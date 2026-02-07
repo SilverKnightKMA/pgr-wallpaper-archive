@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PGR Wallpaper Archive</title>
-    <link rel="icon" type="image/png" href="https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
             --bg: #0d1117;
@@ -89,7 +89,7 @@
 </head>
 <body>
     <div class="container">
-        <h1><img src="https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" alt="PGR" width="32" height="32" style="vertical-align: middle; margin-right: 8px;">PGR Wallpaper Archive</h1>
+        <h1><img src="favicon.png" alt="PGR" width="32" height="32" style="vertical-align: middle; margin-right: 8px;" onerror="this.src='https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png'">PGR Wallpaper Archive</h1>
         <p class="subtitle">Browse and filter wallpapers from Punishing: Gray Raven</p>
 
         <div class="controls">
@@ -290,7 +290,7 @@
                             filename: w.filename,
                             url: w.url || '',
                             status: w.status || 'success',
-                            releaseTime: serverData.lastUpdated || releaseTime || ''
+                            releaseTime: w.releaseTime || releaseTime || serverData.lastUpdated || ''
                         });
                     });
                 });

@@ -165,9 +165,9 @@ function generateBranchReadme(server) {
             try { failedFilenames.add(decodeURIComponent(url.split('/').pop())); } catch (e) { /* ignore */ }
         });
 
-        // Single table with preview, path, link, status, release time
-        readmeContent += "| Preview | Filename | Path | Download | Status | Release Time |\n";
-        readmeContent += "|---------|----------|------|----------|--------|--------------|\n";
+        // Single table with preview, path, link, status
+        readmeContent += "| Preview | Filename | Path | Download | Status |\n";
+        readmeContent += "|---------|----------|------|----------|--------|\n";
         allFiles.forEach(fileObj => {
             const file = fileObj.name;
             const encodedFile = encodeFilename(file);
@@ -178,7 +178,7 @@ function generateBranchReadme(server) {
             const downloadUrl = `https://raw.githubusercontent.com/${repoSlug}/${wallpapersBranch}/${server.id}/images/${encodedFile}`;
             const imgPath = useSubDir ? `images/${encodedFile}` : encodedFile;
             const status = failedFilenames.has(file) ? '❌' : '✅';
-            readmeContent += `| <img src="${thumbRawUrl}" width="100" alt="${safeFile}"> | \`${file}\` | \`${server.id}/${imgPath}\` | [Download](${downloadUrl}) | ${status} | ${releaseTime} |\n`;
+            readmeContent += `| <img src="${thumbRawUrl}" width="100" alt="${safeFile}"> | \`${file}\` | \`${server.id}/${imgPath}\` | [Download](${downloadUrl}) | ${status} |\n`;
         });
     }
 

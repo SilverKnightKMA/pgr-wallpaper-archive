@@ -284,9 +284,13 @@ jobs:
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           MANIFEST_PATH="$(pwd)/data/manifest.json" node src/generate_readme.js main
+          # Vendor PGR favicon locally if not already present
+          if [ ! -f docs/favicon.png ]; then
+            curl -sL -o docs/favicon.png "https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" || true
+          fi
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md data/manifest.json
+          git add README.md data/manifest.json docs/favicon.png
           if git diff --cached --quiet; then
             echo "No README changes."
           else
