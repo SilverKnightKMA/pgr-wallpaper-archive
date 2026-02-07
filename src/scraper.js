@@ -33,81 +33,103 @@ async function getLinks(server) {
         console.log(`[${timestamp()}] Navigating to: ${server.url}`);
         await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 90000 });
 
-        // Wait for the specific container to be present in DOM
+        // --- CRITICAL FIX 1: WAIT FOR ACTUAL IMAGES TO LOAD ---
+        // We take the first selector from the config string to wait for
+        const primarySelector = server.selector.split(',')[0].trim();
+        console.log(`[${timestamp()}] Waiting for selector: "${primarySelector}"...`);
+        
         try {
-            await page.waitForSelector('#app', { timeout: 5000 });
-        } catch (e) { /* ignore if #app not found */ }
+            await page.waitForSelector(primarySelector, { timeout: 15000 });
+            console.log(`[${timestamp()}] Content loaded.`);
+        } catch (e) {
+            console.warn(`[${timestamp()}] Warning: Timeout waiting for selector. Page might be empty or slow.`);
+        }
 
-        console.log(`[${timestamp()}] detecting scroll container...`);
+        console.log(`[${timestamp()}] Detecting scroll container...`);
         
         await page.evaluate(async () => {
             const log = (msg) => console.log(`[BROWSER] ${msg}`);
 
+            // --- CRITICAL FIX 2: IMPROVED CONTAINER DETECTION ---
             function getContainer() {
-                // FORCE PRIORITY: Check for known wrapper IDs/Classes first.
-                // We return these IMMEDIATELY without checking scrollHeight conditions
-                // because sometimes the content loads slightly after.
-                
-                const app = document.querySelector('#app');
-                if (app) return app;
+                // 1. Define candidates
+                const candidates = [
+                    document.querySelector('.wallpaper-list'),
+                    document.querySelector('.pns-picture'),
+                    document.querySelector('#app'),
+                    document.querySelector('main'),
+                    document.documentElement // html
+                ];
 
-                const wrapper = document.querySelector('.wallpaper-list') || 
-                                document.querySelector('.pns-picture');
-                if (wrapper) return wrapper;
-
-                // Fallback: Find largest scrollable div
-                const allDivs = Array.from(document.querySelectorAll('div'));
-                const scrollables = allDivs.filter(el => {
+                // 2. Filter candidates that exist AND have actual scrollable content
+                for (let el of candidates) {
+                    if (!el) continue;
+                    
                     const style = window.getComputedStyle(el);
-                    return (style.overflowY === 'auto' || style.overflowY === 'scroll') 
-                           && el.scrollHeight > el.clientHeight;
-                });
-
-                if (scrollables.length > 0) {
-                    return scrollables.sort((a, b) => b.scrollHeight - a.scrollHeight)[0];
+                    const overflowY = style.overflowY;
+                    const isScrollable = overflowY !== 'hidden' && overflowY !== 'visible';
+                    const hasContent = el.scrollHeight > el.clientHeight;
+                    
+                    // If element has content larger than view, and isn't hidden, use it.
+                    // Special case: #app might have overflow: hidden but contain the scroll, 
+                    // so we mainly check dimensions.
+                    if (el.scrollHeight > 0 && el.scrollHeight > el.clientHeight) {
+                        return el;
+                    }
                 }
 
-                return document.documentElement;
+                // 3. Fallback: If no specific container found, return NULL to indicate Window scroll
+                return null;
             }
 
             const container = getContainer();
-            const containerName = container.id ? `#${container.id}` : (container.className ? `.${container.className}` : container.tagName);
+            const isWindowScroll = !container || container === document.documentElement;
             
-            log(`TARGET CONTAINER: ${containerName}`);
-            log(`INIT SIZE: ScrollHeight=${container.scrollHeight}, ClientHeight=${container.clientHeight}`);
+            if (isWindowScroll) {
+                log(`TARGET: WINDOW (Fallback)`);
+                log(`SIZE: DocumentHeight=${document.body.scrollHeight}`);
+            } else {
+                const name = container.id ? `#${container.id}` : container.className;
+                log(`TARGET: ${name}`);
+                log(`SIZE: ScrollHeight=${container.scrollHeight}, ClientHeight=${container.clientHeight}`);
+            }
 
             // --- SCROLL LOOP ---
             await new Promise((resolve) => {
                 let totalHeight = 0;
                 let distance = 300;
                 let retries = 0;
-                const maxRetries = 15; // Increased retries for slow loads
+                const maxRetries = 20; 
 
                 const timer = setInterval(() => {
-                    const scrollHeight = container.scrollHeight;
-                    
-                    // Force scroll logic
-                    if (container === document.documentElement) {
+                    // Determine scroll height based on target
+                    let scrollHeight, currentScroll, clientHeight;
+
+                    if (isWindowScroll) {
+                        scrollHeight = document.body.scrollHeight;
                         window.scrollBy(0, distance);
+                        currentScroll = window.scrollY;
+                        clientHeight = window.innerHeight;
                     } else {
+                        scrollHeight = container.scrollHeight;
                         container.scrollBy(0, distance);
+                        currentScroll = container.scrollTop;
+                        clientHeight = container.clientHeight;
                     }
                     
-                    // Calculate current position
-                    const scrollTop = (container === document.documentElement) ? window.scrollY : container.scrollTop;
-                    const clientHeight = (container === document.documentElement) ? window.innerHeight : container.clientHeight;
-                    
-                    // Check if we hit bottom
-                    if ((scrollTop + clientHeight) >= (scrollHeight - 100)) {
+                    // Check if we hit bottom (with 50px buffer)
+                    if ((currentScroll + clientHeight) >= (scrollHeight - 50)) {
                         retries++;
                         if (retries % 5 === 0) log(`Waiting for lazy load... (${retries}/${maxRetries})`);
                         
+                        // If we are stuck at bottom for too long, finish.
                         if (retries >= maxRetries) {
                             log(`Finished scrolling.`);
                             clearInterval(timer);
                             resolve();
                         }
                     } else {
+                        // Reset retries if height increased or we moved
                         retries = 0;
                         totalHeight += distance;
                     }
@@ -118,7 +140,9 @@ async function getLinks(server) {
         console.log(`[${timestamp()}] Extracting links...`);
         
         const links = await page.evaluate((selector) => {
-            return Array.from(document.querySelectorAll(selector))
+            // Fix: ensure we select everything
+            const imgs = document.querySelectorAll(selector);
+            return Array.from(imgs)
                 .map(img => img.src)
                 .filter(src => src && src.startsWith('http') && !src.includes('base64'))
                 .map(url => {
