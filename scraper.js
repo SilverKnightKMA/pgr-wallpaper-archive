@@ -1,8 +1,15 @@
+const path = require('path');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 
 async function getLinks(server) {
+    const linkDir = path.dirname(server.txtPath);
+    if (!fs.existsSync(linkDir)) {
+        fs.mkdirSync(linkDir, { recursive: true });
+        console.log(`[+] Created directory: ${linkDir}`);
+    }
+    
     const timestamp = () => new Set().add(new Date().toLocaleTimeString()).values().next().value;
     console.log(`\n[${timestamp()}] 🚀 STARTING: ${server.name.toUpperCase()}`);
     
