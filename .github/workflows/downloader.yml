@@ -75,12 +75,12 @@ jobs:
           if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
             git fetch --filter=blob:none origin "$WALLPAPERS_BRANCH" --depth=1
             # List all image files at root of the branch
-            git ls-tree --name-only "origin/$WALLPAPERS_BRANCH" 2>/dev/null | while read -r filepath; do
+            while read -r filepath; do
               filename=$(basename "$filepath")
               if echo "$filename" | grep -qiE '\.(jpg|jpeg|png|webp)$'; then
                 echo "$filename" >> ".existing_images_all"
               fi
-            done
+            done < <(git ls-tree --name-only "origin/$WALLPAPERS_BRANCH" 2>/dev/null)
             # Distribute to per-server branches dirs based on manifest
             while IFS= read -r id; do
               mkdir -p "branches/$id"
@@ -247,9 +247,8 @@ jobs:
 
             # Track files >100MB for Git LFS
             find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -size +100M | while read -r bigfile; do
-              ext="${bigfile##*.}"
               echo "  ⚠️ Large file detected (>100MB): $(basename "$bigfile"), tracking with Git LFS"
-              cd "$WP_DIR" && git lfs track "$(basename "$bigfile")" && cd "$REPO_DIR"
+              git -C "$WP_DIR" lfs track "$(basename "$bigfile")"
             done
 
             # Copy thumbnails to preview branch (per-server dirs preserved)
