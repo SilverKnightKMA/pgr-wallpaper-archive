@@ -67,7 +67,7 @@ async function getLinks(server, maxImages, existingImages) {
 
         console.log(`[${timestamp()}] 📜 Starting Smart Scroll Loop...`);
 
-        const links = await page.evaluate(async (selector) => {
+        const links = await page.evaluate(async (selector, maxImages, existingCount) => {
             const log = (msg) => console.log(`[BROWSER] ${msg}`);
 
             const getScroller = () => {
@@ -85,6 +85,7 @@ async function getLinks(server, maxImages, existingImages) {
             return await new Promise(async (resolve) => {
                 let previousCount = countImages();
                 let retries = 0;
+                let totalCount = existingCount;
                 
                 const MAX_RETRIES = 10; 
                 const WAIT_TIME = 2000; 
@@ -116,8 +117,23 @@ async function getLinks(server, maxImages, existingImages) {
 
                     if (currentCount > previousCount) {
                         log(`✅ NEW CONTENT: ${currentCount} images (was ${previousCount})`);
+                        totalCount += (currentCount - previousCount);
                         previousCount = currentCount;
                         retries = 0; // Reset
+
+                        if (totalCount >= maxImages) {
+                            log(`🚨 Total images (${totalCount}) reached maxImages (${maxImages}). Stopping scroll.`);
+                            clearInterval(timer);
+                            const imgs = document.querySelectorAll(selector);
+                            const result = Array.from(imgs)
+                                .map(img => img.src)
+                                .filter(src => src && src.startsWith('http') && !src.includes('base64'))
+                                .map(url => {
+                                    try { return encodeURI(decodeURI(url.replace(/\+/g, '%20'))); } 
+                                    catch (e) { return url; }
+                                });
+                            resolve(result);
+                        }
                     } else {
                         retries++;
                         log(`⏳ Waiting... (${retries}/${MAX_RETRIES}) - Count: ${currentCount}`);
@@ -125,8 +141,6 @@ async function getLinks(server, maxImages, existingImages) {
                         if (retries >= MAX_RETRIES) {
                             log(`🛑 Finished scrolling.`);
                             clearInterval(timer);
-                            
-                            // Extract links
                             const imgs = document.querySelectorAll(selector);
                             const result = Array.from(imgs)
                                 .map(img => img.src)
@@ -141,19 +155,13 @@ async function getLinks(server, maxImages, existingImages) {
                 }, WAIT_TIME);
             });
 
-        }, server.selector);
+        }, server.selector, maxImages, existingImages.size);
 
         // --- SAVE RESULTS ---
         const uniqueLinks = [...new Set(links)];
         const newLinks = uniqueLinks.filter(link => !existingImages.has(path.basename(link)));
 
         if (newLinks.length > 0) {
-            if (newLinks.length >= maxImages) {
-                console.log(`[${timestamp()}] 🚨 Number of new links (${newLinks.length}) exceeds maxImages (${maxImages}). Stopping scraper.`);
-                fs.writeFileSync(server.txtPath, newLinks.join('\n'));
-                process.exit(0);
-            }
-
             fs.writeFileSync(server.txtPath, newLinks.join('\n'));
             console.log(`[${timestamp()}] ✅ Success: Found ${newLinks.length} new unique links. Saved to ${server.txtPath}`);
         } else {
