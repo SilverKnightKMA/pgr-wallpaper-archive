@@ -19,7 +19,7 @@ async function getLinks(server) {
 
     const browser = await puppeteer.launch({
         headless: "new",
-        protocolTimeout: 0, 
+        protocolTimeout: 0,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
@@ -27,13 +27,9 @@ async function getLinks(server) {
         const page = await browser.newPage();
         await page.setViewport({ width: 1920, height: 1080 });
 
-        // --- 1. ENABLE CONSOLE LOGS (Quan trọng để debug) ---
+        // Enable log forwarding
         page.on('console', msg => {
-            const text = msg.text();
-            // Chỉ hiện log do mình viết (có prefix [BROWSER])
-            if (text.includes('[BROWSER]')) {
-                console.log(`  ↳ ${text}`);
-            }
+            if (msg.text().includes('[BROWSER]')) console.log(`  ↳ ${msg.text()}`);
         });
 
         if (config.settings?.userAgent) {
@@ -41,29 +37,23 @@ async function getLinks(server) {
         }
 
         console.log(`[${timestamp()}] Navigating to: ${server.url}`);
-        // Dùng networkidle2 để đảm bảo trang load xong hoàn toàn
         await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 0 });
 
-        // Chờ selector đầu tiên
+        // Wait for primary selector
         const primarySelector = server.selector.split(',')[0].trim();
         console.log(`[${timestamp()}] Waiting for selector: "${primarySelector}"...`);
         try {
             await page.waitForSelector(primarySelector, { timeout: 20000 });
             console.log(`[${timestamp()}] Selector found. Page ready.`);
         } catch (e) {
-            console.warn(`[${timestamp()}] ⚠️ Selector NOT found immediately. Page might be empty or slow.`);
+            console.warn(`[${timestamp()}] ⚠️ Selector NOT found immediately. Continuing anyway...`);
         }
 
-        console.log(`[${timestamp()}] 📜 Starting Scroll Loop...`);
+        console.log(`[${timestamp()}] 📜 Starting Smart Scroll Loop...`);
 
-        // --- 2. SCROLL LOGIC (Image Count Strategy) ---
         const links = await page.evaluate(async (selector) => {
             const log = (msg) => console.log(`[BROWSER] ${msg}`);
 
-            // Hàm đếm số ảnh thực tế đang có trong DOM
-            const countImages = () => document.querySelectorAll(selector).length;
-
-            // Hàm tìm thằng cuộn to nhất (để scroll nó)
             const getScroller = () => {
                 const candidates = [
                     document.querySelector('#app'),
@@ -74,40 +64,53 @@ async function getLinks(server) {
                 return candidates.filter(e => e).sort((a, b) => b.scrollHeight - a.scrollHeight)[0];
             };
 
-            return await new Promise((resolve) => {
+            const countImages = () => document.querySelectorAll(selector).length;
+
+            return await new Promise(async (resolve) => {
                 let previousCount = countImages();
                 let retries = 0;
-                const MAX_RETRIES = 5; 
-                const WAIT_TIME = 2000; // 2 giây chờ load
+                
+                const MAX_RETRIES = 10; 
+                const WAIT_TIME = 2000; 
 
                 log(`Initial Image Count: ${previousCount}`);
 
+                log(`Warm-up scroll...`);
+                const scroller = getScroller();
+                if (scroller) scroller.scrollBy(0, 500);
+                window.scrollBy(0, 500);
+                
+                await new Promise(r => setTimeout(r, 4000));
+                
                 const timer = setInterval(() => {
-                    // 1. Scroll mạnh xuống đáy
                     const scroller = getScroller();
+                    const distance = 1000;
                     
-                    // Scroll cả Window lẫn Container để chắc chắn trúng
-                    window.scrollTo(0, document.body.scrollHeight);
+                    window.scrollBy(0, distance);
                     if (scroller && scroller !== document.documentElement) {
-                        scroller.scrollTop = scroller.scrollHeight;
+                        scroller.scrollBy(0, distance);
+                        
+                        if (scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 100) {
+                             // Force bottom check
+                             scroller.scrollTop = scroller.scrollHeight;
+                        }
                     }
 
-                    // 2. Kiểm tra kết quả
                     const currentCount = countImages();
 
                     if (currentCount > previousCount) {
-                        log(`✅ Loaded new images! Total: ${currentCount} (was ${previousCount})`);
+                        log(`✅ NEW CONTENT: ${currentCount} images (was ${previousCount})`);
                         previousCount = currentCount;
                         retries = 0; // Reset
                     } else {
                         retries++;
-                        log(`⏳ No change... Waiting (${retries}/${MAX_RETRIES}) - Count: ${currentCount}`);
+                        log(`⏳ Waiting... (${retries}/${MAX_RETRIES}) - Count: ${currentCount}`);
                         
                         if (retries >= MAX_RETRIES) {
                             log(`🛑 Finished scrolling.`);
                             clearInterval(timer);
                             
-                            // 3. Trích xuất link
+                            // Trích xuất link
                             const imgs = document.querySelectorAll(selector);
                             const result = Array.from(imgs)
                                 .map(img => img.src)
@@ -142,7 +145,7 @@ async function getLinks(server) {
 }
 
 (async () => {
-    console.log("=== SCRAPER STARTED (DEBUG MODE) ===");
+    console.log("=== SCRAPER STARTED (SMART SCROLL) ===");
     for (const server of config.servers) {
         await getLinks(server);
     }
