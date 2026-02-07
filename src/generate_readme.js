@@ -4,7 +4,7 @@ const configPath = path.join(__dirname, '../config.json');
 const configPath = path.join(__dirname, '..', 'config.json');
 
 if (!fs.existsSync(configPath)) {
-    console.error(`❌ Không tìm thấy file config tại: ${configPath}`);
+    console.error(`❌ Config not found: ${configPath}`);
     process.exit(1);
 }
 
