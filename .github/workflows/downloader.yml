@@ -259,13 +259,54 @@ jobs:
               find "$BRANCH_DIR/thumbnails" -maxdepth 1 -type f -exec cp {} "$PV_DIR/$id/thumbnails/" \;
             fi
             
-            # Generate missing thumbnails for existing files in wallpapers branch
-            # This ensures all files have thumbnails, not just newly downloaded ones
+            # Generate missing thumbnails for files belonging to this server
+            # Use the per-server URL list to determine which wallpapers belong to this server
             echo "  🔍 Checking for missing thumbnails..."
             THUMB_WIDTH=$(node -e "const c=require('$REPO_DIR/config.json'); console.log(c.settings.thumbnailWidth || 400)")
             MISSING_COUNT=0
-            while IFS= read -r wpfile; do
-              filename=$(basename "$wpfile")
+            
+            URL_LIST_FILE="$REPO_DIR/Wallpapers/images_url/$id.txt"
+            
+            # Build a list of filenames that belong to this server
+            declare -a SERVER_FILES
+            
+            # Get filenames from current txt file (new downloads this run)
+            if [ -f "$URL_LIST_FILE" ] && [ -s "$URL_LIST_FILE" ]; then
+              while IFS= read -r url; do
+                # Extract filename from URL
+                filename=$(basename "$url" | python3 -c "import sys, urllib.parse; print(urllib.parse.unquote(sys.stdin.read().strip()))")
+                SERVER_FILES+=("$filename")
+              done < "$URL_LIST_FILE"
+            fi
+            
+            # Also get filenames from prior manifest for this server (to handle runs with no new images)
+            if [ -f "$REPO_DIR/data/manifest.json" ]; then
+              MANIFEST_FILES=$(python3 -c "
+import json, sys
+try:
+    with open('$REPO_DIR/data/manifest.json') as f:
+        m = json.load(f)
+    if '$id' in m and 'wallpapers' in m['$id']:
+        for w in m['$id']['wallpapers']:
+            if w.get('status') == 'success' and w.get('filename'):
+                print(w['filename'])
+except: pass
+")
+              if [ -n "$MANIFEST_FILES" ]; then
+                while IFS= read -r filename; do
+                  SERVER_FILES+=("$filename")
+                done <<< "$MANIFEST_FILES"
+              fi
+            fi
+            
+            # Remove duplicates and process each file
+            for filename in $(printf '%s\n' "${SERVER_FILES[@]}" | sort -u); do
+              wpfile="$WP_DIR/$filename"
+              # Skip if the wallpaper file does not exist in the flat wallpapers branch
+              if [ ! -f "$wpfile" ]; then
+                continue
+              fi
+              
               thumb_path="$PV_DIR/$id/thumbnails/$filename"
               
               # If thumbnail doesn't exist, generate it
@@ -279,7 +320,7 @@ jobs:
                   echo "       Error: $ERROR_MSG"
                 fi
               fi
-            done < <(find "$WP_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \))
+            done
             
             if [ $MISSING_COUNT -gt 0 ]; then
               echo "  ✅ Generated $MISSING_COUNT missing thumbnails for $id"

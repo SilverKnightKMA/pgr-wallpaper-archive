@@ -76,9 +76,10 @@ Since wallpapers branch is flat (no per-server subdirectories), this code added 
 **Fix**:
 ```python
 # src/build_manifest.py (new code)
-# Removed the fallback file discovery
-# Only count files from manifest + new downloads
-# Added explanatory comment about why
+# Merge prior manifest with new discoveries from images_url txt files
+# images_url/*.txt contains only NEW links per run (scraper truncates when none found)
+# So we preserve existing wallpapers from prior manifest and add new ones
+# This prevents dropping wallpapers on runs with no new images
 ```
 
 ## Solutions Implemented

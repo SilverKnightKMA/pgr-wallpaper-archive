@@ -154,8 +154,9 @@ if (fs.existsSync(manifestPath)) {
         if (manifest[serverId].wallpapers) {
             for (const wallpaper of manifest[serverId].wallpapers) {
                 const fn = wallpaper.filename;
-                // Check that filename doesn't contain % encoding
-                if (fn && fn.includes('%')) {
+                // Check that filename doesn't contain URL-encoded %XX sequences
+                // Note: decoded filenames can legitimately contain literal % characters
+                if (fn && /%[0-9A-Fa-f]{2}/.test(fn)) {
                     try {
                         // Check if it's a valid encoding or not
                         const decoded = decodeURIComponent(fn);

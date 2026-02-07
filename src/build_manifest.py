@@ -55,15 +55,23 @@ def main():
         # Directories to search for file sizes (new downloads + wallpapers branch root)
         size_dirs = [d for d in [img_dir, wp_branch_root] if os.path.isdir(d)]
 
-        # Build prior filename mapping from old manifest (for preserving metadata)
+        # Build prior filename mapping and get existing success filenames from old manifest
+        # NOTE: images_url txt files contain only NEW links per run (scraper truncates when none found)
+        # So we must merge with prior manifest to preserve existing wallpapers
         prior_url_map = {}
         prior_release_time_map = {}
         prior_size_map = {}
+        success_filenames = set()
+        
         if sid in manifest and 'wallpapers' in manifest[sid]:
             for pw in manifest[sid]['wallpapers']:
                 filename = pw.get('filename')
                 if not filename:
                     continue
+                # Preserve existing successful wallpapers
+                if pw.get('status') == 'success':
+                    success_filenames.add(filename)
+                # Preserve metadata for all wallpapers
                 if pw.get('url'):
                     prior_url_map[filename] = pw['url']
                 if pw.get('releaseTime'):
@@ -71,9 +79,7 @@ def main():
                 if pw.get('size'):
                     prior_size_map[filename] = pw['size']
 
-        # Count successful images: Get list from images_url txt file
-        # This is the source of truth for what belongs to this server
-        success_filenames = set()
+        # Add NEW filenames from images_url txt file (new discoveries this run)
         if os.path.isfile(txt_file):
             with open(txt_file) as f:
                 for line in f:
@@ -84,6 +90,9 @@ def main():
                     decoded_fn = urllib.parse.unquote(raw_fn)
                     fn = decoded_fn if decoded_fn != raw_fn else raw_fn
                     success_filenames.add(fn)
+                    # Update URL for new or previously missing URLs
+                    if fn not in prior_url_map or not prior_url_map[fn]:
+                        prior_url_map[fn] = url
 
         success = len(success_filenames)
 
@@ -97,33 +106,24 @@ def main():
 
         total = success + failed_count
 
-        # Build detailed wallpaper list from images_url txt file (source of truth)
+        # Build detailed wallpaper list from success_filenames (deduplicated set)
         wallpapers = []
         
-        # Add successful wallpapers
-        if os.path.isfile(txt_file):
-            with open(txt_file) as f:
-                for line in f:
-                    url = line.strip()
-                    if not url:
-                        continue
-                    raw_fn = os.path.basename(url)
-                    decoded_fn = urllib.parse.unquote(raw_fn)
-                    fn = decoded_fn if decoded_fn != raw_fn else raw_fn
-                    
-                    # Get file size
-                    size = get_file_size(size_dirs, fn)
-                    size_str = prior_size_map.get(fn, '')
-                    if size > 0:
-                        size_str = format_size(size)
-                    
-                    wallpapers.append({
-                        'filename': fn,
-                        'url': url,
-                        'status': 'success',
-                        'releaseTime': prior_release_time_map.get(fn, timestamp),
-                        'size': size_str
-                    })
+        # Add all successful wallpapers from the deduplicated set
+        for fn in sorted(success_filenames):
+            # Get file size
+            size = get_file_size(size_dirs, fn)
+            size_str = prior_size_map.get(fn, '')
+            if size > 0:
+                size_str = format_size(size)
+            
+            wallpapers.append({
+                'filename': fn,
+                'url': prior_url_map.get(fn, ''),
+                'status': 'success',
+                'releaseTime': prior_release_time_map.get(fn, timestamp),
+                'size': size_str
+            })
 
         # Add failed URLs
         for url in failed_urls:
