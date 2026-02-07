@@ -100,16 +100,17 @@ jobs:
       - name: Check for new images
         id: check_new
         run: |
-          new_count=0
+          has_new=false
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
           while IFS= read -r id; do
             txt="Wallpapers/images_url/${id}.txt"
             if [ -f "$txt" ] && [ -s "$txt" ]; then
-              new_count=$((new_count + $(wc -l < "$txt")))
+              count=$(wc -l < "$txt")
+              echo "New images for $id: $count"
+              has_new=true
             fi
           done <<< "$SERVERS"
-          echo "New images found: $new_count"
-          echo "has_new=$([ "$new_count" -gt 0 ] && echo "true" || echo "false")" >> "$GITHUB_OUTPUT"
+          echo "has_new=$has_new" >> "$GITHUB_OUTPUT"
 
       - name: Set release tag
         id: set_tag
@@ -125,7 +126,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG_TS: ${{ steps.set_tag.outputs.timestamp }}
-        run: bash src/sync_repo.sh
+        run: |
+          # Save old manifest for comparison before sync builds a new one
+          if [ -f data/manifest.json ]; then
+            cp data/manifest.json data/manifest_old.json
+          else
+            echo '{}' > data/manifest_old.json
+          fi
+          bash src/sync_repo.sh
+
+      - name: Diff manifests for release
+        if: steps.check_new.outputs.has_new == 'true'
+        run: |
+          mkdir -p new_images
+          python3 src/diff_manifest.py data/manifest_old.json data/manifest.json new_images
 
       - name: Update main README
         if: steps.check_new.outputs.has_new == 'true'
@@ -155,11 +169,10 @@ jobs:
         if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
         run: |
           mkdir -p release_assets
-          # Reuse logic to find files to zip
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
           while IFS= read -r id; do
             mkdir -p "release_staging/$id"
-            txt="Wallpapers/images_url/${id}.txt"
+            txt="new_images/${id}.txt"
             [ -f "$txt" ] && while IFS= read -r url; do
               fn=$(basename "$url")
               decoded=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$fn")
@@ -170,14 +183,13 @@ jobs:
           # Simple zip logic (split if needed)
           cd release_staging
           zip -r "../release_assets/${{ steps.set_tag.outputs.tag }}.zip" .
-          # Note: If you need the complex splitting logic, put it in a separate src/zip_assets.sh script too!
 
       - name: Create GitHub Release
         if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.set_tag.outputs.tag }}
-          name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
+          name: ${{ steps.set_tag.outputs.tag }}
           body_path: release_notes.md
           files: release_assets/*.zip
         env:

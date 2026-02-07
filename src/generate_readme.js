@@ -105,11 +105,7 @@ function generateMainReadme() {
                 readmeContent += `<a href="${rawUrl}"><img src="${thumbRawUrl}" width="150" alt="${safeFile}" title="${safeFile}"></a>\n`;
             });
             readmeContent += "</p>\n\n";
-            if (wallpapers.length > 15) {
-                readmeContent += `- ... and ${wallpapers.length - 15} more — [View all in Preview](${previewReadmeUrl})\n`;
-            } else {
-                readmeContent += `- [View all in Preview](${previewReadmeUrl})\n`;
-            }
+            readmeContent += `- [View all in Preview](${previewReadmeUrl})\n`;
         } else {
             readmeContent += "_No wallpapers yet._\n";
         }

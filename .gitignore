@@ -129,7 +129,9 @@ dist
 branches/
 release_assets/
 release_staging/
+new_images/
 Wallpapers/
+data/manifest_old.json
 
 # yarn v3
 .pnp.*

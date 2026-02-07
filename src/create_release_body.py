@@ -41,7 +41,7 @@ def main():
     for server in servers:
         sid = server['id']
         sname = server['name']
-        txt_file = f"Wallpapers/images_url/{sid}.txt"
+        txt_file = f"new_images/{sid}.txt"
         
         if not os.path.exists(txt_file) or os.path.getsize(txt_file) == 0:
             continue
