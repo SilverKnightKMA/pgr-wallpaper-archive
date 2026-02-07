@@ -8,7 +8,7 @@ on:
       max_images:
         description: 'Maximum number of images allowed before triggering downloader.'
         required: false
-        default: 1000
+        default: 10000
 
 jobs:
   scrape-and-download:
