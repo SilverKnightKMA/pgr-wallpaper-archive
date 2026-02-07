@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGR Wallpaper Archive</title>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --success: #3fb950;
+            --danger: #f85149;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        h1 { margin-bottom: 8px; }
+        .subtitle { color: var(--text-muted); margin-bottom: 24px; }
+        .controls {
+            display: flex; flex-wrap: wrap; gap: 12px;
+            margin-bottom: 24px; align-items: center;
+        }
+        .controls select, .controls input {
+            background: var(--card-bg); color: var(--text);
+            border: 1px solid var(--border); border-radius: 6px;
+            padding: 8px 12px; font-size: 14px;
+        }
+        .controls input { flex: 1; min-width: 200px; }
+        .stats {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 6px; padding: 16px; margin-bottom: 24px;
+            display: flex; gap: 24px; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 24px; font-weight: bold; }
+        .stat-label { color: var(--text-muted); font-size: 12px; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border);
+            border-radius: 8px; overflow: hidden; transition: border-color 0.2s;
+        }
+        .card:hover { border-color: var(--accent); }
+        .card img {
+            width: 100%; aspect-ratio: 16/9; object-fit: cover;
+            background: #21262d; display: block;
+        }
+        .card-body { padding: 12px; }
+        .card-filename {
+            font-size: 12px; word-break: break-all;
+            color: var(--text-muted); margin-bottom: 8px;
+        }
+        .card-actions { display: flex; gap: 8px; }
+        .card-actions a {
+            font-size: 12px; padding: 4px 10px;
+            border-radius: 4px; text-decoration: none;
+            border: 1px solid var(--border); color: var(--text);
+            transition: background 0.2s;
+        }
+        .card-actions a:hover { background: var(--border); }
+        .card-actions a.download { border-color: var(--accent); color: var(--accent); }
+        .badge {
+            display: inline-block; font-size: 11px; padding: 2px 6px;
+            border-radius: 4px; font-weight: 600;
+        }
+        .badge-success { background: rgba(63,185,80,0.15); color: var(--success); }
+        .badge-danger { background: rgba(248,81,73,0.15); color: var(--danger); }
+        .loading { text-align: center; padding: 60px; color: var(--text-muted); }
+        .empty { text-align: center; padding: 60px; color: var(--text-muted); }
+        .timestamp { color: var(--text-muted); font-size: 12px; margin-bottom: 16px; }
+        @media (max-width: 600px) {
+            .gallery { grid-template-columns: 1fr; }
+            .controls { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ PGR Wallpaper Archive</h1>
+        <p class="subtitle">Browse and filter wallpapers from Punishing: Gray Raven</p>
+
+        <div class="controls">
+            <select id="serverFilter">
+                <option value="all">All Servers</option>
+            </select>
+            <select id="statusFilter">
+                <option value="all">All Status</option>
+                <option value="success">✅ Success</option>
+                <option value="failed">❌ Failed</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Search by filename...">
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-item"><div class="stat-value" id="statTotal">-</div><div class="stat-label">Total</div></div>
+            <div class="stat-item"><div class="stat-value" id="statSuccess">-</div><div class="stat-label">Success</div></div>
+            <div class="stat-item"><div class="stat-value" id="statFailed">-</div><div class="stat-label">Failed</div></div>
+            <div class="stat-item"><div class="stat-value" id="statServers">-</div><div class="stat-label">Servers</div></div>
+        </div>
+
+        <div class="timestamp" id="lastUpdated"></div>
+
+        <div id="gallery" class="gallery">
+            <div class="loading">Loading wallpaper data...</div>
+        </div>
+    </div>
+
+    <script>
+        let REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
+        let DATA_BRANCH = 'data';
+        let WALLPAPERS_BRANCH = 'wallpapers';
+        let PREVIEW_BRANCH = 'preview';
+
+        let allData = [];
+        let serverNames = {};
+
+        // Encode filename for URLs, preserving existing %XX sequences
+        function encodeFilename(filename) {
+            return filename
+                .replace(/[^A-Za-z0-9._~:@!$&'()*+,;=%\/-]/g, c => encodeURIComponent(c))
+                .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
+        }
+
+        async function loadConfig() {
+            try {
+                // Derive repo slug from GitHub Pages hostname if possible
+                const host = window.location.hostname;
+                const pathParts = window.location.pathname.split('/').filter(Boolean);
+                if (host.endsWith('.github.io')) {
+                    const owner = host.replace('.github.io', '');
+                    const repoName = pathParts[0] || '';
+                    if (owner && repoName) {
+                        REPO = `${owner}/${repoName}`;
+                    }
+                }
+
+                const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/config.json`);
+                const config = await res.json();
+                config.servers.forEach(s => { serverNames[s.id] = s.name; });
+                // Read branch names from config
+                if (config.dataBranch) DATA_BRANCH = config.dataBranch;
+                if (config.wallpapersBranch) WALLPAPERS_BRANCH = config.wallpapersBranch;
+                if (config.previewBranch) PREVIEW_BRANCH = config.previewBranch;
+            } catch (e) {
+                console.warn('Could not load config, using defaults');
+            }
+        }
+
+        async function loadManifest() {
+            const url = `https://raw.githubusercontent.com/${REPO}/${DATA_BRANCH}/manifest.json`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('Manifest not found');
+            return res.json();
+        }
+
+        function getThumbUrl(serverId, filename) {
+            const encoded = encodeFilename(filename);
+            return `https://raw.githubusercontent.com/${REPO}/${PREVIEW_BRANCH}/${serverId}/thumbnails/${encoded}`;
+        }
+
+        function getDownloadUrl(serverId, filename) {
+            const encoded = encodeFilename(filename);
+            return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${serverId}/images/${encoded}`;
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function escapeAttr(str) {
+            return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function isValidUrl(url) {
+            try {
+                const parsed = new URL(url);
+                return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function renderGallery(items) {
+            const gallery = document.getElementById('gallery');
+            if (items.length === 0) {
+                gallery.innerHTML = '<div class="empty">No wallpapers match your filters.</div>';
+                return;
+            }
+            gallery.innerHTML = items.map(item => {
+                const thumbUrl = getThumbUrl(item.server, item.filename);
+                const downloadUrl = getDownloadUrl(item.server, item.filename);
+                const safeName = escapeHtml(item.filename);
+                const safeAlt = escapeAttr(item.filename);
+                const safeServer = escapeHtml(serverNames[item.server] || item.server);
+                const sourceLink = (item.url && isValidUrl(item.url))
+                    ? `<a href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">🔗 Source</a>` : '';
+                return `
+                <div class="card">
+                    <img src="${escapeAttr(thumbUrl)}"
+                         alt="${safeAlt}"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+                    <div class="card-body">
+                        <div class="card-filename">${safeName}</div>
+                        <div style="margin-bottom:8px">
+                            <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
+                                ${item.status === 'success' ? '✅ Success' : '❌ Failed'}
+                            </span>
+                            <span class="badge" style="background:rgba(88,166,255,0.15);color:var(--accent)">
+                                ${safeServer}
+                            </span>
+                        </div>
+                        <div class="card-actions">
+                            ${item.status === 'success' ? `<a href="${escapeAttr(downloadUrl)}" class="download" target="_blank" rel="noopener noreferrer">⬇ Download</a>` : ''}
+                            ${sourceLink}
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function updateStats(items) {
+            const success = items.filter(i => i.status === 'success').length;
+            const failed = items.filter(i => i.status === 'failed').length;
+            const servers = new Set(items.map(i => i.server)).size;
+            document.getElementById('statTotal').textContent = items.length;
+            document.getElementById('statSuccess').textContent = success;
+            document.getElementById('statFailed').textContent = failed;
+            document.getElementById('statServers').textContent = servers;
+        }
+
+        function applyFilters() {
+            const server = document.getElementById('serverFilter').value;
+            const status = document.getElementById('statusFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+
+            let filtered = allData;
+            if (server !== 'all') filtered = filtered.filter(i => i.server === server);
+            if (status !== 'all') filtered = filtered.filter(i => i.status === status);
+            if (search) filtered = filtered.filter(i => i.filename.toLowerCase().includes(search));
+
+            updateStats(filtered);
+            renderGallery(filtered);
+        }
+
+        async function init() {
+            try {
+                await loadConfig();
+                const manifest = await loadManifest();
+
+                // Populate server filter
+                const serverFilter = document.getElementById('serverFilter');
+                const serverIds = Object.keys(manifest);
+                serverIds.forEach(id => {
+                    const opt = document.createElement('option');
+                    opt.value = id;
+                    opt.textContent = serverNames[id] || id;
+                    serverFilter.appendChild(opt);
+                });
+
+                // Build flat data array
+                let latestTime = '';
+                serverIds.forEach(id => {
+                    const serverData = manifest[id];
+                    if (serverData.lastUpdated && serverData.lastUpdated > latestTime) {
+                        latestTime = serverData.lastUpdated;
+                    }
+                    (serverData.wallpapers || []).forEach(w => {
+                        allData.push({
+                            server: id,
+                            filename: w.filename,
+                            url: w.url || '',
+                            status: w.status || 'success'
+                        });
+                    });
+                });
+
+                if (latestTime) {
+                    document.getElementById('lastUpdated').textContent = `Last Updated: ${latestTime}`;
+                }
+
+                // Check URL params for pre-filter
+                const params = new URLSearchParams(window.location.search);
+                if (params.get('server')) {
+                    serverFilter.value = params.get('server');
+                }
+
+                // Attach event listeners
+                document.getElementById('serverFilter').addEventListener('change', applyFilters);
+                document.getElementById('statusFilter').addEventListener('change', applyFilters);
+                document.getElementById('searchInput').addEventListener('input', applyFilters);
+
+                applyFilters();
+            } catch (e) {
+                document.getElementById('gallery').innerHTML =
+                    `<div class="empty">Failed to load data. The manifest may not exist yet on the <code>${escapeHtml(DATA_BRANCH)}</code> branch.</div>`;
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>
