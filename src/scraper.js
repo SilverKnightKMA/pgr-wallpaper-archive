@@ -11,13 +11,23 @@ const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const timestamp = () => new Date().toLocaleTimeString();
 
-// Function to count images in a directory
-function countImagesInDirectory(directory) {
-    if (!fs.existsSync(directory)) return 0;
-    return fs.readdirSync(directory).filter(file => file.endsWith('.jpg') || file.endsWith('.png')).length;
+// Function to list images in a directory
+function listImagesInDirectory(directory) {
+    if (!fs.existsSync(directory)) return [];
+    return fs.readdirSync(directory).filter(file => file.endsWith('.jpg') || file.endsWith('.png'));
 }
 
-async function getLinks(server, maxImages) {
+// Function to list all images across configured directories
+function listAllImages(directories) {
+    const allImages = new Set();
+    for (const dir of directories) {
+        const images = listImagesInDirectory(dir);
+        images.forEach(image => allImages.add(image));
+    }
+    return allImages;
+}
+
+async function getLinks(server, maxImages, existingImages) {
     const linkDir = path.dirname(server.txtPath);
     if (!fs.existsSync(linkDir)) fs.mkdirSync(linkDir, { recursive: true });
 
@@ -135,21 +145,19 @@ async function getLinks(server, maxImages) {
 
         // --- SAVE RESULTS ---
         const uniqueLinks = [...new Set(links)];
+        const newLinks = uniqueLinks.filter(link => !existingImages.has(path.basename(link)));
 
-        if (uniqueLinks.length > 0) {
-            fs.writeFileSync(server.txtPath, uniqueLinks.join('\n'));
-            console.log(`[${timestamp()}] ✅ Success: Found ${uniqueLinks.length} unique links. Saved to ${server.txtPath}`);
+        if (newLinks.length > 0) {
+            if (newLinks.length >= maxImages) {
+                console.log(`[${timestamp()}] 🚨 Number of new links (${newLinks.length}) exceeds maxImages (${maxImages}). Stopping scraper.`);
+                fs.writeFileSync(server.txtPath, newLinks.join('\n'));
+                process.exit(0);
+            }
+
+            fs.writeFileSync(server.txtPath, newLinks.join('\n'));
+            console.log(`[${timestamp()}] ✅ Success: Found ${newLinks.length} new unique links. Saved to ${server.txtPath}`);
         } else {
-            console.warn(`[${timestamp()}] ⚠️ Warning: No links found for ${server.name}`);
-        }
-
-        // Check image count in directory
-        const imageCount = countImagesInDirectory(server.imageDir);
-        console.log(`[${timestamp()}] 📂 Current image count in ${server.imageDir}: ${imageCount}`);
-
-        if (imageCount > maxImages) {
-            console.log(`[${timestamp()}] 🚨 Image count exceeds limit (${maxImages}). Stopping scraper.`);
-            process.exit(0);
+            console.warn(`[${timestamp()}] ⚠️ Warning: No new links found for ${server.name}`);
         }
 
     } catch (error) {
@@ -164,8 +172,13 @@ async function getLinks(server, maxImages) {
     console.log(`=== SCRAPER STARTED (SMART SCROLL) ===`);
     console.log(`[${timestamp()}] Max images allowed: ${maxImages}`);
 
+    // List existing images
+    const directories = config.servers.map(server => server.imageDir);
+    const existingImages = listAllImages(directories);
+    console.log(`[${timestamp()}] 📂 Existing images: ${existingImages.size}`);
+
     for (const server of config.servers) {
-        await getLinks(server, maxImages);
+        await getLinks(server, maxImages, existingImages);
     }
     console.log(`\n=== ALL TASKS COMPLETED ===\n`);
 })();
