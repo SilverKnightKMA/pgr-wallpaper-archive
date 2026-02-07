@@ -11,10 +11,13 @@ on:
         default: 1000
 
 jobs:
-  update:
+  scrape-and-download:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      has_new_images: ${{ steps.check_new.outputs.has_new }}
+      release_tag: ${{ steps.set_tag.outputs.tag }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -31,6 +34,32 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Create branch working directories
+        run: |
+          # For each server, checkout existing branch content if it exists
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + ' ' + s.branch))")
+          while IFS=' ' read -r id branch; do
+            mkdir -p "branches/$id"
+            if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
+              echo "📥 Fetching existing branch: $branch"
+              git fetch origin "$branch" --depth=1
+              git worktree add "worktree-$id" "origin/$branch" --detach 2>/dev/null || true
+              # Copy existing images to branches dir
+              if [ -d "worktree-$id" ]; then
+                cp -r "worktree-$id"/*.jpg "branches/$id/" 2>/dev/null || true
+                cp -r "worktree-$id"/*.jpeg "branches/$id/" 2>/dev/null || true
+                cp -r "worktree-$id"/*.png "branches/$id/" 2>/dev/null || true
+                cp -r "worktree-$id"/*.webp "branches/$id/" 2>/dev/null || true
+                git worktree remove "worktree-$id" --force 2>/dev/null || true
+              fi
+            else
+              echo "🆕 Branch $branch does not exist yet, will be created."
+            fi
+          done <<< "$SERVERS"
+
       - name: Scrape Links
         env:
           MAX_IMAGES: ${{ inputs.max_images }}
@@ -40,38 +69,148 @@ jobs:
         shell: pwsh
         run: ./src/downloader.ps1
 
-      - name: Generate Gallery README
-        run: node src/generate_readme.js
+      - name: Generate Thumbnails
+        run: |
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
+          while IFS= read -r id; do
+            THUMB_WIDTH=$(node -e "const c=require('./config.json'); console.log(c.settings.thumbnailWidth || 400)")
+            if [ -d "branches/$id" ]; then
+              bash src/generate_thumbnails.sh "branches/$id" "$THUMB_WIDTH"
+            fi
+          done <<< "$SERVERS"
 
-      - name: Commit and Push
+      - name: Check for new images
+        id: check_new
+        run: |
+          new_count=0
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
+          while IFS= read -r id; do
+            txt="Wallpapers/images_url/${id}.txt"
+            if [ -f "$txt" ] && [ -s "$txt" ]; then
+              count=$(wc -l < "$txt")
+              new_count=$((new_count + count))
+            fi
+          done <<< "$SERVERS"
+          echo "New images found: $new_count"
+          if [ "$new_count" -gt 0 ]; then
+            echo "has_new=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set release tag
+        id: set_tag
+        if: steps.check_new.outputs.has_new == 'true'
+        run: |
+          TAG="wallpapers-$(date -u +%Y%m%d-%H%M%S)"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "Release tag: $TAG"
+
+      - name: Push images to per-server branches
+        if: steps.check_new.outputs.has_new == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global http.postBuffer 524288000
 
-          files=$(git ls-files --others --exclude-standard --modified)
-          
-          if [ -z "$files" ]; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
-          batch_size=20
-          count=0
-          
-          echo "$files" | while read -r file; do
-            git add "$file"
-            count=$((count + 1))
-            
-            if [ $((count % batch_size)) -eq 0 ]; then
-              git commit -m "Auto-sync: Update wallpapers batch $((count / batch_size))"
-              git push || (sleep 5 && git push)
-              echo "Pushed batch of $batch_size files."
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + ' ' + s.branch))")
+          while IFS=' ' read -r id branch; do
+            BRANCH_DIR="branches/$id"
+            if [ ! -d "$BRANCH_DIR" ] || [ -z "$(ls -A "$BRANCH_DIR"/*.jpg "$BRANCH_DIR"/*.jpeg "$BRANCH_DIR"/*.png "$BRANCH_DIR"/*.webp 2>/dev/null)" ]; then
+              echo "⏭️ No images for $id, skipping branch push."
+              continue
             fi
-          done
 
-          if [ $((count % batch_size)) -ne 0 ]; then
-            git commit -m "Auto-sync: Update remaining wallpapers"
-            git push || (sleep 5 && git push)
-            echo "Pushed final batch."
+            echo "🔀 Processing branch: $branch (server: $id)"
+
+            # Create a temporary directory for branch work
+            WORK_DIR=$(mktemp -d)
+            rm -rf "$WORK_DIR"  # git clone needs non-existent target
+
+            # Initialize or clone the branch
+            if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
+              git clone --single-branch --branch "$branch" --depth 1 "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$WORK_DIR"
+            else
+              mkdir -p "$WORK_DIR"
+              cd "$WORK_DIR"
+              git init
+              git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+              git checkout -b "$branch"
+              cd -
+            fi
+
+            # Copy images and thumbnails
+            cp -r "$BRANCH_DIR"/*.jpg "$WORK_DIR/" 2>/dev/null || true
+            cp -r "$BRANCH_DIR"/*.jpeg "$WORK_DIR/" 2>/dev/null || true
+            cp -r "$BRANCH_DIR"/*.png "$WORK_DIR/" 2>/dev/null || true
+            cp -r "$BRANCH_DIR"/*.webp "$WORK_DIR/" 2>/dev/null || true
+            if [ -d "$BRANCH_DIR/thumbnails" ]; then
+              mkdir -p "$WORK_DIR/thumbnails"
+              cp -r "$BRANCH_DIR/thumbnails"/* "$WORK_DIR/thumbnails/" 2>/dev/null || true
+            fi
+
+            # Generate branch README directly in WORK_DIR
+            BRANCH_DIR="$WORK_DIR" BRANCH_README_OUTPUT="$WORK_DIR/README.md" node src/generate_readme.js branch "$id"
+
+            # Commit and push
+            cd "$WORK_DIR"
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            if git diff --cached --quiet; then
+              echo "  No changes for $branch."
+            else
+              git commit -m "Auto-sync: Update $id wallpapers"
+              git push origin HEAD:"$branch" --force
+              echo "  ✅ Pushed to $branch"
+            fi
+            cd -
+            rm -rf "$WORK_DIR"
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update main README
+        if: steps.check_new.outputs.has_new == 'true'
+        run: |
+          node src/generate_readme.js main
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No README changes."
+          else
+            git commit -m "Auto-sync: Update main README with branch links"
+            git push
           fi
+
+      - name: Collect release assets
+        if: steps.check_new.outputs.has_new == 'true'
+        run: |
+          mkdir -p release_assets
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
+          while IFS= read -r id; do
+            txt="Wallpapers/images_url/${id}.txt"
+            if [ -f "$txt" ] && [ -s "$txt" ]; then
+              BRANCH_DIR="branches/$id"
+              while IFS= read -r url; do
+                filename=$(basename "$url")
+                if [ -f "$BRANCH_DIR/$filename" ]; then
+                  cp "$BRANCH_DIR/$filename" "release_assets/${id}_${filename}"
+                fi
+              done < "$txt"
+            fi
+          done <<< "$SERVERS"
+
+      - name: Create GitHub Release
+        if: steps.check_new.outputs.has_new == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.set_tag.outputs.tag }}
+          name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
+          body: |
+            🖼️ Automated wallpaper update.
+            
+            This release contains all new wallpapers discovered during this run.
+          files: release_assets/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

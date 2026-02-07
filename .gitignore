@@ -125,6 +125,11 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Working directories for branch-based workflow
+branches/
+release_assets/
+Wallpapers/
+
 # yarn v3
 .pnp.*
 .yarn/*

@@ -12,8 +12,12 @@ Write-Host "=== PGR DOWNLOADER START ===" -ForegroundColor Yellow
 
 foreach ($server in $config.servers) {
     $serverName = $server.name
-    $serverDir  = $server.dir
+    $serverId   = $server.id
     $txtPath    = $server.txtPath
+
+    # Download to per-server branch directory
+    $serverDir = Join-Path $PSScriptRoot ".." "branches" $serverId
+    $serverDir = [System.IO.Path]::GetFullPath($serverDir)
 
     Write-Host "`n--- Processing: $serverName ---" -ForegroundColor Cyan
     Write-Host " [i] Reading links from: $txtPath" -ForegroundColor DarkGray
