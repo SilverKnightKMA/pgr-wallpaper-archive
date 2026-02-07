@@ -1,4 +1,4 @@
-$config = Get-Content "./config.json" | ConvertFrom-Json
+$config = Get-Content "$PSScriptRoot/../config.json" | ConvertFrom-Json
 Write-Host "=== PGR DOWNLOADER START ===" -ForegroundColor Yellow
 
 foreach ($server in $config.servers) {
