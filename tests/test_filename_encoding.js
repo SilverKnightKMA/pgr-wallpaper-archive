@@ -12,11 +12,29 @@
 const fs = require('fs');
 const path = require('path');
 
-// Import the encodeFilename function from generate_readme.js
-function encodeFilename(filename) {
-    return filename
-        .replace(/[^A-Za-z0-9._~:@!$&'()*+,;=%\/-]/g, c => encodeURIComponent(c))
-        .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
+// Import the actual encodeFilename function from generate_readme.js
+// This ensures we're testing the real implementation, not a copy
+const generateReadmePath = path.join(__dirname, '..', 'src', 'generate_readme.js');
+let encodeFilename;
+
+try {
+    // Load the function from the actual source file
+    const generateReadmeContent = fs.readFileSync(generateReadmePath, 'utf8');
+    const functionMatch = generateReadmeContent.match(/function encodeFilename\(filename\) \{[\s\S]*?\n\}/);
+    if (functionMatch) {
+        // Safely evaluate just the function
+        encodeFilename = eval(`(${functionMatch[0]})`);
+    } else {
+        throw new Error('encodeFilename function not found in generate_readme.js');
+    }
+} catch (error) {
+    // Fallback to inline implementation if loading fails
+    console.warn('⚠️  Warning: Could not load encodeFilename from source, using fallback');
+    encodeFilename = function(filename) {
+        return filename
+            .replace(/[^A-Za-z0-9._~:@!$&'()*+,;=%\/-]/g, c => encodeURIComponent(c))
+            .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
+    };
 }
 
 console.log('='.repeat(70));
@@ -141,6 +159,7 @@ if (fs.existsSync(manifestPath)) {
     
     let allFilenamesValid = true;
     let sampleFilename = '';
+    let errorDetails = '';
     
     for (const serverId of servers) {
         if (manifest[serverId].wallpapers) {
@@ -153,6 +172,7 @@ if (fs.existsSync(manifestPath)) {
                     if (decoded !== fn) {
                         allFilenamesValid = false;
                         sampleFilename = fn;
+                        errorDetails = `Found URL-encoded filename in ${serverId}: "${fn}" (should be "${decoded}")`;
                         break;
                     }
                 }
@@ -167,7 +187,7 @@ if (fs.existsSync(manifestPath)) {
     test(
         'Manifest stores decoded filenames (not URL-encoded)',
         allFilenamesValid,
-        sampleFilename ? `Sample: "${sampleFilename}"` : ''
+        errorDetails || (sampleFilename ? `Sample valid filename: "${sampleFilename}"` : '')
     );
 } else {
     console.log('⏭️  SKIP: Manifest file not found');
