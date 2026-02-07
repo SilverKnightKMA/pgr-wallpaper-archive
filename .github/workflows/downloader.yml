@@ -262,7 +262,7 @@ jobs:
             # Generate missing thumbnails for existing files in wallpapers branch
             # This ensures all files have thumbnails, not just newly downloaded ones
             echo "  🔍 Checking for missing thumbnails..."
-            THUMB_WIDTH=$(node -e "const c=require('./config.json'); console.log(c.settings.thumbnailWidth || 400)")
+            THUMB_WIDTH=$(node -e "const c=require('$REPO_DIR/config.json'); console.log(c.settings.thumbnailWidth || 400)")
             MISSING_COUNT=0
             while IFS= read -r wpfile; do
               filename=$(basename "$wpfile")
@@ -314,10 +314,11 @@ jobs:
 
           # --- NOW count images from pushed branches and build manifest ---
           echo ""
-          echo "📊 Counting images from pushed branches..."
+          echo "📊 Counting images and building manifest..."
           
           # Use build_manifest.py to build detailed manifest (with size info)
-          # This now counts from the images_url txt files (source of truth)
+          # This counts from the images_url txt files (source of truth)
+          # Note: $WP_DIR still needed for file size lookups
           MANIFEST=$(printf '%s' "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
 
           # Save manifest to main branch data dir
@@ -330,6 +331,9 @@ jobs:
             MANIFEST_PATH="$REPO_DIR/data/manifest.json" BRANCH_DIR="$WP_DIR" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
           done <<< "$SERVERS"
           
+          # Now we can cleanup WP_DIR (no longer needed)
+          rm -rf "$(dirname "$WP_DIR")"
+          
           # Push updated READMEs to preview branch
           git -C "$PV_DIR" add -A
           if ! git -C "$PV_DIR" diff --cached --quiet; then
@@ -338,8 +342,7 @@ jobs:
             echo "  ✅ Updated READMEs on $PREVIEW_BRANCH"
           fi
           
-          # Cleanup
-          rm -rf "$(dirname "$WP_DIR")"
+          # Cleanup preview dir
           rm -rf "$(dirname "$PV_DIR")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
