@@ -192,7 +192,7 @@ async function getLinks(server, maxImages, existingImages) {
     console.log(`[${timestamp()}] 📂 Existing images: ${existingImages.size}`);
 
     const pLimit = await getPLimit();
-    const limit = pLimit(4); // Limit concurrency to 4 threads
+    const limit = pLimit(6); // Limit concurrency to 6 threads
 
     await Promise.all(
         config.servers.map(server =>
