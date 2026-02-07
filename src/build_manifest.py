@@ -41,8 +41,12 @@ def main():
     config_path = os.path.join(repo_dir, 'config.json')
     server_name_map = {}
     if os.path.isfile(config_path):
-        with open(config_path) as cf:
-            config = json.load(cf)
+        try:
+            with open(config_path, encoding='utf-8') as cf:
+                config = json.load(cf)
+        except json.JSONDecodeError as e:
+            print(f"Error: Failed to parse JSON config file at {config_path}: {e}", file=sys.stderr)
+            config = {}
         for s in config.get('servers', []):
             server_name_map[s['id']] = s.get('name', s['id'])
 

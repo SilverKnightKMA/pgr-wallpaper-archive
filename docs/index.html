@@ -273,9 +273,17 @@
                 await loadConfig();
                 const manifest = await loadManifest();
 
+                // Populate server names from manifest before building UI
+                const serverIds = Object.keys(manifest).filter(k => k !== 'releaseTime');
+                serverIds.forEach(id => {
+                    const serverData = manifest[id];
+                    if (serverData.name && !serverNames[id]) {
+                        serverNames[id] = serverData.name;
+                    }
+                });
+
                 // Populate server filter
                 const serverFilter = document.getElementById('serverFilter');
-                const serverIds = Object.keys(manifest).filter(k => k !== 'releaseTime');
                 serverIds.forEach(id => {
                     const opt = document.createElement('option');
                     opt.value = id;
@@ -288,10 +296,6 @@
                 const releaseTime = manifest.releaseTime || '';
                 serverIds.forEach(id => {
                     const serverData = manifest[id];
-                    // Use name from manifest if available, fallback to config, then raw id
-                    if (serverData.name && !serverNames[id]) {
-                        serverNames[id] = serverData.name;
-                    }
                     if (serverData.lastUpdated && serverData.lastUpdated > latestTime) {
                         latestTime = serverData.lastUpdated;
                     }
