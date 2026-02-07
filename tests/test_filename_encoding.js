@@ -13,29 +13,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Import the actual encodeFilename function from generate_readme.js
-// This ensures we're testing the real implementation, not a copy
-const generateReadmePath = path.join(__dirname, '..', 'src', 'generate_readme.js');
-let encodeFilename;
-
-try {
-    // Load the function from the actual source file
-    const generateReadmeContent = fs.readFileSync(generateReadmePath, 'utf8');
-    const functionMatch = generateReadmeContent.match(/function encodeFilename\(filename\) \{[\s\S]*?\n\}/);
-    if (functionMatch) {
-        // Safely evaluate just the function
-        encodeFilename = eval(`(${functionMatch[0]})`);
-    } else {
-        throw new Error('encodeFilename function not found in generate_readme.js');
-    }
-} catch (error) {
-    // Fallback to inline implementation if loading fails
-    console.warn('⚠️  Warning: Could not load encodeFilename from source, using fallback');
-    encodeFilename = function(filename) {
-        return filename
-            .replace(/[^A-Za-z0-9._~:@!$&'()*+,;=%\/-]/g, c => encodeURIComponent(c))
-            .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
-    };
-}
+const { encodeFilename } = require('../src/generate_readme.js');
 
 console.log('='.repeat(70));
 console.log('Filename Encoding Test Suite');
@@ -167,12 +145,19 @@ if (fs.existsSync(manifestPath)) {
                 const fn = wallpaper.filename;
                 // Check that filename doesn't contain % encoding
                 if (fn && fn.includes('%')) {
-                    // Check if it's a valid encoding or not
-                    const decoded = decodeURIComponent(fn);
-                    if (decoded !== fn) {
+                    try {
+                        // Check if it's a valid encoding or not
+                        const decoded = decodeURIComponent(fn);
+                        if (decoded !== fn) {
+                            allFilenamesValid = false;
+                            sampleFilename = fn;
+                            errorDetails = `Found URL-encoded filename in ${serverId}: "${fn}" (should be "${decoded}")`;
+                            break;
+                        }
+                    } catch (e) {
+                        // URIError from malformed percent encoding
                         allFilenamesValid = false;
-                        sampleFilename = fn;
-                        errorDetails = `Found URL-encoded filename in ${serverId}: "${fn}" (should be "${decoded}")`;
+                        errorDetails = `Malformed percent encoding in ${serverId}: "${fn}" (${e.message})`;
                         break;
                     }
                 }
