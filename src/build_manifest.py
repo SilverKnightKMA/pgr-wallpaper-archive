@@ -73,15 +73,10 @@ def main():
                     prior_filenames.add(filename)
             existing_count = len(prior_filenames)
 
-        # Fallback: also discover image files on the wallpapers branch root
-        # that may not be in the manifest (manual additions, prior bugs, manifest reset)
-        if os.path.isdir(wp_branch_root):
-            for fn in os.listdir(wp_branch_root):
-                fp = os.path.join(wp_branch_root, fn)
-                if os.path.isfile(fp) and fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                    if fn not in prior_filenames:
-                        prior_filenames.add(fn)
-                        existing_count += 1
+        # Note: We do NOT scan the wallpapers branch root to discover files because
+        # it's a flat structure shared by all servers. We can't determine which files
+        # belong to which server without the manifest. Files should only be tracked
+        # if they're in the manifest or being newly downloaded.
 
         success = existing_count + image_count
 

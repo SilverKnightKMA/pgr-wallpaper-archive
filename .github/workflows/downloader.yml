@@ -258,6 +258,33 @@ jobs:
             if [ -d "$BRANCH_DIR/thumbnails" ]; then
               find "$BRANCH_DIR/thumbnails" -maxdepth 1 -type f -exec cp {} "$PV_DIR/$id/thumbnails/" \;
             fi
+            
+            # Generate missing thumbnails for existing files in wallpapers branch
+            # This ensures all files have thumbnails, not just newly downloaded ones
+            echo "  🔍 Checking for missing thumbnails..."
+            MISSING_COUNT=0
+            while IFS= read -r wpfile; do
+              filename=$(basename "$wpfile")
+              thumb_path="$PV_DIR/$id/thumbnails/$filename"
+              
+              # If thumbnail doesn't exist, generate it
+              if [ ! -f "$thumb_path" ]; then
+                echo "    📸 Generating missing thumbnail: $filename"
+                THUMB_WIDTH=$(node -e "const c=require('./config.json'); console.log(c.settings.thumbnailWidth || 400)")
+                convert "$wpfile" -resize "${THUMB_WIDTH}x>" -quality 80 "$thumb_path" 2>/dev/null
+                if [ $? -eq 0 ]; then
+                  MISSING_COUNT=$((MISSING_COUNT + 1))
+                else
+                  echo "    ⚠️ Failed to generate thumbnail for: $filename"
+                fi
+              fi
+            done < <(find "$WP_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \))
+            
+            if [ $MISSING_COUNT -gt 0 ]; then
+              echo "  ✅ Generated $MISSING_COUNT missing thumbnails for $id"
+            else
+              echo "  ✅ All thumbnails already exist for $id"
+            fi
           done <<< "$SERVERS"
 
           # Use build_manifest.py to build detailed manifest (with size info)
