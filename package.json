@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Automated archive for Punishing: Gray Raven Wallpapers",
   "main": "scraper.js",
+  "scripts": {
+    "test": "node tests/test_filename_encoding.js",
+    "test:encoding": "node tests/test_filename_encoding.js"
+  },
   "dependencies": {
     "p-limit": "^7.3.0",
     "puppeteer": "^24.37.2"
