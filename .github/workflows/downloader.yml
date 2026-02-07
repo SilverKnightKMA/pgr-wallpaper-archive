@@ -348,11 +348,43 @@ jobs:
             fi
           done <<< "$SERVERS"
 
-          # Create a single zip with per-server folders
+          # Create zip file(s) for release, ensuring each is under 2GB
+          MAX_ZIP_BYTES=$((1900 * 1024 * 1024))  # 1.9 GB safety margin
           if [ "$HAS_FILES" = true ]; then
-            cd release_staging
-            zip -r "../release_assets/${RELEASE_TAG}.zip" .
-            cd ..
+            TOTAL_SIZE=$(du -sb release_staging | cut -f1)
+            echo "📦 Total staging size: $(numfmt --to=iec $TOTAL_SIZE)"
+
+            if [ "$TOTAL_SIZE" -lt "$MAX_ZIP_BYTES" ]; then
+              # All files fit in a single zip
+              cd release_staging
+              zip -r "../release_assets/${RELEASE_TAG}.zip" .
+              cd ..
+              echo "  ✅ Created single zip"
+            else
+              # Split into per-server zips to stay under 2GB
+              echo "  ⚠️ Total size exceeds 1.9 GB, creating per-server zips"
+              PART=1
+              for server_dir in release_staging/*/; do
+                [ -d "$server_dir" ] || continue
+                server_id=$(basename "$server_dir")
+                SERVER_SIZE=$(du -sb "$server_dir" | cut -f1)
+                echo "  📂 $server_id: $(numfmt --to=iec $SERVER_SIZE)"
+
+                if [ "$SERVER_SIZE" -lt "$MAX_ZIP_BYTES" ]; then
+                  cd release_staging
+                  zip -r "../release_assets/${RELEASE_TAG}-part${PART}.zip" "$server_id"
+                  cd ..
+                else
+                  # Single server exceeds limit — split its zip
+                  echo "    ⚠️ Server $server_id exceeds 1.9 GB, using zip split"
+                  cd release_staging
+                  zip -r -s ${MAX_ZIP_BYTES} "../release_assets/${RELEASE_TAG}-part${PART}.zip" "$server_id"
+                  cd ..
+                fi
+                PART=$((PART + 1))
+              done
+              echo "  ✅ Created $((PART - 1)) zip part(s)"
+            fi
           fi
 
           # Write release body to file
@@ -370,6 +402,6 @@ jobs:
           tag_name: ${{ steps.set_tag.outputs.tag }}
           name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
           body_path: release_notes.md
-          files: release_assets/${{ steps.set_tag.outputs.tag }}.zip
+          files: release_assets/*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
