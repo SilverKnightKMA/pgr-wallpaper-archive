@@ -26,8 +26,9 @@ def main():
         try:
             with open(old_path, encoding='utf-8') as f:
                 old_manifest = json.load(f)
-        except (json.JSONDecodeError, OSError):
-            old_manifest = {}
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"Error: Failed to load old manifest '{old_path}': {e}", file=sys.stderr)
+            sys.exit(1)
 
     # Load new manifest
     if not os.path.isfile(new_path):

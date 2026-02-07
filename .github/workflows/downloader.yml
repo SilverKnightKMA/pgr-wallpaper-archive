@@ -180,9 +180,22 @@ jobs:
             done < "$txt"
           done <<< "$SERVERS"
           
-          # Simple zip logic (split if needed)
           cd release_staging
-          zip -r "../release_assets/${{ steps.set_tag.outputs.tag }}.zip" .
+          ZIP_PATH="../release_assets/${{ steps.set_tag.outputs.tag }}.zip"
+          zip -r "$ZIP_PATH" .
+          
+          # Guard against exceeding GitHub's 2GB release asset limit
+          ZIP_SIZE=$(stat --format=%s "$ZIP_PATH")
+          MAX_SIZE=$((1900 * 1024 * 1024))  # 1.9 GB safety margin
+          if [ "$ZIP_SIZE" -gt "$MAX_SIZE" ]; then
+            echo "::warning::Release zip exceeds 1.9 GB ($(( ZIP_SIZE / 1024 / 1024 )) MB). Splitting into per-server zips."
+            rm "$ZIP_PATH"
+            while IFS= read -r id; do
+              if [ -d "$id" ] && [ "$(find "$id" -type f | wc -l)" -gt 0 ]; then
+                zip -r "../release_assets/${{ steps.set_tag.outputs.tag }}-${id}.zip" "$id"
+              fi
+            done <<< "$SERVERS"
+          fi
 
       - name: Create GitHub Release
         if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
