@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const configPath = path.join(__dirname, '../config.json');
 const configPath = path.join(__dirname, '..', 'config.json');
 
 if (!fs.existsSync(configPath)) {
