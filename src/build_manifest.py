@@ -110,6 +110,9 @@ def main():
             'wallpapers': wallpapers
         }
 
+    # Store a single releaseTime for the entire action run
+    manifest['releaseTime'] = timestamp
+
     print(json.dumps(manifest, indent=2, ensure_ascii=False))
 
 

@@ -45,8 +45,7 @@ jobs:
 
           for BRANCH_NAME in \
             "$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")" \
-            "$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")" \
-            "$(node -e "const c=require('./config.json'); console.log(c.dataBranch || 'data')")"; do
+            "$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")"; do
             if git ls-remote --exit-code origin "$BRANCH_NAME" >/dev/null 2>&1; then
               echo "✅ Branch $BRANCH_NAME already exists."
             else
@@ -163,7 +162,7 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "Release tag: $TAG"
 
-      - name: Build manifest and push to wallpapers/preview/data branches
+      - name: Build manifest and push to wallpapers/preview branches
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
@@ -173,7 +172,6 @@ jobs:
           REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
           PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          DATA_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.dataBranch || 'data')")
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
           # --- Wallpapers branch (images only, no thumbnails) ---
@@ -198,21 +196,10 @@ jobs:
             git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH"
           fi
 
-          # --- Data branch (manifest) ---
-          DT_DIR="$(mktemp -d)/repo"
-          git init "$DT_DIR"
-          git -C "$DT_DIR" remote add origin "$REMOTE_URL"
-          if git ls-remote --exit-code origin "$DATA_BRANCH" >/dev/null 2>&1; then
-            git -C "$DT_DIR" fetch origin "$DATA_BRANCH" --depth=1
-            git -C "$DT_DIR" checkout -b "$DATA_BRANCH" "origin/$DATA_BRANCH"
-          else
-            git -C "$DT_DIR" checkout -b "$DATA_BRANCH"
-          fi
-
-          # Load existing manifest from data branch if available
+          # Load existing manifest from main branch data dir if available
           MANIFEST="{}"
-          if [ -f "$DT_DIR/manifest.json" ]; then
-            MANIFEST=$(cat "$DT_DIR/manifest.json")
+          if [ -f "$REPO_DIR/data/manifest.json" ]; then
+            MANIFEST=$(cat "$REPO_DIR/data/manifest.json")
           fi
 
           # Build manifest JSON with detailed wallpaper info
@@ -226,6 +213,9 @@ jobs:
 
           # Use build_manifest.py to build detailed manifest
           MANIFEST=$(printf '%s' "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
+
+          # Save manifest to main branch data dir (needed by branch README generation)
+          echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
 
           while IFS= read -r id; do
             BRANCH_DIR="$REPO_DIR/branches/$id"
@@ -255,14 +245,8 @@ jobs:
             fi
 
             # Generate per-server README on preview branch (read images from wallpapers dir)
-            BRANCH_DIR="$WP_DIR/$id" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
+            MANIFEST_PATH="$REPO_DIR/data/manifest.json" BRANCH_DIR="$WP_DIR/$id" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
           done <<< "$SERVERS"
-
-          # Save manifest to main branch data dir (summary for main README)
-          echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
-
-          # Save manifest to data branch
-          echo "$MANIFEST" > "$DT_DIR/manifest.json"
 
           # --- Push wallpapers branch ---
           git -C "$WP_DIR" config user.name "github-actions[bot]"
@@ -289,19 +273,6 @@ jobs:
             echo "  ✅ Pushed to $PREVIEW_BRANCH"
           fi
           rm -rf "$(dirname "$PV_DIR")"
-
-          # --- Push data branch ---
-          git -C "$DT_DIR" config user.name "github-actions[bot]"
-          git -C "$DT_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
-          git -C "$DT_DIR" add -A
-          if git -C "$DT_DIR" diff --cached --quiet; then
-            echo "  No changes for $DATA_BRANCH."
-          else
-            git -C "$DT_DIR" commit -m "Auto-sync: Update manifest data"
-            git -C "$DT_DIR" push origin HEAD:"$DATA_BRANCH" --force-with-lease
-            echo "  ✅ Pushed to $DATA_BRANCH"
-          fi
-          rm -rf "$(dirname "$DT_DIR")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -360,13 +331,8 @@ jobs:
                   fi
                 done < "$txt"
 
-                # Build release notes section for this server
-                RELEASE_BODY="${RELEASE_BODY}### 🖼️ ${name} (${FILE_COUNT} new)\n\n"
-                RELEASE_BODY="${RELEASE_BODY}📁 **Folder:** \`${id}/\`\n"
-                RELEASE_BODY="${RELEASE_BODY}🔗 **Branch:** [\`${WALLPAPERS_BRANCH}\`](https://github.com/${GITHUB_REPOSITORY}/tree/${WALLPAPERS_BRANCH}/${id})\n"
-                RELEASE_BODY="${RELEASE_BODY}🕐 **Time:** ${RELEASE_TIMESTAMP}\n\n"
-
-                RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview</summary>\n\n"
+                # Build release notes section for this server — only file list & preview
+                RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview ${name} (${FILE_COUNT} new)</summary>\n\n"
                 RELEASE_BODY="${RELEASE_BODY}| Preview | Filename | Download | Status |\n"
                 RELEASE_BODY="${RELEASE_BODY}|---------|----------|----------|--------|\n"
                 while IFS= read -r url; do

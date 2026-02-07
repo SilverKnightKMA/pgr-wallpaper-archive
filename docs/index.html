@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PGR Wallpaper Archive</title>
+    <link rel="icon" type="image/png" href="https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png">
     <style>
         :root {
             --bg: #0d1117;
@@ -88,7 +89,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🖼️ PGR Wallpaper Archive</h1>
+        <h1><img src="https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" alt="PGR" width="32" height="32" style="vertical-align: middle; margin-right: 8px;">PGR Wallpaper Archive</h1>
         <p class="subtitle">Browse and filter wallpapers from Punishing: Gray Raven</p>
 
         <div class="controls">
@@ -99,6 +100,9 @@
                 <option value="all">All Status</option>
                 <option value="success">✅ Success</option>
                 <option value="failed">❌ Failed</option>
+            </select>
+            <select id="releaseTimeFilter">
+                <option value="all">All Release Times</option>
             </select>
             <input type="text" id="searchInput" placeholder="Search by filename...">
         </div>
@@ -119,7 +123,6 @@
 
     <script>
         let REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
-        let DATA_BRANCH = 'data';
         let WALLPAPERS_BRANCH = 'wallpapers';
         let PREVIEW_BRANCH = 'preview';
 
@@ -150,7 +153,6 @@
                 const config = await res.json();
                 config.servers.forEach(s => { serverNames[s.id] = s.name; });
                 // Read branch names from config
-                if (config.dataBranch) DATA_BRANCH = config.dataBranch;
                 if (config.wallpapersBranch) WALLPAPERS_BRANCH = config.wallpapersBranch;
                 if (config.previewBranch) PREVIEW_BRANCH = config.previewBranch;
             } catch (e) {
@@ -159,7 +161,7 @@
         }
 
         async function loadManifest() {
-            const url = `https://raw.githubusercontent.com/${REPO}/${DATA_BRANCH}/manifest.json`;
+            const url = `https://raw.githubusercontent.com/${REPO}/main/data/manifest.json`;
             const res = await fetch(url);
             if (!res.ok) throw new Error('Manifest not found');
             return res.json();
@@ -246,11 +248,13 @@
         function applyFilters() {
             const server = document.getElementById('serverFilter').value;
             const status = document.getElementById('statusFilter').value;
+            const releaseTimeVal = document.getElementById('releaseTimeFilter').value;
             const search = document.getElementById('searchInput').value.toLowerCase();
 
             let filtered = allData;
             if (server !== 'all') filtered = filtered.filter(i => i.server === server);
             if (status !== 'all') filtered = filtered.filter(i => i.status === status);
+            if (releaseTimeVal !== 'all') filtered = filtered.filter(i => i.releaseTime === releaseTimeVal);
             if (search) filtered = filtered.filter(i => i.filename.toLowerCase().includes(search));
 
             updateStats(filtered);
@@ -264,7 +268,7 @@
 
                 // Populate server filter
                 const serverFilter = document.getElementById('serverFilter');
-                const serverIds = Object.keys(manifest);
+                const serverIds = Object.keys(manifest).filter(k => k !== 'releaseTime');
                 serverIds.forEach(id => {
                     const opt = document.createElement('option');
                     opt.value = id;
@@ -274,7 +278,9 @@
 
                 // Build flat data array
                 let latestTime = '';
+                const releaseTime = manifest.releaseTime || '';
                 serverIds.forEach(id => {
+                    if (id === 'releaseTime') return; // skip top-level releaseTime key
                     const serverData = manifest[id];
                     if (serverData.lastUpdated && serverData.lastUpdated > latestTime) {
                         latestTime = serverData.lastUpdated;
@@ -284,7 +290,8 @@
                             server: id,
                             filename: w.filename,
                             url: w.url || '',
-                            status: w.status || 'success'
+                            status: w.status || 'success',
+                            releaseTime: serverData.lastUpdated || releaseTime || ''
                         });
                     });
                 });
@@ -292,6 +299,16 @@
                 if (latestTime) {
                     document.getElementById('lastUpdated').textContent = `Last Updated: ${latestTime}`;
                 }
+
+                // Populate release time filter
+                const releaseTimeFilter = document.getElementById('releaseTimeFilter');
+                const releaseTimes = [...new Set(allData.map(i => i.releaseTime).filter(Boolean))].sort().reverse();
+                releaseTimes.forEach(rt => {
+                    const opt = document.createElement('option');
+                    opt.value = rt;
+                    opt.textContent = rt;
+                    releaseTimeFilter.appendChild(opt);
+                });
 
                 // Check URL params for pre-filter
                 const params = new URLSearchParams(window.location.search);
@@ -302,12 +319,13 @@
                 // Attach event listeners
                 document.getElementById('serverFilter').addEventListener('change', applyFilters);
                 document.getElementById('statusFilter').addEventListener('change', applyFilters);
+                document.getElementById('releaseTimeFilter').addEventListener('change', applyFilters);
                 document.getElementById('searchInput').addEventListener('input', applyFilters);
 
                 applyFilters();
             } catch (e) {
                 document.getElementById('gallery').innerHTML =
-                    `<div class="empty">Failed to load data. The manifest may not exist yet on the <code>${escapeHtml(DATA_BRANCH)}</code> branch.</div>`;
+                    `<div class="empty">Failed to load data. The manifest may not exist yet in <code>data/manifest.json</code> on the main branch.</div>`;
             }
         }
 
