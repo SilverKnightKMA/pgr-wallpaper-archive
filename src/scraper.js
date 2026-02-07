@@ -1,7 +1,7 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+const config = JSON.parse(fs.readFileSync('../config.json', 'utf8'));
 
 async function getLinks(server) {
     const linkDir = path.dirname(server.txtPath);
