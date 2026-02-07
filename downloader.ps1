@@ -3,6 +3,7 @@ Write-Host "=== PGR DOWNLOADER START ===" -ForegroundColor Yellow
 
 foreach ($server in $config.servers) {
     Write-Host "`n--- Processing: $($server.name) ---" -ForegroundColor Cyan
+    Write-Host " [i] Reading links from: $($server.txtPath)" -ForegroundColor DarkGray
     
     if (!(Test-Path $server.txtPath)) {
         Write-Host " [!] Skip: File $($server.txtPath) not found." -ForegroundColor Yellow
