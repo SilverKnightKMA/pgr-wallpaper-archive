@@ -49,10 +49,7 @@ jobs:
               git worktree add "worktree-$id" "origin/$branch" --detach 2>/dev/null || true
               # Copy existing images to branches dir
               if [ -d "worktree-$id" ]; then
-                cp -r "worktree-$id"/*.jpg "branches/$id/" 2>/dev/null || true
-                cp -r "worktree-$id"/*.jpeg "branches/$id/" 2>/dev/null || true
-                cp -r "worktree-$id"/*.png "branches/$id/" 2>/dev/null || true
-                cp -r "worktree-$id"/*.webp "branches/$id/" 2>/dev/null || true
+                find "worktree-$id" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "branches/$id/" \;
                 git worktree remove "worktree-$id" --force 2>/dev/null || true
               fi
             else
@@ -115,7 +112,8 @@ jobs:
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + ' ' + s.branch))")
           while IFS=' ' read -r id branch; do
             BRANCH_DIR="branches/$id"
-            if [ ! -d "$BRANCH_DIR" ] || [ -z "$(ls -A "$BRANCH_DIR"/*.jpg "$BRANCH_DIR"/*.jpeg "$BRANCH_DIR"/*.png "$BRANCH_DIR"/*.webp 2>/dev/null)" ]; then
+            IMAGE_COUNT=$(find "$BRANCH_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
+            if [ ! -d "$BRANCH_DIR" ] || [ "$IMAGE_COUNT" -eq 0 ]; then
               echo "⏭️ No images for $id, skipping branch push."
               continue
             fi
@@ -139,13 +137,10 @@ jobs:
             fi
 
             # Copy images and thumbnails
-            cp -r "$BRANCH_DIR"/*.jpg "$WORK_DIR/" 2>/dev/null || true
-            cp -r "$BRANCH_DIR"/*.jpeg "$WORK_DIR/" 2>/dev/null || true
-            cp -r "$BRANCH_DIR"/*.png "$WORK_DIR/" 2>/dev/null || true
-            cp -r "$BRANCH_DIR"/*.webp "$WORK_DIR/" 2>/dev/null || true
+            find "$BRANCH_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "$WORK_DIR/" \;
             if [ -d "$BRANCH_DIR/thumbnails" ]; then
               mkdir -p "$WORK_DIR/thumbnails"
-              cp -r "$BRANCH_DIR/thumbnails"/* "$WORK_DIR/thumbnails/" 2>/dev/null || true
+              find "$BRANCH_DIR/thumbnails" -maxdepth 1 -type f -exec cp {} "$WORK_DIR/thumbnails/" \;
             fi
 
             # Generate branch README directly in WORK_DIR
@@ -160,7 +155,7 @@ jobs:
               echo "  No changes for $branch."
             else
               git commit -m "Auto-sync: Update $id wallpapers"
-              git push origin HEAD:"$branch" --force
+              git push origin HEAD:"$branch" --force-with-lease
               echo "  ✅ Pushed to $branch"
             fi
             cd -

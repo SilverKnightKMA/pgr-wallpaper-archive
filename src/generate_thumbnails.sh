@@ -16,8 +16,7 @@ fi
 mkdir -p "$THUMB_DIR"
 
 count=0
-for img in "$SOURCE_DIR"/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}; do
-    [ -f "$img" ] || continue
+find "$SOURCE_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | while read -r img; do
     filename=$(basename "$img")
     thumb_path="${THUMB_DIR}/${filename}"
 
