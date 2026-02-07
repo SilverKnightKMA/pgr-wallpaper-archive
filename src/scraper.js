@@ -1,7 +1,5 @@
 const path = require('path');
-const puppeteer = require('puppeteer');
 const fs = require('fs');
-const pLimit = require('p-limit'); // Import p-limit to control concurrency
 
 const configPath = path.join(__dirname, '..', 'config.json');
 if (!fs.existsSync(configPath)) {
@@ -11,6 +9,12 @@ if (!fs.existsSync(configPath)) {
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const timestamp = () => new Date().toLocaleTimeString();
+
+// Function to dynamically import p-limit
+async function getPLimit() {
+    const { default: pLimit } = await import('p-limit');
+    return pLimit;
+}
 
 // Function to list images in a directory
 function listImagesInDirectory(directory) {
@@ -186,6 +190,7 @@ async function getLinks(server, maxImages, existingImages) {
     const existingImages = listAllImages(directories);
     console.log(`[${timestamp()}] 📂 Existing images: ${existingImages.size}`);
 
+    const pLimit = await getPLimit();
     const limit = pLimit(4); // Limit concurrency to 4 threads
 
     await Promise.all(
