@@ -189,12 +189,10 @@ jobs:
             txt="Wallpapers/images_url/${id}.txt"
             if [ -f "$txt" ] && [ -s "$txt" ]; then
               BRANCH_DIR="branches/$id"
-              FILE_LIST=""
               FILE_COUNT=0
               while IFS= read -r url; do
                 filename=$(basename "$url")
                 if [ -f "$BRANCH_DIR/$filename" ]; then
-                  FILE_LIST="${FILE_LIST}${filename}\n"
                   FILE_COUNT=$((FILE_COUNT + 1))
                 fi
               done < "$txt"
@@ -219,7 +217,7 @@ jobs:
                 RELEASE_BODY="${RELEASE_BODY}|---------|----------|-----|\n"
                 while IFS= read -r url; do
                   filename=$(basename "$url")
-                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${branch}/thumbnails/$(echo "$filename" | sed 's/ /%20/g')"
+                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${branch}/thumbnails/$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$filename")"
                   RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${filename}\` | [Link](${url}) |\n"
                 done < "$txt"
                 RELEASE_BODY="${RELEASE_BODY}\n</details>\n\n---\n\n"
