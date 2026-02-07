@@ -211,7 +211,7 @@ jobs:
               FAILED_COUNT=$(wc -l < "$FAILED_FILE")
             fi
 
-            SUCCESS=$((TOTAL))
+            SUCCESS=$((TOTAL - FAILED_COUNT))
             MANIFEST=$(echo "$MANIFEST" | python3 -c "import json, sys; m = json.load(sys.stdin); m['$id'] = {'total': $TOTAL, 'success': $SUCCESS, 'failed': $FAILED_COUNT}; print(json.dumps(m, indent=2))")
 
             if [ "$IMAGE_COUNT" -eq 0 ]; then

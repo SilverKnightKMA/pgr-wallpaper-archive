@@ -72,8 +72,8 @@ function generateBranchReadme(server) {
 
     // Read images from the images/ subdirectory
     const allFiles = [];
-    const imgDir = fs.existsSync(imagesSubDir) ? imagesSubDir : branchDir;
     const useSubDir = fs.existsSync(imagesSubDir);
+    const imgDir = useSubDir ? imagesSubDir : branchDir;
 
     if (fs.existsSync(imgDir)) {
         fs.readdirSync(imgDir).forEach(f => {
