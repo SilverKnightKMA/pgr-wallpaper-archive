@@ -1,767 +1,631 @@
 {
   "global": {
-    "total": 24,
-    "success": 24,
+    "total": 18,
+    "success": 18,
     "failed": 0,
-    "lastUpdated": "2026-02-07T19:10:18Z",
+    "lastUpdated": "2026-02-07T20:00:34Z",
     "wallpapers": [
       {
         "filename": "s9e18f5h7knz7yjfm0-1770360110740一骑当千.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/s9e18f5h7knz7yjfm0-1770360110740%E4%B8%80%E9%AA%91%E5%BD%93%E5%8D%83.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "3agtzqu8p588l801o2-1770360082039夜之篇章.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/3agtzqu8p588l801o2-1770360082039%E5%A4%9C%E4%B9%8B%E7%AF%87%E7%AB%A0.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ou7inq8e2vlx2bw7li-1770360045251首次交锋.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/ou7inq8e2vlx2bw7li-1770360045251%E9%A6%96%E6%AC%A1%E4%BA%A4%E9%94%8B.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "3jpabhsiufav1xh3vo-1770360008147破落王座差分.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/3jpabhsiufav1xh3vo-1770360008147%E7%A0%B4%E8%90%BD%E7%8E%8B%E5%BA%A7%E5%B7%AE%E5%88%86.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "kdlk0kqr3lv8iy0l4h-1770359960332罗塞塔 雪暴尽头.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/kdlk0kqr3lv8iy0l4h-1770359960332%E7%BD%97%E5%A1%9E%E5%A1%94%20%E9%9B%AA%E6%9A%B4%E5%B0%BD%E5%A4%B4.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ozzwv1itbih4n0jug3-1770359932511回首正常（微笑）.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/ozzwv1itbih4n0jug3-1770359932511%E5%9B%9E%E9%A6%96%E6%AD%A3%E5%B8%B8%EF%BC%88%E5%BE%AE%E7%AC%91%EF%BC%89.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "cwntmpd4cbmjm9zvbv-1770359911368故去者们.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/cwntmpd4cbmjm9zvbv-1770359911368%E6%95%85%E5%8E%BB%E8%80%85%E4%BB%AC.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "mt56azrqv7pzjyrjue-1770359890261超罗塞塔关底图.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/mt56azrqv7pzjyrjue-1770359890261%E8%B6%85%E7%BD%97%E5%A1%9E%E5%A1%94%E5%85%B3%E5%BA%95%E5%9B%BE.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "qk2hzfgs91yr9z8k4w-17703598661504.2活动面板.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770307200000/qk2hzfgs91yr9z8k4w-17703598661504.2%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "kc3s0smeki4h3pfe50-1766655608237英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/kc3s0smeki4h3pfe50-1766655608237%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "jt5mx8y3pkvl3eq9ml-1766655566710英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/jt5mx8y3pkvl3eq9ml-1766655566710%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "bfqil6uv6e5vmsc8re-1766655532410英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/bfqil6uv6e5vmsc8re-1766655532410%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "b702w8o7eobmfzwqoz-1766655506412英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/b702w8o7eobmfzwqoz-1766655506412%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "272bevn3hu1zy0tqz8-1766655473456英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/272bevn3hu1zy0tqz8-1766655473456%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "0lh4t2cs5iogkak3vh-1766655448792英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/0lh4t2cs5iogkak3vh-1766655448792%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "gavtbtmc0ifede5fb0-1766655426671英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/gavtbtmc0ifede5fb0-1766655426671%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "khj1g7mjjuu02j816g-1766655399571英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/khj1g7mjjuu02j816g-1766655399571%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "vyd6myzxzikp9rvexp-1766655377842英文.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/vyd6myzxzikp9rvexp-1766655377842%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "bp73opbc6i1t6y6agp-1766655353466英文.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/bp73opbc6i1t6y6agp-1766655353466%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "gwilu5frsqaxs2pgmm-1766655304705英文.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766592000000/gwilu5frsqaxs2pgmm-1766655304705%E8%8B%B1%E6%96%87.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "m306v4x3b81toeter7-1764040997660家人.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1764000000000/m306v4x3b81toeter7-1764040997660%E5%AE%B6%E4%BA%BA.png",
-        "status": "success"
-      },
-      {
-        "filename": "lvlsj0dh8qq3ibbvdu-1764040793222伊甸园的少女-拆分1.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1764000000000/lvlsj0dh8qq3ibbvdu-1764040793222%E4%BC%8A%E7%94%B8%E5%9B%AD%E7%9A%84%E5%B0%91%E5%A5%B3-%E6%8B%86%E5%88%861.png",
-        "status": "success"
-      },
-      {
-        "filename": "e3xyztsrmi4uzg9gzm-1764040400741丽芙的梦.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1764000000000/e3xyztsrmi4uzg9gzm-1764040400741%E4%B8%BD%E8%8A%99%E7%9A%84%E6%A2%A6.png",
-        "status": "success"
-      },
-      {
-        "filename": "xjfyxa53g4899xl48i-1764039555714丽芙cg (1).png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1764000000000/xjfyxa53g4899xl48i-1764039555714%E4%B8%BD%E8%8A%99cg%20(1).png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       }
     ]
   },
   "cn": {
-    "total": 30,
-    "success": 29,
-    "failed": 1,
-    "lastUpdated": "2026-02-07T19:10:18Z",
+    "total": 20,
+    "success": 20,
+    "failed": 0,
+    "lastUpdated": "2026-02-07T20:00:34Z",
     "wallpapers": [
       {
         "filename": "b89ibfxzjus5gw04ov-17701769266482.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/b89ibfxzjus5gw04ov-17701769266482.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "gjhdpwj9mfx6gffjs1-17701769148383.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/gjhdpwj9mfx6gffjs1-17701769148383.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "y5wy71ky0nsothy38c-17701769407871.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/y5wy71ky0nsothy38c-17701769407871.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "9s6i4q8l2vimtv5v0k-17701769022884.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/9s6i4q8l2vimtv5v0k-17701769022884.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "woovgmsnfae9vgqrpu-17701768879995.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/woovgmsnfae9vgqrpu-17701768879995.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "hodwk4fzcncqsqt1h2-17701768495707.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/hodwk4fzcncqsqt1h2-17701768495707.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "h1sjs54ux3ud6oevco-17701768300908.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/h1sjs54ux3ud6oevco-17701768300908.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "8n4yljf9xxmqatlfw8-17701768670166.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/8n4yljf9xxmqatlfw8-17701768670166.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "cw68q5y7avl6nuz63h-17701768137679.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/cw68q5y7avl6nuz63h-17701768137679.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "s3fuiby6yk02xi5a27-177017679780110.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/s3fuiby6yk02xi5a27-177017679780110.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ygjr74fc2up31u3x2x-177017649041312.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/ygjr74fc2up31u3x2x-177017649041312.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "u05s83bypgvy7gfj5u-177017646774313.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/u05s83bypgvy7gfj5u-177017646774313.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "jke5ovk1wxmr78f9yc-177017665946711.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/jke5ovk1wxmr78f9yc-177017665946711.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ifbwgvmft2f1rew9wo-177017642538214.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/ifbwgvmft2f1rew9wo-177017642538214.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "tusyz2vqq3ts9ladli-177017637434015.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/tusyz2vqq3ts9ladli-177017637434015.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "1dlrubqc0hnvdpz12a-177017633540417.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/1dlrubqc0hnvdpz12a-177017633540417.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "tucoype0ds1ohm85nk-177017630378518.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/tucoype0ds1ohm85nk-177017630378518.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "nxlheks3kfiuaqi82q-177017635307616.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/nxlheks3kfiuaqi82q-177017635307616.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "5qqla4vatwr1vs6gna-177017628542019.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/5qqla4vatwr1vs6gna-177017628542019.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "yoelhlz9lrq417ryt9-177017626157220.png",
         "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/yoelhlz9lrq417ryt9-177017626157220.png",
-        "status": "success"
-      },
-      {
-        "filename": "3m4lkmzzisz9x97zfi-177017622337022.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/3m4lkmzzisz9x97zfi-177017622337022.png",
-        "status": "success"
-      },
-      {
-        "filename": "1ngsru8ir923es94uk-177017619985723.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/1ngsru8ir923es94uk-177017619985723.png",
-        "status": "success"
-      },
-      {
-        "filename": "bxfqvefbnml7z0hsdv-177017624421121.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1770134400000/bxfqvefbnml7z0hsdv-177017624421121.png",
-        "status": "success"
-      },
-      {
-        "filename": "ulv8dk12afzo0m1r9u-17669740405321.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/ulv8dk12afzo0m1r9u-17669740405321.png",
-        "status": "success"
-      },
-      {
-        "filename": "ntdjjcbf5zwsorxghb-17669740231792.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/ntdjjcbf5zwsorxghb-17669740231792.png",
-        "status": "success"
-      },
-      {
-        "filename": "c8vc7v1rttfmj5usky-17669739600074.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/c8vc7v1rttfmj5usky-17669739600074.png",
-        "status": "success"
-      },
-      {
-        "filename": "otyzkelttioc4y5lim-17669739472285.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/otyzkelttioc4y5lim-17669739472285.png",
-        "status": "success"
-      },
-      {
-        "filename": "1wyf1v1tj3bapitvq2-17669739743453.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/1wyf1v1tj3bapitvq2-17669739743453.png",
-        "status": "success"
-      },
-      {
-        "filename": "6xu63kgyg518ubekte-17669739319796.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/6xu63kgyg518ubekte-17669739319796.png",
-        "status": "success"
-      },
-      {
-        "filename": "l5bvxnfghszuntqrqk-17669739174957.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/l5bvxnfghszuntqrqk-17669739174957.png",
-        "status": "success"
-      },
-      {
-        "filename": "ulv8dk12afzo0m1r9u-17669740405321.png",
-        "url": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1766937600000/ulv8dk12afzo0m1r9u-17669740405321.png",
-        "status": "failed"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       }
     ]
   },
   "jp": {
-    "total": 30,
-    "success": 30,
+    "total": 20,
+    "success": 20,
     "failed": 0,
-    "lastUpdated": "2026-02-07T19:10:18Z",
+    "lastUpdated": "2026-02-07T20:00:34Z",
     "wallpapers": [
       {
         "filename": "rfficz7swwh9prp4i8-1718591453376葬礼与动员（包括拆分）_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718553600000/rfficz7swwh9prp4i8-1718591453376%E8%91%AC%E7%A4%BC%E4%B8%8E%E5%8A%A8%E5%91%98%EF%BC%88%E5%8C%85%E6%8B%AC%E6%8B%86%E5%88%86%EF%BC%89_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "w8rfwn1d7zkck78s7y-1718361061077替我见证差分_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/w8rfwn1d7zkck78s7y-1718361061077%E6%9B%BF%E6%88%91%E8%A7%81%E8%AF%81%E5%B7%AE%E5%88%86_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "iuy172xee4zxqip87i-1718591503831葬礼与动员（打雷版）_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718553600000/iuy172xee4zxqip87i-1718591503831%E8%91%AC%E7%A4%BC%E4%B8%8E%E5%8A%A8%E5%91%98%EF%BC%88%E6%89%93%E9%9B%B7%E7%89%88%EF%BC%89_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "nhnu1p7d2rt4fyezqb-1718361018120替我见证_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/nhnu1p7d2rt4fyezqb-1718361018120%E6%9B%BF%E6%88%91%E8%A7%81%E8%AF%81_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "rb3i5xkon96h2ki8qf-1718354204078死与生的注视.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/rb3i5xkon96h2ki8qf-1718354204078%E6%AD%BB%E4%B8%8E%E7%94%9F%E7%9A%84%E6%B3%A8%E8%A7%86.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "xh3d7swlhuxw5dj54o-1718354075270久等了.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/xh3d7swlhuxw5dj54o-1718354075270%E4%B9%85%E7%AD%89%E4%BA%86.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "yrct6u5a5z2vk385tv-1718353961790渡边-他们所在01_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/yrct6u5a5z2vk385tv-1718353961790%E6%B8%A1%E8%BE%B9-%E4%BB%96%E4%BB%AC%E6%89%80%E5%9C%A801_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ohrkhtcne1nbprmh2s-1718354141647群星飞往伊甸_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/ohrkhtcne1nbprmh2s-1718354141647%E7%BE%A4%E6%98%9F%E9%A3%9E%E5%BE%80%E4%BC%8A%E7%94%B8_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "vou40s0d4x2ezndha6-1718353883789渡边-抗天的脊梁-训斥.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/vou40s0d4x2ezndha6-1718353883789%E6%B8%A1%E8%BE%B9-%E6%8A%97%E5%A4%A9%E7%9A%84%E8%84%8A%E6%A2%81-%E8%AE%AD%E6%96%A5.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "hdfop0qso9h2raxlds-1718353834085渡边-抗天的脊梁-平静.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/hdfop0qso9h2raxlds-1718353834085%E6%B8%A1%E8%BE%B9-%E6%8A%97%E5%A4%A9%E7%9A%84%E8%84%8A%E6%A2%81-%E5%B9%B3%E9%9D%99.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "jaow7bu6dgoip2x3jh-1718352398816渡边CG 司机.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/jaow7bu6dgoip2x3jh-1718352398816%E6%B8%A1%E8%BE%B9CG%20%E5%8F%B8%E6%9C%BA.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "8wku1dh2b9ta9s7tt2-1715245089189最后的斗争.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/8wku1dh2b9ta9s7tt2-1715245089189%E6%9C%80%E5%90%8E%E7%9A%84%E6%96%97%E4%BA%89.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "2em3vxzx1n9zhlshgd-1718353781326渡边-告别死亡奔向未来_.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1718294400000/2em3vxzx1n9zhlshgd-1718353781326%E6%B8%A1%E8%BE%B9-%E5%91%8A%E5%88%AB%E6%AD%BB%E4%BA%A1%E5%A5%94%E5%90%91%E6%9C%AA%E6%9D%A5_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ott9vg51w8sr5v3zay-1715245059110围剿.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/ott9vg51w8sr5v3zay-1715245059110%E5%9B%B4%E5%89%BF.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "s3tq1xnvka0oe6ggfz-1715245026071死亡主宰.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/s3tq1xnvka0oe6ggfz-1715245026071%E6%AD%BB%E4%BA%A1%E4%B8%BB%E5%AE%B0.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ugn94ifs1cvaubr541-1715244964313蓝焰少女.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/ugn94ifs1cvaubr541-1715244964313%E8%93%9D%E7%84%B0%E5%B0%91%E5%A5%B3.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "c4jg8ntayk16a2a7hs-1715244916186回廊世界.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/c4jg8ntayk16a2a7hs-1715244916186%E5%9B%9E%E5%BB%8A%E4%B8%96%E7%95%8C.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ozixdc9y9edgfcrg2m-1715244995058升变.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/ozixdc9y9edgfcrg2m-1715244995058%E5%8D%87%E5%8F%98.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "akp1hgk6147blqhka6-1715244882617对局.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/akp1hgk6147blqhka6-1715244882617%E5%AF%B9%E5%B1%80.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "akf4147xcj93soqz6n-1715244839050斗争的轮回.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1715184000000/akf4147xcj93soqz6n-1715244839050%E6%96%97%E4%BA%89%E7%9A%84%E8%BD%AE%E5%9B%9E.png",
-        "status": "success"
-      },
-      {
-        "filename": "zmgq35wbne12oelm0i-1711526194268星辰大海与你_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/zmgq35wbne12oelm0i-1711526194268%E6%98%9F%E8%BE%B0%E5%A4%A7%E6%B5%B7%E4%B8%8E%E4%BD%A0_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "8mjeh27e66mg42l32k-1711526111548弥留之言CG2_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/8mjeh27e66mg42l32k-1711526111548%E5%BC%A5%E7%95%99%E4%B9%8B%E8%A8%80CG2_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "e92zq4pn10szl0xns5-1711526231123孕育死者的巨树（包含差分）_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/e92zq4pn10szl0xns5-1711526231123%E5%AD%95%E8%82%B2%E6%AD%BB%E8%80%85%E7%9A%84%E5%B7%A8%E6%A0%91%EF%BC%88%E5%8C%85%E5%90%AB%E5%B7%AE%E5%88%86%EF%BC%89_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "yfnh8sx0u994mmjuiy-1711526076204弥留之言CG1_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/yfnh8sx0u994mmjuiy-1711526076204%E5%BC%A5%E7%95%99%E4%B9%8B%E8%A8%80CG1_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "bzgvwfl2ny2ng33g7n-1711526041053猫的摇篮（原图含差分共8张）_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/bzgvwfl2ny2ng33g7n-1711526041053%E7%8C%AB%E7%9A%84%E6%91%87%E7%AF%AE%EF%BC%88%E5%8E%9F%E5%9B%BE%E5%90%AB%E5%B7%AE%E5%88%86%E5%85%B18%E5%BC%A0%EF%BC%89_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "rdtlseg4xlwk7beq5z-1711525974139拉弥亚-离群者的求爱-抱_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/rdtlseg4xlwk7beq5z-1711525974139%E6%8B%89%E5%BC%A5%E4%BA%9A-%E7%A6%BB%E7%BE%A4%E8%80%85%E7%9A%84%E6%B1%82%E7%88%B1-%E6%8A%B1_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "kqku2z4ynttp2avau4-1711525939437拉弥亚-克希拉苏醒-差分6_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/kqku2z4ynttp2avau4-1711525939437%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%866_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "kqpcq80qaauu7faj92-1711526004990拉弥亚-离群者的求爱-举_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/kqpcq80qaauu7faj92-1711526004990%E6%8B%89%E5%BC%A5%E4%BA%9A-%E7%A6%BB%E7%BE%A4%E8%80%85%E7%9A%84%E6%B1%82%E7%88%B1-%E4%B8%BE_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "56fywvc69qd7n6oq9t-1711525902323拉弥亚-克希拉苏醒-差分5_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/56fywvc69qd7n6oq9t-1711525902323%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%865_.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "idllrou4jsmi6au9y3-1711525866058拉弥亚-克希拉苏醒-差分4_.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/idllrou4jsmi6au9y3-1711525866058%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%864_.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       }
     ]
   },
   "kr": {
-    "total": 30,
-    "success": 30,
+    "total": 20,
+    "success": 20,
     "failed": 0,
-    "lastUpdated": "2026-02-07T19:10:18Z",
+    "lastUpdated": "2026-02-07T20:00:34Z",
     "wallpapers": [
       {
         "filename": "xa4l6axr5boh94u0zw-17664455185727.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/xa4l6axr5boh94u0zw-17664455185727.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "tkxijggmw75a8hnze9-17664454969696.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/tkxijggmw75a8hnze9-17664454969696.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "m4i08cn5sobqeckka9-17664455368138.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/m4i08cn5sobqeckka9-17664455368138.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ddjgpp9azbc8zzkl01-17664454783845.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/ddjgpp9azbc8zzkl01-17664454783845.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "8rro5gkmoh4y1aiou0-17664454530754.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/8rro5gkmoh4y1aiou0-17664454530754.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "okldzcyxpuc4y3keo4-17664454152222.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/okldzcyxpuc4y3keo4-17664454152222.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "ipbxt0ehmlsuok1mvp-17664453241921.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/ipbxt0ehmlsuok1mvp-17664453241921.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "fh44dj7af5l4i7h6ym-17664454349723.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/fh44dj7af5l4i7h6ym-17664454349723.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "1e0q1tawjht70qzok6-17664452803978.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/1e0q1tawjht70qzok6-17664452803978.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "2gv99nk8dilwyu2dsc-17664452460807.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/2gv99nk8dilwyu2dsc-17664452460807.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "yd8fa1tgsqje2i24u3-17664451956255.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/yd8fa1tgsqje2i24u3-17664451956255.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "idlozctmipahgau07q-17664451672704.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/idlozctmipahgau07q-17664451672704.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "qnf37fubd1alcqmwed-17664452173206.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/qnf37fubd1alcqmwed-17664452173206.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "c4hr15qq88fn2mz3uz-17664451305033.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/c4hr15qq88fn2mz3uz-17664451305033.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "c68yxtrmjnt5t3pwjf-17664450402022.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/c68yxtrmjnt5t3pwjf-17664450402022.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "phprs85gkwhncn50ke-17564597353661.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/phprs85gkwhncn50ke-17564597353661.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "goplsbq0vmidisxwfb-17564597118963.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/goplsbq0vmidisxwfb-17564597118963.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "uozlrgtadt2mt5zb4s-17664448970881.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766419200000/uozlrgtadt2mt5zb4s-17664448970881.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "pbwe0a2unnfogxwsh9-17564596896979.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/pbwe0a2unnfogxwsh9-17564596896979.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "dd0oz8vxa4as23n6r4-17564596353405.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/dd0oz8vxa4as23n6r4-17564596353405.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "v15rz16vqj04vjol27-17564595220736.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/v15rz16vqj04vjol27-17564595220736.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "gmeuhsqp3oyvsoobp9-17564595006514.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/gmeuhsqp3oyvsoobp9-17564595006514.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "lcen69vk1so5xqd8bz-17564595462882.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/lcen69vk1so5xqd8bz-17564595462882.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "zs7aybsu76524tk70i-17564594788038.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/zs7aybsu76524tk70i-17564594788038.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "bgl4981h6gre3d70uq-17564594508947.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/bgl4981h6gre3d70uq-17564594508947.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "b6v3l6fwa96jecg7x9-1756459389526涂装海报-赛琳娜.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/b6v3l6fwa96jecg7x9-1756459389526%E6%B6%82%E8%A3%85%E6%B5%B7%E6%8A%A5-%E8%B5%9B%E7%90%B3%E5%A8%9C.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "eek56z41ww17iep520-1756459366718涂装海报-七实.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/eek56z41ww17iep520-1756459366718%E6%B6%82%E8%A3%85%E6%B5%B7%E6%8A%A5-%E4%B8%83%E5%AE%9E.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "usagbp2c3e2fx1r1my-1756459410967涂装海报-薇拉.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/usagbp2c3e2fx1r1my-1756459410967%E6%B6%82%E8%A3%85%E6%B5%B7%E6%8A%A5-%E8%96%87%E6%8B%89.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "l0ki1p7eyyrfipwt1y-1756459342566涂装海报-露西亚.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/l0ki1p7eyyrfipwt1y-1756459342566%E6%B6%82%E8%A3%85%E6%B5%B7%E6%8A%A5-%E9%9C%B2%E8%A5%BF%E4%BA%9A.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "vcyp36oz87vs0b035o-1756459324697涂装海报-莉莉丝.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1756396800000/vcyp36oz87vs0b035o-1756459324697%E6%B6%82%E8%A3%85%E6%B5%B7%E6%8A%A5-%E8%8E%89%E8%8E%89%E4%B8%9D.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       }
     ]
   },
   "tw": {
-    "total": 30,
-    "success": 30,
+    "total": 20,
+    "success": 20,
     "failed": 0,
-    "lastUpdated": "2026-02-07T19:10:18Z",
+    "lastUpdated": "2026-02-07T20:00:34Z",
     "wallpapers": [
       {
         "filename": "iwzov6i3wuyglfm258-1770190320420繁中8.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/iwzov6i3wuyglfm258-1770190320420%E7%B9%81%E4%B8%AD8.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "8f06ki80yzawdzi5pb-1770190254395繁中7.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/8f06ki80yzawdzi5pb-1770190254395%E7%B9%81%E4%B8%AD7.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "8w4bgt2rcc3286f4f3-1770190429887繁中9.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/8w4bgt2rcc3286f4f3-1770190429887%E7%B9%81%E4%B8%AD9.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "aoslcecpqpa4zybow3-1770190199175繁中6.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/aoslcecpqpa4zybow3-1770190199175%E7%B9%81%E4%B8%AD6.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "5uf82hcp46k72kk5gl-1770189973143繁中5.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/5uf82hcp46k72kk5gl-1770189973143%E7%B9%81%E4%B8%AD5.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "17yzsdirwnf3j0tpf8-1770189531003繁中3.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/17yzsdirwnf3j0tpf8-1770189531003%E7%B9%81%E4%B8%AD3.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "wbuqt2p1rj9lzaav1c-1770189482110繁中2.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/wbuqt2p1rj9lzaav1c-1770189482110%E7%B9%81%E4%B8%AD2.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "kh393js1o6yj61bfnr-1770189572802繁中4.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/kh393js1o6yj61bfnr-1770189572802%E7%B9%81%E4%B8%AD4.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "8p1zlao3ec5z05aip3-1770203881589繁中1.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1770134400000/8p1zlao3ec5z05aip3-1770203881589%E7%B9%81%E4%B8%AD1.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "m26aoguc2ulntye2pn-17667401708553.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766678400000/m26aoguc2ulntye2pn-17667401708553.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "pkogwqljl60bqy1jo3-1766740036155繁中.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766678400000/pkogwqljl60bqy1jo3-1766740036155%E7%B9%81%E4%B8%AD.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "hwbxnq9870a6md81f4-1766739732530通用尺寸（全球）1920px-1080px 繁中.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766678400000/hwbxnq9870a6md81f4-1766739732530%E9%80%9A%E7%94%A8%E5%B0%BA%E5%AF%B8%EF%BC%88%E5%85%A8%E7%90%83%EF%BC%891920px-1080px%20%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "s1wyt1ksto4rxa49rf-17667401416894.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766678400000/s1wyt1ksto4rxa49rf-17667401416894.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "xh91nk5n0264fj6ssi-17667395320092.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766678400000/xh91nk5n0264fj6ssi-17667395320092.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "2tqpkw95k7rkc6yqzh-17667394894161.jpg",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1766678400000/2tqpkw95k7rkc6yqzh-17667394894161.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "05amtjo850rz4uoxz1-1763983759821繁中.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/05amtjo850rz4uoxz1-1763983759821%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "xtwiv4ipf6l5rmhfd7-1763983658603繁中.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/xtwiv4ipf6l5rmhfd7-1763983658603%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "kx6cmuzrh4fweysqzl-1763984055193繁中.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/kx6cmuzrh4fweysqzl-1763984055193%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "738yoawi8uhkq9kwmg-1763983584668繁中.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/738yoawi8uhkq9kwmg-1763983584668%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       },
       {
         "filename": "88xcnio6ne5lftf3sn-1763983511682繁中.png",
         "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/88xcnio6ne5lftf3sn-1763983511682%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
-      },
-      {
-        "filename": "7yeafnn7vq6n6o07x3-1763983278756繁中.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/7yeafnn7vq6n6o07x3-1763983278756%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
-      },
-      {
-        "filename": "3cb6w86vy5im0hxh06-1763983183009繁中.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/3cb6w86vy5im0hxh06-1763983183009%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
-      },
-      {
-        "filename": "pvyfx2xy40bvk3mmuk-1763983375181繁中.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/pvyfx2xy40bvk3mmuk-1763983375181%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
-      },
-      {
-        "filename": "zqbfak8ftuqdbkifu4-1763983116774繁中.png",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1763913600000/zqbfak8ftuqdbkifu4-1763983116774%E7%B9%81%E4%B8%AD.png",
-        "status": "success"
-      },
-      {
-        "filename": "37nwtl0pnhqqsr42ak-1760587542558维罗妮卡登陆图.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/37nwtl0pnhqqsr42ak-1760587542558%E7%BB%B4%E7%BD%97%E5%A6%AE%E5%8D%A1%E7%99%BB%E9%99%86%E5%9B%BE.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "4qgrxbqd2bvah6turd-1760587492520仰望飞鸟-final.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/4qgrxbqd2bvah6turd-1760587492520%E4%BB%B0%E6%9C%9B%E9%A3%9E%E9%B8%9F-final.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "5jvqcvcy5ttc8zibg2-1760587447014维罗妮卡伴生皮海报.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/5jvqcvcy5ttc8zibg2-1760587447014%E7%BB%B4%E7%BD%97%E5%A6%AE%E5%8D%A1%E4%BC%B4%E7%94%9F%E7%9A%AE%E6%B5%B7%E6%8A%A5.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "4zq2mvbsk0jzlfppb4-1760587521717无言的阻隔-改脸.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/4zq2mvbsk0jzlfppb4-1760587521717%E6%97%A0%E8%A8%80%E7%9A%84%E9%98%BB%E9%9A%94-%E6%94%B9%E8%84%B8.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "9ultylm383qgoub96m-1760587425469吞噬欲望-差分2.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/9ultylm383qgoub96m-1760587425469%E5%90%9E%E5%99%AC%E6%AC%B2%E6%9C%9B-%E5%B7%AE%E5%88%862.jpg",
-        "status": "success"
-      },
-      {
-        "filename": "n3qsujodwxn6igk4x3-1760587398176吞噬欲望-差分1.jpg",
-        "url": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/n3qsujodwxn6igk4x3-1760587398176%E5%90%9E%E5%99%AC%E6%AC%B2%E6%9C%9B-%E5%B7%AE%E5%88%861.jpg",
-        "status": "success"
+        "status": "success",
+        "releaseTime": "2026-02-07T20:00:34Z"
       }
     ]
-  }
+  },
+  "releaseTime": "2026-02-07T20:00:34Z"
 }
