@@ -1,6 +1,7 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
+const pLimit = require('p-limit'); // Import p-limit to control concurrency
 
 const configPath = path.join(__dirname, '..', 'config.json');
 if (!fs.existsSync(configPath)) {
@@ -185,8 +186,13 @@ async function getLinks(server, maxImages, existingImages) {
     const existingImages = listAllImages(directories);
     console.log(`[${timestamp()}] 📂 Existing images: ${existingImages.size}`);
 
-    for (const server of config.servers) {
-        await getLinks(server, maxImages, existingImages);
-    }
+    const limit = pLimit(4); // Limit concurrency to 4 threads
+
+    await Promise.all(
+        config.servers.map(server =>
+            limit(() => getLinks(server, maxImages, existingImages))
+        )
+    );
+
     console.log(`\n=== ALL TASKS COMPLETED ===\n`);
 })();
