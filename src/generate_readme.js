@@ -26,6 +26,16 @@ function encodeFilename(filename) {
         .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
 }
 
+// Validate URL scheme (http/https only)
+function isValidUrl(url) {
+    try {
+        const parsed = new URL(url);
+        return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+    } catch (e) {
+        return false;
+    }
+}
+
 if (mode === 'main') {
     generateMainReadme();
 } else if (mode === 'branch') {
@@ -88,7 +98,7 @@ function generateMainReadme() {
                 const encodedFile = encodeFilename(filename);
                 const safeFile = escapeHtml(filename);
                 const thumbRawUrl = `https://raw.githubusercontent.com/${repoSlug}/${previewBranch}/${server.id}/thumbnails/${encodedFile}`;
-                const rawUrl = `https://raw.githubusercontent.com/${repoSlug}/${wallpapersBranch}/${encodedFile}`;
+                const rawUrl = `https://github.com/${repoSlug}/raw/${wallpapersBranch}/${encodedFile}`;
                 readmeContent += `<a href="${rawUrl}"><img src="${thumbRawUrl}" width="150" alt="${safeFile}" title="${safeFile}"></a>\n`;
             });
             readmeContent += "</p>\n\n";
@@ -161,13 +171,13 @@ function generateBranchReadme(server) {
             const encodedFile = encodeFilename(file);
             const safeFile = escapeHtml(file);
             const thumbRawUrl = `https://raw.githubusercontent.com/${repoSlug}/${previewBranch}/${server.id}/thumbnails/${encodedFile}`;
-            // Download raw from wallpapers branch (flat root)
-            const downloadUrl = `https://raw.githubusercontent.com/${repoSlug}/${wallpapersBranch}/${encodedFile}`;
+            // Download raw from wallpapers branch (flat root) — LFS-safe URL
+            const downloadUrl = `https://github.com/${repoSlug}/raw/${wallpapersBranch}/${encodedFile}`;
             const status = (w.status === 'failed' || failedFilenames.has(file)) ? '❌ Failed' : '✅ Success';
             const releaseTime = w.releaseTime || 'N/A';
             const size = w.size || 'N/A';
             const sourceUrl = w.url || '';
-            const sourceLink = sourceUrl ? `<a href="${escapeHtml(sourceUrl)}">🔗 Original</a>` : '';
+            const sourceLink = (sourceUrl && isValidUrl(sourceUrl)) ? `<a href="${escapeHtml(sourceUrl)}">🔗 Original</a>` : '';
 
             readmeContent += `<details>\n`;
             readmeContent += `<summary>\n`;

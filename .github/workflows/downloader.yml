@@ -69,24 +69,26 @@ jobs:
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
           WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
 
-          # Fetch file listing from the wallpapers branch via git ls-tree (no clone needed)
-          # Use --filter=blob:none to avoid downloading image blobs
-          # Wallpapers branch uses flat root structure (all files at root)
-          if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
-            git fetch --filter=blob:none origin "$WALLPAPERS_BRANCH" --depth=1
-            # List all image files at root of the branch
-            while read -r filepath; do
-              filename=$(basename "$filepath")
-              if echo "$filename" | grep -qiE '\.(jpg|jpeg|png|webp)$'; then
-                echo "$filename" >> ".existing_images_all"
-              fi
-            done < <(git ls-tree --name-only "origin/$WALLPAPERS_BRANCH" 2>/dev/null)
-            # Distribute to per-server branches dirs based on manifest
+          # Build per-server .existing_images from manifest (not from git ls-tree)
+          # This avoids inflating existingImages.size with filenames from other servers
+          if [ -f "data/manifest.json" ]; then
             while IFS= read -r id; do
               mkdir -p "branches/$id"
-              if [ -f ".existing_images_all" ]; then
-                cp ".existing_images_all" "branches/$id/.existing_images" 2>/dev/null || true
-              fi
+              python3 -c "
+import json, sys
+with open('data/manifest.json') as f:
+    m = json.load(f)
+sid = sys.argv[1]
+if sid in m and 'wallpapers' in m[sid]:
+    for w in m[sid]['wallpapers']:
+        fn = w.get('filename')
+        if fn and w.get('status') == 'success':
+            print(fn)
+" "$id" > "branches/$id/.existing_images"
+            done <<< "$SERVERS"
+          else
+            while IFS= read -r id; do
+              mkdir -p "branches/$id"
             done <<< "$SERVERS"
           fi
 
@@ -264,17 +266,9 @@ jobs:
           # Save manifest to main branch data dir (needed by branch README generation)
           echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
 
-          # Generate per-server READMEs on preview branch
+          # Generate per-server READMEs on preview branch (always, not just when new images)
           while IFS= read -r id; do
-            BRANCH_DIR="$REPO_DIR/branches/$id"
-            IMG_DIR="$BRANCH_DIR/images"
-            IMAGE_COUNT=0
-            if [ -d "$IMG_DIR" ]; then
-              IMAGE_COUNT=$(find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
-            fi
-            if [ "$IMAGE_COUNT" -gt 0 ]; then
-              MANIFEST_PATH="$REPO_DIR/data/manifest.json" BRANCH_DIR="$WP_DIR" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
-            fi
+            MANIFEST_PATH="$REPO_DIR/data/manifest.json" BRANCH_DIR="$WP_DIR" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
           done <<< "$SERVERS"
 
           # --- Push wallpapers branch ---
@@ -376,7 +370,7 @@ jobs:
                   decoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$raw_filename")
                   encoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='%'))" "$decoded_filename")
                   thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${PREVIEW_BRANCH}/${id}/thumbnails/${encoded_filename}"
-                  download_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${WALLPAPERS_BRANCH}/${encoded_filename}"
+                  download_url="https://github.com/${GITHUB_REPOSITORY}/raw/${WALLPAPERS_BRANCH}/${encoded_filename}"
                   RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${decoded_filename}\` | [Download](${download_url}) | ✅ |\n"
                 done < "$txt"
                 RELEASE_BODY="${RELEASE_BODY}\n</details>\n\n---\n\n"

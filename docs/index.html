@@ -174,7 +174,7 @@
 
         function getDownloadUrl(serverId, filename) {
             const encoded = encodeFilename(filename);
-            return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${encoded}`;
+            return `https://github.com/${REPO}/raw/${WALLPAPERS_BRANCH}/${encoded}`;
         }
 
         function escapeHtml(str) {

@@ -68,9 +68,20 @@ def main():
         prior_filenames = set()
         if sid in manifest and 'wallpapers' in manifest[sid]:
             for pw in manifest[sid]['wallpapers']:
-                if pw.get('status') == 'success':
-                    prior_filenames.add(pw['filename'])
+                filename = pw.get('filename')
+                if filename and pw.get('status') == 'success':
+                    prior_filenames.add(filename)
             existing_count = len(prior_filenames)
+
+        # Fallback: also discover image files on the wallpapers branch root
+        # that may not be in the manifest (manual additions, prior bugs, manifest reset)
+        if os.path.isdir(wp_branch_root):
+            for fn in os.listdir(wp_branch_root):
+                fp = os.path.join(wp_branch_root, fn)
+                if os.path.isfile(fp) and fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+                    if fn not in prior_filenames:
+                        prior_filenames.add(fn)
+                        existing_count += 1
 
         success = existing_count + image_count
 
@@ -94,12 +105,15 @@ def main():
         prior_size_map = {}
         if sid in manifest and 'wallpapers' in manifest[sid]:
             for pw in manifest[sid]['wallpapers']:
+                filename = pw.get('filename')
+                if not filename:
+                    continue
                 if pw.get('url'):
-                    prior_url_map[pw['filename']] = pw['url']
+                    prior_url_map[filename] = pw['url']
                 if pw.get('releaseTime'):
-                    prior_release_time_map[pw['filename']] = pw['releaseTime']
+                    prior_release_time_map[filename] = pw['releaseTime']
                 if pw.get('size'):
-                    prior_size_map[pw['filename']] = pw['size']
+                    prior_size_map[filename] = pw['size']
 
         # Collect existing wallpapers from the prior manifest (flat root structure)
         for fn in sorted(prior_filenames):
