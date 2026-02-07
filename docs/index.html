@@ -174,7 +174,7 @@
 
         function getDownloadUrl(serverId, filename) {
             const encoded = encodeFilename(filename);
-            return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${serverId}/images/${encoded}`;
+            return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${encoded}`;
         }
 
         function escapeHtml(str) {
@@ -208,16 +208,23 @@
                 const safeName = escapeHtml(item.filename);
                 const safeAlt = escapeAttr(item.filename);
                 const safeServer = escapeHtml(serverNames[item.server] || item.server);
+                const sizeText = item.size ? escapeHtml(item.size) : 'N/A';
+                const releaseTimeText = item.releaseTime ? escapeHtml(item.releaseTime) : 'N/A';
                 const sourceLink = (item.url && isValidUrl(item.url))
-                    ? `<a href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">🔗 Source</a>` : '';
+                    ? `<a href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
                 return `
                 <div class="card">
-                    <img src="${escapeAttr(thumbUrl)}"
-                         alt="${safeAlt}"
-                         loading="lazy"
-                         onerror="this.style.display='none'">
+                    <a href="${escapeAttr(downloadUrl)}" target="_blank" rel="noopener noreferrer">
+                        <img src="${escapeAttr(thumbUrl)}"
+                             alt="${safeAlt}"
+                             loading="lazy"
+                             onerror="this.style.display='none'">
+                    </a>
                     <div class="card-body">
                         <div class="card-filename">${safeName}</div>
+                        <div style="margin-bottom:6px;font-size:12px;color:var(--text-muted)">
+                            <span>📅 ${releaseTimeText}</span> · <span>📦 ${sizeText}</span>
+                        </div>
                         <div style="margin-bottom:8px">
                             <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
                                 ${item.status === 'success' ? '✅ Success' : '❌ Failed'}
@@ -227,7 +234,7 @@
                             </span>
                         </div>
                         <div class="card-actions">
-                            ${item.status === 'success' ? `<a href="${escapeAttr(downloadUrl)}" class="download" target="_blank" rel="noopener noreferrer">⬇ Download</a>` : ''}
+                            ${item.status === 'success' ? `<a href="${escapeAttr(downloadUrl)}" class="download" target="_blank" rel="noopener noreferrer">⬇ Download Raw</a>` : ''}
                             ${sourceLink}
                         </div>
                     </div>
@@ -290,7 +297,8 @@
                             filename: w.filename,
                             url: w.url || '',
                             status: w.status || 'success',
-                            releaseTime: w.releaseTime || releaseTime || serverData.lastUpdated || ''
+                            releaseTime: w.releaseTime || releaseTime || serverData.lastUpdated || '',
+                            size: w.size || ''
                         });
                     });
                 });
