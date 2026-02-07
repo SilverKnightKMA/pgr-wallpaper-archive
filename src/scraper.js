@@ -3,19 +3,14 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 const configPath = path.join(__dirname, '..', 'config.json');
-if (!fs.existsSync(configPath)) {
-    console.error(`Error: Config file not found at ${configPath}`);
-    process.exit(1);
-}
+if (!fs.existsSync(configPath)) process.exit(1);
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const timestamp = () => new Date().toLocaleTimeString();
 
 async function getLinks(server) {
     const linkDir = path.dirname(server.txtPath);
-    if (!fs.existsSync(linkDir)) {
-        fs.mkdirSync(linkDir, { recursive: true });
-    }
+    if (!fs.existsSync(linkDir)) fs.mkdirSync(linkDir, { recursive: true });
 
     console.log(`\n[${timestamp()}] Starting task: ${server.name}`);
 
@@ -28,124 +23,107 @@ async function getLinks(server) {
         const page = await browser.newPage();
         await page.setViewport({ width: 1920, height: 1080 });
 
-        // --- DEBUG: ENABLE CONSOLE LOG FROM BROWSER ---
+        // Enable Browser Logs
         page.on('console', msg => {
-            const type = msg.type();
-            // Chỉ hiện log tay của mình (bắt đầu bằng [BROWSER]) để đỡ rối
-            if (msg.text().includes('[BROWSER]')) {
-                console.log(`  ↳ ${msg.text()}`);
-            }
+            if (msg.text().includes('[BROWSER]')) console.log(`  ↳ ${msg.text()}`);
         });
 
-        if (config.settings && config.settings.userAgent) {
-            await page.setUserAgent(config.settings.userAgent);
-        }
+        if (config.settings?.userAgent) await page.setUserAgent(config.settings.userAgent);
 
         console.log(`[${timestamp()}] Navigating to: ${server.url}`);
         await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 90000 });
 
+        // Wait for the specific container to be present in DOM
+        try {
+            await page.waitForSelector('#app', { timeout: 5000 });
+        } catch (e) { /* ignore if #app not found */ }
+
         console.log(`[${timestamp()}] detecting scroll container...`);
         
         await page.evaluate(async () => {
-            // Helper log function
             const log = (msg) => console.log(`[BROWSER] ${msg}`);
 
             function getContainer() {
-                // 1. Try generic scroll check first (Most reliable)
-                // Find ALL divs, sort by scrollHeight descending to find the biggest scrollable area
-                const allDivs = Array.from(document.querySelectorAll('div, ul, section, main'));
+                // FORCE PRIORITY: Check for known wrapper IDs/Classes first.
+                // We return these IMMEDIATELY without checking scrollHeight conditions
+                // because sometimes the content loads slightly after.
                 
-                // Find elements that have scrollable overflow AND content larger than view
+                const app = document.querySelector('#app');
+                if (app) return app;
+
+                const wrapper = document.querySelector('.wallpaper-list') || 
+                                document.querySelector('.pns-picture');
+                if (wrapper) return wrapper;
+
+                // Fallback: Find largest scrollable div
+                const allDivs = Array.from(document.querySelectorAll('div'));
                 const scrollables = allDivs.filter(el => {
                     const style = window.getComputedStyle(el);
-                    const isScrollable = style.overflowY === 'auto' || style.overflowY === 'scroll';
-                    const hasOverflow = el.scrollHeight > el.clientHeight;
-                    return isScrollable && hasOverflow;
+                    return (style.overflowY === 'auto' || style.overflowY === 'scroll') 
+                           && el.scrollHeight > el.clientHeight;
                 });
 
                 if (scrollables.length > 0) {
-                    // Return the one with the largest scrollHeight (likely the main wrapper)
                     return scrollables.sort((a, b) => b.scrollHeight - a.scrollHeight)[0];
                 }
 
-                // 2. Fallback to specific selectors if generic fails
-                let node = document.querySelector('.wallpaper-list') || 
-                           document.querySelector('#app');
-                
-                if (node && node.scrollHeight > node.clientHeight) return node;
-
-                // 3. Last resort
                 return document.documentElement;
             }
 
             const container = getContainer();
-            
-            // --- DEBUG INFO ---
-            const containerName = container.id ? `#${container.id}` : 
-                                  container.className ? `.${container.className}` : 
-                                  container.tagName;
+            const containerName = container.id ? `#${container.id}` : (container.className ? `.${container.className}` : container.tagName);
             
             log(`TARGET CONTAINER: ${containerName}`);
-            log(`START DIMENSIONS: ScrollHeight=${container.scrollHeight}, ClientHeight=${container.clientHeight}`);
-            
-            if (container.scrollHeight <= container.clientHeight) {
-                log(`WARNING: Container does not seem scrollable! (Scroll <= Client)`);
-            }
+            log(`INIT SIZE: ScrollHeight=${container.scrollHeight}, ClientHeight=${container.clientHeight}`);
 
-            // --- SCROLL LOGIC (INCREMENTAL) ---
+            // --- SCROLL LOOP ---
             await new Promise((resolve) => {
                 let totalHeight = 0;
-                let distance = 300; // Scroll distance per step
+                let distance = 300;
                 let retries = 0;
-                const maxRetries = 10; // More retries for safety
+                const maxRetries = 15; // Increased retries for slow loads
 
                 const timer = setInterval(() => {
                     const scrollHeight = container.scrollHeight;
                     
-                    // Use scrollBy for smoother lazy load triggering
-                    // If container is documentElement/body, use window.scrollBy
-                    if (container === document.documentElement || container === document.body) {
+                    // Force scroll logic
+                    if (container === document.documentElement) {
                         window.scrollBy(0, distance);
                     } else {
                         container.scrollBy(0, distance);
                     }
                     
-                    // Check if we reached bottom
-                    const currentScroll = (container === document.documentElement) ? window.scrollY : container.scrollTop;
-                    const viewHeight = (container === document.documentElement) ? window.innerHeight : container.clientHeight;
-
-                    // Log progress every 5 ticks to avoid spam
-                    if (totalHeight % (distance * 5) === 0) {
-                        log(`Scrolling... Current: ${Math.floor(currentScroll + viewHeight)} / ${scrollHeight}`);
-                    }
-
-                    if ((currentScroll + viewHeight) >= (scrollHeight - 50)) {
+                    // Calculate current position
+                    const scrollTop = (container === document.documentElement) ? window.scrollY : container.scrollTop;
+                    const clientHeight = (container === document.documentElement) ? window.innerHeight : container.clientHeight;
+                    
+                    // Check if we hit bottom
+                    if ((scrollTop + clientHeight) >= (scrollHeight - 100)) {
                         retries++;
+                        if (retries % 5 === 0) log(`Waiting for lazy load... (${retries}/${maxRetries})`);
+                        
                         if (retries >= maxRetries) {
-                            log(`Reached bottom. Finished.`);
+                            log(`Finished scrolling.`);
                             clearInterval(timer);
                             resolve();
                         }
                     } else {
-                        retries = 0; // Reset retries if we are still moving
+                        retries = 0;
                         totalHeight += distance;
                     }
-                }, 200); // 200ms delay between scrolls
+                }, 200);
             });
         });
 
         console.log(`[${timestamp()}] Extracting links...`);
         
         const links = await page.evaluate((selector) => {
-            const imgs = document.querySelectorAll(selector);
-            return Array.from(imgs)
+            return Array.from(document.querySelectorAll(selector))
                 .map(img => img.src)
                 .filter(src => src && src.startsWith('http') && !src.includes('base64'))
                 .map(url => {
-                    try {
-                        let fixed = url.replace(/\+/g, '%20');
-                        return encodeURI(decodeURI(fixed));
-                    } catch (e) { return url; }
+                    try { return encodeURI(decodeURI(url.replace(/\+/g, '%20'))); } 
+                    catch (e) { return url; }
                 });
         }, server.selector);
 
