@@ -16,14 +16,17 @@ async function getLinks(server) {
 
     const browser = await puppeteer.launch({
         headless: "new",
+        protocolTimeout: 0, 
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     try {
         const page = await browser.newPage();
         await page.setViewport({ width: 1920, height: 1080 });
+        
+        page.setDefaultNavigationTimeout(0);
+        page.setDefaultTimeout(0);
 
-        // Forward console logs from browser to node terminal
         page.on('console', msg => {
             if (msg.text().includes('[BROWSER]')) console.log(`  ↳ ${msg.text()}`);
         });
@@ -31,35 +34,27 @@ async function getLinks(server) {
         if (config.settings?.userAgent) await page.setUserAgent(config.settings.userAgent);
 
         console.log(`[${timestamp()}] Navigating to: ${server.url}`);
-        
-        // Increase timeout for the page load
-        await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 90000 });
+        await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 0 });
 
-        // Wait for the first image to ensure DOM is ready (Crucial step)
+        // Wait for content
         const primarySelector = server.selector.split(',')[0].trim();
         try {
-            await page.waitForSelector(primarySelector, { timeout: 10000 });
+            await page.waitForSelector(primarySelector, { timeout: 15000 });
         } catch (e) { /* ignore */ }
 
         console.log(`[${timestamp()}] Injecting scrolling logic...`);
 
-        // --- INJECTING YOUR WORKING CONSOLE LOGIC ---
-        // We pass 'server.selector' into the browser context
         const links = await page.evaluate(async (selector) => {
             const log = (msg) => console.log(`[BROWSER] ${msg}`);
 
-            // 1. EXACT getContainer logic from your working script
             function getContainer() {
-                // Check specific PGR classes
                 let node = document.querySelector('.wallpaper-list') || 
                            document.querySelector('.pns-picture') || 
                            document.querySelector('.pcWallpaper')?.parentElement ||
                            document.querySelector('#app');
                 
-                // If found and has content, return it
                 if (node && node.scrollHeight > node.clientHeight) return node;
 
-                // Fallback: Check all divs
                 for (let div of document.querySelectorAll('div')) {
                     let s = window.getComputedStyle(div);
                     if ((s.overflowY === 'auto' || s.overflowY === 'scroll') && div.scrollHeight > div.clientHeight) {
@@ -74,22 +69,18 @@ async function getLinks(server) {
             
             log(`Target: ${containerName} (Height: ${container.scrollHeight})`);
 
-            // 2. Scroll Loop
-            // We use a Promise to pause Puppeteer execution while the browser scrolls
             await new Promise((resolve) => {
                 let lastHeight = container.scrollHeight;
                 let retries = 0;
                 const maxRetries = 10; 
 
                 const timer = setInterval(() => {
-                    // Scroll to bottom
                     if (container === document.documentElement) {
                         window.scrollTo(0, document.body.scrollHeight);
                     } else {
                         container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
                     }
 
-                    // Check if height changed
                     const newHeight = container.scrollHeight;
                     
                     if (newHeight === lastHeight) {
@@ -106,10 +97,9 @@ async function getLinks(server) {
                         lastHeight = newHeight;
                         retries = 0;
                     }
-                }, 1500); // Check every 1.5 seconds (adjust if internet is slow)
+                }, 800);
             });
 
-            // 3. Extract Links (Inside browser context)
             const imgs = document.querySelectorAll(selector);
             return Array.from(imgs)
                 .map(img => img.src)
@@ -121,7 +111,6 @@ async function getLinks(server) {
 
         }, server.selector);
 
-        // --- SAVE RESULTS ---
         const uniqueLinks = [...new Set(links)];
 
         if (uniqueLinks.length > 0) {
