@@ -1,21 +1,14 @@
-$jobs = @(
-    @{ path = "links_global.txt"; dir = "Wallpapers_Global" },
-    @{ path = "links_cn.txt"; dir = "Wallpapers_CN" },
-    @{ path = "links_jp.txt"; dir = "Wallpapers_JP" },
-    @{ path = "links_kr.txt"; dir = "Wallpapers_KR" },
-    @{ path = "links_tw.txt"; dir = "Wallpapers_TW" }
-    
-)
+$config = Get-Content "./config.json" | ConvertFrom-Json
 
-foreach ($job in $jobs) {
-    if (Test-Path $job.path) {
-        Write-Host "[Processing] $($job.path)"
-        if (!(Test-Path $job.dir)) { New-Item -ItemType Directory -Path $job.dir }
+foreach ($server in $config.servers) {
+    if (Test-Path $server.txtPath) {
+        Write-Host "[Processing] $($server.name)" -ForegroundColor Cyan
+        if (!(Test-Path $server.dir)) { New-Item -ItemType Directory -Path $server.dir }
         
-        $urls = Get-Content $job.path
+        $urls = Get-Content $server.txtPath
         foreach ($url in $urls) {
-            $filename = split-path $url -leaf
-            $dest = Join-Path $job.dir $filename
+            $filename = Split-Path $url -Leaf
+            $dest = Join-Path $server.dir $filename
             if (!(Test-Path $dest)) {
                 try {
                     Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
