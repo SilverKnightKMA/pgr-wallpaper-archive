@@ -1,1 +1,27 @@
-{}
+{
+  "global": {
+    "total": 24,
+    "success": 24,
+    "failed": 0
+  },
+  "cn": {
+    "total": 30,
+    "success": 30,
+    "failed": 0
+  },
+  "jp": {
+    "total": 30,
+    "success": 30,
+    "failed": 0
+  },
+  "kr": {
+    "total": 30,
+    "success": 30,
+    "failed": 0
+  },
+  "tw": {
+    "total": 30,
+    "success": 30,
+    "failed": 0
+  }
+}
