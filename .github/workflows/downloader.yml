@@ -67,8 +67,9 @@ jobs:
           IMAGES_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.imagesBranch || 'images')")
 
           # Fetch file listing from the images branch via git ls-tree (no clone needed)
+          # Use --filter=blob:none to avoid downloading image blobs
           if git ls-remote --exit-code origin "$IMAGES_BRANCH" >/dev/null 2>&1; then
-            git fetch origin "$IMAGES_BRANCH" --depth=1
+            git fetch --filter=blob:none origin "$IMAGES_BRANCH" --depth=1
             while IFS= read -r id; do
               mkdir -p "branches/$id"
               # List existing images in <id>/images/ on the branch
@@ -202,7 +203,8 @@ jobs:
               EXISTING_COUNT=$(find "$WORK_DIR/$id/images" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
             fi
 
-            TOTAL=$((EXISTING_COUNT + IMAGE_COUNT))
+            # success = existing images on branch + newly downloaded images
+            SUCCESS=$((EXISTING_COUNT + IMAGE_COUNT))
 
             # Count failed
             FAILED_COUNT=0
@@ -211,7 +213,8 @@ jobs:
               FAILED_COUNT=$(wc -l < "$FAILED_FILE")
             fi
 
-            SUCCESS=$((TOTAL - FAILED_COUNT))
+            # total = success + failed (all images attempted)
+            TOTAL=$((SUCCESS + FAILED_COUNT))
             MANIFEST=$(echo "$MANIFEST" | python3 -c "import json, sys; m = json.load(sys.stdin); m['$id'] = {'total': $TOTAL, 'success': $SUCCESS, 'failed': $FAILED_COUNT}; print(json.dumps(m, indent=2))")
 
             if [ "$IMAGE_COUNT" -eq 0 ]; then

@@ -14,6 +14,10 @@ const serverId = process.argv[3];       // server id for branch mode
 const repoSlug = process.env.GITHUB_REPOSITORY || 'SilverKnightKMA/pgr-wallpaper-archive';
 const imagesBranch = config.imagesBranch || 'images';
 
+function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 if (mode === 'main') {
     generateMainReadme();
 } else if (mode === 'branch') {
@@ -117,10 +121,11 @@ function generateBranchReadme(server) {
                 if (index % 3 === 0) readmeContent += "<tr>\n";
                 const file = fileObj.name;
                 const encodedFile = encodeURIComponent(file);
+                const safeFile = escapeHtml(file);
                 const imgPath = useSubDir ? `images/${encodedFile}` : encodedFile;
                 const hasThumb = fs.existsSync(path.join(thumbsDir, file));
                 const thumbSrc = hasThumb ? `thumbnails/${encodedFile}` : imgPath;
-                readmeContent += `<td align="center"><a href="${imgPath}"><img src="${thumbSrc}" width="250" title="${file}" alt="${file}"></a></td>\n`;
+                readmeContent += `<td align="center"><a href="${imgPath}"><img src="${thumbSrc}" width="250" title="${safeFile}" alt="${safeFile}"></a></td>\n`;
                 if ((index + 1) % 3 === 0) readmeContent += "</tr>\n";
             });
             if (files.length % 3 !== 0) readmeContent += "</tr>\n";
