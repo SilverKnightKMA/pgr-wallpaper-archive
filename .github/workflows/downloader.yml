@@ -38,12 +38,30 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global http.postBuffer 524288000
-          git config --global http.version HTTP/1.1
-          git config --global core.quotepath false
-          git add .
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Auto-sync: Updated Gallery & Wallpapers"
-            git push || (sleep 10 && git push)
-          else
-            echo "No changes to commit"
+
+          files=$(git ls-files --others --exclude-standard --modified)
+          
+          if [ -z "$files" ]; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          batch_size=20
+          count=0
+          
+          echo "$files" | while read -r file; do
+            git add "$file"
+            count=$((count + 1))
+            
+            if [ $((count % batch_size)) -eq 0 ]; then
+              git commit -m "Auto-sync: Update wallpapers batch $((count / batch_size))"
+              git push || (sleep 5 && git push)
+              echo "Pushed batch of $batch_size files."
+            fi
+          done
+
+          if [ $((count % batch_size)) -ne 0 ]; then
+            git commit -m "Auto-sync: Update remaining wallpapers"
+            git push || (sleep 5 && git push)
+            echo "Pushed final batch."
           fi
