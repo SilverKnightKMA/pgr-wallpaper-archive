@@ -20,17 +20,7 @@ async function getPLimit() {
 // Function to list images in a directory
 function listImagesInDirectory(directory) {
     if (!fs.existsSync(directory)) return [];
-    return fs.readdirSync(directory).filter(file => file.endsWith('.jpg') || file.endsWith('.png'));
-}
-
-// Function to list all images across configured directories
-function listAllImages(directories) {
-    const allImages = new Set();
-    for (const dir of directories) {
-        const images = listImagesInDirectory(dir);
-        images.forEach(image => allImages.add(image));
-    }
-    return allImages;
+    return fs.readdirSync(directory).filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file));
 }
 
 async function getLinks(server, maxImages, existingImages) {
@@ -186,9 +176,13 @@ async function getLinks(server, maxImages, existingImages) {
     console.log(`=== SCRAPER STARTED (SMART SCROLL) ===`);
     console.log(`[${timestamp()}] Max images allowed: ${maxImages}`);
 
-    // List existing images
-    const directories = config.servers.map(server => server.imageDir);
-    const existingImages = listAllImages(directories);
+    // List existing images from per-server branch working directories
+    const existingImages = new Set();
+    for (const server of config.servers) {
+        const branchDir = path.join(__dirname, '..', 'branches', server.id);
+        const images = listImagesInDirectory(branchDir);
+        images.forEach(image => existingImages.add(image));
+    }
     console.log(`[${timestamp()}] 📂 Existing images: ${existingImages.size}`);
 
     const pLimit = await getPLimit();
