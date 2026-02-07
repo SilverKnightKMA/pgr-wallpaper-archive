@@ -180,21 +180,62 @@ jobs:
 
       - name: Collect release assets
         if: steps.check_new.outputs.has_new == 'true'
+        id: release_notes
         run: |
-          mkdir -p release_assets
-          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
-          while IFS= read -r id; do
+          mkdir -p release_assets release_staging
+          RELEASE_BODY=""
+          HAS_FILES=false
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + '|' + s.name + '|' + s.branch))")
+          while IFS='|' read -r id name branch; do
             txt="Wallpapers/images_url/${id}.txt"
             if [ -f "$txt" ] && [ -s "$txt" ]; then
               BRANCH_DIR="branches/$id"
+              FILE_COUNT=0
               while IFS= read -r url; do
                 filename=$(basename "$url")
                 if [ -f "$BRANCH_DIR/$filename" ]; then
-                  cp "$BRANCH_DIR/$filename" "release_assets/${id}_${filename}"
+                  FILE_COUNT=$((FILE_COUNT + 1))
                 fi
               done < "$txt"
+
+              # Copy new images into a per-server folder for the zip
+              if [ $FILE_COUNT -gt 0 ]; then
+                HAS_FILES=true
+                mkdir -p "release_staging/$id"
+                while IFS= read -r url; do
+                  filename=$(basename "$url")
+                  if [ -f "$BRANCH_DIR/$filename" ]; then
+                    cp "$BRANCH_DIR/$filename" "release_staging/$id/$filename"
+                  fi
+                done < "$txt"
+
+                # Build release notes section for this server
+                RELEASE_BODY="${RELEASE_BODY}### 🖼️ ${name} (${FILE_COUNT} new)\n\n"
+                RELEASE_BODY="${RELEASE_BODY}📁 **Folder:** \`${id}/\`\n"
+                RELEASE_BODY="${RELEASE_BODY}🔗 **Branch:** [\`${branch}\`](https://github.com/${GITHUB_REPOSITORY}/tree/${branch})\n\n"
+
+                RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview</summary>\n\n"
+                RELEASE_BODY="${RELEASE_BODY}| Preview | Filename | URL |\n"
+                RELEASE_BODY="${RELEASE_BODY}|---------|----------|-----|\n"
+                while IFS= read -r url; do
+                  filename=$(basename "$url")
+                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${branch}/thumbnails/$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$filename")"
+                  RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${filename}\` | [Link](${url}) |\n"
+                done < "$txt"
+                RELEASE_BODY="${RELEASE_BODY}\n</details>\n\n---\n\n"
+              fi
             fi
           done <<< "$SERVERS"
+
+          # Create a single zip with per-server folders
+          if [ "$HAS_FILES" = true ]; then
+            cd release_staging
+            zip -r ../release_assets/wallpapers.zip .
+            cd ..
+          fi
+
+          # Write release body to file
+          echo -e "$RELEASE_BODY" > release_notes.md
 
       - name: Create GitHub Release
         if: steps.check_new.outputs.has_new == 'true'
@@ -202,10 +243,7 @@ jobs:
         with:
           tag_name: ${{ steps.set_tag.outputs.tag }}
           name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
-          body: |
-            🖼️ Automated wallpaper update.
-            
-            This release contains all new wallpapers discovered during this run.
-          files: release_assets/*
+          body_path: release_notes.md
+          files: release_assets/wallpapers.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
