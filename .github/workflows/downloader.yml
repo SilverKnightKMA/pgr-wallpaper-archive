@@ -109,31 +109,35 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+          REPO_DIR="$(pwd)"
+          REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + ' ' + s.branch))")
           while IFS=' ' read -r id branch; do
-            BRANCH_DIR="branches/$id"
+            BRANCH_DIR="$REPO_DIR/branches/$id"
             IMAGE_COUNT=$(find "$BRANCH_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
             if [ ! -d "$BRANCH_DIR" ] || [ "$IMAGE_COUNT" -eq 0 ]; then
               echo "⏭️ No images for $id, skipping branch push."
               continue
             fi
 
-            echo "🔀 Processing branch: $branch (server: $id)"
+            echo "🔀 Processing branch: $branch (server: $id, $IMAGE_COUNT images)"
 
             # Create a temporary directory for branch work
             WORK_DIR=$(mktemp -d)
             rm -rf "$WORK_DIR"  # git clone needs non-existent target
 
             # Initialize or clone the branch
+            BRANCH_EXISTS=false
             if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
-              git clone --single-branch --branch "$branch" --depth 1 "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$WORK_DIR"
+              BRANCH_EXISTS=true
+              git clone --single-branch --branch "$branch" --depth 1 "$REMOTE_URL" "$WORK_DIR"
             else
+              echo "  🆕 Creating new orphan branch: $branch"
               mkdir -p "$WORK_DIR"
-              cd "$WORK_DIR"
-              git init
-              git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-              git checkout -b "$branch"
-              cd -
+              git -C "$WORK_DIR" init
+              git -C "$WORK_DIR" remote add origin "$REMOTE_URL"
+              git -C "$WORK_DIR" checkout -b "$branch"
             fi
 
             # Copy images and thumbnails
@@ -144,21 +148,23 @@ jobs:
             fi
 
             # Generate branch README directly in WORK_DIR
-            BRANCH_DIR="$WORK_DIR" BRANCH_README_OUTPUT="$WORK_DIR/README.md" node src/generate_readme.js branch "$id"
+            BRANCH_DIR="$WORK_DIR" BRANCH_README_OUTPUT="$WORK_DIR/README.md" node "$REPO_DIR/src/generate_readme.js" branch "$id"
 
             # Commit and push
-            cd "$WORK_DIR"
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add -A
-            if git diff --cached --quiet; then
+            git -C "$WORK_DIR" config user.name "github-actions[bot]"
+            git -C "$WORK_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
+            git -C "$WORK_DIR" add -A
+            if git -C "$WORK_DIR" diff --cached --quiet; then
               echo "  No changes for $branch."
             else
-              git commit -m "Auto-sync: Update $id wallpapers"
-              git push origin HEAD:"$branch" --force-with-lease
+              git -C "$WORK_DIR" commit -m "Auto-sync: Update $id wallpapers"
+              if [ "$BRANCH_EXISTS" = true ]; then
+                git -C "$WORK_DIR" push origin HEAD:"$branch" --force-with-lease
+              else
+                git -C "$WORK_DIR" push origin HEAD:"$branch"
+              fi
               echo "  ✅ Pushed to $branch"
             fi
-            cd -
             rm -rf "$WORK_DIR"
           done
         env:
@@ -219,7 +225,7 @@ jobs:
                 RELEASE_BODY="${RELEASE_BODY}|---------|----------|-----|\n"
                 while IFS= read -r url; do
                   filename=$(basename "$url")
-                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${branch}/thumbnails/$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$filename")"
+                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${branch}/thumbnails/$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='%'))" "$filename")"
                   RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${filename}\` | [Link](${url}) |\n"
                 done < "$txt"
                 RELEASE_BODY="${RELEASE_BODY}\n</details>\n\n---\n\n"
@@ -237,8 +243,11 @@ jobs:
           # Write release body to file
           echo -e "$RELEASE_BODY" > release_notes.md
 
+          # Output whether we have files to release
+          echo "has_files=$HAS_FILES" >> "$GITHUB_OUTPUT"
+
       - name: Create GitHub Release
-        if: steps.check_new.outputs.has_new == 'true'
+        if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.set_tag.outputs.tag }}
