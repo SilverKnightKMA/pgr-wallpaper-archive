@@ -182,8 +182,9 @@ jobs:
         if: steps.check_new.outputs.has_new == 'true'
         id: release_notes
         run: |
-          mkdir -p release_assets
+          mkdir -p release_assets release_staging
           RELEASE_BODY=""
+          HAS_FILES=false
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + '|' + s.name + '|' + s.branch))")
           while IFS='|' read -r id name branch; do
             txt="Wallpapers/images_url/${id}.txt"
@@ -197,19 +198,20 @@ jobs:
                 fi
               done < "$txt"
 
-              # Create a zip file for this server with only new images
+              # Copy new images into a per-server folder for the zip
               if [ $FILE_COUNT -gt 0 ]; then
-                ZIP_NAME="${id}-wallpapers.zip"
+                HAS_FILES=true
+                mkdir -p "release_staging/$id"
                 while IFS= read -r url; do
                   filename=$(basename "$url")
                   if [ -f "$BRANCH_DIR/$filename" ]; then
-                    zip -j "release_assets/$ZIP_NAME" "$BRANCH_DIR/$filename"
+                    cp "$BRANCH_DIR/$filename" "release_staging/$id/$filename"
                   fi
                 done < "$txt"
 
                 # Build release notes section for this server
                 RELEASE_BODY="${RELEASE_BODY}### 🖼️ ${name} (${FILE_COUNT} new)\n\n"
-                RELEASE_BODY="${RELEASE_BODY}📦 **Download:** \`${ZIP_NAME}\`\n"
+                RELEASE_BODY="${RELEASE_BODY}📁 **Folder:** \`${id}/\`\n"
                 RELEASE_BODY="${RELEASE_BODY}🔗 **Branch:** [\`${branch}\`](https://github.com/${GITHUB_REPOSITORY}/tree/${branch})\n\n"
 
                 RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview</summary>\n\n"
@@ -225,6 +227,13 @@ jobs:
             fi
           done <<< "$SERVERS"
 
+          # Create a single zip with per-server folders
+          if [ "$HAS_FILES" = true ]; then
+            cd release_staging
+            zip -r ../release_assets/wallpapers.zip .
+            cd ..
+          fi
+
           # Write release body to file
           echo -e "$RELEASE_BODY" > release_notes.md
 
@@ -235,6 +244,6 @@ jobs:
           tag_name: ${{ steps.set_tag.outputs.tag }}
           name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
           body_path: release_notes.md
-          files: release_assets/*.zip
+          files: release_assets/wallpapers.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
