@@ -55,35 +55,46 @@ def main():
         # Directories to search for file sizes (new downloads + wallpapers branch root)
         size_dirs = [d for d in [img_dir, wp_branch_root] if os.path.isdir(d)]
 
-        # Count new images
-        image_count = 0
-        if os.path.isdir(img_dir):
-            image_count = len([f for f in os.listdir(img_dir)
-                             if os.path.isfile(os.path.join(img_dir, f))
-                             and f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp'))])
-
-        # Count existing images on wallpapers branch (flat root)
-        # We need the list of files that belong to this server from prior manifest
-        existing_count = 0
-        prior_filenames = set()
+        # Build prior filename mapping and get existing success filenames from old manifest
+        # NOTE: images_url txt files contain only NEW links per run (scraper truncates when none found)
+        # So we must merge with prior manifest to preserve existing wallpapers
+        prior_url_map = {}
+        prior_release_time_map = {}
+        prior_size_map = {}
+        success_filenames = set()
+        
         if sid in manifest and 'wallpapers' in manifest[sid]:
             for pw in manifest[sid]['wallpapers']:
                 filename = pw.get('filename')
-                if filename and pw.get('status') == 'success':
-                    prior_filenames.add(filename)
-            existing_count = len(prior_filenames)
+                if not filename:
+                    continue
+                # Preserve existing successful wallpapers
+                if pw.get('status') == 'success':
+                    success_filenames.add(filename)
+                # Preserve metadata for all wallpapers
+                if pw.get('url'):
+                    prior_url_map[filename] = pw['url']
+                if pw.get('releaseTime'):
+                    prior_release_time_map[filename] = pw['releaseTime']
+                if pw.get('size'):
+                    prior_size_map[filename] = pw['size']
 
-        # Fallback: also discover image files on the wallpapers branch root
-        # that may not be in the manifest (manual additions, prior bugs, manifest reset)
-        if os.path.isdir(wp_branch_root):
-            for fn in os.listdir(wp_branch_root):
-                fp = os.path.join(wp_branch_root, fn)
-                if os.path.isfile(fp) and fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                    if fn not in prior_filenames:
-                        prior_filenames.add(fn)
-                        existing_count += 1
+        # Add NEW filenames from images_url txt file (new discoveries this run)
+        if os.path.isfile(txt_file):
+            with open(txt_file) as f:
+                for line in f:
+                    url = line.strip()
+                    if not url:
+                        continue
+                    raw_fn = os.path.basename(url)
+                    decoded_fn = urllib.parse.unquote(raw_fn)
+                    fn = decoded_fn if decoded_fn != raw_fn else raw_fn
+                    success_filenames.add(fn)
+                    # Update URL for new or previously missing URLs
+                    if fn not in prior_url_map or not prior_url_map[fn]:
+                        prior_url_map[fn] = url
 
-        success = existing_count + image_count
+        success = len(success_filenames)
 
         # Count failed
         failed_count = 0
@@ -95,65 +106,24 @@ def main():
 
         total = success + failed_count
 
-        # Build detailed wallpaper list
+        # Build detailed wallpaper list from success_filenames (deduplicated set)
         wallpapers = []
-        existing_names = set()
-
-        # Seed maps from prior manifest to retain source URLs/times/sizes for older wallpapers
-        prior_url_map = {}
-        prior_release_time_map = {}
-        prior_size_map = {}
-        if sid in manifest and 'wallpapers' in manifest[sid]:
-            for pw in manifest[sid]['wallpapers']:
-                filename = pw.get('filename')
-                if not filename:
-                    continue
-                if pw.get('url'):
-                    prior_url_map[filename] = pw['url']
-                if pw.get('releaseTime'):
-                    prior_release_time_map[filename] = pw['releaseTime']
-                if pw.get('size'):
-                    prior_size_map[filename] = pw['size']
-
-        # Collect existing wallpapers from the prior manifest (flat root structure)
-        for fn in sorted(prior_filenames):
+        
+        # Add all successful wallpapers from the deduplicated set
+        for fn in sorted(success_filenames):
+            # Get file size
             size = get_file_size(size_dirs, fn)
             size_str = prior_size_map.get(fn, '')
             if size > 0:
                 size_str = format_size(size)
+            
             wallpapers.append({
                 'filename': fn,
-                'status': 'success',
                 'url': prior_url_map.get(fn, ''),
+                'status': 'success',
                 'releaseTime': prior_release_time_map.get(fn, timestamp),
                 'size': size_str
             })
-            existing_names.add(fn)
-
-        # Add newly downloaded wallpapers with their URLs
-        if os.path.isfile(txt_file):
-            with open(txt_file) as f:
-                for line in f:
-                    url = line.strip()
-                    if not url:
-                        continue
-                    raw_fn = os.path.basename(url)
-                    decoded_fn = urllib.parse.unquote(raw_fn)
-                    fn = decoded_fn if decoded_fn != raw_fn else raw_fn
-                    if fn not in existing_names:
-                        size = get_file_size(size_dirs, fn)
-                        size_str = format_size(size) if size > 0 else ''
-                        wallpapers.append({
-                            'filename': fn, 'url': url, 'status': 'success',
-                            'releaseTime': timestamp, 'size': size_str
-                        })
-                        existing_names.add(fn)
-                    else:
-                        # Update URL for existing entry if missing
-                        for w in wallpapers:
-                            if w['filename'] == fn and not w.get('url'):
-                                w['url'] = url
-                                break
 
         # Add failed URLs
         for url in failed_urls:
@@ -161,8 +131,11 @@ def main():
             decoded_fn = urllib.parse.unquote(raw_fn)
             fn = decoded_fn if decoded_fn != raw_fn else raw_fn
             wallpapers.append({
-                'filename': fn, 'url': url, 'status': 'failed',
-                'releaseTime': timestamp, 'size': ''
+                'filename': fn,
+                'url': url,
+                'status': 'failed',
+                'releaseTime': timestamp,
+                'size': ''
             })
 
         manifest[sid] = {

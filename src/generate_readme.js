@@ -36,19 +36,22 @@ function isValidUrl(url) {
     }
 }
 
-if (mode === 'main') {
-    generateMainReadme();
-} else if (mode === 'branch') {
-    if (!serverId) {
-        console.error('❌ Server ID required for branch mode');
-        process.exit(1);
+// Only run if executed directly (not when required as a module)
+if (require.main === module) {
+    if (mode === 'main') {
+        generateMainReadme();
+    } else if (mode === 'branch') {
+        if (!serverId) {
+            console.error('❌ Server ID required for branch mode');
+            process.exit(1);
+        }
+        const server = config.servers.find(s => s.id === serverId);
+        if (!server) {
+            console.error(`❌ Server not found: ${serverId}`);
+            process.exit(1);
+        }
+        generateBranchReadme(server);
     }
-    const server = config.servers.find(s => s.id === serverId);
-    if (!server) {
-        console.error(`❌ Server not found: ${serverId}`);
-        process.exit(1);
-    }
-    generateBranchReadme(server);
 }
 
 function loadManifest() {
@@ -211,3 +214,6 @@ function generateBranchReadme(server) {
     fs.writeFileSync(outputPath, readmeContent);
     console.log(`✅ Branch README for ${server.name} updated at ${outputPath}!`);
 }
+
+// Export for testing
+module.exports = { encodeFilename, escapeHtml, isValidUrl };
