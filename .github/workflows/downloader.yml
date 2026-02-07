@@ -160,7 +160,10 @@ jobs:
         run: |
           TAG="wallpapers-$(date -u +%Y%m%d-%H%M%S)"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          echo "Release tag: $TAG"
+          # Derive ISO timestamp from tag name (wallpapers-YYYYMMDD-HHMMSS)
+          TAG_TS=$(echo "$TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3T\4:\5:\6Z/')
+          echo "timestamp=$TAG_TS" >> "$GITHUB_OUTPUT"
+          echo "Release tag: $TAG → $TAG_TS"
 
       - name: Build manifest and push to wallpapers/preview branches
         if: steps.check_new.outputs.has_new == 'true'
@@ -172,7 +175,7 @@ jobs:
           REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
           PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          TIMESTAMP="${RELEASE_TAG_TS}"
 
           # --- Wallpapers branch (images only, no thumbnails) ---
           WP_DIR="$(mktemp -d)/repo"
@@ -275,6 +278,7 @@ jobs:
           rm -rf "$(dirname "$PV_DIR")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG_TS: ${{ steps.set_tag.outputs.timestamp }}
 
       - name: Update main README and manifest
         if: steps.check_new.outputs.has_new == 'true'
@@ -296,7 +300,8 @@ jobs:
         run: |
           WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
           PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          RELEASE_TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          # Derive release timestamp from tag name (wallpapers-YYYYMMDD-HHMMSS → YYYY-MM-DD HH:MM:SS UTC)
+          RELEASE_TIMESTAMP=$(echo "$RELEASE_TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3 \4:\5:\6 UTC/')
           mkdir -p release_assets release_staging
           RELEASE_BODY="📅 **Release Time:** ${RELEASE_TIMESTAMP}\n\n"
           HAS_FILES=false
