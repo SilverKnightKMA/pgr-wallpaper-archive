@@ -85,4 +85,25 @@ async function getLinks(url, filename, selector) {
         "links_cn.txt", 
         '.pcWallpaper img:not(.openDetail)'
     );
+
+    // JP Site
+    await getLinks(
+        "https://pgr.kurogames.com/jp/picture", 
+        "links_jp.txt", 
+        '.pcWallpaper img:not(.openDetail)'
+    );
+
+    // KR Site
+    await getLinks(
+        "https://pgr.kurogames.com/kr/picture", 
+        "links_jp.txt", 
+        '.pcWallpaper img:not(.openDetail)'
+    );
+
+    // TW Site
+    await getLinks(
+        "https://pgr.kurogames.com/tw/picture", 
+        "links_jp.txt", 
+        '.pcWallpaper img:not(.openDetail)'
+    );
 })();
