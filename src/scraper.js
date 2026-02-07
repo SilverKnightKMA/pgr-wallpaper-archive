@@ -161,6 +161,8 @@ async function getLinks(server, maxImages, existingImages) {
             fs.writeFileSync(server.txtPath, newLinks.join('\n'));
             console.log(`[${timestamp()}] [${server.name}] ✅ Success: Found ${newLinks.length} new unique links. Saved to ${server.txtPath}`);
         } else {
+            // Truncate the file so downstream steps don't detect stale content as new
+            fs.writeFileSync(server.txtPath, '');
             console.warn(`[${timestamp()}] [${server.name}] ⚠️ Warning: No new links found for ${server.name}`);
         }
 

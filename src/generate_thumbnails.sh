@@ -16,7 +16,7 @@ fi
 mkdir -p "$THUMB_DIR"
 
 count=0
-find "$SOURCE_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) | while read -r img; do
+while read -r img; do
     filename=$(basename "$img")
     thumb_path="${THUMB_DIR}/${filename}"
 
@@ -30,6 +30,6 @@ find "$SOURCE_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -
     else
         echo "⚠️ Failed to create thumbnail for: $filename"
     fi
-done
+done < <(find "$SOURCE_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \))
 
 echo "✅ Generated $count new thumbnails in $THUMB_DIR"
