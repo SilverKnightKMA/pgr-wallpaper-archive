@@ -2,26 +2,36 @@
   "global": {
     "total": 24,
     "success": 24,
-    "failed": 0
+    "failed": 0,
+    "lastUpdated": "2026-02-07T18:25:16Z",
+    "wallpapers": []
   },
   "cn": {
     "total": 30,
     "success": 30,
-    "failed": 0
+    "failed": 0,
+    "lastUpdated": "2026-02-07T18:25:16Z",
+    "wallpapers": []
   },
   "jp": {
     "total": 30,
     "success": 30,
-    "failed": 0
+    "failed": 0,
+    "lastUpdated": "2026-02-07T18:25:16Z",
+    "wallpapers": []
   },
   "kr": {
     "total": 30,
     "success": 30,
-    "failed": 0
+    "failed": 0,
+    "lastUpdated": "2026-02-07T18:25:16Z",
+    "wallpapers": []
   },
   "tw": {
     "total": 30,
     "success": 30,
-    "failed": 0
+    "failed": 0,
+    "lastUpdated": "2026-02-07T18:25:16Z",
+    "wallpapers": []
   }
 }

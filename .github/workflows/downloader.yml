@@ -37,26 +37,30 @@ jobs:
       - name: Install ImageMagick
         run: sudo apt-get update && sudo apt-get install -y imagemagick
 
-      - name: Ensure images branch exists
+      - name: Ensure branches exist
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-          IMAGES_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.imagesBranch || 'images')")
-          if git ls-remote --exit-code origin "$IMAGES_BRANCH" >/dev/null 2>&1; then
-            echo "✅ Branch $IMAGES_BRANCH already exists."
-          else
-            echo "🆕 Creating new orphan branch: $IMAGES_BRANCH"
-            INIT_DIR=$(mktemp -d)
-            git -C "$INIT_DIR" init
-            git -C "$INIT_DIR" remote add origin "$REMOTE_URL"
-            git -C "$INIT_DIR" checkout -b "$IMAGES_BRANCH"
-            git -C "$INIT_DIR" commit --allow-empty -m "Initialize branch $IMAGES_BRANCH"
-            git -C "$INIT_DIR" push origin "$IMAGES_BRANCH"
-            rm -rf "$INIT_DIR"
-            echo "  ✅ Branch $IMAGES_BRANCH created."
-          fi
+          for BRANCH_NAME in \
+            "$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")" \
+            "$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")" \
+            "$(node -e "const c=require('./config.json'); console.log(c.dataBranch || 'data')")"; do
+            if git ls-remote --exit-code origin "$BRANCH_NAME" >/dev/null 2>&1; then
+              echo "✅ Branch $BRANCH_NAME already exists."
+            else
+              echo "🆕 Creating new orphan branch: $BRANCH_NAME"
+              INIT_DIR=$(mktemp -d)
+              git -C "$INIT_DIR" init
+              git -C "$INIT_DIR" remote add origin "$REMOTE_URL"
+              git -C "$INIT_DIR" checkout -b "$BRANCH_NAME"
+              git -C "$INIT_DIR" commit --allow-empty -m "Initialize branch $BRANCH_NAME"
+              git -C "$INIT_DIR" push origin "$BRANCH_NAME"
+              rm -rf "$INIT_DIR"
+              echo "  ✅ Branch $BRANCH_NAME created."
+            fi
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -64,16 +68,16 @@ jobs:
         run: |
           mkdir -p data
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
-          IMAGES_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.imagesBranch || 'images')")
+          WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
 
-          # Fetch file listing from the images branch via git ls-tree (no clone needed)
+          # Fetch file listing from the wallpapers branch via git ls-tree (no clone needed)
           # Use --filter=blob:none to avoid downloading image blobs
-          if git ls-remote --exit-code origin "$IMAGES_BRANCH" >/dev/null 2>&1; then
-            git fetch --filter=blob:none origin "$IMAGES_BRANCH" --depth=1
+          if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
+            git fetch --filter=blob:none origin "$WALLPAPERS_BRANCH" --depth=1
             while IFS= read -r id; do
               mkdir -p "branches/$id"
               # List existing images in <id>/images/ on the branch
-              git ls-tree --name-only "origin/$IMAGES_BRANCH" -- "$id/images/" 2>/dev/null | while read -r filepath; do
+              git ls-tree --name-only "origin/$WALLPAPERS_BRANCH" -- "$id/images/" 2>/dev/null | while read -r filepath; do
                 filename=$(basename "$filepath")
                 echo "$filename" >> "branches/$id/.existing_images"
               done
@@ -159,7 +163,7 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "Release tag: $TAG"
 
-      - name: Build manifest and push to images branch
+      - name: Build manifest and push to wallpapers/preview/data branches
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
@@ -167,55 +171,71 @@ jobs:
 
           REPO_DIR="$(pwd)"
           REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          IMAGES_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.imagesBranch || 'images')")
+          WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
+          PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
+          DATA_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.dataBranch || 'data')")
+          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
-          # Create a temporary directory for the images branch
-          WORK_DIR="$(mktemp -d)/repo"
-          git init "$WORK_DIR"
-          git -C "$WORK_DIR" remote add origin "$REMOTE_URL"
-
-          # Fetch existing branch content without full clone
-          if git ls-remote --exit-code origin "$IMAGES_BRANCH" >/dev/null 2>&1; then
-            git -C "$WORK_DIR" fetch origin "$IMAGES_BRANCH" --depth=1
-            git -C "$WORK_DIR" checkout -b "$IMAGES_BRANCH" "origin/$IMAGES_BRANCH"
+          # --- Wallpapers branch (images only, no thumbnails) ---
+          WP_DIR="$(mktemp -d)/repo"
+          git init "$WP_DIR"
+          git -C "$WP_DIR" remote add origin "$REMOTE_URL"
+          if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
+            git -C "$WP_DIR" fetch origin "$WALLPAPERS_BRANCH" --depth=1
+            git -C "$WP_DIR" checkout -b "$WALLPAPERS_BRANCH" "origin/$WALLPAPERS_BRANCH"
           else
-            git -C "$WORK_DIR" checkout -b "$IMAGES_BRANCH"
+            git -C "$WP_DIR" checkout -b "$WALLPAPERS_BRANCH"
           fi
 
-          # Build manifest JSON
-          mkdir -p "$REPO_DIR/data"
+          # --- Preview branch (thumbnails + READMEs) ---
+          PV_DIR="$(mktemp -d)/repo"
+          git init "$PV_DIR"
+          git -C "$PV_DIR" remote add origin "$REMOTE_URL"
+          if git ls-remote --exit-code origin "$PREVIEW_BRANCH" >/dev/null 2>&1; then
+            git -C "$PV_DIR" fetch origin "$PREVIEW_BRANCH" --depth=1
+            git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH" "origin/$PREVIEW_BRANCH"
+          else
+            git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH"
+          fi
+
+          # --- Data branch (manifest) ---
+          DT_DIR="$(mktemp -d)/repo"
+          git init "$DT_DIR"
+          git -C "$DT_DIR" remote add origin "$REMOTE_URL"
+          if git ls-remote --exit-code origin "$DATA_BRANCH" >/dev/null 2>&1; then
+            git -C "$DT_DIR" fetch origin "$DATA_BRANCH" --depth=1
+            git -C "$DT_DIR" checkout -b "$DATA_BRANCH" "origin/$DATA_BRANCH"
+          else
+            git -C "$DT_DIR" checkout -b "$DATA_BRANCH"
+          fi
+
+          # Load existing manifest from data branch if available
           MANIFEST="{}"
+          if [ -f "$DT_DIR/manifest.json" ]; then
+            MANIFEST=$(cat "$DT_DIR/manifest.json")
+          fi
+
+          # Build manifest JSON with detailed wallpaper info
+          mkdir -p "$REPO_DIR/data"
 
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
+          SERVER_ARGS=""
+          while IFS= read -r id; do
+            SERVER_ARGS="$SERVER_ARGS $id"
+          done <<< "$SERVERS"
+
+          # Use build_manifest.py to build detailed manifest
+          MANIFEST=$(echo "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
+
           while IFS= read -r id; do
             BRANCH_DIR="$REPO_DIR/branches/$id"
             IMG_DIR="$BRANCH_DIR/images"
 
-            # Count images
+            # Count new images
             IMAGE_COUNT=0
             if [ -d "$IMG_DIR" ]; then
               IMAGE_COUNT=$(find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
             fi
-
-            # Count existing images on branch
-            EXISTING_COUNT=0
-            if [ -d "$WORK_DIR/$id/images" ]; then
-              EXISTING_COUNT=$(find "$WORK_DIR/$id/images" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
-            fi
-
-            # success = existing images on branch + newly downloaded images
-            SUCCESS=$((EXISTING_COUNT + IMAGE_COUNT))
-
-            # Count failed
-            FAILED_COUNT=0
-            FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt"
-            if [ -f "$FAILED_FILE" ] && [ -s "$FAILED_FILE" ]; then
-              FAILED_COUNT=$(wc -l < "$FAILED_FILE")
-            fi
-
-            # total = success + failed (all images attempted)
-            TOTAL=$((SUCCESS + FAILED_COUNT))
-            MANIFEST=$(echo "$MANIFEST" | python3 -c "import json, sys; m = json.load(sys.stdin); m['$id'] = {'total': $TOTAL, 'success': $SUCCESS, 'failed': $FAILED_COUNT}; print(json.dumps(m, indent=2))")
 
             if [ "$IMAGE_COUNT" -eq 0 ]; then
               echo "⏭️ No new images for $id, skipping."
@@ -224,33 +244,64 @@ jobs:
 
             echo "📂 Processing server: $id ($IMAGE_COUNT new images)"
 
-            # Copy images and thumbnails into per-server dirs on images branch
-            mkdir -p "$WORK_DIR/$id/images"
-            mkdir -p "$WORK_DIR/$id/thumbnails"
-            find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "$WORK_DIR/$id/images/" \;
+            # Copy images to wallpapers branch (images only)
+            mkdir -p "$WP_DIR/$id/images"
+            find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "$WP_DIR/$id/images/" \;
+
+            # Copy thumbnails to preview branch
+            mkdir -p "$PV_DIR/$id/thumbnails"
             if [ -d "$BRANCH_DIR/thumbnails" ]; then
-              find "$BRANCH_DIR/thumbnails" -maxdepth 1 -type f -exec cp {} "$WORK_DIR/$id/thumbnails/" \;
+              find "$BRANCH_DIR/thumbnails" -maxdepth 1 -type f -exec cp {} "$PV_DIR/$id/thumbnails/" \;
             fi
 
-            # Generate per-server README
-            BRANCH_DIR="$WORK_DIR/$id" BRANCH_README_OUTPUT="$WORK_DIR/$id/README.md" FAILED_FILE="$FAILED_FILE" node "$REPO_DIR/src/generate_readme.js" branch "$id"
+            # Generate per-server README on preview branch (read images from wallpapers dir)
+            BRANCH_DIR="$WP_DIR/$id" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
           done <<< "$SERVERS"
 
-          # Save manifest to main branch data dir
+          # Save manifest to main branch data dir (summary for main README)
           echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
 
-          # Commit and push images branch
-          git -C "$WORK_DIR" config user.name "github-actions[bot]"
-          git -C "$WORK_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
-          git -C "$WORK_DIR" add -A
-          if git -C "$WORK_DIR" diff --cached --quiet; then
-            echo "  No changes for $IMAGES_BRANCH."
+          # Save manifest to data branch
+          echo "$MANIFEST" > "$DT_DIR/manifest.json"
+
+          # --- Push wallpapers branch ---
+          git -C "$WP_DIR" config user.name "github-actions[bot]"
+          git -C "$WP_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
+          git -C "$WP_DIR" add -A
+          if git -C "$WP_DIR" diff --cached --quiet; then
+            echo "  No changes for $WALLPAPERS_BRANCH."
           else
-            git -C "$WORK_DIR" commit -m "Auto-sync: Update wallpapers"
-            git -C "$WORK_DIR" push origin HEAD:"$IMAGES_BRANCH" --force-with-lease
-            echo "  ✅ Pushed to $IMAGES_BRANCH"
+            git -C "$WP_DIR" commit -m "Auto-sync: Update wallpapers"
+            git -C "$WP_DIR" push origin HEAD:"$WALLPAPERS_BRANCH" --force-with-lease
+            echo "  ✅ Pushed to $WALLPAPERS_BRANCH"
           fi
-          rm -rf "$(dirname "$WORK_DIR")"
+          rm -rf "$(dirname "$WP_DIR")"
+
+          # --- Push preview branch ---
+          git -C "$PV_DIR" config user.name "github-actions[bot]"
+          git -C "$PV_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
+          git -C "$PV_DIR" add -A
+          if git -C "$PV_DIR" diff --cached --quiet; then
+            echo "  No changes for $PREVIEW_BRANCH."
+          else
+            git -C "$PV_DIR" commit -m "Auto-sync: Update previews"
+            git -C "$PV_DIR" push origin HEAD:"$PREVIEW_BRANCH" --force-with-lease
+            echo "  ✅ Pushed to $PREVIEW_BRANCH"
+          fi
+          rm -rf "$(dirname "$PV_DIR")"
+
+          # --- Push data branch ---
+          git -C "$DT_DIR" config user.name "github-actions[bot]"
+          git -C "$DT_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
+          git -C "$DT_DIR" add -A
+          if git -C "$DT_DIR" diff --cached --quiet; then
+            echo "  No changes for $DATA_BRANCH."
+          else
+            git -C "$DT_DIR" commit -m "Auto-sync: Update manifest data"
+            git -C "$DT_DIR" push origin HEAD:"$DATA_BRANCH" --force-with-lease
+            echo "  ✅ Pushed to $DATA_BRANCH"
+          fi
+          rm -rf "$(dirname "$DT_DIR")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -272,9 +323,11 @@ jobs:
         if: steps.check_new.outputs.has_new == 'true'
         id: release_notes
         run: |
-          IMAGES_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.imagesBranch || 'images')")
+          WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
+          PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
+          RELEASE_TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
           mkdir -p release_assets release_staging
-          RELEASE_BODY=""
+          RELEASE_BODY="📅 **Release Time:** ${RELEASE_TIMESTAMP}\n\n"
           HAS_FILES=false
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + '|' + s.name))")
           while IFS='|' read -r id name; do
@@ -310,16 +363,19 @@ jobs:
                 # Build release notes section for this server
                 RELEASE_BODY="${RELEASE_BODY}### 🖼️ ${name} (${FILE_COUNT} new)\n\n"
                 RELEASE_BODY="${RELEASE_BODY}📁 **Folder:** \`${id}/\`\n"
-                RELEASE_BODY="${RELEASE_BODY}🔗 **Branch:** [\`${IMAGES_BRANCH}\`](https://github.com/${GITHUB_REPOSITORY}/tree/${IMAGES_BRANCH}/${id})\n\n"
+                RELEASE_BODY="${RELEASE_BODY}🔗 **Branch:** [\`${WALLPAPERS_BRANCH}\`](https://github.com/${GITHUB_REPOSITORY}/tree/${WALLPAPERS_BRANCH}/${id})\n"
+                RELEASE_BODY="${RELEASE_BODY}🕐 **Time:** ${RELEASE_TIMESTAMP}\n\n"
 
                 RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview</summary>\n\n"
-                RELEASE_BODY="${RELEASE_BODY}| Preview | Filename | URL |\n"
-                RELEASE_BODY="${RELEASE_BODY}|---------|----------|-----|\n"
+                RELEASE_BODY="${RELEASE_BODY}| Preview | Filename | Download | Status |\n"
+                RELEASE_BODY="${RELEASE_BODY}|---------|----------|----------|--------|\n"
                 while IFS= read -r url; do
                   raw_filename=$(basename "$url")
                   decoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$raw_filename")
-                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${IMAGES_BRANCH}/${id}/thumbnails/$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='%'))" "$decoded_filename")"
-                  RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${decoded_filename}\` | [Link](${url}) |\n"
+                  encoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='%'))" "$decoded_filename")
+                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${PREVIEW_BRANCH}/${id}/thumbnails/${encoded_filename}"
+                  download_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${WALLPAPERS_BRANCH}/${id}/images/${encoded_filename}"
+                  RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${decoded_filename}\` | [Download](${download_url}) | ✅ |\n"
                 done < "$txt"
                 RELEASE_BODY="${RELEASE_BODY}\n</details>\n\n---\n\n"
               fi
