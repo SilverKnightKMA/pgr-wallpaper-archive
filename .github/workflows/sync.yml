@@ -24,14 +24,14 @@ jobs:
         run: npm ci
 
       - name: Scrape Links
-        run: node scraper.js
+        run: node src/scraper.js
 
       - name: Sync & Update README
         shell: pwsh
-        run: ./downloader.ps1
+        run: ./src/downloader.ps1
 
       - name: Generate Gallery README
-        run: node generate_readme.js
+        run: node src/generate_readme.js
 
       - name: Commit and Push
         run: |
