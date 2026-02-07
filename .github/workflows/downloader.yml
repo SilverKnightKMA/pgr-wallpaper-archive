@@ -1,4 +1,4 @@
-name: PGR Wallpaper Sync
+name: PGR Wallpapers Downloader
 
 on:
   schedule:
