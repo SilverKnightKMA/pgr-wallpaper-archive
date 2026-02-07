@@ -1,9 +1,9 @@
 {
   "global": {
-    "total": 62,
-    "success": 62,
+    "total": 56,
+    "success": 56,
     "failed": 0,
-    "lastUpdated": "2026-02-07T20:55:59Z",
+    "lastUpdated": "2026-02-07T20:58:57Z",
     "wallpapers": [
       {
         "filename": "0lh4t2cs5iogkak3vh-1766655448792英文.jpg",
@@ -319,7 +319,7 @@
     "total": 64,
     "success": 64,
     "failed": 0,
-    "lastUpdated": "2026-02-07T20:55:59Z",
+    "lastUpdated": "2026-02-07T20:58:57Z",
     "wallpapers": [
       {
         "filename": "0lh4t2cs5iogkak3vh-1766655448792英文.jpg",
@@ -775,7 +775,7 @@
     "total": 64,
     "success": 64,
     "failed": 0,
-    "lastUpdated": "2026-02-07T20:55:59Z",
+    "lastUpdated": "2026-02-07T20:58:57Z",
     "wallpapers": [
       {
         "filename": "0lh4t2cs5iogkak3vh-1766655448792英文.jpg",
@@ -1126,7 +1126,7 @@
     "total": 64,
     "success": 64,
     "failed": 0,
-    "lastUpdated": "2026-02-07T20:55:59Z",
+    "lastUpdated": "2026-02-07T20:58:57Z",
     "wallpapers": [
       {
         "filename": "0lh4t2cs5iogkak3vh-1766655448792英文.jpg",
@@ -1582,7 +1582,7 @@
     "total": 64,
     "success": 64,
     "failed": 0,
-    "lastUpdated": "2026-02-07T20:55:59Z",
+    "lastUpdated": "2026-02-07T20:58:57Z",
     "wallpapers": [
       {
         "filename": "05amtjo850rz4uoxz1-1763983759821繁中.png",
@@ -1957,5 +1957,5 @@
       }
     ]
   },
-  "releaseTime": "2026-02-07T20:55:59Z"
+  "releaseTime": "2026-02-07T20:58:57Z"
 }
