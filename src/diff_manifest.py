@@ -62,7 +62,7 @@ def main():
 
         # Write per-server file
         out_file = os.path.join(output_dir, f'{sid}.txt')
-        with open(out_file, 'w') as f:
+        with open(out_file, 'w', encoding='utf-8') as f:
             for url in new_urls:
                 f.write(url + '\n')
 
