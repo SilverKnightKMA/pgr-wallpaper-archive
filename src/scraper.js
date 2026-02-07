@@ -179,9 +179,17 @@ async function getLinks(server, maxImages, existingImages) {
     console.log(`[${timestamp()}] Max images allowed: ${maxImages}`);
 
     // List existing images from per-server branch working directories
+    // Uses .existing_images file populated by manifest step (from git ls-tree, no clone needed)
     const existingImages = new Set();
     for (const server of config.servers) {
         const branchDir = path.join(__dirname, '..', 'branches', server.id);
+        // Read from .existing_images file if available
+        const existingFile = path.join(branchDir, '.existing_images');
+        if (fs.existsSync(existingFile)) {
+            const lines = fs.readFileSync(existingFile, 'utf8').trim().split('\n').filter(Boolean);
+            lines.forEach(image => existingImages.add(image));
+        }
+        // Also check for local images (in case already downloaded)
         const images = listImagesInDirectory(branchDir);
         images.forEach(image => existingImages.add(image));
     }
