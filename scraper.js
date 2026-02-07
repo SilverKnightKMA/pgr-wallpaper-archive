@@ -8,12 +8,19 @@ async function getLinks(url, filename, selector) {
         args: ['--no-sandbox', '--disable-setuid-sandbox'] 
     });
     const page = await browser.newPage();
+    
+    // 1. Set a large viewport to load more content initially
+    await page.setViewport({ width: 1920, height: 1080 });
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
     
     try {
         await page.goto(url, { waitUntil: 'networkidle2', timeout: 90000 });
 
+        // 2. Advanced Scroll Logic
         await page.evaluate(async () => {
+            const delay = (ms) => new Promise(r => setTimeout(r, ms));
+            
+            // Auto-detect the correct scroll container
             const getContainer = () => {
                 let node = document.querySelector('.wallpaper-list') || 
                            document.querySelector('.pns-picture') || 
@@ -21,17 +28,31 @@ async function getLinks(url, filename, selector) {
                            document.querySelector('#app');
                 return (node && node.scrollHeight > node.clientHeight) ? node : document.documentElement;
             };
+
             const container = getContainer();
             let lastHeight = container.scrollHeight;
-            for (let i = 0; i < 15; i++) {
-                window.scrollBy(0, document.body.scrollHeight);
-                container.scrollTo(0, container.scrollHeight);
-                await new Promise(r => setTimeout(r, 2500));
-                if (container.scrollHeight === lastHeight) break;
-                lastHeight = container.scrollHeight;
+            let totalScrolled = 0;
+
+            // Loop until no more content loads or we hit a safety limit
+            for (let i = 0; i < 30; i++) {
+                // Scroll both the window and the container to be safe
+                window.scrollTo(0, document.body.scrollHeight);
+                container.scrollBy(0, 1000); 
+                
+                await delay(2000); // Wait for images to load
+
+                let newHeight = container.scrollHeight;
+                if (newHeight === lastHeight) {
+                    // Try one more time with a longer wait before giving up
+                    await delay(2000);
+                    if (container.scrollHeight === lastHeight) break;
+                }
+                lastHeight = newHeight;
+                console.log(`Scrolled to height: ${newHeight}`);
             }
         });
 
+        // 3. Extract Links
         const links = await page.evaluate((sel) => {
             const imgs = document.querySelectorAll(sel);
             return Array.from(imgs)
@@ -42,7 +63,7 @@ async function getLinks(url, filename, selector) {
 
         const uniqueLinks = [...new Set(links)];
         fs.writeFileSync(filename, uniqueLinks.join('\n'));
-        console.log(`✅ Success: ${uniqueLinks.length} links saved to ${filename}`);
+        console.log(`✅ Success: Found ${uniqueLinks.length} links for ${filename}`);
     } catch (error) {
         console.error(`❌ Scraper Error: ${error.message}`);
     } finally {
@@ -51,6 +72,17 @@ async function getLinks(url, filename, selector) {
 }
 
 (async () => {
-    await getLinks("https://pgr.kurogame.net/wallpapers", "links_global.txt", '.imgBox1 img, .imgBox2 img, .imgBox3 img, .imgBox4 img, .imgBox5 img, .imgBox6 img');
-    await getLinks("https://pns.kurogames.com/picture", "links_cn.txt", '.pcWallpaper img:not(.openDetail)');
+    // Global Site
+    await getLinks(
+        "https://pgr.kurogame.net/wallpapers", 
+        "links_global.txt", 
+        '.wallpaperItem1 img, .wallpaperItem2 img, .wallpaperItem3 img, .wallpaperItem4 img, .imgBox1 img, .imgBox2 img, .imgBox3 img, .imgBox4 img, .imgBox5 img, .imgBox6 img'
+    );
+
+    // CN Site
+    await getLinks(
+        "https://pns.kurogames.com/picture", 
+        "links_cn.txt", 
+        '.pcWallpaper img:not(.openDetail)'
+    );
 })();
