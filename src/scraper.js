@@ -51,30 +51,30 @@ async function getLinks(server, maxImages, existingImages) {
 
         // Enable log forwarding
         page.on('console', msg => {
-            if (msg.text().includes('[BROWSER]')) console.log(`  ↳ ${msg.text()}`);
+            if (msg.text().includes('[BROWSER]')) console.log(`  ↳ [${server.name}] ${msg.text()}`);
         });
 
         if (config.settings?.userAgent) {
             await page.setUserAgent(config.settings.userAgent);
         }
 
-        console.log(`[${timestamp()}] Navigating to: ${server.url}`);
+        console.log(`[${timestamp()}] [${server.name}] Navigating to: ${server.url}`);
         await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 0 });
 
         // Wait for primary selector
         const primarySelector = server.selector.split(',')[0].trim();
-        console.log(`[${timestamp()}] Waiting for selector: "${primarySelector}"...`);
+        console.log(`[${timestamp()}] [${server.name}] Waiting for selector: "${primarySelector}"...`);
         try {
             await page.waitForSelector(primarySelector, { timeout: 20000 });
-            console.log(`[${timestamp()}] Selector found. Page ready.`);
+            console.log(`[${timestamp()}] [${server.name}] Selector found. Page ready.`);
         } catch (e) {
-            console.warn(`[${timestamp()}] ⚠️ Selector NOT found immediately. Continuing anyway...`);
+            console.warn(`[${timestamp()}] [${server.name}] ⚠️ Selector NOT found immediately. Continuing anyway...`);
         }
 
-        console.log(`[${timestamp()}] 📜 Starting Smart Scroll Loop...`);
+        console.log(`[${timestamp()}] [${server.name}] 📜 Starting Smart Scroll Loop...`);
 
-        const links = await page.evaluate(async (selector, maxImages, existingCount) => {
-            const log = (msg) => console.log(`[BROWSER] ${msg}`);
+        const links = await page.evaluate(async (selector, maxImages, existingCount, serverName) => {
+            const log = (msg) => console.log(`[BROWSER] [${serverName}] ${msg}`);
 
             const getScroller = () => {
                 const candidates = [
@@ -161,7 +161,7 @@ async function getLinks(server, maxImages, existingImages) {
                 }, WAIT_TIME);
             });
 
-        }, server.selector, maxImages, existingImages.size);
+        }, server.selector, maxImages, existingImages.size, server.name);
 
         // --- SAVE RESULTS ---
         const uniqueLinks = [...new Set(links)];
@@ -169,13 +169,13 @@ async function getLinks(server, maxImages, existingImages) {
 
         if (newLinks.length > 0) {
             fs.writeFileSync(server.txtPath, newLinks.join('\n'));
-            console.log(`[${timestamp()}] ✅ Success: Found ${newLinks.length} new unique links. Saved to ${server.txtPath}`);
+            console.log(`[${timestamp()}] [${server.name}] ✅ Success: Found ${newLinks.length} new unique links. Saved to ${server.txtPath}`);
         } else {
-            console.warn(`[${timestamp()}] ⚠️ Warning: No new links found for ${server.name}`);
+            console.warn(`[${timestamp()}] [${server.name}] ⚠️ Warning: No new links found for ${server.name}`);
         }
 
     } catch (error) {
-        console.error(`[${timestamp()}] ❌ Error [${server.id}]: ${error.message}`);
+        console.error(`[${timestamp()}] [${server.name}] ❌ Error: ${error.message}`);
     } finally {
         await browser.close();
     }
