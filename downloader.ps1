@@ -25,19 +25,20 @@ foreach ($server in $config.servers) {
         $filename = Split-Path $url -Leaf
         $dest = Join-Path $server.dir $filename
         
-        Write-Progress -Activity "Downloading from $($server.name)" -Status "File $count/$total: $filename" -PercentComplete (($count/$total)*100)
+        if (!$env:GITHUB_ACTIONS) {
+            Write-Progress -Activity "Downloading from $($server.name)" -Status "File $count/${total}: $filename" -PercentComplete (($count/$total)*100)
+        }
 
         if (!(Test-Path $dest)) {
             try {
                 Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
-                Write-Host "  [$count/$total] DOWNLOADED: $filename" -ForegroundColor Green
+                Write-Host "  [$count/${total}] DOWNLOADED: $filename" -ForegroundColor Green
                 $downloaded++
             } catch {
-                Write-Host "  [$count/$total] ERROR: $filename" -ForegroundColor Red
+                Write-Host "  [$count/${total}] ERROR: $filename" -ForegroundColor Red
             }
         } else {
-            # Log mờ cho các file đã tồn tại để tránh rác màn hình
-            Write-Host "  [$count/$total] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
+            Write-Host "  [$count/${total}] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
         }
     }
     Write-Host " >> Finish $($server.name): $downloaded new files added." -ForegroundColor Green
