@@ -1,0 +1,9 @@
+{
+  "name": "pgr-wallpaper-archive",
+  "version": "1.0.0",
+  "description": "Automated archive for Punishing: Gray Raven Wallpapers",
+  "main": "scraper.js",
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
