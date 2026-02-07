@@ -158,7 +158,7 @@ async function getLinks(server, maxImages, existingImages) {
         const newLinks = uniqueLinks.filter(link => !existingImages.has(path.basename(link)));
 
         if (newLinks.length > 0) {
-            fs.writeFileSync(server.txtPath, newLinks.join('\n'));
+            fs.writeFileSync(server.txtPath, newLinks.join('\n') + '\n');
             console.log(`[${timestamp()}] [${server.name}] ✅ Success: Found ${newLinks.length} new unique links. Saved to ${server.txtPath}`);
         } else {
             // Truncate the file so downstream steps don't detect stale content as new
