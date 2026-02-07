@@ -1,44 +1,33 @@
 const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('../config.json', 'utf8'));
-
-console.log("📝 Generating README.md...");
+const path = require('path');
+const configPath = path.join(__dirname, '../config.json');
+const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 let readmeContent = "# PGR Wallpaper Archive\n\nAutomated repository to archive high-quality wallpapers.\n\n";
 readmeContent += `> Last Updated: ${new Date().toUTCString()}\n\n`;
 
 config.servers.forEach(server => {
-    if (fs.existsSync(server.dir)) {
-        const allFiles = fs.readdirSync(server.dir).filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f));
-        
-        // Sắp xếp theo thời gian file mới nhất lên đầu
+    const absDir = path.join(__dirname, '../', server.dir);
+    if (fs.existsSync(absDir)) {
+        const allFiles = fs.readdirSync(absDir).filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f));
         const sortedFiles = allFiles.map(name => ({
             name,
-            time: fs.statSync(`${server.dir}/${name}`).mtime.getTime()
+            time: fs.statSync(path.join(absDir, name)).mtime.getTime()
         }))
         .sort((a, b) => b.time - a.time)
-        .slice(0, 9); 
-
-        console.log(` - Processing ${server.name}: Found ${allFiles.length} total files.`);
+        .slice(0, 9);
 
         readmeContent += `## 🖼️ ${server.name} (${allFiles.length} images)\n\n`;
         readmeContent += "<table><tr>";
-        
         sortedFiles.forEach((fileObj, index) => {
             const file = fileObj.name;
             const relativePath = `${server.dir}/${encodeURIComponent(file)}`;
-            // Đã loại bỏ thẻ <sub> chứa tên file, chỉ để lại ảnh
             readmeContent += `<td><img src='${relativePath}' width='250' title='${file}' alt='${file}'></td>`;
-            
-            if ((index + 1) % 3 === 0 && index !== sortedFiles.length - 1) {
-                readmeContent += "</tr><tr>";
-            }
+            if ((index + 1) % 3 === 0 && index !== sortedFiles.length - 1) readmeContent += "</tr><tr>";
         });
-        
-        readmeContent += "</tr></table>\n\n[📂 View Folder](./" + server.dir + ")\n\n---\n\n";
-    } else {
-        console.log(` ! Skip ${server.name}: Directory not found.`);
+        readmeContent += "</tr></table>\n\n---\n\n";
     }
 });
 
-fs.writeFileSync('README.md', readmeContent);
-console.log("✅ README.md has been updated successfully!");
+fs.writeFileSync(path.join(__dirname, '../README.md'), readmeContent);
+console.log("✅ README.md updated!");
