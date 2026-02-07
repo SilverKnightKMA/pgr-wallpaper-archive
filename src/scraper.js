@@ -23,6 +23,7 @@ async function getLinks(server) {
         const page = await browser.newPage();
         await page.setViewport({ width: 1920, height: 1080 });
 
+        // Forward console logs from browser to node terminal
         page.on('console', msg => {
             if (msg.text().includes('[BROWSER]')) console.log(`  ↳ ${msg.text()}`);
         });
@@ -30,126 +31,97 @@ async function getLinks(server) {
         if (config.settings?.userAgent) await page.setUserAgent(config.settings.userAgent);
 
         console.log(`[${timestamp()}] Navigating to: ${server.url}`);
+        
+        // Increase timeout for the page load
         await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 90000 });
 
-        // Wait for content
+        // Wait for the first image to ensure DOM is ready (Crucial step)
         const primarySelector = server.selector.split(',')[0].trim();
         try {
             await page.waitForSelector(primarySelector, { timeout: 10000 });
         } catch (e) { /* ignore */ }
 
-        console.log(`[${timestamp()}] Detecting scroll container...`);
-        
-        await page.evaluate(async () => {
+        console.log(`[${timestamp()}] Injecting scrolling logic...`);
+
+        // --- INJECTING YOUR WORKING CONSOLE LOGIC ---
+        // We pass 'server.selector' into the browser context
+        const links = await page.evaluate(async (selector) => {
             const log = (msg) => console.log(`[BROWSER] ${msg}`);
 
+            // 1. EXACT getContainer logic from your working script
             function getContainer() {
-                // 1. Try to find the specific app wrapper first
-                const app = document.querySelector('#app');
-                const list = document.querySelector('.wallpaper-list');
-                const pic = document.querySelector('.pns-picture');
+                // Check specific PGR classes
+                let node = document.querySelector('.wallpaper-list') || 
+                           document.querySelector('.pns-picture') || 
+                           document.querySelector('.pcWallpaper')?.parentElement ||
+                           document.querySelector('#app');
                 
-                // Prioritize checking if these specific elements are actually scrollable
-                const candidates = [app, list, pic, document.documentElement];
-                
-                for (let el of candidates) {
-                    if (!el) continue;
-                    const style = window.getComputedStyle(el);
-                    // Check if it has vertical overflow SET (auto/scroll) OR if it is the root
-                    if (el === document.documentElement || style.overflowY === 'auto' || style.overflowY === 'scroll') {
-                        if (el.scrollHeight > el.clientHeight) return el;
+                // If found and has content, return it
+                if (node && node.scrollHeight > node.clientHeight) return node;
+
+                // Fallback: Check all divs
+                for (let div of document.querySelectorAll('div')) {
+                    let s = window.getComputedStyle(div);
+                    if ((s.overflowY === 'auto' || s.overflowY === 'scroll') && div.scrollHeight > div.clientHeight) {
+                        return div;
                     }
                 }
-                return document.documentElement; // Default fallback
+                return document.documentElement;
             }
 
-            let container = getContainer();
-            let isWindowScroll = (container === document.documentElement || container === document.body);
+            const container = getContainer();
+            const containerName = container.id ? `#${container.id}` : (container.className ? `.${container.className}` : container.tagName);
+            
+            log(`Target: ${containerName} (Height: ${container.scrollHeight})`);
 
-            // Log initial state
-            const getName = (el) => el.id ? `#${el.id}` : (el.className ? `.${el.className}` : el.tagName);
-            log(`TARGET: ${getName(container)}`);
-            log(`SIZE: ScrollHeight=${container.scrollHeight}, ClientHeight=${container.clientHeight}`);
-
-            // --- SMART SCROLL LOOP ---
+            // 2. Scroll Loop
+            // We use a Promise to pause Puppeteer execution while the browser scrolls
             await new Promise((resolve) => {
-                let distance = 300;
+                let lastHeight = container.scrollHeight;
                 let retries = 0;
-                let stuckCounter = 0;
-                let lastScrollTop = -1;
-                const maxRetries = 15; 
+                const maxRetries = 10; 
 
                 const timer = setInterval(() => {
-                    // 1. Get current position BEFORE scroll
-                    let currentScrollTop = isWindowScroll ? window.scrollY : container.scrollTop;
-                    const scrollHeight = isWindowScroll ? document.body.scrollHeight : container.scrollHeight;
-                    const clientHeight = isWindowScroll ? window.innerHeight : container.clientHeight;
-
-                    // 2. Perform Scroll
-                    if (isWindowScroll) {
-                        window.scrollBy(0, distance);
+                    // Scroll to bottom
+                    if (container === document.documentElement) {
+                        window.scrollTo(0, document.body.scrollHeight);
                     } else {
-                        container.scrollBy(0, distance);
+                        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
                     }
 
-                    // 3. Get new position AFTER scroll attempt
-                    let newScrollTop = isWindowScroll ? window.scrollY : container.scrollTop;
-
-                    // --- STUCK PROTECTION ---
-                    // If we tried to scroll but didn't move, and we aren't at the bottom yet
-                    if (Math.abs(newScrollTop - lastScrollTop) < 1 && (newScrollTop + clientHeight) < (scrollHeight - 50)) {
-                        stuckCounter++;
-                        if (stuckCounter > 3) {
-                            log(`⚠️ Stuck detected! Target element isn't scrolling.`);
-                            if (!isWindowScroll) {
-                                log(`🔄 Switching to WINDOW scroll fallback...`);
-                                isWindowScroll = true; // Force switch to window
-                                container = document.documentElement;
-                                stuckCounter = 0;
-                            } else {
-                                log(`❌ Window also stuck. Forcing finish.`);
-                                clearInterval(timer);
-                                resolve();
-                            }
-                        }
-                    } else {
-                        stuckCounter = 0; // Reset if we moved
-                    }
-                    lastScrollTop = newScrollTop;
-
-                    // 4. Check for bottom / Lazy Load
-                    if ((newScrollTop + clientHeight) >= (scrollHeight - 50)) {
+                    // Check if height changed
+                    const newHeight = container.scrollHeight;
+                    
+                    if (newHeight === lastHeight) {
                         retries++;
-                        if (retries % 5 === 0) log(`Waiting for content load... (${retries}/${maxRetries})`);
-                        
-                        // If scrollHeight increased, reset retries (content loaded!)
-                        // Note: In next iteration, 'scrollHeight' variable will update
+                        if (retries % 2 === 0) log(`Waiting... (${retries}/${maxRetries})`);
                         
                         if (retries >= maxRetries) {
-                            log(`Finished scrolling.`);
+                            log("Finished scrolling.");
                             clearInterval(timer);
                             resolve();
                         }
                     } else {
-                        // If we are moving and not at bottom, reset finish retries
-                        retries = 0; 
+                        log(`Height increased: ${newHeight}px`);
+                        lastHeight = newHeight;
+                        retries = 0;
                     }
-                }, 200);
+                }, 1500); // Check every 1.5 seconds (adjust if internet is slow)
             });
-        });
 
-        console.log(`[${timestamp()}] Extracting links...`);
-        
-        const links = await page.evaluate((selector) => {
-            return Array.from(document.querySelectorAll(selector))
+            // 3. Extract Links (Inside browser context)
+            const imgs = document.querySelectorAll(selector);
+            return Array.from(imgs)
                 .map(img => img.src)
                 .filter(src => src && src.startsWith('http') && !src.includes('base64'))
                 .map(url => {
                     try { return encodeURI(decodeURI(url.replace(/\+/g, '%20'))); } 
                     catch (e) { return url; }
                 });
+
         }, server.selector);
 
+        // --- SAVE RESULTS ---
         const uniqueLinks = [...new Set(links)];
 
         if (uniqueLinks.length > 0) {
