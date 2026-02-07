@@ -4,40 +4,40 @@
       "id": "global",
       "name": "Global Server",
       "url": "https://pgr.kurogame.net/wallpapers",
-      "txtPath": "images_url/global.txt",
-      "dir": "Wallpapers_Global",
+      "txtPath": "Wallpapers/images_url/global.txt",
+      "dir": "Wallpapers/Global",
       "selector": ".wallpaperItem1 img, .wallpaperItem2 img, .wallpaperItem3 img, .wallpaperItem4 img, .imgBox1 img, .imgBox2 img, .imgBox3 img, .imgBox4 img, .imgBox5 img, .imgBox6 img"
     },
     {
       "id": "cn",
       "name": "CN Server",
       "url": "https://pns.kurogames.com/picture",
-      "txtPath": "images_url/cn.txt",
-      "dir": "Wallpapers_CN",
+      "txtPath": "Wallpapers/images_url/cn.txt",
+      "dir": "Wallpapers/CN",
       "selector": ".pcWallpaper img:not(.openDetail)"
     },
     {
       "id": "jp",
       "name": "JP Server",
       "url": "https://pgr.kurogames.com/jp/picture",
-      "txtPath": "images_url/jp.txt",
-      "dir": "Wallpapers_JP",
+      "txtPath": "Wallpapers/images_url/jp.txt",
+      "dir": "Wallpapers/JP",
       "selector": ".pcWallpaper img:not(.openDetail)"
     },
     {
       "id": "kr",
       "name": "KR Server",
       "url": "https://pgr.kurogames.com/kr/picture",
-      "txtPath": "images_url/kr.txt",
-      "dir": "Wallpapers_KR",
+      "txtPath": "Wallpapers/images_url/kr.txt",
+      "dir": "Wallpapers/KR",
       "selector": ".pcWallpaper img:not(.openDetail)"
     },
     {
       "id": "tw",
       "name": "TW Server",
       "url": "https://pgr.kurogames.com/tw/picture",
-      "txtPath": "images_url/tw.txt",
-      "dir": "Wallpapers_TW",
+      "txtPath": "Wallpapers/images_url/tw.txt",
+      "dir": "Wallpapers/TW",
       "selector": ".pcWallpaper img:not(.openDetail)"
     }
   ],
