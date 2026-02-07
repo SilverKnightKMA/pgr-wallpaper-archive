@@ -149,7 +149,7 @@ jobs:
             echo "🔀 Processing branch: $branch (server: $id, $IMAGE_COUNT images)"
 
             # Create a temporary directory for branch work
-            WORK_DIR="$(mktemp -u)"
+            WORK_DIR="$(mktemp -d)/repo"
 
             # Clone the branch (guaranteed to exist from pre-creation step)
             git clone --single-branch --branch "$branch" --depth 1 "$REMOTE_URL" "$WORK_DIR"
@@ -175,7 +175,7 @@ jobs:
               git -C "$WORK_DIR" push origin HEAD:"$branch" --force-with-lease
               echo "  ✅ Pushed to $branch"
             fi
-            rm -rf "$WORK_DIR"
+            rm -rf "$(dirname "$WORK_DIR")"
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
