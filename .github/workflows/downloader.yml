@@ -75,23 +75,23 @@ jobs:
             while IFS= read -r id; do
               mkdir -p "branches/$id"
               python3 -c "
-import json, sys
-with open('data/manifest.json') as f:
-    m = json.load(f)
-sid = sys.argv[1]
-if sid in m and 'wallpapers' in m[sid]:
-    for w in m[sid]['wallpapers']:
-        fn = w.get('filename')
-        if fn and w.get('status') == 'success':
-            print(fn)
-" "$id" > "branches/$id/.existing_images"
+          import json, sys
+          with open('data/manifest.json') as f:
+              m = json.load(f)
+          sid = sys.argv[1]
+          if sid in m and 'wallpapers' in m[sid]:
+              for w in m[sid]['wallpapers']:
+                  fn = w.get('filename')
+                  if fn and w.get('status') == 'success':
+                      print(fn)
+          " "$id" > "branches/$id/.existing_images"
             done <<< "$SERVERS"
           else
             while IFS= read -r id; do
               mkdir -p "branches/$id"
             done <<< "$SERVERS"
           fi
-
+          
       - name: Scrape Links
         env:
           MAX_IMAGES: ${{ inputs.max_images }}
