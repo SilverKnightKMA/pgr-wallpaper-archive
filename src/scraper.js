@@ -3,7 +3,10 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 
 const configPath = path.join(__dirname, '..', 'config.json');
-if (!fs.existsSync(configPath)) process.exit(1);
+if (!fs.existsSync(configPath)) {
+    console.error(`Error: Config file not found at ${configPath}`);
+    process.exit(1);
+}
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const timestamp = () => new Date().toLocaleTimeString();
@@ -12,123 +15,123 @@ async function getLinks(server) {
     const linkDir = path.dirname(server.txtPath);
     if (!fs.existsSync(linkDir)) fs.mkdirSync(linkDir, { recursive: true });
 
-    console.log(`\n[${timestamp()}] Starting task: ${server.name}`);
+    console.log(`\n[${timestamp()}] 🚀 STARTING TASK: ${server.name}`);
 
     const browser = await puppeteer.launch({
         headless: "new",
-        protocolTimeout: 0, 
+        protocolTimeout: 0, // Disable timeout for long-running scripts
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
     try {
         const page = await browser.newPage();
         await page.setViewport({ width: 1920, height: 1080 });
-        
-        page.setDefaultNavigationTimeout(0);
-        page.setDefaultTimeout(0);
 
-        page.on('console', msg => {
-            if (msg.text().includes('[BROWSER]')) console.log(`  ↳ ${msg.text()}`);
+        // --- OPTIMIZATION 1: BLOCK IMAGE & CSS LOADING ---
+        // We only need the URL string, we don't need to actually render the image.
+        // This speeds up the process significantly.
+        await page.setRequestInterception(true);
+        page.on('request', (req) => {
+            const resourceType = req.resourceType();
+            if (['image', 'stylesheet', 'font', 'media'].includes(resourceType)) {
+                req.abort();
+            } else {
+                req.continue();
+            }
         });
 
-        if (config.settings?.userAgent) await page.setUserAgent(config.settings.userAgent);
+        if (config.settings?.userAgent) {
+            await page.setUserAgent(config.settings.userAgent);
+        }
 
         console.log(`[${timestamp()}] Navigating to: ${server.url}`);
-        await page.goto(server.url, { waitUntil: 'networkidle2', timeout: 0 });
+        // 'domcontentloaded' is faster than 'networkidle2' because we don't wait for images
+        await page.goto(server.url, { waitUntil: 'domcontentloaded', timeout: 0 });
 
-        // Wait for content
+        // Wait for the first element to ensure DOM is ready
         const primarySelector = server.selector.split(',')[0].trim();
         try {
-            await page.waitForSelector(primarySelector, { timeout: 15000 });
-        } catch (e) { /* ignore */ }
+            await page.waitForSelector(primarySelector, { timeout: 10000 });
+        } catch (e) { /* ignore timeout */ }
 
-        console.log(`[${timestamp()}] Injecting scrolling logic...`);
+        console.log(`[${timestamp()}] ⚡ Turbo scrolling started...`);
 
+        // --- OPTIMIZATION 2: AGGRESSIVE SCROLLING ---
         const links = await page.evaluate(async (selector) => {
-            const log = (msg) => console.log(`[BROWSER] ${msg}`);
-
-            function getContainer() {
-                let node = document.querySelector('.wallpaper-list') || 
-                           document.querySelector('.pns-picture') || 
-                           document.querySelector('.pcWallpaper')?.parentElement ||
-                           document.querySelector('#app');
-                
-                if (node && node.scrollHeight > node.clientHeight) return node;
-
-                for (let div of document.querySelectorAll('div')) {
-                    let s = window.getComputedStyle(div);
-                    if ((s.overflowY === 'auto' || s.overflowY === 'scroll') && div.scrollHeight > div.clientHeight) {
-                        return div;
-                    }
-                }
-                return document.documentElement;
-            }
-
-            const container = getContainer();
-            const containerName = container.id ? `#${container.id}` : (container.className ? `.${container.className}` : container.tagName);
             
-            log(`Target: ${containerName} (Height: ${container.scrollHeight})`);
+            // Helper to find the scrollable container
+            const getScroller = () => {
+                const app = document.querySelector('#app');
+                const list = document.querySelector('.wallpaper-list');
+                // Return specific container if it exists and has content, else return document
+                return (app && app.scrollHeight > app.clientHeight) ? app : 
+                       (list && list.scrollHeight > list.clientHeight) ? list : 
+                       document.documentElement;
+            };
 
-            await new Promise((resolve) => {
-                let lastHeight = container.scrollHeight;
+            return await new Promise((resolve) => {
+                let previousCount = 0;
                 let retries = 0;
-                const maxRetries = 10; 
+                // Stop if no new content is found after ~3 seconds (15 checks * 200ms)
+                const MAX_RETRIES = 15; 
 
                 const timer = setInterval(() => {
-                    if (container === document.documentElement) {
-                        window.scrollTo(0, document.body.scrollHeight);
-                    } else {
-                        container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
-                    }
-
-                    const newHeight = container.scrollHeight;
+                    const scroller = getScroller();
                     
-                    if (newHeight === lastHeight) {
-                        retries++;
-                        if (retries % 2 === 0) log(`Waiting... (${retries}/${maxRetries})`);
-                        
-                        if (retries >= maxRetries) {
-                            log("Finished scrolling.");
-                            clearInterval(timer);
-                            resolve();
-                        }
-                    } else {
-                        log(`Height increased: ${newHeight}px`);
-                        lastHeight = newHeight;
-                        retries = 0;
-                    }
-                }, 800);
-            });
+                    // 1. Force scroll to bottom immediately (no smooth behavior)
+                    if (scroller) scroller.scrollTop = scroller.scrollHeight;
+                    window.scrollTo(0, document.body.scrollHeight);
 
-            const imgs = document.querySelectorAll(selector);
-            return Array.from(imgs)
-                .map(img => img.src)
-                .filter(src => src && src.startsWith('http') && !src.includes('base64'))
-                .map(url => {
-                    try { return encodeURI(decodeURI(url.replace(/\+/g, '%20'))); } 
-                    catch (e) { return url; }
-                });
+                    // 2. Count current image elements in DOM
+                    const currentCount = document.querySelectorAll(selector).length;
+
+                    if (currentCount > previousCount) {
+                        // Content increased -> Reset retries
+                        previousCount = currentCount;
+                        retries = 0;
+                    } else {
+                        // Content didn't increase
+                        retries++;
+                        
+                        if (retries >= MAX_RETRIES) {
+                            clearInterval(timer);
+                            
+                            // 3. Extract Links
+                            const imgs = document.querySelectorAll(selector);
+                            const result = Array.from(imgs)
+                                .map(img => img.src || img.getAttribute('data-src')) // Fallback to lazy-load attribute
+                                .filter(src => src && src.startsWith('http') && !src.includes('base64'))
+                                .map(url => {
+                                    try { return encodeURI(decodeURI(url.replace(/\+/g, '%20'))); } 
+                                    catch (e) { return url; }
+                                });
+                            resolve(result);
+                        }
+                    }
+                }, 200); // Check every 200ms
+            });
 
         }, server.selector);
 
+        // --- SAVE RESULTS ---
         const uniqueLinks = [...new Set(links)];
 
         if (uniqueLinks.length > 0) {
             fs.writeFileSync(server.txtPath, uniqueLinks.join('\n'));
-            console.log(`[${timestamp()}] Success: Saved ${uniqueLinks.length} unique links to ${server.txtPath}`);
+            console.log(`[${timestamp()}] ✅ Success: Found ${uniqueLinks.length} unique links. Saved to ${server.txtPath}`);
         } else {
-            console.warn(`[${timestamp()}] Warning: No links found for ${server.name}`);
+            console.warn(`[${timestamp()}] ⚠️ Warning: No links found for ${server.name}`);
         }
 
     } catch (error) {
-        console.error(`[${timestamp()}] Error [${server.id}]: ${error.message}`);
+        console.error(`[${timestamp()}] ❌ Error [${server.id}]: ${error.message}`);
     } finally {
         await browser.close();
     }
 }
 
 (async () => {
-    console.log("=== SCRAPER STARTED ===");
+    console.log("=== SCRAPER STARTED (TURBO MODE) ===");
     for (const server of config.servers) {
         await getLinks(server);
     }
