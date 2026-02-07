@@ -13,7 +13,15 @@ const fs = require('fs');
 const path = require('path');
 
 // Import the actual encodeFilename function from generate_readme.js
-const { encodeFilename } = require('../src/generate_readme.js');
+// Note: generate_readme.js must export these functions for testing
+try {
+    var { encodeFilename } = require('../src/generate_readme.js');
+} catch (error) {
+    console.error('❌ Failed to import encodeFilename from generate_readme.js');
+    console.error('   Make sure generate_readme.js exports the function:');
+    console.error('   module.exports = { encodeFilename, ... }');
+    process.exit(1);
+}
 
 console.log('='.repeat(70));
 console.log('Filename Encoding Test Suite');

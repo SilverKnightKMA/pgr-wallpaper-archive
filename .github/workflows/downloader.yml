@@ -271,11 +271,12 @@ jobs:
               if [ ! -f "$thumb_path" ]; then
                 echo "    📸 Generating missing thumbnail: $filename"
                 THUMB_WIDTH=$(node -e "const c=require('./config.json'); console.log(c.settings.thumbnailWidth || 400)")
-                convert "$wpfile" -resize "${THUMB_WIDTH}x>" -quality 80 "$thumb_path" 2>/dev/null
+                ERROR_MSG=$(convert "$wpfile" -resize "${THUMB_WIDTH}x>" -quality 80 "$thumb_path" 2>&1)
                 if [ $? -eq 0 ]; then
                   MISSING_COUNT=$((MISSING_COUNT + 1))
                 else
                   echo "    ⚠️ Failed to generate thumbnail for: $filename"
+                  echo "       Error: $ERROR_MSG"
                 fi
               fi
             done < <(find "$WP_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \))

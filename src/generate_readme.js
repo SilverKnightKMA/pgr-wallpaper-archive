@@ -216,6 +216,4 @@ function generateBranchReadme(server) {
 }
 
 // Export for testing
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { encodeFilename, escapeHtml, isValidUrl };
-}
+module.exports = { encodeFilename, escapeHtml, isValidUrl };
