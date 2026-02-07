@@ -4,6 +4,7 @@
   "description": "Automated archive for Punishing: Gray Raven Wallpapers",
   "main": "scraper.js",
   "dependencies": {
+    "p-limit": "^7.3.0",
     "puppeteer": "^24.37.2"
   }
 }
