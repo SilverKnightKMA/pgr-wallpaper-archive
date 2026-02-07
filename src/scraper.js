@@ -1,7 +1,14 @@
 const path = require('path');
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('../config.json', 'utf8'));
+const configPath = path.join(__dirname, '..', 'config.json');
+
+if (!fs.existsSync(configPath)) {
+    console.error(`❌ Không tìm thấy file config tại: ${configPath}`);
+    process.exit(1);
+}
+
+const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 async function getLinks(server) {
     const linkDir = path.dirname(server.txtPath);
