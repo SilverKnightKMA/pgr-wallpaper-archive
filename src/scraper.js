@@ -11,7 +11,13 @@ const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const timestamp = () => new Date().toLocaleTimeString();
 
-async function getLinks(server) {
+// Function to count images in a directory
+function countImagesInDirectory(directory) {
+    if (!fs.existsSync(directory)) return 0;
+    return fs.readdirSync(directory).filter(file => file.endsWith('.jpg') || file.endsWith('.png')).length;
+}
+
+async function getLinks(server, maxImages) {
     const linkDir = path.dirname(server.txtPath);
     if (!fs.existsSync(linkDir)) fs.mkdirSync(linkDir, { recursive: true });
 
@@ -110,7 +116,7 @@ async function getLinks(server) {
                             log(`🛑 Finished scrolling.`);
                             clearInterval(timer);
                             
-                            // Trích xuất link
+                            // Extract links
                             const imgs = document.querySelectorAll(selector);
                             const result = Array.from(imgs)
                                 .map(img => img.src)
@@ -137,6 +143,15 @@ async function getLinks(server) {
             console.warn(`[${timestamp()}] ⚠️ Warning: No links found for ${server.name}`);
         }
 
+        // Check image count in directory
+        const imageCount = countImagesInDirectory(server.imageDir);
+        console.log(`[${timestamp()}] 📂 Current image count in ${server.imageDir}: ${imageCount}`);
+
+        if (imageCount > maxImages) {
+            console.log(`[${timestamp()}] 🚨 Image count exceeds limit (${maxImages}). Stopping scraper.`);
+            process.exit(0);
+        }
+
     } catch (error) {
         console.error(`[${timestamp()}] ❌ Error [${server.id}]: ${error.message}`);
     } finally {
@@ -145,9 +160,12 @@ async function getLinks(server) {
 }
 
 (async () => {
-    console.log("=== SCRAPER STARTED (SMART SCROLL) ===");
+    const maxImages = parseInt(process.env.MAX_IMAGES, 10) || 1000; // Default to 1000 if not provided
+    console.log(`=== SCRAPER STARTED (SMART SCROLL) ===`);
+    console.log(`[${timestamp()}] Max images allowed: ${maxImages}`);
+
     for (const server of config.servers) {
-        await getLinks(server);
+        await getLinks(server, maxImages);
     }
-    console.log("\n=== ALL TASKS COMPLETED ===\n");
+    console.log(`\n=== ALL TASKS COMPLETED ===\n`);
 })();

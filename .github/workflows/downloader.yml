@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 0 * * 0'
   workflow_dispatch:
+    inputs:
+      max_images:
+        description: 'Maximum number of images allowed before triggering downloader.'
+        required: false
+        default: 1000
 
 jobs:
   update:
@@ -24,6 +29,8 @@ jobs:
         run: npm ci
 
       - name: Scrape Links
+        env:
+          MAX_IMAGES: ${{ inputs.max_images }}
         run: node src/scraper.js
 
       - name: Download Wallpapers
