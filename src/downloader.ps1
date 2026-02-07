@@ -38,6 +38,8 @@ foreach ($server in $config.servers) {
     # Thread-safe counters
     $countRef      = [ref] 0
     $downloadedRef = [ref] 0
+    $failedRef     = [ref] 0
+    $failedUrls    = [System.Collections.Concurrent.ConcurrentBag[string]]::new()
 
     # Multi-threaded download
     $urls | ForEach-Object -Parallel {
@@ -46,24 +48,48 @@ foreach ($server in $config.servers) {
         $tot      = $using:total
         $cntRef   = $using:countRef
         $dlRef    = $using:downloadedRef
+        $failRef  = $using:failedRef
+        $failBag  = $using:failedUrls
 
         $filename = [System.IO.Path]::GetFileName($url)
+        # Decode percent-encoded filename for readability
+        $decodedFilename = [System.Uri]::UnescapeDataString($filename)
+        if ($decodedFilename -ne $filename) {
+            $filename = $decodedFilename
+        }
         $dest     = Join-Path $dir $filename
         $idx      = [System.Threading.Interlocked]::Increment($cntRef)
+        $srvName  = $using:serverName
 
         if (!(Test-Path $dest)) {
             try {
                 Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
                 [System.Threading.Interlocked]::Increment($dlRef) | Out-Null
-                Write-Host "  [$idx/$tot] DOWNLOADED: $filename" -ForegroundColor Green
+                Write-Host "  [$srvName] [$idx/$tot] DOWNLOADED: $filename" -ForegroundColor Green
             } catch {
-                Write-Host "  [$idx/$tot] ERROR: $filename - $_" -ForegroundColor Red
+                [System.Threading.Interlocked]::Increment($failRef) | Out-Null
+                $failBag.Add($url)
+                Write-Host "  [$srvName] [$idx/$tot] ERROR: $filename - $_" -ForegroundColor Red
             }
         } else {
-            Write-Host "  [$idx/$tot] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
+            Write-Host "  [$srvName] [$idx/$tot] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
         }
     } -ThrottleLimit 16
 
-    Write-Host " >> Finish $serverName : $($downloadedRef.Value) new files added." -ForegroundColor Green
+    Write-Host " >> Finish $serverName : $($downloadedRef.Value) success, $($failedRef.Value) failed." -ForegroundColor Green
+
+    # Write failed URLs to file for downstream broken-link tracking
+    $failedDir = Join-Path $PSScriptRoot ".." "Wallpapers" "failed"
+    if (!(Test-Path $failedDir)) {
+        New-Item -ItemType Directory -Path $failedDir | Out-Null
+    }
+    $failedFile = Join-Path $failedDir "$serverId.txt"
+    if ($failedRef.Value -gt 0) {
+        $failedUrls.ToArray() | Set-Content $failedFile
+        Write-Host " [!] Failed URLs saved to: $failedFile" -ForegroundColor Yellow
+    } else {
+        # Clear previous failures if all succeeded
+        if (Test-Path $failedFile) { Remove-Item $failedFile }
+    }
 }
 Write-Host "`n=== ALL DOWNLOADS FINISHED ===" -ForegroundColor Yellow

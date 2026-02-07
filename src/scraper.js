@@ -178,21 +178,35 @@ async function getLinks(server, maxImages, existingImages) {
     console.log(`=== SCRAPER STARTED (SMART SCROLL) ===`);
     console.log(`[${timestamp()}] Max images allowed: ${maxImages}`);
 
-    // List existing images from per-server branch working directories
-    const existingImages = new Set();
+    // Build per-server existing images map
+    // Uses .existing_images file populated by manifest step (from git ls-tree, no clone needed)
+    const existingImagesMap = new Map();
     for (const server of config.servers) {
+        const serverImages = new Set();
         const branchDir = path.join(__dirname, '..', 'branches', server.id);
+        // Read from .existing_images file if available
+        const existingFile = path.join(branchDir, '.existing_images');
+        if (fs.existsSync(existingFile)) {
+            const lines = fs.readFileSync(existingFile, 'utf8').trim().split('\n').filter(Boolean);
+            lines.forEach(image => serverImages.add(image));
+        }
+        // Also check for local images (in case already downloaded)
         const images = listImagesInDirectory(branchDir);
-        images.forEach(image => existingImages.add(image));
+        images.forEach(image => serverImages.add(image));
+        // Also check images/ subdirectory
+        const imagesSubDir = path.join(branchDir, 'images');
+        const subImages = listImagesInDirectory(imagesSubDir);
+        subImages.forEach(image => serverImages.add(image));
+        existingImagesMap.set(server.id, serverImages);
+        console.log(`[${timestamp()}] 📂 Existing images for ${server.id}: ${serverImages.size}`);
     }
-    console.log(`[${timestamp()}] 📂 Existing images: ${existingImages.size}`);
 
     const pLimit = await getPLimit();
     const limit = pLimit(6); // Limit concurrency to 6 threads
 
     await Promise.all(
         config.servers.map(server =>
-            limit(() => getLinks(server, maxImages, existingImages))
+            limit(() => getLinks(server, maxImages, existingImagesMap.get(server.id)))
         )
     );
 
