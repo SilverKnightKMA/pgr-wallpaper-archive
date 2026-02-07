@@ -3,7 +3,7 @@ $jobs = @(
     @{ path = "links_cn.txt"; dir = "Wallpapers_CN" },
     @{ path = "links_jp.txt"; dir = "Wallpapers_JP" },
     @{ path = "links_kr.txt"; dir = "Wallpapers_KR" },
-    @{ path = "links_tw.txt"; dir = "Wallpapers_TW" },
+    @{ path = "links_tw.txt"; dir = "Wallpapers_TW" }
     
 )
 
