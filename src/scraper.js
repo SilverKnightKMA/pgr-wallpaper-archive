@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const puppeteer = require('puppeteer');
 
 const configPath = path.join(__dirname, '..', 'config.json');
 if (!fs.existsSync(configPath)) {
