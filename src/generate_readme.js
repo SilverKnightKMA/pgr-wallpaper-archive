@@ -14,10 +14,16 @@ const serverId = process.argv[3];       // server id for branch mode
 const repoSlug = process.env.GITHUB_REPOSITORY || 'SilverKnightKMA/pgr-wallpaper-archive';
 const wallpapersBranch = config.wallpapersBranch || 'wallpapers';
 const previewBranch = config.previewBranch || 'preview';
-const dataBranch = config.dataBranch || 'data';
 
 function escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Encode filename for use in URLs, preserving existing %XX sequences
+function encodeFilename(filename) {
+    return filename
+        .replace(/[^A-Za-z0-9._~:@!$&'()*+,;=%\/-]/g, c => encodeURIComponent(c))
+        .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
 }
 
 if (mode === 'main') {
@@ -70,11 +76,12 @@ function generateMainReadme() {
         const serverData = manifest[server.id] || {};
         const wallpapers = serverData.wallpapers || [];
         const lastUpdated = serverData.lastUpdated || 'N/A';
+        const total = serverData.total || 0;
         readmeContent += `### ${server.name}\n\n`;
-        readmeContent += `> Last Updated: ${lastUpdated} | Total: ${wallpapers.length} wallpapers\n\n`;
+        readmeContent += `> Last Updated: ${lastUpdated} | Total: ${total} wallpapers\n\n`;
         if (wallpapers.length > 0) {
-            // Show most recent wallpapers (up to 5)
-            const recent = wallpapers.slice(0, 5);
+            // Show last added wallpapers (up to 5)
+            const recent = wallpapers.slice(-5).reverse();
             recent.forEach(w => {
                 const filename = w.filename || 'unknown';
                 const status = w.status === 'success' ? '✅' : '❌';
@@ -136,22 +143,29 @@ function generateBranchReadme(server) {
 
     readmeContent += "## 🖼️ Gallery\n\n";
 
-    if (allFiles.length === 0) {
+    if (allFiles.length === 0 && failedUrls.length === 0) {
         readmeContent += "_No wallpapers yet._\n";
     } else {
+        // Build set of failed filenames for status lookup
+        const failedFilenames = new Set();
+        failedUrls.forEach(url => {
+            try { failedFilenames.add(decodeURIComponent(url.split('/').pop())); } catch (e) { /* ignore */ }
+        });
+
         // Single table with preview, path, link, status
         readmeContent += "| Preview | Filename | Path | Download | Status |\n";
         readmeContent += "|---------|----------|------|----------|--------|\n";
         allFiles.forEach(fileObj => {
             const file = fileObj.name;
-            const encodedFile = encodeURIComponent(file);
+            const encodedFile = encodeFilename(file);
             const safeFile = escapeHtml(file);
             // Preview uses raw URL from the preview branch
             const thumbRawUrl = `https://raw.githubusercontent.com/${repoSlug}/${previewBranch}/${server.id}/thumbnails/${encodedFile}`;
             // Download uses raw URL from the wallpapers branch
             const downloadUrl = `https://raw.githubusercontent.com/${repoSlug}/${wallpapersBranch}/${server.id}/images/${encodedFile}`;
             const imgPath = useSubDir ? `images/${encodedFile}` : encodedFile;
-            readmeContent += `| <img src="${thumbRawUrl}" width="100" alt="${safeFile}"> | \`${safeFile}\` | \`${server.id}/${imgPath}\` | [Download](${downloadUrl}) | ✅ |\n`;
+            const status = failedFilenames.has(file) ? '❌' : '✅';
+            readmeContent += `| <img src="${thumbRawUrl}" width="100" alt="${safeFile}"> | \`${file}\` | \`${server.id}/${imgPath}\` | [Download](${downloadUrl}) | ${status} |\n`;
         });
     }
 

@@ -4,7 +4,6 @@ import json
 import sys
 import os
 import urllib.parse
-from pathlib import Path
 
 
 def main():
@@ -18,7 +17,12 @@ def main():
     server_ids = sys.argv[4:]
 
     # Load existing manifest if passed via stdin
-    manifest = json.load(sys.stdin)
+    if sys.stdin.isatty():
+        manifest = {}
+    else:
+        data = sys.stdin.read()
+        data = data.strip()
+        manifest = json.loads(data) if data else {}
 
     for sid in server_ids:
         img_dir = os.path.join(repo_dir, 'branches', sid, 'images')
@@ -56,12 +60,19 @@ def main():
         wallpapers = []
         existing_names = set()
 
+        # Seed URL map from prior manifest to retain source URLs for older wallpapers
+        prior_url_map = {}
+        if sid in manifest and 'wallpapers' in manifest[sid]:
+            for pw in manifest[sid]['wallpapers']:
+                if pw.get('url'):
+                    prior_url_map[pw['filename']] = pw['url']
+
         # Collect existing wallpapers from the wallpapers branch
         if os.path.isdir(wp_branch_img_dir):
             for fn in sorted(os.listdir(wp_branch_img_dir)):
                 fp = os.path.join(wp_branch_img_dir, fn)
                 if os.path.isfile(fp) and fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                    wallpapers.append({'filename': fn, 'status': 'success', 'url': ''})
+                    wallpapers.append({'filename': fn, 'status': 'success', 'url': prior_url_map.get(fn, '')})
                     existing_names.add(fn)
 
         # Add newly downloaded wallpapers with their URLs

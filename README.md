@@ -2,7 +2,7 @@
 
 Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.
 
-> Last Updated: Sat, 07 Feb 2026 18:44:50 GMT
+> Last Updated: Sat, 07 Feb 2026 18:57:49 GMT
 
 ## 📂 Server Galleries
 
@@ -22,31 +22,31 @@ Each server's wallpapers are stored in the [`wallpapers`](https://github.com/Sil
 
 ### Global Server
 
-> Last Updated: 2026-02-07T18:25:16Z | Total: 0 wallpapers
+> Last Updated: 2026-02-07T18:25:16Z | Total: 24 wallpapers
 
 _No wallpapers yet._
 
 ### CN Server
 
-> Last Updated: 2026-02-07T18:25:16Z | Total: 0 wallpapers
+> Last Updated: 2026-02-07T18:25:16Z | Total: 30 wallpapers
 
 _No wallpapers yet._
 
 ### JP Server
 
-> Last Updated: 2026-02-07T18:25:16Z | Total: 0 wallpapers
+> Last Updated: 2026-02-07T18:25:16Z | Total: 30 wallpapers
 
 _No wallpapers yet._
 
 ### KR Server
 
-> Last Updated: 2026-02-07T18:25:16Z | Total: 0 wallpapers
+> Last Updated: 2026-02-07T18:25:16Z | Total: 30 wallpapers
 
 _No wallpapers yet._
 
 ### TW Server
 
-> Last Updated: 2026-02-07T18:25:16Z | Total: 0 wallpapers
+> Last Updated: 2026-02-07T18:25:16Z | Total: 30 wallpapers
 
 _No wallpapers yet._
 

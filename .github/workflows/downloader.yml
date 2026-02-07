@@ -225,7 +225,7 @@ jobs:
           done <<< "$SERVERS"
 
           # Use build_manifest.py to build detailed manifest
-          MANIFEST=$(echo "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
+          MANIFEST=$(printf '%s' "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
 
           while IFS= read -r id; do
             BRANCH_DIR="$REPO_DIR/branches/$id"

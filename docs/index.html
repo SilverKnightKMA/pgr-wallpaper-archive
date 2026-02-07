@@ -118,39 +118,80 @@
     </div>
 
     <script>
-        const REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
-        const DATA_BRANCH = 'data';
-        const WALLPAPERS_BRANCH = 'wallpapers';
-        const PREVIEW_BRANCH = 'preview';
-        const MANIFEST_URL = `https://raw.githubusercontent.com/${REPO}/${DATA_BRANCH}/manifest.json`;
+        let REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
+        let DATA_BRANCH = 'data';
+        let WALLPAPERS_BRANCH = 'wallpapers';
+        let PREVIEW_BRANCH = 'preview';
 
         let allData = [];
         let serverNames = {};
 
+        // Encode filename for URLs, preserving existing %XX sequences
+        function encodeFilename(filename) {
+            return filename
+                .replace(/[^A-Za-z0-9._~:@!$&'()*+,;=%\/-]/g, c => encodeURIComponent(c))
+                .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
+        }
+
         async function loadConfig() {
             try {
+                // Derive repo slug from GitHub Pages hostname if possible
+                const host = window.location.hostname;
+                const pathParts = window.location.pathname.split('/').filter(Boolean);
+                if (host.endsWith('.github.io')) {
+                    const owner = host.replace('.github.io', '');
+                    const repoName = pathParts[0] || '';
+                    if (owner && repoName) {
+                        REPO = `${owner}/${repoName}`;
+                    }
+                }
+
                 const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/config.json`);
                 const config = await res.json();
                 config.servers.forEach(s => { serverNames[s.id] = s.name; });
+                // Read branch names from config
+                if (config.dataBranch) DATA_BRANCH = config.dataBranch;
+                if (config.wallpapersBranch) WALLPAPERS_BRANCH = config.wallpapersBranch;
+                if (config.previewBranch) PREVIEW_BRANCH = config.previewBranch;
             } catch (e) {
                 console.warn('Could not load config, using defaults');
             }
         }
 
         async function loadManifest() {
-            const res = await fetch(MANIFEST_URL);
+            const url = `https://raw.githubusercontent.com/${REPO}/${DATA_BRANCH}/manifest.json`;
+            const res = await fetch(url);
             if (!res.ok) throw new Error('Manifest not found');
             return res.json();
         }
 
         function getThumbUrl(serverId, filename) {
-            const encoded = encodeURIComponent(filename);
+            const encoded = encodeFilename(filename);
             return `https://raw.githubusercontent.com/${REPO}/${PREVIEW_BRANCH}/${serverId}/thumbnails/${encoded}`;
         }
 
         function getDownloadUrl(serverId, filename) {
-            const encoded = encodeURIComponent(filename);
+            const encoded = encodeFilename(filename);
             return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${serverId}/images/${encoded}`;
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function escapeAttr(str) {
+            return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function isValidUrl(url) {
+            try {
+                const parsed = new URL(url);
+                return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+            } catch (e) {
+                return false;
+            }
         }
 
         function renderGallery(items) {
@@ -159,35 +200,37 @@
                 gallery.innerHTML = '<div class="empty">No wallpapers match your filters.</div>';
                 return;
             }
-            gallery.innerHTML = items.map(item => `
+            gallery.innerHTML = items.map(item => {
+                const thumbUrl = getThumbUrl(item.server, item.filename);
+                const downloadUrl = getDownloadUrl(item.server, item.filename);
+                const safeName = escapeHtml(item.filename);
+                const safeAlt = escapeAttr(item.filename);
+                const safeServer = escapeHtml(serverNames[item.server] || item.server);
+                const sourceLink = (item.url && isValidUrl(item.url))
+                    ? `<a href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">🔗 Source</a>` : '';
+                return `
                 <div class="card">
-                    <img src="${getThumbUrl(item.server, item.filename)}"
-                         alt="${item.filename}"
+                    <img src="${escapeAttr(thumbUrl)}"
+                         alt="${safeAlt}"
                          loading="lazy"
                          onerror="this.style.display='none'">
                     <div class="card-body">
-                        <div class="card-filename">${escapeHtml(item.filename)}</div>
+                        <div class="card-filename">${safeName}</div>
                         <div style="margin-bottom:8px">
                             <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
                                 ${item.status === 'success' ? '✅ Success' : '❌ Failed'}
                             </span>
                             <span class="badge" style="background:rgba(88,166,255,0.15);color:var(--accent)">
-                                ${serverNames[item.server] || item.server}
+                                ${safeServer}
                             </span>
                         </div>
                         <div class="card-actions">
-                            ${item.status === 'success' ? `<a href="${getDownloadUrl(item.server, item.filename)}" class="download" target="_blank">⬇ Download</a>` : ''}
-                            ${item.url ? `<a href="${item.url}" target="_blank">🔗 Source</a>` : ''}
+                            ${item.status === 'success' ? `<a href="${escapeAttr(downloadUrl)}" class="download" target="_blank" rel="noopener noreferrer">⬇ Download</a>` : ''}
+                            ${sourceLink}
                         </div>
                     </div>
-                </div>
-            `).join('');
-        }
-
-        function escapeHtml(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
+                </div>`;
+            }).join('');
         }
 
         function updateStats(items) {
@@ -264,7 +307,7 @@
                 applyFilters();
             } catch (e) {
                 document.getElementById('gallery').innerHTML =
-                    `<div class="empty">Failed to load data. The manifest may not exist yet on the <code>${DATA_BRANCH}</code> branch.</div>`;
+                    `<div class="empty">Failed to load data. The manifest may not exist yet on the <code>data</code> branch.</div>`;
             }
         }
 
