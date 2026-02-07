@@ -128,6 +128,7 @@ def main():
             
             wallpapers.append({
                 'filename': fn,
+                'server': server_name_map.get(sid, sid),
                 'url': prior_url_map.get(fn, ''),
                 'status': 'success',
                 'releaseTime': prior_release_time_map.get(fn, timestamp),
@@ -141,6 +142,7 @@ def main():
             fn = decoded_fn if decoded_fn != raw_fn else raw_fn
             wallpapers.append({
                 'filename': fn,
+                'server': server_name_map.get(sid, sid),
                 'url': url,
                 'status': 'failed',
                 'releaseTime': timestamp,
