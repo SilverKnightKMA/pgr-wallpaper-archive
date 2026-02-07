@@ -35,18 +35,20 @@ foreach ($server in $config.servers) {
         $filename = [System.IO.Path]::GetFileName($url)
         $dest = Join-Path $using:server.dir $filename
 
+        $using:count = $using:count + 1
+
         if (!(Test-Path $dest)) {
             try {
                 Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
-                Write-Host "  [$(++$using:count)/$using:total] DOWNLOADED: $filename" -ForegroundColor Green
-                $using:downloaded++
+                Write-Host "  [$using:count/$using:total] DOWNLOADED: $filename" -ForegroundColor Green
+                $using:downloaded = $using:downloaded + 1
             } catch {
-                Write-Host "  [$(++$using:count)/$using:total] ERROR: $filename" -ForegroundColor Red
+                Write-Host "  [$using:count/$using:total] ERROR: $filename" -ForegroundColor Red
             }
         } else {
-            Write-Host "  [$(++$using:count)/$using:total] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
+            Write-Host "  [$using:count/$using:total] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
         }
-    } -ThrottleLimit 16 # Limit to 8 parallel downloads
+    } -ThrottleLimit 16 # Limit to 16 parallel downloads
 
     Write-Host " >> Finish $($server.name): $downloaded new files added." -ForegroundColor Green
 }
