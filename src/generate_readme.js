@@ -1,6 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const configPath = path.join(__dirname, '../config.json');
+const configPath = path.join(__dirname, '..', 'config.json');
+
+if (!fs.existsSync(configPath)) {
+    console.error(`❌ Không tìm thấy file config tại: ${configPath}`);
+    process.exit(1);
+}
+
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 let readmeContent = "# PGR Wallpaper Archive\n\nAutomated repository to archive high-quality wallpapers.\n\n";
