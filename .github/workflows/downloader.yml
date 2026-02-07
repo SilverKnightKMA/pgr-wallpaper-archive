@@ -37,6 +37,31 @@ jobs:
       - name: Install ImageMagick
         run: sudo apt-get update && sudo apt-get install -y imagemagick
 
+      - name: Ensure per-server branches exist
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + ' ' + s.branch))")
+          while IFS=' ' read -r id branch; do
+            if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
+              echo "✅ Branch $branch already exists."
+            else
+              echo "🆕 Creating new orphan branch: $branch"
+              INIT_DIR=$(mktemp -d)
+              git -C "$INIT_DIR" init
+              git -C "$INIT_DIR" remote add origin "$REMOTE_URL"
+              git -C "$INIT_DIR" checkout -b "$branch"
+              git -C "$INIT_DIR" commit --allow-empty -m "Initialize branch $branch"
+              git -C "$INIT_DIR" push origin "$branch"
+              rm -rf "$INIT_DIR"
+              echo "  ✅ Branch $branch created."
+            fi
+          done <<< "$SERVERS"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create branch working directories
         run: |
           # For each server, checkout existing branch content if it exists
@@ -53,7 +78,7 @@ jobs:
                 git worktree remove "worktree-$id" --force 2>/dev/null || true
               fi
             else
-              echo "🆕 Branch $branch does not exist yet, will be created."
+              echo "⚠️ Branch $branch does not exist (unexpected at this point)."
             fi
           done <<< "$SERVERS"
 
@@ -124,21 +149,10 @@ jobs:
             echo "🔀 Processing branch: $branch (server: $id, $IMAGE_COUNT images)"
 
             # Create a temporary directory for branch work
-            WORK_DIR=$(mktemp -d)
-            rm -rf "$WORK_DIR"  # git clone needs non-existent target
+            WORK_DIR="$(mktemp -d)/repo"
 
-            # Initialize or clone the branch
-            BRANCH_EXISTS=false
-            if git ls-remote --exit-code origin "$branch" >/dev/null 2>&1; then
-              BRANCH_EXISTS=true
-              git clone --single-branch --branch "$branch" --depth 1 "$REMOTE_URL" "$WORK_DIR"
-            else
-              echo "  🆕 Creating new orphan branch: $branch"
-              mkdir -p "$WORK_DIR"
-              git -C "$WORK_DIR" init
-              git -C "$WORK_DIR" remote add origin "$REMOTE_URL"
-              git -C "$WORK_DIR" checkout -b "$branch"
-            fi
+            # Clone the branch (guaranteed to exist from pre-creation step)
+            git clone --single-branch --branch "$branch" --depth 1 "$REMOTE_URL" "$WORK_DIR"
 
             # Copy images and thumbnails
             find "$BRANCH_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "$WORK_DIR/" \;
@@ -158,15 +172,11 @@ jobs:
               echo "  No changes for $branch."
             else
               git -C "$WORK_DIR" commit -m "Auto-sync: Update $id wallpapers"
-              if [ "$BRANCH_EXISTS" = true ]; then
-                git -C "$WORK_DIR" push origin HEAD:"$branch" --force-with-lease
-              else
-                git -C "$WORK_DIR" push origin HEAD:"$branch"
-              fi
+              git -C "$WORK_DIR" push origin HEAD:"$branch" --force-with-lease
               echo "  ✅ Pushed to $branch"
             fi
-            rm -rf "$WORK_DIR"
-          done
+            rm -rf "$(dirname "$WORK_DIR")"
+          done <<< "$SERVERS"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -236,7 +246,7 @@ jobs:
           # Create a single zip with per-server folders
           if [ "$HAS_FILES" = true ]; then
             cd release_staging
-            zip -r ../release_assets/wallpapers.zip .
+            zip -r "../release_assets/${RELEASE_TAG}.zip" .
             cd ..
           fi
 
@@ -245,6 +255,8 @@ jobs:
 
           # Output whether we have files to release
           echo "has_files=$HAS_FILES" >> "$GITHUB_OUTPUT"
+        env:
+          RELEASE_TAG: ${{ steps.set_tag.outputs.tag }}
 
       - name: Create GitHub Release
         if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
@@ -253,6 +265,6 @@ jobs:
           tag_name: ${{ steps.set_tag.outputs.tag }}
           name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
           body_path: release_notes.md
-          files: release_assets/wallpapers.zip
+          files: release_assets/${{ steps.set_tag.outputs.tag }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
