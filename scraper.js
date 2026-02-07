@@ -96,14 +96,14 @@ async function getLinks(url, filename, selector) {
     // KR Site
     await getLinks(
         "https://pgr.kurogames.com/kr/picture", 
-        "links_jp.txt", 
+        "links_kr.txt", 
         '.pcWallpaper img:not(.openDetail)'
     );
 
     // TW Site
     await getLinks(
         "https://pgr.kurogames.com/tw/picture", 
-        "links_jp.txt", 
+        "links_tw.txt", 
         '.pcWallpaper img:not(.openDetail)'
     );
 })();
