@@ -353,8 +353,8 @@ jobs:
             fi
           done <<< "$SERVERS"
 
-          # Create zip file(s) for release, ensuring each is under 2GB
-          MAX_ZIP_BYTES=$((1900 * 1024 * 1024))  # 1.9 GB safety margin
+          # Create zip file(s) for release, ensuring each is under 2GB (GitHub release asset limit)
+          MAX_ZIP_BYTES=$((1900 * 1024 * 1024))  # 1.9 GB safety margin below GitHub's 2 GB limit
           if [ "$HAS_FILES" = true ]; then
             TOTAL_SIZE=$(du -sb release_staging | cut -f1)
             echo "📦 Total staging size: $(numfmt --to=iec $TOTAL_SIZE)"
@@ -380,10 +380,26 @@ jobs:
                   zip -r "../release_assets/${RELEASE_TAG}-part${PART}.zip" "$server_id"
                   cd ..
                 else
-                  # Single server exceeds limit — split its zip
-                  echo "    ⚠️ Server $server_id exceeds 1.9 GB, using zip split"
+                  # Single server exceeds limit — split files into multiple zips
+                  echo "    ⚠️ Server $server_id exceeds 1.9 GB, splitting into multiple zips"
+                  CURRENT_SIZE=0
+                  SUB=1
+                  FILE_LIST=""
                   cd release_staging
-                  zip -r -s ${MAX_ZIP_BYTES} "../release_assets/${RELEASE_TAG}-part${PART}.zip" "$server_id"
+                  while IFS= read -r -d '' file; do
+                    FSIZE=$(stat -c%s "$file")
+                    if [ "$CURRENT_SIZE" -gt 0 ] && [ $((CURRENT_SIZE + FSIZE)) -ge "$MAX_ZIP_BYTES" ]; then
+                      zip "../release_assets/${RELEASE_TAG}-part${PART}-${SUB}.zip" $FILE_LIST
+                      SUB=$((SUB + 1))
+                      CURRENT_SIZE=0
+                      FILE_LIST=""
+                    fi
+                    FILE_LIST="$FILE_LIST \"$file\""
+                    CURRENT_SIZE=$((CURRENT_SIZE + FSIZE))
+                  done < <(find "$server_id" -type f -print0)
+                  if [ -n "$FILE_LIST" ]; then
+                    eval zip "../release_assets/${RELEASE_TAG}-part${PART}-${SUB}.zip" $FILE_LIST
+                  fi
                   cd ..
                 fi
                 PART=$((PART + 1))
