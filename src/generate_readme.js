@@ -26,6 +26,16 @@ function encodeFilename(filename) {
         .replace(/%(?![0-9A-Fa-f]{2})/g, '%25');
 }
 
+// Validate URL scheme (http/https only)
+function isValidUrl(url) {
+    try {
+        const parsed = new URL(url);
+        return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+    } catch (e) {
+        return false;
+    }
+}
+
 if (mode === 'main') {
     generateMainReadme();
 } else if (mode === 'branch') {
@@ -51,52 +61,49 @@ function loadManifest() {
 
 function generateMainReadme() {
     const manifest = loadManifest();
-    const releaseTime = manifest.releaseTime || 'N/A';
     const pagesBaseUrl = `https://${repoSlug.split('/')[0]}.github.io/${repoSlug.split('/')[1]}/`;
 
     let readmeContent = "# PGR Wallpaper Archive\n\nAutomated repository to archive high-quality wallpapers from Punishing: Gray Raven.\n\n";
-    readmeContent += `> Last Updated: ${new Date().toUTCString()}\n\n`;
     readmeContent += `🌐 [Browse & Filter Wallpapers on Web](${pagesBaseUrl})\n\n`;
     readmeContent += "## 📂 Server Galleries\n\n";
-    readmeContent += `Each server's wallpapers are stored in the [\`${wallpapersBranch}\`](https://github.com/${repoSlug}/tree/${wallpapersBranch}) branch under per-server directories.\n\n`;
-    readmeContent += "| Server | Directory | Gallery | Total | Success | Failed | Release Time |\n";
-    readmeContent += "|--------|-----------|---------|-------|---------|--------|--------------|\n";
+    readmeContent += `All wallpapers are stored in the [\`${wallpapersBranch}\`](https://github.com/${repoSlug}/tree/${wallpapersBranch}) branch.\n\n`;
+    readmeContent += "| Server | Preview | Total | Success | Failed | Last Updated |\n";
+    readmeContent += "|--------|---------|-------|---------|--------|---------------|\n";
 
     config.servers.forEach(server => {
-        const dirUrl = `https://github.com/${repoSlug}/tree/${wallpapersBranch}/${server.id}`;
+        const previewUrl = `https://github.com/${repoSlug}/tree/${previewBranch}/${server.id}`;
         const serverData = manifest[server.id] || {};
         const total = serverData.total || 0;
         const success = serverData.success || 0;
         const failed = serverData.failed || 0;
-        readmeContent += `| 🖼️ ${server.name} | \`${server.id}/\` | [View Gallery](${dirUrl}) | ${total} | ✅ ${success} | ❌ ${failed} | ${releaseTime} |\n`;
+        const lastUpdated = serverData.lastUpdated || 'N/A';
+        readmeContent += `| 🖼️ ${server.name} | [View Preview](${previewUrl}) | ${total} | ✅ ${success} | ❌ ${failed} | ${lastUpdated} |\n`;
     });
 
     readmeContent += "\n---\n\n";
 
-    // Wallpaper list per server with 18 most recent previews
-    readmeContent += "## 🖼️ Wallpaper List\n\n";
+    // Wallpaper list per server with 15 most recent previews
+    readmeContent += "## 🖼️ Wallpaper Preview\n\n";
     config.servers.forEach(server => {
         const serverData = manifest[server.id] || {};
         const wallpapers = serverData.wallpapers || [];
-        const lastUpdated = serverData.lastUpdated || 'N/A';
-        const total = serverData.total || 0;
         const previewReadmeUrl = `https://github.com/${repoSlug}/tree/${previewBranch}/${server.id}`;
         readmeContent += `### ${server.name}\n\n`;
-        readmeContent += `> Last Updated: ${lastUpdated} | Total: ${total} wallpapers | Release Time: ${releaseTime}\n\n`;
         if (wallpapers.length > 0) {
-            // Show preview images of the 18 most recent wallpapers
-            const recent = wallpapers.slice(-18).reverse();
+            // Show preview images of the 15 most recent wallpapers, linked to raw image
+            const recent = wallpapers.slice(-15).reverse();
             readmeContent += "<p>\n";
             recent.forEach(w => {
                 const filename = w.filename || 'unknown';
                 const encodedFile = encodeFilename(filename);
                 const safeFile = escapeHtml(filename);
                 const thumbRawUrl = `https://raw.githubusercontent.com/${repoSlug}/${previewBranch}/${server.id}/thumbnails/${encodedFile}`;
-                readmeContent += `<img src="${thumbRawUrl}" width="150" alt="${safeFile}" title="${safeFile}">\n`;
+                const rawUrl = `https://github.com/${repoSlug}/raw/${wallpapersBranch}/${encodedFile}`;
+                readmeContent += `<a href="${rawUrl}"><img src="${thumbRawUrl}" width="150" alt="${safeFile}" title="${safeFile}"></a>\n`;
             });
             readmeContent += "</p>\n\n";
-            if (wallpapers.length > 18) {
-                readmeContent += `- ... and ${wallpapers.length - 18} more — [View all in Preview](${previewReadmeUrl})\n`;
+            if (wallpapers.length > 15) {
+                readmeContent += `- ... and ${wallpapers.length - 15} more — [View all in Preview](${previewReadmeUrl})\n`;
             } else {
                 readmeContent += `- [View all in Preview](${previewReadmeUrl})\n`;
             }
@@ -117,23 +124,11 @@ function generateMainReadme() {
 }
 
 function generateBranchReadme(server) {
-    const branchDir = process.env.BRANCH_DIR || path.join(__dirname, '..', 'branches', server.id);
-    const imagesSubDir = path.join(branchDir, 'images');
-
-    // Read images from the images/ subdirectory
-    const allFiles = [];
-    const useSubDir = fs.existsSync(imagesSubDir);
-    const imgDir = useSubDir ? imagesSubDir : branchDir;
-
-    if (fs.existsSync(imgDir)) {
-        fs.readdirSync(imgDir).forEach(f => {
-            if (/\.(jpg|jpeg|png|webp)$/i.test(f)) {
-                const stat = fs.statSync(path.join(imgDir, f));
-                allFiles.push({ name: f, time: stat.mtime.getTime() });
-            }
-        });
-    }
-    allFiles.sort((a, b) => b.time - a.time);
+    // Load manifest for wallpaper data
+    const manifest = loadManifest();
+    const serverData = manifest[server.id] || {};
+    const wallpapers = serverData.wallpapers || [];
+    const total = serverData.total || wallpapers.length;
 
     // Read failed URLs
     const failedFile = process.env.FAILED_FILE || path.join(__dirname, '..', 'Wallpapers', 'failed', `${server.id}.txt`);
@@ -142,12 +137,16 @@ function generateBranchReadme(server) {
         failedUrls = fs.readFileSync(failedFile, 'utf8').trim().split('\n').filter(Boolean);
     }
 
-    // Load manifest for releaseTime
-    const manifest = loadManifest();
-    const releaseTime = manifest.releaseTime || 'N/A';
+    // Build set of failed filenames for status lookup
+    const failedFilenames = new Set();
+    failedUrls.forEach(url => {
+        try { failedFilenames.add(decodeURIComponent(url.split('/').pop())); } catch (e) { /* ignore */ }
+    });
+
+    const branchDir = process.env.BRANCH_DIR || path.join(__dirname, '..', 'branches', server.id);
 
     let readmeContent = `# ${server.name} — PGR Wallpaper Archive\n\n`;
-    readmeContent += `> Total: ${allFiles.length} wallpapers | Last Updated: ${new Date().toUTCString()} | Release Time: ${releaseTime}\n\n`;
+    readmeContent += `> Total: ${total} wallpapers\n\n`;
     readmeContent += `[⬅️ Back to Main](https://github.com/${repoSlug})\n\n`;
 
     // Link to GitHub Pages for full filtering
@@ -156,29 +155,42 @@ function generateBranchReadme(server) {
 
     readmeContent += "## 🖼️ Gallery\n\n";
 
-    if (allFiles.length === 0 && failedUrls.length === 0) {
+    // Use manifest wallpapers sorted by releaseTime desc
+    const sortedWallpapers = [...wallpapers].sort((a, b) => {
+        const ta = a.releaseTime || '';
+        const tb = b.releaseTime || '';
+        return tb.localeCompare(ta);
+    });
+
+    if (sortedWallpapers.length === 0 && failedUrls.length === 0) {
         readmeContent += "_No wallpapers yet._\n";
     } else {
-        // Build set of failed filenames for status lookup
-        const failedFilenames = new Set();
-        failedUrls.forEach(url => {
-            try { failedFilenames.add(decodeURIComponent(url.split('/').pop())); } catch (e) { /* ignore */ }
-        });
-
-        // Single table with preview, path, link, status
-        readmeContent += "| Preview | Filename | Path | Download | Status |\n";
-        readmeContent += "|---------|----------|------|----------|--------|\n";
-        allFiles.forEach(fileObj => {
-            const file = fileObj.name;
+        // Responsive card-based layout using HTML (no horizontal scroll)
+        sortedWallpapers.forEach(w => {
+            const file = w.filename || 'unknown';
             const encodedFile = encodeFilename(file);
             const safeFile = escapeHtml(file);
-            // Preview uses raw URL from the preview branch
             const thumbRawUrl = `https://raw.githubusercontent.com/${repoSlug}/${previewBranch}/${server.id}/thumbnails/${encodedFile}`;
-            // Download uses raw URL from the wallpapers branch
-            const downloadUrl = `https://raw.githubusercontent.com/${repoSlug}/${wallpapersBranch}/${server.id}/images/${encodedFile}`;
-            const imgPath = useSubDir ? `images/${encodedFile}` : encodedFile;
-            const status = failedFilenames.has(file) ? '❌' : '✅';
-            readmeContent += `| <img src="${thumbRawUrl}" width="100" alt="${safeFile}"> | \`${file}\` | \`${server.id}/${imgPath}\` | [Download](${downloadUrl}) | ${status} |\n`;
+            // Download raw from wallpapers branch (flat root) — LFS-safe URL
+            const downloadUrl = `https://github.com/${repoSlug}/raw/${wallpapersBranch}/${encodedFile}`;
+            const status = (w.status === 'failed' || failedFilenames.has(file)) ? '❌ Failed' : '✅ Success';
+            const releaseTime = w.releaseTime || 'N/A';
+            const size = w.size || 'N/A';
+            const sourceUrl = w.url || '';
+            const sourceLink = (sourceUrl && isValidUrl(sourceUrl)) ? `<a href="${escapeHtml(sourceUrl)}">🔗 Original</a>` : '';
+
+            readmeContent += `<details>\n`;
+            readmeContent += `<summary>\n`;
+            readmeContent += `<img src="${thumbRawUrl}" width="200" alt="${safeFile}" title="${safeFile}"> <strong>${safeFile}</strong>\n`;
+            readmeContent += `</summary>\n\n`;
+            readmeContent += `- **Release Time:** ${releaseTime}\n`;
+            readmeContent += `- **Size:** ${size}\n`;
+            readmeContent += `- **Status:** ${status}\n`;
+            readmeContent += `- **Download Raw:** [⬇ Download](${downloadUrl})\n`;
+            if (sourceLink) {
+                readmeContent += `- **Original:** ${sourceLink}\n`;
+            }
+            readmeContent += `\n</details>\n\n`;
         });
     }
 
