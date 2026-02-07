@@ -37,6 +37,19 @@ def main():
     timestamp = sys.argv[3]
     server_ids = sys.argv[4:]
 
+    # Load config to get server names
+    config_path = os.path.join(repo_dir, 'config.json')
+    server_name_map = {}
+    if os.path.isfile(config_path):
+        try:
+            with open(config_path, encoding='utf-8') as cf:
+                config = json.load(cf)
+        except json.JSONDecodeError as e:
+            print(f"Error: Failed to parse JSON config file at {config_path}: {e}", file=sys.stderr)
+            config = {}
+        for s in config.get('servers', []):
+            server_name_map[s['id']] = s.get('name', s['id'])
+
     # Load existing manifest if passed via stdin
     if sys.stdin.isatty():
         manifest = {}
@@ -119,6 +132,7 @@ def main():
             
             wallpapers.append({
                 'filename': fn,
+                'server': server_name_map.get(sid, sid),
                 'url': prior_url_map.get(fn, ''),
                 'status': 'success',
                 'releaseTime': prior_release_time_map.get(fn, timestamp),
@@ -132,6 +146,7 @@ def main():
             fn = decoded_fn if decoded_fn != raw_fn else raw_fn
             wallpapers.append({
                 'filename': fn,
+                'server': server_name_map.get(sid, sid),
                 'url': url,
                 'status': 'failed',
                 'releaseTime': timestamp,
@@ -139,6 +154,7 @@ def main():
             })
 
         manifest[sid] = {
+            'name': server_name_map.get(sid, sid),
             'total': total,
             'success': success,
             'failed': failed_count,

@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import re
 import urllib.parse
 from datetime import datetime
 
@@ -60,7 +61,8 @@ def main():
             # Simple check if file exists locally (it should after download step)
             if os.path.exists(local_path_decoded):
                 file_count += 1
-                encoded_fn = urllib.parse.quote(decoded)
+                encoded_fn = urllib.parse.quote(decoded, safe="/~@!$&'()*+,;=")
+                encoded_fn = re.sub(r'%(?![0-9A-Fa-f]{2})', '%25', encoded_fn)
                 thumb_url = f"https://raw.githubusercontent.com/{repo}/{preview_branch}/{sid}/thumbnails/{encoded_fn}"
                 dl_url = f"https://github.com/{repo}/raw/{wallpapers_branch}/{encoded_fn}"
                 
