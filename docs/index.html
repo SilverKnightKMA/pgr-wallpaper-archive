@@ -280,7 +280,6 @@
                 let latestTime = '';
                 const releaseTime = manifest.releaseTime || '';
                 serverIds.forEach(id => {
-                    if (id === 'releaseTime') return; // skip top-level releaseTime key
                     const serverData = manifest[id];
                     if (serverData.lastUpdated && serverData.lastUpdated > latestTime) {
                         latestTime = serverData.lastUpdated;
