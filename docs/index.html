@@ -307,7 +307,7 @@
                 applyFilters();
             } catch (e) {
                 document.getElementById('gallery').innerHTML =
-                    `<div class="empty">Failed to load data. The manifest may not exist yet on the <code>data</code> branch.</div>`;
+                    `<div class="empty">Failed to load data. The manifest may not exist yet on the <code>${escapeHtml(DATA_BRANCH)}</code> branch.</div>`;
             }
         }
 
