@@ -37,6 +37,15 @@ def main():
     timestamp = sys.argv[3]
     server_ids = sys.argv[4:]
 
+    # Load config to get server names
+    config_path = os.path.join(repo_dir, 'config.json')
+    server_name_map = {}
+    if os.path.isfile(config_path):
+        with open(config_path) as cf:
+            config = json.load(cf)
+        for s in config.get('servers', []):
+            server_name_map[s['id']] = s.get('name', s['id'])
+
     # Load existing manifest if passed via stdin
     if sys.stdin.isatty():
         manifest = {}
@@ -139,6 +148,7 @@ def main():
             })
 
         manifest[sid] = {
+            'name': server_name_map.get(sid, sid),
             'total': total,
             'success': success,
             'failed': failed_count,

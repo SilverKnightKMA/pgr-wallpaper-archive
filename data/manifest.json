@@ -1,5 +1,6 @@
 {
   "global": {
+    "name": "Global Server",
     "total": 98,
     "success": 98,
     "failed": 0,
@@ -694,6 +695,7 @@
     ]
   },
   "cn": {
+    "name": "CN Server",
     "total": 98,
     "success": 98,
     "failed": 0,
@@ -1388,6 +1390,7 @@
     ]
   },
   "jp": {
+    "name": "JP Server",
     "total": 98,
     "success": 98,
     "failed": 0,
@@ -2082,6 +2085,7 @@
     ]
   },
   "kr": {
+    "name": "KR Server",
     "total": 98,
     "success": 98,
     "failed": 0,
@@ -2776,6 +2780,7 @@
     ]
   },
   "tw": {
+    "name": "TW Server",
     "total": 98,
     "success": 98,
     "failed": 0,
