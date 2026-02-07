@@ -2,7 +2,7 @@
 
 Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.
 
-> Last Updated: Sat, 07 Feb 2026 16:26:54 GMT
+> Last Updated: Sat, 07 Feb 2026 16:47:44 GMT
 
 ## 📂 Server Galleries
 
@@ -10,11 +10,11 @@ Each server's wallpapers are stored in a dedicated branch.
 
 | Server | Branch | Gallery |
 |--------|--------|----------|
-| 🖼️ Global Server | `wallpapers/global` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers/global) |
-| 🖼️ CN Server | `wallpapers/cn` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers/cn) |
-| 🖼️ JP Server | `wallpapers/jp` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers/jp) |
-| 🖼️ KR Server | `wallpapers/kr` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers/kr) |
-| 🖼️ TW Server | `wallpapers/tw` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers/tw) |
+| 🖼️ Global Server | `global` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/global) |
+| 🖼️ CN Server | `cn` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/cn) |
+| 🖼️ JP Server | `jp` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/jp) |
+| 🖼️ KR Server | `kr` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/kr) |
+| 🖼️ TW Server | `tw` | [View Gallery](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/tw) |
 
 ---
 
