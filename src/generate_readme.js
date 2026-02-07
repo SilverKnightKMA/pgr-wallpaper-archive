@@ -90,7 +90,6 @@ function generateMainReadme() {
     config.servers.forEach(server => {
         const serverData = manifest[server.id] || {};
         const wallpapers = serverData.wallpapers || [];
-        const previewReadmeUrl = `https://github.com/${repoSlug}/tree/${previewBranch}/${server.id}`;
         readmeContent += `### ${server.name}\n\n`;
         if (wallpapers.length > 0) {
             // Show preview images of the 15 most recent wallpapers, linked to raw image
@@ -105,7 +104,6 @@ function generateMainReadme() {
                 readmeContent += `<a href="${rawUrl}"><img src="${thumbRawUrl}" width="150" alt="${safeFile}" title="${safeFile}"></a>\n`;
             });
             readmeContent += "</p>\n\n";
-            readmeContent += `- [View all in Preview](${previewReadmeUrl})\n`;
         } else {
             readmeContent += "_No wallpapers yet._\n";
         }
