@@ -45,8 +45,7 @@ jobs:
 
           for BRANCH_NAME in \
             "$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")" \
-            "$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")" \
-            "$(node -e "const c=require('./config.json'); console.log(c.dataBranch || 'data')")"; do
+            "$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")"; do
             if git ls-remote --exit-code origin "$BRANCH_NAME" >/dev/null 2>&1; then
               echo "✅ Branch $BRANCH_NAME already exists."
             else
@@ -161,9 +160,12 @@ jobs:
         run: |
           TAG="wallpapers-$(date -u +%Y%m%d-%H%M%S)"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          echo "Release tag: $TAG"
+          # Derive ISO timestamp from tag name (wallpapers-YYYYMMDD-HHMMSS)
+          TAG_TS=$(echo "$TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3T\4:\5:\6Z/')
+          echo "timestamp=$TAG_TS" >> "$GITHUB_OUTPUT"
+          echo "Release tag: $TAG → $TAG_TS"
 
-      - name: Build manifest and push to wallpapers/preview/data branches
+      - name: Build manifest and push to wallpapers/preview branches
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
@@ -173,8 +175,7 @@ jobs:
           REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
           PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          DATA_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.dataBranch || 'data')")
-          TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          TIMESTAMP="${RELEASE_TAG_TS}"
 
           # --- Wallpapers branch (images only, no thumbnails) ---
           WP_DIR="$(mktemp -d)/repo"
@@ -198,21 +199,10 @@ jobs:
             git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH"
           fi
 
-          # --- Data branch (manifest) ---
-          DT_DIR="$(mktemp -d)/repo"
-          git init "$DT_DIR"
-          git -C "$DT_DIR" remote add origin "$REMOTE_URL"
-          if git ls-remote --exit-code origin "$DATA_BRANCH" >/dev/null 2>&1; then
-            git -C "$DT_DIR" fetch origin "$DATA_BRANCH" --depth=1
-            git -C "$DT_DIR" checkout -b "$DATA_BRANCH" "origin/$DATA_BRANCH"
-          else
-            git -C "$DT_DIR" checkout -b "$DATA_BRANCH"
-          fi
-
-          # Load existing manifest from data branch if available
+          # Load existing manifest from main branch data dir if available
           MANIFEST="{}"
-          if [ -f "$DT_DIR/manifest.json" ]; then
-            MANIFEST=$(cat "$DT_DIR/manifest.json")
+          if [ -f "$REPO_DIR/data/manifest.json" ]; then
+            MANIFEST=$(cat "$REPO_DIR/data/manifest.json")
           fi
 
           # Build manifest JSON with detailed wallpaper info
@@ -226,6 +216,9 @@ jobs:
 
           # Use build_manifest.py to build detailed manifest
           MANIFEST=$(printf '%s' "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
+
+          # Save manifest to main branch data dir (needed by branch README generation)
+          echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
 
           while IFS= read -r id; do
             BRANCH_DIR="$REPO_DIR/branches/$id"
@@ -255,14 +248,8 @@ jobs:
             fi
 
             # Generate per-server README on preview branch (read images from wallpapers dir)
-            BRANCH_DIR="$WP_DIR/$id" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
+            MANIFEST_PATH="$REPO_DIR/data/manifest.json" BRANCH_DIR="$WP_DIR/$id" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
           done <<< "$SERVERS"
-
-          # Save manifest to main branch data dir (summary for main README)
-          echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
-
-          # Save manifest to data branch
-          echo "$MANIFEST" > "$DT_DIR/manifest.json"
 
           # --- Push wallpapers branch ---
           git -C "$WP_DIR" config user.name "github-actions[bot]"
@@ -289,29 +276,22 @@ jobs:
             echo "  ✅ Pushed to $PREVIEW_BRANCH"
           fi
           rm -rf "$(dirname "$PV_DIR")"
-
-          # --- Push data branch ---
-          git -C "$DT_DIR" config user.name "github-actions[bot]"
-          git -C "$DT_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
-          git -C "$DT_DIR" add -A
-          if git -C "$DT_DIR" diff --cached --quiet; then
-            echo "  No changes for $DATA_BRANCH."
-          else
-            git -C "$DT_DIR" commit -m "Auto-sync: Update manifest data"
-            git -C "$DT_DIR" push origin HEAD:"$DATA_BRANCH" --force-with-lease
-            echo "  ✅ Pushed to $DATA_BRANCH"
-          fi
-          rm -rf "$(dirname "$DT_DIR")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG_TS: ${{ steps.set_tag.outputs.timestamp }}
 
       - name: Update main README and manifest
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           MANIFEST_PATH="$(pwd)/data/manifest.json" node src/generate_readme.js main
+          # Vendor PGR favicon locally if not already present
+          if [ ! -f docs/favicon.png ]; then
+            curl -sL -o docs/favicon.png "https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" || true
+          fi
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md data/manifest.json
+          [ -f docs/favicon.png ] && git add docs/favicon.png
           if git diff --cached --quiet; then
             echo "No README changes."
           else
@@ -325,7 +305,8 @@ jobs:
         run: |
           WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
           PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          RELEASE_TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          # Derive release timestamp from tag name (wallpapers-YYYYMMDD-HHMMSS → YYYY-MM-DD HH:MM:SS UTC)
+          RELEASE_TIMESTAMP=$(echo "$RELEASE_TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3 \4:\5:\6 UTC/')
           mkdir -p release_assets release_staging
           RELEASE_BODY="📅 **Release Time:** ${RELEASE_TIMESTAMP}\n\n"
           HAS_FILES=false
@@ -360,13 +341,8 @@ jobs:
                   fi
                 done < "$txt"
 
-                # Build release notes section for this server
-                RELEASE_BODY="${RELEASE_BODY}### 🖼️ ${name} (${FILE_COUNT} new)\n\n"
-                RELEASE_BODY="${RELEASE_BODY}📁 **Folder:** \`${id}/\`\n"
-                RELEASE_BODY="${RELEASE_BODY}🔗 **Branch:** [\`${WALLPAPERS_BRANCH}\`](https://github.com/${GITHUB_REPOSITORY}/tree/${WALLPAPERS_BRANCH}/${id})\n"
-                RELEASE_BODY="${RELEASE_BODY}🕐 **Time:** ${RELEASE_TIMESTAMP}\n\n"
-
-                RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview</summary>\n\n"
+                # Build release notes section for this server — only file list & preview
+                RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview ${name} (${FILE_COUNT} new)</summary>\n\n"
                 RELEASE_BODY="${RELEASE_BODY}| Preview | Filename | Download | Status |\n"
                 RELEASE_BODY="${RELEASE_BODY}|---------|----------|----------|--------|\n"
                 while IFS= read -r url; do
@@ -382,11 +358,59 @@ jobs:
             fi
           done <<< "$SERVERS"
 
-          # Create a single zip with per-server folders
+          # Create zip file(s) for release, ensuring each is under 2GB (GitHub release asset limit)
+          MAX_ZIP_BYTES=$((1900 * 1024 * 1024))  # 1.9 GB safety margin below GitHub's 2 GB limit
           if [ "$HAS_FILES" = true ]; then
-            cd release_staging
-            zip -r "../release_assets/${RELEASE_TAG}.zip" .
-            cd ..
+            TOTAL_SIZE=$(du -sb release_staging | cut -f1)
+            echo "📦 Total staging size: $(numfmt --to=iec $TOTAL_SIZE)"
+
+            if [ "$TOTAL_SIZE" -lt "$MAX_ZIP_BYTES" ]; then
+              # All files fit in a single zip
+              cd release_staging
+              zip -r "../release_assets/${RELEASE_TAG}.zip" .
+              cd ..
+              echo "  ✅ Created single zip"
+            else
+              # Split into per-server zips to stay under 2GB
+              echo "  ⚠️ Total size exceeds 1.9 GB, creating per-server zips"
+              PART=1
+              for server_dir in release_staging/*/; do
+                [ -d "$server_dir" ] || continue
+                server_id=$(basename "$server_dir")
+                SERVER_SIZE=$(du -sb "$server_dir" | cut -f1)
+                echo "  📂 $server_id: $(numfmt --to=iec $SERVER_SIZE)"
+
+                if [ "$SERVER_SIZE" -lt "$MAX_ZIP_BYTES" ]; then
+                  cd release_staging
+                  zip -r "../release_assets/${RELEASE_TAG}-part${PART}.zip" "$server_id"
+                  cd ..
+                else
+                  # Single server exceeds limit — split files into multiple zips
+                  echo "    ⚠️ Server $server_id exceeds 1.9 GB, splitting into multiple zips"
+                  CURRENT_SIZE=0
+                  SUB=1
+                  FILE_LIST=""
+                  cd release_staging
+                  while IFS= read -r -d '' file; do
+                    FSIZE=$(stat -c%s "$file")
+                    if [ "$CURRENT_SIZE" -gt 0 ] && [ $((CURRENT_SIZE + FSIZE)) -ge "$MAX_ZIP_BYTES" ]; then
+                      zip "../release_assets/${RELEASE_TAG}-part${PART}-${SUB}.zip" $FILE_LIST
+                      SUB=$((SUB + 1))
+                      CURRENT_SIZE=0
+                      FILE_LIST=""
+                    fi
+                    FILE_LIST="$FILE_LIST \"$file\""
+                    CURRENT_SIZE=$((CURRENT_SIZE + FSIZE))
+                  done < <(find "$server_id" -type f -print0)
+                  if [ -n "$FILE_LIST" ]; then
+                    eval zip "../release_assets/${RELEASE_TAG}-part${PART}-${SUB}.zip" $FILE_LIST
+                  fi
+                  cd ..
+                fi
+                PART=$((PART + 1))
+              done
+              echo "  ✅ Created $((PART - 1)) zip part(s)"
+            fi
           fi
 
           # Write release body to file
@@ -404,6 +428,6 @@ jobs:
           tag_name: ${{ steps.set_tag.outputs.tag }}
           name: "Wallpapers ${{ steps.set_tag.outputs.tag }}"
           body_path: release_notes.md
-          files: release_assets/${{ steps.set_tag.outputs.tag }}.zip
+          files: release_assets/*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

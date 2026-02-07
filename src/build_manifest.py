@@ -62,17 +62,25 @@ def main():
 
         # Seed URL map from prior manifest to retain source URLs for older wallpapers
         prior_url_map = {}
+        prior_release_time_map = {}
         if sid in manifest and 'wallpapers' in manifest[sid]:
             for pw in manifest[sid]['wallpapers']:
                 if pw.get('url'):
                     prior_url_map[pw['filename']] = pw['url']
+                if pw.get('releaseTime'):
+                    prior_release_time_map[pw['filename']] = pw['releaseTime']
 
         # Collect existing wallpapers from the wallpapers branch
         if os.path.isdir(wp_branch_img_dir):
             for fn in sorted(os.listdir(wp_branch_img_dir)):
                 fp = os.path.join(wp_branch_img_dir, fn)
                 if os.path.isfile(fp) and fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                    wallpapers.append({'filename': fn, 'status': 'success', 'url': prior_url_map.get(fn, '')})
+                    wallpapers.append({
+                        'filename': fn,
+                        'status': 'success',
+                        'url': prior_url_map.get(fn, ''),
+                        'releaseTime': prior_release_time_map.get(fn, timestamp)
+                    })
                     existing_names.add(fn)
 
         # Add newly downloaded wallpapers with their URLs
@@ -86,7 +94,7 @@ def main():
                     decoded_fn = urllib.parse.unquote(raw_fn)
                     fn = decoded_fn if decoded_fn != raw_fn else raw_fn
                     if fn not in existing_names:
-                        wallpapers.append({'filename': fn, 'url': url, 'status': 'success'})
+                        wallpapers.append({'filename': fn, 'url': url, 'status': 'success', 'releaseTime': timestamp})
                         existing_names.add(fn)
                     else:
                         # Update URL for existing entry if missing
@@ -100,7 +108,7 @@ def main():
             raw_fn = os.path.basename(url)
             decoded_fn = urllib.parse.unquote(raw_fn)
             fn = decoded_fn if decoded_fn != raw_fn else raw_fn
-            wallpapers.append({'filename': fn, 'url': url, 'status': 'failed'})
+            wallpapers.append({'filename': fn, 'url': url, 'status': 'failed', 'releaseTime': timestamp})
 
         manifest[sid] = {
             'total': total,
@@ -109,6 +117,9 @@ def main():
             'lastUpdated': timestamp,
             'wallpapers': wallpapers
         }
+
+    # Store a single releaseTime for the entire action run
+    manifest['releaseTime'] = timestamp
 
     print(json.dumps(manifest, indent=2, ensure_ascii=False))
 

@@ -51,13 +51,16 @@ function loadManifest() {
 
 function generateMainReadme() {
     const manifest = loadManifest();
+    const releaseTime = manifest.releaseTime || 'N/A';
+    const pagesBaseUrl = `https://${repoSlug.split('/')[0]}.github.io/${repoSlug.split('/')[1]}/`;
 
     let readmeContent = "# PGR Wallpaper Archive\n\nAutomated repository to archive high-quality wallpapers from Punishing: Gray Raven.\n\n";
     readmeContent += `> Last Updated: ${new Date().toUTCString()}\n\n`;
+    readmeContent += `🌐 [Browse & Filter Wallpapers on Web](${pagesBaseUrl})\n\n`;
     readmeContent += "## 📂 Server Galleries\n\n";
     readmeContent += `Each server's wallpapers are stored in the [\`${wallpapersBranch}\`](https://github.com/${repoSlug}/tree/${wallpapersBranch}) branch under per-server directories.\n\n`;
-    readmeContent += "| Server | Directory | Gallery | Total | Success | Failed |\n";
-    readmeContent += "|--------|-----------|---------|-------|---------|--------|\n";
+    readmeContent += "| Server | Directory | Gallery | Total | Success | Failed | Release Time |\n";
+    readmeContent += "|--------|-----------|---------|-------|---------|--------|--------------|\n";
 
     config.servers.forEach(server => {
         const dirUrl = `https://github.com/${repoSlug}/tree/${wallpapersBranch}/${server.id}`;
@@ -65,31 +68,37 @@ function generateMainReadme() {
         const total = serverData.total || 0;
         const success = serverData.success || 0;
         const failed = serverData.failed || 0;
-        readmeContent += `| 🖼️ ${server.name} | \`${server.id}/\` | [View Gallery](${dirUrl}) | ${total} | ✅ ${success} | ❌ ${failed} |\n`;
+        readmeContent += `| 🖼️ ${server.name} | \`${server.id}/\` | [View Gallery](${dirUrl}) | ${total} | ✅ ${success} | ❌ ${failed} | ${releaseTime} |\n`;
     });
 
     readmeContent += "\n---\n\n";
 
-    // Wallpaper list per server (most recent update)
+    // Wallpaper list per server with 18 most recent previews
     readmeContent += "## 🖼️ Wallpaper List\n\n";
     config.servers.forEach(server => {
         const serverData = manifest[server.id] || {};
         const wallpapers = serverData.wallpapers || [];
         const lastUpdated = serverData.lastUpdated || 'N/A';
         const total = serverData.total || 0;
+        const previewReadmeUrl = `https://github.com/${repoSlug}/tree/${previewBranch}/${server.id}`;
         readmeContent += `### ${server.name}\n\n`;
-        readmeContent += `> Last Updated: ${lastUpdated} | Total: ${total} wallpapers\n\n`;
+        readmeContent += `> Last Updated: ${lastUpdated} | Total: ${total} wallpapers | Release Time: ${releaseTime}\n\n`;
         if (wallpapers.length > 0) {
-            // Show last added wallpapers (up to 5)
-            const recent = wallpapers.slice(-5).reverse();
+            // Show preview images of the 18 most recent wallpapers
+            const recent = wallpapers.slice(-18).reverse();
+            readmeContent += "<p>\n";
             recent.forEach(w => {
                 const filename = w.filename || 'unknown';
-                const status = w.status === 'success' ? '✅' : '❌';
-                readmeContent += `- ${status} \`${filename}\`\n`;
+                const encodedFile = encodeFilename(filename);
+                const safeFile = escapeHtml(filename);
+                const thumbRawUrl = `https://raw.githubusercontent.com/${repoSlug}/${previewBranch}/${server.id}/thumbnails/${encodedFile}`;
+                readmeContent += `<img src="${thumbRawUrl}" width="150" alt="${safeFile}" title="${safeFile}">\n`;
             });
-            if (wallpapers.length > 5) {
-                const pagesUrl = `https://${repoSlug.split('/')[0]}.github.io/${repoSlug.split('/')[1]}/?server=${server.id}`;
-                readmeContent += `- ... and ${wallpapers.length - 5} more — [View all on GitHub Pages](${pagesUrl})\n`;
+            readmeContent += "</p>\n\n";
+            if (wallpapers.length > 18) {
+                readmeContent += `- ... and ${wallpapers.length - 18} more — [View all in Preview](${previewReadmeUrl})\n`;
+            } else {
+                readmeContent += `- [View all in Preview](${previewReadmeUrl})\n`;
             }
         } else {
             readmeContent += "_No wallpapers yet._\n";
@@ -133,8 +142,12 @@ function generateBranchReadme(server) {
         failedUrls = fs.readFileSync(failedFile, 'utf8').trim().split('\n').filter(Boolean);
     }
 
+    // Load manifest for releaseTime
+    const manifest = loadManifest();
+    const releaseTime = manifest.releaseTime || 'N/A';
+
     let readmeContent = `# ${server.name} — PGR Wallpaper Archive\n\n`;
-    readmeContent += `> Total: ${allFiles.length} wallpapers | Last Updated: ${new Date().toUTCString()}\n\n`;
+    readmeContent += `> Total: ${allFiles.length} wallpapers | Last Updated: ${new Date().toUTCString()} | Release Time: ${releaseTime}\n\n`;
     readmeContent += `[⬅️ Back to Main](https://github.com/${repoSlug})\n\n`;
 
     // Link to GitHub Pages for full filtering
