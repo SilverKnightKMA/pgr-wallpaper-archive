@@ -8,6 +8,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -27,6 +29,9 @@ jobs:
       - name: Sync & Update README
         shell: pwsh
         run: ./downloader.ps1
+
+      - name: Generate Gallery README
+        run: node generate_readme.js
 
       - name: Commit and Push
         run: |
