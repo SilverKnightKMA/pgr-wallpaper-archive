@@ -1,5 +1,13 @@
-$configPath = Join-Path $PSScriptRoot "../config.json"
+$configPath = Join-Path $PSScriptRoot ".." "config.json"
+$configPath = [System.IO.Path]::GetFullPath($configPath) # Chuẩn hóa đường dẫn
+
+if (!(Test-Path $configPath)) {
+    Write-Host "❌ Config not found: $configPath" -ForegroundColor Red
+    exit 1
+}
+
 $config = Get-Content $configPath | ConvertFrom-Json
+
 Write-Host "=== PGR DOWNLOADER START ===" -ForegroundColor Yellow
 
 foreach ($server in $config.servers) {
