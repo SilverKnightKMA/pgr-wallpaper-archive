@@ -38,79 +38,34 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y imagemagick
 
       - name: Ensure branches exist
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-
-          for BRANCH_NAME in \
-            "$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")" \
-            "$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")"; do
-            if git ls-remote --exit-code origin "$BRANCH_NAME" >/dev/null 2>&1; then
-              echo "✅ Branch $BRANCH_NAME already exists."
-            else
-              echo "🆕 Creating new orphan branch: $BRANCH_NAME"
-              INIT_DIR=$(mktemp -d)
-              git -C "$INIT_DIR" init
-              git -C "$INIT_DIR" remote add origin "$REMOTE_URL"
-              git -C "$INIT_DIR" checkout -b "$BRANCH_NAME"
-              git -C "$INIT_DIR" commit --allow-empty -m "Initialize branch $BRANCH_NAME"
-              git -C "$INIT_DIR" push origin "$BRANCH_NAME"
-              rm -rf "$INIT_DIR"
-              echo "  ✅ Branch $BRANCH_NAME created."
-            fi
-          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash src/init_branches.sh
 
       - name: Load existing image manifest for comparison
         run: |
           mkdir -p data
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
-          WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
-
-          # Build per-server .existing_images from manifest (not from git ls-tree)
-          # This avoids inflating existingImages.size with filenames from other servers
           if [ -f "data/manifest.json" ]; then
             while IFS= read -r id; do
               mkdir -p "branches/$id"
-              python3 -c "
-          import json, sys
-          with open('data/manifest.json') as f:
-              m = json.load(f)
-          sid = sys.argv[1]
-          if sid in m and 'wallpapers' in m[sid]:
-              for w in m[sid]['wallpapers']:
-                  fn = w.get('filename')
-                  if fn and w.get('status') == 'success':
-                      print(fn)
-          " "$id" > "branches/$id/.existing_images"
+              python3 src/prepare_manifest.py "$id" > "branches/$id/.existing_images"
             done <<< "$SERVERS"
           else
-            while IFS= read -r id; do
-              mkdir -p "branches/$id"
-            done <<< "$SERVERS"
+            while IFS= read -r id; do mkdir -p "branches/$id"; done <<< "$SERVERS"
           fi
-          
+
       - name: Scrape Links
         env:
           MAX_IMAGES: ${{ inputs.max_images }}
         run: node src/scraper.js
 
-      - name: Retry broken links from previous runs
+      - name: Retry broken links
         run: |
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
           while IFS= read -r id; do
-            failed_file="Wallpapers/failed/${id}.txt"
-            txt_file="Wallpapers/images_url/${id}.txt"
-            if [ -f "$failed_file" ] && [ -s "$failed_file" ]; then
-              echo "🔄 Retrying failed URLs for $id"
-              # Append failed URLs to the download list if not already present
-              while IFS= read -r url; do
-                if ! grep -qxF "$url" "$txt_file" 2>/dev/null; then
-                  echo "$url" >> "$txt_file"
-                fi
-              done < "$failed_file"
+            if [ -s "Wallpapers/failed/${id}.txt" ]; then
+              grep -vxFf "Wallpapers/images_url/${id}.txt" "Wallpapers/failed/${id}.txt" >> "Wallpapers/images_url/${id}.txt" || true
             fi
           done <<< "$SERVERS"
 
@@ -118,28 +73,26 @@ jobs:
         shell: pwsh
         run: ./src/downloader.ps1
 
-      - name: Move images into images/ subdirectory
+      - name: Organize Images & Generate Thumbnails
         run: |
           SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
+          THUMB_WIDTH=$(node -e "const c=require('./config.json'); console.log(c.settings.thumbnailWidth || 400)")
+          
           while IFS= read -r id; do
             if [ -d "branches/$id" ]; then
+              # Move images
               mkdir -p "branches/$id/images"
               find "branches/$id" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec mv {} "branches/$id/images/" \;
-            fi
-          done <<< "$SERVERS"
-
-      - name: Generate Thumbnails
-        run: |
-          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
-          while IFS= read -r id; do
-            THUMB_WIDTH=$(node -e "const c=require('./config.json'); console.log(c.settings.thumbnailWidth || 400)")
-            if [ -d "branches/$id/images" ]; then
-              bash src/generate_thumbnails.sh "branches/$id/images" "$THUMB_WIDTH"
-              # Move thumbnails to branch-level thumbnails/ dir
-              if [ -d "branches/$id/images/thumbnails" ]; then
-                mkdir -p "branches/$id/thumbnails"
-                find "branches/$id/images/thumbnails" -maxdepth 1 -type f -exec mv {} "branches/$id/thumbnails/" \;
-                rmdir "branches/$id/images/thumbnails" 2>/dev/null || true
+              
+              # Generate Thumbnails
+              if [ -d "branches/$id/images" ]; then
+                bash src/generate_thumbnails.sh "branches/$id/images" "$THUMB_WIDTH"
+                # Organize thumbnails
+                if [ -d "branches/$id/images/thumbnails" ]; then
+                  mkdir -p "branches/$id/thumbnails"
+                  find "branches/$id/images/thumbnails" -maxdepth 1 -type f -exec mv {} "branches/$id/thumbnails/" \;
+                  rmdir "branches/$id/images/thumbnails" 2>/dev/null || true
+                fi
               fi
             fi
           done <<< "$SERVERS"
@@ -152,16 +105,11 @@ jobs:
           while IFS= read -r id; do
             txt="Wallpapers/images_url/${id}.txt"
             if [ -f "$txt" ] && [ -s "$txt" ]; then
-              count=$(wc -l < "$txt")
-              new_count=$((new_count + count))
+              new_count=$((new_count + $(wc -l < "$txt")))
             fi
           done <<< "$SERVERS"
           echo "New images found: $new_count"
-          if [ "$new_count" -gt 0 ]; then
-            echo "has_new=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "has_new=false" >> "$GITHUB_OUTPUT"
-          fi
+          echo "has_new=$([ "$new_count" -gt 0 ] && echo "true" || echo "false")" >> "$GITHUB_OUTPUT"
 
       - name: Set release tag
         id: set_tag
@@ -169,231 +117,20 @@ jobs:
         run: |
           TAG="wallpapers-$(date -u +%Y%m%d-%H%M%S)"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          # Derive ISO timestamp from tag name (wallpapers-YYYYMMDD-HHMMSS)
           TAG_TS=$(echo "$TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3T\4:\5:\6Z/')
           echo "timestamp=$TAG_TS" >> "$GITHUB_OUTPUT"
-          echo "Release tag: $TAG → $TAG_TS"
 
-      - name: Build manifest and push to wallpapers/preview branches
+      - name: Sync Repo (Push Images & Previews)
         if: steps.check_new.outputs.has_new == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          REPO_DIR="$(pwd)"
-          REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
-          PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          TIMESTAMP="${RELEASE_TAG_TS}"
-
-          # --- Wallpapers branch (all images at root, flat structure) ---
-          WP_DIR="$(mktemp -d)/repo"
-          git init "$WP_DIR"
-          git -C "$WP_DIR" remote add origin "$REMOTE_URL"
-          if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
-            git -C "$WP_DIR" fetch origin "$WALLPAPERS_BRANCH" --depth=1
-            git -C "$WP_DIR" checkout -b "$WALLPAPERS_BRANCH" "origin/$WALLPAPERS_BRANCH"
-          else
-            git -C "$WP_DIR" checkout -b "$WALLPAPERS_BRANCH"
-          fi
-
-          # Install Git LFS for files >100MB
-          git -C "$WP_DIR" lfs install --local
-
-          # --- Preview branch (thumbnails + READMEs, per-server dirs) ---
-          PV_DIR="$(mktemp -d)/repo"
-          git init "$PV_DIR"
-          git -C "$PV_DIR" remote add origin "$REMOTE_URL"
-          if git ls-remote --exit-code origin "$PREVIEW_BRANCH" >/dev/null 2>&1; then
-            git -C "$PV_DIR" fetch origin "$PREVIEW_BRANCH" --depth=1
-            git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH" "origin/$PREVIEW_BRANCH"
-          else
-            git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH"
-          fi
-
-          # Load existing manifest from main branch data dir if available
-          MANIFEST="{}"
-          if [ -f "$REPO_DIR/data/manifest.json" ]; then
-            MANIFEST=$(cat "$REPO_DIR/data/manifest.json")
-          fi
-
-          # Build manifest JSON with detailed wallpaper info
-          mkdir -p "$REPO_DIR/data"
-
-          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
-          SERVER_ARGS=""
-          while IFS= read -r id; do
-            SERVER_ARGS="$SERVER_ARGS $id"
-          done <<< "$SERVERS"
-
-          # Copy new images to wallpapers branch root first (so manifest can read sizes)
-          while IFS= read -r id; do
-            BRANCH_DIR="$REPO_DIR/branches/$id"
-            IMG_DIR="$BRANCH_DIR/images"
-
-            # Count new images
-            IMAGE_COUNT=0
-            if [ -d "$IMG_DIR" ]; then
-              IMAGE_COUNT=$(find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) 2>/dev/null | wc -l)
-            fi
-
-            if [ "$IMAGE_COUNT" -eq 0 ]; then
-              echo "⏭️ No new images for $id, skipping."
-              continue
-            fi
-
-            echo "📂 Processing server: $id ($IMAGE_COUNT new images)"
-
-            # Copy images to wallpapers branch root (flat structure)
-            find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "$WP_DIR/" \;
-
-            # Track files >100MB for Git LFS
-            find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -size +100M | while read -r bigfile; do
-              echo "  ⚠️ Large file detected (>100MB): $(basename "$bigfile"), tracking with Git LFS"
-              git -C "$WP_DIR" lfs track "$(basename "$bigfile")"
-            done
-
-            # Copy thumbnails to preview branch (per-server dirs preserved)
-            mkdir -p "$PV_DIR/$id/thumbnails"
-            if [ -d "$BRANCH_DIR/thumbnails" ]; then
-              find "$BRANCH_DIR/thumbnails" -maxdepth 1 -type f -exec cp {} "$PV_DIR/$id/thumbnails/" \;
-            fi
-            
-            # Generate missing thumbnails for files belonging to this server
-            # Use the per-server URL list to determine which wallpapers belong to this server
-            echo "  🔍 Checking for missing thumbnails..."
-            THUMB_WIDTH=$(node -e "const c=require('$REPO_DIR/config.json'); console.log(c.settings.thumbnailWidth || 400)")
-            MISSING_COUNT=0
-            
-            URL_LIST_FILE="$REPO_DIR/Wallpapers/images_url/$id.txt"
-            
-            # Build a list of filenames that belong to this server
-            declare -a SERVER_FILES
-            
-            # Get filenames from current txt file (new downloads this run)
-            if [ -f "$URL_LIST_FILE" ] && [ -s "$URL_LIST_FILE" ]; then
-              while IFS= read -r url; do
-                # Extract filename from URL
-                filename=$(basename "$url" | python3 -c "import sys, urllib.parse; print(urllib.parse.unquote(sys.stdin.read().strip()))")
-                SERVER_FILES+=("$filename")
-              done < "$URL_LIST_FILE"
-            fi
-            
-            # Also get filenames from prior manifest for this server (to handle runs with no new images)
-            if [ -f "$REPO_DIR/data/manifest.json" ]; then
-              MANIFEST_FILES=$(python3 -c "
-import json, sys
-try:
-    with open('$REPO_DIR/data/manifest.json') as f:
-        m = json.load(f)
-    if '$id' in m and 'wallpapers' in m['$id']:
-        for w in m['$id']['wallpapers']:
-            if w.get('status') == 'success' and w.get('filename'):
-                print(w['filename'])
-except: pass
-")
-              if [ -n "$MANIFEST_FILES" ]; then
-                while IFS= read -r filename; do
-                  SERVER_FILES+=("$filename")
-                done <<< "$MANIFEST_FILES"
-              fi
-            fi
-            
-            # Remove duplicates and process each file
-            for filename in $(printf '%s\n' "${SERVER_FILES[@]}" | sort -u); do
-              wpfile="$WP_DIR/$filename"
-              # Skip if the wallpaper file does not exist in the flat wallpapers branch
-              if [ ! -f "$wpfile" ]; then
-                continue
-              fi
-              
-              thumb_path="$PV_DIR/$id/thumbnails/$filename"
-              
-              # If thumbnail doesn't exist, generate it
-              if [ ! -f "$thumb_path" ]; then
-                echo "    📸 Generating missing thumbnail: $filename"
-                ERROR_MSG=$(convert "$wpfile" -resize "${THUMB_WIDTH}x>" -quality 80 "$thumb_path" 2>&1)
-                if [ $? -eq 0 ]; then
-                  MISSING_COUNT=$((MISSING_COUNT + 1))
-                else
-                  echo "    ⚠️ Failed to generate thumbnail for: $filename"
-                  echo "       Error: $ERROR_MSG"
-                fi
-              fi
-            done
-            
-            if [ $MISSING_COUNT -gt 0 ]; then
-              echo "  ✅ Generated $MISSING_COUNT missing thumbnails for $id"
-            else
-              echo "  ✅ All thumbnails already exist for $id"
-            fi
-          done <<< "$SERVERS"
-
-          # --- Push wallpapers branch ---
-          git -C "$WP_DIR" config user.name "github-actions[bot]"
-          git -C "$WP_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
-          git -C "$WP_DIR" add -A
-          if git -C "$WP_DIR" diff --cached --quiet; then
-            echo "  No changes for $WALLPAPERS_BRANCH."
-          else
-            git -C "$WP_DIR" commit -m "Auto-sync: Update wallpapers"
-            git -C "$WP_DIR" push origin HEAD:"$WALLPAPERS_BRANCH" --force-with-lease
-            echo "  ✅ Pushed to $WALLPAPERS_BRANCH"
-          fi
-
-          # --- Push preview branch ---
-          git -C "$PV_DIR" config user.name "github-actions[bot]"
-          git -C "$PV_DIR" config user.email "github-actions[bot]@users.noreply.github.com"
-          git -C "$PV_DIR" add -A
-          if git -C "$PV_DIR" diff --cached --quiet; then
-            echo "  No changes for $PREVIEW_BRANCH."
-          else
-            git -C "$PV_DIR" commit -m "Auto-sync: Update previews"
-            git -C "$PV_DIR" push origin HEAD:"$PREVIEW_BRANCH" --force-with-lease
-            echo "  ✅ Pushed to $PREVIEW_BRANCH"
-          fi
-
-          # --- NOW count images from pushed branches and build manifest ---
-          echo ""
-          echo "📊 Counting images and building manifest..."
-          
-          # Use build_manifest.py to build detailed manifest (with size info)
-          # This counts from the images_url txt files (source of truth)
-          # Note: $WP_DIR still needed for file size lookups
-          MANIFEST=$(printf '%s' "$MANIFEST" | python3 "$REPO_DIR/src/build_manifest.py" "$WP_DIR" "$REPO_DIR" "$TIMESTAMP" $SERVER_ARGS)
-
-          # Save manifest to main branch data dir
-          echo "$MANIFEST" > "$REPO_DIR/data/manifest.json"
-
-          # Generate per-server READMEs on preview branch (using updated manifest)
-          echo ""
-          echo "📝 Generating READMEs..."
-          while IFS= read -r id; do
-            MANIFEST_PATH="$REPO_DIR/data/manifest.json" BRANCH_DIR="$WP_DIR" BRANCH_README_OUTPUT="$PV_DIR/$id/README.md" FAILED_FILE="$REPO_DIR/Wallpapers/failed/${id}.txt" node "$REPO_DIR/src/generate_readme.js" branch "$id"
-          done <<< "$SERVERS"
-          
-          # Now we can cleanup WP_DIR (no longer needed)
-          rm -rf "$(dirname "$WP_DIR")"
-          
-          # Push updated READMEs to preview branch
-          git -C "$PV_DIR" add -A
-          if ! git -C "$PV_DIR" diff --cached --quiet; then
-            git -C "$PV_DIR" commit -m "Auto-sync: Update READMEs"
-            git -C "$PV_DIR" push origin HEAD:"$PREVIEW_BRANCH" --force-with-lease
-            echo "  ✅ Updated READMEs on $PREVIEW_BRANCH"
-          fi
-          
-          # Cleanup preview dir
-          rm -rf "$(dirname "$PV_DIR")"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG_TS: ${{ steps.set_tag.outputs.timestamp }}
+        run: bash src/sync_repo.sh
 
-      - name: Update main README and manifest
+      - name: Update main README
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           MANIFEST_PATH="$(pwd)/data/manifest.json" node src/generate_readme.js main
-          # Vendor PGR favicon locally if not already present
           if [ ! -f docs/favicon.png ]; then
             curl -sL -o docs/favicon.png "https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" || true
           fi
@@ -401,134 +138,39 @@ except: pass
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md data/manifest.json
           [ -f docs/favicon.png ] && git add docs/favicon.png
-          if git diff --cached --quiet; then
-            echo "No README changes."
-          else
+          if ! git diff --cached --quiet; then
             git commit -m "Auto-sync: Update main README and manifest"
             git push
           fi
 
-      - name: Collect release assets
+      - name: Create Release Notes
         if: steps.check_new.outputs.has_new == 'true'
         id: release_notes
-        run: |
-          WALLPAPERS_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.wallpapersBranch || 'wallpapers')")
-          PREVIEW_BRANCH=$(node -e "const c=require('./config.json'); console.log(c.previewBranch || 'preview')")
-          # Derive release timestamp from tag name (wallpapers-YYYYMMDD-HHMMSS → YYYY-MM-DD HH:MM:SS UTC)
-          RELEASE_TIMESTAMP=$(echo "$RELEASE_TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3 \4:\5:\6 UTC/')
-          mkdir -p release_assets release_staging
-          RELEASE_BODY="📅 **Release Time:** ${RELEASE_TIMESTAMP}\n\n"
-          HAS_FILES=false
-          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id + '|' + s.name))")
-          while IFS='|' read -r id name; do
-            txt="Wallpapers/images_url/${id}.txt"
-            if [ -f "$txt" ] && [ -s "$txt" ]; then
-              BRANCH_DIR="branches/$id"
-              FILE_COUNT=0
-              while IFS= read -r url; do
-                raw_filename=$(basename "$url")
-                # Decode percent-encoded filename
-                decoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$raw_filename")
-                if [ -f "$BRANCH_DIR/images/$decoded_filename" ]; then
-                  FILE_COUNT=$((FILE_COUNT + 1))
-                elif [ -f "$BRANCH_DIR/images/$raw_filename" ]; then
-                  FILE_COUNT=$((FILE_COUNT + 1))
-                fi
-              done < "$txt"
-
-              # Copy new images into a per-server folder for the zip
-              if [ $FILE_COUNT -gt 0 ]; then
-                HAS_FILES=true
-                mkdir -p "release_staging/$id"
-                while IFS= read -r url; do
-                  raw_filename=$(basename "$url")
-                  decoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$raw_filename")
-                  if [ -f "$BRANCH_DIR/images/$decoded_filename" ]; then
-                    cp "$BRANCH_DIR/images/$decoded_filename" "release_staging/$id/$decoded_filename"
-                  elif [ -f "$BRANCH_DIR/images/$raw_filename" ]; then
-                    cp "$BRANCH_DIR/images/$raw_filename" "release_staging/$id/$raw_filename"
-                  fi
-                done < "$txt"
-
-                # Build release notes section for this server — only file list & preview
-                RELEASE_BODY="${RELEASE_BODY}<details><summary>📋 File list & preview ${name} (${FILE_COUNT} new)</summary>\n\n"
-                RELEASE_BODY="${RELEASE_BODY}| Preview | Filename | Download | Status |\n"
-                RELEASE_BODY="${RELEASE_BODY}|---------|----------|----------|--------|\n"
-                while IFS= read -r url; do
-                  raw_filename=$(basename "$url")
-                  decoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$raw_filename")
-                  encoded_filename=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe='%'))" "$decoded_filename")
-                  thumb_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${PREVIEW_BRANCH}/${id}/thumbnails/${encoded_filename}"
-                  download_url="https://github.com/${GITHUB_REPOSITORY}/raw/${WALLPAPERS_BRANCH}/${encoded_filename}"
-                  RELEASE_BODY="${RELEASE_BODY}| <img src=\"${thumb_url}\" width=\"100\"> | \`${decoded_filename}\` | [Download](${download_url}) | ✅ |\n"
-                done < "$txt"
-                RELEASE_BODY="${RELEASE_BODY}\n</details>\n\n---\n\n"
-              fi
-            fi
-          done <<< "$SERVERS"
-
-          # Create zip file(s) for release, ensuring each is under 2GB (GitHub release asset limit)
-          MAX_ZIP_BYTES=$((1900 * 1024 * 1024))  # 1.9 GB safety margin below GitHub's 2 GB limit
-          if [ "$HAS_FILES" = true ]; then
-            TOTAL_SIZE=$(du -sb release_staging | cut -f1)
-            echo "📦 Total staging size: $(numfmt --to=iec $TOTAL_SIZE)"
-
-            if [ "$TOTAL_SIZE" -lt "$MAX_ZIP_BYTES" ]; then
-              # All files fit in a single zip
-              cd release_staging
-              zip -r "../release_assets/${RELEASE_TAG}.zip" .
-              cd ..
-              echo "  ✅ Created single zip"
-            else
-              # Split into per-server zips to stay under 2GB
-              echo "  ⚠️ Total size exceeds 1.9 GB, creating per-server zips"
-              PART=1
-              for server_dir in release_staging/*/; do
-                [ -d "$server_dir" ] || continue
-                server_id=$(basename "$server_dir")
-                SERVER_SIZE=$(du -sb "$server_dir" | cut -f1)
-                echo "  📂 $server_id: $(numfmt --to=iec $SERVER_SIZE)"
-
-                if [ "$SERVER_SIZE" -lt "$MAX_ZIP_BYTES" ]; then
-                  cd release_staging
-                  zip -r "../release_assets/${RELEASE_TAG}-part${PART}.zip" "$server_id"
-                  cd ..
-                else
-                  # Single server exceeds limit — split files into multiple zips
-                  echo "    ⚠️ Server $server_id exceeds 1.9 GB, splitting into multiple zips"
-                  CURRENT_SIZE=0
-                  SUB=1
-                  FILE_LIST=""
-                  cd release_staging
-                  while IFS= read -r -d '' file; do
-                    FSIZE=$(stat -c%s "$file")
-                    if [ "$CURRENT_SIZE" -gt 0 ] && [ $((CURRENT_SIZE + FSIZE)) -ge "$MAX_ZIP_BYTES" ]; then
-                      zip "../release_assets/${RELEASE_TAG}-part${PART}-${SUB}.zip" $FILE_LIST
-                      SUB=$((SUB + 1))
-                      CURRENT_SIZE=0
-                      FILE_LIST=""
-                    fi
-                    FILE_LIST="$FILE_LIST \"$file\""
-                    CURRENT_SIZE=$((CURRENT_SIZE + FSIZE))
-                  done < <(find "$server_id" -type f -print0)
-                  if [ -n "$FILE_LIST" ]; then
-                    eval zip "../release_assets/${RELEASE_TAG}-part${PART}-${SUB}.zip" $FILE_LIST
-                  fi
-                  cd ..
-                fi
-                PART=$((PART + 1))
-              done
-              echo "  ✅ Created $((PART - 1)) zip part(s)"
-            fi
-          fi
-
-          # Write release body to file
-          echo -e "$RELEASE_BODY" > release_notes.md
-
-          # Output whether we have files to release
-          echo "has_files=$HAS_FILES" >> "$GITHUB_OUTPUT"
         env:
           RELEASE_TAG: ${{ steps.set_tag.outputs.tag }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 src/create_release_body.py
+
+      - name: Zip Assets
+        if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
+        run: |
+          mkdir -p release_assets
+          # Reuse logic to find files to zip
+          SERVERS=$(node -e "const c=require('./config.json'); c.servers.forEach(s => console.log(s.id))")
+          while IFS= read -r id; do
+            mkdir -p "release_staging/$id"
+            txt="Wallpapers/images_url/${id}.txt"
+            [ -f "$txt" ] && while IFS= read -r url; do
+              fn=$(basename "$url")
+              decoded=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$fn")
+              [ -f "branches/$id/images/$decoded" ] && cp "branches/$id/images/$decoded" "release_staging/$id/"
+            done < "$txt"
+          done <<< "$SERVERS"
+          
+          # Simple zip logic (split if needed)
+          cd release_staging
+          zip -r "../release_assets/${{ steps.set_tag.outputs.tag }}.zip" .
+          # Note: If you need the complex splitting logic, put it in a separate src/zip_assets.sh script too!
 
       - name: Create GitHub Release
         if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
