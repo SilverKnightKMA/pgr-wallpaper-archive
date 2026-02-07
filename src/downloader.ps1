@@ -1,5 +1,5 @@
 $configPath = Join-Path $PSScriptRoot ".." "config.json"
-$configPath = [System.IO.Path]::GetFullPath($configPath) # Chuẩn hóa đường dẫn
+$configPath = [System.IO.Path]::GetFullPath($configPath)
 
 if (!(Test-Path $configPath)) {
     Write-Host "❌ Config not found: $configPath" -ForegroundColor Red
