@@ -29,27 +29,25 @@ foreach ($server in $config.servers) {
     $count = 0
     $downloaded = 0
 
-    foreach ($url in $urls) {
-        $count++
-        $filename = Split-Path $url -Leaf
-        $dest = Join-Path $server.dir $filename
-        
-        if (!$env:GITHUB_ACTIONS) {
-            Write-Progress -Activity "Downloading from $($server.name)" -Status "File $count/${total}: $filename" -PercentComplete (($count/$total)*100)
-        }
+    # Multi-threaded download using ForEach-Object -Parallel
+    $urls | ForEach-Object -Parallel {
+        $url = $_
+        $filename = [System.IO.Path]::GetFileName($url)
+        $dest = Join-Path $using:server.dir $filename
 
         if (!(Test-Path $dest)) {
             try {
                 Invoke-WebRequest -Uri $url -OutFile $dest -ErrorAction Stop
-                Write-Host "  [$count/${total}] DOWNLOADED: $filename" -ForegroundColor Green
-                $downloaded++
+                Write-Host "  [$(++$using:count)/$using:total] DOWNLOADED: $filename" -ForegroundColor Green
+                $using:downloaded++
             } catch {
-                Write-Host "  [$count/${total}] ERROR: $filename" -ForegroundColor Red
+                Write-Host "  [$(++$using:count)/$using:total] ERROR: $filename" -ForegroundColor Red
             }
         } else {
-            Write-Host "  [$count/${total}] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
+            Write-Host "  [$(++$using:count)/$using:total] SKIPPED: $filename (Exists)" -ForegroundColor DarkGray
         }
-    }
+    } -ThrottleLimit 16 # Limit to 8 parallel downloads
+
     Write-Host " >> Finish $($server.name): $downloaded new files added." -ForegroundColor Green
 }
 Write-Host "`n=== ALL DOWNLOADS FINISHED ===" -ForegroundColor Yellow
