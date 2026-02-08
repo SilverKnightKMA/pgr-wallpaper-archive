@@ -92,7 +92,7 @@ jobs:
 
       - name: Download Wallpapers
         if: steps.check_new.outputs.has_new == 'true'
-        run: python3 src/downloader.py
+        run: python3 -u src/downloader.py
 
       - name: Organize Images
         if: steps.check_new.outputs.has_new == 'true'

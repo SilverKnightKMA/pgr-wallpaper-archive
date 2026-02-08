@@ -107,6 +107,7 @@ def process_server(server):
     server_name = server['name']
 
     print(f'\n--- Processing: {server_name} ---')
+    sys.stdout.flush()
 
     for category in CATEGORIES:
         txt_path = os.path.join(REPO_DIR, 'Wallpapers', 'images_url',
@@ -114,6 +115,7 @@ def process_server(server):
         server_dir = os.path.join(REPO_DIR, 'branches', server_id, category)
 
         print(f'  [{category}] Reading links from: {txt_path}')
+        sys.stdout.flush()
 
         if not os.path.isfile(txt_path):
             print(f'  [{category}] Skip: File not found.')
@@ -165,6 +167,7 @@ def process_server(server):
                     downloaded += 1
                     if downloaded % 10 == 0 or downloaded == len(tasks):
                         print(f'  [{server_name}/{category}] Progress: {downloaded}/{len(tasks)} downloaded')
+                        sys.stdout.flush()
                 else:
                     failed += 1
                     failed_urls.append(url)
@@ -172,8 +175,10 @@ def process_server(server):
                     print(f'    Original URL: {url}')
                     print(f'    Encoded URL:  {enc_url}')
                     print(f'    Error:        {err}')
+                    sys.stdout.flush()
 
         print(f'  >> {server_name}/{category}: {downloaded} success, {failed} failed.')
+        sys.stdout.flush()
 
         # Write failed URLs
         failed_dir = os.path.join(REPO_DIR, 'Wallpapers', 'failed')
@@ -193,11 +198,13 @@ def process_server(server):
 def main():
     config = load_config()
     print('=== PGR DOWNLOADER START ===')
+    sys.stdout.flush()
 
     for server in config['servers']:
         process_server(server)
 
     print('\n=== ALL DOWNLOADS FINISHED ===')
+    sys.stdout.flush()
 
 
 if __name__ == '__main__':
