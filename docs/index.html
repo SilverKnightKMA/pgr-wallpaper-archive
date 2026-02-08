@@ -33,27 +33,66 @@
             margin-bottom: 24px;
         }
         .filter-group {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 12px;
+            position: relative;
         }
         .filter-label {
             font-size: 12px;
             font-weight: 600;
             color: var(--text-muted);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             display: block;
         }
-        .filter-options {
-            max-height: 150px;
+        .dropdown-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        .dropdown-toggle:hover {
+            border-color: var(--accent);
+        }
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+        .dropdown-toggle.open::after {
+            content: '▲';
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px;
+            max-height: 250px;
             overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .dropdown-menu.show {
+            display: block;
         }
         .checkbox-item {
             display: flex;
             align-items: center;
-            padding: 4px 0;
+            padding: 6px 4px;
             cursor: pointer;
+            border-radius: 4px;
+        }
+        .checkbox-item:hover {
+            background: var(--border);
         }
         .checkbox-item input[type="checkbox"] {
             margin-right: 8px;
@@ -77,7 +116,7 @@
             border-radius: 6px; padding: 16px; margin-bottom: 24px;
             display: flex; gap: 24px; flex-wrap: wrap;
         }
-        .stat-item { text-align: center; }
+        .stat-item { text-align: center; min-width: 80px; }
         .stat-value { font-size: 24px; font-weight: bold; }
         .stat-label { color: var(--text-muted); font-size: 12px; }
         .gallery {
@@ -131,12 +170,18 @@
         <div class="controls">
             <div class="filter-group">
                 <label class="filter-label">🌐 Servers</label>
-                <div class="filter-options" id="serverFilterBox"></div>
+                <div class="dropdown-toggle" data-dropdown="serverFilter">
+                    <span id="serverFilterLabel">All Servers</span>
+                </div>
+                <div class="dropdown-menu" id="serverFilterMenu"></div>
             </div>
             
             <div class="filter-group">
                 <label class="filter-label">📂 Categories</label>
-                <div class="filter-options" id="categoryFilterBox">
+                <div class="dropdown-toggle" data-dropdown="categoryFilter">
+                    <span id="categoryFilterLabel">All Categories</span>
+                </div>
+                <div class="dropdown-menu" id="categoryFilterMenu">
                     <div class="checkbox-item">
                         <input type="checkbox" id="cat-desktop" value="desktop" checked>
                         <label for="cat-desktop">🖥️ Desktop</label>
@@ -150,7 +195,10 @@
             
             <div class="filter-group">
                 <label class="filter-label">✅ Status</label>
-                <div class="filter-options" id="statusFilterBox">
+                <div class="dropdown-toggle" data-dropdown="statusFilter">
+                    <span id="statusFilterLabel">All Status</span>
+                </div>
+                <div class="dropdown-menu" id="statusFilterMenu">
                     <div class="checkbox-item">
                         <input type="checkbox" id="status-success" value="success" checked>
                         <label for="status-success">✅ Success</label>
@@ -164,9 +212,10 @@
             
             <div class="filter-group">
                 <label class="filter-label">📅 Release Time</label>
-                <select id="releaseTimeFilter">
-                    <option value="all">All Times</option>
-                </select>
+                <div class="dropdown-toggle" data-dropdown="releaseTimeFilter">
+                    <span id="releaseTimeFilterLabel">All Times</span>
+                </div>
+                <div class="dropdown-menu" id="releaseTimeFilterMenu"></div>
             </div>
             
             <div class="filter-group">
@@ -193,6 +242,7 @@
             <div class="stat-item"><div class="stat-value" id="statSuccess">-</div><div class="stat-label">Success</div></div>
             <div class="stat-item"><div class="stat-value" id="statFailed">-</div><div class="stat-label">Failed</div></div>
             <div class="stat-item"><div class="stat-value" id="statServers">-</div><div class="stat-label">Servers</div></div>
+            <div class="stat-item"><div class="stat-value" id="statTotalSize">-</div><div class="stat-label">Total Size</div></div>
         </div>
 
         <div class="timestamp" id="lastUpdated"></div>
@@ -323,20 +373,89 @@
             }).join('');
         }
 
+        function parseSize(sizeStr) {
+            if (!sizeStr) return 0;
+            const match = sizeStr.match(/([0-9.]+)\s*(KB|MB|GB)?/i);
+            if (!match) return 0;
+            const num = parseFloat(match[1]);
+            const unit = (match[2] || 'MB').toUpperCase();
+            const multipliers = { KB: 1024, MB: 1024*1024, GB: 1024*1024*1024 };
+            return num * (multipliers[unit] || 1);
+        }
+
+        function formatSize(bytes) {
+            if (bytes === 0) return '0 B';
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(2) + ' KB';
+            if (bytes < 1024 * 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+            return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+        }
+
         function updateStats(items) {
             const success = items.filter(i => i.status === 'success').length;
             const failed = items.filter(i => i.status === 'failed').length;
             const servers = new Set(items.map(i => i.server)).size;
+            const totalBytes = items.reduce((sum, item) => sum + parseSize(item.size), 0);
+            
             document.getElementById('statTotal').textContent = items.length;
             document.getElementById('statSuccess').textContent = success;
             document.getElementById('statFailed').textContent = failed;
             document.getElementById('statServers').textContent = servers;
+            document.getElementById('statTotalSize').textContent = formatSize(totalBytes);
         }
 
         function getSelectedCheckboxes(containerSelector) {
             const container = document.querySelector(containerSelector);
             return Array.from(container.querySelectorAll('input[type="checkbox"]:checked'))
                 .map(cb => cb.value);
+        }
+
+        function updateDropdownLabel(dropdownName, menuSelector, labelSelector) {
+            const checkboxes = document.querySelectorAll(`${menuSelector} input[type="checkbox"]`);
+            const checked = Array.from(checkboxes).filter(cb => cb.checked);
+            const label = document.querySelector(labelSelector);
+            
+            if (checked.length === 0) {
+                label.textContent = `No ${dropdownName}`;
+            } else if (checked.length === checkboxes.length) {
+                label.textContent = `All ${dropdownName}`;
+            } else {
+                label.textContent = `${checked.length} ${dropdownName}`;
+            }
+        }
+
+        function setupDropdowns() {
+            // Toggle dropdown on click
+            document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const dropdown = toggle.getAttribute('data-dropdown');
+                    const menu = toggle.nextElementSibling;
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.dropdown-menu').forEach(m => {
+                        if (m !== menu) m.classList.remove('show');
+                    });
+                    document.querySelectorAll('.dropdown-toggle').forEach(t => {
+                        if (t !== toggle) t.classList.remove('open');
+                    });
+                    
+                    // Toggle current
+                    menu.classList.toggle('show');
+                    toggle.classList.toggle('open');
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('show'));
+                document.querySelectorAll('.dropdown-toggle').forEach(t => t.classList.remove('open'));
+            });
+
+            // Prevent dropdown from closing when clicking inside
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.addEventListener('click', (e) => e.stopPropagation());
+            });
         }
 
         function sortItems(items, sortBy) {
@@ -346,16 +465,6 @@
                 let valB = b[field] || '';
                 
                 if (field === 'size') {
-                    // Parse size strings like "1.2 MB" to bytes for comparison
-                    const parseSize = (str) => {
-                        if (!str) return 0;
-                        const match = str.match(/([0-9.]+)\s*(KB|MB|GB)?/i);
-                        if (!match) return 0;
-                        const num = parseFloat(match[1]);
-                        const unit = (match[2] || 'MB').toUpperCase();
-                        const multipliers = { KB: 1024, MB: 1024*1024, GB: 1024*1024*1024 };
-                        return num * (multipliers[unit] || 1);
-                    };
                     valA = parseSize(valA);
                     valB = parseSize(valB);
                 }
@@ -368,12 +477,18 @@
         }
 
         function applyFilters() {
-            const selectedServers = getSelectedCheckboxes('#serverFilterBox');
-            const selectedStatuses = getSelectedCheckboxes('#statusFilterBox');
-            const selectedCategories = getSelectedCheckboxes('#categoryFilterBox');
-            const releaseTimeVal = document.getElementById('releaseTimeFilter').value;
+            const selectedServers = getSelectedCheckboxes('#serverFilterMenu');
+            const selectedStatuses = getSelectedCheckboxes('#statusFilterMenu');
+            const selectedCategories = getSelectedCheckboxes('#categoryFilterMenu');
+            const selectedReleaseTimes = getSelectedCheckboxes('#releaseTimeFilterMenu');
             const search = document.getElementById('searchInput').value.toLowerCase();
             const sortBy = document.getElementById('sortFilter').value;
+
+            // Update dropdown labels
+            updateDropdownLabel('Servers', '#serverFilterMenu', '#serverFilterLabel');
+            updateDropdownLabel('Categories', '#categoryFilterMenu', '#categoryFilterLabel');
+            updateDropdownLabel('Status', '#statusFilterMenu', '#statusFilterLabel');
+            updateDropdownLabel('Times', '#releaseTimeFilterMenu', '#releaseTimeFilterLabel');
 
             let filtered = allData;
             
@@ -386,8 +501,8 @@
             if (selectedCategories.length > 0) {
                 filtered = filtered.filter(i => selectedCategories.includes(i.category));
             }
-            if (releaseTimeVal !== 'all') {
-                filtered = filtered.filter(i => i.releaseTime === releaseTimeVal);
+            if (selectedReleaseTimes.length > 0) {
+                filtered = filtered.filter(i => selectedReleaseTimes.includes(i.releaseTime));
             }
             if (search) {
                 filtered = filtered.filter(i => i.filename.toLowerCase().includes(search));
@@ -414,8 +529,8 @@
                     }
                 });
 
-                // Populate server filter (checkboxes)
-                const serverFilterBox = document.getElementById('serverFilterBox');
+                // Populate server filter (checkboxes in dropdown)
+                const serverFilterMenu = document.getElementById('serverFilterMenu');
                 serverIds.forEach(id => {
                     const div = document.createElement('div');
                     div.className = 'checkbox-item';
@@ -424,7 +539,7 @@
                         <input type="checkbox" id="${checkId}" value="${id}" checked>
                         <label for="${checkId}">${escapeHtml(serverNames[id] || id)}</label>
                     `;
-                    serverFilterBox.appendChild(div);
+                    serverFilterMenu.appendChild(div);
                 });
 
                 // Build flat data array
@@ -452,37 +567,46 @@
                     document.getElementById('lastUpdated').textContent = `Last Updated: ${latestTime}`;
                 }
 
-                // Populate release time filter
-                const releaseTimeFilter = document.getElementById('releaseTimeFilter');
+                // Populate release time filter (checkboxes in dropdown)
+                const releaseTimeFilterMenu = document.getElementById('releaseTimeFilterMenu');
                 const releaseTimes = [...new Set(allData.map(i => i.releaseTime).filter(Boolean))].sort().reverse();
                 releaseTimes.forEach(rt => {
-                    const opt = document.createElement('option');
-                    opt.value = rt;
-                    opt.textContent = rt;
-                    releaseTimeFilter.appendChild(opt);
+                    const div = document.createElement('div');
+                    div.className = 'checkbox-item';
+                    const checkId = `time-${rt.replace(/[^a-zA-Z0-9]/g, '-')}`;
+                    div.innerHTML = `
+                        <input type="checkbox" id="${checkId}" value="${escapeAttr(rt)}" checked>
+                        <label for="${checkId}">${escapeHtml(rt)}</label>
+                    `;
+                    releaseTimeFilterMenu.appendChild(div);
                 });
+
+                // Setup dropdown functionality
+                setupDropdowns();
 
                 // Check URL params for pre-filter
                 const params = new URLSearchParams(window.location.search);
                 if (params.get('server')) {
                     const serverId = params.get('server');
                     // Uncheck all, then check only the requested server
-                    serverFilterBox.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                    serverFilterMenu.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
                     const targetCb = document.getElementById(`server-${serverId}`);
                     if (targetCb) targetCb.checked = true;
                 }
 
                 // Attach event listeners
-                document.querySelectorAll('#serverFilterBox input[type="checkbox"]').forEach(cb => {
+                document.querySelectorAll('#serverFilterMenu input[type="checkbox"]').forEach(cb => {
                     cb.addEventListener('change', applyFilters);
                 });
-                document.querySelectorAll('#statusFilterBox input[type="checkbox"]').forEach(cb => {
+                document.querySelectorAll('#statusFilterMenu input[type="checkbox"]').forEach(cb => {
                     cb.addEventListener('change', applyFilters);
                 });
-                document.querySelectorAll('#categoryFilterBox input[type="checkbox"]').forEach(cb => {
+                document.querySelectorAll('#categoryFilterMenu input[type="checkbox"]').forEach(cb => {
                     cb.addEventListener('change', applyFilters);
                 });
-                document.getElementById('releaseTimeFilter').addEventListener('change', applyFilters);
+                document.querySelectorAll('#releaseTimeFilterMenu input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', applyFilters);
+                });
                 document.getElementById('sortFilter').addEventListener('change', applyFilters);
                 document.getElementById('searchInput').addEventListener('input', applyFilters);
 
