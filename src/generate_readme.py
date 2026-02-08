@@ -81,8 +81,8 @@ def generate_main_readme(config):
     lines.append(f'🌐 [Browse & Filter Wallpapers on Web]({pages_url})\n')
     lines.append('## 📂 Server Galleries\n')
     lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')
-    lines.append('| Server | Details | Total | Success | Failed | Last Updated |')
-    lines.append('|--------|---------|-------|---------|--------|--------------|')
+    lines.append('| Server | Total | Success | Failed | Last Updated |')
+    lines.append('|--------|-------|---------|--------|--------------|')
 
     for server in config['servers']:
         server_url = f'https://github.com/{repo_slug}/tree/main/preview/{server["id"]}'
@@ -91,7 +91,7 @@ def generate_main_readme(config):
         success = sd.get('success', 0)
         failed = sd.get('failed', 0)
         last_updated = sd.get('lastUpdated', 'N/A')
-        lines.append(f'| 🖼️ {server["name"]} | [View Details]({server_url}) | {total} | ✅ {success} | ❌ {failed} | {last_updated} |')
+        lines.append(f'| [🖼️ {server["name"]}]({server_url}) | {total} | ✅ {success} | ❌ {failed} | {last_updated} |')
 
     lines.append('\n---\n')
     lines.append('## 🖼️ Wallpaper Preview\n')
@@ -201,6 +201,7 @@ def generate_server_readme(config, server):
             lines.append('</summary>\n')
             lines.append(f'- **Release Time:** {release_time}')
             lines.append(f'- **Size:** {size}')
+            lines.append(f'- **Category:** {cat}')
             lines.append(f'- **Status:** {status}')
             lines.append(f'- **Download Raw:** [⬇ Download]({dl})')
             if source_link:

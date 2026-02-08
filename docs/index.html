@@ -104,6 +104,11 @@
             <select id="releaseTimeFilter">
                 <option value="all">All Release Times</option>
             </select>
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="desktop">🖥️ Desktop</option>
+                <option value="mobile">📱 Mobile</option>
+            </select>
             <input type="text" id="searchInput" placeholder="Search by filename...">
         </div>
 
@@ -257,12 +262,14 @@
             const status = document.getElementById('statusFilter').value;
             const releaseTimeVal = document.getElementById('releaseTimeFilter').value;
             const search = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
 
             let filtered = allData;
             if (server !== 'all') filtered = filtered.filter(i => i.server === server);
             if (status !== 'all') filtered = filtered.filter(i => i.status === status);
             if (releaseTimeVal !== 'all') filtered = filtered.filter(i => i.releaseTime === releaseTimeVal);
             if (search) filtered = filtered.filter(i => i.filename.toLowerCase().includes(search));
+            if (category !== 'all') filtered = filtered.filter(i => i.category === category);
 
             updateStats(filtered);
             renderGallery(filtered);

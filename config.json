@@ -27,5 +27,26 @@
     }
   ],
   "wallpapersBranch": "wallpapers",
-  "settings": {}
+  "settings": {},
+  "readme": {
+    "main": {
+      "outputPath": "README.md",
+      "previewCount": 15
+    },
+    "server": {
+      "outputDir": "preview",
+      "fields": ["releaseTime", "size", "category", "status", "url"]
+    }
+  },
+  "website": {
+    "filters": ["desktop", "mobile"],
+    "gallery": {
+      "thumbnailField": "condenseImg",
+      "fallbackThumbnail": "rawUrl"
+    }
+  },
+  "release": {
+    "notesTemplate": "release_notes.md",
+    "fields": ["filename", "category", "size", "status"]
+  }
 }
