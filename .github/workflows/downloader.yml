@@ -182,7 +182,7 @@ jobs:
             while IFS= read -r id; do
               rm -rf "branches/$id/downloads" "branches/$id/images" "branches/$id/previews"
             done <<< "$SERVERS"
-            rm -rf new_images
+            rm -rf new_images Wallpapers/downloaded
             rm -f release_notes.md data/manifest_old.json
 
             echo "Batch $BATCH complete."

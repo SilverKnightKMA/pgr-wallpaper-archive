@@ -150,6 +150,7 @@ def process_server(server, cumulative_bytes):
     failed = 0
     failed_urls = []
     remaining_urls = []
+    downloaded_urls = []
 
     # Submit in small batches so we can stop when size limit is hit
     SUBMIT_BATCH = MAX_WORKERS * 2  # submit this many at a time
@@ -173,6 +174,7 @@ def process_server(server, cumulative_bytes):
                 if success:
                     downloaded += 1
                     cumulative_bytes += fsize
+                    downloaded_urls.append(url)
                     if downloaded % 10 == 0:
                         size_mb = cumulative_bytes / (1024 * 1024)
                         print(f'  [{server_name}] {downloaded} downloaded ({size_mb:.0f} MB cumulative)')
@@ -217,6 +219,16 @@ def process_server(server, cumulative_bytes):
         # All done for this server -- clear the URL file
         with open(txt_path, 'w', encoding='utf-8') as f:
             pass
+
+    # Write successfully downloaded URLs so build_manifest.py can discover them
+    if downloaded_urls:
+        dl_dir = os.path.join(REPO_DIR, 'Wallpapers', 'downloaded')
+        os.makedirs(dl_dir, exist_ok=True)
+        dl_path = os.path.join(dl_dir, f'{server_id}.txt')
+        # Append to support multiple batches within same run
+        with open(dl_path, 'a', encoding='utf-8') as f:
+            for url in downloaded_urls:
+                f.write(url + '\n')
 
     return cumulative_bytes, hit_limit
 

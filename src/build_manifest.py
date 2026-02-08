@@ -206,10 +206,15 @@ def main():
                         failed_filenames.add(filename_from_url(url))
         failed_count = len(failed_urls)
 
-        # ---- Add NEW filenames from images_url txt ----
+        # ---- Add NEW filenames from images_url txt + downloaded txt ----
         new_url_map = {}  # filename -> url
-        txt_file = os.path.join(repo_dir, 'Wallpapers', 'images_url', f'{sid}.txt')
-        if os.path.isfile(txt_file):
+        url_files = [
+            os.path.join(repo_dir, 'Wallpapers', 'images_url', f'{sid}.txt'),
+            os.path.join(repo_dir, 'Wallpapers', 'downloaded', f'{sid}.txt'),
+        ]
+        for txt_file in url_files:
+            if not os.path.isfile(txt_file):
+                continue
             with open(txt_file, encoding='utf-8') as f:
                 for line in f:
                     url = line.strip()
