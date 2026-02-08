@@ -15,9 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    outputs:
-      has_new_images: ${{ steps.check_new.outputs.has_new }}
-      release_tag: ${{ steps.set_tag.outputs.tag }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -61,7 +58,6 @@ jobs:
           SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
           while IFS= read -r id; do
             if [ -s "Wallpapers/failed/${id}.txt" ]; then
-              # Add failed URLs not already in the URL list
               grep -vxFf "Wallpapers/images_url/${id}.txt" "Wallpapers/failed/${id}.txt" >> "Wallpapers/images_url/${id}.txt" 2>/dev/null || true
             fi
           done <<< "$SERVERS"
@@ -81,77 +77,124 @@ jobs:
           done <<< "$SERVERS"
           echo "has_new=$has_new" >> "$GITHUB_OUTPUT"
 
-      - name: Set release tag
-        id: set_tag
+      - name: Download, Process & Release (Batched Loop)
         if: steps.check_new.outputs.has_new == 'true'
-        run: |
-          TAG="wallpapers-$(date -u +%Y%m%d-%H%M%S)"
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
-          TAG_TS=$(echo "$TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3T\4:\5:\6Z/')
-          echo "timestamp=$TAG_TS" >> "$GITHUB_OUTPUT"
-
-      - name: Download Wallpapers
-        if: steps.check_new.outputs.has_new == 'true'
-        run: python3 -u src/downloader.py
-
-      - name: Process Images (Resolution + Previews)
-        if: steps.check_new.outputs.has_new == 'true'
-        run: python3 -u src/process_images.py
-
-      - name: Sync Repo (Push Images + Previews)
-        if: steps.check_new.outputs.has_new == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_TAG_TS: ${{ steps.set_tag.outputs.timestamp }}
-        run: |
-          # Save old manifest for comparison before sync builds a new one
-          if [ -f data/manifest.json ]; then
-            cp data/manifest.json data/manifest_old.json
-          else
-            echo '{}' > data/manifest_old.json
-          fi
-          bash src/sync_repo.sh
-
-      - name: Diff manifests for release
-        if: steps.check_new.outputs.has_new == 'true'
-        run: |
-          mkdir -p new_images
-          python3 src/diff_manifest.py data/manifest_old.json data/manifest.json new_images
-
-      - name: Update main README
-        if: steps.check_new.outputs.has_new == 'true'
-        run: |
-          MANIFEST_PATH="$(pwd)/data/manifest.json" python3 src/generate_readme.py main
-          if [ ! -f docs/favicon.png ]; then
-            curl -sL -o docs/favicon.png "https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" || true
-          fi
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md data/manifest.json
-          [ -f docs/favicon.png ] && git add docs/favicon.png
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-sync: Update README and manifest"
-            git push
-          fi
-
-      - name: Create Release Notes
-        if: steps.check_new.outputs.has_new == 'true'
-        id: release_notes
-        env:
-          RELEASE_TAG: ${{ steps.set_tag.outputs.tag }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: python3 src/create_release_body.py
-
-      - name: Create Release & Upload Zipped Assets
-        if: steps.check_new.outputs.has_new == 'true' && steps.release_notes.outputs.has_files == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
-          # Create the release first
-          gh release create "${{ steps.set_tag.outputs.tag }}" \
-            --title "${{ steps.set_tag.outputs.tag }}" \
-            --notes-file release_notes.md
+          set -e
 
-          # Zip in batches (<1.8GB each), upload each, then delete zip + source images
-          bash src/zip_and_release.sh "${{ steps.set_tag.outputs.tag }}"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          BATCH=0
+          MORE_WORK=true
+
+          while $MORE_WORK; do
+            BATCH=$((BATCH + 1))
+            echo ""
+            echo "========================================"
+            echo "  BATCH $BATCH"
+            echo "========================================"
+
+            # --- Set release tag for this batch ---
+            RELEASE_TAG="wallpapers-$(date -u +%Y%m%d-%H%M%S)"
+            RELEASE_TAG_TS=$(echo "$RELEASE_TAG" | sed 's/wallpapers-\([0-9]\{4\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)-\([0-9]\{2\}\)\([0-9]\{2\}\)\([0-9]\{2\}\)/\1-\2-\3T\4:\5:\6Z/')
+            export RELEASE_TAG RELEASE_TAG_TS
+
+            # --- 1. Download (up to 1.8GB) ---
+            echo "--- Step 1: Download ---"
+            DL_EXIT=0
+            python3 -u src/downloader.py || DL_EXIT=$?
+
+            if [ "$DL_EXIT" -eq 2 ]; then
+              echo "Batch limit reached -- will loop again after processing."
+            elif [ "$DL_EXIT" -ne 0 ]; then
+              echo "Downloader failed with exit code $DL_EXIT"
+              exit 1
+            else
+              MORE_WORK=false
+            fi
+
+            # Check if any files were actually downloaded
+            DOWNLOAD_COUNT=$(find branches/*/downloads/ -type f 2>/dev/null | wc -l)
+            if [ "$DOWNLOAD_COUNT" -eq 0 ]; then
+              echo "No files downloaded in this batch. Stopping."
+              break
+            fi
+            echo "Downloaded $DOWNLOAD_COUNT files in batch $BATCH"
+
+            # --- 2. Process images (resolution + previews) ---
+            echo "--- Step 2: Process Images ---"
+            python3 -u src/process_images.py
+
+            # --- 3. Save old manifest ---
+            if [ -f data/manifest.json ]; then
+              cp data/manifest.json data/manifest_old.json
+            else
+              echo '{}' > data/manifest_old.json
+            fi
+
+            # --- 4. Sync repo (push wallpapers + previews) ---
+            echo "--- Step 3: Sync Repo ---"
+            bash src/sync_repo.sh
+
+            # --- 5. Diff manifests ---
+            echo "--- Step 4: Diff Manifests ---"
+            mkdir -p new_images
+            python3 src/diff_manifest.py data/manifest_old.json data/manifest.json new_images
+
+            # --- 6. Update main README ---
+            echo "--- Step 5: Update README ---"
+            MANIFEST_PATH="$(pwd)/data/manifest.json" python3 src/generate_readme.py main
+            if [ ! -f docs/favicon.png ]; then
+              curl -sL -o docs/favicon.png "https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" || true
+            fi
+            git add README.md data/manifest.json
+            [ -f docs/favicon.png ] && git add docs/favicon.png
+            if ! git diff --cached --quiet; then
+              git commit -m "Auto-sync: Update README and manifest (batch $BATCH)"
+              git push
+            fi
+
+            # --- 7. Create release ---
+            echo "--- Step 6: Release ---"
+            python3 src/create_release_body.py
+
+            # Check if there are files to release
+            HAS_NEW_FILES=$(find new_images/ -name '*.txt' -not -empty 2>/dev/null | head -1)
+            if [ -n "$HAS_NEW_FILES" ]; then
+              gh release create "$RELEASE_TAG" \
+                --title "$RELEASE_TAG" \
+                --notes-file release_notes.md
+
+              bash src/zip_and_release.sh "$RELEASE_TAG"
+            else
+              echo "No new files to release in batch $BATCH."
+            fi
+
+            # --- 8. Cleanup for next batch ---
+            echo "--- Step 7: Cleanup ---"
+            # Delete downloaded images and branch temp dirs
+            SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
+            while IFS= read -r id; do
+              rm -rf "branches/$id/downloads" "branches/$id/images" "branches/$id/previews"
+            done <<< "$SERVERS"
+            rm -rf new_images
+            rm -f release_notes.md data/manifest_old.json
+
+            echo "Batch $BATCH complete."
+            echo ""
+
+            # Small delay between batches to avoid rate limiting
+            if $MORE_WORK; then
+              sleep 5
+            fi
+          done
+
+          echo ""
+          echo "========================================"
+          echo "  ALL BATCHES COMPLETE"
+          echo "========================================"

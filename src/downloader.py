@@ -4,8 +4,13 @@
 Reads per-server URL lists from Wallpapers/images_url/<server_id>.txt
 and downloads them into branches/<server_id>/downloads/ (flat directory).
 
-Category organization is handled later by process_images.py based on
-actual image resolution.
+Supports a size limit (MAX_BATCH_BYTES env var, default 1.8GB).
+When the limit is reached, downloading stops and remaining URLs are kept
+in the txt files for the next iteration.
+
+Exit codes:
+    0 - All downloads completed (no remaining)
+    2 - Batch limit reached, more downloads remain
 
 Usage:
     python3 src/downloader.py
@@ -26,6 +31,10 @@ REPO_DIR = os.path.join(SCRIPT_DIR, '..')
 CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
 MAX_WORKERS = 16
 
+# 1.8 GB default, overridable via env
+MAX_BATCH_BYTES = int(float(os.environ.get('MAX_BATCH_BYTES',
+                                            1.8 * 1024 * 1024 * 1024)))
+
 
 def load_config():
     with open(CONFIG_PATH, encoding='utf-8') as f:
@@ -33,10 +42,9 @@ def load_config():
 
 
 def encode_url(url):
-    """Properly encode a URL that may contain non-ASCII characters or spaces."""
     parsed = urllib.parse.urlsplit(url)
     path = urllib.parse.unquote(parsed.path)
-    path = urllib.parse.quote(path, safe='/:@!$&\'()*,;=-._~')
+    path = urllib.parse.quote(path, safe="/:@!$&'()*,;=-._~")
     return urllib.parse.urlunsplit((
         parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment
     ))
@@ -47,10 +55,7 @@ RETRY_BACKOFF = [2, 5, 10]
 
 
 def download_file(url, dest):
-    """Download a single file with retry logic.
-
-    Returns (success, filename, error_msg, encoded_url).
-    """
+    """Download a single file. Returns (success, filename, error, encoded_url, size)."""
     ctx = ssl.create_default_context()
     encoded_url = encode_url(url)
     basename = os.path.basename(dest)
@@ -68,7 +73,8 @@ def download_file(url, dest):
                         if not chunk:
                             break
                         f.write(chunk)
-            return True, basename, None, encoded_url
+            fsize = os.path.getsize(dest)
+            return True, basename, None, encoded_url, fsize
         except urllib.error.HTTPError as e:
             last_err = str(e)
             if 400 <= e.code < 500:
@@ -88,13 +94,18 @@ def download_file(url, dest):
                 except OSError:
                     pass
 
-    return False, basename, f'{last_err} (after {attempt} attempt(s))', encoded_url
+    return False, basename, f'{last_err} (after {attempt} attempt(s))', encoded_url, 0
 
 
-def process_server(server):
-    """Download all new images for a server into a flat downloads directory."""
+def process_server(server, cumulative_bytes):
+    """Download new images for a server.
+
+    Returns (new_cumulative_bytes, hit_limit).
+    When limit is reached, remaining URLs are written back to the txt file.
+    """
     server_id = server['id']
     server_name = server['name']
+    hit_limit = False
 
     print(f'\n--- Processing: {server_name} ---')
     sys.stdout.flush()
@@ -103,29 +114,20 @@ def process_server(server):
                             f'{server_id}.txt')
     download_dir = os.path.join(REPO_DIR, 'branches', server_id, 'downloads')
 
-    print(f'  Reading links from: {txt_path}')
-    sys.stdout.flush()
-
     if not os.path.isfile(txt_path):
-        print(f'  Skip: File not found.')
-        return
+        print(f'  Skip: URL file not found.')
+        return cumulative_bytes, False
 
-    os.makedirs(download_dir, exist_ok=True)
-
-    # Read URLs
     with open(txt_path, encoding='utf-8') as f:
         urls = [line.strip() for line in f if line.strip()]
 
     if not urls:
         print(f'  No URLs to download.')
-        return
+        return cumulative_bytes, False
 
-    total = len(urls)
-    downloaded = 0
-    failed = 0
-    failed_urls = []
+    os.makedirs(download_dir, exist_ok=True)
 
-    # Build download tasks
+    # Separate into tasks (need download) vs already-downloaded
     tasks = []
     for url in urls:
         raw_fn = os.path.basename(urllib.parse.urlparse(url).path.rstrip('/'))
@@ -137,36 +139,47 @@ def process_server(server):
         dest = os.path.join(download_dir, filename)
 
         if os.path.isfile(dest):
-            print(f'  [{server_name}] SKIPPED: {filename} (Exists)')
             continue
-
         tasks.append((url, dest, filename))
 
-    # Download concurrently
+    if not tasks:
+        print(f'  All files already exist.')
+        return cumulative_bytes, False
+
+    downloaded = 0
+    failed = 0
+    failed_urls = []
+    remaining_urls = []
+
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {}
-        for idx, (url, dest, filename) in enumerate(tasks, 1):
+        for url, dest, filename in tasks:
+            if hit_limit:
+                remaining_urls.append(url)
+                continue
             future = executor.submit(download_file, url, dest)
-            futures[future] = (idx, url, filename)
+            futures[future] = (url, dest, filename)
 
         for future in as_completed(futures):
-            idx, url, filename = futures[future]
-            success, fn, err, enc_url = future.result()
+            url, dest, filename = futures[future]
+            success, fn, err, enc_url, fsize = future.result()
             if success:
                 downloaded += 1
-                if downloaded % 10 == 0 or downloaded == len(tasks):
-                    print(f'  [{server_name}] Progress: {downloaded}/{len(tasks)} downloaded')
+                cumulative_bytes += fsize
+                if downloaded % 10 == 0 or downloaded == len(futures):
+                    size_mb = cumulative_bytes / (1024 * 1024)
+                    print(f'  [{server_name}] {downloaded}/{len(futures)} downloaded ({size_mb:.0f} MB cumulative)')
                     sys.stdout.flush()
+                if cumulative_bytes >= MAX_BATCH_BYTES:
+                    print(f'  [!] Batch size limit reached ({MAX_BATCH_BYTES / (1024**3):.1f} GB)')
+                    hit_limit = True
             else:
                 failed += 1
                 failed_urls.append(url)
-                print(f'  [{server_name}] FAILED: {fn}')
-                print(f'    Original URL: {url}')
-                print(f'    Encoded URL:  {enc_url}')
-                print(f'    Error:        {err}')
+                print(f'  [{server_name}] FAILED: {fn} -- {err}')
                 sys.stdout.flush()
 
-    print(f'  >> {server_name}: {downloaded} success, {failed} failed out of {total}.')
+    print(f'  >> {server_name}: {downloaded} OK, {failed} failed, {len(remaining_urls)} deferred')
     sys.stdout.flush()
 
     # Write failed URLs
@@ -177,10 +190,21 @@ def process_server(server):
         with open(failed_file, 'w', encoding='utf-8') as f:
             for url in failed_urls:
                 f.write(url + '\n')
-        print(f'  [!] Failed URLs saved to: {failed_file}')
+    elif os.path.isfile(failed_file):
+        os.remove(failed_file)
+
+    # Write remaining URLs back for next iteration
+    if remaining_urls:
+        with open(txt_path, 'w', encoding='utf-8') as f:
+            for url in remaining_urls:
+                f.write(url + '\n')
+        print(f'  [{server_name}] {len(remaining_urls)} URLs saved for next batch')
     else:
-        if os.path.isfile(failed_file):
-            os.remove(failed_file)
+        # All done for this server -- clear the URL file
+        with open(txt_path, 'w', encoding='utf-8') as f:
+            pass
+
+    return cumulative_bytes, hit_limit
 
 
 def main():
@@ -188,11 +212,22 @@ def main():
     print('=== PGR DOWNLOADER START ===')
     sys.stdout.flush()
 
-    for server in config['servers']:
-        process_server(server)
+    cumulative = 0
+    hit_limit = False
 
-    print('\n=== ALL DOWNLOADS FINISHED ===')
+    for server in config['servers']:
+        cumulative, hit_limit = process_server(server, cumulative)
+        if hit_limit:
+            print(f'\n[!] Batch limit reached. Remaining servers deferred to next iteration.')
+            break
+
+    size_mb = cumulative / (1024 * 1024)
+    print(f'\n=== DOWNLOAD BATCH COMPLETE ({size_mb:.0f} MB) ===')
     sys.stdout.flush()
+
+    # Exit code 2 = more work remains (used by workflow loop)
+    if hit_limit:
+        sys.exit(2)
 
 
 if __name__ == '__main__':
