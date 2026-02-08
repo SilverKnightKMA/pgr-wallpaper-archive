@@ -36,43 +36,43 @@ def main():
     body = f"📅 **Release Time:** {pretty_time}\n\n"
     has_files = False
     
-    # Create staging dir for python zipping later (handled by caller, but we check files here)
-    
     for server in servers:
         sid = server['id']
         sname = server['name']
-        txt_file = f"new_images/{sid}.txt"
         
-        if not os.path.exists(txt_file) or os.path.getsize(txt_file) == 0:
-            continue
-
         file_count = 0
         file_list_md = ""
         
-        # Determine actual downloaded files
-        with open(txt_file, 'r') as f:
-            urls = [line.strip() for line in f if line.strip()]
+        for cat in ['desktop', 'mobile']:
+            txt_file = f"new_images/{sid}_{cat}.txt"
             
-        for url in urls:
-            decoded = decode_filename(url)
-            # Check if file exists in the downloaded folder
-            local_path_decoded = f"branches/{sid}/images/{decoded}"
-            
-            # Simple check if file exists locally (it should after download step)
-            if os.path.exists(local_path_decoded):
-                file_count += 1
-                encoded_fn = urllib.parse.quote(decoded, safe="/~@!$&'()*+,;=")
-                encoded_fn = re.sub(r'%(?![0-9A-Fa-f]{2})', '%25', encoded_fn)
-                thumb_url = f"https://raw.githubusercontent.com/{repo}/{preview_branch}/{sid}/thumbnails/{encoded_fn}"
-                dl_url = f"https://github.com/{repo}/raw/{wallpapers_branch}/{encoded_fn}"
+            if not os.path.exists(txt_file) or os.path.getsize(txt_file) == 0:
+                continue
+
+            # Determine actual downloaded files
+            with open(txt_file, 'r') as f:
+                urls = [line.strip() for line in f if line.strip()]
                 
-                file_list_md += f"| <img src=\"{thumb_url}\" width=\"100\"> | `{decoded}` | [Download]({dl_url}) | ✅ |\n"
+            for url in urls:
+                decoded = decode_filename(url)
+                # Check if file exists locally
+                local_path_decoded = f"branches/{sid}/images/{cat}/{decoded}"
+                
+                if os.path.exists(local_path_decoded):
+                    file_count += 1
+                    encoded_fn = urllib.parse.quote(decoded, safe="/~@!$&'()*+,;=")
+                    encoded_fn = re.sub(r'%(?![0-9A-Fa-f]{2})', '%25', encoded_fn)
+                    thumb_url = f"https://raw.githubusercontent.com/{repo}/{preview_branch}/{sid}/thumbnails/{cat}/{encoded_fn}"
+                    dl_url = f"https://github.com/{repo}/raw/{wallpapers_branch}/{cat}/{encoded_fn}"
+                    cat_label = '🖥️' if cat == 'desktop' else '📱'
+                    
+                    file_list_md += f"| <img src=\"{thumb_url}\" width=\"100\"> | `{decoded}` | {cat_label} {cat} | [Download]({dl_url}) | ✅ |\n"
 
         if file_count > 0:
             has_files = True
             body += f"<details><summary>📋 File list & preview {sname} ({file_count} new)</summary>\n\n"
-            body += "| Preview | Filename | Download | Status |\n"
-            body += "|---------|----------|----------|--------|\n"
+            body += "| Preview | Filename | Category | Download | Status |\n"
+            body += "|---------|----------|----------|----------|--------|\n"
             body += file_list_md
             body += "\n</details>\n\n---\n\n"
 

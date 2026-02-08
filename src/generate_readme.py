@@ -27,6 +27,8 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
 CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
 
+CATEGORIES = ['desktop', 'mobile']
+
 
 def load_config():
     with open(CONFIG_PATH, encoding='utf-8') as f:
@@ -108,10 +110,11 @@ def generate_main_readme(config):
                 chunk = recent[i:i+5]
                 for w in chunk:
                     fn = w.get('filename', 'unknown')
+                    cat = w.get('category', 'desktop')
                     enc_fn = encode_filename(fn)
                     safe_fn = escape_html(fn)
-                    thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{server["id"]}/thumbnails/{enc_fn}'
-                    raw = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{enc_fn}'
+                    thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{server["id"]}/thumbnails/{cat}/{enc_fn}'
+                    raw = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
                     lines.append(f'    <td width="20%" align="center" valign="middle">')
                     lines.append(f'      <a href="{raw}">')
                     lines.append(f'        <img src="{thumb}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
@@ -145,13 +148,15 @@ def generate_branch_readme(config, server):
     wallpapers = sd.get('wallpapers', [])
     total = sd.get('total', len(wallpapers))
 
-    # Read failed URLs
-    failed_file = os.environ.get('FAILED_FILE',
-                                  os.path.join(REPO_DIR, 'Wallpapers', 'failed', f'{server["id"]}.txt'))
+    # Read failed URLs from per-category files
+    failed_dir = os.environ.get('FAILED_DIR',
+                                  os.path.join(REPO_DIR, 'Wallpapers', 'failed'))
     failed_urls = []
-    if os.path.isfile(failed_file):
-        with open(failed_file, encoding='utf-8') as f:
-            failed_urls = [line.strip() for line in f if line.strip()]
+    for cat in CATEGORIES:
+        failed_file = os.path.join(failed_dir, f'{server["id"]}_{cat}.txt')
+        if os.path.isfile(failed_file):
+            with open(failed_file, encoding='utf-8') as f:
+                failed_urls.extend([line.strip() for line in f if line.strip()])
 
     failed_filenames = set()
     for url in failed_urls:
@@ -179,10 +184,11 @@ def generate_branch_readme(config, server):
     else:
         for w in sorted_wp:
             fn = w.get('filename', 'unknown')
+            cat = w.get('category', 'desktop')
             enc_fn = encode_filename(fn)
             safe_fn = escape_html(fn)
-            thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{server["id"]}/thumbnails/{enc_fn}'
-            dl = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{enc_fn}'
+            thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{server["id"]}/thumbnails/{cat}/{enc_fn}'
+            dl = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
             status = '❌ Failed' if (w.get('status') == 'failed' or fn in failed_filenames) else '✅ Success'
             release_time = w.get('releaseTime', 'N/A')
             size = w.get('size', 'N/A')

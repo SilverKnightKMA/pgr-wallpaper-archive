@@ -59,11 +59,13 @@ jobs:
       - name: Retry broken links
         run: |
           SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
-          while IFS= read -r id; do
-            if [ -s "Wallpapers/failed/${id}.txt" ]; then
-              grep -vxFf "Wallpapers/images_url/${id}.txt" "Wallpapers/failed/${id}.txt" >> "Wallpapers/images_url/${id}.txt" || true
-            fi
-          done <<< "$SERVERS"
+          for cat in desktop mobile; do
+            while IFS= read -r id; do
+              if [ -s "Wallpapers/failed/${id}_${cat}.txt" ]; then
+                grep -vxFf "Wallpapers/images_url/${id}_${cat}.txt" "Wallpapers/failed/${id}_${cat}.txt" >> "Wallpapers/images_url/${id}_${cat}.txt" || true
+              fi
+            done <<< "$SERVERS"
+          done
 
       - name: Check for new images
         id: check_new
@@ -71,12 +73,14 @@ jobs:
           has_new=false
           SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
           while IFS= read -r id; do
-            txt="Wallpapers/images_url/${id}.txt"
-            if [ -f "$txt" ] && [ -s "$txt" ]; then
-              count=$(wc -l < "$txt")
-              echo "New images for $id: $count"
-              has_new=true
-            fi
+            for cat in desktop mobile; do
+              txt="Wallpapers/images_url/${id}_${cat}.txt"
+              if [ -f "$txt" ] && [ -s "$txt" ]; then
+                count=$(wc -l < "$txt")
+                echo "New $cat images for $id: $count"
+                has_new=true
+              fi
+            done
           done <<< "$SERVERS"
           echo "has_new=$has_new" >> "$GITHUB_OUTPUT"
 
@@ -100,22 +104,25 @@ jobs:
           THUMB_WIDTH=$(python3 -c "import json; c=json.load(open('config.json')); print(c.get('settings',{}).get('thumbnailWidth',400))")
           
           while IFS= read -r id; do
-            if [ -d "branches/$id" ]; then
-              # Move images
-              mkdir -p "branches/$id/images"
-              find "branches/$id" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec mv {} "branches/$id/images/" \;
-              
-              # Generate Thumbnails
-              if [ -d "branches/$id/images" ]; then
-                bash src/generate_thumbnails.sh "branches/$id/images" "$THUMB_WIDTH"
-                # Organize thumbnails
-                if [ -d "branches/$id/images/thumbnails" ]; then
-                  mkdir -p "branches/$id/thumbnails"
-                  find "branches/$id/images/thumbnails" -maxdepth 1 -type f -exec mv {} "branches/$id/thumbnails/" \;
-                  rmdir "branches/$id/images/thumbnails" 2>/dev/null || true
+            for cat in desktop mobile; do
+              SRC_DIR="branches/$id/$cat"
+              if [ -d "$SRC_DIR" ]; then
+                # Move images to images/{category}/
+                mkdir -p "branches/$id/images/$cat"
+                find "$SRC_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec mv {} "branches/$id/images/$cat/" \;
+                
+                # Generate Thumbnails
+                if [ -d "branches/$id/images/$cat" ]; then
+                  bash src/generate_thumbnails.sh "branches/$id/images/$cat" "$THUMB_WIDTH"
+                  # Organize thumbnails
+                  if [ -d "branches/$id/images/$cat/thumbnails" ]; then
+                    mkdir -p "branches/$id/thumbnails/$cat"
+                    find "branches/$id/images/$cat/thumbnails" -maxdepth 1 -type f -exec mv {} "branches/$id/thumbnails/$cat/" \;
+                    rmdir "branches/$id/images/$cat/thumbnails" 2>/dev/null || true
+                  fi
                 fi
               fi
-            fi
+            done
           done <<< "$SERVERS"
 
       - name: Sync Repo (Push Images & Previews)

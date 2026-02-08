@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """Compare old and new manifests to find truly new wallpapers per server.
 
-Writes per-server txt files containing only URLs for wallpapers that are
-new (not present in the old manifest with success status).
+Writes per-server, per-category txt files containing only URLs for wallpapers
+that are new (not present in the old manifest with success status).
 
 Usage: diff_manifest.py <old_manifest> <new_manifest> <output_dir>
 """
 import json
 import os
 import sys
+
+CATEGORIES = ['desktop', 'mobile']
 
 
 def main():
@@ -52,24 +54,26 @@ def main():
                 if fn and w.get('status') == 'success':
                     old_filenames.add(fn)
 
-        # Find new wallpapers (in new but not in old)
-        new_urls = []
+        # Find new wallpapers (in new but not in old) grouped by category
+        new_urls_by_cat = {cat: [] for cat in CATEGORIES}
         for w in server_data['wallpapers']:
             fn = w.get('filename')
             if fn and w.get('status') == 'success' and fn not in old_filenames:
                 url = w.get('url', '')
-                if url:
-                    new_urls.append(url)
+                cat = w.get('category', 'desktop')
+                if url and cat in new_urls_by_cat:
+                    new_urls_by_cat[cat].append(url)
 
-        # Write per-server file
-        out_file = os.path.join(output_dir, f'{sid}.txt')
-        with open(out_file, 'w', encoding='utf-8') as f:
-            for url in new_urls:
-                f.write(url + '\n')
+        # Write per-server, per-category files
+        for cat in CATEGORIES:
+            out_file = os.path.join(output_dir, f'{sid}_{cat}.txt')
+            with open(out_file, 'w', encoding='utf-8') as f:
+                for url in new_urls_by_cat[cat]:
+                    f.write(url + '\n')
 
-        count = len(new_urls)
-        if count > 0:
-            print(f"[{sid}] {count} new wallpapers")
+            count = len(new_urls_by_cat[cat])
+            if count > 0:
+                print(f"[{sid}/{cat}] {count} new wallpapers")
 
 
 if __name__ == '__main__':
