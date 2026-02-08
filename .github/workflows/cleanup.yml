@@ -1,0 +1,57 @@
+name: Cleanup
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Delete all branches except main
+        run: |
+          git fetch --prune
+          branches=$(git branch -r --format='%(refname:short)' | sed 's|origin/||' | grep -v '^main$' | grep -v '^HEAD$')
+          if [ -z "$branches" ]; then
+            echo "No branches to delete."
+          else
+            for branch in $branches; do
+              echo "Deleting branch: $branch"
+              git push origin --delete "$branch" || true
+            done
+          fi
+
+      - name: Delete data directory
+        run: |
+          if [ -d "data" ]; then
+            git rm -rf data
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: remove data directory"
+            git push origin main
+            echo "Deleted data directory."
+          else
+            echo "No data directory found."
+          fi
+
+      - name: Delete all releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          releases=$(gh release list --limit 1000 --json tagName -q '.[].tagName')
+          if [ -z "$releases" ]; then
+            echo "No releases to delete."
+          else
+            for tag in $releases; do
+              echo "Deleting release: $tag"
+              gh release delete "$tag" --yes --cleanup-tag || true
+            done
+          fi

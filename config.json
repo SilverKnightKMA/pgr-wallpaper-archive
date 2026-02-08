@@ -1,0 +1,34 @@
+{
+  "servers": [
+    {
+      "id": "cn",
+      "name": "CN Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/json/G144/MainMenu.json"
+    },
+    {
+      "id": "jp",
+      "name": "JP Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G282/jp/MainMenu.json"
+    },
+    {
+      "id": "global",
+      "name": "Global Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G167/MainMenu.json"
+    },
+    {
+      "id": "tw",
+      "name": "TW Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G279/zh-tw/MainMenu.json"
+    },
+    {
+      "id": "kr",
+      "name": "KR Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G286/kr/MainMenu.json"
+    }
+  ],
+  "wallpapersBranch": "wallpapers",
+  "previewBranch": "preview",
+  "settings": {
+    "thumbnailWidth": 400
+  }
+}
