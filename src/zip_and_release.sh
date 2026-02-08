@@ -14,25 +14,28 @@ fi
 MAX_BATCH_BYTES=$((1800 * 1024 * 1024))  # 1.8 GB
 WORK_DIR="$(pwd)"
 SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
+CATEGORIES="desktop mobile"
 
 # --- 1. Collect all new image file paths ---
 FILE_LIST=$(mktemp)
 trap "rm -f '$FILE_LIST'" EXIT
 
 while IFS= read -r id; do
-  txt="new_images/${id}.txt"
-  [ -f "$txt" ] || continue
+  for cat in $CATEGORIES; do
+    txt="new_images/${id}_${cat}.txt"
+    [ -f "$txt" ] || continue
 
-  while IFS= read -r url; do
-    [ -z "$url" ] && continue
-    fn=$(basename "$url")
-    decoded=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$fn")
-    filepath="branches/$id/images/$decoded"
-    if [ -f "$filepath" ]; then
-      # Format: server_id|relative_path
-      echo "$id|$filepath" >> "$FILE_LIST"
-    fi
-  done < "$txt"
+    while IFS= read -r url; do
+      [ -z "$url" ] && continue
+      fn=$(basename "$url")
+      decoded=$(python3 -c "import urllib.parse, sys; print(urllib.parse.unquote(sys.argv[1]))" "$fn")
+      filepath="branches/$id/images/$cat/$decoded"
+      if [ -f "$filepath" ]; then
+        # Format: category|relative_path
+        echo "$cat|$filepath" >> "$FILE_LIST"
+      fi
+    done < "$txt"
+  done
 done <<< "$SERVERS"
 
 TOTAL=$(wc -l < "$FILE_LIST" | tr -d ' ')
@@ -98,7 +101,7 @@ flush_and_upload() {
   BATCH_SIZE=0
 }
 
-while IFS='|' read -r id filepath; do
+while IFS='|' read -r cat filepath; do
   [ -z "$filepath" ] && continue
 
   filesize=$(stat -c%s "$filepath" 2>/dev/null || echo 0)
@@ -108,8 +111,9 @@ while IFS='|' read -r id filepath; do
     flush_and_upload
   fi
 
-  # Copy file into staging (flat – no server sub-directories)
-  cp "$filepath" "$STAGING_DIR/"
+  # Copy file into staging preserving desktop/mobile structure
+  mkdir -p "$STAGING_DIR/$cat"
+  cp "$filepath" "$STAGING_DIR/$cat/"
   echo "$filepath" >> "$BATCH_SOURCES"
   BATCH_SIZE=$((BATCH_SIZE + filesize))
 
