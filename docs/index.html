@@ -535,10 +535,16 @@
                     const div = document.createElement('div');
                     div.className = 'checkbox-item';
                     const checkId = `server-${id}`;
-                    div.innerHTML = `
-                        <input type="checkbox" id="${checkId}" value="${id}" checked>
-                        <label for="${checkId}">${escapeHtml(serverNames[id] || id)}</label>
-                    `;
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = checkId;
+                    checkbox.value = id;
+                    checkbox.checked = true;
+                    const label = document.createElement('label');
+                    label.htmlFor = checkId;
+                    label.textContent = serverNames[id] || id;
+                    div.appendChild(checkbox);
+                    div.appendChild(label);
                     serverFilterMenu.appendChild(div);
                 });
 
@@ -574,10 +580,16 @@
                     const div = document.createElement('div');
                     div.className = 'checkbox-item';
                     const checkId = `time-${rt.replace(/[^a-zA-Z0-9]/g, '-')}`;
-                    div.innerHTML = `
-                        <input type="checkbox" id="${checkId}" value="${escapeAttr(rt)}" checked>
-                        <label for="${checkId}">${escapeHtml(rt)}</label>
-                    `;
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = checkId;
+                    checkbox.value = rt;
+                    checkbox.checked = true;
+                    const label = document.createElement('label');
+                    label.htmlFor = checkId;
+                    label.textContent = rt;
+                    div.appendChild(checkbox);
+                    div.appendChild(label);
                     releaseTimeFilterMenu.appendChild(div);
                 });
 
