@@ -62,6 +62,7 @@ def download_file(url, dest):
     last_err = None
 
     for attempt in range(1, MAX_RETRIES + 1):
+        last_err = None  # Reset for each attempt so finally doesn't delete retried files
         req = urllib.request.Request(encoded_url, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })

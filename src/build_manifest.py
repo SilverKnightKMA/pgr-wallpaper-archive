@@ -19,7 +19,7 @@ import json
 import sys
 import os
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone
 
 CATEGORIES = ['desktop', 'mobile']
 
@@ -60,7 +60,7 @@ def epoch_ms_to_iso(ms):
     if not ms or not isinstance(ms, (int, float)):
         return ''
     try:
-        return datetime.utcfromtimestamp(ms / 1000).strftime('%Y-%m-%d %H:%M:%S')
+        return datetime.fromtimestamp(ms / 1000, tz=timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
     except (OSError, ValueError):
         return ''
 
@@ -332,7 +332,7 @@ def main():
                 newest_start = st
         if newest_start > 0:
             try:
-                last_updated = datetime.utcfromtimestamp(newest_start / 1000).strftime('%Y-%m-%dT%H:%M:%SZ')
+                last_updated = datetime.fromtimestamp(newest_start / 1000, tz=timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
             except (OSError, ValueError):
                 last_updated = run_timestamp
         else:

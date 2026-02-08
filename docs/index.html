@@ -123,6 +123,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 16px;
+            align-items: start;
         }
         .card {
             background: var(--card-bg); border: 1px solid var(--border);
@@ -135,7 +136,7 @@
         }
         .card.card-portrait img {
             aspect-ratio: 9/16;
-            max-height: 420px;
+            object-fit: cover;
         }
         .card-body { padding: 12px; }
         .card-filename {

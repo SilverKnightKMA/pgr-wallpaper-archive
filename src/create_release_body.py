@@ -17,6 +17,10 @@ repo = os.environ.get('GITHUB_REPOSITORY', '')
 config_path = 'config.json'
 release_tag = os.environ.get('RELEASE_TAG', '')
 
+# GitHub release body limit is 125000 characters; leave some margin
+MAX_BODY_CHARS = 120000
+MAX_ROWS_PER_SERVER = 200
+
 
 def load_config():
     with open(config_path, 'r', encoding='utf-8') as f:
@@ -162,10 +166,19 @@ def main():
         if file_count > 0:
             has_files = True
             total_new += file_count
+
+            # Truncate table rows if too many to avoid hitting GitHub body limit
+            rows = file_list_md.rstrip('\n').split('\n') if file_list_md.strip() else []
+            truncated = len(rows) > MAX_ROWS_PER_SERVER
+            if truncated:
+                rows = rows[:MAX_ROWS_PER_SERVER]
+
             body += f"<details><summary>📁 {sname} ({file_count} new)</summary>\n\n"
             body += "| " + " | ".join(fields) + " |\n"
             body += "| " + " | ".join(["-" * max(len(field), 3) for field in fields]) + " |\n"
-            body += file_list_md
+            body += '\n'.join(rows) + '\n'
+            if truncated:
+                body += f"\n> **Note:** Only showing first {MAX_ROWS_PER_SERVER} of {file_count} wallpapers. Download the ZIP for the full set.\n"
             body += "\n</details>\n\n---\n\n"
 
     # Summary at top
@@ -175,6 +188,11 @@ def main():
             summary += f" | **Total size:** {format_size_bytes(total_size_bytes)}"
         summary += "\n\n"
         body = f"**Release Time:** {pretty_time}\n\n{summary}" + body.split('\n\n', 1)[1]
+
+    # Final safety truncation if body is still too long
+    if len(body) > MAX_BODY_CHARS:
+        truncation_notice = f"\n\n---\n\n> **Note:** Release notes truncated ({len(body)} chars exceeded GitHub's 125000 char limit). Download the ZIP for the complete list.\n"
+        body = body[:MAX_BODY_CHARS - len(truncation_notice)] + truncation_notice
 
     with open('release_notes.md', 'w', encoding='utf-8') as f:
         f.write(body)
