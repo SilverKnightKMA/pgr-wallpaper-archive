@@ -151,33 +151,47 @@ def process_server(server, cumulative_bytes):
     failed_urls = []
     remaining_urls = []
 
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {}
-        for url, dest, filename in tasks:
-            if hit_limit:
-                remaining_urls.append(url)
-                continue
-            future = executor.submit(download_file, url, dest)
-            futures[future] = (url, dest, filename)
+    # Submit in small batches so we can stop when size limit is hit
+    SUBMIT_BATCH = MAX_WORKERS * 2  # submit this many at a time
+    task_idx = 0
 
-        for future in as_completed(futures):
-            url, dest, filename = futures[future]
-            success, fn, err, enc_url, fsize = future.result()
-            if success:
-                downloaded += 1
-                cumulative_bytes += fsize
-                if downloaded % 10 == 0 or downloaded == len(futures):
-                    size_mb = cumulative_bytes / (1024 * 1024)
-                    print(f'  [{server_name}] {downloaded}/{len(futures)} downloaded ({size_mb:.0f} MB cumulative)')
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        while task_idx < len(tasks) and not hit_limit:
+            # Submit a batch of tasks
+            futures = {}
+            batch_end = min(task_idx + SUBMIT_BATCH, len(tasks))
+            for i in range(task_idx, batch_end):
+                url, dest, filename = tasks[i]
+                future = executor.submit(download_file, url, dest)
+                futures[future] = (url, dest, filename)
+            task_idx = batch_end
+
+            # Collect results
+            for future in as_completed(futures):
+                url, dest, filename = futures[future]
+                success, fn, err, enc_url, fsize = future.result()
+                if success:
+                    downloaded += 1
+                    cumulative_bytes += fsize
+                    if downloaded % 10 == 0:
+                        size_mb = cumulative_bytes / (1024 * 1024)
+                        print(f'  [{server_name}] {downloaded} downloaded ({size_mb:.0f} MB cumulative)')
+                        sys.stdout.flush()
+                    if cumulative_bytes >= MAX_BATCH_BYTES:
+                        hit_limit = True
+                else:
+                    failed += 1
+                    failed_urls.append(url)
+                    print(f'  [{server_name}] FAILED: {fn} -- {err}')
                     sys.stdout.flush()
-                if cumulative_bytes >= MAX_BATCH_BYTES:
-                    print(f'  [!] Batch size limit reached ({MAX_BATCH_BYTES / (1024**3):.1f} GB)')
-                    hit_limit = True
-            else:
-                failed += 1
-                failed_urls.append(url)
-                print(f'  [{server_name}] FAILED: {fn} -- {err}')
-                sys.stdout.flush()
+
+        # Any tasks not yet submitted go to remaining
+        if hit_limit and task_idx < len(tasks):
+            for i in range(task_idx, len(tasks)):
+                remaining_urls.append(tasks[i][0])  # url
+
+    if hit_limit:
+        print(f'  [!] Batch size limit reached ({MAX_BATCH_BYTES / (1024**3):.1f} GB)')
 
     print(f'  >> {server_name}: {downloaded} OK, {failed} failed, {len(remaining_urls)} deferred')
     sys.stdout.flush()
