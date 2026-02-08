@@ -61,3 +61,16 @@ jobs:
               gh release delete "$tag" --yes --cleanup-tag || true
             done
           fi
+
+      - name: Delete all Git tags
+        run: |
+          tags=$(git tag)
+          if [ -z "$tags" ]; then
+            echo "No tags to delete."
+          else
+            for tag in $tags; do
+              echo "Deleting tag: $tag"
+              git tag -d "$tag" || true
+              git push origin :refs/tags/$tag || true
+            done
+          fi
