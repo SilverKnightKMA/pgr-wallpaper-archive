@@ -12,7 +12,7 @@ Environment variables:
     README_OUTPUT         – output path for main README (default: README.md)
     BRANCH_README_OUTPUT  – output path for branch README
     BRANCH_DIR            – wallpapers branch checkout dir
-    FAILED_FILE           – path to failed URLs file
+    FAILED_DIR            – directory containing per-category failed URL files
     GITHUB_REPOSITORY     – repo slug (default: SilverKnightKMA/pgr-wallpaper-archive)
 """
 

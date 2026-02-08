@@ -240,8 +240,9 @@ def main():
             if 'releaseTime' not in entry:
                 entry['releaseTime'] = run_timestamp
 
-            # File size
-            size = get_file_size(size_dirs, fn)
+            # File size (look in the category-specific directories)
+            cat = entry.get('category', 'desktop')
+            size = get_file_size(size_dirs.get(cat, []), fn)
             if size > 0:
                 entry['size'] = format_size(size)
             elif 'size' not in entry:
