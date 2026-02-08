@@ -221,13 +221,14 @@
             <div class="filter-group">
                 <label class="filter-label">🔽 Sort By</label>
                 <select id="sortFilter">
-                    <option value="startTime-desc">Published (Newest)</option>
-                    <option value="startTime-asc">Published (Oldest)</option>
-                    <option value="releaseTime-desc">Archived (Newest)</option>
-                    <option value="releaseTime-asc">Archived (Oldest)</option>
+                    <option value="startTime-desc">Published Date (Newest)</option>
+                    <option value="startTime-asc">Published Date (Oldest)</option>
+                    <option value="releaseTime-desc">Downloaded Date (Newest)</option>
+                    <option value="releaseTime-asc">Downloaded Date (Oldest)</option>
                     <option value="filename-asc">Filename (A-Z)</option>
                     <option value="filename-desc">Filename (Z-A)</option>
                     <option value="server-asc">Server (A-Z)</option>
+                    <option value="server-desc">Server (Z-A)</option>
                     <option value="size-desc">Size (Largest)</option>
                     <option value="size-asc">Size (Smallest)</option>
                 </select>
@@ -353,7 +354,7 @@
                 const sizeText = item.size ? escapeHtml(item.size) : 'N/A';
                 const resText = item.resolution ? escapeHtml(item.resolution) : '';
                 const startTimeText = item.startTime_formatted ? escapeHtml(item.startTime_formatted) : '';
-                const releaseTimeText = item.releaseTime ? escapeHtml(item.releaseTime) : 'N/A';
+                const catLabel = item.category === 'mobile' ? '📱 Mobile' : '🖥️ Desktop';
                 const sourceLink = (item.imgUrl && isValidUrl(item.imgUrl))
                     ? `<a href="${escapeAttr(item.imgUrl)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
                 return `
@@ -369,9 +370,12 @@
                         <div style="margin-bottom:6px;font-size:12px;color:var(--text-muted)">
                             ${startTimeText ? `<span>📅 ${startTimeText}</span> · ` : ''}<span>📦 ${sizeText}</span>${resText ? ` · <span>📐 ${resText}</span>` : ''}
                         </div>
-                        <div style="margin-bottom:8px">
+                        <div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px">
+                            <span class="badge" style="background:rgba(136,98,228,0.15);color:#a78bfa">
+                                ${catLabel}
+                            </span>
                             <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
-                                ${item.status === 'success' ? '✅ Success' : '❌ Failed'}
+                                ${item.status === 'success' ? '✅ OK' : '❌ Failed'}
                             </span>
                             <span class="badge" style="background:rgba(88,166,255,0.15);color:var(--accent)">
                                 ${safeServer}
@@ -527,6 +531,16 @@
             
             // Apply sorting
             filtered = sortItems(filtered, sortBy);
+
+            // Update last updated timestamp based on filtered data
+            const latestFilteredTime = filtered.reduce((latest, item) => {
+                return item.releaseTime > latest ? item.releaseTime : latest;
+            }, '');
+            if (latestFilteredTime) {
+                document.getElementById('lastUpdated').textContent = `Last Updated: ${latestFilteredTime}`;
+            } else {
+                document.getElementById('lastUpdated').textContent = 'Last Updated: N/A';
+            }
 
             updateStats(filtered);
             renderGallery(filtered);

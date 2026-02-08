@@ -296,14 +296,16 @@ def generate_server_readme(config, server):
             lines.append('<summary>')
             lines.append(f'<img src="{thumb_src}" width="200" alt="{safe_fn}" title="{safe_fn}"> <strong>{safe_fn}</strong>')
             lines.append('</summary>\n')
+            cat_emoji = '📱' if cat == 'mobile' else '🖥️'
+            cat_label = f'{cat_emoji} {cat.capitalize()}'
             if name_in:
                 lines.append(f'- **Name:** {name_in}')
             if start_time:
-                lines.append(f'- **Published:** {start_time}')
-            lines.append(f'- **Archived:** {release_time}')
+                lines.append(f'- **Published Date:** {start_time}')
+            lines.append(f'- **Downloaded Date:** {release_time}')
+            lines.append(f'- **Category:** {cat_label}')
             lines.append(f'- **Resolution:** {resolution}')
             lines.append(f'- **Size:** {size}')
-            lines.append(f'- **Category:** {cat}')
             lines.append(f'- **Status:** {status}')
             lines.append(f'- **Download Raw:** [Download]({dl})')
             if source_link:
