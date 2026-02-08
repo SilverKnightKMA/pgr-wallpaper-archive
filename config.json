@@ -27,6 +27,7 @@
     }
   ],
   "wallpapersBranch": "wallpapers",
+  "previewBranch": "preview",
   "settings": {},
   "readme": {
     "main": {
@@ -35,18 +36,18 @@
     },
     "server": {
       "outputDir": "preview",
-      "fields": ["releaseTime", "size", "category", "status", "url"]
+      "fields": ["startTime_formatted", "releaseTime", "resolution", "size", "category", "status"]
     }
   },
   "website": {
     "filters": ["desktop", "mobile"],
     "gallery": {
-      "thumbnailField": "condenseImg",
+      "thumbnailSource": "previewBranch",
       "fallbackThumbnail": "rawUrl"
     }
   },
   "release": {
     "notesTemplate": "release_notes.md",
-    "fields": ["filename", "category", "size", "status"]
+    "fields": ["filename", "category", "resolution", "size", "status"]
   }
 }

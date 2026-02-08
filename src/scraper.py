@@ -2,21 +2,21 @@
 """Scraper: Download MainMenu.json from each server, extract wallpaper data.
 
 Fetches picture entries from each server's MainMenu.json and filters to
-wallpaper types only (pictureType 11 = wallpapers/CG, 12 = version key visual).
-Images are categorized into 'desktop' and 'mobile' based on terminalType:
-  - terminalType 7  → desktop (PC)
-  - terminalType 6  → mobile
-  - terminalType 20 → desktop (universal)
+wallpaper types only (pictureType 11, terminalType 20).
+
+Category (desktop/mobile) is NOT determined here — it is resolved later by
+process_images.py using actual image resolution (landscape -> desktop,
+portrait -> mobile).
 
 Output:
-  - Per-server URL lists: images_url/{server}_{desktop|mobile}.txt
+  - Per-server URL lists: images_url/{server}.txt
   - Combined metadata: data/scraped_metadata.json
 
 Usage:
     python3 src/scraper.py
 
 Environment variables:
-    MAX_IMAGES  – cap on images per server per category (default: unlimited)
+    MAX_IMAGES  - cap on images per server (default: unlimited)
 """
 
 import json
@@ -31,18 +31,9 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
 CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
 
-# Only download wallpaper/CG (11) and version key visual (12)
-ALLOWED_PICTURE_TYPES = {11, 12}
-
-# terminalType → folder category
-# Based on PGR website: pcTopPicture uses tt=7, mobileTopPicture uses tt=6
-TERMINAL_CATEGORY = {
-    6: 'mobile',
-    7: 'desktop',
-    20: 'desktop',  # universal resolution, stored with desktop
-}
-
-CATEGORIES = ['desktop', 'mobile']
+# Only download wallpaper/CG (pictureType 11, terminalType 20)
+ALLOWED_PICTURE_TYPES = {11}
+ALLOWED_TERMINAL_TYPES = {20}
 
 timestamp = lambda: datetime.now().strftime('%H:%M:%S')
 
@@ -79,36 +70,39 @@ def list_existing_images(server_id):
                 if line:
                     existing.add(line)
 
-    # Check local desktop/mobile directories
-    for category in CATEGORIES:
-        for subdir in [os.path.join(branch_dir, category),
-                       os.path.join(branch_dir, 'images', category)]:
-            if os.path.isdir(subdir):
-                for fn in os.listdir(subdir):
-                    if fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                        existing.add(fn)
+    # Check local directories (flat downloads + organized categories)
+    for subdir_name in ['downloads', 'images', 'desktop', 'mobile']:
+        subdir = os.path.join(branch_dir, subdir_name)
+        if os.path.isdir(subdir):
+            for fn in os.listdir(subdir):
+                if fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+                    existing.add(fn)
+            # Also check category subdirs inside images/
+            for cat in ['desktop', 'mobile']:
+                cat_dir = os.path.join(subdir, cat)
+                if os.path.isdir(cat_dir):
+                    for fn in os.listdir(cat_dir):
+                        if fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+                            existing.add(fn)
 
     return existing
 
 
-def extract_download_info(picture_item):
-    """Extract downloadable URL and category from a picture item.
+def extract_download_url(picture_item):
+    """Extract downloadable URL from a picture item.
 
-    Returns a list of (url, category) tuples.
-    Only items with pictureType 11/12 and a valid imgUrl are included.
+    Returns URL string or None.
+    Only items with pictureType 11 + terminalType 20 and a valid imgUrl.
     """
-    results = []
     pt = picture_item.get('pictureType')
-    if pt not in ALLOWED_PICTURE_TYPES:
-        return results
+    tt = picture_item.get('terminalType')
+    if pt not in ALLOWED_PICTURE_TYPES or tt not in ALLOWED_TERMINAL_TYPES:
+        return None
 
     img = picture_item.get('imgUrl', '')
     if img and img.startswith('http'):
-        tt = picture_item.get('terminalType', 20)
-        category = TERMINAL_CATEGORY.get(tt, 'desktop')
-        results.append((img, category))
-
-    return results
+        return img
+    return None
 
 
 def filename_from_url(url):
@@ -127,68 +121,63 @@ def process_server(server, max_images):
     server_name = server['name']
     json_url = server.get('jsonUrl', '')
 
-    print(f'\n[{timestamp()}] 🚀 STARTING: {server_name}')
+    print(f'\n[{timestamp()}] STARTING: {server_name}')
 
     if not json_url:
-        print(f'[{timestamp()}] [{server_name}] ⚠️ No jsonUrl configured, skipping.')
-        return [], {'desktop': [], 'mobile': []}
+        print(f'[{timestamp()}] [{server_name}] No jsonUrl configured, skipping.')
+        return [], []
 
     # Download the MainMenu.json
     print(f'[{timestamp()}] [{server_name}] Downloading: {json_url}')
     try:
         data = download_json(json_url)
     except Exception as e:
-        print(f'[{timestamp()}] [{server_name}] ❌ Failed to download JSON: {e}',
+        print(f'[{timestamp()}] [{server_name}] Failed to download JSON: {e}',
               file=sys.stderr)
-        return [], {'desktop': [], 'mobile': []}
+        return [], []
 
-    # Extract picture array and filter to allowed types
+    # Extract picture array and filter
     pictures = data.get('picture', [])
-    filtered = [p for p in pictures if p.get('pictureType') in ALLOWED_PICTURE_TYPES]
+    filtered = [p for p in pictures
+                if p.get('pictureType') in ALLOWED_PICTURE_TYPES
+                and p.get('terminalType') in ALLOWED_TERMINAL_TYPES]
     print(f'[{timestamp()}] [{server_name}] Found {len(pictures)} picture entries, '
-          f'{len(filtered)} are wallpapers (type 11/12)')
+          f'{len(filtered)} are wallpapers (pictureType=11, terminalType=20)')
 
     # Load existing images
     existing = list_existing_images(server_id)
-    print(f'[{timestamp()}] [{server_name}] 📂 Existing images: {len(existing)}')
+    print(f'[{timestamp()}] [{server_name}] Existing images: {len(existing)}')
 
-    # Collect filtered picture metadata and new URLs by category
+    # Collect filtered picture metadata and new URLs
     all_pictures = []
-    new_urls = {'desktop': [], 'mobile': []}
+    new_urls = []
 
     for pic in filtered:
         all_pictures.append(pic)
-
-        infos = extract_download_info(pic)
-        for url, category in infos:
+        url = extract_download_url(pic)
+        if url:
             fn = filename_from_url(url)
             if fn and fn not in existing:
-                new_urls[category].append(url)
+                new_urls.append(url)
                 existing.add(fn)  # prevent duplicates within this run
 
-    # Apply max_images cap per category
-    if max_images:
-        for cat in CATEGORIES:
-            if len(new_urls[cat]) > max_images:
-                new_urls[cat] = new_urls[cat][:max_images]
+    # Apply max_images cap
+    if max_images and len(new_urls) > max_images:
+        new_urls = new_urls[:max_images]
 
-    # Write new URLs to per-category txt files
+    # Write new URLs to a single txt file per server
     url_dir = os.path.join(REPO_DIR, 'Wallpapers', 'images_url')
     os.makedirs(url_dir, exist_ok=True)
 
-    total_new = 0
-    for cat in CATEGORIES:
-        txt_path = os.path.join(url_dir, f'{server_id}_{cat}.txt')
-        with open(txt_path, 'w', encoding='utf-8') as f:
-            for url in new_urls[cat]:
-                f.write(url + '\n')
-        count = len(new_urls[cat])
-        total_new += count
-        if count:
-            print(f'[{timestamp()}] [{server_name}] ✅ {count} new {cat} URLs → {txt_path}')
+    txt_path = os.path.join(url_dir, f'{server_id}.txt')
+    with open(txt_path, 'w', encoding='utf-8') as f:
+        for url in new_urls:
+            f.write(url + '\n')
 
-    if total_new == 0:
-        print(f'[{timestamp()}] [{server_name}] ⚠️ No new images found')
+    if new_urls:
+        print(f'[{timestamp()}] [{server_name}] {len(new_urls)} new URLs -> {txt_path}')
+    else:
+        print(f'[{timestamp()}] [{server_name}] No new images found')
 
     return all_pictures, new_urls
 
@@ -199,8 +188,7 @@ def main():
 
     print('=== SCRAPER STARTED (JSON MODE) ===')
     print(f'[{timestamp()}] Max images per server: {max_images or "unlimited"}')
-    print(f'[{timestamp()}] Filter: pictureType in {ALLOWED_PICTURE_TYPES}')
-    print(f'[{timestamp()}] Categories: desktop (tt=7,20), mobile (tt=6)')
+    print(f'[{timestamp()}] Filter: pictureType=11, terminalType=20')
 
     # Process all servers and collect metadata
     all_metadata = {}
@@ -219,7 +207,7 @@ def main():
     metadata_path = os.path.join(metadata_dir, 'scraped_metadata.json')
     with open(metadata_path, 'w', encoding='utf-8') as f:
         json.dump(all_metadata, f, ensure_ascii=False, indent=2)
-    print(f'\n[{timestamp()}] 📄 Scraped metadata saved to {metadata_path}')
+    print(f'\n[{timestamp()}] Scraped metadata saved to {metadata_path}')
 
     print('\n=== ALL TASKS COMPLETED ===\n')
 

@@ -3,7 +3,13 @@
 
 Merges scraped picture data from the CDN JSON with the existing manifest,
 preserving custom fields added by the user while incorporating all original
-JSON fields (pictureId, pictureType, terminalType, nameIn, packageUrl, etc.).
+JSON fields.
+
+Key changes from previous version:
+  - Uses resolution-based category detection (landscape=desktop, portrait=mobile)
+  - Stores resolution field in manifest entries
+  - Uses imgUrl instead of redundant url field
+  - Properly separates startTime (image publish time) and releaseTime (GitHub archive time)
 
 Usage:
     python3 build_manifest.py <wp_dir> <repo_dir> <timestamp> <server_id> [...]
@@ -16,13 +22,6 @@ import urllib.parse
 from datetime import datetime
 
 CATEGORIES = ['desktop', 'mobile']
-
-# terminalType → folder category (same mapping as scraper)
-TERMINAL_CATEGORY = {
-    6: 'mobile',
-    7: 'desktop',
-    20: 'desktop',
-}
 
 
 def format_size(size_bytes):
@@ -67,10 +66,7 @@ def epoch_ms_to_iso(ms):
 
 
 def build_picture_index(scraped_metadata, server_id):
-    """Build an index from scraped metadata keyed by pictureId.
-
-    Returns dict mapping pictureId -> picture data.
-    """
+    """Build an index from scraped metadata keyed by pictureId."""
     index = {}
     server_meta = scraped_metadata.get(server_id, {})
     pictures = server_meta.get('pictures', [])
@@ -85,7 +81,7 @@ def build_url_to_picture_map(pictures):
     """Build a map from URL basename -> picture data for URL-based matching."""
     url_map = {}
     for pic in pictures:
-        for key in ('packageUrl', 'imgUrl', 'condenseImg', 'deputyImgUrl'):
+        for key in ('imgUrl', 'condenseImg', 'deputyImgUrl'):
             url = pic.get(key, '')
             if url and url.startswith('http'):
                 fn = filename_from_url(url)
@@ -94,15 +90,29 @@ def build_url_to_picture_map(pictures):
     return url_map
 
 
+def get_resolution_from_file(filepath):
+    """Get image resolution using Pillow. Returns (width, height) or (0, 0)."""
+    try:
+        from PIL import Image
+        with Image.open(filepath) as img:
+            return img.size
+    except Exception:
+        return (0, 0)
+
+
+def determine_category(width, height):
+    """Determine category from resolution: landscape=desktop, portrait=mobile."""
+    if width <= 0 or height <= 0:
+        return 'desktop'
+    return 'desktop' if width >= height else 'mobile'
+
+
 # Standard fields from the CDN JSON to preserve in manifest
 PICTURE_FIELDS = [
     'gameId', 'pictureId', 'pictureType', 'terminalType',
-    'packageUrl', 'imgUrl', 'condenseImg', 'deputyImgUrl',
+    'imgUrl', 'condenseImg',
     'nameIn', 'nameOut', 'versionOut',
     'sortingMark', 'startTime', 'endTime', 'ossUpdate',
-    'roleAudioUrl', 'audioUrl', 'audioTime',
-    'roleLeve', 'voiceCn', 'voiceJp', 'voiceGd',
-    'videoLink', 'videoType', 'clickUrl',
 ]
 
 
@@ -140,6 +150,16 @@ def main():
         except (json.JSONDecodeError, OSError) as e:
             print(f"Warning: Could not load scraped metadata: {e}", file=sys.stderr)
 
+    # Load image metadata (produced by process_images.py)
+    img_meta_path = os.path.join(repo_dir, 'data', 'image_metadata.json')
+    image_metadata = {}
+    if os.path.isfile(img_meta_path):
+        try:
+            with open(img_meta_path, encoding='utf-8') as f:
+                image_metadata = json.load(f)
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"Warning: Could not load image metadata: {e}", file=sys.stderr)
+
     # Load existing manifest from stdin
     if sys.stdin.isatty():
         manifest = {}
@@ -148,8 +168,6 @@ def main():
         manifest = json.loads(data) if data else {}
 
     for sid in server_ids:
-        wp_branch_root = wp_dir
-
         # Collect size lookup dirs across both categories
         size_dirs = {}
         for cat in CATEGORIES:
@@ -162,8 +180,8 @@ def main():
         server_pics = scraped_metadata.get(sid, {}).get('pictures', [])
         url_pic_map = build_url_to_picture_map(server_pics)
 
-        # ---- Preserve prior manifest data (custom fields, etc.) ----
-        prior_wallpaper_map = {}  # filename -> full wallpaper dict
+        # ---- Preserve prior manifest data ----
+        prior_wallpaper_map = {}
         success_filenames = set()
 
         if sid in manifest and 'wallpapers' in manifest[sid]:
@@ -175,35 +193,36 @@ def main():
                 if pw.get('status') == 'success':
                     success_filenames.add(fn)
 
-        # ---- Load failed URLs first to exclude from success ----
+        # ---- Load failed URLs ----
         failed_urls = []
         failed_filenames = set()
-        for cat in CATEGORIES:
-            failed_file = os.path.join(repo_dir, 'Wallpapers', 'failed', f'{sid}_{cat}.txt')
-            if os.path.isfile(failed_file):
-                with open(failed_file, encoding='utf-8') as f:
-                    for line in f:
-                        url = line.strip()
-                        if url:
-                            failed_urls.append(url)
-                            failed_filenames.add(filename_from_url(url))
+        failed_file = os.path.join(repo_dir, 'Wallpapers', 'failed', f'{sid}.txt')
+        if os.path.isfile(failed_file):
+            with open(failed_file, encoding='utf-8') as f:
+                for line in f:
+                    url = line.strip()
+                    if url:
+                        failed_urls.append(url)
+                        failed_filenames.add(filename_from_url(url))
         failed_count = len(failed_urls)
 
-        # ---- Add NEW filenames from images_url txt (new discoveries) ----
-        new_url_map = {}  # filename -> (url, category)
-        for cat in CATEGORIES:
-            txt_file = os.path.join(repo_dir, 'Wallpapers', 'images_url', f'{sid}_{cat}.txt')
-            if os.path.isfile(txt_file):
-                with open(txt_file, encoding='utf-8') as f:
-                    for line in f:
-                        url = line.strip()
-                        if not url:
-                            continue
-                        fn = filename_from_url(url)
-                        new_url_map[fn] = (url, cat)
-                        # Only mark as success if not in failed list AND file exists on disk
-                        if fn not in failed_filenames and get_file_size(size_dirs.get(cat, []), fn) > 0:
-                            success_filenames.add(fn)
+        # ---- Add NEW filenames from images_url txt ----
+        new_url_map = {}  # filename -> url
+        txt_file = os.path.join(repo_dir, 'Wallpapers', 'images_url', f'{sid}.txt')
+        if os.path.isfile(txt_file):
+            with open(txt_file, encoding='utf-8') as f:
+                for line in f:
+                    url = line.strip()
+                    if not url:
+                        continue
+                    fn = filename_from_url(url)
+                    new_url_map[fn] = url
+                    if fn not in failed_filenames:
+                        # Check if file exists in any category dir
+                        for cat in CATEGORIES:
+                            if get_file_size(size_dirs.get(cat, []), fn) > 0:
+                                success_filenames.add(fn)
+                                break
 
         success = len(success_filenames)
         total = success + failed_count
@@ -212,7 +231,6 @@ def main():
         wallpapers = []
 
         for fn in sorted(success_filenames):
-            # Start with prior data to preserve custom fields
             entry = dict(prior_wallpaper_map.get(fn, {}))
 
             # Core fields
@@ -220,27 +238,50 @@ def main():
             entry['server'] = server_name_map.get(sid, sid)
             entry['status'] = 'success'
 
-            # URL and category
-            if fn in new_url_map:
-                entry['url'] = new_url_map[fn][0]
-                entry['category'] = new_url_map[fn][1]
-            elif 'url' not in entry:
-                entry['url'] = ''
+            # ---- Resolution + Category (resolution-based) ----
+            img_meta = image_metadata.get(fn)
+            if img_meta:
+                entry['resolution'] = img_meta.get('resolution', '')
+                entry['category'] = img_meta.get('category', 'desktop')
+                if img_meta.get('preview'):
+                    entry['preview'] = img_meta['preview']
+            else:
+                # Try to get resolution from file in WP_DIR
+                resolution_found = False
+                for cat in CATEGORIES:
+                    filepath = os.path.join(wp_dir, cat, fn)
+                    if os.path.isfile(filepath):
+                        w, h = get_resolution_from_file(filepath)
+                        if w > 0 and h > 0:
+                            entry['resolution'] = f'{w}x{h}'
+                            entry['category'] = determine_category(w, h)
+                            resolution_found = True
+                        break
+                if not resolution_found:
+                    # Preserve prior values or use defaults
+                    if 'resolution' not in entry:
+                        entry['resolution'] = ''
+                    if 'category' not in entry:
+                        entry['category'] = 'desktop'
 
-            # Determine category from picture metadata if not set
-            if 'category' not in entry:
-                pic = url_pic_map.get(fn)
-                if pic:
-                    tt = pic.get('terminalType', 20)
-                    entry['category'] = TERMINAL_CATEGORY.get(tt, 'desktop')
-                else:
-                    entry['category'] = 'desktop'
+            # imgUrl (primary URL field, replaces old 'url')
+            pic_data = url_pic_map.get(fn)
+            if pic_data and pic_data.get('imgUrl'):
+                entry['imgUrl'] = pic_data['imgUrl']
+            elif fn in new_url_map:
+                entry['imgUrl'] = new_url_map[fn]
+            elif 'imgUrl' not in entry:
+                # Migrate from old 'url' field
+                entry['imgUrl'] = entry.pop('url', '')
 
-            # Release time
+            # Remove old redundant 'url' field if present
+            entry.pop('url', None)
+
+            # releaseTime = when archived to GitHub (batch crawl timestamp)
             if 'releaseTime' not in entry:
                 entry['releaseTime'] = run_timestamp
 
-            # File size (look in the category-specific directories)
+            # File size
             cat = entry.get('category', 'desktop')
             size = get_file_size(size_dirs.get(cat, []), fn)
             if size > 0:
@@ -249,16 +290,15 @@ def main():
                 entry['size'] = ''
 
             # ---- Enrich with scraped picture metadata ----
-            # Try to match by filename -> URL -> picture data
-            pic_data = url_pic_map.get(fn)
             if pic_data:
                 for field in PICTURE_FIELDS:
                     if field in pic_data and pic_data[field] not in (None, ''):
                         val = pic_data[field]
-                        # Convert epoch ms timestamps to readable format
                         if field in ('startTime', 'endTime', 'ossUpdate') and isinstance(val, (int, float)):
                             entry[field] = val  # keep raw epoch ms
                             entry[f'{field}_formatted'] = epoch_ms_to_iso(val)
+                        elif field == 'imgUrl':
+                            entry['imgUrl'] = val  # already handled above
                         else:
                             entry[field] = val
 
@@ -270,10 +310,13 @@ def main():
             entry = dict(prior_wallpaper_map.get(fn, {}))
             entry['filename'] = fn
             entry['server'] = server_name_map.get(sid, sid)
-            entry['url'] = url
+            entry['imgUrl'] = url
+            entry.pop('url', None)
             entry['status'] = 'failed'
             entry['releaseTime'] = run_timestamp
             entry['size'] = ''
+            entry['resolution'] = ''
+            entry['category'] = 'desktop'
             wallpapers.append(entry)
 
         # ---- Build server-level metadata ----
@@ -286,12 +329,8 @@ def main():
             'wallpapers': wallpapers,
         }
 
-        # Store full picture catalog from JSON separately for reference
         if server_pics:
             server_entry['pictureCount'] = len(server_pics)
-            server_entry['pictureTypes'] = sorted(set(
-                p.get('pictureType') for p in server_pics if p.get('pictureType') is not None
-            ))
 
         # Preserve any custom top-level fields from prior manifest
         if sid in manifest:

@@ -30,6 +30,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install Python Dependencies
+        run: pip install Pillow
+
       - name: Ensure branches exist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,13 +59,12 @@ jobs:
       - name: Retry broken links
         run: |
           SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
-          for cat in desktop mobile; do
-            while IFS= read -r id; do
-              if [ -s "Wallpapers/failed/${id}_${cat}.txt" ]; then
-                grep -vxFf "Wallpapers/images_url/${id}_${cat}.txt" "Wallpapers/failed/${id}_${cat}.txt" >> "Wallpapers/images_url/${id}_${cat}.txt" || true
-              fi
-            done <<< "$SERVERS"
-          done
+          while IFS= read -r id; do
+            if [ -s "Wallpapers/failed/${id}.txt" ]; then
+              # Add failed URLs not already in the URL list
+              grep -vxFf "Wallpapers/images_url/${id}.txt" "Wallpapers/failed/${id}.txt" >> "Wallpapers/images_url/${id}.txt" 2>/dev/null || true
+            fi
+          done <<< "$SERVERS"
 
       - name: Check for new images
         id: check_new
@@ -70,14 +72,12 @@ jobs:
           has_new=false
           SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
           while IFS= read -r id; do
-            for cat in desktop mobile; do
-              txt="Wallpapers/images_url/${id}_${cat}.txt"
-              if [ -f "$txt" ] && [ -s "$txt" ]; then
-                count=$(wc -l < "$txt")
-                echo "New $cat images for $id: $count"
-                has_new=true
-              fi
-            done
+            txt="Wallpapers/images_url/${id}.txt"
+            if [ -f "$txt" ] && [ -s "$txt" ]; then
+              count=$(wc -l < "$txt")
+              echo "New images for $id: $count"
+              has_new=true
+            fi
           done <<< "$SERVERS"
           echo "has_new=$has_new" >> "$GITHUB_OUTPUT"
 
@@ -94,21 +94,11 @@ jobs:
         if: steps.check_new.outputs.has_new == 'true'
         run: python3 -u src/downloader.py
 
-      - name: Organize Images
+      - name: Process Images (Resolution + Previews)
         if: steps.check_new.outputs.has_new == 'true'
-        run: |
-          SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
-          while IFS= read -r id; do
-            for cat in desktop mobile; do
-              SRC_DIR="branches/$id/$cat"
-              if [ -d "$SRC_DIR" ]; then
-                mkdir -p "branches/$id/images/$cat"
-                find "$SRC_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec mv {} "branches/$id/images/$cat/" \;
-              fi
-            done
-          done <<< "$SERVERS"
+        run: python3 -u src/process_images.py
 
-      - name: Sync Repo (Push Images)
+      - name: Sync Repo (Push Images + Previews)
         if: steps.check_new.outputs.has_new == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -137,10 +127,10 @@ jobs:
           fi
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md data/manifest.json preview/
+          git add README.md data/manifest.json
           [ -f docs/favicon.png ] && git add docs/favicon.png
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-sync: Update README, manifest, and server pages"
+            git commit -m "Auto-sync: Update README and manifest"
             git push
           fi
 

@@ -24,7 +24,7 @@ def main():
     wallpapers_branch = config.get('wallpapersBranch', 'wallpapers')
     servers = config.get('servers', [])
     release_config = config.get('release', {})
-    fields = release_config.get('fields', ["filename", "category", "size", "status"])
+    fields = release_config.get('fields', ["filename", "category", "resolution", "size", "status"])
 
     # Format timestamp
     try:
@@ -34,7 +34,7 @@ def main():
     except:
         pretty_time = release_tag
 
-    body = f"📅 **Release Time:** {pretty_time}\n\n"
+    body = f"**Release Time:** {pretty_time}\n\n"
     has_files = False
 
     for server in servers:
@@ -62,15 +62,14 @@ def main():
                     encoded_fn = urllib.parse.quote(decoded, safe="/~@!$&'()*+,;=")
                     encoded_fn = re.sub(r'%(?![0-9A-Fa-f]{2})', '%25', encoded_fn)
                     dl_url = f"https://github.com/{repo}/raw/{wallpapers_branch}/{cat}/{encoded_fn}"
-                    thumb_url = f"https://raw.githubusercontent.com/{repo}/{wallpapers_branch}/{cat}/{encoded_fn}"
-                    cat_label = '🖥️' if cat == 'desktop' else '📱'
+                    cat_label = 'Desktop' if cat == 'desktop' else 'Mobile'
 
-                    row = {"filename": decoded, "category": cat_label, "size": "N/A", "status": "✅", "url": dl_url}
+                    row = {"filename": decoded, "category": cat_label, "resolution": "N/A", "size": "N/A", "status": "OK"}
                     file_list_md += "| " + " | ".join(str(row.get(field, '')) for field in fields) + " |\n"
 
         if file_count > 0:
             has_files = True
-            body += f"<details><summary>📋 File list & preview {sname} ({file_count} new)</summary>\n\n"
+            body += f"<details><summary>File list & preview {sname} ({file_count} new)</summary>\n\n"
             body += "| " + " | ".join(fields) + " |\n"
             body += "| " + " | ".join(["-" * len(field) for field in fields]) + " |\n"
             body += file_list_md

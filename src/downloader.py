@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Download wallpaper images from URL lists.
 
-Reads per-server, per-category URL lists from
-Wallpapers/images_url/<server_id>_{desktop|mobile}.txt
-and downloads them with concurrent workers into
-branches/<server_id>/{desktop|mobile}/.
+Reads per-server URL lists from Wallpapers/images_url/<server_id>.txt
+and downloads them into branches/<server_id>/downloads/ (flat directory).
+
+Category organization is handled later by process_images.py based on
+actual image resolution.
 
 Usage:
     python3 src/downloader.py
@@ -24,7 +25,6 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
 CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
 MAX_WORKERS = 16
-CATEGORIES = ['desktop', 'mobile']
 
 
 def load_config():
@@ -33,30 +33,23 @@ def load_config():
 
 
 def encode_url(url):
-    """Properly encode a URL that may contain non-ASCII characters or spaces.
-
-    Note: '+' is intentionally NOT in the safe set so it gets encoded as %2B.
-    Some CDNs/servers misinterpret literal '+' in URL paths.
-    """
+    """Properly encode a URL that may contain non-ASCII characters or spaces."""
     parsed = urllib.parse.urlsplit(url)
-    # Re-encode the path: unquote first (to avoid double-encoding), then quote
     path = urllib.parse.unquote(parsed.path)
     path = urllib.parse.quote(path, safe='/:@!$&\'()*,;=-._~')
-    # Reconstruct the URL
     return urllib.parse.urlunsplit((
         parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment
     ))
 
 
 MAX_RETRIES = 3
-RETRY_BACKOFF = [2, 5, 10]  # seconds between retries
+RETRY_BACKOFF = [2, 5, 10]
 
 
 def download_file(url, dest):
     """Download a single file with retry logic.
 
     Returns (success, filename, error_msg, encoded_url).
-    Retries on transient errors (timeouts, 5xx). Does NOT retry on 4xx (e.g. 404).
     """
     ctx = ssl.create_default_context()
     encoded_url = encode_url(url)
@@ -78,10 +71,8 @@ def download_file(url, dest):
             return True, basename, None, encoded_url
         except urllib.error.HTTPError as e:
             last_err = str(e)
-            # Don't retry client errors (4xx) — they won't succeed
             if 400 <= e.code < 500:
                 break
-            # Server errors (5xx) are retryable
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_BACKOFF[attempt - 1])
         except Exception as e:
@@ -89,7 +80,6 @@ def download_file(url, dest):
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_BACKOFF[attempt - 1])
         finally:
-            # Clean up partial download on failure
             if not os.path.exists(dest) or os.path.getsize(dest) == 0:
                 pass
             elif last_err:
@@ -102,97 +92,95 @@ def download_file(url, dest):
 
 
 def process_server(server):
-    """Download all new images for a server (both desktop and mobile)."""
+    """Download all new images for a server into a flat downloads directory."""
     server_id = server['id']
     server_name = server['name']
 
     print(f'\n--- Processing: {server_name} ---')
     sys.stdout.flush()
 
-    for category in CATEGORIES:
-        txt_path = os.path.join(REPO_DIR, 'Wallpapers', 'images_url',
-                                f'{server_id}_{category}.txt')
-        server_dir = os.path.join(REPO_DIR, 'branches', server_id, category)
+    txt_path = os.path.join(REPO_DIR, 'Wallpapers', 'images_url',
+                            f'{server_id}.txt')
+    download_dir = os.path.join(REPO_DIR, 'branches', server_id, 'downloads')
 
-        print(f'  [{category}] Reading links from: {txt_path}')
-        sys.stdout.flush()
+    print(f'  Reading links from: {txt_path}')
+    sys.stdout.flush()
 
-        if not os.path.isfile(txt_path):
-            print(f'  [{category}] Skip: File not found.')
+    if not os.path.isfile(txt_path):
+        print(f'  Skip: File not found.')
+        return
+
+    os.makedirs(download_dir, exist_ok=True)
+
+    # Read URLs
+    with open(txt_path, encoding='utf-8') as f:
+        urls = [line.strip() for line in f if line.strip()]
+
+    if not urls:
+        print(f'  No URLs to download.')
+        return
+
+    total = len(urls)
+    downloaded = 0
+    failed = 0
+    failed_urls = []
+
+    # Build download tasks
+    tasks = []
+    for url in urls:
+        raw_fn = os.path.basename(urllib.parse.urlparse(url).path.rstrip('/'))
+        try:
+            decoded_fn = urllib.parse.unquote(raw_fn)
+        except Exception:
+            decoded_fn = raw_fn
+        filename = decoded_fn if decoded_fn else raw_fn
+        dest = os.path.join(download_dir, filename)
+
+        if os.path.isfile(dest):
+            print(f'  [{server_name}] SKIPPED: {filename} (Exists)')
             continue
 
-        os.makedirs(server_dir, exist_ok=True)
+        tasks.append((url, dest, filename))
 
-        # Read URLs
-        with open(txt_path, encoding='utf-8') as f:
-            urls = [line.strip() for line in f if line.strip()]
+    # Download concurrently
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {}
+        for idx, (url, dest, filename) in enumerate(tasks, 1):
+            future = executor.submit(download_file, url, dest)
+            futures[future] = (idx, url, filename)
 
-        if not urls:
-            print(f'  [{category}] No URLs to download.')
-            continue
-
-        total = len(urls)
-        downloaded = 0
-        failed = 0
-        failed_urls = []
-
-        # Build download tasks
-        tasks = []
-        for url in urls:
-            raw_fn = os.path.basename(urllib.parse.urlparse(url).path.rstrip('/'))
-            try:
-                decoded_fn = urllib.parse.unquote(raw_fn)
-            except Exception:
-                decoded_fn = raw_fn
-            filename = decoded_fn if decoded_fn else raw_fn
-            dest = os.path.join(server_dir, filename)
-
-            if os.path.isfile(dest):
-                print(f'  [{server_name}/{category}] SKIPPED: {filename} (Exists)')
-                continue
-
-            tasks.append((url, dest, filename))
-
-        # Download concurrently
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            futures = {}
-            for idx, (url, dest, filename) in enumerate(tasks, 1):
-                future = executor.submit(download_file, url, dest)
-                futures[future] = (idx, url, filename)
-
-            for future in as_completed(futures):
-                idx, url, filename = futures[future]
-                success, fn, err, enc_url = future.result()
-                if success:
-                    downloaded += 1
-                    if downloaded % 10 == 0 or downloaded == len(tasks):
-                        print(f'  [{server_name}/{category}] Progress: {downloaded}/{len(tasks)} downloaded')
-                        sys.stdout.flush()
-                else:
-                    failed += 1
-                    failed_urls.append(url)
-                    print(f'  [{server_name}/{category}] ❌ FAILED: {fn}')
-                    print(f'    Original URL: {url}')
-                    print(f'    Encoded URL:  {enc_url}')
-                    print(f'    Error:        {err}')
+        for future in as_completed(futures):
+            idx, url, filename = futures[future]
+            success, fn, err, enc_url = future.result()
+            if success:
+                downloaded += 1
+                if downloaded % 10 == 0 or downloaded == len(tasks):
+                    print(f'  [{server_name}] Progress: {downloaded}/{len(tasks)} downloaded')
                     sys.stdout.flush()
+            else:
+                failed += 1
+                failed_urls.append(url)
+                print(f'  [{server_name}] FAILED: {fn}')
+                print(f'    Original URL: {url}')
+                print(f'    Encoded URL:  {enc_url}')
+                print(f'    Error:        {err}')
+                sys.stdout.flush()
 
-        print(f'  >> {server_name}/{category}: {downloaded} success, {failed} failed.')
-        sys.stdout.flush()
+    print(f'  >> {server_name}: {downloaded} success, {failed} failed out of {total}.')
+    sys.stdout.flush()
 
-        # Write failed URLs
-        failed_dir = os.path.join(REPO_DIR, 'Wallpapers', 'failed')
-        os.makedirs(failed_dir, exist_ok=True)
-        failed_file = os.path.join(failed_dir, f'{server_id}_{category}.txt')
-        if failed_urls:
-            with open(failed_file, 'w', encoding='utf-8') as f:
-                for url in failed_urls:
-                    f.write(url + '\n')
-            print(f'  [!] Failed URLs saved to: {failed_file}')
-        else:
-            # Clear previous failures
-            if os.path.isfile(failed_file):
-                os.remove(failed_file)
+    # Write failed URLs
+    failed_dir = os.path.join(REPO_DIR, 'Wallpapers', 'failed')
+    os.makedirs(failed_dir, exist_ok=True)
+    failed_file = os.path.join(failed_dir, f'{server_id}.txt')
+    if failed_urls:
+        with open(failed_file, 'w', encoding='utf-8') as f:
+            for url in failed_urls:
+                f.write(url + '\n')
+        print(f'  [!] Failed URLs saved to: {failed_file}')
+    else:
+        if os.path.isfile(failed_file):
+            os.remove(failed_file)
 
 
 def main():

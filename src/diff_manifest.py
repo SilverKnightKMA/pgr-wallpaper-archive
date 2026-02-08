@@ -4,6 +4,8 @@
 Writes per-server, per-category txt files containing only URLs for wallpapers
 that are new (not present in the old manifest with success status).
 
+Uses imgUrl field (not old 'url' field).
+
 Usage: diff_manifest.py <old_manifest> <new_manifest> <output_dir>
 """
 import json
@@ -54,12 +56,12 @@ def main():
                 if fn and w.get('status') == 'success':
                     old_filenames.add(fn)
 
-        # Find new wallpapers (in new but not in old) grouped by category
+        # Find new wallpapers grouped by category
         new_urls_by_cat = {cat: [] for cat in CATEGORIES}
         for w in server_data['wallpapers']:
             fn = w.get('filename')
             if fn and w.get('status') == 'success' and fn not in old_filenames:
-                url = w.get('url', '')
+                url = w.get('imgUrl', '')
                 cat = w.get('category', 'desktop')
                 if url and cat in new_urls_by_cat:
                     new_urls_by_cat[cat].append(url)

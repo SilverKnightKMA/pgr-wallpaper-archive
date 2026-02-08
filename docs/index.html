@@ -221,8 +221,10 @@
             <div class="filter-group">
                 <label class="filter-label">🔽 Sort By</label>
                 <select id="sortFilter">
-                    <option value="releaseTime-desc">Release Time (Newest)</option>
-                    <option value="releaseTime-asc">Release Time (Oldest)</option>
+                    <option value="startTime-desc">Published (Newest)</option>
+                    <option value="startTime-asc">Published (Oldest)</option>
+                    <option value="releaseTime-desc">Archived (Newest)</option>
+                    <option value="releaseTime-asc">Archived (Oldest)</option>
                     <option value="filename-asc">Filename (A-Z)</option>
                     <option value="filename-desc">Filename (Z-A)</option>
                     <option value="server-asc">Server (A-Z)</option>
@@ -255,6 +257,7 @@
     <script>
         let REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
         let WALLPAPERS_BRANCH = 'wallpapers';
+        let PREVIEW_BRANCH = 'preview';
 
         let allData = [];
         let serverNames = {};
@@ -284,6 +287,7 @@
                 config.servers.forEach(s => { serverNames[s.id] = s.name; });
                 // Read branch names from config
                 if (config.wallpapersBranch) WALLPAPERS_BRANCH = config.wallpapersBranch;
+                if (config.previewBranch) PREVIEW_BRANCH = config.previewBranch;
             } catch (e) {
                 console.warn('Could not load config, using defaults');
             }
@@ -296,10 +300,17 @@
             return res.json();
         }
 
+        function previewFilename(filename) {
+            // Preview files are always .jpg
+            const lastDot = filename.lastIndexOf('.');
+            if (lastDot > 0) return filename.substring(0, lastDot) + '.jpg';
+            return filename + '.jpg';
+        }
+
         function getThumbUrl(item) {
-            // Use raw.githubusercontent.com from wallpapers branch
-            // (CDN condenseImg URLs fail through GitHub's camo proxy)
-            return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${item.category || 'desktop'}/${encodeFilename(item.filename)}`;
+            // Use preview branch for lightweight thumbnails
+            const prevFn = previewFilename(item.filename);
+            return `https://raw.githubusercontent.com/${REPO}/${PREVIEW_BRANCH}/${encodeFilename(prevFn)}`;
         }
 
         function getDownloadUrl(item) {
@@ -340,9 +351,11 @@
                 const safeAlt = escapeAttr(item.filename);
                 const safeServer = escapeHtml(serverNames[item.server] || item.server);
                 const sizeText = item.size ? escapeHtml(item.size) : 'N/A';
+                const resText = item.resolution ? escapeHtml(item.resolution) : '';
+                const startTimeText = item.startTime_formatted ? escapeHtml(item.startTime_formatted) : '';
                 const releaseTimeText = item.releaseTime ? escapeHtml(item.releaseTime) : 'N/A';
-                const sourceLink = (item.url && isValidUrl(item.url))
-                    ? `<a href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
+                const sourceLink = (item.imgUrl && isValidUrl(item.imgUrl))
+                    ? `<a href="${escapeAttr(item.imgUrl)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
                 return `
                 <div class="card">
                     <a href="${escapeAttr(downloadUrl)}" target="_blank" rel="noopener noreferrer">
@@ -354,7 +367,7 @@
                     <div class="card-body">
                         <div class="card-filename">${safeName}</div>
                         <div style="margin-bottom:6px;font-size:12px;color:var(--text-muted)">
-                            <span>📅 ${releaseTimeText}</span> · <span>📦 ${sizeText}</span>
+                            ${startTimeText ? `<span>📅 ${startTimeText}</span> · ` : ''}<span>📦 ${sizeText}</span>${resText ? ` · <span>📐 ${resText}</span>` : ''}
                         </div>
                         <div style="margin-bottom:8px">
                             <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
@@ -468,6 +481,10 @@
                     valA = parseSize(valA);
                     valB = parseSize(valB);
                 }
+                if (field === 'startTime') {
+                    valA = a.startTime || 0;
+                    valB = b.startTime || 0;
+                }
                 
                 if (valA < valB) return order === 'asc' ? -1 : 1;
                 if (valA > valB) return order === 'asc' ? 1 : -1;
@@ -560,10 +577,13 @@
                         allData.push({
                             server: id,
                             filename: w.filename,
-                            url: w.url || '',
+                            imgUrl: w.imgUrl || w.url || '',
                             status: w.status || 'success',
                             releaseTime: w.releaseTime || releaseTime || serverData.lastUpdated || '',
+                            startTime: w.startTime || 0,
+                            startTime_formatted: w.startTime_formatted || '',
                             size: w.size || '',
+                            resolution: w.resolution || '',
                             category: w.category || 'desktop'
                         });
                     });
