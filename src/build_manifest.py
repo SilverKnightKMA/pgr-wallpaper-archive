@@ -319,13 +319,28 @@ def main():
             entry['category'] = 'desktop'
             wallpapers.append(entry)
 
+        # Compute lastUpdated from newest startTime across wallpapers
+        newest_start = 0
+        for w in wallpapers:
+            st = w.get('startTime', 0)
+            if isinstance(st, (int, float)) and st > newest_start:
+                newest_start = st
+        if newest_start > 0:
+            try:
+                last_updated = datetime.utcfromtimestamp(newest_start / 1000).strftime('%Y-%m-%dT%H:%M:%SZ')
+            except (OSError, ValueError):
+                last_updated = run_timestamp
+        else:
+            last_updated = run_timestamp
+
         # ---- Build server-level metadata ----
         server_entry = {
             'name': server_name_map.get(sid, sid),
             'total': total,
             'success': success,
             'failed': failed_count,
-            'lastUpdated': run_timestamp,
+            'lastUpdated': last_updated,
+            'lastActionRun': run_timestamp,
             'wallpapers': wallpapers,
         }
 

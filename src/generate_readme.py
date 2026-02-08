@@ -74,6 +74,32 @@ def load_manifest():
     return {}
 
 
+def parse_size(size_str):
+    """Parse size string like '2.11 MB' to bytes."""
+    if not size_str:
+        return 0
+    import re as _re
+    match = _re.match(r'([0-9.]+)\s*(B|KB|MB|GB)', size_str, _re.IGNORECASE)
+    if not match:
+        return 0
+    num = float(match.group(1))
+    unit = match.group(2).upper()
+    multipliers = {'B': 1, 'KB': 1024, 'MB': 1024**2, 'GB': 1024**3}
+    return int(num * multipliers.get(unit, 1))
+
+
+def format_size(total_bytes):
+    """Format bytes to human-readable string."""
+    if total_bytes < 1024:
+        return f'{total_bytes} B'
+    elif total_bytes < 1024**2:
+        return f'{total_bytes / 1024:.1f} KB'
+    elif total_bytes < 1024**3:
+        return f'{total_bytes / 1024**2:.2f} MB'
+    else:
+        return f'{total_bytes / 1024**3:.2f} GB'
+
+
 def generate_main_readme(config):
     manifest = load_manifest()
     repo_slug = os.environ.get('GITHUB_REPOSITORY', 'SilverKnightKMA/pgr-wallpaper-archive')
@@ -83,15 +109,59 @@ def generate_main_readme(config):
     repo_name = repo_slug.split('/')[1]
     pages_url = f'https://{owner}.github.io/{repo_name}/'
 
+    # Aggregate stats across all servers
+    total_all = 0
+    total_desktop = 0
+    total_mobile = 0
+    total_success = 0
+    total_failed = 0
+    total_size_bytes = 0
+    last_action_run = 'N/A'
+
+    for server in config['servers']:
+        sd = manifest.get(server['id'], {})
+        total_all += sd.get('total', 0)
+        total_success += sd.get('success', 0)
+        total_failed += sd.get('failed', 0)
+        action_run = sd.get('lastActionRun', '')
+        if action_run and (last_action_run == 'N/A' or action_run > last_action_run):
+            last_action_run = action_run
+        for w in sd.get('wallpapers', []):
+            cat = w.get('category', 'desktop')
+            if cat == 'desktop':
+                total_desktop += 1
+            else:
+                total_mobile += 1
+            total_size_bytes += parse_size(w.get('size', ''))
+
+    total_size_str = format_size(total_size_bytes)
+
     lines = []
     lines.append('# PGR Wallpaper Archive\n')
     lines.append('Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.\n')
+
+    # --- Badges ---
+    workflow_badge = f'[![Workflow](https://github.com/{repo_slug}/actions/workflows/downloader.yml/badge.svg)](https://github.com/{repo_slug}/actions/workflows/downloader.yml)'
+    total_badge = f'![Total](https://img.shields.io/badge/Total-{total_all}-blue)'
+    desktop_badge = f'![Desktop](https://img.shields.io/badge/Desktop-{total_desktop}-informational)'
+    mobile_badge = f'![Mobile](https://img.shields.io/badge/Mobile-{total_mobile}-informational)'
+    size_badge = f'![Size](https://img.shields.io/badge/Size-{total_size_str.replace(" ", "%20")}-green)'
+
+    if total_failed > 0:
+        failed_badge = f'![Failed](https://img.shields.io/badge/Failed-{total_failed}-red)'
+    else:
+        failed_badge = f'![Failed](https://img.shields.io/badge/Failed-0-brightgreen)'
+
+    lines.append(f'{workflow_badge} {total_badge} {desktop_badge} {mobile_badge} {size_badge} {failed_badge}\n')
+
+    lines.append(f'> **Last Action Run:** {last_action_run}\n')
+
     lines.append(f'[Browse & Filter Wallpapers on Web]({pages_url})\n')
     lines.append('## Server Galleries\n')
     lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')
     lines.append(f'Previews and server pages are in the [`{preview_branch}`](https://github.com/{repo_slug}/tree/{preview_branch}) branch.\n')
-    lines.append('| Server | Total | Success | Failed | Last Updated |')
-    lines.append('|--------|-------|---------|--------|--------------|')
+    lines.append('| Server | Total | Desktop | Mobile | Success | Failed | Last Updated |')
+    lines.append('|--------|-------|---------|--------|---------|--------|--------------|')
 
     for server in config['servers']:
         server_url = f'https://github.com/{repo_slug}/tree/{preview_branch}/{server["id"]}'
@@ -100,7 +170,10 @@ def generate_main_readme(config):
         success = sd.get('success', 0)
         failed = sd.get('failed', 0)
         last_updated = sd.get('lastUpdated', 'N/A')
-        lines.append(f'| [{server["name"]}]({server_url}) | {total} | {success} | {failed} | {last_updated} |')
+        # Count desktop/mobile per server
+        s_desktop = sum(1 for w in sd.get('wallpapers', []) if w.get('category', 'desktop') == 'desktop')
+        s_mobile = sum(1 for w in sd.get('wallpapers', []) if w.get('category') == 'mobile')
+        lines.append(f'| [{server["name"]}]({server_url}) | {total} | {s_desktop} | {s_mobile} | {success} | {failed} | {last_updated} |')
 
     lines.append('\n---\n')
     lines.append('## Wallpaper Preview\n')
@@ -125,7 +198,7 @@ def generate_main_readme(config):
                     enc_fn = encode_filename(fn)
                     safe_fn = escape_html(fn)
                     # Thumbnail from preview branch
-                    thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{enc_prev_fn}'
+                    thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/previews/{enc_prev_fn}'
                     # Full image from wallpapers branch
                     raw = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
                     lines.append(f'    <td width="20%" align="center" valign="middle">')
@@ -207,7 +280,7 @@ def generate_server_readme(config, server):
             enc_prev_fn = encode_filename(prev_fn)
             safe_fn = escape_html(fn)
             # Thumbnail from preview branch
-            thumb_src = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{enc_prev_fn}'
+            thumb_src = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/previews/{enc_prev_fn}'
             # Full image from wallpapers branch
             dl = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
             status = 'Failed' if (w.get('status') == 'failed' or fn in failed_filenames) else 'Success'

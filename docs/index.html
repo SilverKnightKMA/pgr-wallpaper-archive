@@ -310,7 +310,7 @@
         function getThumbUrl(item) {
             // Use preview branch for lightweight thumbnails
             const prevFn = previewFilename(item.filename);
-            return `https://raw.githubusercontent.com/${REPO}/${PREVIEW_BRANCH}/${encodeFilename(prevFn)}`;
+            return `https://raw.githubusercontent.com/${REPO}/${PREVIEW_BRANCH}/previews/${encodeFilename(prevFn)}`;
         }
 
         function getDownloadUrl(item) {

@@ -97,13 +97,14 @@ while IFS= read -r id; do
     done
   done
 
-  # Copy previews to PV_DIR/ (flat - all previews in root)
+  # Copy previews to PV_DIR/previews/ subdirectory
   PREVIEW_DIR="$BRANCH_DIR/previews"
   if [ -d "$PREVIEW_DIR" ]; then
     PREVIEW_COUNT=$(find "$PREVIEW_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) 2>/dev/null | wc -l)
     if [ "$PREVIEW_COUNT" -gt 0 ]; then
       echo "  Previews: $PREVIEW_COUNT files"
-      find "$PREVIEW_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -exec cp {} "$PV_DIR/" \;
+      mkdir -p "$PV_DIR/previews"
+      find "$PREVIEW_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -exec cp {} "$PV_DIR/previews/" \;
     fi
   fi
 
@@ -112,7 +113,8 @@ done <<< "$SERVERS"
 # --- 4. Generate previews for existing images in WP_DIR ---
 echo ""
 echo "Generating previews for all images in wallpapers branch..."
-python3 "$REPO_DIR/src/process_images.py" --wp-dir "$WP_DIR" --preview-dir "$PV_DIR"
+mkdir -p "$PV_DIR/previews"
+python3 "$REPO_DIR/src/process_images.py" --wp-dir "$WP_DIR" --preview-dir "$PV_DIR/previews"
 
 # --- 5. Push Wallpapers Branch (Batched) ---
 echo ""
