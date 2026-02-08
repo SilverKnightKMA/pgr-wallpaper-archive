@@ -1,12 +1,82 @@
 # KR Server — PGR Wallpaper Archive
 
-> Total: 60 wallpapers
+> Total: 65 wallpapers
 
 [⬅️ Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 🔍 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=kr)
 
 ## 🖼️ Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/elroqhf9wslt72jmle-1745813080466478.jpg" width="200" alt="elroqhf9wslt72jmle-1745813080466478.jpg" title="elroqhf9wslt72jmle-1745813080466478.jpg"> <strong>elroqhf9wslt72jmle-1745813080466478.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.55 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/elroqhf9wslt72jmle-1745813080466478.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1745769600000/elroqhf9wslt72jmle-1745813080466478.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/fdgyitbuy92ir289nv-1745813015359475.jpg" width="200" alt="fdgyitbuy92ir289nv-1745813015359475.jpg" title="fdgyitbuy92ir289nv-1745813015359475.jpg"> <strong>fdgyitbuy92ir289nv-1745813015359475.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.24 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fdgyitbuy92ir289nv-1745813015359475.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1745769600000/fdgyitbuy92ir289nv-1745813015359475.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/fxp9idnmqj34a0z135-1745813059465477.jpg" width="200" alt="fxp9idnmqj34a0z135-1745813059465477.jpg" title="fxp9idnmqj34a0z135-1745813059465477.jpg"> <strong>fxp9idnmqj34a0z135-1745813059465477.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 2.07 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fxp9idnmqj34a0z135-1745813059465477.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1745769600000/fxp9idnmqj34a0z135-1745813059465477.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/i5gurbxmu0772b7j0c-1745813033257476.jpg" width="200" alt="i5gurbxmu0772b7j0c-1745813033257476.jpg" title="i5gurbxmu0772b7j0c-1745813033257476.jpg"> <strong>i5gurbxmu0772b7j0c-1745813033257476.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.31 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/i5gurbxmu0772b7j0c-1745813033257476.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1745769600000/i5gurbxmu0772b7j0c-1745813033257476.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/ls316g0qxzjuue0ba2-1749188636729479.jpg" width="200" alt="ls316g0qxzjuue0ba2-1749188636729479.jpg" title="ls316g0qxzjuue0ba2-1749188636729479.jpg"> <strong>ls316g0qxzjuue0ba2-1749188636729479.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.76 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ls316g0qxzjuue0ba2-1749188636729479.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1749139200000/ls316g0qxzjuue0ba2-1749188636729479.jpg">🔗 Original</a>
+
+</details>
 
 <details>
 <summary>

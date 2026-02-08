@@ -1,12 +1,82 @@
 # TW Server — PGR Wallpaper Archive
 
-> Total: 77 wallpapers
+> Total: 82 wallpapers
 
 [⬅️ Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 🔍 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=tw)
 
 ## 🖼️ Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/0cdgwk12chb0yg7h5j-1760586655665%E5%8D%8F%E5%A5%8F%E7%99%BB%E9%99%86%E5%9B%BE.png" width="200" alt="0cdgwk12chb0yg7h5j-1760586655665协奏登陆图.png" title="0cdgwk12chb0yg7h5j-1760586655665协奏登陆图.png"> <strong>0cdgwk12chb0yg7h5j-1760586655665协奏登陆图.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 4.10 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/0cdgwk12chb0yg7h5j-1760586655665%E5%8D%8F%E5%A5%8F%E7%99%BB%E9%99%86%E5%9B%BE.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/0cdgwk12chb0yg7h5j-1760586655665协奏登陆图.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/8v9fkqy7q2fv61tbmo-1760586526833%E5%A4%A9%E7%9C%9F%E7%9A%84%E6%9D%80%E6%88%AE.png" width="200" alt="8v9fkqy7q2fv61tbmo-1760586526833天真的杀戮.png" title="8v9fkqy7q2fv61tbmo-1760586526833天真的杀戮.png"> <strong>8v9fkqy7q2fv61tbmo-1760586526833天真的杀戮.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 3.33 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8v9fkqy7q2fv61tbmo-1760586526833%E5%A4%A9%E7%9C%9F%E7%9A%84%E6%9D%80%E6%88%AE.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/8v9fkqy7q2fv61tbmo-1760586526833天真的杀戮.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/a5oi8ryunkt07fcnuq-17605867658643.8%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg" width="200" alt="a5oi8ryunkt07fcnuq-17605867658643.8活动面板.jpg" title="a5oi8ryunkt07fcnuq-17605867658643.8活动面板.jpg"> <strong>a5oi8ryunkt07fcnuq-17605867658643.8活动面板.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.37 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/a5oi8ryunkt07fcnuq-17605867658643.8%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/a5oi8ryunkt07fcnuq-17605867658643.8活动面板.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/m6294s4qrzhe4jfnto-1760586625679%E4%B8%87%E4%BA%8B%E5%8C%BB%E7%94%9F%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5-%E5%8F%91%E5%B0%BE%E6%94%B9%E8%89%B2.png" width="200" alt="m6294s4qrzhe4jfnto-1760586625679万事医生皮肤海报-发尾改色.png" title="m6294s4qrzhe4jfnto-1760586625679万事医生皮肤海报-发尾改色.png"> <strong>m6294s4qrzhe4jfnto-1760586625679万事医生皮肤海报-发尾改色.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 3.12 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/m6294s4qrzhe4jfnto-1760586625679%E4%B8%87%E4%BA%8B%E5%8C%BB%E7%94%9F%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5-%E5%8F%91%E5%B0%BE%E6%94%B9%E8%89%B2.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/m6294s4qrzhe4jfnto-1760586625679万事医生皮肤海报-发尾改色.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/v3kzvymblrlu6sl2ss-1760586600622%E5%AE%8C%E5%85%A8%E8%A3%81%E5%89%AA.png" width="200" alt="v3kzvymblrlu6sl2ss-1760586600622完全裁剪.png" title="v3kzvymblrlu6sl2ss-1760586600622完全裁剪.png"> <strong>v3kzvymblrlu6sl2ss-1760586600622完全裁剪.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 3.38 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/v3kzvymblrlu6sl2ss-1760586600622%E5%AE%8C%E5%85%A8%E8%A3%81%E5%89%AA.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/v3kzvymblrlu6sl2ss-1760586600622完全裁剪.png">🔗 Original</a>
+
+</details>
 
 <details>
 <summary>
