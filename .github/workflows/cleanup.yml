@@ -29,17 +29,23 @@ jobs:
             done
           fi
 
-      - name: Delete data directory
+      - name: Delete data and preview directories
         run: |
-          if [ -d "data" ]; then
-            git rm -rf data preview
+          deleted=false
+          for dir in data preview; do
+            if [ -d "$dir" ]; then
+              git rm -rf "$dir"
+              deleted=true
+              echo "Staged $dir for deletion."
+            fi
+          done
+          if [ "$deleted" = true ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: remove data directory"
+            git commit -m "chore: remove data and preview directories"
             git push origin main
-            echo "Deleted data directory."
           else
-            echo "No data directory found."
+            echo "No directories to delete."
           fi
 
       - name: Delete all releases
