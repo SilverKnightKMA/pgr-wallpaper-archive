@@ -27,15 +27,51 @@
         h1 { margin-bottom: 8px; }
         .subtitle { color: var(--text-muted); margin-bottom: 24px; }
         .controls {
-            display: flex; flex-wrap: wrap; gap: 12px;
-            margin-bottom: 24px; align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .filter-group {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+        }
+        .filter-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .filter-options {
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 4px 0;
+            cursor: pointer;
+        }
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        .checkbox-item label {
+            font-size: 13px;
+            cursor: pointer;
+            user-select: none;
+            flex: 1;
         }
         .controls select, .controls input {
             background: var(--card-bg); color: var(--text);
             border: 1px solid var(--border); border-radius: 6px;
             padding: 8px 12px; font-size: 14px;
+            width: 100%;
         }
-        .controls input { flex: 1; min-width: 200px; }
+        .search-group { grid-column: 1 / -1; }
         .stats {
             background: var(--card-bg); border: 1px solid var(--border);
             border-radius: 6px; padding: 16px; margin-bottom: 24px;
@@ -93,23 +129,63 @@
         <p class="subtitle">Browse and filter wallpapers from Punishing: Gray Raven</p>
 
         <div class="controls">
-            <select id="serverFilter">
-                <option value="all">All Servers</option>
-            </select>
-            <select id="statusFilter">
-                <option value="all">All Status</option>
-                <option value="success">✅ Success</option>
-                <option value="failed">❌ Failed</option>
-            </select>
-            <select id="releaseTimeFilter">
-                <option value="all">All Release Times</option>
-            </select>
-            <select id="categoryFilter">
-                <option value="all">All Categories</option>
-                <option value="desktop">🖥️ Desktop</option>
-                <option value="mobile">📱 Mobile</option>
-            </select>
-            <input type="text" id="searchInput" placeholder="Search by filename...">
+            <div class="filter-group">
+                <label class="filter-label">🌐 Servers</label>
+                <div class="filter-options" id="serverFilterBox"></div>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">📂 Categories</label>
+                <div class="filter-options" id="categoryFilterBox">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cat-desktop" value="desktop" checked>
+                        <label for="cat-desktop">🖥️ Desktop</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cat-mobile" value="mobile" checked>
+                        <label for="cat-mobile">📱 Mobile</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">✅ Status</label>
+                <div class="filter-options" id="statusFilterBox">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-success" value="success" checked>
+                        <label for="status-success">✅ Success</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-failed" value="failed" checked>
+                        <label for="status-failed">❌ Failed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">📅 Release Time</label>
+                <select id="releaseTimeFilter">
+                    <option value="all">All Times</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label class="filter-label">🔽 Sort By</label>
+                <select id="sortFilter">
+                    <option value="releaseTime-desc">Release Time (Newest)</option>
+                    <option value="releaseTime-asc">Release Time (Oldest)</option>
+                    <option value="filename-asc">Filename (A-Z)</option>
+                    <option value="filename-desc">Filename (Z-A)</option>
+                    <option value="server-asc">Server (A-Z)</option>
+                    <option value="size-desc">Size (Largest)</option>
+                    <option value="size-asc">Size (Smallest)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group search-group">
+                <label class="filter-label">🔍 Search</label>
+                <input type="text" id="searchInput" placeholder="Search by filename...">
+            </div>
         </div>
 
         <div class="stats" id="stats">
@@ -257,19 +333,68 @@
             document.getElementById('statServers').textContent = servers;
         }
 
+        function getSelectedCheckboxes(containerSelector) {
+            const container = document.querySelector(containerSelector);
+            return Array.from(container.querySelectorAll('input[type="checkbox"]:checked'))
+                .map(cb => cb.value);
+        }
+
+        function sortItems(items, sortBy) {
+            const [field, order] = sortBy.split('-');
+            const sorted = [...items].sort((a, b) => {
+                let valA = a[field] || '';
+                let valB = b[field] || '';
+                
+                if (field === 'size') {
+                    // Parse size strings like "1.2 MB" to bytes for comparison
+                    const parseSize = (str) => {
+                        if (!str) return 0;
+                        const match = str.match(/([0-9.]+)\s*(KB|MB|GB)?/i);
+                        if (!match) return 0;
+                        const num = parseFloat(match[1]);
+                        const unit = (match[2] || 'MB').toUpperCase();
+                        const multipliers = { KB: 1024, MB: 1024*1024, GB: 1024*1024*1024 };
+                        return num * (multipliers[unit] || 1);
+                    };
+                    valA = parseSize(valA);
+                    valB = parseSize(valB);
+                }
+                
+                if (valA < valB) return order === 'asc' ? -1 : 1;
+                if (valA > valB) return order === 'asc' ? 1 : -1;
+                return 0;
+            });
+            return sorted;
+        }
+
         function applyFilters() {
-            const server = document.getElementById('serverFilter').value;
-            const status = document.getElementById('statusFilter').value;
+            const selectedServers = getSelectedCheckboxes('#serverFilterBox');
+            const selectedStatuses = getSelectedCheckboxes('#statusFilterBox');
+            const selectedCategories = getSelectedCheckboxes('#categoryFilterBox');
             const releaseTimeVal = document.getElementById('releaseTimeFilter').value;
             const search = document.getElementById('searchInput').value.toLowerCase();
-            const category = document.getElementById('categoryFilter').value;
+            const sortBy = document.getElementById('sortFilter').value;
 
             let filtered = allData;
-            if (server !== 'all') filtered = filtered.filter(i => i.server === server);
-            if (status !== 'all') filtered = filtered.filter(i => i.status === status);
-            if (releaseTimeVal !== 'all') filtered = filtered.filter(i => i.releaseTime === releaseTimeVal);
-            if (search) filtered = filtered.filter(i => i.filename.toLowerCase().includes(search));
-            if (category !== 'all') filtered = filtered.filter(i => i.category === category);
+            
+            if (selectedServers.length > 0) {
+                filtered = filtered.filter(i => selectedServers.includes(i.server));
+            }
+            if (selectedStatuses.length > 0) {
+                filtered = filtered.filter(i => selectedStatuses.includes(i.status));
+            }
+            if (selectedCategories.length > 0) {
+                filtered = filtered.filter(i => selectedCategories.includes(i.category));
+            }
+            if (releaseTimeVal !== 'all') {
+                filtered = filtered.filter(i => i.releaseTime === releaseTimeVal);
+            }
+            if (search) {
+                filtered = filtered.filter(i => i.filename.toLowerCase().includes(search));
+            }
+            
+            // Apply sorting
+            filtered = sortItems(filtered, sortBy);
 
             updateStats(filtered);
             renderGallery(filtered);
@@ -289,13 +414,17 @@
                     }
                 });
 
-                // Populate server filter
-                const serverFilter = document.getElementById('serverFilter');
+                // Populate server filter (checkboxes)
+                const serverFilterBox = document.getElementById('serverFilterBox');
                 serverIds.forEach(id => {
-                    const opt = document.createElement('option');
-                    opt.value = id;
-                    opt.textContent = serverNames[id] || id;
-                    serverFilter.appendChild(opt);
+                    const div = document.createElement('div');
+                    div.className = 'checkbox-item';
+                    const checkId = `server-${id}`;
+                    div.innerHTML = `
+                        <input type="checkbox" id="${checkId}" value="${id}" checked>
+                        <label for="${checkId}">${escapeHtml(serverNames[id] || id)}</label>
+                    `;
+                    serverFilterBox.appendChild(div);
                 });
 
                 // Build flat data array
@@ -336,13 +465,25 @@
                 // Check URL params for pre-filter
                 const params = new URLSearchParams(window.location.search);
                 if (params.get('server')) {
-                    serverFilter.value = params.get('server');
+                    const serverId = params.get('server');
+                    // Uncheck all, then check only the requested server
+                    serverFilterBox.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                    const targetCb = document.getElementById(`server-${serverId}`);
+                    if (targetCb) targetCb.checked = true;
                 }
 
                 // Attach event listeners
-                document.getElementById('serverFilter').addEventListener('change', applyFilters);
-                document.getElementById('statusFilter').addEventListener('change', applyFilters);
+                document.querySelectorAll('#serverFilterBox input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', applyFilters);
+                });
+                document.querySelectorAll('#statusFilterBox input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', applyFilters);
+                });
+                document.querySelectorAll('#categoryFilterBox input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', applyFilters);
+                });
                 document.getElementById('releaseTimeFilter').addEventListener('change', applyFilters);
+                document.getElementById('sortFilter').addEventListener('change', applyFilters);
                 document.getElementById('searchInput').addEventListener('input', applyFilters);
 
                 applyFilters();
