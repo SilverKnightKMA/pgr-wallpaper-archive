@@ -1,12 +1,82 @@
 # JP Server — PGR Wallpaper Archive
 
-> Total: 83 wallpapers
+> Total: 88 wallpapers
 
 [⬅️ Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 🔍 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=jp)
 
 ## 🖼️ Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/4ptuh2235t2oj5g641-1711525831311%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%863_.jpg" width="200" alt="4ptuh2235t2oj5g641-1711525831311拉弥亚-克希拉苏醒-差分3_.jpg" title="4ptuh2235t2oj5g641-1711525831311拉弥亚-克希拉苏醒-差分3_.jpg"> <strong>4ptuh2235t2oj5g641-1711525831311拉弥亚-克希拉苏醒-差分3_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.97 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4ptuh2235t2oj5g641-1711525831311%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%863_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/4ptuh2235t2oj5g641-1711525831311拉弥亚-克希拉苏醒-差分3_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/6nzigw5znfkgq32rnx-1711525797377%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%862_.jpg" width="200" alt="6nzigw5znfkgq32rnx-1711525797377拉弥亚-克希拉苏醒-差分2_.jpg" title="6nzigw5znfkgq32rnx-1711525797377拉弥亚-克希拉苏醒-差分2_.jpg"> <strong>6nzigw5znfkgq32rnx-1711525797377拉弥亚-克希拉苏醒-差分2_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 973.7 KB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/6nzigw5znfkgq32rnx-1711525797377%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%862_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/6nzigw5znfkgq32rnx-1711525797377拉弥亚-克希拉苏醒-差分2_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/afayerego54k1cua1p-1711525940175%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%866_.jpg" width="200" alt="afayerego54k1cua1p-1711525940175拉弥亚-克希拉苏醒-差分6_.jpg" title="afayerego54k1cua1p-1711525940175拉弥亚-克希拉苏醒-差分6_.jpg"> <strong>afayerego54k1cua1p-1711525940175拉弥亚-克希拉苏醒-差分6_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 8.03 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/afayerego54k1cua1p-1711525940175%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%866_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/afayerego54k1cua1p-1711525940175拉弥亚-克希拉苏醒-差分6_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/jg9qwncthoc78i2que-1711525902719%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%865_.jpg" width="200" alt="jg9qwncthoc78i2que-1711525902719拉弥亚-克希拉苏醒-差分5_.jpg" title="jg9qwncthoc78i2que-1711525902719拉弥亚-克希拉苏醒-差分5_.jpg"> <strong>jg9qwncthoc78i2que-1711525902719拉弥亚-克希拉苏醒-差分5_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 3.23 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jg9qwncthoc78i2que-1711525902719%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%865_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/jg9qwncthoc78i2que-1711525902719拉弥亚-克希拉苏醒-差分5_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/lmaefp7wuswnpm5vih-1711525866346%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%864_.jpg" width="200" alt="lmaefp7wuswnpm5vih-1711525866346拉弥亚-克希拉苏醒-差分4_.jpg" title="lmaefp7wuswnpm5vih-1711525866346拉弥亚-克希拉苏醒-差分4_.jpg"> <strong>lmaefp7wuswnpm5vih-1711525866346拉弥亚-克希拉苏醒-差分4_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T11:50:51Z
+- **Size:** 1.13 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lmaefp7wuswnpm5vih-1711525866346%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%864_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/lmaefp7wuswnpm5vih-1711525866346拉弥亚-克希拉苏醒-差分4_.jpg">🔗 Original</a>
+
+</details>
 
 <details>
 <summary>
