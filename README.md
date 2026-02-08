@@ -10,11 +10,11 @@ All wallpapers are stored in the [`wallpapers`](https://github.com/SilverKnightK
 
 | Server | Details | Total | Success | Failed | Last Updated |
 |--------|---------|-------|---------|--------|--------------|
-| 🖼️ CN Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/cn) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:01:48Z |
-| 🖼️ JP Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/jp) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:01:48Z |
-| 🖼️ Global Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/global) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:01:48Z |
-| 🖼️ TW Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/tw) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:01:48Z |
-| 🖼️ KR Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/kr) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:01:48Z |
+| 🖼️ CN Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/cn) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:22:07Z |
+| 🖼️ JP Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/jp) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:22:07Z |
+| 🖼️ Global Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/global) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:22:07Z |
+| 🖼️ TW Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/tw) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:22:07Z |
+| 🖼️ KR Server | [View Details](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/main/preview/kr) | 10 | ✅ 10 | ❌ 0 | 2026-02-08T11:22:07Z |
 
 ---
 
