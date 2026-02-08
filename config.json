@@ -27,8 +27,5 @@
     }
   ],
   "wallpapersBranch": "wallpapers",
-  "previewBranch": "preview",
-  "settings": {
-    "thumbnailWidth": 400
-  }
+  "settings": {}
 }

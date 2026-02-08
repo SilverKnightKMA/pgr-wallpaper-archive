@@ -124,7 +124,6 @@
     <script>
         let REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
         let WALLPAPERS_BRANCH = 'wallpapers';
-        let PREVIEW_BRANCH = 'preview';
 
         let allData = [];
         let serverNames = {};
@@ -154,7 +153,6 @@
                 config.servers.forEach(s => { serverNames[s.id] = s.name; });
                 // Read branch names from config
                 if (config.wallpapersBranch) WALLPAPERS_BRANCH = config.wallpapersBranch;
-                if (config.previewBranch) PREVIEW_BRANCH = config.previewBranch;
             } catch (e) {
                 console.warn('Could not load config, using defaults');
             }
@@ -167,14 +165,16 @@
             return res.json();
         }
 
-        function getThumbUrl(serverId, filename) {
-            const encoded = encodeFilename(filename);
-            return `https://raw.githubusercontent.com/${REPO}/${PREVIEW_BRANCH}/${serverId}/thumbnails/${encoded}`;
+        function getThumbUrl(item) {
+            // Use condenseImg from CDN if available, otherwise fall back to raw image
+            if (item.condenseImg) return item.condenseImg;
+            return getDownloadUrl(item);
         }
 
-        function getDownloadUrl(serverId, filename) {
-            const encoded = encodeFilename(filename);
-            return `https://github.com/${REPO}/raw/${WALLPAPERS_BRANCH}/${encoded}`;
+        function getDownloadUrl(item) {
+            const encoded = encodeFilename(item.filename);
+            const category = item.category || 'desktop';
+            return `https://github.com/${REPO}/raw/${WALLPAPERS_BRANCH}/${category}/${encoded}`;
         }
 
         function escapeHtml(str) {
@@ -203,8 +203,8 @@
                 return;
             }
             gallery.innerHTML = items.map(item => {
-                const thumbUrl = getThumbUrl(item.server, item.filename);
-                const downloadUrl = getDownloadUrl(item.server, item.filename);
+                const thumbUrl = getThumbUrl(item);
+                const downloadUrl = getDownloadUrl(item);
                 const safeName = escapeHtml(item.filename);
                 const safeAlt = escapeAttr(item.filename);
                 const safeServer = escapeHtml(serverNames[item.server] || item.server);
@@ -306,7 +306,9 @@
                             url: w.url || '',
                             status: w.status || 'success',
                             releaseTime: w.releaseTime || releaseTime || serverData.lastUpdated || '',
-                            size: w.size || ''
+                            size: w.size || '',
+                            category: w.category || 'desktop',
+                            condenseImg: w.condenseImg || ''
                         });
                     });
                 });

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Generate README files for main branch and per-server preview branches.
-
-Replaces the old generate_readme.js.
+"""Generate README files for main branch and per-server pages.
 
 Usage:
     python3 src/generate_readme.py main
-    python3 src/generate_readme.py branch <server_id>
+    python3 src/generate_readme.py server <server_id>
+
+Thumbnails are sourced directly from the PGR CDN (condenseImg field).
 
 Environment variables:
     MANIFEST_PATH         – path to manifest.json (default: data/manifest.json)
     README_OUTPUT         – output path for main README (default: README.md)
-    BRANCH_README_OUTPUT  – output path for branch README
+    BRANCH_README_OUTPUT  – output path for server README (default: servers/{id}/README.md)
     BRANCH_DIR            – wallpapers branch checkout dir
     FAILED_DIR            – directory containing per-category failed URL files
     GITHUB_REPOSITORY     – repo slug (default: SilverKnightKMA/pgr-wallpaper-archive)
@@ -71,7 +71,6 @@ def generate_main_readme(config):
     manifest = load_manifest()
     repo_slug = os.environ.get('GITHUB_REPOSITORY', 'SilverKnightKMA/pgr-wallpaper-archive')
     wallpapers_branch = config.get('wallpapersBranch', 'wallpapers')
-    preview_branch = config.get('previewBranch', 'preview')
     owner = repo_slug.split('/')[0]
     repo_name = repo_slug.split('/')[1]
     pages_url = f'https://{owner}.github.io/{repo_name}/'
@@ -82,17 +81,17 @@ def generate_main_readme(config):
     lines.append(f'🌐 [Browse & Filter Wallpapers on Web]({pages_url})\n')
     lines.append('## 📂 Server Galleries\n')
     lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')
-    lines.append('| Server | Preview | Total | Success | Failed | Last Updated |')
+    lines.append('| Server | Details | Total | Success | Failed | Last Updated |')
     lines.append('|--------|---------|-------|---------|--------|--------------|')
 
     for server in config['servers']:
-        preview_url = f'https://github.com/{repo_slug}/tree/{preview_branch}/{server["id"]}'
+        server_url = f'https://github.com/{repo_slug}/tree/main/servers/{server["id"]}'
         sd = manifest.get(server['id'], {})
         total = sd.get('total', 0)
         success = sd.get('success', 0)
         failed = sd.get('failed', 0)
         last_updated = sd.get('lastUpdated', 'N/A')
-        lines.append(f'| 🖼️ {server["name"]} | [View Preview]({preview_url}) | {total} | ✅ {success} | ❌ {failed} | {last_updated} |')
+        lines.append(f'| 🖼️ {server["name"]} | [View Details]({server_url}) | {total} | ✅ {success} | ❌ {failed} | {last_updated} |')
 
     lines.append('\n---\n')
     lines.append('## 🖼️ Wallpaper Preview\n')
@@ -113,11 +112,14 @@ def generate_main_readme(config):
                     cat = w.get('category', 'desktop')
                     enc_fn = encode_filename(fn)
                     safe_fn = escape_html(fn)
-                    thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{server["id"]}/thumbnails/{cat}/{enc_fn}'
+                    thumb = w.get('condenseImg', '')
                     raw = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
                     lines.append(f'    <td width="20%" align="center" valign="middle">')
                     lines.append(f'      <a href="{raw}">')
-                    lines.append(f'        <img src="{thumb}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
+                    if thumb:
+                        lines.append(f'        <img src="{thumb}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
+                    else:
+                        lines.append(f'        <img src="{raw}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
                     lines.append(f'      </a>')
                     lines.append(f'    </td>')
                 lines.append('  </tr>')
@@ -136,11 +138,10 @@ def generate_main_readme(config):
     print('✅ Main README.md updated!')
 
 
-def generate_branch_readme(config, server):
+def generate_server_readme(config, server):
     manifest = load_manifest()
     repo_slug = os.environ.get('GITHUB_REPOSITORY', 'SilverKnightKMA/pgr-wallpaper-archive')
     wallpapers_branch = config.get('wallpapersBranch', 'wallpapers')
-    preview_branch = config.get('previewBranch', 'preview')
     owner = repo_slug.split('/')[0]
     repo_name = repo_slug.split('/')[1]
 
@@ -168,6 +169,8 @@ def generate_branch_readme(config, server):
     branch_dir = os.environ.get('BRANCH_DIR',
                                  os.path.join(REPO_DIR, 'branches', server['id']))
 
+    server_dir = os.path.join(REPO_DIR, 'servers', server['id'])
+
     lines = []
     lines.append(f'# {server["name"]} — PGR Wallpaper Archive\n')
     lines.append(f'> Total: {total} wallpapers\n')
@@ -187,8 +190,9 @@ def generate_branch_readme(config, server):
             cat = w.get('category', 'desktop')
             enc_fn = encode_filename(fn)
             safe_fn = escape_html(fn)
-            thumb = f'https://raw.githubusercontent.com/{repo_slug}/{preview_branch}/{server["id"]}/thumbnails/{cat}/{enc_fn}'
+            thumb = w.get('condenseImg', '')
             dl = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
+            thumb_src = thumb if thumb else dl
             status = '❌ Failed' if (w.get('status') == 'failed' or fn in failed_filenames) else '✅ Success'
             release_time = w.get('releaseTime', 'N/A')
             size = w.get('size', 'N/A')
@@ -197,7 +201,7 @@ def generate_branch_readme(config, server):
 
             lines.append('<details>')
             lines.append('<summary>')
-            lines.append(f'<img src="{thumb}" width="200" alt="{safe_fn}" title="{safe_fn}"> <strong>{safe_fn}</strong>')
+            lines.append(f'<img src="{thumb_src}" width="200" alt="{safe_fn}" title="{safe_fn}"> <strong>{safe_fn}</strong>')
             lines.append('</summary>\n')
             lines.append(f'- **Release Time:** {release_time}')
             lines.append(f'- **Size:** {size}')
@@ -218,11 +222,11 @@ def generate_branch_readme(config, server):
 
     content = '\n'.join(lines)
     output_path = os.environ.get('BRANCH_README_OUTPUT',
-                                  os.path.join(branch_dir, 'README.md'))
+                                  os.path.join(server_dir, 'README.md'))
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(content)
-    print(f'✅ Branch README for {server["name"]} updated at {output_path}!')
+    print(f'✅ Server README for {server["name"]} updated at {output_path}!')
 
 
 def main():
@@ -231,16 +235,16 @@ def main():
 
     if mode == 'main':
         generate_main_readme(config)
-    elif mode == 'branch':
+    elif mode in ('branch', 'server'):
         if len(sys.argv) < 3:
-            print('❌ Server ID required for branch mode', file=sys.stderr)
+            print('❌ Server ID required for server mode', file=sys.stderr)
             sys.exit(1)
         server_id = sys.argv[2]
         server = next((s for s in config['servers'] if s['id'] == server_id), None)
         if not server:
             print(f'❌ Server not found: {server_id}', file=sys.stderr)
             sys.exit(1)
-        generate_branch_readme(config, server)
+        generate_server_readme(config, server)
     else:
         print(f'❌ Unknown mode: {mode}', file=sys.stderr)
         sys.exit(1)

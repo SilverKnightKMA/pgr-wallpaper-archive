@@ -30,9 +30,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
-
       - name: Ensure branches exist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -97,35 +94,21 @@ jobs:
         if: steps.check_new.outputs.has_new == 'true'
         run: python3 src/downloader.py
 
-      - name: Organize Images & Generate Thumbnails
+      - name: Organize Images
         if: steps.check_new.outputs.has_new == 'true'
         run: |
           SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
-          THUMB_WIDTH=$(python3 -c "import json; c=json.load(open('config.json')); print(c.get('settings',{}).get('thumbnailWidth',400))")
-          
           while IFS= read -r id; do
             for cat in desktop mobile; do
               SRC_DIR="branches/$id/$cat"
               if [ -d "$SRC_DIR" ]; then
-                # Move images to images/{category}/
                 mkdir -p "branches/$id/images/$cat"
                 find "$SRC_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec mv {} "branches/$id/images/$cat/" \;
-                
-                # Generate Thumbnails
-                if [ -d "branches/$id/images/$cat" ]; then
-                  bash src/generate_thumbnails.sh "branches/$id/images/$cat" "$THUMB_WIDTH"
-                  # Organize thumbnails
-                  if [ -d "branches/$id/images/$cat/thumbnails" ]; then
-                    mkdir -p "branches/$id/thumbnails/$cat"
-                    find "branches/$id/images/$cat/thumbnails" -maxdepth 1 -type f -exec mv {} "branches/$id/thumbnails/$cat/" \;
-                    rmdir "branches/$id/images/$cat/thumbnails" 2>/dev/null || true
-                  fi
-                fi
               fi
             done
           done <<< "$SERVERS"
 
-      - name: Sync Repo (Push Images & Previews)
+      - name: Sync Repo (Push Images)
         if: steps.check_new.outputs.has_new == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -138,15 +121,6 @@ jobs:
             echo '{}' > data/manifest_old.json
           fi
           bash src/sync_repo.sh
-
-      - name: Cleanup preview files
-        if: steps.check_new.outputs.has_new == 'true'
-        run: |
-          SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
-          while IFS= read -r id; do
-            rm -rf "branches/$id/thumbnails"
-          done <<< "$SERVERS"
-          echo "✅ Preview files cleaned up"
 
       - name: Diff manifests for release
         if: steps.check_new.outputs.has_new == 'true'
@@ -163,10 +137,10 @@ jobs:
           fi
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md data/manifest.json
+          git add README.md data/manifest.json servers/
           [ -f docs/favicon.png ] && git add docs/favicon.png
           if ! git diff --cached --quiet; then
-            git commit -m "Auto-sync: Update main README and manifest"
+            git commit -m "Auto-sync: Update README, manifest, and server pages"
             git push
           fi
 
