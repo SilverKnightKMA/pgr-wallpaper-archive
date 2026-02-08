@@ -1,12 +1,82 @@
 # TW Server — PGR Wallpaper Archive
 
-> Total: 82 wallpapers
+> Total: 87 wallpapers
 
 [⬅️ Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 🔍 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=tw)
 
 ## 🖼️ Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/4ol6mjl70q63kyyc3n-1760586503894%E6%9B%B2%E7%9A%AE%E8%82%A4%E6%8F%92%E5%9B%BE-%E5%8E%BB%E5%85%89%E6%95%88.png" width="200" alt="4ol6mjl70q63kyyc3n-1760586503894曲皮肤插图-去光效.png" title="4ol6mjl70q63kyyc3n-1760586503894曲皮肤插图-去光效.png"> <strong>4ol6mjl70q63kyyc3n-1760586503894曲皮肤插图-去光效.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 3.20 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4ol6mjl70q63kyyc3n-1760586503894%E6%9B%B2%E7%9A%AE%E8%82%A4%E6%8F%92%E5%9B%BE-%E5%8E%BB%E5%85%89%E6%95%88.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/4ol6mjl70q63kyyc3n-1760586503894曲皮肤插图-去光效.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/bb5n99fqr91em997dc-1760586481238%E7%BB%9D%E8%B7%AF.png" width="200" alt="bb5n99fqr91em997dc-1760586481238绝路.png" title="bb5n99fqr91em997dc-1760586481238绝路.png"> <strong>bb5n99fqr91em997dc-1760586481238绝路.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 3.40 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/bb5n99fqr91em997dc-1760586481238%E7%BB%9D%E8%B7%AF.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/bb5n99fqr91em997dc-1760586481238绝路.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/diba6zwka58tc06cjf-1760586407445%E6%96%AD%E7%BA%BFCG1.png" width="200" alt="diba6zwka58tc06cjf-1760586407445断线CG1.png" title="diba6zwka58tc06cjf-1760586407445断线CG1.png"> <strong>diba6zwka58tc06cjf-1760586407445断线CG1.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 2.29 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/diba6zwka58tc06cjf-1760586407445%E6%96%AD%E7%BA%BFCG1.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/diba6zwka58tc06cjf-1760586407445断线CG1.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/j1nr71fv0h9xi0ol1z-1760586457711%E4%BF%AF%E7%9E%B0%E7%BE%A4%E7%94%9F%E5%B7%AE%E5%88%861.png" width="200" alt="j1nr71fv0h9xi0ol1z-1760586457711俯瞰群生差分1.png" title="j1nr71fv0h9xi0ol1z-1760586457711俯瞰群生差分1.png"> <strong>j1nr71fv0h9xi0ol1z-1760586457711俯瞰群生差分1.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 2.50 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/j1nr71fv0h9xi0ol1z-1760586457711%E4%BF%AF%E7%9E%B0%E7%BE%A4%E7%94%9F%E5%B7%AE%E5%88%861.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/j1nr71fv0h9xi0ol1z-1760586457711俯瞰群生差分1.png">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/p4f4kdu67oj5aoc746-17605863103913.7%E5%8D%8F%E5%A5%8F%E5%85%B3%E5%BA%95%E5%9B%BE.png" width="200" alt="p4f4kdu67oj5aoc746-17605863103913.7协奏关底图.png" title="p4f4kdu67oj5aoc746-17605863103913.7协奏关底图.png"> <strong>p4f4kdu67oj5aoc746-17605863103913.7协奏关底图.png</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 2.70 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/p4f4kdu67oj5aoc746-17605863103913.7%E5%8D%8F%E5%A5%8F%E5%85%B3%E5%BA%95%E5%9B%BE.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/p4f4kdu67oj5aoc746-17605863103913.7协奏关底图.png">🔗 Original</a>
+
+</details>
 
 <details>
 <summary>

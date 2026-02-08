@@ -1,12 +1,82 @@
 # JP Server — PGR Wallpaper Archive
 
-> Total: 88 wallpapers
+> Total: 93 wallpapers
 
 [⬅️ Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 🔍 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=jp)
 
 ## 🖼️ Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/3s9ttigydd4zx7wgfw-1711525553968%E7%81%B0%E5%94%81CG2_.jpg" width="200" alt="3s9ttigydd4zx7wgfw-1711525553968灰唁CG2_.jpg" title="3s9ttigydd4zx7wgfw-1711525553968灰唁CG2_.jpg"> <strong>3s9ttigydd4zx7wgfw-1711525553968灰唁CG2_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 1.92 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/3s9ttigydd4zx7wgfw-1711525553968%E7%81%B0%E5%94%81CG2_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/3s9ttigydd4zx7wgfw-1711525553968灰唁CG2_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/al5mkcsr2myjpgrmdo-1711525633346%E7%81%B0%E5%94%81CG3_.jpg" width="200" alt="al5mkcsr2myjpgrmdo-1711525633346灰唁CG3_.jpg" title="al5mkcsr2myjpgrmdo-1711525633346灰唁CG3_.jpg"> <strong>al5mkcsr2myjpgrmdo-1711525633346灰唁CG3_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 1.72 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/al5mkcsr2myjpgrmdo-1711525633346%E7%81%B0%E5%94%81CG3_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/al5mkcsr2myjpgrmdo-1711525633346灰唁CG3_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/g3n82sp830ywwivmca-1711525686693%E5%AF%84%E7%BB%99%E7%B9%81%E6%98%9F%E7%9A%84%E6%83%85%E4%B9%A6-CG1_.jpg" width="200" alt="g3n82sp830ywwivmca-1711525686693寄给繁星的情书-CG1_.jpg" title="g3n82sp830ywwivmca-1711525686693寄给繁星的情书-CG1_.jpg"> <strong>g3n82sp830ywwivmca-1711525686693寄给繁星的情书-CG1_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 6.79 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g3n82sp830ywwivmca-1711525686693%E5%AF%84%E7%BB%99%E7%B9%81%E6%98%9F%E7%9A%84%E6%83%85%E4%B9%A6-CG1_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/g3n82sp830ywwivmca-1711525686693寄给繁星的情书-CG1_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/qjrqpkh708nwp4ang9-1711525729001%E5%AF%84%E7%BB%99%E7%B9%81%E6%98%9F%E7%9A%84%E6%83%85%E4%B9%A6-CG2_.jpg" width="200" alt="qjrqpkh708nwp4ang9-1711525729001寄给繁星的情书-CG2_.jpg" title="qjrqpkh708nwp4ang9-1711525729001寄给繁星的情书-CG2_.jpg"> <strong>qjrqpkh708nwp4ang9-1711525729001寄给繁星的情书-CG2_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 1.75 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/qjrqpkh708nwp4ang9-1711525729001%E5%AF%84%E7%BB%99%E7%B9%81%E6%98%9F%E7%9A%84%E6%83%85%E4%B9%A6-CG2_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/qjrqpkh708nwp4ang9-1711525729001寄给繁星的情书-CG2_.jpg">🔗 Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/wallpapers/desktop/zdiq3uwad3z77w1csx-1711525760422%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%861_.jpg" width="200" alt="zdiq3uwad3z77w1csx-1711525760422拉弥亚-克希拉苏醒-差分1_.jpg" title="zdiq3uwad3z77w1csx-1711525760422拉弥亚-克希拉苏醒-差分1_.jpg"> <strong>zdiq3uwad3z77w1csx-1711525760422拉弥亚-克希拉苏醒-差分1_.jpg</strong>
+</summary>
+
+- **Release Time:** 2026-02-08T12:38:25Z
+- **Size:** 1.68 MB
+- **Category:** desktop
+- **Status:** ✅ Success
+- **Download Raw:** [⬇ Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/zdiq3uwad3z77w1csx-1711525760422%E6%8B%89%E5%BC%A5%E4%BA%9A-%E5%85%8B%E5%B8%8C%E6%8B%89%E8%8B%8F%E9%86%92-%E5%B7%AE%E5%88%861_.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1711468800000/zdiq3uwad3z77w1csx-1711525760422拉弥亚-克希拉苏醒-差分1_.jpg">🔗 Original</a>
+
+</details>
 
 <details>
 <summary>
