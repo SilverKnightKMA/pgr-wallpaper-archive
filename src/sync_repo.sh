@@ -149,7 +149,7 @@ echo "📝 Generating per-server READMEs..."
 while IFS= read -r id; do
    export MANIFEST_PATH="$REPO_DIR/data/manifest.json"
    export BRANCH_DIR="$WP_DIR"
-   export BRANCH_README_OUTPUT="$REPO_DIR/servers/$id/README.md"
+   export BRANCH_README_OUTPUT="$REPO_DIR/preview/$id/README.md"
    export FAILED_DIR="$REPO_DIR/Wallpapers/failed"
    
    python3 "$REPO_DIR/src/generate_readme.py" branch "$id"

@@ -166,9 +166,9 @@
         }
 
         function getThumbUrl(item) {
-            // Use condenseImg from CDN if available, otherwise fall back to raw image
-            if (item.condenseImg) return item.condenseImg;
-            return getDownloadUrl(item);
+            // Use raw.githubusercontent.com from wallpapers branch
+            // (CDN condenseImg URLs fail through GitHub's camo proxy)
+            return `https://raw.githubusercontent.com/${REPO}/${WALLPAPERS_BRANCH}/${item.category || 'desktop'}/${encodeFilename(item.filename)}`;
         }
 
         function getDownloadUrl(item) {
@@ -307,8 +307,7 @@
                             status: w.status || 'success',
                             releaseTime: w.releaseTime || releaseTime || serverData.lastUpdated || '',
                             size: w.size || '',
-                            category: w.category || 'desktop',
-                            condenseImg: w.condenseImg || ''
+                            category: w.category || 'desktop'
                         });
                     });
                 });

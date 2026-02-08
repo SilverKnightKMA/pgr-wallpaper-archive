@@ -5,12 +5,12 @@ Usage:
     python3 src/generate_readme.py main
     python3 src/generate_readme.py server <server_id>
 
-Thumbnails are sourced directly from the PGR CDN (condenseImg field).
+Thumbnails use raw.githubusercontent.com URLs from the wallpapers branch.
 
 Environment variables:
     MANIFEST_PATH         – path to manifest.json (default: data/manifest.json)
     README_OUTPUT         – output path for main README (default: README.md)
-    BRANCH_README_OUTPUT  – output path for server README (default: servers/{id}/README.md)
+    BRANCH_README_OUTPUT  – output path for server README (default: preview/{id}/README.md)
     BRANCH_DIR            – wallpapers branch checkout dir
     FAILED_DIR            – directory containing per-category failed URL files
     GITHUB_REPOSITORY     – repo slug (default: SilverKnightKMA/pgr-wallpaper-archive)
@@ -85,7 +85,7 @@ def generate_main_readme(config):
     lines.append('|--------|---------|-------|---------|--------|--------------|')
 
     for server in config['servers']:
-        server_url = f'https://github.com/{repo_slug}/tree/main/servers/{server["id"]}'
+        server_url = f'https://github.com/{repo_slug}/tree/main/preview/{server["id"]}'
         sd = manifest.get(server['id'], {})
         total = sd.get('total', 0)
         success = sd.get('success', 0)
@@ -112,14 +112,11 @@ def generate_main_readme(config):
                     cat = w.get('category', 'desktop')
                     enc_fn = encode_filename(fn)
                     safe_fn = escape_html(fn)
-                    thumb = w.get('condenseImg', '')
+                    thumb = f'https://raw.githubusercontent.com/{repo_slug}/{wallpapers_branch}/{cat}/{enc_fn}'
                     raw = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
                     lines.append(f'    <td width="20%" align="center" valign="middle">')
                     lines.append(f'      <a href="{raw}">')
-                    if thumb:
-                        lines.append(f'        <img src="{thumb}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
-                    else:
-                        lines.append(f'        <img src="{raw}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
+                    lines.append(f'        <img src="{thumb}" width="100%" alt="{safe_fn}" title="{safe_fn}">')
                     lines.append(f'      </a>')
                     lines.append(f'    </td>')
                 lines.append('  </tr>')
@@ -169,7 +166,7 @@ def generate_server_readme(config, server):
     branch_dir = os.environ.get('BRANCH_DIR',
                                  os.path.join(REPO_DIR, 'branches', server['id']))
 
-    server_dir = os.path.join(REPO_DIR, 'servers', server['id'])
+    server_dir = os.path.join(REPO_DIR, 'preview', server['id'])
 
     lines = []
     lines.append(f'# {server["name"]} — PGR Wallpaper Archive\n')
@@ -190,9 +187,8 @@ def generate_server_readme(config, server):
             cat = w.get('category', 'desktop')
             enc_fn = encode_filename(fn)
             safe_fn = escape_html(fn)
-            thumb = w.get('condenseImg', '')
+            thumb_src = f'https://raw.githubusercontent.com/{repo_slug}/{wallpapers_branch}/{cat}/{enc_fn}'
             dl = f'https://github.com/{repo_slug}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
-            thumb_src = thumb if thumb else dl
             status = '❌ Failed' if (w.get('status') == 'failed' or fn in failed_filenames) else '✅ Success'
             release_time = w.get('releaseTime', 'N/A')
             size = w.get('size', 'N/A')

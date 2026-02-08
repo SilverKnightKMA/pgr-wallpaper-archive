@@ -19,34 +19,6 @@ def decode_filename(url):
     return urllib.parse.unquote(filename)
 
 
-def load_manifest():
-    """Load manifest.json to look up condenseImg for thumbnails."""
-    manifest_path = 'data/manifest.json'
-    if os.path.exists(manifest_path):
-        try:
-            with open(manifest_path, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except Exception:
-            pass
-    return {}
-
-
-_manifest_cache = None
-
-
-def get_condense_img(server_id, filename):
-    """Look up condenseImg URL from the manifest for a given wallpaper."""
-    global _manifest_cache
-    if _manifest_cache is None:
-        _manifest_cache = load_manifest()
-    server_data = _manifest_cache.get(server_id, {})
-    for w in server_data.get('wallpapers', []):
-        if w.get('filename') == filename:
-            img = w.get('condenseImg', '')
-            if img and img.startswith('http'):
-                return img
-    return ''
-
 def main():
     config = load_config()
     wallpapers_branch = config.get('wallpapersBranch', 'wallpapers')
@@ -91,8 +63,7 @@ def main():
                     encoded_fn = urllib.parse.quote(decoded, safe="/~@!$&'()*+,;=")
                     encoded_fn = re.sub(r'%(?![0-9A-Fa-f]{2})', '%25', encoded_fn)
                     dl_url = f"https://github.com/{repo}/raw/{wallpapers_branch}/{cat}/{encoded_fn}"
-                    # Use condenseImg from manifest as thumbnail if available
-                    thumb_url = get_condense_img(sid, decoded) or dl_url
+                    thumb_url = f"https://raw.githubusercontent.com/{repo}/{wallpapers_branch}/{cat}/{encoded_fn}"
                     cat_label = '🖥️' if cat == 'desktop' else '📱'
                     
                     file_list_md += f"| <img src=\"{thumb_url}\" width=\"100\"> | `{decoded}` | {cat_label} {cat} | [Download]({dl_url}) | ✅ |\n"

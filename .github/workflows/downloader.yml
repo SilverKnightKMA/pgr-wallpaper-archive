@@ -137,7 +137,7 @@ jobs:
           fi
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md data/manifest.json servers/
+          git add README.md data/manifest.json preview/
           [ -f docs/favicon.png ] && git add docs/favicon.png
           if ! git diff --cached --quiet; then
             git commit -m "Auto-sync: Update README, manifest, and server pages"
