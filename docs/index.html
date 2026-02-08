@@ -133,6 +133,10 @@
             width: 100%; aspect-ratio: 16/9; object-fit: cover;
             background: #21262d; display: block;
         }
+        .card.card-portrait img {
+            aspect-ratio: 9/16;
+            max-height: 420px;
+        }
         .card-body { padding: 12px; }
         .card-filename {
             font-size: 12px; word-break: break-all;
@@ -357,8 +361,9 @@
                 const catLabel = item.category === 'mobile' ? '📱 Mobile' : '🖥️ Desktop';
                 const sourceLink = (item.imgUrl && isValidUrl(item.imgUrl))
                     ? `<a href="${escapeAttr(item.imgUrl)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
+                const cardClass = item.category === 'mobile' ? 'card card-portrait' : 'card';
                 return `
-                <div class="card">
+                <div class="${cardClass}">
                     <a href="${escapeAttr(downloadUrl)}" target="_blank" rel="noopener noreferrer">
                         <img src="${escapeAttr(thumbUrl)}"
                              alt="${safeAlt}"
