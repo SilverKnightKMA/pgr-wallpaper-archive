@@ -18,15 +18,18 @@ jobs:
 
       - name: Delete all branches except main
         run: |
-          git fetch --prune
-          branches=$(git branch -r --format='%(refname:short)' | sed 's|origin/||' | grep -v '^main$' | grep -v '^HEAD$')
+          # Use ls-remote instead of fetch --prune (no need to download objects)
+          branches=$(git ls-remote --heads origin | awk -F'refs/heads/' '{print $2}' | grep -v '^main$')
           if [ -z "$branches" ]; then
             echo "No branches to delete."
           else
+            # Batch delete all branches in one push command
+            delete_refs=""
             for branch in $branches; do
-              echo "Deleting branch: $branch"
-              git push origin --delete "$branch" || true
+              echo "Will delete branch: $branch"
+              delete_refs="$delete_refs :refs/heads/$branch"
             done
+            git push origin $delete_refs || true
           fi
 
       - name: Delete data and preview directories
@@ -52,25 +55,23 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          releases=$(gh release list --limit 1000 --json tagName -q '.[].tagName')
-          if [ -z "$releases" ]; then
-            echo "No releases to delete."
-          else
-            for tag in $releases; do
-              echo "Deleting release: $tag"
-              gh release delete "$tag" --yes --cleanup-tag || true
-            done
-          fi
+          # Delete releases in parallel (up to 10 at a time)
+          gh release list --limit 1000 --json tagName -q '.[].tagName' | \
+            xargs -P 10 -I {} sh -c 'echo "Deleting release: {}" && gh release delete "{}" --yes --cleanup-tag' || true
+          echo "All releases deleted."
 
       - name: Delete all Git tags
         run: |
-          tags=$(git tag)
+          # Use ls-remote to list tags without downloading objects
+          tags=$(git ls-remote --tags origin | awk -F'refs/tags/' '{print $2}' | grep -v '\^{}$')
           if [ -z "$tags" ]; then
             echo "No tags to delete."
           else
+            # Batch delete all tags in one push command
+            delete_refs=""
             for tag in $tags; do
-              echo "Deleting tag: $tag"
-              git tag -d "$tag" || true
-              git push origin :refs/tags/$tag || true
+              delete_refs="$delete_refs :refs/tags/$tag"
             done
+            echo "Deleting $(echo "$tags" | wc -l) tags in one batch..."
+            git push origin $delete_refs || true
           fi
