@@ -2,9 +2,9 @@
 
 Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.
 
-[![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-1298-blue) ![Desktop](https://img.shields.io/badge/Desktop-1224-informational) ![Mobile](https://img.shields.io/badge/Mobile-74-informational) ![Size](https://img.shields.io/badge/Size-9.04%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
+[![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-1298-blue) ![Desktop](https://img.shields.io/badge/Desktop-1224-informational) ![Mobile](https://img.shields.io/badge/Mobile-74-informational) ![Size](https://img.shields.io/badge/Size-9.07%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
 
-> **Last Action Run:** 2026-02-09T08:25:00Z
+> **Last Action Run:** 2026-02-09T11:01:10Z
 
 [Browse & Filter Wallpapers on Web](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/)
 
@@ -18,9 +18,9 @@ Previews and server pages are in the [`preview`](https://github.com/SilverKnight
 |--------|-------|---------|--------|---------|--------|--------------|
 | [CN Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/cn) | 860 | 786 | 74 | 860 | 0 | 2026-02-04T03:48:52Z |
 | [JP Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/jp) | 438 | 438 | 0 | 438 | 0 | 2024-06-18T10:30:00Z |
-| [Global Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/global) | 0 | 0 | 0 | 0 | 0 | 2026-02-09T08:25:00Z |
-| [TW Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/tw) | 0 | 0 | 0 | 0 | 0 | 2026-02-09T08:25:00Z |
-| [KR Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/kr) | 0 | 0 | 0 | 0 | 0 | 2026-02-09T08:25:00Z |
+| [Global Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/global) | 0 | 0 | 0 | 0 | 0 | 2026-02-09T11:01:10Z |
+| [TW Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/tw) | 0 | 0 | 0 | 0 | 0 | 2026-02-09T11:01:10Z |
+| [KR Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/kr) | 0 | 0 | 0 | 0 | 0 | 2026-02-09T11:01:10Z |
 
 ---
 
