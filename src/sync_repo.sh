@@ -18,6 +18,16 @@ REMOTE_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITOR
 # --- 1. Prepare Wallpapers Branch ---
 echo "Preparing $WALLPAPERS_BRANCH branch..."
 WP_DIR="$(mktemp -d)/repo_wp"
+PV_DIR=""
+
+# Trap to always clean up temp dirs, even on failure
+cleanup_temp() {
+  echo "Cleaning up temp dirs..."
+  [ -n "$WP_DIR" ] && rm -rf "$(dirname "$WP_DIR")" 2>/dev/null || true
+  [ -n "$PV_DIR" ] && rm -rf "$(dirname "$PV_DIR")" 2>/dev/null || true
+}
+trap cleanup_temp EXIT
+
 git init "$WP_DIR"
 git -C "$WP_DIR" remote add origin "$REMOTE_URL"
 if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
@@ -226,5 +236,5 @@ else
   echo "  All batches pushed to $PREVIEW_BRANCH"
 fi
 
-# Cleanup
-rm -rf "$WP_DIR" "$PV_DIR"
+# Cleanup handled by EXIT trap
+echo "Sync complete."
