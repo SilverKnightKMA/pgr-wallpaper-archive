@@ -122,38 +122,56 @@ echo "Processing push for $WALLPAPERS_BRANCH..."
 
 git -C "$WP_DIR" config core.quotepath false
 
+# Push helper with exponential backoff
+push_with_retry() {
+  local DIR="$1"
+  local BRANCH="$2"
+  local MAX_RETRIES=7
+  local ATTEMPT=0
+  local DELAY=10
+
+  while [ $ATTEMPT -lt $MAX_RETRIES ]; do
+    # Push LFS objects first (separate step to avoid timeouts)
+    if git -C "$DIR" lfs push origin HEAD 2>/dev/null; then
+      echo "  LFS objects pushed successfully."
+    fi
+
+    if git -C "$DIR" push origin HEAD:"$BRANCH"; then
+      return 0
+    else
+      ATTEMPT=$((ATTEMPT + 1))
+      # Exponential backoff: 10, 20, 40, 80, 160, 320, 640
+      echo "  Push failed (Attempt $ATTEMPT/$MAX_RETRIES). Retrying in ${DELAY}s..."
+      sleep $DELAY
+      DELAY=$((DELAY * 2))
+    fi
+  done
+  return 1
+}
+
+WP_BATCH_SIZE=40
+
 if [ -z "$(git -C "$WP_DIR" status --porcelain)" ]; then
   echo "  No changes for $WALLPAPERS_BRANCH."
 else
   while [ -n "$(git -C "$WP_DIR" status --porcelain)" ]; do
     REMAINING=$(git -C "$WP_DIR" status --porcelain | wc -l)
-    echo "  Processing batch... ($REMAINING files remaining)"
+    BATCH_N=$((REMAINING < WP_BATCH_SIZE ? REMAINING : WP_BATCH_SIZE))
+    echo "  Processing batch of $BATCH_N... ($REMAINING files remaining)"
 
-    git -C "$WP_DIR" status --porcelain | head -n 200 | cut -c4- | sed 's/^"//;s/"$//' | while read -r file; do
+    git -C "$WP_DIR" status --porcelain | head -n "$WP_BATCH_SIZE" | cut -c4- | sed 's/^"//;s/"$//' | while read -r file; do
       git -C "$WP_DIR" add "$file"
     done
 
     git -C "$WP_DIR" commit -m "Auto-sync: Batch update ($REMAINING remaining)"
 
-    ATTEMPT=0
-    MAX_RETRIES=5
-    PUSH_SUCCESS=false
-
-    while [ $ATTEMPT -lt $MAX_RETRIES ]; do
-      if git -C "$WP_DIR" push origin HEAD:"$WALLPAPERS_BRANCH"; then
-        PUSH_SUCCESS=true
-        break
-      else
-        ATTEMPT=$((ATTEMPT + 1))
-        echo "  Push failed (Attempt $ATTEMPT/$MAX_RETRIES). Retrying in 5s..."
-        sleep 5
-      fi
-    done
-
-    if [ "$PUSH_SUCCESS" = false ]; then
+    if ! push_with_retry "$WP_DIR" "$WALLPAPERS_BRANCH"; then
       echo "  Critical error: Failed to push batch to $WALLPAPERS_BRANCH."
       exit 1
     fi
+
+    # Small delay between successful pushes to avoid rate limiting
+    sleep 3
   done
   echo "  All batches pushed to $WALLPAPERS_BRANCH"
 fi
@@ -182,38 +200,28 @@ echo "Processing push for $PREVIEW_BRANCH..."
 
 git -C "$PV_DIR" config core.quotepath false
 
+PV_BATCH_SIZE=200
+
 if [ -z "$(git -C "$PV_DIR" status --porcelain)" ]; then
   echo "  No changes for $PREVIEW_BRANCH."
 else
   while [ -n "$(git -C "$PV_DIR" status --porcelain)" ]; do
     REMAINING=$(git -C "$PV_DIR" status --porcelain | wc -l)
-    echo "  Processing batch... ($REMAINING files remaining)"
+    BATCH_N=$((REMAINING < PV_BATCH_SIZE ? REMAINING : PV_BATCH_SIZE))
+    echo "  Processing batch of $BATCH_N... ($REMAINING files remaining)"
 
-    git -C "$PV_DIR" status --porcelain | head -n 500 | cut -c4- | sed 's/^"//;s/"$//' | while read -r file; do
+    git -C "$PV_DIR" status --porcelain | head -n "$PV_BATCH_SIZE" | cut -c4- | sed 's/^"//;s/"$//' | while read -r file; do
       git -C "$PV_DIR" add "$file"
     done
 
     git -C "$PV_DIR" commit -m "Auto-sync: Preview update ($REMAINING remaining)"
 
-    ATTEMPT=0
-    MAX_RETRIES=5
-    PUSH_SUCCESS=false
-
-    while [ $ATTEMPT -lt $MAX_RETRIES ]; do
-      if git -C "$PV_DIR" push origin HEAD:"$PREVIEW_BRANCH"; then
-        PUSH_SUCCESS=true
-        break
-      else
-        ATTEMPT=$((ATTEMPT + 1))
-        echo "  Push failed (Attempt $ATTEMPT/$MAX_RETRIES). Retrying in 5s..."
-        sleep 5
-      fi
-    done
-
-    if [ "$PUSH_SUCCESS" = false ]; then
+    if ! push_with_retry "$PV_DIR" "$PREVIEW_BRANCH"; then
       echo "  Critical error: Failed to push batch to $PREVIEW_BRANCH."
       exit 1
     fi
+
+    sleep 2
   done
   echo "  All batches pushed to $PREVIEW_BRANCH"
 fi

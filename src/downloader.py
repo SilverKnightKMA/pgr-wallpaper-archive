@@ -54,15 +54,26 @@ MAX_RETRIES = 3
 RETRY_BACKOFF = [2, 5, 10]
 
 
-def download_file(url, dest):
-    """Download a single file. Returns (success, filename, error, encoded_url, size)."""
+def download_file(url, dest, stop_event=None):
+    """Download a single file. Returns (success, filename, error, encoded_url, size).
+
+    If stop_event is set before or during download, aborts early and returns failure.
+    """
     ctx = ssl.create_default_context()
     encoded_url = encode_url(url)
     basename = os.path.basename(dest)
     last_err = None
 
+    # Check before starting
+    if stop_event and stop_event.is_set():
+        return False, basename, 'cancelled', encoded_url, 0
+
     for attempt in range(1, MAX_RETRIES + 1):
-        last_err = None  # Reset for each attempt so finally doesn't delete retried files
+        # Check again before each retry
+        if stop_event and stop_event.is_set():
+            return False, basename, 'cancelled', encoded_url, 0
+
+        last_err = None
         req = urllib.request.Request(encoded_url, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
@@ -70,10 +81,20 @@ def download_file(url, dest):
             with urllib.request.urlopen(req, context=ctx, timeout=120) as resp:
                 with open(dest, 'wb') as f:
                     while True:
+                        if stop_event and stop_event.is_set():
+                            # Abort mid-download
+                            last_err = 'cancelled'
+                            break
                         chunk = resp.read(65536)
                         if not chunk:
                             break
                         f.write(chunk)
+                    if last_err == 'cancelled':
+                        try:
+                            os.remove(dest)
+                        except OSError:
+                            pass
+                        return False, basename, 'cancelled', encoded_url, 0
             fsize = os.path.getsize(dest)
             return True, basename, None, encoded_url, fsize
         except urllib.error.HTTPError as e:
@@ -153,45 +174,51 @@ def process_server(server, cumulative_bytes):
     remaining_urls = []
     downloaded_urls = []
 
-    # Submit in small batches so we can stop when size limit is hit
-    SUBMIT_BATCH = MAX_WORKERS * 2  # submit this many at a time
-    task_idx = 0
+    # Thread-safe cumulative size tracking
+    lock = threading.Lock()
+    stop_event = threading.Event()
 
+    # Submit ALL tasks at once -- workers pick them up as they become free.
+    # When the size limit is reached we signal stop_event so in-flight
+    # downloads abort at the next chunk boundary and un-started futures
+    # are effectively no-ops (they check stop_event immediately).
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        while task_idx < len(tasks) and not hit_limit:
-            # Submit a batch of tasks
-            futures = {}
-            batch_end = min(task_idx + SUBMIT_BATCH, len(tasks))
-            for i in range(task_idx, batch_end):
-                url, dest, filename = tasks[i]
-                future = executor.submit(download_file, url, dest)
-                futures[future] = (url, dest, filename)
-            task_idx = batch_end
+        futures = {}
+        for url, dest, filename in tasks:
+            future = executor.submit(download_file, url, dest, stop_event)
+            futures[future] = (url, dest, filename)
 
-            # Collect results
-            for future in as_completed(futures):
-                url, dest, filename = futures[future]
-                success, fn, err, enc_url, fsize = future.result()
-                if success:
+        for future in as_completed(futures):
+            url, dest, filename = futures[future]
+            success, fn, err, enc_url, fsize = future.result()
+
+            if err == 'cancelled':
+                # Was cancelled by stop_event -- defer to next batch
+                remaining_urls.append(url)
+                continue
+
+            if success:
+                with lock:
                     downloaded += 1
                     cumulative_bytes += fsize
                     downloaded_urls.append(url)
-                    if downloaded % 10 == 0:
-                        size_mb = cumulative_bytes / (1024 * 1024)
-                        print(f'  [{server_name}] {downloaded} downloaded ({size_mb:.0f} MB cumulative)')
-                        sys.stdout.flush()
-                    if cumulative_bytes >= MAX_BATCH_BYTES:
-                        hit_limit = True
-                else:
-                    failed += 1
-                    failed_urls.append(url)
-                    print(f'  [{server_name}] FAILED: {fn} -- {err}')
+                    current_count = downloaded
+                    current_bytes = cumulative_bytes
+
+                if current_count % 10 == 0:
+                    size_mb = current_bytes / (1024 * 1024)
+                    print(f'  [{server_name}] {current_count} downloaded ({size_mb:.0f} MB cumulative)')
                     sys.stdout.flush()
 
-        # Any tasks not yet submitted go to remaining
-        if hit_limit and task_idx < len(tasks):
-            for i in range(task_idx, len(tasks)):
-                remaining_urls.append(tasks[i][0])  # url
+                if current_bytes >= MAX_BATCH_BYTES and not stop_event.is_set():
+                    hit_limit = True
+                    stop_event.set()  # signal all workers to stop
+            else:
+                with lock:
+                    failed += 1
+                    failed_urls.append(url)
+                print(f'  [{server_name}] FAILED: {fn} -- {err}')
+                sys.stdout.flush()
 
     if hit_limit:
         print(f'  [!] Batch size limit reached ({MAX_BATCH_BYTES / (1024**3):.1f} GB)')
