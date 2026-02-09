@@ -11,7 +11,7 @@ if [ -z "$RELEASE_TAG" ]; then
   exit 1
 fi
 
-MAX_BATCH_BYTES=$((1800 * 1024 * 1024))  # 1.8 GB
+MAX_BATCH_BYTES=$((2000 * 1024 * 1024))
 WORK_DIR="$(pwd)"
 SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
 CATEGORIES="desktop mobile"
