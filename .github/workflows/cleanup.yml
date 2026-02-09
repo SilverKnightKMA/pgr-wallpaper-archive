@@ -17,19 +17,18 @@ jobs:
           fetch-depth: 1
 
       - name: Delete all branches except main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Use ls-remote instead of fetch --prune (no need to download objects)
-          branches=$(git ls-remote --heads origin | awk -F'refs/heads/' '{print $2}' | grep -v '^main$')
+          # Use gh api to delete branches (no need to fetch anything)
+          branches=$(gh api repos/${{ github.repository }}/branches --paginate -q '.[].name' | grep -v '^main$') || true
           if [ -z "$branches" ]; then
             echo "No branches to delete."
           else
-            # Batch delete all branches in one push command
-            delete_refs=""
             for branch in $branches; do
-              echo "Will delete branch: $branch"
-              delete_refs="$delete_refs :refs/heads/$branch"
+              echo "Deleting branch: $branch"
+              gh api -X DELETE "repos/${{ github.repository }}/git/refs/heads/$branch" 2>/dev/null || true
             done
-            git push origin $delete_refs || true
           fi
 
       - name: Delete data and preview directories
@@ -61,17 +60,16 @@ jobs:
           echo "All releases deleted."
 
       - name: Delete all Git tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Use ls-remote to list tags without downloading objects
-          tags=$(git ls-remote --tags origin | awk -F'refs/tags/' '{print $2}' | grep -v '\^{}$')
+          tags=$(gh api repos/${{ github.repository }}/tags --paginate -q '.[].name') || true
           if [ -z "$tags" ]; then
             echo "No tags to delete."
           else
-            # Batch delete all tags in one push command
-            delete_refs=""
+            count=$(echo "$tags" | wc -l)
+            echo "Deleting $count tags..."
             for tag in $tags; do
-              delete_refs="$delete_refs :refs/tags/$tag"
+              gh api -X DELETE "repos/${{ github.repository }}/git/refs/tags/$tag" 2>/dev/null || true
             done
-            echo "Deleting $(echo "$tags" | wc -l) tags in one batch..."
-            git push origin $delete_refs || true
           fi

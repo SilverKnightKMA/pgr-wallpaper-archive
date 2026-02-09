@@ -171,8 +171,8 @@ def process_server_downloads(server_id):
         result = process_single_image(filepath, server_id, images_dir, previews_dir)
         if result:
             metadata[filename] = result
-            cat_icon = '🖥️' if result['category'] == 'desktop' else '📱'
-            print(f'    {cat_icon} {filename}: {result["resolution"]} → {result["category"]}')
+        else:
+            print(f'    FAILED: {filename}')
 
     print(f'  Done: {len(metadata)} images processed for {server_id}')
     return metadata

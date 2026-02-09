@@ -59,11 +59,9 @@ flush_and_upload() {
   fi
 
   local ZIP_NAME="${RELEASE_TAG}-part${PART}.zip"
-  echo ""
-  echo "📦 Creating ${ZIP_NAME}..."
-  (cd "$STAGING_DIR" && zip -r "${WORK_DIR}/${ZIP_NAME}" .)
+  (cd "$STAGING_DIR" && zip -q -r "${WORK_DIR}/${ZIP_NAME}" .)
 
-  echo "📤 Uploading ${ZIP_NAME}..."
+  echo "Uploading ${ZIP_NAME}..."
   local ATTEMPT=0
   local MAX_RETRIES=3
   local UPLOAD_OK=false

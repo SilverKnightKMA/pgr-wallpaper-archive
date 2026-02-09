@@ -35,7 +35,7 @@ cleanup_temp() {
 }
 trap cleanup_temp EXIT
 
-git init "$WP_DIR"
+git init -q "$WP_DIR"
 git -C "$WP_DIR" remote add origin "$REMOTE_URL"
 if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
   # Sparse checkout: only root files (.gitattributes etc)
@@ -44,10 +44,10 @@ if git ls-remote --exit-code origin "$WALLPAPERS_BRANCH" >/dev/null 2>&1; then
 
   # Partial clone: fetch ONLY tree structure (file listing), skip ALL blobs
   # This downloads ~few MB instead of ~10-15GB of existing images
-  GIT_LFS_SKIP_SMUDGE=1 git -C "$WP_DIR" fetch --filter=blob:none --depth=1 origin "$WALLPAPERS_BRANCH"
-  GIT_LFS_SKIP_SMUDGE=1 git -C "$WP_DIR" checkout -b "$WALLPAPERS_BRANCH" "origin/$WALLPAPERS_BRANCH"
+  GIT_LFS_SKIP_SMUDGE=1 git -C "$WP_DIR" fetch -q --filter=blob:none --depth=1 origin "$WALLPAPERS_BRANCH"
+  GIT_LFS_SKIP_SMUDGE=1 git -C "$WP_DIR" checkout -q -b "$WALLPAPERS_BRANCH" "origin/$WALLPAPERS_BRANCH"
 else
-  git -C "$WP_DIR" checkout -b "$WALLPAPERS_BRANCH"
+  git -C "$WP_DIR" checkout -q -b "$WALLPAPERS_BRANCH"
 fi
 git -C "$WP_DIR" lfs install --local
 
@@ -57,15 +57,15 @@ mkdir -p "$WP_DIR/desktop" "$WP_DIR/mobile"
 # --- 2. Prepare Preview Branch ---
 echo "Preparing $PREVIEW_BRANCH branch..."
 PV_DIR="$(mktemp -d)/repo_pv"
-git init "$PV_DIR"
+git init -q "$PV_DIR"
 git -C "$PV_DIR" remote add origin "$REMOTE_URL"
 if git ls-remote --exit-code origin "$PREVIEW_BRANCH" >/dev/null 2>&1; then
   # Sparse checkout: only root files; skip existing preview images
   git -C "$PV_DIR" sparse-checkout init --cone
 
   # Partial clone: tree structure only, no blobs
-  git -C "$PV_DIR" fetch --filter=blob:none --depth=1 origin "$PREVIEW_BRANCH"
-  git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH" "origin/$PREVIEW_BRANCH"
+  git -C "$PV_DIR" fetch -q --filter=blob:none --depth=1 origin "$PREVIEW_BRANCH"
+  git -C "$PV_DIR" checkout -q -b "$PREVIEW_BRANCH" "origin/$PREVIEW_BRANCH"
 else
   git -C "$PV_DIR" checkout -b "$PREVIEW_BRANCH"
 fi
@@ -162,11 +162,9 @@ push_with_retry() {
 
   while [ $ATTEMPT -lt $MAX_RETRIES ]; do
     # Push LFS objects first (separate step to avoid timeouts)
-    if git -C "$DIR" lfs push origin HEAD 2>/dev/null; then
-      echo "  LFS objects pushed successfully."
-    fi
+    git -C "$DIR" lfs push origin HEAD 2>/dev/null || true
 
-    if git -C "$DIR" push origin HEAD:"$BRANCH"; then
+    if git -C "$DIR" push -q origin HEAD:"$BRANCH"; then
       return 0
     else
       ATTEMPT=$((ATTEMPT + 1))
@@ -193,7 +191,7 @@ else
       git -C "$WP_DIR" add "$file"
     done
 
-    git -C "$WP_DIR" commit -m "Auto-sync: Batch update ($REMAINING remaining)"
+    git -C "$WP_DIR" commit -q -m "Auto-sync: Batch update ($REMAINING remaining)"
 
     if ! push_with_retry "$WP_DIR" "$WALLPAPERS_BRANCH"; then
       echo "  Critical error: Failed to push batch to $WALLPAPERS_BRANCH."
@@ -247,7 +245,7 @@ else
       git -C "$PV_DIR" add "$file"
     done
 
-    git -C "$PV_DIR" commit -m "Auto-sync: Preview update ($REMAINING remaining)"
+    git -C "$PV_DIR" commit -q -m "Auto-sync: Preview update ($REMAINING remaining)"
 
     if ! push_with_retry "$PV_DIR" "$PREVIEW_BRANCH"; then
       echo "  Critical error: Failed to push batch to $PREVIEW_BRANCH."

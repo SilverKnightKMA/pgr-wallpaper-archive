@@ -206,7 +206,7 @@ def process_server(server, cumulative_bytes):
                     current_count = downloaded
                     current_bytes = cumulative_bytes
 
-                if current_count % 10 == 0:
+                if current_count % 50 == 0:
                     size_mb = current_bytes / (1024 * 1024)
                     print(f'  [{server_name}] {current_count} downloaded ({size_mb:.0f} MB cumulative)')
                     sys.stdout.flush()
