@@ -2,7 +2,7 @@
 """Scraper: Download MainMenu.json from each server, extract wallpaper data.
 
 Fetches picture entries from each server's MainMenu.json and filters to
-wallpaper types only (pictureType 11, terminalType 20).
+wallpaper types only (pictureType 11).
 
 Category (desktop/mobile) is NOT determined here — it is resolved later by
 process_images.py using actual image resolution (landscape -> desktop,
@@ -31,9 +31,8 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
 CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
 
-# Only download wallpaper/CG (pictureType 11, terminalType 20)
+# Only download wallpaper/CG (pictureType 11)
 ALLOWED_PICTURE_TYPES = {11}
-ALLOWED_TERMINAL_TYPES = {20}
 
 timestamp = lambda: datetime.now().strftime('%H:%M:%S')
 
@@ -92,11 +91,12 @@ def extract_download_url(picture_item):
     """Extract downloadable URL from a picture item.
 
     Returns URL string or None.
-    Only items with pictureType 11 + terminalType 20 and a valid imgUrl.
+    Only items with pictureType 11 and a valid imgUrl.
     """
     pt = picture_item.get('pictureType')
-    tt = picture_item.get('terminalType')
-    if pt not in ALLOWED_PICTURE_TYPES or tt not in ALLOWED_TERMINAL_TYPES:
+    
+    # Check only pictureType
+    if pt not in ALLOWED_PICTURE_TYPES:
         return None
 
     img = picture_item.get('imgUrl', '')
@@ -138,11 +138,13 @@ def process_server(server, max_images):
 
     # Extract picture array and filter
     pictures = data.get('picture', [])
+    
+    # Filter: Only check pictureType
     filtered = [p for p in pictures
-                if p.get('pictureType') in ALLOWED_PICTURE_TYPES
-                and p.get('terminalType') in ALLOWED_TERMINAL_TYPES]
+                if p.get('pictureType') in ALLOWED_PICTURE_TYPES]
+                
     print(f'[{timestamp()}] [{server_name}] Found {len(pictures)} picture entries, '
-          f'{len(filtered)} are wallpapers (pictureType=11, terminalType=20)')
+          f'{len(filtered)} are wallpapers (pictureType=11)')
 
     # Load existing images
     existing = list_existing_images(server_id)
@@ -188,7 +190,7 @@ def main():
 
     print('=== SCRAPER STARTED (JSON MODE) ===')
     print(f'[{timestamp()}] Max images per server: {max_images or "unlimited"}')
-    print(f'[{timestamp()}] Filter: pictureType=11, terminalType=20')
+    print(f'[{timestamp()}] Filter: pictureType=11')
 
     # Process all servers and collect metadata
     all_metadata = {}
