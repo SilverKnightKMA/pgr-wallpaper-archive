@@ -188,7 +188,7 @@ else
     echo "  Processing batch of $BATCH_N... ($REMAINING files remaining)"
 
     git -C "$WP_DIR" status --porcelain | head -n "$WP_BATCH_SIZE" | cut -c4- | sed 's/^"//;s/"$//' | while read -r file; do
-      git -C "$WP_DIR" add "$file"
+      git -C "$WP_DIR" add --sparse "$file"
     done
 
     git -C "$WP_DIR" commit -q -m "Auto-sync: Batch update ($REMAINING remaining)"
@@ -242,7 +242,7 @@ else
     echo "  Processing batch of $BATCH_N... ($REMAINING files remaining)"
 
     git -C "$PV_DIR" status --porcelain | head -n "$PV_BATCH_SIZE" | cut -c4- | sed 's/^"//;s/"$//' | while read -r file; do
-      git -C "$PV_DIR" add "$file"
+      git -C "$PV_DIR" add --sparse "$file"
     done
 
     git -C "$PV_DIR" commit -q -m "Auto-sync: Preview update ($REMAINING remaining)"
