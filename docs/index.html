@@ -30,7 +30,7 @@
         /* --- Filter Controls Styling --- */
         .controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min-width slightly */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
             margin-bottom: 24px;
         }
@@ -75,7 +75,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 6px; /* Reduced padding */
+            padding: 6px;
             max-height: 300px;
             overflow-y: auto;
             z-index: 1000;
@@ -88,7 +88,7 @@
         .checkbox-item {
             display: flex;
             align-items: center;
-            padding: 6px 8px; /* Compact padding */
+            padding: 6px 8px;
             cursor: pointer;
             border-radius: 4px;
             transition: background 0.15s;
@@ -157,11 +157,21 @@
         .stat-value { font-size: 24px; font-weight: bold; }
         .stat-label { color: var(--text-muted); font-size: 12px; }
         
-        /* --- Masonry Layout Transition --- */
+        /* --- JS Masonry Layout Styling --- */
         .gallery {
-            /* Switch from Grid to Column layout for Masonry effect */
-            column-count: 4;
-            column-gap: 16px;
+            /* Flex container to hold the vertical columns */
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        /* Individual column styling */
+        .gallery-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 0; /* Prevents flex items from overflowing */
         }
         
         .card {
@@ -170,12 +180,7 @@
             border-radius: 8px; 
             overflow: hidden; 
             transition: border-color 0.2s;
-            
-            /* Necessary for Masonry layout to prevent breaking items */
-            display: inline-block;
             width: 100%;
-            margin-bottom: 16px;
-            break-inside: avoid; 
         }
 
         .card:hover { border-color: var(--accent); }
@@ -183,7 +188,6 @@
             width: 100%; 
             display: block;
             background: #21262d;
-            /* Remove fixed aspect ratio forcing to allow natural height */
             height: auto; 
         }
         
@@ -207,15 +211,17 @@
         }
         .badge-success { background: rgba(63,185,80,0.15); color: var(--success); }
         .badge-danger { background: rgba(248,81,73,0.15); color: var(--danger); }
-        .loading { text-align: center; padding: 60px; color: var(--text-muted); column-span: all; }
-        .empty { text-align: center; padding: 60px; color: var(--text-muted); column-span: all; }
+        
+        /* Helper classes for loading/empty states */
+        .loading, .empty { 
+            text-align: center; 
+            padding: 60px; 
+            color: var(--text-muted); 
+            width: 100%;
+        }
         .timestamp { color: var(--text-muted); font-size: 12px; margin-bottom: 16px; }
 
-        /* Responsive Columns */
-        @media (max-width: 1100px) { .gallery { column-count: 3; } }
-        @media (max-width: 800px) { .gallery { column-count: 2; } }
         @media (max-width: 500px) { 
-            .gallery { column-count: 1; } 
             .controls { display: flex; flex-direction: column; }
         }
     </style>
@@ -320,6 +326,9 @@
 
         let allData = [];
         let serverNames = {};
+        
+        // Store current filtered items globally to handle resize
+        let currentFilteredItems = [];
 
         // Encode filename for URLs, preserving existing %XX sequences
         function encodeFilename(filename) {
@@ -397,59 +406,83 @@
             }
         }
 
+        // New Render Function: Distributes items into columns horizontally
         function renderGallery(items) {
             const gallery = document.getElementById('gallery');
+            currentFilteredItems = items; // Save for resize event
+
             if (items.length === 0) {
                 gallery.innerHTML = '<div class="empty">No wallpapers match your filters.</div>';
                 return;
             }
-            gallery.innerHTML = items.map(item => {
-                const thumbUrl = getThumbUrl(item);
-                const downloadUrl = getDownloadUrl(item);
-                const safeName = escapeHtml(item.filename);
-                const safeAlt = escapeAttr(item.filename);
-                const safeServer = escapeHtml(serverNames[item.server] || item.server);
-                const sizeText = item.size ? escapeHtml(item.size) : 'N/A';
-                const resText = item.resolution ? escapeHtml(item.resolution) : '';
-                const startTimeText = item.startTime_formatted ? escapeHtml(item.startTime_formatted) : '';
-                const catLabel = item.category === 'mobile' ? '📱 Mobile' : '🖥️ Desktop';
-                const sourceLink = (item.imgUrl && isValidUrl(item.imgUrl))
-                    ? `<a href="${escapeAttr(item.imgUrl)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
+
+            // Determine column count based on screen width (matching CSS breakpoints)
+            const width = window.innerWidth;
+            let colCount = 4;
+            if (width <= 500) colCount = 1;
+            else if (width <= 800) colCount = 2;
+            else if (width <= 1100) colCount = 3;
+
+            // Initialize columns array
+            const cols = Array.from({ length: colCount }, () => []);
+
+            // Distribute items: Item 0 -> Col 0, Item 1 -> Col 1, ... Item N -> Col (N % Count)
+            // This ensures Left-to-Right visual ordering at the top
+            items.forEach((item, index) => {
+                cols[index % colCount].push(item);
+            });
+
+            // Generate HTML for each column
+            const colsHtml = cols.map(colItems => {
+                const innerHtml = colItems.map(item => {
+                    const thumbUrl = getThumbUrl(item);
+                    const downloadUrl = getDownloadUrl(item);
+                    const safeName = escapeHtml(item.filename);
+                    const safeAlt = escapeAttr(item.filename);
+                    const safeServer = escapeHtml(serverNames[item.server] || item.server);
+                    const sizeText = item.size ? escapeHtml(item.size) : 'N/A';
+                    const resText = item.resolution ? escapeHtml(item.resolution) : '';
+                    const startTimeText = item.startTime_formatted ? escapeHtml(item.startTime_formatted) : '';
+                    const catLabel = item.category === 'mobile' ? '📱 Mobile' : '🖥️ Desktop';
+                    const sourceLink = (item.imgUrl && isValidUrl(item.imgUrl))
+                        ? `<a href="${escapeAttr(item.imgUrl)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
+                    
+                    return `
+                    <div class="card">
+                        <a href="${escapeAttr(downloadUrl)}" target="_blank" rel="noopener noreferrer">
+                            <img src="${escapeAttr(thumbUrl)}"
+                                 alt="${safeAlt}"
+                                 loading="lazy"
+                                 onerror="this.style.display='none'">
+                        </a>
+                        <div class="card-body">
+                            <div class="card-filename">${safeName}</div>
+                            <div style="margin-bottom:6px;font-size:12px;color:var(--text-muted)">
+                                ${startTimeText ? `<span>📅 ${startTimeText}</span> · ` : ''}<span>📦 ${sizeText}</span>${resText ? ` · <span>📐 ${resText}</span>` : ''}
+                            </div>
+                            <div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px">
+                                <span class="badge" style="background:rgba(136,98,228,0.15);color:#a78bfa">
+                                    ${catLabel}
+                                </span>
+                                <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
+                                    ${item.status === 'success' ? '✅ OK' : '❌ Failed'}
+                                </span>
+                                <span class="badge" style="background:rgba(88,166,255,0.15);color:var(--accent)">
+                                    ${safeServer}
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                ${item.status === 'success' ? `<a href="${escapeAttr(downloadUrl)}" class="download" target="_blank" rel="noopener noreferrer">⬇ Download Raw</a>` : ''}
+                                ${sourceLink}
+                            </div>
+                        </div>
+                    </div>`;
+                }).join('');
                 
-                // Note: removed 'card-portrait' logic as Masonry handles height naturally now
-                const cardClass = 'card'; 
-                
-                return `
-                <div class="${cardClass}">
-                    <a href="${escapeAttr(downloadUrl)}" target="_blank" rel="noopener noreferrer">
-                        <img src="${escapeAttr(thumbUrl)}"
-                             alt="${safeAlt}"
-                             loading="lazy"
-                             onerror="this.style.display='none'">
-                    </a>
-                    <div class="card-body">
-                        <div class="card-filename">${safeName}</div>
-                        <div style="margin-bottom:6px;font-size:12px;color:var(--text-muted)">
-                            ${startTimeText ? `<span>📅 ${startTimeText}</span> · ` : ''}<span>📦 ${sizeText}</span>${resText ? ` · <span>📐 ${resText}</span>` : ''}
-                        </div>
-                        <div style="margin-bottom:8px;display:flex;flex-wrap:wrap;gap:4px">
-                            <span class="badge" style="background:rgba(136,98,228,0.15);color:#a78bfa">
-                                ${catLabel}
-                            </span>
-                            <span class="badge ${item.status === 'success' ? 'badge-success' : 'badge-danger'}">
-                                ${item.status === 'success' ? '✅ OK' : '❌ Failed'}
-                            </span>
-                            <span class="badge" style="background:rgba(88,166,255,0.15);color:var(--accent)">
-                                ${safeServer}
-                            </span>
-                        </div>
-                        <div class="card-actions">
-                            ${item.status === 'success' ? `<a href="${escapeAttr(downloadUrl)}" class="download" target="_blank" rel="noopener noreferrer">⬇ Download Raw</a>` : ''}
-                            ${sourceLink}
-                        </div>
-                    </div>
-                </div>`;
+                return `<div class="gallery-col">${innerHtml}</div>`;
             }).join('');
+
+            gallery.innerHTML = colsHtml;
         }
 
         function parseSize(sizeStr) {
@@ -717,6 +750,11 @@
                 });
                 document.getElementById('sortFilter').addEventListener('change', applyFilters);
                 document.getElementById('searchInput').addEventListener('input', applyFilters);
+                
+                // Add resize listener to re-calculate columns on window resize
+                window.addEventListener('resize', () => {
+                   if(currentFilteredItems.length > 0) renderGallery(currentFilteredItems);
+                });
 
                 applyFilters();
             } catch (e) {
