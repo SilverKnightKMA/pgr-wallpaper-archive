@@ -50,6 +50,11 @@ def encode_filename(filename):
     return encoded
 
 
+def escape_markdown(text):
+    # Escape [, ], (, ) for Markdown links
+    return text.replace('[', '\\[').replace(']', '\\]').replace('(', '\\(').replace(')', '\\)')
+
+
 def format_size_bytes(size_bytes):
     if size_bytes < 1024:
         return f"{size_bytes} B"
@@ -159,7 +164,7 @@ def main():
                     dl_url = f'https://github.com/{repo}/raw/{wallpapers_branch}/{cat}/{enc_fn}'
 
                     # Override filename field to include thumbnail + link
-                    row["filename"] = f'<img src="{preview_url}" height="40"> [{decoded}]({dl_url})'
+                    row["filename"] = f'<img src="{preview_url}" height="40"> [{escape_markdown(decoded)}]({dl_url})'
 
                     file_list_md += "| " + " | ".join(str(row.get(field, '')) for field in fields) + " |\n"
 

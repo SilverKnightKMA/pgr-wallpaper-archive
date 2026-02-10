@@ -26,15 +26,15 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h1 { margin-bottom: 8px; }
         .subtitle { color: var(--text-muted); margin-bottom: 24px; }
+        
+        /* --- Filter Controls Styling --- */
         .controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min-width slightly */
             gap: 16px;
             margin-bottom: 24px;
         }
-        .filter-group {
-            position: relative;
-        }
+        .filter-group { position: relative; }
         .filter-label {
             font-size: 12px;
             font-weight: 600;
@@ -54,18 +54,19 @@
             justify-content: space-between;
             align-items: center;
             user-select: none;
+            transition: border-color 0.2s;
         }
-        .dropdown-toggle:hover {
-            border-color: var(--accent);
-        }
+        .dropdown-toggle:hover { border-color: var(--accent); }
         .dropdown-toggle::after {
-            content: '▼';
-            font-size: 10px;
-            color: var(--text-muted);
+            content: '';
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid var(--text-muted);
+            margin-left: 8px;
         }
-        .dropdown-toggle.open::after {
-            content: '▲';
-        }
+        .dropdown-toggle.open::after { transform: rotate(180deg); }
+
+        /* --- Compact Dropdown Menu --- */
         .dropdown-menu {
             position: absolute;
             top: calc(100% + 4px);
@@ -74,43 +75,79 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 8px;
-            max-height: 250px;
+            padding: 6px; /* Reduced padding */
+            max-height: 300px;
             overflow-y: auto;
             z-index: 1000;
             display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
         }
-        .dropdown-menu.show {
-            display: block;
-        }
+        .dropdown-menu.show { display: block; }
+
+        /* --- Custom Compact Checkbox Styling --- */
         .checkbox-item {
             display: flex;
             align-items: center;
-            padding: 6px 4px;
+            padding: 6px 8px; /* Compact padding */
             cursor: pointer;
             border-radius: 4px;
+            transition: background 0.15s;
         }
-        .checkbox-item:hover {
-            background: var(--border);
-        }
+        .checkbox-item:hover { background: rgba(255,255,255,0.05); }
+        
+        /* Hide default checkbox */
         .checkbox-item input[type="checkbox"] {
-            margin-right: 8px;
+            appearance: none;
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1px solid var(--text-muted);
+            border-radius: 3px;
+            margin-right: 10px;
+            position: relative;
             cursor: pointer;
+            flex-shrink: 0;
+            background-color: transparent;
         }
+        
+        /* Custom Checked State */
+        .checkbox-item input[type="checkbox"]:checked {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        /* Checkmark Icon */
+        .checkbox-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2px;
+            width: 3px;
+            height: 8px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
         .checkbox-item label {
             font-size: 13px;
             cursor: pointer;
             user-select: none;
             flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        .controls select, .controls input {
+
+        .controls select, .controls input[type="text"] {
             background: var(--card-bg); color: var(--text);
             border: 1px solid var(--border); border-radius: 6px;
             padding: 8px 12px; font-size: 14px;
             width: 100%;
         }
         .search-group { grid-column: 1 / -1; }
+        
+        /* --- Stats Bar --- */
         .stats {
             background: var(--card-bg); border: 1px solid var(--border);
             border-radius: 6px; padding: 16px; margin-bottom: 24px;
@@ -119,25 +156,37 @@
         .stat-item { text-align: center; min-width: 80px; }
         .stat-value { font-size: 24px; font-weight: bold; }
         .stat-label { color: var(--text-muted); font-size: 12px; }
+        
+        /* --- Masonry Layout Transition --- */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
-            align-items: start;
+            /* Switch from Grid to Column layout for Masonry effect */
+            column-count: 4;
+            column-gap: 16px;
         }
+        
         .card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            border-radius: 8px; overflow: hidden; transition: border-color 0.2s;
+            background: var(--card-bg); 
+            border: 1px solid var(--border);
+            border-radius: 8px; 
+            overflow: hidden; 
+            transition: border-color 0.2s;
+            
+            /* Necessary for Masonry layout to prevent breaking items */
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 16px;
+            break-inside: avoid; 
         }
+
         .card:hover { border-color: var(--accent); }
         .card img {
-            width: 100%; aspect-ratio: 16/9; object-fit: cover;
-            background: #21262d; display: block;
+            width: 100%; 
+            display: block;
+            background: #21262d;
+            /* Remove fixed aspect ratio forcing to allow natural height */
+            height: auto; 
         }
-        .card.card-portrait img {
-            aspect-ratio: 9/16;
-            object-fit: cover;
-        }
+        
         .card-body { padding: 12px; }
         .card-filename {
             font-size: 12px; word-break: break-all;
@@ -158,12 +207,16 @@
         }
         .badge-success { background: rgba(63,185,80,0.15); color: var(--success); }
         .badge-danger { background: rgba(248,81,73,0.15); color: var(--danger); }
-        .loading { text-align: center; padding: 60px; color: var(--text-muted); }
-        .empty { text-align: center; padding: 60px; color: var(--text-muted); }
+        .loading { text-align: center; padding: 60px; color: var(--text-muted); column-span: all; }
+        .empty { text-align: center; padding: 60px; color: var(--text-muted); column-span: all; }
         .timestamp { color: var(--text-muted); font-size: 12px; margin-bottom: 16px; }
-        @media (max-width: 600px) {
-            .gallery { grid-template-columns: 1fr; }
-            .controls { flex-direction: column; }
+
+        /* Responsive Columns */
+        @media (max-width: 1100px) { .gallery { column-count: 3; } }
+        @media (max-width: 800px) { .gallery { column-count: 2; } }
+        @media (max-width: 500px) { 
+            .gallery { column-count: 1; } 
+            .controls { display: flex; flex-direction: column; }
         }
     </style>
 </head>
@@ -332,7 +385,7 @@
         }
 
         function escapeAttr(str) {
-            return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/<//g, '&lt;').replace(/>/g, '&gt;');
         }
 
         function isValidUrl(url) {
@@ -362,7 +415,10 @@
                 const catLabel = item.category === 'mobile' ? '📱 Mobile' : '🖥️ Desktop';
                 const sourceLink = (item.imgUrl && isValidUrl(item.imgUrl))
                     ? `<a href="${escapeAttr(item.imgUrl)}" target="_blank" rel="noopener noreferrer">🔗 Original</a>` : '';
-                const cardClass = item.category === 'mobile' ? 'card card-portrait' : 'card';
+                
+                // Note: removed 'card-portrait' logic as Masonry handles height naturally now
+                const cardClass = 'card'; 
+                
                 return `
                 <div class="${cardClass}">
                     <a href="${escapeAttr(downloadUrl)}" target="_blank" rel="noopener noreferrer">
@@ -664,7 +720,7 @@
 
                 applyFilters();
             } catch (e) {
-                document.getElementById('gallery').innerHTML =
+                document.getElementById('gallery').innerHTML = 
                     `<div class="empty">Failed to load data. The manifest may not exist yet in <code>data/manifest.json</code> on the main branch.</div>`;
             }
         }
