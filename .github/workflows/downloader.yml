@@ -22,8 +22,8 @@ jobs:
           android: true
           dotnet: true
           haskell: true
-          large-packages: true
-          docker-images: true
+          large-packages: false
+          docker-images: false
           swap-storage: true
 
       - name: Checkout Repository
@@ -168,6 +168,7 @@ jobs:
             [ -f docs/favicon.png ] && git add docs/favicon.png
             if ! git diff --cached --quiet; then
               git commit -m "Auto-sync: Update README and manifest (batch $BATCH)"
+              git pull --rebase origin main
               git push
             fi
 
