@@ -8,7 +8,6 @@ on:
       max_images:
         description: 'Maximum number of images to scrape per server (not counting existing images).'
         required: false
-        default: 10000
 
 jobs:
   scrape-and-download:
@@ -50,7 +49,7 @@ jobs:
 
       - name: Scrape Links
         env:
-          MAX_IMAGES: ${{ inputs.max_images }}
+          MAX_IMAGES: ${{ inputs.max_images || '10000' }}
         run: python3 src/scraper.py
 
       - name: Retry broken links
