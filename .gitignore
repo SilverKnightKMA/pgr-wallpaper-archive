@@ -149,3 +149,7 @@ vite.config.ts.timestamp-*
 # Python cache
 __pycache__/
 *.pyc
+
+# Ignore dump file
+full_source_code.txt
+dump_code.sh
