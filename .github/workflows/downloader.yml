@@ -15,17 +15,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Free Disk Space (Ubuntu)
-        uses: jlumbroso/free-disk-space@main
-        with:
-          tool-cache: false
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: false
-          docker-images: false
-          swap-storage: true
-
       - name: Checkout Repository
         uses: actions/checkout@v6
         with:
@@ -86,6 +75,18 @@ jobs:
             fi
           done <<< "$SERVERS"
           echo "has_new=$has_new" >> "$GITHUB_OUTPUT"
+
+      - name: Free Disk Space (Ubuntu)
+        if: steps.check_new.outputs.has_new == 'true'
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: false
+          swap-storage: true
 
       - name: Download, Process & Release (Batched Loop)
         if: steps.check_new.outputs.has_new == 'true'
