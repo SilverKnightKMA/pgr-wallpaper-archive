@@ -9,13 +9,3 @@ updates:
       - "dependencies"
     assignees:
       - "SilverKnightKMA"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    labels:
-      - "automated"
-      - "dependencies"
-    assignees:
-      - "SilverKnightKMA"
