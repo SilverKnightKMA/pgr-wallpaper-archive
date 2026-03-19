@@ -5,7 +5,7 @@
     "success": 860,
     "failed": 0,
     "lastUpdated": "2026-02-04T03:48:52Z",
-    "lastActionRun": "2026-02-11T07:28:55Z",
+    "lastActionRun": "2026-03-19T02:48:16Z",
     "wallpapers": [
       {
         "filename": "00mypqzhee2bmf7ad6-16911465097297.jpg",
@@ -20656,7 +20656,7 @@
     "success": 442,
     "failed": 0,
     "lastUpdated": "2024-06-18T10:30:00Z",
-    "lastActionRun": "2026-02-11T07:28:55Z",
+    "lastActionRun": "2026-03-19T02:48:16Z",
     "wallpapers": [
       {
         "filename": "036v1l165xms4q5c4r-1715244995757升变.png",
@@ -31270,11 +31270,11 @@
   },
   "global": {
     "name": "Global Server",
-    "total": 304,
-    "success": 304,
+    "total": 313,
+    "success": 313,
     "failed": 0,
-    "lastUpdated": "2026-02-06T06:41:31Z",
-    "lastActionRun": "2026-02-11T07:28:55Z",
+    "lastUpdated": "2026-03-18T07:47:49Z",
+    "lastActionRun": "2026-03-19T02:48:16Z",
     "wallpapers": [
       {
         "filename": "07r2afens5bi7zwp32-1760433012098道别-加特效.jpg",
@@ -31395,6 +31395,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1729069285828,
         "ossUpdate_formatted": "2024-10-16 09:01:25"
+      },
+      {
+        "filename": "0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "6063x3082",
+        "category": "desktop",
+        "preview": "0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "7.20 MB",
+        "gameId": "G167",
+        "pictureId": 5464,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/cjhrg1yv50y0fxcal0-1773819774783时刻准备着-拆分.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 312,
+        "startTime": 1773819766000,
+        "startTime_formatted": "2026-03-18 07:42:46",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819807635,
+        "ossUpdate_formatted": "2026-03-18 07:43:27"
       },
       {
         "filename": "0t1heojgwyhzi7mlrj-1752835271166不依-改绷带城市.jpg",
@@ -33797,6 +33821,30 @@
         "ossUpdate_formatted": "2025-07-18 10:48:24"
       },
       {
+        "filename": "ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "8839x5556",
+        "category": "desktop",
+        "preview": "ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "14.21 MB",
+        "gameId": "G167",
+        "pictureId": 5462,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/m8ijrt1dmy9pyj66n2-1773819679433涅缇娅活动面板.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 310,
+        "startTime": 1773819647000,
+        "startTime_formatted": "2026-03-18 07:40:47",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819684471,
+        "ossUpdate_formatted": "2026-03-18 07:41:24"
+      },
+      {
         "filename": "d28rt2pkceaw8me9jj-1766655569961英文.jpg",
         "server": "Global Server",
         "status": "success",
@@ -34949,6 +34997,30 @@
         "ossUpdate_formatted": "2025-07-21 10:40:12"
       },
       {
+        "filename": "icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "14.20 MB",
+        "gameId": "G167",
+        "pictureId": 5465,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/jwlb1av4sgm7inxjsb-1773819827591薇拉黑手党.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 313,
+        "startTime": 1773819790000,
+        "startTime_formatted": "2026-03-18 07:43:10",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819842418,
+        "ossUpdate_formatted": "2026-03-18 07:44:02"
+      },
+      {
         "filename": "iiq09wrf5qeo2pp2y9-1760340845302天真的杀戮.png",
         "server": "Global Server",
         "status": "success",
@@ -35261,6 +35333,30 @@
         "ossUpdate_formatted": "2025-06-05 02:50:23"
       },
       {
+        "filename": "jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "17.81 MB",
+        "gameId": "G167",
+        "pictureId": 5468,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/2nhyl8r666gn52jd6v-1773820182078最后的斗争.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 316,
+        "startTime": 1773820069000,
+        "startTime_formatted": "2026-03-18 07:47:49",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773820220348,
+        "ossUpdate_formatted": "2026-03-18 07:50:20"
+      },
+      {
         "filename": "jvy71ujorquopb510w-1744972348329最后的对谈差分1.jpg",
         "server": "Global Server",
         "status": "success",
@@ -35307,6 +35403,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1760181348962,
         "ossUpdate_formatted": "2025-10-11 11:15:48"
+      },
+      {
+        "filename": "kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "9.12 MB",
+        "gameId": "G167",
+        "pictureId": 5466,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/0s07gfx9xcoqiv4rk3-1773819887767枝芽-拆分.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 314,
+        "startTime": 1773819877000,
+        "startTime_formatted": "2026-03-18 07:44:37",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819894652,
+        "ossUpdate_formatted": "2026-03-18 07:44:54"
       },
       {
         "filename": "kvqsdff6rkvn04izeh-1735287432873黑与白.jpg",
@@ -36125,6 +36245,30 @@
         "ossUpdate_formatted": "2026-02-06 06:38:39"
       },
       {
+        "filename": "ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "19.12 MB",
+        "gameId": "G167",
+        "pictureId": 5460,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/x6g1vnn0um81q7qqxy-1773819324750卡赫季的鹰-默认.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 308,
+        "startTime": 1773819307000,
+        "startTime_formatted": "2026-03-18 07:35:07",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819334952,
+        "ossUpdate_formatted": "2026-03-18 07:35:34"
+      },
+      {
         "filename": "ohlrub0z26ovrdj8cl-1722595280214废墟逃亡（拆分）.png",
         "server": "Global Server",
         "status": "success",
@@ -36749,6 +36893,30 @@
         "ossUpdate_formatted": "2025-04-18 10:32:42"
       },
       {
+        "filename": "rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "15.39 MB",
+        "gameId": "G167",
+        "pictureId": 5467,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/wjocm5uvd4kx4r1lpu-1773819944445自我剪裁.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 315,
+        "startTime": 1773819931000,
+        "startTime_formatted": "2026-03-18 07:45:31",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819954651,
+        "ossUpdate_formatted": "2026-03-18 07:45:54"
+      },
+      {
         "filename": "rlvhtpr4tdupdo1eck-1726283015446猫的摇篮（原图含差分共8张）.jpg",
         "server": "Global Server",
         "status": "success",
@@ -37083,6 +37251,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1752836382439,
         "ossUpdate_formatted": "2025-07-18 10:59:42"
+      },
+      {
+        "filename": "tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "8035x4747",
+        "category": "desktop",
+        "preview": "tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "13.80 MB",
+        "gameId": "G167",
+        "pictureId": 5463,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/oscy03yok9u86m75us-1773819756008时刻准备着.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 311,
+        "startTime": 1773819743000,
+        "startTime_formatted": "2026-03-18 07:42:23",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819764851,
+        "ossUpdate_formatted": "2026-03-18 07:42:44"
       },
       {
         "filename": "tnvr8zu3blbnczzk0z-1731662818439渡边CG 司机.jpg",
@@ -37973,6 +38165,30 @@
         "ossUpdate_formatted": "2024-03-22 08:21:24"
       },
       {
+        "filename": "xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4323",
+        "category": "desktop",
+        "preview": "xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg",
+        "releaseTime": "2026-03-19T02:48:16Z",
+        "size": "12.36 MB",
+        "gameId": "G167",
+        "pictureId": 5461,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/ucuwcihwusmdax6662-1773819608674涅缇娅登陆图.jpg",
+        "nameIn": "更美好的明天",
+        "sortingMark": 309,
+        "startTime": 1773819599000,
+        "startTime_formatted": "2026-03-18 07:39:59",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1773819615129,
+        "ossUpdate_formatted": "2026-03-18 07:40:15"
+      },
+      {
         "filename": "xi6l6ablv4mjcilc88-1711095753673归还.jpg",
         "server": "Global Server",
         "status": "success",
@@ -38573,7 +38789,7 @@
         "ossUpdate_formatted": "2024-08-02 10:44:53"
       }
     ],
-    "pictureCount": 304
+    "pictureCount": 313
   },
   "tw": {
     "name": "TW Server",
@@ -38581,7 +38797,7 @@
     "success": 223,
     "failed": 0,
     "lastUpdated": "2026-02-07T04:01:00Z",
-    "lastActionRun": "2026-02-11T07:28:55Z",
+    "lastActionRun": "2026-03-19T02:48:16Z",
     "wallpapers": [
       {
         "filename": "01e2dd3yqoar25ic4f-1763983192136繁中.png",
@@ -43899,7 +44115,7 @@
     "success": 548,
     "failed": 0,
     "lastUpdated": "2025-12-22T23:18:54Z",
-    "lastActionRun": "2026-02-11T07:28:55Z",
+    "lastActionRun": "2026-03-19T02:48:16Z",
     "wallpapers": [
       {
         "filename": "01zfp40e584l55633r-1731998358962388.jpg",
@@ -57056,5 +57272,5 @@
     ],
     "pictureCount": 548
   },
-  "releaseTime": "2026-02-11T07:28:55Z"
+  "releaseTime": "2026-03-19T02:48:16Z"
 }
