@@ -1,12 +1,165 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 304 wallpapers
+> Total: 313 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=global)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jtomah6p0v7lggyho9-1773820182446%E6%9C%80%E5%90%8E%E7%9A%84%E6%96%97%E4%BA%89.jpg" width="200" alt="jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg" title="jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg"> <strong>jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:47:49
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 17.81 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jtomah6p0v7lggyho9-1773820182446%E6%9C%80%E5%90%8E%E7%9A%84%E6%96%97%E4%BA%89.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/jtomah6p0v7lggyho9-1773820182446最后的斗争.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/rh6d86brzhsc45rz76-1773819944644%E8%87%AA%E6%88%91%E5%89%AA%E8%A3%81.jpg" width="200" alt="rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg" title="rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg"> <strong>rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:45:31
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 15.39 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/rh6d86brzhsc45rz76-1773819944644%E8%87%AA%E6%88%91%E5%89%AA%E8%A3%81.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/rh6d86brzhsc45rz76-1773819944644自我剪裁.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/kugx0621bdc75z10t7-1773819887960%E6%9E%9D%E8%8A%BD-%E6%8B%86%E5%88%86.jpg" width="200" alt="kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg" title="kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg"> <strong>kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:44:37
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 9.12 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/kugx0621bdc75z10t7-1773819887960%E6%9E%9D%E8%8A%BD-%E6%8B%86%E5%88%86.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/kugx0621bdc75z10t7-1773819887960枝芽-拆分.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/icxczbl9l1q1vt5e8d-1773819827991%E8%96%87%E6%8B%89%E9%BB%91%E6%89%8B%E5%85%9A.jpg" width="200" alt="icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg" title="icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg"> <strong>icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:43:10
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 14.20 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/icxczbl9l1q1vt5e8d-1773819827991%E8%96%87%E6%8B%89%E9%BB%91%E6%89%8B%E5%85%9A.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/icxczbl9l1q1vt5e8d-1773819827991薇拉黑手党.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/0muiarc83rzo89r0cy-1773819774923%E6%97%B6%E5%88%BB%E5%87%86%E5%A4%87%E7%9D%80-%E6%8B%86%E5%88%86.jpg" width="200" alt="0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg" title="0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg"> <strong>0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:42:46
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 6063x3082
+- **Size:** 7.20 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/0muiarc83rzo89r0cy-1773819774923%E6%97%B6%E5%88%BB%E5%87%86%E5%A4%87%E7%9D%80-%E6%8B%86%E5%88%86.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/0muiarc83rzo89r0cy-1773819774923时刻准备着-拆分.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/tnv7ar60fanmkricj4-1773819756387%E6%97%B6%E5%88%BB%E5%87%86%E5%A4%87%E7%9D%80.jpg" width="200" alt="tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg" title="tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg"> <strong>tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:42:23
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 8035x4747
+- **Size:** 13.80 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/tnv7ar60fanmkricj4-1773819756387%E6%97%B6%E5%88%BB%E5%87%86%E5%A4%87%E7%9D%80.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/tnv7ar60fanmkricj4-1773819756387时刻准备着.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ct60ye7ynz24l40s6p-1773819679851%E6%B6%85%E7%BC%87%E5%A8%85%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg" width="200" alt="ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg" title="ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg"> <strong>ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:40:47
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 8839x5556
+- **Size:** 14.21 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ct60ye7ynz24l40s6p-1773819679851%E6%B6%85%E7%BC%87%E5%A8%85%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/ct60ye7ynz24l40s6p-1773819679851涅缇娅活动面板.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/xh9okhehnvtr1ugf3e-1773819609018%E6%B6%85%E7%BC%87%E5%A8%85%E7%99%BB%E9%99%86%E5%9B%BE.jpg" width="200" alt="xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg" title="xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg"> <strong>xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:39:59
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4323
+- **Size:** 12.36 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/xh9okhehnvtr1ugf3e-1773819609018%E6%B6%85%E7%BC%87%E5%A8%85%E7%99%BB%E9%99%86%E5%9B%BE.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/xh9okhehnvtr1ugf3e-1773819609018涅缇娅登陆图.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ohj0mmnrq4ym5dz3su-1773819325177%E5%8D%A1%E8%B5%AB%E5%AD%A3%E7%9A%84%E9%B9%B0-%E9%BB%98%E8%AE%A4.jpg" width="200" alt="ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg" title="ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg"> <strong>ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg</strong>
+</summary>
+
+- **Name:** 更美好的明天
+- **Published Date:** 2026-03-18 07:35:07
+- **Downloaded Date:** 2026-03-19T02:48:16Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 19.12 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ohj0mmnrq4ym5dz3su-1773819325177%E5%8D%A1%E8%B5%AB%E5%AD%A3%E7%9A%84%E9%B9%B0-%E9%BB%98%E8%AE%A4.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773763200000/ohj0mmnrq4ym5dz3su-1773819325177卡赫季的鹰-默认.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
