@@ -2,9 +2,9 @@
 
 Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.
 
-[![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-2408-blue) ![Desktop](https://img.shields.io/badge/Desktop-2325-informational) ![Mobile](https://img.shields.io/badge/Mobile-83-informational) ![Size](https://img.shields.io/badge/Size-15.89%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
+[![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-2433-blue) ![Desktop](https://img.shields.io/badge/Desktop-2350-informational) ![Mobile](https://img.shields.io/badge/Mobile-83-informational) ![Size](https://img.shields.io/badge/Size-16.34%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
 
-> **Last Action Run:** 2026-03-21T02:33:11Z
+> **Last Action Run:** 2026-04-23T03:27:53Z
 
 [Browse & Filter Wallpapers on Web](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/)
 
@@ -20,7 +20,7 @@ Previews and server pages are in the [`preview`](https://github.com/SilverKnight
 | [JP Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/jp) | 442 | 442 | 0 | 442 | 0 | 2024-06-18T10:30:00Z |
 | [Global Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/global) | 313 | 309 | 4 | 313 | 0 | 2026-03-18T07:47:49Z |
 | [TW Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/tw) | 231 | 227 | 4 | 231 | 0 | 2026-03-20T07:29:34Z |
-| [KR Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/kr) | 548 | 547 | 1 | 548 | 0 | 2025-12-22T23:18:54Z |
+| [KR Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/kr) | 573 | 572 | 1 | 573 | 0 | 2026-04-22T13:06:54Z |
 
 ---
 
@@ -375,82 +375,82 @@ Previews and server pages are in the [`preview`](https://github.com/SilverKnight
 <table>
   <tr>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/gqu0ss1in44gh3n6ge-17664455385918.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/gqu0ss1in44gh3n6ge-17664455385918.jpg" width="100%" alt="gqu0ss1in44gh3n6ge-17664455385918.jpg" title="gqu0ss1in44gh3n6ge-17664455385918.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/l88b88tf8finfbuqq5-17768632373844.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/l88b88tf8finfbuqq5-17768632373844.jpg" width="100%" alt="l88b88tf8finfbuqq5-17768632373844.jpg" title="l88b88tf8finfbuqq5-17768632373844.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/81hp4tqn23ir53p68g-17664455200557.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/81hp4tqn23ir53p68g-17664455200557.jpg" width="100%" alt="81hp4tqn23ir53p68g-17664455200557.jpg" title="81hp4tqn23ir53p68g-17664455200557.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ijwn42i3677bl7ypkl-17768631800263.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ijwn42i3677bl7ypkl-17768631800263.jpg" width="100%" alt="ijwn42i3677bl7ypkl-17768631800263.jpg" title="ijwn42i3677bl7ypkl-17768631800263.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ntl3ryuxxi4c4ocf5o-17664454984526.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ntl3ryuxxi4c4ocf5o-17664454984526.jpg" width="100%" alt="ntl3ryuxxi4c4ocf5o-17664454984526.jpg" title="ntl3ryuxxi4c4ocf5o-17664454984526.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jtnc2mzkuwf7x2wtuq-17768631631222.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jtnc2mzkuwf7x2wtuq-17768631631222.jpg" width="100%" alt="jtnc2mzkuwf7x2wtuq-17768631631222.jpg" title="jtnc2mzkuwf7x2wtuq-17768631631222.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/t0hzuqebid3k2qklzt-17664454798715.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/t0hzuqebid3k2qklzt-17664454798715.jpg" width="100%" alt="t0hzuqebid3k2qklzt-17664454798715.jpg" title="t0hzuqebid3k2qklzt-17664454798715.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8b840yddmwqulzvcpa-17768631472881.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/8b840yddmwqulzvcpa-17768631472881.jpg" width="100%" alt="8b840yddmwqulzvcpa-17768631472881.jpg" title="8b840yddmwqulzvcpa-17768631472881.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jhakyshch6v4xbze8k-17664454548814.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jhakyshch6v4xbze8k-17664454548814.jpg" width="100%" alt="jhakyshch6v4xbze8k-17664454548814.jpg" title="jhakyshch6v4xbze8k-17664454548814.jpg">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/h1xkk90iesigyl4toq-17664454364773.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/h1xkk90iesigyl4toq-17664454364773.jpg" width="100%" alt="h1xkk90iesigyl4toq-17664454364773.jpg" title="h1xkk90iesigyl4toq-17664454364773.jpg">
-      </a>
-    </td>
-    <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4o4m4ptg66zpox2xp8-17664454170222.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/4o4m4ptg66zpox2xp8-17664454170222.jpg" width="100%" alt="4o4m4ptg66zpox2xp8-17664454170222.jpg" title="4o4m4ptg66zpox2xp8-17664454170222.jpg">
-      </a>
-    </td>
-    <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/shg5cqdnmpw2i08eqr-17664453256981.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/shg5cqdnmpw2i08eqr-17664453256981.jpg" width="100%" alt="shg5cqdnmpw2i08eqr-17664453256981.jpg" title="shg5cqdnmpw2i08eqr-17664453256981.jpg">
-      </a>
-    </td>
-    <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/7joyo31s0z9wblw4np-17664452818958.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/7joyo31s0z9wblw4np-17664452818958.jpg" width="100%" alt="7joyo31s0z9wblw4np-17664452818958.jpg" title="7joyo31s0z9wblw4np-17664452818958.jpg">
-      </a>
-    </td>
-    <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/a9nmfrdkaen22jaa3s-17664452478677.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/a9nmfrdkaen22jaa3s-17664452478677.jpg" width="100%" alt="a9nmfrdkaen22jaa3s-17664452478677.jpg" title="a9nmfrdkaen22jaa3s-17664452478677.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ypy028u9cp1ztnypka-17768631163136.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ypy028u9cp1ztnypka-17768631163136.jpg" width="100%" alt="ypy028u9cp1ztnypka-17768631163136.jpg" title="ypy028u9cp1ztnypka-17768631163136.jpg">
       </a>
     </td>
   </tr>
   <tr>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/npahsef6y99tolh3g4-17664452191106.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/npahsef6y99tolh3g4-17664452191106.jpg" width="100%" alt="npahsef6y99tolh3g4-17664452191106.jpg" title="npahsef6y99tolh3g4-17664452191106.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mh9qosjbdi2uthmiyx-17768630975155.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mh9qosjbdi2uthmiyx-17768630975155.jpg" width="100%" alt="mh9qosjbdi2uthmiyx-17768630975155.jpg" title="mh9qosjbdi2uthmiyx-17768630975155.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/7ez823glayyf82ztfq-17664451971155.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/7ez823glayyf82ztfq-17664451971155.jpg" width="100%" alt="7ez823glayyf82ztfq-17664451971155.jpg" title="7ez823glayyf82ztfq-17664451971155.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5moyytgi09ht68jr8z-17768630726974.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5moyytgi09ht68jr8z-17768630726974.jpg" width="100%" alt="5moyytgi09ht68jr8z-17768630726974.jpg" title="5moyytgi09ht68jr8z-17768630726974.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/6hecp53iygq8tnz2z4-17664451690664.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/6hecp53iygq8tnz2z4-17664451690664.jpg" width="100%" alt="6hecp53iygq8tnz2z4-17664451690664.jpg" title="6hecp53iygq8tnz2z4-17664451690664.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/6jxjhytz35r0krcui1-17768630450443.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/6jxjhytz35r0krcui1-17768630450443.jpg" width="100%" alt="6jxjhytz35r0krcui1-17768630450443.jpg" title="6jxjhytz35r0krcui1-17768630450443.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mbzex40czntccbfsj3-17664451325883.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mbzex40czntccbfsj3-17664451325883.jpg" width="100%" alt="mbzex40czntccbfsj3-17664451325883.jpg" title="mbzex40czntccbfsj3-17664451325883.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jvdmqwj8rjnausszaw-17768630052472.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jvdmqwj8rjnausszaw-17768630052472.jpg" width="100%" alt="jvdmqwj8rjnausszaw-17768630052472.jpg" title="jvdmqwj8rjnausszaw-17768630052472.jpg">
       </a>
     </td>
     <td width="20%" align="center" valign="middle">
-      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/cidghdgfhiftorm4j1-17664450422952.jpg">
-        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/cidghdgfhiftorm4j1-17664450422952.jpg" width="100%" alt="cidghdgfhiftorm4j1-17664450422952.jpg" title="cidghdgfhiftorm4j1-17664450422952.jpg">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/37n5ok1z7lulmp1r3q-17768629713591.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/37n5ok1z7lulmp1r3q-17768629713591.jpg" width="100%" alt="37n5ok1z7lulmp1r3q-17768629713591.jpg" title="37n5ok1z7lulmp1r3q-17768629713591.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="20%" align="center" valign="middle">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/81fkbb47uutpd5faz2-17768626829566.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/81fkbb47uutpd5faz2-17768626829566.jpg" width="100%" alt="81fkbb47uutpd5faz2-17768626829566.jpg" title="81fkbb47uutpd5faz2-17768626829566.jpg">
+      </a>
+    </td>
+    <td width="20%" align="center" valign="middle">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/gnomlu582oc20j0538-17768626179695.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/gnomlu582oc20j0538-17768626179695.jpg" width="100%" alt="gnomlu582oc20j0538-17768626179695.jpg" title="gnomlu582oc20j0538-17768626179695.jpg">
+      </a>
+    </td>
+    <td width="20%" align="center" valign="middle">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q9mzrss57z7t0h20gl-17768625912574.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q9mzrss57z7t0h20gl-17768625912574.jpg" width="100%" alt="q9mzrss57z7t0h20gl-17768625912574.jpg" title="q9mzrss57z7t0h20gl-17768625912574.jpg">
+      </a>
+    </td>
+    <td width="20%" align="center" valign="middle">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g37bqf2cq4vle5ql8l-17768625571453.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g37bqf2cq4vle5ql8l-17768625571453.jpg" width="100%" alt="g37bqf2cq4vle5ql8l-17768625571453.jpg" title="g37bqf2cq4vle5ql8l-17768625571453.jpg">
+      </a>
+    </td>
+    <td width="20%" align="center" valign="middle">
+      <a href="https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/l7nhszqnkwpe3ixby9-17768625097172.jpg">
+        <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/l7nhszqnkwpe3ixby9-17768625097172.jpg" width="100%" alt="l7nhszqnkwpe3ixby9-17768625097172.jpg" title="l7nhszqnkwpe3ixby9-17768625097172.jpg">
       </a>
     </td>
   </tr>
