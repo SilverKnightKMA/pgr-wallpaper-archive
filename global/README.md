@@ -1,12 +1,165 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 313 wallpapers
+> Total: 322 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=global)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/0dj0627eqtaspo1pk1-1776918510228%E6%AD%BB%E5%9F%8E.jpg" width="200" alt="0dj0627eqtaspo1pk1-1776918510228死城.jpg" title="0dj0627eqtaspo1pk1-1776918510228死城.jpg"> <strong>0dj0627eqtaspo1pk1-1776918510228死城.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:28:19
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 6.27 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/0dj0627eqtaspo1pk1-1776918510228%E6%AD%BB%E5%9F%8E.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/0dj0627eqtaspo1pk1-1776918510228死城.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nzy05qhrza1j1fcrym-1776918480487%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89.jpg" width="200" alt="nzy05qhrza1j1fcrym-1776918480487一无所有.jpg" title="nzy05qhrza1j1fcrym-1776918480487一无所有.jpg"> <strong>nzy05qhrza1j1fcrym-1776918480487一无所有.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:27:37
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7879x4433
+- **Size:** 9.16 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nzy05qhrza1j1fcrym-1776918480487%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/nzy05qhrza1j1fcrym-1776918480487一无所有.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/f8kek5cbxmdq8116fu-1776918449225%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg" width="200" alt="f8kek5cbxmdq8116fu-1776918449225活动面板.jpg" title="f8kek5cbxmdq8116fu-1776918449225活动面板.jpg"> <strong>f8kek5cbxmdq8116fu-1776918449225活动面板.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:27:13
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4834
+- **Size:** 8.53 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/f8kek5cbxmdq8116fu-1776918449225%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/f8kek5cbxmdq8116fu-1776918449225活动面板.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/m8tre75uhprzij28hy-1776918306080%E5%85%B3%E5%BA%95.jpg" width="200" alt="m8tre75uhprzij28hy-1776918306080关底.jpg" title="m8tre75uhprzij28hy-1776918306080关底.jpg"> <strong>m8tre75uhprzij28hy-1776918306080关底.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:24:51
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4800x2700
+- **Size:** 8.85 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/m8tre75uhprzij28hy-1776918306080%E5%85%B3%E5%BA%95.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/m8tre75uhprzij28hy-1776918306080关底.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hl59nas1o5bsedvvyc-1776918280283%E9%B1%BC%E6%AD%BB%E7%BD%91%E7%A0%B4%E7%9A%84%E8%83%9C%E5%88%A9.jpg" width="200" alt="hl59nas1o5bsedvvyc-1776918280283鱼死网破的胜利.jpg" title="hl59nas1o5bsedvvyc-1776918280283鱼死网破的胜利.jpg"> <strong>hl59nas1o5bsedvvyc-1776918280283鱼死网破的胜利.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:24:27
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 12.54 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hl59nas1o5bsedvvyc-1776918280283%E9%B1%BC%E6%AD%BB%E7%BD%91%E7%A0%B4%E7%9A%84%E8%83%9C%E5%88%A9.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/hl59nas1o5bsedvvyc-1776918280283鱼死网破的胜利.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ksgpywpo81jv12n50h-1776918233422%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6.jpg" width="200" alt="ksgpywpo81jv12n50h-1776918233422何以为家.jpg" title="ksgpywpo81jv12n50h-1776918233422何以为家.jpg"> <strong>ksgpywpo81jv12n50h-1776918233422何以为家.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:23:36
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 6000x3498
+- **Size:** 10.17 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ksgpywpo81jv12n50h-1776918233422%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/ksgpywpo81jv12n50h-1776918233422何以为家.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/v9qvigfu9ywm4oucat-1776918207539%E5%AE%B6%E4%BA%BA%E7%9A%84%E6%8B%A5%E6%8A%B1.jpg" width="200" alt="v9qvigfu9ywm4oucat-1776918207539家人的拥抱.jpg" title="v9qvigfu9ywm4oucat-1776918207539家人的拥抱.jpg"> <strong>v9qvigfu9ywm4oucat-1776918207539家人的拥抱.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:23:11
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 12.46 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/v9qvigfu9ywm4oucat-1776918207539%E5%AE%B6%E4%BA%BA%E7%9A%84%E6%8B%A5%E6%8A%B1.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/v9qvigfu9ywm4oucat-1776918207539家人的拥抱.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bg818d8bihwr5x9sjv-1776918184196%E5%AD%A4%E5%84%BF.jpg" width="200" alt="bg818d8bihwr5x9sjv-1776918184196孤儿.jpg" title="bg818d8bihwr5x9sjv-1776918184196孤儿.jpg"> <strong>bg818d8bihwr5x9sjv-1776918184196孤儿.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:22:39
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 10.89 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/bg818d8bihwr5x9sjv-1776918184196%E5%AD%A4%E5%84%BF.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/bg818d8bihwr5x9sjv-1776918184196孤儿.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hn2kvl9cfrxsdfx0gm-1776918148390%E7%99%BB%E9%99%86%E5%9B%BE.jpg" width="200" alt="hn2kvl9cfrxsdfx0gm-1776918148390登陆图.jpg" title="hn2kvl9cfrxsdfx0gm-1776918148390登陆图.jpg"> <strong>hn2kvl9cfrxsdfx0gm-1776918148390登陆图.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬
+- **Published Date:** 2026-04-23 04:22:08
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 11.11 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hn2kvl9cfrxsdfx0gm-1776918148390%E7%99%BB%E9%99%86%E5%9B%BE.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776873600000/hn2kvl9cfrxsdfx0gm-1776918148390登陆图.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>

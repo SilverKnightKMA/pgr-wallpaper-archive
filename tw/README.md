@@ -1,12 +1,165 @@
 # TW Server — PGR Wallpaper Archive
 
-> Total: 231 wallpapers
+> Total: 240 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=tw)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/57qkwogczc8241w2fl-17768479206335.%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="57qkwogczc8241w2fl-17768479206335.一无所有 繁中.jpg" title="57qkwogczc8241w2fl-17768479206335.一无所有 繁中.jpg"> <strong>57qkwogczc8241w2fl-17768479206335.一无所有 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬5
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7879x4433
+- **Size:** 9.18 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/57qkwogczc8241w2fl-17768479206335.%E4%B8%80%E6%97%A0%E6%89%80%E6%9C%89%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/57qkwogczc8241w2fl-17768479206335.一无所有 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/97ex1io9ku2eq4xnj4-17768480142313.%E5%AD%A4%E5%84%BF%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="97ex1io9ku2eq4xnj4-17768480142313.孤儿 繁中.jpg" title="97ex1io9ku2eq4xnj4-17768480142313.孤儿 繁中.jpg"> <strong>97ex1io9ku2eq4xnj4-17768480142313.孤儿 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬3
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 10.90 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/97ex1io9ku2eq4xnj4-17768480142313.%E5%AD%A4%E5%84%BF%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/97ex1io9ku2eq4xnj4-17768480142313.孤儿 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/gzf9rmp3u9qp98ex1v-17768476835507.%E5%AE%B6%E4%BA%BA%E7%9A%84%E6%8B%A5%E6%8A%B1%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="gzf9rmp3u9qp98ex1v-17768476835507.家人的拥抱 繁中.jpg" title="gzf9rmp3u9qp98ex1v-17768476835507.家人的拥抱 繁中.jpg"> <strong>gzf9rmp3u9qp98ex1v-17768476835507.家人的拥抱 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬7
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 12.48 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/gzf9rmp3u9qp98ex1v-17768476835507.%E5%AE%B6%E4%BA%BA%E7%9A%84%E6%8B%A5%E6%8A%B1%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/gzf9rmp3u9qp98ex1v-17768476835507.家人的拥抱 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hxme2y602gahjtqu1r-17768476382488.%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="hxme2y602gahjtqu1r-17768476382488.何以为家 繁中.jpg" title="hxme2y602gahjtqu1r-17768476382488.何以为家 繁中.jpg"> <strong>hxme2y602gahjtqu1r-17768476382488.何以为家 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬8
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 6000x3498
+- **Size:** 10.19 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hxme2y602gahjtqu1r-17768476382488.%E4%BD%95%E4%BB%A5%E4%B8%BA%E5%AE%B6%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/hxme2y602gahjtqu1r-17768476382488.何以为家 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nicgljxmq8qxhp8jty-17768477805786.%E6%AD%BB%E5%9F%8E-%E5%90%AB%E5%B7%AE%E5%88%86%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="nicgljxmq8qxhp8jty-17768477805786.死城-含差分 繁中.jpg" title="nicgljxmq8qxhp8jty-17768477805786.死城-含差分 繁中.jpg"> <strong>nicgljxmq8qxhp8jty-17768477805786.死城-含差分 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬6
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 6.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nicgljxmq8qxhp8jty-17768477805786.%E6%AD%BB%E5%9F%8E-%E5%90%AB%E5%B7%AE%E5%88%86%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/nicgljxmq8qxhp8jty-17768477805786.死城-含差分 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nxyiazltuee1u9motj-17768480554852.%E7%A5%9E%E5%A8%81%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="nxyiazltuee1u9motj-17768480554852.神威活动面板 繁中.jpg" title="nxyiazltuee1u9motj-17768480554852.神威活动面板 繁中.jpg"> <strong>nxyiazltuee1u9motj-17768480554852.神威活动面板 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬2
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4834
+- **Size:** 8.54 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nxyiazltuee1u9motj-17768480554852.%E7%A5%9E%E5%A8%81%E6%B4%BB%E5%8A%A8%E9%9D%A2%E6%9D%BF%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/nxyiazltuee1u9motj-17768480554852.神威活动面板 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/piil45vuqcd0outz9y-17768479680194.%E9%B1%BC%E6%AD%BB%E7%BD%91%E7%A0%B4%E7%9A%84%E8%83%9C%E5%88%A9%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="piil45vuqcd0outz9y-17768479680194.鱼死网破的胜利 繁中.jpg" title="piil45vuqcd0outz9y-17768479680194.鱼死网破的胜利 繁中.jpg"> <strong>piil45vuqcd0outz9y-17768479680194.鱼死网破的胜利 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬4
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 12.55 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/piil45vuqcd0outz9y-17768479680194.%E9%B1%BC%E6%AD%BB%E7%BD%91%E7%A0%B4%E7%9A%84%E8%83%9C%E5%88%A9%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/piil45vuqcd0outz9y-17768479680194.鱼死网破的胜利 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/rsu9i07u2kw46z32bj-17768481678421.%E8%B6%85%E7%A5%9E%E5%A8%81%E5%85%B3%E5%BA%95-%E6%94%B9%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="rsu9i07u2kw46z32bj-17768481678421.超神威关底-改 繁中.jpg" title="rsu9i07u2kw46z32bj-17768481678421.超神威关底-改 繁中.jpg"> <strong>rsu9i07u2kw46z32bj-17768481678421.超神威关底-改 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬1
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4800x2700
+- **Size:** 8.86 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/rsu9i07u2kw46z32bj-17768481678421.%E8%B6%85%E7%A5%9E%E5%A8%81%E5%85%B3%E5%BA%95-%E6%94%B9%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/rsu9i07u2kw46z32bj-17768481678421.超神威关底-改 繁中.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/w9lsv0jpy4g39zbld7-17768475794399.%E7%A5%9E%E5%A8%81%E7%99%BB%E9%99%86%E5%9B%BE%E6%8F%90%E4%BA%A4-%E6%94%B9%E9%9E%8B%20%E7%B9%81%E4%B8%AD.jpg" width="200" alt="w9lsv0jpy4g39zbld7-17768475794399.神威登陆图提交-改鞋 繁中.jpg" title="w9lsv0jpy4g39zbld7-17768475794399.神威登陆图提交-改鞋 繁中.jpg"> <strong>w9lsv0jpy4g39zbld7-17768475794399.神威登陆图提交-改鞋 繁中.jpg</strong>
+</summary>
+
+- **Name:** 烈日将烬9
+- **Published Date:** 2026-04-23 10:00:00
+- **Downloaded Date:** 2026-04-24T03:30:18Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 11.12 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/w9lsv0jpy4g39zbld7-17768475794399.%E7%A5%9E%E5%A8%81%E7%99%BB%E9%99%86%E5%9B%BE%E6%8F%90%E4%BA%A4-%E6%94%B9%E9%9E%8B%20%E7%B9%81%E4%B8%AD.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/w9lsv0jpy4g39zbld7-17768475794399.神威登陆图提交-改鞋 繁中.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
