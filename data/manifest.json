@@ -5,7 +5,7 @@
     "success": 888,
     "failed": 0,
     "lastUpdated": "2026-04-23T07:57:59Z",
-    "lastActionRun": "2026-04-28T03:46:49Z",
+    "lastActionRun": "2026-04-28T04:35:11Z",
     "wallpapers": [
       {
         "filename": "00mypqzhee2bmf7ad6-16911465097297.jpg",
@@ -21324,11 +21324,11 @@
   },
   "jp": {
     "name": "JP Server",
-    "total": 586,
-    "success": 586,
+    "total": 591,
+    "success": 591,
     "failed": 0,
     "lastUpdated": "2026-04-28T03:15:55Z",
-    "lastActionRun": "2026-04-28T03:46:49Z",
+    "lastActionRun": "2026-04-28T04:35:11Z",
     "wallpapers": [
       {
         "filename": "02u9d4930i0094nhvj-1777283045597壁纸2.png",
@@ -26081,6 +26081,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1777295930888,
         "ossUpdate_formatted": "2026-04-27 13:18:50"
+      },
+      {
+        "filename": "c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.png",
+        "releaseTime": "2026-04-28T04:35:11Z",
+        "size": "38.42 MB",
+        "gameId": "G282",
+        "pictureId": 5634,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/lh3jboy28iedvkthm2-1777282703413溃碎寰宇的终点.png",
+        "nameIn": "溃碎寰宇的终点",
+        "sortingMark": 444,
+        "startTime": 1777282672000,
+        "startTime_formatted": "2026-04-27 09:37:52",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1777282718175,
+        "ossUpdate_formatted": "2026-04-27 09:38:38"
       },
       {
         "filename": "c7hc28iturybnb5fld-1695278614625第十一章-05.png",
@@ -31819,6 +31843,30 @@
         "ossUpdate_formatted": "2024-05-14 06:51:03"
       },
       {
+        "filename": "q437hqzupjyi3lomsb-1777282428775黑与白.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "q437hqzupjyi3lomsb-1777282428775黑与白.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/q437hqzupjyi3lomsb-1777282428775黑与白.png",
+        "releaseTime": "2026-04-28T04:35:11Z",
+        "size": "45.35 MB",
+        "gameId": "G282",
+        "pictureId": 5632,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/i6u3j8a99jkdvlhgu6-1777282427934黑与白.png",
+        "nameIn": "黑与白",
+        "sortingMark": 442,
+        "startTime": 1777282387000,
+        "startTime_formatted": "2026-04-27 09:33:07",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1777282436110,
+        "ossUpdate_formatted": "2026-04-27 09:33:56"
+      },
+      {
         "filename": "q5ajn5k8w6z4a7nfjs-1695287109811自杀者(差分）.png",
         "server": "JP Server",
         "status": "success",
@@ -32275,6 +32323,30 @@
         "ossUpdate_formatted": "2023-09-20 08:41:13"
       },
       {
+        "filename": "rcrp557tzhui3tm8vi-1777282240193东南倾.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "rcrp557tzhui3tm8vi-1777282240193东南倾.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/rcrp557tzhui3tm8vi-1777282240193东南倾.png",
+        "releaseTime": "2026-04-28T04:35:11Z",
+        "size": "69.86 MB",
+        "gameId": "G282",
+        "pictureId": 5631,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/jiqlb3ovtznmvh45s8-1777282236118东南倾.png",
+        "nameIn": "东南倾",
+        "sortingMark": 441,
+        "startTime": 1777282138000,
+        "startTime_formatted": "2026-04-27 09:28:58",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1777282246360,
+        "ossUpdate_formatted": "2026-04-27 09:30:46"
+      },
+      {
         "filename": "rcyfx7t0gmx0z4fjp3-1695289229877七实-未来.png",
         "server": "JP Server",
         "status": "success",
@@ -32489,6 +32561,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852333325,
         "ossUpdate_formatted": "2023-09-16 08:18:53"
+      },
+      {
+        "filename": "rtk27ofafgpm3oc1mn-1777282767121携旧魂.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "rtk27ofafgpm3oc1mn-1777282767121携旧魂.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/rtk27ofafgpm3oc1mn-1777282767121携旧魂.png",
+        "releaseTime": "2026-04-28T04:35:11Z",
+        "size": "52.55 MB",
+        "gameId": "G282",
+        "pictureId": 5635,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/se3ign7wo9wfvx90a5-1777282765893携旧魂.png",
+        "nameIn": "携旧魂",
+        "sortingMark": 445,
+        "startTime": 1777282730000,
+        "startTime_formatted": "2026-04-27 09:38:50",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1777282775868,
+        "ossUpdate_formatted": "2026-04-27 09:39:35"
       },
       {
         "filename": "rv4aw7crenthodis06-1695279023091水上乐园章-02.png",
@@ -34314,6 +34410,30 @@
         "ossUpdate_formatted": "2023-09-19 03:07:38"
       },
       {
+        "filename": "wozi3qymsbje6478q9-1777282862017携旧魂拆分.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "wozi3qymsbje6478q9-1777282862017携旧魂拆分.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/wozi3qymsbje6478q9-1777282862017携旧魂拆分.png",
+        "releaseTime": "2026-04-28T04:35:11Z",
+        "size": "52.52 MB",
+        "gameId": "G282",
+        "pictureId": 5636,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/yljuclotnfbyrn96l0-1777282860595携旧魂拆分.png",
+        "nameIn": "携旧魂拆分",
+        "sortingMark": 446,
+        "startTime": 1777282825000,
+        "startTime_formatted": "2026-04-27 09:40:25",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1777282875420,
+        "ossUpdate_formatted": "2026-04-27 09:41:15"
+      },
+      {
         "filename": "wtrk1pn9l46et12qid-1777345592771晚祷之后.png",
         "server": "JP Server",
         "status": "success",
@@ -35402,7 +35522,7 @@
     "success": 322,
     "failed": 0,
     "lastUpdated": "2026-04-23T04:28:19Z",
-    "lastActionRun": "2026-04-28T03:46:49Z",
+    "lastActionRun": "2026-04-28T04:35:11Z",
     "wallpapers": [
       {
         "filename": "07r2afens5bi7zwp32-1760433012098道别-加特效.jpg",
@@ -43141,7 +43261,7 @@
     "success": 240,
     "failed": 0,
     "lastUpdated": "2026-04-23T10:00:00Z",
-    "lastActionRun": "2026-04-28T03:46:49Z",
+    "lastActionRun": "2026-04-28T04:35:11Z",
     "wallpapers": [
       {
         "filename": "01e2dd3yqoar25ic4f-1763983192136繁中.png",
@@ -48867,7 +48987,7 @@
     "success": 573,
     "failed": 0,
     "lastUpdated": "2026-04-22T13:06:54Z",
-    "lastActionRun": "2026-04-28T03:46:49Z",
+    "lastActionRun": "2026-04-28T04:35:11Z",
     "wallpapers": [
       {
         "filename": "01zfp40e584l55633r-1731998358962388.jpg",
@@ -62624,5 +62744,5 @@
     ],
     "pictureCount": 573
   },
-  "releaseTime": "2026-04-28T03:46:49Z"
+  "releaseTime": "2026-04-28T04:35:11Z"
 }
