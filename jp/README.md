@@ -1,6 +1,6 @@
 # JP Server — PGR Wallpaper Archive
 
-> Total: 586 wallpapers
+> Total: 591 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
@@ -2441,6 +2441,57 @@
 
 <details>
 <summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/wozi3qymsbje6478q9-1777282862017%E6%90%BA%E6%97%A7%E9%AD%82%E6%8B%86%E5%88%86.jpg" width="200" alt="wozi3qymsbje6478q9-1777282862017携旧魂拆分.png" title="wozi3qymsbje6478q9-1777282862017携旧魂拆分.png"> <strong>wozi3qymsbje6478q9-1777282862017携旧魂拆分.png</strong>
+</summary>
+
+- **Name:** 携旧魂拆分
+- **Published Date:** 2026-04-27 09:40:25
+- **Downloaded Date:** 2026-04-28T04:35:11Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 52.52 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/wozi3qymsbje6478q9-1777282862017%E6%90%BA%E6%97%A7%E9%AD%82%E6%8B%86%E5%88%86.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/wozi3qymsbje6478q9-1777282862017携旧魂拆分.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/rtk27ofafgpm3oc1mn-1777282767121%E6%90%BA%E6%97%A7%E9%AD%82.jpg" width="200" alt="rtk27ofafgpm3oc1mn-1777282767121携旧魂.png" title="rtk27ofafgpm3oc1mn-1777282767121携旧魂.png"> <strong>rtk27ofafgpm3oc1mn-1777282767121携旧魂.png</strong>
+</summary>
+
+- **Name:** 携旧魂
+- **Published Date:** 2026-04-27 09:38:50
+- **Downloaded Date:** 2026-04-28T04:35:11Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 52.55 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/rtk27ofafgpm3oc1mn-1777282767121%E6%90%BA%E6%97%A7%E9%AD%82.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/rtk27ofafgpm3oc1mn-1777282767121携旧魂.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/c6fq5n49wy9uypx7ug-1777282704555%E6%BA%83%E7%A2%8E%E5%AF%B0%E5%AE%87%E7%9A%84%E7%BB%88%E7%82%B9.jpg" width="200" alt="c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.png" title="c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.png"> <strong>c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.png</strong>
+</summary>
+
+- **Name:** 溃碎寰宇的终点
+- **Published Date:** 2026-04-27 09:37:52
+- **Downloaded Date:** 2026-04-28T04:35:11Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 38.42 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/c6fq5n49wy9uypx7ug-1777282704555%E6%BA%83%E7%A2%8E%E5%AF%B0%E5%AE%87%E7%9A%84%E7%BB%88%E7%82%B9.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/c6fq5n49wy9uypx7ug-1777282704555溃碎寰宇的终点.png">Original</a>
+
+</details>
+
+<details>
+<summary>
 <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/fsbn8ik4vxiqado0gk-1777282617446%E6%BA%83%E7%A2%8E%E5%AF%B0%E5%AE%87%E7%9A%84%E7%BB%88%E7%82%B9%EF%BC%88%E6%9C%89%E4%B8%83%E5%AE%9E%EF%BC%89.jpg" width="200" alt="fsbn8ik4vxiqado0gk-1777282617446溃碎寰宇的终点（有七实）.png" title="fsbn8ik4vxiqado0gk-1777282617446溃碎寰宇的终点（有七实）.png"> <strong>fsbn8ik4vxiqado0gk-1777282617446溃碎寰宇的终点（有七实）.png</strong>
 </summary>
 
@@ -2453,6 +2504,40 @@
 - **Status:** Success
 - **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fsbn8ik4vxiqado0gk-1777282617446%E6%BA%83%E7%A2%8E%E5%AF%B0%E5%AE%87%E7%9A%84%E7%BB%88%E7%82%B9%EF%BC%88%E6%9C%89%E4%B8%83%E5%AE%9E%EF%BC%89.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/fsbn8ik4vxiqado0gk-1777282617446溃碎寰宇的终点（有七实）.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q437hqzupjyi3lomsb-1777282428775%E9%BB%91%E4%B8%8E%E7%99%BD.jpg" width="200" alt="q437hqzupjyi3lomsb-1777282428775黑与白.png" title="q437hqzupjyi3lomsb-1777282428775黑与白.png"> <strong>q437hqzupjyi3lomsb-1777282428775黑与白.png</strong>
+</summary>
+
+- **Name:** 黑与白
+- **Published Date:** 2026-04-27 09:33:07
+- **Downloaded Date:** 2026-04-28T04:35:11Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 45.35 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q437hqzupjyi3lomsb-1777282428775%E9%BB%91%E4%B8%8E%E7%99%BD.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/q437hqzupjyi3lomsb-1777282428775黑与白.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/rcrp557tzhui3tm8vi-1777282240193%E4%B8%9C%E5%8D%97%E5%80%BE.jpg" width="200" alt="rcrp557tzhui3tm8vi-1777282240193东南倾.png" title="rcrp557tzhui3tm8vi-1777282240193东南倾.png"> <strong>rcrp557tzhui3tm8vi-1777282240193东南倾.png</strong>
+</summary>
+
+- **Name:** 东南倾
+- **Published Date:** 2026-04-27 09:28:58
+- **Downloaded Date:** 2026-04-28T04:35:11Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 69.86 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/rcrp557tzhui3tm8vi-1777282240193%E4%B8%9C%E5%8D%97%E5%80%BE.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1777219200000/rcrp557tzhui3tm8vi-1777282240193东南倾.png">Original</a>
 
 </details>
 
