@@ -5,7 +5,7 @@
     "success": 888,
     "failed": 0,
     "lastUpdated": "2026-04-23T07:57:59Z",
-    "lastActionRun": "2026-06-05T04:19:05Z",
+    "lastActionRun": "2026-06-10T04:17:15Z",
     "wallpapers": [
       {
         "filename": "00mypqzhee2bmf7ad6-16911465097297.jpg",
@@ -21328,7 +21328,7 @@
     "success": 684,
     "failed": 0,
     "lastUpdated": "2026-06-04T09:22:13Z",
-    "lastActionRun": "2026-06-05T04:19:05Z",
+    "lastActionRun": "2026-06-10T04:17:15Z",
     "wallpapers": [
       {
         "filename": "02u9d4930i0094nhvj-1777283045597壁纸2.png",
@@ -37754,7 +37754,7 @@
     "success": 322,
     "failed": 0,
     "lastUpdated": "2026-04-23T04:28:19Z",
-    "lastActionRun": "2026-06-05T04:19:05Z",
+    "lastActionRun": "2026-06-10T04:17:15Z",
     "wallpapers": [
       {
         "filename": "07r2afens5bi7zwp32-1760433012098道别-加特效.jpg",
@@ -45489,11 +45489,11 @@
   },
   "tw": {
     "name": "TW Server",
-    "total": 240,
-    "success": 240,
+    "total": 249,
+    "success": 249,
     "failed": 0,
-    "lastUpdated": "2026-04-23T10:00:00Z",
-    "lastActionRun": "2026-06-05T04:19:05Z",
+    "lastUpdated": "2026-06-10T02:20:27Z",
+    "lastActionRun": "2026-06-10T04:17:15Z",
     "wallpapers": [
       {
         "filename": "01e2dd3yqoar25ic4f-1763983192136繁中.png",
@@ -46736,6 +46736,30 @@
         "ossUpdate_formatted": "2025-09-09 03:24:59"
       },
       {
+        "filename": "8asyw94klsb81q4nsd-1781057965507繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "8asyw94klsb81q4nsd-1781057965507繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/8asyw94klsb81q4nsd-1781057965507繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.43 MB",
+        "gameId": "G279",
+        "pictureId": 5973,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/7bxi5umuuixlyfqtoa-1781057965385繁中.jpg",
+        "nameIn": "长路归航4",
+        "sortingMark": 118,
+        "startTime": 1781057955000,
+        "startTime_formatted": "2026-06-10 02:19:15",
+        "endTime": 1812593955000,
+        "endTime_formatted": "2027-06-10 02:19:15",
+        "ossUpdate": 1781057977549,
+        "ossUpdate_formatted": "2026-06-10 02:19:37"
+      },
+      {
         "filename": "8b1kcnzkwyroft16ar-1717468639641壁纸4.jpg",
         "server": "TW Server",
         "status": "success",
@@ -47068,6 +47092,30 @@
         "endTime_formatted": "2028-07-13 02:45:00",
         "ossUpdate": 1752374802823,
         "ossUpdate_formatted": "2025-07-13 02:46:42"
+      },
+      {
+        "filename": "9wouzowjsk24d0ltib-1781057826044繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "9wouzowjsk24d0ltib-1781057826044繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/9wouzowjsk24d0ltib-1781057826044繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "2.29 MB",
+        "gameId": "G279",
+        "pictureId": 5968,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/pa1e0n43cfnl389e1p-1781057825674繁中.jpg",
+        "nameIn": "长路归航9",
+        "sortingMark": 118,
+        "startTime": 1781057787000,
+        "startTime_formatted": "2026-06-10 02:16:27",
+        "endTime": 1812593787000,
+        "endTime_formatted": "2027-06-10 02:16:27",
+        "ossUpdate": 1781057836410,
+        "ossUpdate_formatted": "2026-06-10 02:17:16"
       },
       {
         "filename": "9ybljyx673ozqfphvu-1719211897405壁纸9.jpg",
@@ -47403,6 +47451,30 @@
         "endTime_formatted": "2027-10-17 03:57:19",
         "ossUpdate": 1760846258460,
         "ossUpdate_formatted": "2025-10-19 03:57:38"
+      },
+      {
+        "filename": "bt7g2plax0qnxl7shc-1781057890153繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "bt7g2plax0qnxl7shc-1781057890153繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/bt7g2plax0qnxl7shc-1781057890153繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.93 MB",
+        "gameId": "G279",
+        "pictureId": 5970,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/2jk3mpbek4no8krq5x-1781057889912繁中.jpg",
+        "nameIn": "长路归航7",
+        "sortingMark": 118,
+        "startTime": 1781057879000,
+        "startTime_formatted": "2026-06-10 02:17:59",
+        "endTime": 1812593879000,
+        "endTime_formatted": "2027-06-10 02:17:59",
+        "ossUpdate": 1781057896522,
+        "ossUpdate_formatted": "2026-06-10 02:18:16"
       },
       {
         "filename": "bulrh16oc7cacqjenx-1754536961431img_v3_02or_42654d71-4523-4308-ae5c-7b069c137b2g.png",
@@ -47997,6 +48069,30 @@
         "ossUpdate_formatted": "2024-09-03 03:47:05"
       },
       {
+        "filename": "fugw4pkzffbpbt2amh-1781058035838繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "fugw4pkzffbpbt2amh-1781058035838繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/fugw4pkzffbpbt2amh-1781058035838繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.68 MB",
+        "gameId": "G279",
+        "pictureId": 5976,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/3n8rm6m1gpx7q985a8-1781058035699繁中.jpg",
+        "nameIn": "长路归航1",
+        "sortingMark": 118,
+        "startTime": 1781058027000,
+        "startTime_formatted": "2026-06-10 02:20:27",
+        "endTime": 1812594027000,
+        "endTime_formatted": "2027-06-10 02:20:27",
+        "ossUpdate": 1781058065843,
+        "ossUpdate_formatted": "2026-06-10 02:21:05"
+      },
+      {
         "filename": "fwmmr2zykg51qj9kw7-17603516996853.7版本活动面板加人.png",
         "server": "TW Server",
         "status": "success",
@@ -48353,6 +48449,30 @@
         "endTime_formatted": "2026-06-24 06:47:14",
         "ossUpdate": 1719211652630,
         "ossUpdate_formatted": "2024-06-24 06:47:32"
+      },
+      {
+        "filename": "idef1hn97m4slr1wr4-1781057861518繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "idef1hn97m4slr1wr4-1781057861518繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/idef1hn97m4slr1wr4-1781057861518繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.09 MB",
+        "gameId": "G279",
+        "pictureId": 5969,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/07nh2fc5q44mzzmcf1-1781057861398繁中.jpg",
+        "nameIn": "长路归航8",
+        "sortingMark": 118,
+        "startTime": 1781057844000,
+        "startTime_formatted": "2026-06-10 02:17:24",
+        "endTime": 1812593844000,
+        "endTime_formatted": "2027-06-10 02:17:24",
+        "ossUpdate": 1781057866110,
+        "ossUpdate_formatted": "2026-06-10 02:17:46"
       },
       {
         "filename": "iheqmtkxucorcatwte-173397403064822.海報2.jpg",
@@ -49046,6 +49166,30 @@
         "ossUpdate_formatted": "2025-10-19 04:03:08"
       },
       {
+        "filename": "mvr5qq9hs7tiody2jq-1781057914728繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "mvr5qq9hs7tiody2jq-1781057914728繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/mvr5qq9hs7tiody2jq-1781057914728繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1012.3 KB",
+        "gameId": "G279",
+        "pictureId": 5971,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/ewjeotfu56d07yvicz-1781057914491繁中.jpg",
+        "nameIn": "长路归航6",
+        "sortingMark": 118,
+        "startTime": 1781057904000,
+        "startTime_formatted": "2026-06-10 02:18:24",
+        "endTime": 1812593904000,
+        "endTime_formatted": "2027-06-10 02:18:24",
+        "ossUpdate": 1781057934492,
+        "ossUpdate_formatted": "2026-06-10 02:18:54"
+      },
+      {
         "filename": "mz0kop5p0r4k72sc7x-1719211994872壁纸12.jpg",
         "server": "TW Server",
         "status": "success",
@@ -49307,6 +49451,30 @@
         "ossUpdate_formatted": "2025-10-19 03:54:18"
       },
       {
+        "filename": "o739xs9lx79bkvw14m-1781058010715繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "o739xs9lx79bkvw14m-1781058010715繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/o739xs9lx79bkvw14m-1781058010715繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.51 MB",
+        "gameId": "G279",
+        "pictureId": 5975,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/ca0dk4mv6vbz0pw0hz-1781058010588繁中.jpg",
+        "nameIn": "长路归航2",
+        "sortingMark": 118,
+        "startTime": 1781058002000,
+        "startTime_formatted": "2026-06-10 02:20:02",
+        "endTime": 1812594002000,
+        "endTime_formatted": "2027-06-10 02:20:02",
+        "ossUpdate": 1781058016344,
+        "ossUpdate_formatted": "2026-06-10 02:20:16"
+      },
+      {
         "filename": "o8bq7xk4qbj7zthc9m-17429591616161.jpg",
         "server": "TW Server",
         "status": "success",
@@ -49378,6 +49546,30 @@
         "ossUpdate_formatted": "2026-03-20 07:28:05"
       },
       {
+        "filename": "ouo82u712rb71j4xjf-1781057941193繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "ouo82u712rb71j4xjf-1781057941193繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/ouo82u712rb71j4xjf-1781057941193繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.92 MB",
+        "gameId": "G279",
+        "pictureId": 5972,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/esdc8lolrp86g2ebb3-1781057941089繁中.jpg",
+        "nameIn": "长路归航5",
+        "sortingMark": 118,
+        "startTime": 1781057930000,
+        "startTime_formatted": "2026-06-10 02:18:50",
+        "endTime": 1812593930000,
+        "endTime_formatted": "2027-06-10 02:18:50",
+        "ossUpdate": 1781057946654,
+        "ossUpdate_formatted": "2026-06-10 02:19:06"
+      },
+      {
         "filename": "p4f4kdu67oj5aoc746-17605863103913.7协奏关底图.png",
         "server": "TW Server",
         "status": "success",
@@ -49400,6 +49592,30 @@
         "endTime_formatted": "2027-10-16 03:39:53",
         "ossUpdate": 1760845198785,
         "ossUpdate_formatted": "2025-10-19 03:39:58"
+      },
+      {
+        "filename": "p6kveh0z8rd6fdxmxh-1781057988518繁中.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "p6kveh0z8rd6fdxmxh-1781057988518繁中.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/p6kveh0z8rd6fdxmxh-1781057988518繁中.jpg",
+        "releaseTime": "2026-06-10T04:17:15Z",
+        "size": "1.56 MB",
+        "gameId": "G279",
+        "pictureId": 5974,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781020800000/cr703yq34f7zzsjkg0-1781057988247繁中.jpg",
+        "nameIn": "长路归航3",
+        "sortingMark": 118,
+        "startTime": 1781057979000,
+        "startTime_formatted": "2026-06-10 02:19:39",
+        "endTime": 1812593979000,
+        "endTime_formatted": "2027-06-10 02:19:39",
+        "ossUpdate": 1781057996329,
+        "ossUpdate_formatted": "2026-06-10 02:19:56"
       },
       {
         "filename": "pgqrxdojno75151yy8-1721982996176壁纸1.jpg",
@@ -51211,7 +51427,7 @@
         "ossUpdate_formatted": "2026-02-07 04:01:18"
       }
     ],
-    "pictureCount": 223
+    "pictureCount": 232
   },
   "kr": {
     "name": "KR Server",
@@ -51219,7 +51435,7 @@
     "success": 573,
     "failed": 0,
     "lastUpdated": "2026-04-22T13:06:54Z",
-    "lastActionRun": "2026-06-05T04:19:05Z",
+    "lastActionRun": "2026-06-10T04:17:15Z",
     "wallpapers": [
       {
         "filename": "01zfp40e584l55633r-1731998358962388.jpg",
@@ -64976,5 +65192,5 @@
     ],
     "pictureCount": 573
   },
-  "releaseTime": "2026-06-05T04:19:05Z"
+  "releaseTime": "2026-06-10T04:17:15Z"
 }
