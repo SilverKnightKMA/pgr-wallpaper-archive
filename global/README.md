@@ -1,12 +1,165 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 322 wallpapers
+> Total: 331 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=global)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/38w3pttqdge413t38y-1781146162052%E8%8B%B1%E6%96%879.jpg" width="200" alt="38w3pttqdge413t38y-1781146162052英文9.jpg" title="38w3pttqdge413t38y-1781146162052英文9.jpg"> <strong>38w3pttqdge413t38y-1781146162052英文9.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:49:16
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/38w3pttqdge413t38y-1781146162052%E8%8B%B1%E6%96%879.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/38w3pttqdge413t38y-1781146162052英文9.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nrd0ls3wwsdwsnff2n-1781146147549%E8%8B%B1%E6%96%878.jpg" width="200" alt="nrd0ls3wwsdwsnff2n-1781146147549英文8.jpg" title="nrd0ls3wwsdwsnff2n-1781146147549英文8.jpg"> <strong>nrd0ls3wwsdwsnff2n-1781146147549英文8.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:49:02
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.08 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nrd0ls3wwsdwsnff2n-1781146147549%E8%8B%B1%E6%96%878.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/nrd0ls3wwsdwsnff2n-1781146147549英文8.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/f7p1qkkp1i8hvpe7xg-1781146133385%E8%8B%B1%E6%96%877.jpg" width="200" alt="f7p1qkkp1i8hvpe7xg-1781146133385英文7.jpg" title="f7p1qkkp1i8hvpe7xg-1781146133385英文7.jpg"> <strong>f7p1qkkp1i8hvpe7xg-1781146133385英文7.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:48:46
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/f7p1qkkp1i8hvpe7xg-1781146133385%E8%8B%B1%E6%96%877.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/f7p1qkkp1i8hvpe7xg-1781146133385英文7.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5xbqd0o7y849i7tpn5-1781146114711%E8%8B%B1%E6%96%876.jpg" width="200" alt="5xbqd0o7y849i7tpn5-1781146114711英文6.jpg" title="5xbqd0o7y849i7tpn5-1781146114711英文6.jpg"> <strong>5xbqd0o7y849i7tpn5-1781146114711英文6.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:48:28
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1003.7 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5xbqd0o7y849i7tpn5-1781146114711%E8%8B%B1%E6%96%876.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/5xbqd0o7y849i7tpn5-1781146114711英文6.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/fhvkjrn0bmplj7p66s-1781146096806%E8%8B%B1%E6%96%875.jpg" width="200" alt="fhvkjrn0bmplj7p66s-1781146096806英文5.jpg" title="fhvkjrn0bmplj7p66s-1781146096806英文5.jpg"> <strong>fhvkjrn0bmplj7p66s-1781146096806英文5.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:48:10
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fhvkjrn0bmplj7p66s-1781146096806%E8%8B%B1%E6%96%875.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/fhvkjrn0bmplj7p66s-1781146096806英文5.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/27ry1soiac13zoirin-1781146077710%E8%8B%B1%E6%96%874.jpg" width="200" alt="27ry1soiac13zoirin-1781146077710英文4.jpg" title="27ry1soiac13zoirin-1781146077710英文4.jpg"> <strong>27ry1soiac13zoirin-1781146077710英文4.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:47:51
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.43 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/27ry1soiac13zoirin-1781146077710%E8%8B%B1%E6%96%874.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/27ry1soiac13zoirin-1781146077710英文4.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/2zt0nrf737phe72o3q-1781146057714%E8%8B%B1%E6%96%873.jpg" width="200" alt="2zt0nrf737phe72o3q-1781146057714英文3.jpg" title="2zt0nrf737phe72o3q-1781146057714英文3.jpg"> <strong>2zt0nrf737phe72o3q-1781146057714英文3.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:47:32
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.56 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/2zt0nrf737phe72o3q-1781146057714%E8%8B%B1%E6%96%873.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/2zt0nrf737phe72o3q-1781146057714英文3.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/z17f80vuks5u4l2uul-1781146032827%E8%8B%B1%E6%96%872.jpg" width="200" alt="z17f80vuks5u4l2uul-1781146032827英文2.jpg" title="z17f80vuks5u4l2uul-1781146032827英文2.jpg"> <strong>z17f80vuks5u4l2uul-1781146032827英文2.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:47:05
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.50 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/z17f80vuks5u4l2uul-1781146032827%E8%8B%B1%E6%96%872.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/z17f80vuks5u4l2uul-1781146032827英文2.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/54i7ipghmqxjscw4tn-1781145992847%E8%8B%B1%E6%96%871.jpg" width="200" alt="54i7ipghmqxjscw4tn-1781145992847英文1.jpg" title="54i7ipghmqxjscw4tn-1781145992847英文1.jpg"> <strong>54i7ipghmqxjscw4tn-1781145992847英文1.jpg</strong>
+</summary>
+
+- **Name:** 长路归航
+- **Published Date:** 2026-06-11 02:46:08
+- **Downloaded Date:** 2026-06-11T04:39:10Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.67 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/54i7ipghmqxjscw4tn-1781145992847%E8%8B%B1%E6%96%871.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1781107200000/54i7ipghmqxjscw4tn-1781145992847英文1.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
