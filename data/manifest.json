@@ -5,7 +5,7 @@
     "success": 897,
     "failed": 0,
     "lastUpdated": "2026-06-11T03:47:09Z",
-    "lastActionRun": "2026-06-11T04:39:10Z",
+    "lastActionRun": "2026-07-17T03:19:00Z",
     "wallpapers": [
       {
         "filename": "00mypqzhee2bmf7ad6-16911465097297.jpg",
@@ -21544,7 +21544,7 @@
     "success": 684,
     "failed": 0,
     "lastUpdated": "2026-06-04T09:22:13Z",
-    "lastActionRun": "2026-06-11T04:39:10Z",
+    "lastActionRun": "2026-07-17T03:19:00Z",
     "wallpapers": [
       {
         "filename": "02u9d4930i0094nhvj-1777283045597壁纸2.png",
@@ -37970,7 +37970,7 @@
     "success": 331,
     "failed": 0,
     "lastUpdated": "2026-06-11T02:49:16Z",
-    "lastActionRun": "2026-06-11T04:39:10Z",
+    "lastActionRun": "2026-07-17T03:19:00Z",
     "wallpapers": [
       {
         "filename": "07r2afens5bi7zwp32-1760433012098道别-加特效.jpg",
@@ -45921,11 +45921,11 @@
   },
   "tw": {
     "name": "TW Server",
-    "total": 249,
-    "success": 249,
+    "total": 253,
+    "success": 253,
     "failed": 0,
-    "lastUpdated": "2026-06-10T02:20:27Z",
-    "lastActionRun": "2026-06-11T04:39:10Z",
+    "lastUpdated": "2026-07-17T03:16:47Z",
+    "lastActionRun": "2026-07-17T03:19:00Z",
     "wallpapers": [
       {
         "filename": "01e2dd3yqoar25ic4f-1763983192136繁中.png",
@@ -46616,6 +46616,30 @@
         "endTime_formatted": "2028-04-28 03:48:03",
         "ossUpdate": 1745812086033,
         "ossUpdate_formatted": "2025-04-28 03:48:06"
+      },
+      {
+        "filename": "3r6im7cle11jew5xtk-17842581946677.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "3r6im7cle11jew5xtk-17842581946677.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/3r6im7cle11jew5xtk-17842581946677.jpg",
+        "releaseTime": "2026-07-17T03:19:00Z",
+        "size": "322.5 KB",
+        "gameId": "G279",
+        "pictureId": 6059,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/4vwwzs2rsoelsgdyod-17842581945207.jpg",
+        "nameIn": "孑念空行7",
+        "sortingMark": 118,
+        "startTime": 1784258187000,
+        "startTime_formatted": "2026-07-17 03:16:27",
+        "endTime": 1815794187000,
+        "endTime_formatted": "2027-07-17 03:16:27",
+        "ossUpdate": 1784258208561,
+        "ossUpdate_formatted": "2026-07-17 03:16:48"
       },
       {
         "filename": "3un5men6v8digippf1-1717468615080壁纸3.jpg",
@@ -48549,6 +48573,30 @@
         "ossUpdate_formatted": "2025-10-19 09:35:38"
       },
       {
+        "filename": "fxjtofidzhcas7fxz0-17842581483399.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "fxjtofidzhcas7fxz0-17842581483399.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/fxjtofidzhcas7fxz0-17842581483399.jpg",
+        "releaseTime": "2026-07-17T03:19:00Z",
+        "size": "544.0 KB",
+        "gameId": "G279",
+        "pictureId": 6057,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/ledget9yt7919f9872-17842581476749.jpg",
+        "nameIn": "孑念空行9",
+        "sortingMark": 118,
+        "startTime": 1784258132000,
+        "startTime_formatted": "2026-07-17 03:15:32",
+        "endTime": 1815794132000,
+        "endTime_formatted": "2027-07-17 03:15:32",
+        "ossUpdate": 1784258157040,
+        "ossUpdate_formatted": "2026-07-17 03:15:57"
+      },
+      {
         "filename": "fy8fejilxvspw6v3l8-1727598223737海報10.jpg",
         "server": "TW Server",
         "status": "success",
@@ -49023,6 +49071,30 @@
         "endTime_formatted": "2028-04-30 03:39:09",
         "ossUpdate": 1745811612478,
         "ossUpdate_formatted": "2025-04-28 03:40:12"
+      },
+      {
+        "filename": "ix623t0awr0xh7iyuz-17842582148316.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "ix623t0awr0xh7iyuz-17842582148316.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/ix623t0awr0xh7iyuz-17842582148316.jpg",
+        "releaseTime": "2026-07-17T03:19:00Z",
+        "size": "604.2 KB",
+        "gameId": "G279",
+        "pictureId": 6060,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/6o45ht84uuqsitciwa-17842582147006.jpg",
+        "nameIn": "孑念空行6",
+        "sortingMark": 118,
+        "startTime": 1784258207000,
+        "startTime_formatted": "2026-07-17 03:16:47",
+        "endTime": 1815794207000,
+        "endTime_formatted": "2027-07-17 03:16:47",
+        "ossUpdate": 1784258228233,
+        "ossUpdate_formatted": "2026-07-17 03:17:08"
       },
       {
         "filename": "ixhc9uorgwon64bb6a-173192921697229.png",
@@ -51002,6 +51074,30 @@
         "ossUpdate_formatted": "2024-12-12 03:31:35"
       },
       {
+        "filename": "us38uzssfik45qtbd6-17842581747528.jpg",
+        "server": "TW Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "us38uzssfik45qtbd6-17842581747528.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/us38uzssfik45qtbd6-17842581747528.jpg",
+        "releaseTime": "2026-07-17T03:19:00Z",
+        "size": "412.0 KB",
+        "gameId": "G279",
+        "pictureId": 6058,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/j272r7lvq0lhy9jrbj-17842581744888.jpg",
+        "nameIn": "孑念空行8",
+        "sortingMark": 118,
+        "startTime": 1784258165000,
+        "startTime_formatted": "2026-07-17 03:16:05",
+        "endTime": 1815794165000,
+        "endTime_formatted": "2027-07-17 03:16:05",
+        "ossUpdate": 1784258193937,
+        "ossUpdate_formatted": "2026-07-17 03:16:33"
+      },
+      {
         "filename": "uymx8ks9szn30146kj-1749028937645所有的破晓者.jpg",
         "server": "TW Server",
         "status": "success",
@@ -51859,7 +51955,7 @@
         "ossUpdate_formatted": "2026-02-07 04:01:18"
       }
     ],
-    "pictureCount": 232
+    "pictureCount": 221
   },
   "kr": {
     "name": "KR Server",
@@ -51867,7 +51963,7 @@
     "success": 573,
     "failed": 0,
     "lastUpdated": "2026-04-22T13:06:54Z",
-    "lastActionRun": "2026-06-11T04:39:10Z",
+    "lastActionRun": "2026-07-17T03:19:00Z",
     "wallpapers": [
       {
         "filename": "01zfp40e584l55633r-1731998358962388.jpg",
@@ -65624,5 +65720,5 @@
     ],
     "pictureCount": 573
   },
-  "releaseTime": "2026-06-11T04:39:10Z"
+  "releaseTime": "2026-07-17T03:19:00Z"
 }
