@@ -1,12 +1,97 @@
 # TW Server — PGR Wallpaper Archive
 
-> Total: 253 wallpapers
+> Total: 258 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=tw)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/pw2h9ybnrpc1svdes3-17842583221751.jpg" width="200" alt="pw2h9ybnrpc1svdes3-17842583221751.jpg" title="pw2h9ybnrpc1svdes3-17842583221751.jpg"> <strong>pw2h9ybnrpc1svdes3-17842583221751.jpg</strong>
+</summary>
+
+- **Name:** 孑念空行1
+- **Published Date:** 2026-07-17 03:18:34
+- **Downloaded Date:** 2026-07-18T02:55:52Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 566.9 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/pw2h9ybnrpc1svdes3-17842583221751.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/pw2h9ybnrpc1svdes3-17842583221751.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/c3geqzzjmzjg2b0gah-17842583047992.jpg" width="200" alt="c3geqzzjmzjg2b0gah-17842583047992.jpg" title="c3geqzzjmzjg2b0gah-17842583047992.jpg"> <strong>c3geqzzjmzjg2b0gah-17842583047992.jpg</strong>
+</summary>
+
+- **Name:** 孑念空行2
+- **Published Date:** 2026-07-17 03:18:16
+- **Downloaded Date:** 2026-07-18T02:55:52Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 632.8 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/c3geqzzjmzjg2b0gah-17842583047992.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/c3geqzzjmzjg2b0gah-17842583047992.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nna20bwf2jvpp2g7ud-17842582818023.jpg" width="200" alt="nna20bwf2jvpp2g7ud-17842582818023.jpg" title="nna20bwf2jvpp2g7ud-17842582818023.jpg"> <strong>nna20bwf2jvpp2g7ud-17842582818023.jpg</strong>
+</summary>
+
+- **Name:** 孑念空行3
+- **Published Date:** 2026-07-17 03:17:53
+- **Downloaded Date:** 2026-07-18T02:55:52Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1210
+- **Size:** 776.3 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nna20bwf2jvpp2g7ud-17842582818023.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/nna20bwf2jvpp2g7ud-17842582818023.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/d2yvifn7jrgw1ovxaz-17842582526244.jpg" width="200" alt="d2yvifn7jrgw1ovxaz-17842582526244.jpg" title="d2yvifn7jrgw1ovxaz-17842582526244.jpg"> <strong>d2yvifn7jrgw1ovxaz-17842582526244.jpg</strong>
+</summary>
+
+- **Name:** 孑念空行4
+- **Published Date:** 2026-07-17 03:17:25
+- **Downloaded Date:** 2026-07-18T02:55:52Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 464.4 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/d2yvifn7jrgw1ovxaz-17842582526244.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/d2yvifn7jrgw1ovxaz-17842582526244.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/gpi82x2eot75kkgj9p-17842582349215.jpg" width="200" alt="gpi82x2eot75kkgj9p-17842582349215.jpg" title="gpi82x2eot75kkgj9p-17842582349215.jpg"> <strong>gpi82x2eot75kkgj9p-17842582349215.jpg</strong>
+</summary>
+
+- **Name:** 孑念空行5
+- **Published Date:** 2026-07-17 03:17:06
+- **Downloaded Date:** 2026-07-18T02:55:52Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 466.6 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/gpi82x2eot75kkgj9p-17842582349215.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1784217600000/gpi82x2eot75kkgj9p-17842582349215.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
