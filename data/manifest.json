@@ -5,7 +5,7 @@
     "success": 911,
     "failed": 0,
     "lastUpdated": "2026-07-21T09:40:14Z",
-    "lastActionRun": "2026-07-22T03:19:17Z",
+    "lastActionRun": "2026-08-12T02:24:39Z",
     "wallpapers": [
       {
         "filename": "00mypqzhee2bmf7ad6-16911465097297.jpg",
@@ -21880,7 +21880,7 @@
     "success": 706,
     "failed": 0,
     "lastUpdated": "2026-07-17T09:12:10Z",
-    "lastActionRun": "2026-07-22T03:19:17Z",
+    "lastActionRun": "2026-08-12T02:24:39Z",
     "wallpapers": [
       {
         "filename": "02u9d4930i0094nhvj-1777283045597壁纸2.png",
@@ -38830,11 +38830,11 @@
   },
   "global": {
     "name": "Global Server",
-    "total": 340,
-    "success": 340,
+    "total": 342,
+    "success": 342,
     "failed": 0,
     "lastUpdated": "2026-07-17T10:15:11Z",
-    "lastActionRun": "2026-07-22T03:19:17Z",
+    "lastActionRun": "2026-08-12T02:24:39Z",
     "wallpapers": [
       {
         "filename": "07r2afens5bi7zwp32-1760433012098道别-加特效.jpg",
@@ -39003,6 +39003,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1773819807635,
         "ossUpdate_formatted": "2026-03-18 07:43:27"
+      },
+      {
+        "filename": "0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1786377600000/0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "releaseTime": "2026-08-12T02:24:39Z",
+        "size": "7.28 MB",
+        "gameId": "G167",
+        "pictureId": 4617,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1786377600000/cpjiqyenbxri3hyir5-1786436958382露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "nameIn": "剪身成蝶",
+        "sortingMark": 182,
+        "startTime": 1745895013000,
+        "startTime_formatted": "2025-04-29 02:50:13",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1786436962603,
+        "ossUpdate_formatted": "2026-08-11 08:29:22"
       },
       {
         "filename": "0t1heojgwyhzi7mlrj-1752835271166不依-改绷带城市.jpg",
@@ -40347,6 +40371,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1711095897378,
         "ossUpdate_formatted": "2024-03-22 08:24:57"
+      },
+      {
+        "filename": "63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "server": "Global Server",
+        "status": "success",
+        "resolution": "7680x4320",
+        "category": "desktop",
+        "preview": "63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1786377600000/63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "releaseTime": "2026-08-12T02:24:39Z",
+        "size": "7.28 MB",
+        "gameId": "G167",
+        "pictureId": 4616,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1786377600000/y0rkxk7c3m8adg4s8o-1786415937769露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "nameIn": "剪身成蝶",
+        "sortingMark": 181,
+        "startTime": 1745894960000,
+        "startTime_formatted": "2025-04-29 02:49:20",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1786415943945,
+        "ossUpdate_formatted": "2026-08-11 02:39:03"
       },
       {
         "filename": "63nohgzpet4oq2bxoc-1701677876521邦比好感.jpg",
@@ -47005,7 +47053,7 @@
     "success": 258,
     "failed": 0,
     "lastUpdated": "2026-07-17T03:18:34Z",
-    "lastActionRun": "2026-07-22T03:19:17Z",
+    "lastActionRun": "2026-08-12T02:24:39Z",
     "wallpapers": [
       {
         "filename": "01e2dd3yqoar25ic4f-1763983192136繁中.png",
@@ -53155,7 +53203,7 @@
         "ossUpdate_formatted": "2026-02-07 04:01:18"
       }
     ],
-    "pictureCount": 226
+    "pictureCount": 216
   },
   "kr": {
     "name": "KR Server",
@@ -53163,7 +53211,7 @@
     "success": 593,
     "failed": 0,
     "lastUpdated": "2026-07-21T02:50:51Z",
-    "lastActionRun": "2026-07-22T03:19:17Z",
+    "lastActionRun": "2026-08-12T02:24:39Z",
     "wallpapers": [
       {
         "filename": "01zfp40e584l55633r-1731998358962388.jpg",
@@ -67400,5 +67448,5 @@
     ],
     "pictureCount": 593
   },
-  "releaseTime": "2026-07-22T03:19:17Z"
+  "releaseTime": "2026-08-12T02:24:39Z"
 }
