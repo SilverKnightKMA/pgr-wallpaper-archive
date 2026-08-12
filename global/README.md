@@ -1,6 +1,6 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 340 wallpapers
+> Total: 342 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
@@ -2747,6 +2747,23 @@
 
 <details>
 <summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/0o0rtpccodrpqsxaai-1786436959084%E9%9C%B2%E8%A5%BF%E4%BA%9ACG-%E9%A9%B6%E5%90%91%E6%98%9F%E6%B5%B7%E7%9A%84%E8%BF%90%E6%B2%B3-%E5%B7%AE%E5%88%861+2.jpg" width="200" alt="0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg" title="0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg"> <strong>0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg</strong>
+</summary>
+
+- **Name:** 剪身成蝶
+- **Published Date:** 2025-04-29 02:50:13
+- **Downloaded Date:** 2026-08-12T02:24:39Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 7.28 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/0o0rtpccodrpqsxaai-1786436959084%E9%9C%B2%E8%A5%BF%E4%BA%9ACG-%E9%A9%B6%E5%90%91%E6%98%9F%E6%B5%B7%E7%9A%84%E8%BF%90%E6%B2%B3-%E5%B7%AE%E5%88%861+2.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1786377600000/0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
 <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/vasbohgpm30yn85upq-1745895032556%E4%B8%83%E5%AE%9E-%E5%87%BA%E5%87%BB.jpg" width="200" alt="vasbohgpm30yn85upq-1745895032556七实-出击.jpg" title="vasbohgpm30yn85upq-1745895032556七实-出击.jpg"> <strong>vasbohgpm30yn85upq-1745895032556七实-出击.jpg</strong>
 </summary>
 
@@ -2759,6 +2776,23 @@
 - **Status:** Success
 - **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/vasbohgpm30yn85upq-1745895032556%E4%B8%83%E5%AE%9E-%E5%87%BA%E5%87%BB.jpg)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1745856000000/vasbohgpm30yn85upq-1745895032556七实-出击.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/63edtak1hop68ihimk-1786415938457%E9%9C%B2%E8%A5%BF%E4%BA%9ACG-%E9%A9%B6%E5%90%91%E6%98%9F%E6%B5%B7%E7%9A%84%E8%BF%90%E6%B2%B3-%E5%B7%AE%E5%88%861+2.jpg" width="200" alt="63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg" title="63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg"> <strong>63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg</strong>
+</summary>
+
+- **Name:** 剪身成蝶
+- **Published Date:** 2025-04-29 02:49:20
+- **Downloaded Date:** 2026-08-12T02:24:39Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 7680x4320
+- **Size:** 7.28 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/63edtak1hop68ihimk-1786415938457%E9%9C%B2%E8%A5%BF%E4%BA%9ACG-%E9%A9%B6%E5%90%91%E6%98%9F%E6%B5%B7%E7%9A%84%E8%BF%90%E6%B2%B3-%E5%B7%AE%E5%88%861+2.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1786377600000/63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg">Original</a>
 
 </details>
 
