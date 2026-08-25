@@ -1,12 +1,165 @@
 # TW Server — PGR Wallpaper Archive
 
-> Total: 258 wallpapers
+> Total: 267 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=tw)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nz2ws1hkywea290izy-178753712237303.jpg" width="200" alt="nz2ws1hkywea290izy-178753712237303.jpg" title="nz2ws1hkywea290izy-178753712237303.jpg"> <strong>nz2ws1hkywea290izy-178753712237303.jpg</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:05:08
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.63 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nz2ws1hkywea290izy-178753712237303.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/nz2ws1hkywea290izy-178753712237303.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/a0h8syuw4qcagb2cit-178753709820904.jpg" width="200" alt="a0h8syuw4qcagb2cit-178753709820904.png" title="a0h8syuw4qcagb2cit-178753709820904.png"> <strong>a0h8syuw4qcagb2cit-178753709820904.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:04:43
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.18 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/a0h8syuw4qcagb2cit-178753709820904.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/a0h8syuw4qcagb2cit-178753709820904.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/6qn07adpxqs1jqsrj8-178753707175105.jpg" width="200" alt="6qn07adpxqs1jqsrj8-178753707175105.jpg" title="6qn07adpxqs1jqsrj8-178753707175105.jpg"> <strong>6qn07adpxqs1jqsrj8-178753707175105.jpg</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:04:20
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.27 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/6qn07adpxqs1jqsrj8-178753707175105.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/6qn07adpxqs1jqsrj8-178753707175105.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/55sbqgo57lg5lxn9fy-178753705186106.jpg" width="200" alt="55sbqgo57lg5lxn9fy-178753705186106.png" title="55sbqgo57lg5lxn9fy-178753705186106.png"> <strong>55sbqgo57lg5lxn9fy-178753705186106.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:04:00
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.73 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/55sbqgo57lg5lxn9fy-178753705186106.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/55sbqgo57lg5lxn9fy-178753705186106.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ule9pznt0podsucee2-178753703049207.jpg" width="200" alt="ule9pznt0podsucee2-178753703049207.png" title="ule9pznt0podsucee2-178753703049207.png"> <strong>ule9pznt0podsucee2-178753703049207.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:03:33
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ule9pznt0podsucee2-178753703049207.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/ule9pznt0podsucee2-178753703049207.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/dl59fnwow92057teyk-178753700017108.jpg" width="200" alt="dl59fnwow92057teyk-178753700017108.png" title="dl59fnwow92057teyk-178753700017108.png"> <strong>dl59fnwow92057teyk-178753700017108.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:03:09
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.82 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/dl59fnwow92057teyk-178753700017108.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/dl59fnwow92057teyk-178753700017108.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/82e8ek9yp5dqph8ut7-178753697404309.jpg" width="200" alt="82e8ek9yp5dqph8ut7-178753697404309.png" title="82e8ek9yp5dqph8ut7-178753697404309.png"> <strong>82e8ek9yp5dqph8ut7-178753697404309.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:02:43
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.30 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/82e8ek9yp5dqph8ut7-178753697404309.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/82e8ek9yp5dqph8ut7-178753697404309.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/og6b8c9kkxsc1i604s-178730712943001.jpg" width="200" alt="og6b8c9kkxsc1i604s-178730712943001.png" title="og6b8c9kkxsc1i604s-178730712943001.png"> <strong>og6b8c9kkxsc1i604s-178730712943001.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:02:30
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.76 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/og6b8c9kkxsc1i604s-178730712943001.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787241600000/og6b8c9kkxsc1i604s-178730712943001.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/aqfirzobp8rxxmhjde-178753694183602.jpg" width="200" alt="aqfirzobp8rxxmhjde-178753694183602.png" title="aqfirzobp8rxxmhjde-178753694183602.png"> <strong>aqfirzobp8rxxmhjde-178753694183602.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 02:00:55
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.43 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/aqfirzobp8rxxmhjde-178753694183602.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/aqfirzobp8rxxmhjde-178753694183602.png">Original</a>
+
+</details>
 
 <details>
 <summary>

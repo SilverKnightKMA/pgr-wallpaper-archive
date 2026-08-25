@@ -1,12 +1,437 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 342 wallpapers
+> Total: 367 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=global)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/vn4y1k89chciz8gb3u-17875604884943.jpg" width="200" alt="vn4y1k89chciz8gb3u-17875604884943.png" title="vn4y1k89chciz8gb3u-17875604884943.png"> <strong>vn4y1k89chciz8gb3u-17875604884943.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:34:32
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.54 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/vn4y1k89chciz8gb3u-17875604884943.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/vn4y1k89chciz8gb3u-17875604884943.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mj0g1wfsfq6u02qpdm-178756046378916.jpg" width="200" alt="mj0g1wfsfq6u02qpdm-178756046378916.png" title="mj0g1wfsfq6u02qpdm-178756046378916.png"> <strong>mj0g1wfsfq6u02qpdm-178756046378916.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:34:17
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.59 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mj0g1wfsfq6u02qpdm-178756046378916.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/mj0g1wfsfq6u02qpdm-178756046378916.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/uqm0no0fyyo1r6majl-178756044823015.jpg" width="200" alt="uqm0no0fyyo1r6majl-178756044823015.png" title="uqm0no0fyyo1r6majl-178756044823015.png"> <strong>uqm0no0fyyo1r6majl-178756044823015.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:34:01
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.78 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/uqm0no0fyyo1r6majl-178756044823015.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/uqm0no0fyyo1r6majl-178756044823015.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/b584jelzryie5wackl-178756043203414.jpg" width="200" alt="b584jelzryie5wackl-178756043203414.png" title="b584jelzryie5wackl-178756043203414.png"> <strong>b584jelzryie5wackl-178756043203414.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:33:42
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.84 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/b584jelzryie5wackl-178756043203414.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/b584jelzryie5wackl-178756043203414.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/lzc97rha4cpvnjcaf9-178756039855213.jpg" width="200" alt="lzc97rha4cpvnjcaf9-178756039855213.png" title="lzc97rha4cpvnjcaf9-178756039855213.png"> <strong>lzc97rha4cpvnjcaf9-178756039855213.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:32:56
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lzc97rha4cpvnjcaf9-178756039855213.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/lzc97rha4cpvnjcaf9-178756039855213.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/fvckgkhtbwr23vl5r5-178756035556812.jpg" width="200" alt="fvckgkhtbwr23vl5r5-178756035556812.png" title="fvckgkhtbwr23vl5r5-178756035556812.png"> <strong>fvckgkhtbwr23vl5r5-178756035556812.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:32:28
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1185
+- **Size:** 3.98 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fvckgkhtbwr23vl5r5-178756035556812.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/fvckgkhtbwr23vl5r5-178756035556812.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/loa3zjefa0ej8xdc1w-178756033967011.jpg" width="200" alt="loa3zjefa0ej8xdc1w-178756033967011.png" title="loa3zjefa0ej8xdc1w-178756033967011.png"> <strong>loa3zjefa0ej8xdc1w-178756033967011.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:32:12
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.74 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/loa3zjefa0ej8xdc1w-178756033967011.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/loa3zjefa0ej8xdc1w-178756033967011.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/kueibeid2eq6iz27qs-178756032414610.jpg" width="200" alt="kueibeid2eq6iz27qs-178756032414610.png" title="kueibeid2eq6iz27qs-178756032414610.png"> <strong>kueibeid2eq6iz27qs-178756032414610.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:31:56
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 4.54 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/kueibeid2eq6iz27qs-178756032414610.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/kueibeid2eq6iz27qs-178756032414610.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/457dtxhgewpg0u70gm-17875603094429.jpg" width="200" alt="457dtxhgewpg0u70gm-17875603094429.png" title="457dtxhgewpg0u70gm-17875603094429.png"> <strong>457dtxhgewpg0u70gm-17875603094429.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:31:43
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.79 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/457dtxhgewpg0u70gm-17875603094429.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/457dtxhgewpg0u70gm-17875603094429.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/kiw64l4lo6tmzt3bet-17875602899008.jpg" width="200" alt="kiw64l4lo6tmzt3bet-17875602899008.png" title="kiw64l4lo6tmzt3bet-17875602899008.png"> <strong>kiw64l4lo6tmzt3bet-17875602899008.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:31:23
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.58 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/kiw64l4lo6tmzt3bet-17875602899008.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/kiw64l4lo6tmzt3bet-17875602899008.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/eqjbz6t8gryw4as49y-17875602750477.jpg" width="200" alt="eqjbz6t8gryw4as49y-17875602750477.png" title="eqjbz6t8gryw4as49y-17875602750477.png"> <strong>eqjbz6t8gryw4as49y-17875602750477.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:31:08
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.32 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/eqjbz6t8gryw4as49y-17875602750477.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/eqjbz6t8gryw4as49y-17875602750477.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/yepzcl83t8k7gh32zh-17875602561876.jpg" width="200" alt="yepzcl83t8k7gh32zh-17875602561876.png" title="yepzcl83t8k7gh32zh-17875602561876.png"> <strong>yepzcl83t8k7gh32zh-17875602561876.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:30:48
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.84 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/yepzcl83t8k7gh32zh-17875602561876.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/yepzcl83t8k7gh32zh-17875602561876.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/lszvapz20e59fi4ytx-17875602404855.jpg" width="200" alt="lszvapz20e59fi4ytx-17875602404855.png" title="lszvapz20e59fi4ytx-17875602404855.png"> <strong>lszvapz20e59fi4ytx-17875602404855.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:30:34
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.25 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lszvapz20e59fi4ytx-17875602404855.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/lszvapz20e59fi4ytx-17875602404855.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/k3yc2r5pcihj7sdi2h-17875602259184.jpg" width="200" alt="k3yc2r5pcihj7sdi2h-17875602259184.png" title="k3yc2r5pcihj7sdi2h-17875602259184.png"> <strong>k3yc2r5pcihj7sdi2h-17875602259184.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:30:12
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.50 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/k3yc2r5pcihj7sdi2h-17875602259184.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/k3yc2r5pcihj7sdi2h-17875602259184.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5pnyhiixbisnh4sgek-17875602013132.jpg" width="200" alt="5pnyhiixbisnh4sgek-17875602013132.png" title="5pnyhiixbisnh4sgek-17875602013132.png"> <strong>5pnyhiixbisnh4sgek-17875602013132.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:29:55
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 4.39 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5pnyhiixbisnh4sgek-17875602013132.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/5pnyhiixbisnh4sgek-17875602013132.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/qyiz6ge6j5icc7wylv-17875601825841.jpg" width="200" alt="qyiz6ge6j5icc7wylv-17875601825841.png" title="qyiz6ge6j5icc7wylv-17875601825841.png"> <strong>qyiz6ge6j5icc7wylv-17875601825841.png</strong>
+</summary>
+
+- **Name:** 于频率中相汇-演唱会专项
+- **Published Date:** 2026-08-24 08:29:32
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 4.79 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/qyiz6ge6j5icc7wylv-17875601825841.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/qyiz6ge6j5icc7wylv-17875601825841.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/uhb4mpxyj8hihs42nt-178754511307309.jpg" width="200" alt="uhb4mpxyj8hihs42nt-178754511307309.png" title="uhb4mpxyj8hihs42nt-178754511307309.png"> <strong>uhb4mpxyj8hihs42nt-178754511307309.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:18:25
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/uhb4mpxyj8hihs42nt-178754511307309.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/uhb4mpxyj8hihs42nt-178754511307309.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bl2iqqno3md8igm5cb-178754509447808.jpg" width="200" alt="bl2iqqno3md8igm5cb-178754509447808.png" title="bl2iqqno3md8igm5cb-178754509447808.png"> <strong>bl2iqqno3md8igm5cb-178754509447808.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:18:04
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.81 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/bl2iqqno3md8igm5cb-178754509447808.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/bl2iqqno3md8igm5cb-178754509447808.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/0reelblwolq2lblnwk-178754507481607.jpg" width="200" alt="0reelblwolq2lblnwk-178754507481607.png" title="0reelblwolq2lblnwk-178754507481607.png"> <strong>0reelblwolq2lblnwk-178754507481607.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:17:46
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/0reelblwolq2lblnwk-178754507481607.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/0reelblwolq2lblnwk-178754507481607.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/y0egtggpt3gjuotsjf-178754505595006.jpg" width="200" alt="y0egtggpt3gjuotsjf-178754505595006.png" title="y0egtggpt3gjuotsjf-178754505595006.png"> <strong>y0egtggpt3gjuotsjf-178754505595006.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:17:26
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.73 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/y0egtggpt3gjuotsjf-178754505595006.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/y0egtggpt3gjuotsjf-178754505595006.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/yv1l24kvg81b10jqet-178754503675605.jpg" width="200" alt="yv1l24kvg81b10jqet-178754503675605.jpg" title="yv1l24kvg81b10jqet-178754503675605.jpg"> <strong>yv1l24kvg81b10jqet-178754503675605.jpg</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:17:11
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1908x1073
+- **Size:** 2.27 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/yv1l24kvg81b10jqet-178754503675605.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/yv1l24kvg81b10jqet-178754503675605.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/sy1nfq3ee0hdz6c9d0-178754502245004.jpg" width="200" alt="sy1nfq3ee0hdz6c9d0-178754502245004.png" title="sy1nfq3ee0hdz6c9d0-178754502245004.png"> <strong>sy1nfq3ee0hdz6c9d0-178754502245004.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:16:54
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.18 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/sy1nfq3ee0hdz6c9d0-178754502245004.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/sy1nfq3ee0hdz6c9d0-178754502245004.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jlz1c2eppa31sn9wph-178754500531003.jpg" width="200" alt="jlz1c2eppa31sn9wph-178754500531003.jpg" title="jlz1c2eppa31sn9wph-178754500531003.jpg"> <strong>jlz1c2eppa31sn9wph-178754500531003.jpg</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:16:32
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.63 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jlz1c2eppa31sn9wph-178754500531003.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/jlz1c2eppa31sn9wph-178754500531003.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/46q0sbr0h4erjrkro0-178754498126002.jpg" width="200" alt="46q0sbr0h4erjrkro0-178754498126002.png" title="46q0sbr0h4erjrkro0-178754498126002.png"> <strong>46q0sbr0h4erjrkro0-178754498126002.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:16:15
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.43 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/46q0sbr0h4erjrkro0-178754498126002.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/46q0sbr0h4erjrkro0-178754498126002.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/f274sjeulcwf4wv8i2-178754496486001.jpg" width="200" alt="f274sjeulcwf4wv8i2-178754496486001.png" title="f274sjeulcwf4wv8i2-178754496486001.png"> <strong>f274sjeulcwf4wv8i2-178754496486001.png</strong>
+</summary>
+
+- **Name:** 歧海循光
+- **Published Date:** 2026-08-24 04:15:50
+- **Downloaded Date:** 2026-08-25T01:38:12Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.76 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/f274sjeulcwf4wv8i2-178754496486001.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/f274sjeulcwf4wv8i2-178754496486001.png">Original</a>
+
+</details>
 
 <details>
 <summary>
