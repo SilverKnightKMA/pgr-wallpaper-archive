@@ -1,12 +1,998 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 367 wallpapers
+> Total: 425 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=global)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/j4yktz4xeohzrr8obt-178773156903140%E6%B5%B7%E4%BC%A6%E6%B1%80-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="j4yktz4xeohzrr8obt-178773156903140海伦汀-合并调整_EN_英文_logo.png" title="j4yktz4xeohzrr8obt-178773156903140海伦汀-合并调整_EN_英文_logo.png"> <strong>j4yktz4xeohzrr8obt-178773156903140海伦汀-合并调整_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:05:59
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3125x1758
+- **Size:** 7.90 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/j4yktz4xeohzrr8obt-178773156903140%E6%B5%B7%E4%BC%A6%E6%B1%80-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/j4yktz4xeohzrr8obt-178773156903140海伦汀-合并调整_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/a2dg8o8al8btmb2prx-178773154946939%E6%B6%85%E7%BC%87%E5%A8%85_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="a2dg8o8al8btmb2prx-178773154946939涅缇娅_EN_英文_logo.png" title="a2dg8o8al8btmb2prx-178773154946939涅缇娅_EN_英文_logo.png"> <strong>a2dg8o8al8btmb2prx-178773154946939涅缇娅_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:05:39
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3891x2189
+- **Size:** 7.98 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/a2dg8o8al8btmb2prx-178773154946939%E6%B6%85%E7%BC%87%E5%A8%85_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/a2dg8o8al8btmb2prx-178773154946939涅缇娅_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/d20qz845ghiyvqy7n5-178773152489838%E5%93%88%E5%8D%A1%E7%8E%9B-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="d20qz845ghiyvqy7n5-178773152489838哈卡玛-合并调整_EN_英文_logo.png" title="d20qz845ghiyvqy7n5-178773152489838哈卡玛-合并调整_EN_英文_logo.png"> <strong>d20qz845ghiyvqy7n5-178773152489838哈卡玛-合并调整_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:05:15
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3037x1708
+- **Size:** 7.87 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/d20qz845ghiyvqy7n5-178773152489838%E5%93%88%E5%8D%A1%E7%8E%9B-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/d20qz845ghiyvqy7n5-178773152489838哈卡玛-合并调整_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/9f2zhwx98e74u91vtp-178773150750837%E4%B8%83%E5%AE%9E-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="9f2zhwx98e74u91vtp-178773150750837七实-合并调整_EN_英文_logo.png" title="9f2zhwx98e74u91vtp-178773150750837七实-合并调整_EN_英文_logo.png"> <strong>9f2zhwx98e74u91vtp-178773150750837七实-合并调整_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:04:58
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.42 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/9f2zhwx98e74u91vtp-178773150750837%E4%B8%83%E5%AE%9E-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/9f2zhwx98e74u91vtp-178773150750837七实-合并调整_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/atgi03lxxrlv1hztxw-178773147524636%E7%BD%97%E5%A1%9E%E5%A1%94-%E8%B0%83%E6%95%B4%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="atgi03lxxrlv1hztxw-178773147524636罗塞塔-调整合并_EN_英文_logo.png" title="atgi03lxxrlv1hztxw-178773147524636罗塞塔-调整合并_EN_英文_logo.png"> <strong>atgi03lxxrlv1hztxw-178773147524636罗塞塔-调整合并_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:04:24
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2972x1672
+- **Size:** 7.90 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/atgi03lxxrlv1hztxw-178773147524636%E7%BD%97%E5%A1%9E%E5%A1%94-%E8%B0%83%E6%95%B4%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/atgi03lxxrlv1hztxw-178773147524636罗塞塔-调整合并_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g4fu7bvgqmpx0j3mde-178773143585835%E8%8E%89%E8%8E%89%E4%B8%9D%E4%BF%AE%E6%94%B9_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="g4fu7bvgqmpx0j3mde-178773143585835莉莉丝修改_EN_英文_logo.png" title="g4fu7bvgqmpx0j3mde-178773143585835莉莉丝修改_EN_英文_logo.png"> <strong>g4fu7bvgqmpx0j3mde-178773143585835莉莉丝修改_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:03:46
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.09 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g4fu7bvgqmpx0j3mde-178773143585835%E8%8E%89%E8%8E%89%E4%B8%9D%E4%BF%AE%E6%94%B9_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/g4fu7bvgqmpx0j3mde-178773143585835莉莉丝修改_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/b753iwmexc75ip252e-178773141816534%E8%89%BE%E6%8B%89_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="b753iwmexc75ip252e-178773141816534艾拉_EN_英文_logo.png" title="b753iwmexc75ip252e-178773141816534艾拉_EN_英文_logo.png"> <strong>b753iwmexc75ip252e-178773141816534艾拉_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:03:26
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3190x1795
+- **Size:** 7.87 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/b753iwmexc75ip252e-178773141816534%E8%89%BE%E6%8B%89_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/b753iwmexc75ip252e-178773141816534艾拉_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bvzdfthx7ax3zptkdp-178773139677633%E9%82%A6%E6%AF%94%E5%A8%9C%E5%A1%94_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="bvzdfthx7ax3zptkdp-178773139677633邦比娜塔_EN_英文_logo.png" title="bvzdfthx7ax3zptkdp-178773139677633邦比娜塔_EN_英文_logo.png"> <strong>bvzdfthx7ax3zptkdp-178773139677633邦比娜塔_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:03:05
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.38 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/bvzdfthx7ax3zptkdp-178773139677633%E9%82%A6%E6%AF%94%E5%A8%9C%E5%A1%94_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/bvzdfthx7ax3zptkdp-178773139677633邦比娜塔_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hdgvm55wl69qdlbo4w-178773137771732%E6%96%9C%E5%A5%8F_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="hdgvm55wl69qdlbo4w-178773137771732斜奏_EN_英文_logo.png" title="hdgvm55wl69qdlbo4w-178773137771732斜奏_EN_英文_logo.png"> <strong>hdgvm55wl69qdlbo4w-178773137771732斜奏_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:02:48
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2753x1549
+- **Size:** 7.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hdgvm55wl69qdlbo4w-178773137771732%E6%96%9C%E5%A5%8F_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/hdgvm55wl69qdlbo4w-178773137771732斜奏_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/f8sdo5r3lgv55fzid2-178773136034831%E6%AF%94%E5%AE%89%E5%8D%A1_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="f8sdo5r3lgv55fzid2-178773136034831比安卡_EN_英文_logo.png" title="f8sdo5r3lgv55fzid2-178773136034831比安卡_EN_英文_logo.png"> <strong>f8sdo5r3lgv55fzid2-178773136034831比安卡_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:02:29
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3063x1723
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/f8sdo5r3lgv55fzid2-178773136034831%E6%AF%94%E5%AE%89%E5%8D%A1_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/f8sdo5r3lgv55fzid2-178773136034831比安卡_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/92pmiovrs1trbxcz6k-178773134072030%E7%BB%B4%E7%BD%97%E5%A6%AE%E5%8D%A1_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="92pmiovrs1trbxcz6k-178773134072030维罗妮卡_EN_英文_logo.png" title="92pmiovrs1trbxcz6k-178773134072030维罗妮卡_EN_英文_logo.png"> <strong>92pmiovrs1trbxcz6k-178773134072030维罗妮卡_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:02:11
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 4.83 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/92pmiovrs1trbxcz6k-178773134072030%E7%BB%B4%E7%BD%97%E5%A6%AE%E5%8D%A1_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/92pmiovrs1trbxcz6k-178773134072030维罗妮卡_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/i6g2qylw6sotlttppo-178773131217029%E5%B8%83%E5%81%B6%E7%86%8A_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="i6g2qylw6sotlttppo-178773131217029布偶熊_EN_英文_logo.png" title="i6g2qylw6sotlttppo-178773131217029布偶熊_EN_英文_logo.png"> <strong>i6g2qylw6sotlttppo-178773131217029布偶熊_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:01:42
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.64 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/i6g2qylw6sotlttppo-178773131217029%E5%B8%83%E5%81%B6%E7%86%8A_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/i6g2qylw6sotlttppo-178773131217029布偶熊_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/1m29tzwdoezy57jtzw-178773128901928%E8%96%87%E6%8B%89_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="1m29tzwdoezy57jtzw-178773128901928薇拉_EN_英文_logo.png" title="1m29tzwdoezy57jtzw-178773128901928薇拉_EN_英文_logo.png"> <strong>1m29tzwdoezy57jtzw-178773128901928薇拉_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:01:15
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3475x1955
+- **Size:** 7.98 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/1m29tzwdoezy57jtzw-178773128901928%E8%96%87%E6%8B%89_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/1m29tzwdoezy57jtzw-178773128901928薇拉_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g978dc1zbitiyvid1v-178773125279427%E9%9C%B2%E5%A8%9C_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="g978dc1zbitiyvid1v-178773125279427露娜_EN_英文_logo.png" title="g978dc1zbitiyvid1v-178773125279427露娜_EN_英文_logo.png"> <strong>g978dc1zbitiyvid1v-178773125279427露娜_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:00:41
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3190x1795
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g978dc1zbitiyvid1v-178773125279427%E9%9C%B2%E5%A8%9C_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/g978dc1zbitiyvid1v-178773125279427露娜_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/e4a2bshv0inj5cbq1g-178773123386426%E5%8D%A1%E7%A9%86%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="e4a2bshv0inj5cbq1g-178773123386426卡穆合并_EN_英文_logo.png" title="e4a2bshv0inj5cbq1g-178773123386426卡穆合并_EN_英文_logo.png"> <strong>e4a2bshv0inj5cbq1g-178773123386426卡穆合并_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:00:23
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2884x1622
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/e4a2bshv0inj5cbq1g-178773123386426%E5%8D%A1%E7%A9%86%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/e4a2bshv0inj5cbq1g-178773123386426卡穆合并_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5rex32iaso4kk8zp2e-178773121687825%E8%8B%8F%E8%8F%B2%E4%BA%9A_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="5rex32iaso4kk8zp2e-178773121687825苏菲亚_EN_英文_logo.png" title="5rex32iaso4kk8zp2e-178773121687825苏菲亚_EN_英文_logo.png"> <strong>5rex32iaso4kk8zp2e-178773121687825苏菲亚_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 08:00:06
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3125x1758
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5rex32iaso4kk8zp2e-178773121687825%E8%8B%8F%E8%8F%B2%E4%BA%9A_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/5rex32iaso4kk8zp2e-178773121687825苏菲亚_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q0yty1q9odd2nthte8-178773119829424%E8%B5%9B%E7%90%B3%E5%A8%9C%E4%B8%8A%E8%89%B2-%E6%94%B92(%E8%B0%83%E8%83%8C%E6%99%AF%E5%92%8C%E8%84%B8%EF%BC%89_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="q0yty1q9odd2nthte8-178773119829424赛琳娜上色-改2(调背景和脸）_EN_英文_logo.png" title="q0yty1q9odd2nthte8-178773119829424赛琳娜上色-改2(调背景和脸）_EN_英文_logo.png"> <strong>q0yty1q9odd2nthte8-178773119829424赛琳娜上色-改2(调背景和脸）_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:59:47
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.55 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q0yty1q9odd2nthte8-178773119829424%E8%B5%9B%E7%90%B3%E5%A8%9C%E4%B8%8A%E8%89%B2-%E6%94%B92(%E8%B0%83%E8%83%8C%E6%99%AF%E5%92%8C%E8%84%B8%EF%BC%89_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/q0yty1q9odd2nthte8-178773119829424赛琳娜上色-改2(调背景和脸）_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/8su79mgti3bmbanusi-178773117985523%E6%B4%81%E5%A1%94%E8%96%87_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="8su79mgti3bmbanusi-178773117985523洁塔薇_EN_英文_logo.png" title="8su79mgti3bmbanusi-178773117985523洁塔薇_EN_英文_logo.png"> <strong>8su79mgti3bmbanusi-178773117985523洁塔薇_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:59:27
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3210x1806
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8su79mgti3bmbanusi-178773117985523%E6%B4%81%E5%A1%94%E8%96%87_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/8su79mgti3bmbanusi-178773117985523洁塔薇_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ha58sx8385cyqrjh53-178773115859922%E8%92%B2%E7%89%A2_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="ha58sx8385cyqrjh53-178773115859922蒲牢_EN_英文_logo.png" title="ha58sx8385cyqrjh53-178773115859922蒲牢_EN_英文_logo.png"> <strong>ha58sx8385cyqrjh53-178773115859922蒲牢_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:59:07
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3840x2160
+- **Size:** 7.08 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ha58sx8385cyqrjh53-178773115859922%E8%92%B2%E7%89%A2_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/ha58sx8385cyqrjh53-178773115859922蒲牢_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hlemawicpoqhnoecog-178773113966021%E4%B8%BD%E8%8A%99_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="hlemawicpoqhnoecog-178773113966021丽芙_EN_英文_logo.png" title="hlemawicpoqhnoecog-178773113966021丽芙_EN_英文_logo.png"> <strong>hlemawicpoqhnoecog-178773113966021丽芙_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:58:48
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.27 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hlemawicpoqhnoecog-178773113966021%E4%B8%BD%E8%8A%99_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/hlemawicpoqhnoecog-178773113966021丽芙_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/4n9dqyrbayt448v41l-178773110673020%E8%AF%BA%E5%AE%89_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="4n9dqyrbayt448v41l-178773110673020诺安_EN_英文_logo.png" title="4n9dqyrbayt448v41l-178773110673020诺安_EN_英文_logo.png"> <strong>4n9dqyrbayt448v41l-178773110673020诺安_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:58:18
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3840x2160
+- **Size:** 4.04 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4n9dqyrbayt448v41l-178773110673020%E8%AF%BA%E5%AE%89_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/4n9dqyrbayt448v41l-178773110673020诺安_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/e4bihuw8xpdxao0tiz-178773109112019%E5%BA%93%E6%B4%9B%E5%A7%86_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="e4bihuw8xpdxao0tiz-178773109112019库洛姆_EN_英文_logo.png" title="e4bihuw8xpdxao0tiz-178773109112019库洛姆_EN_英文_logo.png"> <strong>e4bihuw8xpdxao0tiz-178773109112019库洛姆_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:58:02
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2853x1605
+- **Size:** 7.85 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/e4bihuw8xpdxao0tiz-178773109112019%E5%BA%93%E6%B4%9B%E5%A7%86_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/e4bihuw8xpdxao0tiz-178773109112019库洛姆_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/08abhkaim5vtclvqmm-178773107438718%E5%90%AB%E8%8B%B1%20(2)_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="08abhkaim5vtclvqmm-178773107438718含英 (2)_EN_英文_logo.png" title="08abhkaim5vtclvqmm-178773107438718含英 (2)_EN_英文_logo.png"> <strong>08abhkaim5vtclvqmm-178773107438718含英 (2)_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:57:43
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3588x2018
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/08abhkaim5vtclvqmm-178773107438718%E5%90%AB%E8%8B%B1%20(2)_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/08abhkaim5vtclvqmm-178773107438718含英 (2)_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hb7axg6lafo3apvqby-178773105544917%E9%87%8C%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="hb7axg6lafo3apvqby-178773105544917里合并_EN_英文_logo.png" title="hb7axg6lafo3apvqby-178773105544917里合并_EN_英文_logo.png"> <strong>hb7axg6lafo3apvqby-178773105544917里合并_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:57:26
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2979x1676
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hb7axg6lafo3apvqby-178773105544917%E9%87%8C%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/hb7axg6lafo3apvqby-178773105544917里合并_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/8uilz2skv4rymx7shp-178773103278616%E9%98%BF%E5%B0%94%E6%B3%95%E6%88%90%E5%9B%BE%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="8uilz2skv4rymx7shp-178773103278616阿尔法成图合并_EN_英文_logo.png" title="8uilz2skv4rymx7shp-178773103278616阿尔法成图合并_EN_英文_logo.png"> <strong>8uilz2skv4rymx7shp-178773103278616阿尔法成图合并_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:57:04
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2775x1561
+- **Size:** 7.89 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8uilz2skv4rymx7shp-178773103278616%E9%98%BF%E5%B0%94%E6%B3%95%E6%88%90%E5%9B%BE%E5%90%88%E5%B9%B6_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/8uilz2skv4rymx7shp-178773103278616阿尔法成图合并_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/pw02g2ytmk00i15dkl-178773099130615%E9%9C%B2%E8%A5%BF%E4%BA%9A_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="pw02g2ytmk00i15dkl-178773099130615露西亚_EN_英文_logo.png" title="pw02g2ytmk00i15dkl-178773099130615露西亚_EN_英文_logo.png"> <strong>pw02g2ytmk00i15dkl-178773099130615露西亚_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:56:21
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3357x1888
+- **Size:** 7.94 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/pw02g2ytmk00i15dkl-178773099130615%E9%9C%B2%E8%A5%BF%E4%BA%9A_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/pw02g2ytmk00i15dkl-178773099130615露西亚_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/xbf0hd9gyug437cnnk-178773096518314%E4%B8%87%E4%BA%8B%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="xbf0hd9gyug437cnnk-178773096518314万事 合_EN_英文_logo.png" title="xbf0hd9gyug437cnnk-178773096518314万事 合_EN_英文_logo.png"> <strong>xbf0hd9gyug437cnnk-178773096518314万事 合_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:55:56
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2950x1659
+- **Size:** 7.94 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/xbf0hd9gyug437cnnk-178773096518314%E4%B8%87%E4%BA%8B%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/xbf0hd9gyug437cnnk-178773096518314万事 合_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/8krl4vyy0o9t6s27nz-178773094827513%E7%BD%97%E5%85%B0%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="8krl4vyy0o9t6s27nz-178773094827513罗兰 合_EN_英文_logo.png" title="8krl4vyy0o9t6s27nz-178773094827513罗兰 合_EN_英文_logo.png"> <strong>8krl4vyy0o9t6s27nz-178773094827513罗兰 合_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:55:36
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3606x2028
+- **Size:** 7.97 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8krl4vyy0o9t6s27nz-178773094827513%E7%BD%97%E5%85%B0%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/8krl4vyy0o9t6s27nz-178773094827513罗兰 合_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/54quxo64q331temt1v-178773091520612%E6%B8%A1%E8%BE%B9_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="54quxo64q331temt1v-178773091520612渡边_EN_英文_logo.png" title="54quxo64q331temt1v-178773091520612渡边_EN_英文_logo.png"> <strong>54quxo64q331temt1v-178773091520612渡边_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:55:04
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/54quxo64q331temt1v-178773091520612%E6%B8%A1%E8%BE%B9_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/54quxo64q331temt1v-178773091520612渡边_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/58a78u7f3xz8blgqif-178773089179011%E5%B8%B8%E7%BE%BD_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="58a78u7f3xz8blgqif-178773089179011常羽_EN_英文_logo.png" title="58a78u7f3xz8blgqif-178773089179011常羽_EN_英文_logo.png"> <strong>58a78u7f3xz8blgqif-178773089179011常羽_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:54:42
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.57 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/58a78u7f3xz8blgqif-178773089179011%E5%B8%B8%E7%BE%BD_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/58a78u7f3xz8blgqif-178773089179011常羽_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/cdfczm63txao75uxph-178773085970710%E8%AF%BA%E5%85%8B%E6%8F%90_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="cdfczm63txao75uxph-178773085970710诺克提_EN_英文_logo.png" title="cdfczm63txao75uxph-178773085970710诺克提_EN_英文_logo.png"> <strong>cdfczm63txao75uxph-178773085970710诺克提_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:54:09
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.98 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/cdfczm63txao75uxph-178773085970710%E8%AF%BA%E5%85%8B%E6%8F%90_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/cdfczm63txao75uxph-178773085970710诺克提_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q84ng6pwpmjveby1m6-178773081910309%E4%BA%9A%E9%87%8C%E8%8E%8E%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="q84ng6pwpmjveby1m6-178773081910309亚里莎 合_EN_英文_logo.png" title="q84ng6pwpmjveby1m6-178773081910309亚里莎 合_EN_英文_logo.png"> <strong>q84ng6pwpmjveby1m6-178773081910309亚里莎 合_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:53:29
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3168x1782
+- **Size:** 7.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q84ng6pwpmjveby1m6-178773081910309%E4%BA%9A%E9%87%8C%E8%8E%8E%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/q84ng6pwpmjveby1m6-178773081910309亚里莎 合_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/e96a4ysgagyi3rg2aw-178773080071208%E5%B8%83%E9%87%8C%E5%A7%AC%E7%89%B9_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="e96a4ysgagyi3rg2aw-178773080071208布里姬特_EN_英文_logo.png" title="e96a4ysgagyi3rg2aw-178773080071208布里姬特_EN_英文_logo.png"> <strong>e96a4ysgagyi3rg2aw-178773080071208布里姬特_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:53:10
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3453x1942
+- **Size:** 7.94 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/e96a4ysgagyi3rg2aw-178773080071208%E5%B8%83%E9%87%8C%E5%A7%AC%E7%89%B9_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/e96a4ysgagyi3rg2aw-178773080071208布里姬特_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/anrcrisfaabp6tf8wc-178773077961407%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="anrcrisfaabp6tf8wc-178773077961407卡列尼娜 合_EN_英文_logo.png" title="anrcrisfaabp6tf8wc-178773077961407卡列尼娜 合_EN_英文_logo.png"> <strong>anrcrisfaabp6tf8wc-178773077961407卡列尼娜 合_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:52:50
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3059x1721
+- **Size:** 7.88 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/anrcrisfaabp6tf8wc-178773077961407%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C%20%E5%90%88_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/anrcrisfaabp6tf8wc-178773077961407卡列尼娜 合_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/8ph5g4sxg7kdtpx78r-178773059169306%E6%8B%89%E5%BC%A5%E4%BA%9A%E5%BE%AE%E8%B0%83(1)_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="8ph5g4sxg7kdtpx78r-178773059169306拉弥亚微调(1)_EN_英文_logo.png" title="8ph5g4sxg7kdtpx78r-178773059169306拉弥亚微调(1)_EN_英文_logo.png"> <strong>8ph5g4sxg7kdtpx78r-178773059169306拉弥亚微调(1)_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:49:41
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.78 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8ph5g4sxg7kdtpx78r-178773059169306%E6%8B%89%E5%BC%A5%E4%BA%9A%E5%BE%AE%E8%B0%83(1)_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/8ph5g4sxg7kdtpx78r-178773059169306拉弥亚微调(1)_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ahrbredtbf3xxuf0yn-178773057077605%E5%85%AB%E5%92%AB-%E6%88%90%E5%9B%BE%E5%92%8C_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="ahrbredtbf3xxuf0yn-178773057077605八咫-成图和_EN_英文_logo.png" title="ahrbredtbf3xxuf0yn-178773057077605八咫-成图和_EN_英文_logo.png"> <strong>ahrbredtbf3xxuf0yn-178773057077605八咫-成图和_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:49:21
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3212x1807
+- **Size:** 7.89 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ahrbredtbf3xxuf0yn-178773057077605%E5%85%AB%E5%92%AB-%E6%88%90%E5%9B%BE%E5%92%8C_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/ahrbredtbf3xxuf0yn-178773057077605八咫-成图和_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/noj4erzngjkvrwi5hq-178773053683504%2021%E5%8F%B7_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="noj4erzngjkvrwi5hq-178773053683504 21号_EN_英文_logo.png" title="noj4erzngjkvrwi5hq-178773053683504 21号_EN_英文_logo.png"> <strong>noj4erzngjkvrwi5hq-178773053683504 21号_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:48:46
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3716x2090
+- **Size:** 7.98 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/noj4erzngjkvrwi5hq-178773053683504%2021%E5%8F%B7_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/noj4erzngjkvrwi5hq-178773053683504 21号_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/0hu249tsac5xuap3c0-178773048779003%E6%9B%B2_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="0hu249tsac5xuap3c0-178773048779003曲_EN_英文_logo.png" title="0hu249tsac5xuap3c0-178773048779003曲_EN_英文_logo.png"> <strong>0hu249tsac5xuap3c0-178773048779003曲_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:48:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3891x2189
+- **Size:** 7.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/0hu249tsac5xuap3c0-178773048779003%E6%9B%B2_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/0hu249tsac5xuap3c0-178773048779003曲_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bkrfjecmtrpugkjwy7-178773046769402%E6%85%88%E6%82%B2%E8%80%85_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="bkrfjecmtrpugkjwy7-178773046769402慈悲者_EN_英文_logo.png" title="bkrfjecmtrpugkjwy7-178773046769402慈悲者_EN_英文_logo.png"> <strong>bkrfjecmtrpugkjwy7-178773046769402慈悲者_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:47:40
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.16 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/bkrfjecmtrpugkjwy7-178773046769402%E6%85%88%E6%82%B2%E8%80%85_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/bkrfjecmtrpugkjwy7-178773046769402慈悲者_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/z1qrhidg1x0n7uqfh8-178773044310501%E7%A5%9E%E5%A8%81_EN_%E8%8B%B1%E6%96%87_logo.jpg" width="200" alt="z1qrhidg1x0n7uqfh8-178773044310501神威_EN_英文_logo.png" title="z1qrhidg1x0n7uqfh8-178773044310501神威_EN_英文_logo.png"> <strong>z1qrhidg1x0n7uqfh8-178773044310501神威_EN_英文_logo.png</strong>
+</summary>
+
+- **Name:** 夕韵暇光
+- **Published Date:** 2026-08-26 07:45:55
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 5.16 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/z1qrhidg1x0n7uqfh8-178773044310501%E7%A5%9E%E5%A8%81_EN_%E8%8B%B1%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/z1qrhidg1x0n7uqfh8-178773044310501神威_EN_英文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/miqeyniqss6m7jn8f8-1787711470166%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%854.jpg" width="200" alt="miqeyniqss6m7jn8f8-1787711470166布偶熊泳装4.jpg" title="miqeyniqss6m7jn8f8-1787711470166布偶熊泳装4.jpg"> <strong>miqeyniqss6m7jn8f8-1787711470166布偶熊泳装4.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:31:02
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.72 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/miqeyniqss6m7jn8f8-1787711470166%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%854.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/miqeyniqss6m7jn8f8-1787711470166布偶熊泳装4.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5exrrawimiv1gx2q5p-1787711451313%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%853.jpg" width="200" alt="5exrrawimiv1gx2q5p-1787711451313布偶熊泳装3.jpg" title="5exrrawimiv1gx2q5p-1787711451313布偶熊泳装3.jpg"> <strong>5exrrawimiv1gx2q5p-1787711451313布偶熊泳装3.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:30:46
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1200x1920
+- **Size:** 1.59 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/5exrrawimiv1gx2q5p-1787711451313%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%853.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/5exrrawimiv1gx2q5p-1787711451313布偶熊泳装3.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/fwc79hayidyfh6ndq4-1787711439268%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%852.jpg" width="200" alt="fwc79hayidyfh6ndq4-1787711439268布偶熊泳装2.jpg" title="fwc79hayidyfh6ndq4-1787711439268布偶熊泳装2.jpg"> <strong>fwc79hayidyfh6ndq4-1787711439268布偶熊泳装2.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:30:33
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1200x1920
+- **Size:** 1.70 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/fwc79hayidyfh6ndq4-1787711439268%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%852.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/fwc79hayidyfh6ndq4-1787711439268布偶熊泳装2.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/4z7nn2qy6qmvzyv2n8-1787711424633%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%851.jpg" width="200" alt="4z7nn2qy6qmvzyv2n8-1787711424633布偶熊泳装1.jpg" title="4z7nn2qy6qmvzyv2n8-1787711424633布偶熊泳装1.jpg"> <strong>4z7nn2qy6qmvzyv2n8-1787711424633布偶熊泳装1.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:30:14
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1200x1920
+- **Size:** 1.52 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/4z7nn2qy6qmvzyv2n8-1787711424633%E5%B8%83%E5%81%B6%E7%86%8A%E6%B3%B3%E8%A3%851.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/4z7nn2qy6qmvzyv2n8-1787711424633布偶熊泳装1.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/sqg0amll5ybt2dxrfz-1787711405385%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%855.jpg" width="200" alt="sqg0amll5ybt2dxrfz-1787711405385比安卡泳装5.jpg" title="sqg0amll5ybt2dxrfz-1787711405385比安卡泳装5.jpg"> <strong>sqg0amll5ybt2dxrfz-1787711405385比安卡泳装5.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:30:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.69 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/sqg0amll5ybt2dxrfz-1787711405385%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%855.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/sqg0amll5ybt2dxrfz-1787711405385比安卡泳装5.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/xgk5s4pyxaztjza1un-1787711392993%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%854.jpg" width="200" alt="xgk5s4pyxaztjza1un-1787711392993比安卡泳装4.jpg" title="xgk5s4pyxaztjza1un-1787711392993比安卡泳装4.jpg"> <strong>xgk5s4pyxaztjza1un-1787711392993比安卡泳装4.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:29:47
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1200
+- **Size:** 1.77 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/xgk5s4pyxaztjza1un-1787711392993%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%854.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/xgk5s4pyxaztjza1un-1787711392993比安卡泳装4.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/e6177bfgcanmdbe3nr-1787711379365%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%853.jpg" width="200" alt="e6177bfgcanmdbe3nr-1787711379365比安卡泳装3.jpg" title="e6177bfgcanmdbe3nr-1787711379365比安卡泳装3.jpg"> <strong>e6177bfgcanmdbe3nr-1787711379365比安卡泳装3.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:29:33
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1440x1920
+- **Size:** 1.81 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/e6177bfgcanmdbe3nr-1787711379365%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%853.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/e6177bfgcanmdbe3nr-1787711379365比安卡泳装3.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/tm8o90kz3irdsg31md-1787711358112%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%852.jpg" width="200" alt="tm8o90kz3irdsg31md-1787711358112比安卡泳装2.jpg" title="tm8o90kz3irdsg31md-1787711358112比安卡泳装2.jpg"> <strong>tm8o90kz3irdsg31md-1787711358112比安卡泳装2.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:29:13
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1200x1920
+- **Size:** 1.57 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/tm8o90kz3irdsg31md-1787711358112%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%852.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/tm8o90kz3irdsg31md-1787711358112比安卡泳装2.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/zmba4r1yq42ruaoakc-1787711346433%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%851.jpg" width="200" alt="zmba4r1yq42ruaoakc-1787711346433比安卡泳装1.jpg" title="zmba4r1yq42ruaoakc-1787711346433比安卡泳装1.jpg"> <strong>zmba4r1yq42ruaoakc-1787711346433比安卡泳装1.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:28:55
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1200x1920
+- **Size:** 1.42 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/zmba4r1yq42ruaoakc-1787711346433%E6%AF%94%E5%AE%89%E5%8D%A1%E6%B3%B3%E8%A3%851.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/zmba4r1yq42ruaoakc-1787711346433比安卡泳装1.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/scbsozdyprlezzuc3m-1787711324237%E6%B3%B3%E8%A3%854.jpg" width="200" alt="scbsozdyprlezzuc3m-1787711324237泳装4.jpg" title="scbsozdyprlezzuc3m-1787711324237泳装4.jpg"> <strong>scbsozdyprlezzuc3m-1787711324237泳装4.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:28:39
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1080x1920
+- **Size:** 1.40 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/scbsozdyprlezzuc3m-1787711324237%E6%B3%B3%E8%A3%854.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/scbsozdyprlezzuc3m-1787711324237泳装4.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bg52oi86k2zsx7q7rk-1787711310329%E6%B3%B3%E8%A3%853.jpg" width="200" alt="bg52oi86k2zsx7q7rk-1787711310329泳装3.jpg" title="bg52oi86k2zsx7q7rk-1787711310329泳装3.jpg"> <strong>bg52oi86k2zsx7q7rk-1787711310329泳装3.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:28:26
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1320x2868
+- **Size:** 1.65 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/bg52oi86k2zsx7q7rk-1787711310329%E6%B3%B3%E8%A3%853.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/bg52oi86k2zsx7q7rk-1787711310329泳装3.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/0v1era04e8mkq4jufk-1787711297693%E6%B3%B3%E8%A3%852.jpg" width="200" alt="0v1era04e8mkq4jufk-1787711297693泳装2.jpg" title="0v1era04e8mkq4jufk-1787711297693泳装2.jpg"> <strong>0v1era04e8mkq4jufk-1787711297693泳装2.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:28:13
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1080x1920
+- **Size:** 1.55 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/0v1era04e8mkq4jufk-1787711297693%E6%B3%B3%E8%A3%852.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/0v1era04e8mkq4jufk-1787711297693泳装2.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mffaiodh9cttdu0yi3-1787711284821%E6%B3%B3%E8%A3%851.jpg" width="200" alt="mffaiodh9cttdu0yi3-1787711284821泳装1.jpg" title="mffaiodh9cttdu0yi3-1787711284821泳装1.jpg"> <strong>mffaiodh9cttdu0yi3-1787711284821泳装1.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:27:59
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1320x2868
+- **Size:** 1.57 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/mffaiodh9cttdu0yi3-1787711284821%E6%B3%B3%E8%A3%851.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/mffaiodh9cttdu0yi3-1787711284821泳装1.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/uwd7kzhdhm06mm4grz-1787711264549%E6%B3%B3%E8%A3%859.jpg" width="200" alt="uwd7kzhdhm06mm4grz-1787711264549泳装9.jpg" title="uwd7kzhdhm06mm4grz-1787711264549泳装9.jpg"> <strong>uwd7kzhdhm06mm4grz-1787711264549泳装9.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:27:38
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.02 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/uwd7kzhdhm06mm4grz-1787711264549%E6%B3%B3%E8%A3%859.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/uwd7kzhdhm06mm4grz-1787711264549泳装9.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ush8xc60i7xb5qyjez-1787711248834%E6%B3%B3%E8%A3%858.jpg" width="200" alt="ush8xc60i7xb5qyjez-1787711248834泳装8.jpg" title="ush8xc60i7xb5qyjez-1787711248834泳装8.jpg"> <strong>ush8xc60i7xb5qyjez-1787711248834泳装8.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:27:23
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.55 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ush8xc60i7xb5qyjez-1787711248834%E6%B3%B3%E8%A3%858.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/ush8xc60i7xb5qyjez-1787711248834泳装8.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bpvdmfmejpfyloigbr-1787711236498%E6%B3%B3%E8%A3%857.jpg" width="200" alt="bpvdmfmejpfyloigbr-1787711236498泳装7.jpg" title="bpvdmfmejpfyloigbr-1787711236498泳装7.jpg"> <strong>bpvdmfmejpfyloigbr-1787711236498泳装7.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:27:11
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1080x1920
+- **Size:** 1.58 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/bpvdmfmejpfyloigbr-1787711236498%E6%B3%B3%E8%A3%857.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/bpvdmfmejpfyloigbr-1787711236498泳装7.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/wvnnie5pdwj7la6jz0-1787711219820%E6%B3%B3%E8%A3%856.jpg" width="200" alt="wvnnie5pdwj7la6jz0-1787711219820泳装6.jpg" title="wvnnie5pdwj7la6jz0-1787711219820泳装6.jpg"> <strong>wvnnie5pdwj7la6jz0-1787711219820泳装6.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光
+- **Published Date:** 2026-08-26 02:26:54
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1320x2868
+- **Size:** 2.05 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/wvnnie5pdwj7la6jz0-1787711219820%E6%B3%B3%E8%A3%856.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/wvnnie5pdwj7la6jz0-1787711219820泳装6.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/wxmla01goa2g5z0c4k-1787711205186%E6%B3%B3%E8%A3%855.jpg" width="200" alt="wxmla01goa2g5z0c4k-1787711205186泳装5.jpg" title="wxmla01goa2g5z0c4k-1787711205186泳装5.jpg"> <strong>wxmla01goa2g5z0c4k-1787711205186泳装5.jpg</strong>
+</summary>
+
+- **Name:** 汐落浮光系列
+- **Published Date:** 2026-08-26 02:26:30
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 📱 Mobile
+- **Resolution:** 1080x1920
+- **Size:** 1.52 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/wxmla01goa2g5z0c4k-1787711205186%E6%B3%B3%E8%A3%855.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/wxmla01goa2g5z0c4k-1787711205186泳装5.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>

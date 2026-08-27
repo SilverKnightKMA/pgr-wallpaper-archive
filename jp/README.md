@@ -1,12 +1,845 @@
 # JP Server — PGR Wallpaper Archive
 
-> Total: 722 wallpapers
+> Total: 771 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=jp)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/1j23i4j2kokaedzfq3-178773199698716%E9%98%BF%E5%B0%94%E6%B3%95%E6%88%90%E5%9B%BE%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="1j23i4j2kokaedzfq3-178773199698716阿尔法成图合并_JP_日文_logo.png" title="1j23i4j2kokaedzfq3-178773199698716阿尔法成图合并_JP_日文_logo.png"> <strong>1j23i4j2kokaedzfq3-178773199698716阿尔法成图合并_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸16
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2775x1561
+- **Size:** 7.90 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/1j23i4j2kokaedzfq3-178773199698716%E9%98%BF%E5%B0%94%E6%B3%95%E6%88%90%E5%9B%BE%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/1j23i4j2kokaedzfq3-178773199698716阿尔法成图合并_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/2nb5orkkmdhvq93y1d-178773215867322%E8%92%B2%E7%89%A2_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="2nb5orkkmdhvq93y1d-178773215867322蒲牢_JP_日文_logo.png" title="2nb5orkkmdhvq93y1d-178773215867322蒲牢_JP_日文_logo.png"> <strong>2nb5orkkmdhvq93y1d-178773215867322蒲牢_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸22
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3840x2160
+- **Size:** 7.08 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/2nb5orkkmdhvq93y1d-178773215867322%E8%92%B2%E7%89%A2_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/2nb5orkkmdhvq93y1d-178773215867322蒲牢_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/2pbbtx4k9odq0gikl9-178773338676733%E9%82%A6%E6%AF%94%E5%A8%9C%E5%A1%94_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="2pbbtx4k9odq0gikl9-178773338676733邦比娜塔_JP_日文_logo.png" title="2pbbtx4k9odq0gikl9-178773338676733邦比娜塔_JP_日文_logo.png"> <strong>2pbbtx4k9odq0gikl9-178773338676733邦比娜塔_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸33
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.39 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/2pbbtx4k9odq0gikl9-178773338676733%E9%82%A6%E6%AF%94%E5%A8%9C%E5%A1%94_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/2pbbtx4k9odq0gikl9-178773338676733邦比娜塔_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/2v3w9pxswczlpf7sjm-178773042057607%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="2v3w9pxswczlpf7sjm-178773042057607卡列尼娜 合_JP_日文_logo.png" title="2v3w9pxswczlpf7sjm-178773042057607卡列尼娜 合_JP_日文_logo.png"> <strong>2v3w9pxswczlpf7sjm-178773042057607卡列尼娜 合_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸07
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3059x1721
+- **Size:** 7.87 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/2v3w9pxswczlpf7sjm-178773042057607%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/2v3w9pxswczlpf7sjm-178773042057607卡列尼娜 合_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/324zi3f1wrhhii8i8q-178755310974508.jpg" width="200" alt="324zi3f1wrhhii8i8q-178755310974508.png" title="324zi3f1wrhhii8i8q-178755310974508.png"> <strong>324zi3f1wrhhii8i8q-178755310974508.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸08
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.82 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/324zi3f1wrhhii8i8q-178755310974508.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/324zi3f1wrhhii8i8q-178755310974508.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/38jbzcqfb3b3s7n2ed-178755290334302.jpg" width="200" alt="38jbzcqfb3b3s7n2ed-178755290334302.png" title="38jbzcqfb3b3s7n2ed-178755290334302.png"> <strong>38jbzcqfb3b3s7n2ed-178755290334302.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸02
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.43 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/38jbzcqfb3b3s7n2ed-178755290334302.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/38jbzcqfb3b3s7n2ed-178755290334302.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/39xalgqk36y4jc459s-178773235008628%E8%96%87%E6%8B%89_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="39xalgqk36y4jc459s-178773235008628薇拉_JP_日文_logo.png" title="39xalgqk36y4jc459s-178773235008628薇拉_JP_日文_logo.png"> <strong>39xalgqk36y4jc459s-178773235008628薇拉_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸28
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3453x1942
+- **Size:** 7.89 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/39xalgqk36y4jc459s-178773235008628%E8%96%87%E6%8B%89_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/39xalgqk36y4jc459s-178773235008628薇拉_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/3f3mu8z960ttvds5gb-178756497199002%E6%85%88%E6%82%B2%E8%80%85_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="3f3mu8z960ttvds5gb-178756497199002慈悲者_JP_日文_logo.png" title="3f3mu8z960ttvds5gb-178756497199002慈悲者_JP_日文_logo.png"> <strong>3f3mu8z960ttvds5gb-178756497199002慈悲者_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸02
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.17 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/3f3mu8z960ttvds5gb-178756497199002%E6%85%88%E6%82%B2%E8%80%85_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/3f3mu8z960ttvds5gb-178756497199002慈悲者_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/586evvpo0ghenmowaj-178755299968705.jpg" width="200" alt="586evvpo0ghenmowaj-178755299968705.jpg" title="586evvpo0ghenmowaj-178755299968705.jpg"> <strong>586evvpo0ghenmowaj-178755299968705.jpg</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸05
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1914x1077
+- **Size:** 2.26 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/586evvpo0ghenmowaj-178755299968705.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/586evvpo0ghenmowaj-178755299968705.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5ep3ucr6gwgu35dl6z-178773202649617%E9%87%8C%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="5ep3ucr6gwgu35dl6z-178773202649617里合并_JP_日文_logo.png" title="5ep3ucr6gwgu35dl6z-178773202649617里合并_JP_日文_logo.png"> <strong>5ep3ucr6gwgu35dl6z-178773202649617里合并_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸17
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2979x1676
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5ep3ucr6gwgu35dl6z-178773202649617%E9%87%8C%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/5ep3ucr6gwgu35dl6z-178773202649617里合并_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/7b1sohb2epf2i7tofo-178773226820925%E8%8B%8F%E8%8F%B2%E4%BA%9A_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="7b1sohb2epf2i7tofo-178773226820925苏菲亚_JP_日文_logo.png" title="7b1sohb2epf2i7tofo-178773226820925苏菲亚_JP_日文_logo.png"> <strong>7b1sohb2epf2i7tofo-178773226820925苏菲亚_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸25
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3125x1758
+- **Size:** 7.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/7b1sohb2epf2i7tofo-178773226820925%E8%8B%8F%E8%8F%B2%E4%BA%9A_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/7b1sohb2epf2i7tofo-178773226820925苏菲亚_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/7xmko74lqrnv15c0e7-178773220718823%E6%B4%81%E5%A1%94%E8%96%87_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="7xmko74lqrnv15c0e7-178773220718823洁塔薇_JP_日文_logo.png" title="7xmko74lqrnv15c0e7-178773220718823洁塔薇_JP_日文_logo.png"> <strong>7xmko74lqrnv15c0e7-178773220718823洁塔薇_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸23
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3210x1806
+- **Size:** 7.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/7xmko74lqrnv15c0e7-178773220718823%E6%B4%81%E5%A1%94%E8%96%87_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/7xmko74lqrnv15c0e7-178773220718823洁塔薇_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/8pfm6n6n7s28di0vpd-178755303713806.jpg" width="200" alt="8pfm6n6n7s28di0vpd-178755303713806.png" title="8pfm6n6n7s28di0vpd-178755303713806.png"> <strong>8pfm6n6n7s28di0vpd-178755303713806.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸06
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.73 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/8pfm6n6n7s28di0vpd-178755303713806.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/8pfm6n6n7s28di0vpd-178755303713806.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/chqkvufzbwzr89b7n8-178773345593036%E7%BD%97%E5%A1%9E%E5%A1%94-%E8%B0%83%E6%95%B4%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="chqkvufzbwzr89b7n8-178773345593036罗塞塔-调整合并_JP_日文_logo.png" title="chqkvufzbwzr89b7n8-178773345593036罗塞塔-调整合并_JP_日文_logo.png"> <strong>chqkvufzbwzr89b7n8-178773345593036罗塞塔-调整合并_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸36
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2972x1672
+- **Size:** 7.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/chqkvufzbwzr89b7n8-178773345593036%E7%BD%97%E5%A1%9E%E5%A1%94-%E8%B0%83%E6%95%B4%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/chqkvufzbwzr89b7n8-178773345593036罗塞塔-调整合并_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/cmds80pf63j7u0g38d-178773053130910%E8%AF%BA%E5%85%8B%E6%8F%90_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="cmds80pf63j7u0g38d-178773053130910诺克提_JP_日文_logo.png" title="cmds80pf63j7u0g38d-178773053130910诺克提_JP_日文_logo.png"> <strong>cmds80pf63j7u0g38d-178773053130910诺克提_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸10
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.97 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/cmds80pf63j7u0g38d-178773053130910%E8%AF%BA%E5%85%8B%E6%8F%90_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/cmds80pf63j7u0g38d-178773053130910诺克提_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/dbplovscdp757880mm-178773195802715%E9%9C%B2%E8%A5%BF%E4%BA%9A_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="dbplovscdp757880mm-178773195802715露西亚_JP_日文_logo.png" title="dbplovscdp757880mm-178773195802715露西亚_JP_日文_logo.png"> <strong>dbplovscdp757880mm-178773195802715露西亚_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸15
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3357x1888
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/dbplovscdp757880mm-178773195802715%E9%9C%B2%E8%A5%BF%E4%BA%9A_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/dbplovscdp757880mm-178773195802715露西亚_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/dj9ifbcvoxge3eh2ve-178773207977319%E5%BA%93%E6%B4%9B%E5%A7%86_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="dj9ifbcvoxge3eh2ve-178773207977319库洛姆_JP_日文_logo.png" title="dj9ifbcvoxge3eh2ve-178773207977319库洛姆_JP_日文_logo.png"> <strong>dj9ifbcvoxge3eh2ve-178773207977319库洛姆_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸19
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2853x1605
+- **Size:** 7.87 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/dj9ifbcvoxge3eh2ve-178773207977319%E5%BA%93%E6%B4%9B%E5%A7%86_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/dj9ifbcvoxge3eh2ve-178773207977319库洛姆_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/h5esxikrpxa714ykcu-178773343417535%E8%8E%89%E8%8E%89%E4%B8%9D%E4%BF%AE%E6%94%B9_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="h5esxikrpxa714ykcu-178773343417535莉莉丝修改_JP_日文_logo.png" title="h5esxikrpxa714ykcu-178773343417535莉莉丝修改_JP_日文_logo.png"> <strong>h5esxikrpxa714ykcu-178773343417535莉莉丝修改_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸35
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.09 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/h5esxikrpxa714ykcu-178773343417535%E8%8E%89%E8%8E%89%E4%B8%9D%E4%BF%AE%E6%94%B9_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/h5esxikrpxa714ykcu-178773343417535莉莉丝修改_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/iih8c3crgli9v2pl9d-178756501677003%E6%9B%B2_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="iih8c3crgli9v2pl9d-178756501677003曲_JP_日文_logo.png" title="iih8c3crgli9v2pl9d-178756501677003曲_JP_日文_logo.png"> <strong>iih8c3crgli9v2pl9d-178756501677003曲_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸03
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3891x2189
+- **Size:** 7.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/iih8c3crgli9v2pl9d-178756501677003%E6%9B%B2_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/iih8c3crgli9v2pl9d-178756501677003曲_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/irzvtjli4zfyq2i45g-178773055494311%E5%B8%B8%E7%BE%BD_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="irzvtjli4zfyq2i45g-178773055494311常羽_JP_日文_logo.png" title="irzvtjli4zfyq2i45g-178773055494311常羽_JP_日文_logo.png"> <strong>irzvtjli4zfyq2i45g-178773055494311常羽_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸11
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.57 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/irzvtjli4zfyq2i45g-178773055494311%E5%B8%B8%E7%BE%BD_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/irzvtjli4zfyq2i45g-178773055494311常羽_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/itvf0sa43n7psu6u06-178773239784730%E7%BB%B4%E7%BD%97%E5%A6%AE%E5%8D%A1_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="itvf0sa43n7psu6u06-178773239784730维罗妮卡_JP_日文_logo.png" title="itvf0sa43n7psu6u06-178773239784730维罗妮卡_JP_日文_logo.png"> <strong>itvf0sa43n7psu6u06-178773239784730维罗妮卡_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸30
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 4.84 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/itvf0sa43n7psu6u06-178773239784730%E7%BB%B4%E7%BD%97%E5%A6%AE%E5%8D%A1_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/itvf0sa43n7psu6u06-178773239784730维罗妮卡_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ixh27b2rgxu838ktib-178773224535524%E8%B5%9B%E7%90%B3%E5%A8%9C%E4%B8%8A%E8%89%B2-%E6%94%B92(%E8%B0%83%E8%83%8C%E6%99%AF%E5%92%8C%E8%84%B8%EF%BC%89_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="ixh27b2rgxu838ktib-178773224535524赛琳娜上色-改2(调背景和脸）_JP_日文_logo.png" title="ixh27b2rgxu838ktib-178773224535524赛琳娜上色-改2(调背景和脸）_JP_日文_logo.png"> <strong>ixh27b2rgxu838ktib-178773224535524赛琳娜上色-改2(调背景和脸）_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸24
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.56 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ixh27b2rgxu838ktib-178773224535524%E8%B5%9B%E7%90%B3%E5%A8%9C%E4%B8%8A%E8%89%B2-%E6%94%B92(%E8%B0%83%E8%83%8C%E6%99%AF%E5%92%8C%E8%84%B8%EF%BC%89_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/ixh27b2rgxu838ktib-178773224535524赛琳娜上色-改2(调背景和脸）_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ja1ik6vftpleqt3xjx-178755313894509.jpg" width="200" alt="ja1ik6vftpleqt3xjx-178755313894509.png" title="ja1ik6vftpleqt3xjx-178755313894509.png"> <strong>ja1ik6vftpleqt3xjx-178755313894509.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸09
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ja1ik6vftpleqt3xjx-178755313894509.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/ja1ik6vftpleqt3xjx-178755313894509.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/l62v6o602676ht44bw-178755293823303.jpg" width="200" alt="l62v6o602676ht44bw-178755293823303.jpg" title="l62v6o602676ht44bw-178755293823303.jpg"> <strong>l62v6o602676ht44bw-178755293823303.jpg</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸03
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.63 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/l62v6o602676ht44bw-178755293823303.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/l62v6o602676ht44bw-178755293823303.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/lckgr2frwwii955z7x-178773350725638%E5%93%88%E5%8D%A1%E7%8E%9B-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="lckgr2frwwii955z7x-178773350725638哈卡玛-合并调整_JP_日文_logo.png" title="lckgr2frwwii955z7x-178773350725638哈卡玛-合并调整_JP_日文_logo.png"> <strong>lckgr2frwwii955z7x-178773350725638哈卡玛-合并调整_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸38
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3037x1708
+- **Size:** 7.88 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lckgr2frwwii955z7x-178773350725638%E5%93%88%E5%8D%A1%E7%8E%9B-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/lckgr2frwwii955z7x-178773350725638哈卡玛-合并调整_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ldfu38hsui1o8yck0m-178773232474827%E9%9C%B2%E5%A8%9C_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="ldfu38hsui1o8yck0m-178773232474827露娜_JP_日文_logo.png" title="ldfu38hsui1o8yck0m-178773232474827露娜_JP_日文_logo.png"> <strong>ldfu38hsui1o8yck0m-178773232474827露娜_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸27
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3190x1795
+- **Size:** 7.95 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ldfu38hsui1o8yck0m-178773232474827%E9%9C%B2%E5%A8%9C_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/ldfu38hsui1o8yck0m-178773232474827露娜_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/lhvxkgjeyxksdr16y1-178773336651932%E6%96%9C%E5%A5%8F_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="lhvxkgjeyxksdr16y1-178773336651932斜奏_JP_日文_logo.png" title="lhvxkgjeyxksdr16y1-178773336651932斜奏_JP_日文_logo.png"> <strong>lhvxkgjeyxksdr16y1-178773336651932斜奏_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸32
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2753x1549
+- **Size:** 7.94 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lhvxkgjeyxksdr16y1-178773336651932%E6%96%9C%E5%A5%8F_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/lhvxkgjeyxksdr16y1-178773336651932斜奏_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/m4lkkq4t2b4wzsr5rp-178773050848009%E4%BA%9A%E9%87%8C%E8%8E%8E%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="m4lkkq4t2b4wzsr5rp-178773050848009亚里莎 合_JP_日文_logo.png" title="m4lkkq4t2b4wzsr5rp-178773050848009亚里莎 合_JP_日文_logo.png"> <strong>m4lkkq4t2b4wzsr5rp-178773050848009亚里莎 合_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸09
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3168x1782
+- **Size:** 7.94 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/m4lkkq4t2b4wzsr5rp-178773050848009%E4%BA%9A%E9%87%8C%E8%8E%8E%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/m4lkkq4t2b4wzsr5rp-178773050848009亚里莎 合_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mfyaxzdsa888f2blr8-178755285088201.jpg" width="200" alt="mfyaxzdsa888f2blr8-178755285088201.png" title="mfyaxzdsa888f2blr8-178755285088201.png"> <strong>mfyaxzdsa888f2blr8-178755285088201.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸01
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.76 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mfyaxzdsa888f2blr8-178755285088201.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/mfyaxzdsa888f2blr8-178755285088201.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/n0htmz6m9q4mz8g3y8-178773353006339%E6%B6%85%E7%BC%87%E5%A8%85_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="n0htmz6m9q4mz8g3y8-178773353006339涅缇娅_JP_日文_logo.png" title="n0htmz6m9q4mz8g3y8-178773353006339涅缇娅_JP_日文_logo.png"> <strong>n0htmz6m9q4mz8g3y8-178773353006339涅缇娅_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸39
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3869x2176
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/n0htmz6m9q4mz8g3y8-178773353006339%E6%B6%85%E7%BC%87%E5%A8%85_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/n0htmz6m9q4mz8g3y8-178773353006339涅缇娅_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/o44vmd8j5elcw01miy-178773205390918%E5%90%AB%E8%8B%B1%20(2)_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="o44vmd8j5elcw01miy-178773205390918含英 (2)_JP_日文_logo.png" title="o44vmd8j5elcw01miy-178773205390918含英 (2)_JP_日文_logo.png"> <strong>o44vmd8j5elcw01miy-178773205390918含英 (2)_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸18
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3588x2018
+- **Size:** 7.96 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/o44vmd8j5elcw01miy-178773205390918%E5%90%AB%E8%8B%B1%20(2)_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/o44vmd8j5elcw01miy-178773205390918含英 (2)_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/od9w00kb8hh64dw8d1-178756562762306%E6%8B%89%E5%BC%A5%E4%BA%9A%E5%BE%AE%E8%B0%83(1)_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="od9w00kb8hh64dw8d1-178756562762306拉弥亚微调(1)_JP_日文_logo.png" title="od9w00kb8hh64dw8d1-178756562762306拉弥亚微调(1)_JP_日文_logo.png"> <strong>od9w00kb8hh64dw8d1-178756562762306拉弥亚微调(1)_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸06
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.78 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/od9w00kb8hh64dw8d1-178756562762306%E6%8B%89%E5%BC%A5%E4%BA%9A%E5%BE%AE%E8%B0%83(1)_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/od9w00kb8hh64dw8d1-178756562762306拉弥亚微调(1)_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/oqe45h5s4gvzmjekls-178773193443314%E4%B8%87%E4%BA%8B%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="oqe45h5s4gvzmjekls-178773193443314万事 合_JP_日文_logo.png" title="oqe45h5s4gvzmjekls-178773193443314万事 合_JP_日文_logo.png"> <strong>oqe45h5s4gvzmjekls-178773193443314万事 合_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸14
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2950x1659
+- **Size:** 7.94 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/oqe45h5s4gvzmjekls-178773193443314%E4%B8%87%E4%BA%8B%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/oqe45h5s4gvzmjekls-178773193443314万事 合_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/pgiyct0sank01pfb3b-178773341084234%E8%89%BE%E6%8B%89_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="pgiyct0sank01pfb3b-178773341084234艾拉_JP_日文_logo.png" title="pgiyct0sank01pfb3b-178773341084234艾拉_JP_日文_logo.png"> <strong>pgiyct0sank01pfb3b-178773341084234艾拉_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸34
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3190x1795
+- **Size:** 7.88 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/pgiyct0sank01pfb3b-178773341084234%E8%89%BE%E6%8B%89_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/pgiyct0sank01pfb3b-178773341084234艾拉_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/pswibo7f21xwpp15ld-178773237422029%E5%B8%83%E5%81%B6%E7%86%8A_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="pswibo7f21xwpp15ld-178773237422029布偶熊_JP_日文_logo.png" title="pswibo7f21xwpp15ld-178773237422029布偶熊_JP_日文_logo.png"> <strong>pswibo7f21xwpp15ld-178773237422029布偶熊_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸29
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.66 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/pswibo7f21xwpp15ld-178773237422029%E5%B8%83%E5%81%B6%E7%86%8A_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/pswibo7f21xwpp15ld-178773237422029布偶熊_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q2m40h3flo8xpkf82l-178773048351208%E5%B8%83%E9%87%8C%E5%A7%AC%E7%89%B9_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="q2m40h3flo8xpkf82l-178773048351208布里姬特_JP_日文_logo.png" title="q2m40h3flo8xpkf82l-178773048351208布里姬特_JP_日文_logo.png"> <strong>q2m40h3flo8xpkf82l-178773048351208布里姬特_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸08
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3453x1942
+- **Size:** 7.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q2m40h3flo8xpkf82l-178773048351208%E5%B8%83%E9%87%8C%E5%A7%AC%E7%89%B9_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/q2m40h3flo8xpkf82l-178773048351208布里姬特_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/rj0dplqygfalxids7e-178755307067507.jpg" width="200" alt="rj0dplqygfalxids7e-178755307067507.png" title="rj0dplqygfalxids7e-178755307067507.png"> <strong>rj0dplqygfalxids7e-178755307067507.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸07
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/rj0dplqygfalxids7e-178755307067507.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/rj0dplqygfalxids7e-178755307067507.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/snw3argwqv83sw5k71-178773242168531%E6%AF%94%E5%AE%89%E5%8D%A1_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="snw3argwqv83sw5k71-178773242168531比安卡_JP_日文_logo.png" title="snw3argwqv83sw5k71-178773242168531比安卡_JP_日文_logo.png"> <strong>snw3argwqv83sw5k71-178773242168531比安卡_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸31
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3063x1723
+- **Size:** 7.96 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/snw3argwqv83sw5k71-178773242168531%E6%AF%94%E5%AE%89%E5%8D%A1_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/snw3argwqv83sw5k71-178773242168531比安卡_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ss26j1jc0nyctr6u7f-178773210685820%E8%AF%BA%E5%AE%89_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="ss26j1jc0nyctr6u7f-178773210685820诺安_JP_日文_logo.png" title="ss26j1jc0nyctr6u7f-178773210685820诺安_JP_日文_logo.png"> <strong>ss26j1jc0nyctr6u7f-178773210685820诺安_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸20
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3840x2160
+- **Size:** 4.04 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ss26j1jc0nyctr6u7f-178773210685820%E8%AF%BA%E5%AE%89_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/ss26j1jc0nyctr6u7f-178773210685820诺安_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/t1fjk5oqwyo5tdhgl2-178756482369001%E7%A5%9E%E5%A8%81_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="t1fjk5oqwyo5tdhgl2-178756482369001神威_JP_日文_logo.png" title="t1fjk5oqwyo5tdhgl2-178756482369001神威_JP_日文_logo.png"> <strong>t1fjk5oqwyo5tdhgl2-178756482369001神威_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸01
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 5.16 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/t1fjk5oqwyo5tdhgl2-178756482369001%E7%A5%9E%E5%A8%81_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/t1fjk5oqwyo5tdhgl2-178756482369001神威_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/t5wid3yq3eba09nckh-178773191161513%E7%BD%97%E5%85%B0%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="t5wid3yq3eba09nckh-178773191161513罗兰 合_JP_日文_logo.png" title="t5wid3yq3eba09nckh-178773191161513罗兰 合_JP_日文_logo.png"> <strong>t5wid3yq3eba09nckh-178773191161513罗兰 合_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸13
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3606x2028
+- **Size:** 7.98 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/t5wid3yq3eba09nckh-178773191161513%E7%BD%97%E5%85%B0%20%E5%90%88_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/t5wid3yq3eba09nckh-178773191161513罗兰 合_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/tchxvkc84w1yqaxvik-178773229733526%E5%8D%A1%E7%A9%86%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="tchxvkc84w1yqaxvik-178773229733526卡穆合并_JP_日文_logo.png" title="tchxvkc84w1yqaxvik-178773229733526卡穆合并_JP_日文_logo.png"> <strong>tchxvkc84w1yqaxvik-178773229733526卡穆合并_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸26
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2884x1622
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/tchxvkc84w1yqaxvik-178773229733526%E5%8D%A1%E7%A9%86%E5%90%88%E5%B9%B6_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/tchxvkc84w1yqaxvik-178773229733526卡穆合并_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/tzz3ro6rush5ah0i4u-178756505352304%2021%E5%8F%B7_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="tzz3ro6rush5ah0i4u-178756505352304 21号_JP_日文_logo.png" title="tzz3ro6rush5ah0i4u-178756505352304 21号_JP_日文_logo.png"> <strong>tzz3ro6rush5ah0i4u-178756505352304 21号_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸04
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3694x2078
+- **Size:** 7.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/tzz3ro6rush5ah0i4u-178756505352304%2021%E5%8F%B7_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/tzz3ro6rush5ah0i4u-178756505352304 21号_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/uirmniitrhg7v7umwq-178756508602405%E5%85%AB%E5%92%AB-%E6%88%90%E5%9B%BE%E5%92%8C_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="uirmniitrhg7v7umwq-178756508602405八咫-成图和_JP_日文_logo.png" title="uirmniitrhg7v7umwq-178756508602405八咫-成图和_JP_日文_logo.png"> <strong>uirmniitrhg7v7umwq-178756508602405八咫-成图和_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸05
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3212x1807
+- **Size:** 7.89 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/uirmniitrhg7v7umwq-178756508602405%E5%85%AB%E5%92%AB-%E6%88%90%E5%9B%BE%E5%92%8C_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/uirmniitrhg7v7umwq-178756508602405八咫-成图和_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/vci1c99xhv4ona9lqr-178755297196904.jpg" width="200" alt="vci1c99xhv4ona9lqr-178755297196904.png" title="vci1c99xhv4ona9lqr-178755297196904.png"> <strong>vci1c99xhv4ona9lqr-178755297196904.png</strong>
+</summary>
+
+- **Name:** 4.7-版本壁纸04
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.18 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/vci1c99xhv4ona9lqr-178755297196904.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787500800000/vci1c99xhv4ona9lqr-178755297196904.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/w0ofx3o4ql2xua488q-178773347801337%E4%B8%83%E5%AE%9E-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="w0ofx3o4ql2xua488q-178773347801337七实-合并调整_JP_日文_logo.png" title="w0ofx3o4ql2xua488q-178773347801337七实-合并调整_JP_日文_logo.png"> <strong>w0ofx3o4ql2xua488q-178773347801337七实-合并调整_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸37
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 6.42 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/w0ofx3o4ql2xua488q-178773347801337%E4%B8%83%E5%AE%9E-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/w0ofx3o4ql2xua488q-178773347801337七实-合并调整_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/yjmxp804lix7vme44l-178773187078712%E6%B8%A1%E8%BE%B9_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="yjmxp804lix7vme44l-178773187078712渡边_JP_日文_logo.png" title="yjmxp804lix7vme44l-178773187078712渡边_JP_日文_logo.png"> <strong>yjmxp804lix7vme44l-178773187078712渡边_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸12
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/yjmxp804lix7vme44l-178773187078712%E6%B8%A1%E8%BE%B9_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/yjmxp804lix7vme44l-178773187078712渡边_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/z8o5w6s35wzhj62vt7-178773355881840%E6%B5%B7%E4%BC%A6%E6%B1%80-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="z8o5w6s35wzhj62vt7-178773355881840海伦汀-合并调整_JP_日文_logo.png" title="z8o5w6s35wzhj62vt7-178773355881840海伦汀-合并调整_JP_日文_logo.png"> <strong>z8o5w6s35wzhj62vt7-178773355881840海伦汀-合并调整_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸40
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 3125x1758
+- **Size:** 7.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/z8o5w6s35wzhj62vt7-178773355881840%E6%B5%B7%E4%BC%A6%E6%B1%80-%E5%90%88%E5%B9%B6%E8%B0%83%E6%95%B4_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/z8o5w6s35wzhj62vt7-178773355881840海伦汀-合并调整_JP_日文_logo.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/zphlexrgtjbbaxgr62-178773213058621%E4%B8%BD%E8%8A%99_JP_%E6%97%A5%E6%96%87_logo.jpg" width="200" alt="zphlexrgtjbbaxgr62-178773213058621丽芙_JP_日文_logo.png" title="zphlexrgtjbbaxgr62-178773213058621丽芙_JP_日文_logo.png"> <strong>zphlexrgtjbbaxgr62-178773213058621丽芙_JP_日文_logo.png</strong>
+</summary>
+
+- **Name:** 26年七夕壁纸21
+- **Published Date:** 2026-08-26 10:00:00
+- **Downloaded Date:** 2026-08-27T08:38:55Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 4000x2250
+- **Size:** 7.27 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/zphlexrgtjbbaxgr62-178773213058621%E4%B8%BD%E8%8A%99_JP_%E6%97%A5%E6%96%87_logo.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1787673600000/zphlexrgtjbbaxgr62-178773213058621丽芙_JP_日文_logo.png">Original</a>
+
+</details>
 
 <details>
 <summary>
