@@ -5,7 +5,7 @@
     "success": 976,
     "failed": 0,
     "lastUpdated": "2026-08-27T04:29:29Z",
-    "lastActionRun": "2026-09-29T05:14:49Z",
+    "lastActionRun": "2026-09-30T05:03:27Z",
     "wallpapers": [
       {
         "filename": "00mypqzhee2bmf7ad6-16911465097297.jpg",
@@ -23436,11 +23436,11 @@
   },
   "jp": {
     "name": "JP Server",
-    "total": 786,
-    "success": 786,
+    "total": 789,
+    "success": 789,
     "failed": 0,
-    "lastUpdated": "2026-09-28T09:55:08Z",
-    "lastActionRun": "2026-09-29T05:14:49Z",
+    "lastUpdated": "2026-09-29T07:03:31Z",
+    "lastActionRun": "2026-09-30T05:03:27Z",
     "wallpapers": [
       {
         "filename": "02u9d4930i0094nhvj-1777283045597壁纸2.png",
@@ -23921,6 +23921,30 @@
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695366712939,
         "ossUpdate_formatted": "2023-09-22 07:11:52"
+      },
+      {
+        "filename": "16lsd3lj8t3e2kaywk-17906653722342.联动cg.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "16lsd3lj8t3e2kaywk-17906653722342.联动cg.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/16lsd3lj8t3e2kaywk-17906653722342.联动cg.png",
+        "releaseTime": "2026-09-30T05:03:27Z",
+        "size": "3.02 MB",
+        "gameId": "G282",
+        "pictureId": 6571,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/984hw8wlhd37o3tmk4-17906653719942.联动cg.png",
+        "nameIn": "4.8联动壁纸02",
+        "sortingMark": 795,
+        "startTime": 1790665403000,
+        "startTime_formatted": "2026-09-29 07:03:23",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1790665406207,
+        "ossUpdate_formatted": "2026-09-29 07:03:26"
       },
       {
         "filename": "17t7089m880c8n9cyx-1695198545947露娜银冕2.png",
@@ -34987,6 +35011,30 @@
         "ossUpdate_formatted": "2026-04-27 13:07:48"
       },
       {
+        "filename": "ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.png",
+        "releaseTime": "2026-09-30T05:03:27Z",
+        "size": "3.28 MB",
+        "gameId": "G282",
+        "pictureId": 6572,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/1i0jy56kc43wphekrr-17906653833283.联动皮肤海报.png",
+        "nameIn": "4.8联动壁纸03",
+        "sortingMark": 796,
+        "startTime": 1790665395000,
+        "startTime_formatted": "2026-09-29 07:03:15",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1790665406205,
+        "ossUpdate_formatted": "2026-09-29 07:03:26"
+      },
+      {
         "filename": "lsqtn5ct15h8ug24bv-1695091606587sala(1).png",
         "server": "JP Server",
         "status": "success",
@@ -38827,6 +38875,30 @@
         "ossUpdate_formatted": "2026-08-26 10:00:58"
       },
       {
+        "filename": "t301g0qspybzu5au6w-17906653642051.联动kv.png",
+        "server": "JP Server",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "t301g0qspybzu5au6w-17906653642051.联动kv.jpg",
+        "imgUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/t301g0qspybzu5au6w-17906653642051.联动kv.png",
+        "releaseTime": "2026-09-30T05:03:27Z",
+        "size": "3.82 MB",
+        "gameId": "G282",
+        "pictureId": 6570,
+        "pictureType": 11,
+        "terminalType": 20,
+        "condenseImg": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/t6prqlqfg1zjlcxq9h-17906653637491.联动kv.png",
+        "nameIn": "4.8联动壁纸01",
+        "sortingMark": 794,
+        "startTime": 1790665411000,
+        "startTime_formatted": "2026-09-29 07:03:31",
+        "endTime": 4070880000000,
+        "endTime_formatted": "2098-12-31 16:00:00",
+        "ossUpdate": 1790665425964,
+        "ossUpdate_formatted": "2026-09-29 07:03:45"
+      },
+      {
         "filename": "t3zhy54nfof04mwd6j-1777345198673到婚礼去.png",
         "server": "JP Server",
         "status": "success",
@@ -42306,7 +42378,7 @@
         "ossUpdate_formatted": "2024-02-20 08:39:08"
       }
     ],
-    "pictureCount": 786
+    "pictureCount": 789
   },
   "global": {
     "name": "Global Server",
@@ -42314,7 +42386,7 @@
     "success": 425,
     "failed": 0,
     "lastUpdated": "2026-08-26T08:05:59Z",
-    "lastActionRun": "2026-09-29T05:14:49Z",
+    "lastActionRun": "2026-09-30T05:03:27Z",
     "wallpapers": [
       {
         "filename": "07r2afens5bi7zwp32-1760433012098道别-加特效.jpg",
@@ -52525,7 +52597,7 @@
     "success": 279,
     "failed": 0,
     "lastUpdated": "2026-09-28T11:20:28Z",
-    "lastActionRun": "2026-09-29T05:14:49Z",
+    "lastActionRun": "2026-09-30T05:03:27Z",
     "wallpapers": [
       {
         "filename": "01e2dd3yqoar25ic4f-1763983192136繁中.png",
@@ -59179,7 +59251,7 @@
         "ossUpdate_formatted": "2026-02-07 04:01:18"
       }
     ],
-    "pictureCount": 228
+    "pictureCount": 227
   },
   "kr": {
     "name": "KR Server",
@@ -59187,7 +59259,7 @@
     "success": 593,
     "failed": 0,
     "lastUpdated": "2026-07-21T02:50:51Z",
-    "lastActionRun": "2026-09-29T05:14:49Z",
+    "lastActionRun": "2026-09-30T05:03:27Z",
     "wallpapers": [
       {
         "filename": "01zfp40e584l55633r-1731998358962388.jpg",
@@ -73424,5 +73496,5 @@
     ],
     "pictureCount": 593
   },
-  "releaseTime": "2026-09-29T05:14:49Z"
+  "releaseTime": "2026-09-30T05:03:27Z"
 }
