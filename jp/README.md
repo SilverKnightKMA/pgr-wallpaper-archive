@@ -1,12 +1,63 @@
 # JP Server — PGR Wallpaper Archive
 
-> Total: 786 wallpapers
+> Total: 789 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=jp)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/t301g0qspybzu5au6w-17906653642051.%E8%81%94%E5%8A%A8kv.jpg" width="200" alt="t301g0qspybzu5au6w-17906653642051.联动kv.png" title="t301g0qspybzu5au6w-17906653642051.联动kv.png"> <strong>t301g0qspybzu5au6w-17906653642051.联动kv.png</strong>
+</summary>
+
+- **Name:** 4.8联动壁纸01
+- **Published Date:** 2026-09-29 07:03:31
+- **Downloaded Date:** 2026-09-30T05:03:27Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.82 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/t301g0qspybzu5au6w-17906653642051.%E8%81%94%E5%8A%A8kv.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/t301g0qspybzu5au6w-17906653642051.联动kv.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/16lsd3lj8t3e2kaywk-17906653722342.%E8%81%94%E5%8A%A8cg.jpg" width="200" alt="16lsd3lj8t3e2kaywk-17906653722342.联动cg.png" title="16lsd3lj8t3e2kaywk-17906653722342.联动cg.png"> <strong>16lsd3lj8t3e2kaywk-17906653722342.联动cg.png</strong>
+</summary>
+
+- **Name:** 4.8联动壁纸02
+- **Published Date:** 2026-09-29 07:03:23
+- **Downloaded Date:** 2026-09-30T05:03:27Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.02 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/16lsd3lj8t3e2kaywk-17906653722342.%E8%81%94%E5%8A%A8cg.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/16lsd3lj8t3e2kaywk-17906653722342.联动cg.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ls2v9qkyhsiwhpvlcm-17906653835853.%E8%81%94%E5%8A%A8%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5.jpg" width="200" alt="ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.png" title="ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.png"> <strong>ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.png</strong>
+</summary>
+
+- **Name:** 4.8联动壁纸03
+- **Published Date:** 2026-09-29 07:03:15
+- **Downloaded Date:** 2026-09-30T05:03:27Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.28 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ls2v9qkyhsiwhpvlcm-17906653835853.%E8%81%94%E5%8A%A8%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790611200000/ls2v9qkyhsiwhpvlcm-17906653835853.联动皮肤海报.png">Original</a>
+
+</details>
 
 <details>
 <summary>
