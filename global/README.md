@@ -1,12 +1,216 @@
 # Global Server — PGR Wallpaper Archive
 
-> Total: 425 wallpapers
+> Total: 437 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=global)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/gn2h1kip51pnb0j8fp-17907592900853.%E8%81%94%E5%8A%A8%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5.jpg" width="200" alt="gn2h1kip51pnb0j8fp-17907592900853.联动皮肤海报.png" title="gn2h1kip51pnb0j8fp-17907592900853.联动皮肤海报.png"> <strong>gn2h1kip51pnb0j8fp-17907592900853.联动皮肤海报.png</strong>
+</summary>
+
+- **Name:** 远信回响-约战联动
+- **Published Date:** 2026-09-30 09:08:05
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.28 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/gn2h1kip51pnb0j8fp-17907592900853.%E8%81%94%E5%8A%A8%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/gn2h1kip51pnb0j8fp-17907592900853.联动皮肤海报.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/u3s4g09ok15ui3g3un-17907592726942.%E8%81%94%E5%8A%A8cg.jpg" width="200" alt="u3s4g09ok15ui3g3un-17907592726942.联动cg.png" title="u3s4g09ok15ui3g3un-17907592726942.联动cg.png"> <strong>u3s4g09ok15ui3g3un-17907592726942.联动cg.png</strong>
+</summary>
+
+- **Name:** 远信回响-约战联动
+- **Published Date:** 2026-09-30 09:07:48
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.02 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/u3s4g09ok15ui3g3un-17907592726942.%E8%81%94%E5%8A%A8cg.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/u3s4g09ok15ui3g3un-17907592726942.联动cg.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/r4tbh04qj887va1d91-17907592552701.%E8%81%94%E5%8A%A8kv.jpg" width="200" alt="r4tbh04qj887va1d91-17907592552701.联动kv.png" title="r4tbh04qj887va1d91-17907592552701.联动kv.png"> <strong>r4tbh04qj887va1d91-17907592552701.联动kv.png</strong>
+</summary>
+
+- **Name:** 远信回响-约战联动
+- **Published Date:** 2026-09-30 09:07:27
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.81 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/r4tbh04qj887va1d91-17907592552701.%E8%81%94%E5%8A%A8kv.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/r4tbh04qj887va1d91-17907592552701.联动kv.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/3yp0x8vancbllw7ca2-179075923067109.jpg" width="200" alt="3yp0x8vancbllw7ca2-179075923067109.png" title="3yp0x8vancbllw7ca2-179075923067109.png"> <strong>3yp0x8vancbllw7ca2-179075923067109.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:07:05
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/3yp0x8vancbllw7ca2-179075923067109.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/3yp0x8vancbllw7ca2-179075923067109.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/09j4g41l2ap4e6aam1-179075921402308.jpg" width="200" alt="09j4g41l2ap4e6aam1-179075921402308.png" title="09j4g41l2ap4e6aam1-179075921402308.png"> <strong>09j4g41l2ap4e6aam1-179075921402308.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:06:48
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/09j4g41l2ap4e6aam1-179075921402308.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/09j4g41l2ap4e6aam1-179075921402308.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/isgp1zeofrp0qn2asm-179075919554907.jpg" width="200" alt="isgp1zeofrp0qn2asm-179075919554907.png" title="isgp1zeofrp0qn2asm-179075919554907.png"> <strong>isgp1zeofrp0qn2asm-179075919554907.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:06:28
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.56 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/isgp1zeofrp0qn2asm-179075919554907.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/isgp1zeofrp0qn2asm-179075919554907.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mv5hqasawo584uyiyi-179075917716706.jpg" width="200" alt="mv5hqasawo584uyiyi-179075917716706.png" title="mv5hqasawo584uyiyi-179075917716706.png"> <strong>mv5hqasawo584uyiyi-179075917716706.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:06:11
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.02 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mv5hqasawo584uyiyi-179075917716706.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/mv5hqasawo584uyiyi-179075917716706.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/74aozm88enqyxhvm6q-179075916207105.jpg" width="200" alt="74aozm88enqyxhvm6q-179075916207105.png" title="74aozm88enqyxhvm6q-179075916207105.png"> <strong>74aozm88enqyxhvm6q-179075916207105.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:05:55
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.76 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/74aozm88enqyxhvm6q-179075916207105.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/74aozm88enqyxhvm6q-179075916207105.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/fsjb5g2ljp3yefpxbs-179075914522404.jpg" width="200" alt="fsjb5g2ljp3yefpxbs-179075914522404.png" title="fsjb5g2ljp3yefpxbs-179075914522404.png"> <strong>fsjb5g2ljp3yefpxbs-179075914522404.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:05:40
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1414
+- **Size:** 5.64 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fsjb5g2ljp3yefpxbs-179075914522404.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/fsjb5g2ljp3yefpxbs-179075914522404.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/p9x4tfqpm8dnfwrg40-179075912967303.jpg" width="200" alt="p9x4tfqpm8dnfwrg40-179075912967303.png" title="p9x4tfqpm8dnfwrg40-179075912967303.png"> <strong>p9x4tfqpm8dnfwrg40-179075912967303.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:05:22
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.28 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/p9x4tfqpm8dnfwrg40-179075912967303.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/p9x4tfqpm8dnfwrg40-179075912967303.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/dp3e60chd60imoxgfs-179075893219302.jpg" width="200" alt="dp3e60chd60imoxgfs-179075893219302.png" title="dp3e60chd60imoxgfs-179075893219302.png"> <strong>dp3e60chd60imoxgfs-179075893219302.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:02:05
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1611
+- **Size:** 6.41 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/dp3e60chd60imoxgfs-179075893219302.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/dp3e60chd60imoxgfs-179075893219302.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ctcxj29i8nvdoe2bum-179075886220501.jpg" width="200" alt="ctcxj29i8nvdoe2bum-179075886220501.png" title="ctcxj29i8nvdoe2bum-179075886220501.png"> <strong>ctcxj29i8nvdoe2bum-179075886220501.png</strong>
+</summary>
+
+- **Name:** 远信回响
+- **Published Date:** 2026-09-30 09:00:43
+- **Downloaded Date:** 2026-10-01T05:19:53Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.63 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ctcxj29i8nvdoe2bum-179075886220501.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1790697600000/ctcxj29i8nvdoe2bum-179075886220501.png">Original</a>
+
+</details>
 
 <details>
 <summary>
