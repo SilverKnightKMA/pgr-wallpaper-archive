@@ -170,27 +170,22 @@ def generate_main_readme(config):
 
     lines.append(f'[Browse & Filter Wallpapers on Web]({pages_url})\n')
 
-    # --- Download All guide (kept in README; the website button links here) ---
-    zip_url = f'https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip'
-    clone_url = f'https://github.com/{repo_slug}.git'
+    # --- Download All guide (3 one-click ZIPs; kept in README; website buttons link the same) ---
+    category_branches = config.get('categoryBranches', ['desktop', 'mobile'])
+    cat_stats = {
+        'desktop': (total_desktop, format_size(desktop_size_bytes)),
+        'mobile': (total_mobile, format_size(mobile_size_bytes)),
+    }
     lines.append('<a id="download-all-wallpapers"></a>\n')
     lines.append('## 📥 Download All Wallpapers\n')
-    lines.append(f'The complete archive ({total_all} files, {total_size_str}) lives in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch with a flat `desktop/` + `mobile/` layout.\n')
-    lines.append(f'**Option 1 — one-click ZIP (desktop + mobile together, {total_size_str}):**\n')
-    lines.append(f'[⬇ Download `{wallpapers_branch}.zip`]({zip_url})\n')
-    lines.append(f'**Option 2 — only one category (git sparse checkout; works in Git Bash / PowerShell / Terminal):**\n')
-    lines.append(f'- `desktop/` — {total_desktop} files, {format_size(desktop_size_bytes)}\n')
-    lines.append(f'- `mobile/` — {total_mobile} files, {format_size(mobile_size_bytes)}\n')
-    lines.append('```bash\n')
-    lines.append(f'git clone --filter=blob:none --no-checkout --depth 1 -b {wallpapers_branch} {clone_url} pgr-wallpapers\n')
-    lines.append('cd pgr-wallpapers\n')
-    lines.append("git sparse-checkout set --no-cone '/desktop/*'   # or '/mobile/*'\n")
-    lines.append(f'git checkout {wallpapers_branch}\n')
-    lines.append('```\n')
-    lines.append('**Update your local copy later:**\n')
-    lines.append('```bash\n')
-    lines.append('cd pgr-wallpapers && git pull --ff-only\n')
-    lines.append('```\n')
+    lines.append(f'The complete archive ({total_all} files, {total_size_str}) lives in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch with a flat `desktop/` + `mobile/` layout. Pick a one-click ZIP:\n')
+    lines.append('| What you get | Files | Size | Download |')
+    lines.append('|---|---|---|---|')
+    for cb in category_branches:
+        n, sz = cat_stats.get(cb, (0, '0 B'))
+        lines.append(f'| `{cb}/` only | {n} | {sz} | [⬇ {cb}.zip](https://github.com/{repo_slug}/archive/refs/heads/{cb}.zip) |')
+    lines.append(f'| everything (desktop + mobile) | {total_all} | {total_size_str} | [⬇ {wallpapers_branch}.zip](https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip) |')
+    lines.append(f'The per-category ZIPs are the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch split by folder — same images, no git required.\n')
 
     lines.append('## Server Galleries\n')
     lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')

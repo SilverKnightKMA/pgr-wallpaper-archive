@@ -28,6 +28,7 @@
   ],
   "wallpapersBranch": "wallpapers",
   "previewBranch": "preview",
+  "categoryBranches": ["desktop", "mobile"],
   "settings": {},
   "readme": {
     "main": {

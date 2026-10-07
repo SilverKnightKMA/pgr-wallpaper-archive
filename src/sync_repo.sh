@@ -229,6 +229,29 @@ else
   echo "  All batches pushed to $WALLPAPERS_BRANCH"
 fi
 
+# --- 5b. Update per-category download branches (desktop/mobile ZIPs) ---
+# These branches exist purely for one-click codeload ZIPs (desktop.zip /
+# mobile.zip). Derived from the wallpapers tip via tree surgery — only a few
+# KB of new tree/commit objects, no blob re-upload. Non-fatal on failure.
+CATEGORY_BRANCHES=$(python3 -c "import json; print(' '.join(json.load(open('$REPO_DIR/config.json')).get('categoryBranches', ['desktop','mobile'])))")
+for CB in $CATEGORY_BRANCHES; do
+  SUBTREE=$(git -C "$WP_DIR" ls-tree HEAD | awk -v d="$CB" '$4==d{print $3}')
+  if [ -z "$SUBTREE" ]; then
+    echo "  Category branch skipped: '$CB' not found in $WALLPAPERS_BRANCH"
+    continue
+  fi
+  NEWTREE=$(printf '040000 tree %s\t%s\n' "$SUBTREE" "$CB" | git -C "$WP_DIR" mktree)
+  NEWCOMMIT=$(git -C "$WP_DIR" commit-tree "$NEWTREE" -p HEAD -m "Auto-sync: $CB category branch (derived from $WALLPAPERS_BRANCH)")
+  # Category branches are derived artifacts regenerated from the wallpapers
+  # tip every run — their previous tip is a side-commit, so this is always a
+  # non-fast-forward update. Force-push is intentional and safe.
+  if git -C "$WP_DIR" push -q --force origin "$NEWCOMMIT:refs/heads/$CB"; then
+    echo "  Updated category branch: $CB"
+  else
+    echo "  Warning: failed to update category branch $CB (non-fatal)"
+  fi
+done
+
 # --- 6. Build Manifest ---
 echo ""
 echo "Building manifest..."

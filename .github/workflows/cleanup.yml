@@ -38,7 +38,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          python3 -c "import json; c=json.load(open('config.json')); print('main'); print(c.get('wallpapersBranch','wallpapers')); print(c.get('previewBranch','preview'))" > /tmp/protected_branches.txt
+          python3 -c "import json; c=json.load(open('config.json')); bs=['main', c.get('wallpapersBranch','wallpapers'), c.get('previewBranch','preview')] + c.get('categoryBranches',['desktop','mobile']); print('\n'.join(bs))" > /tmp/protected_branches.txt
           echo "Protected branches:"
           cat /tmp/protected_branches.txt
           branches=$(gh api "repos/${{ github.repository }}/branches" --paginate -q '.[].name' | grep -vxF -f /tmp/protected_branches.txt) || true

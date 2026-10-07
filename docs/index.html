@@ -238,8 +238,9 @@
         <p class="subtitle">Browse and filter wallpapers from Punishing: Gray Raven</p>
 
         <div class="dl-all">
-            <a id="downloadAllBtn" class="dl-zip" href="#" target="_blank" rel="noopener noreferrer">⬇ Download All (.zip)</a>
-            <a id="downloadGuideBtn" class="dl-guide" href="#" target="_blank" rel="noopener noreferrer">Per-category / sync guide</a>
+            <a id="dlDesktopBtn" class="dl-zip" href="#" target="_blank" rel="noopener noreferrer">⬇ Desktop (.zip)</a>
+            <a id="dlMobileBtn" class="dl-zip" href="#" target="_blank" rel="noopener noreferrer">⬇ Mobile (.zip)</a>
+            <a id="dlAllBtn" class="dl-guide" href="#" target="_blank" rel="noopener noreferrer">⬇ Everything (.zip)</a>
         </div>
 
         <div class="controls">
@@ -666,20 +667,28 @@
         }
 
         function setupDownloadButtons(manifest) {
-            const zipBtn = document.getElementById('downloadAllBtn');
-            const guideBtn = document.getElementById('downloadGuideBtn');
-            if (!zipBtn || !guideBtn) return;
-            let count = 0, bytes = 0;
+            const desktopBtn = document.getElementById('dlDesktopBtn');
+            const mobileBtn = document.getElementById('dlMobileBtn');
+            const allBtn = document.getElementById('dlAllBtn');
+            if (!desktopBtn || !mobileBtn || !allBtn) return;
+            const cat = { desktop: 0, mobile: 0 };
+            const bytes = { desktop: 0, mobile: 0 };
             Object.keys(manifest).forEach(id => {
                 const sd = manifest[id];
                 if (!sd || !sd.wallpapers) return;
                 sd.wallpapers.forEach(w => {
-                    if (w.status === 'success') { count++; bytes += parseSizeStr(w.size); }
+                    if (w.status !== 'success') return;
+                    const c = w.category === 'mobile' ? 'mobile' : 'desktop';
+                    cat[c]++; bytes[c] += parseSizeStr(w.size);
                 });
             });
-            if (count > 0) zipBtn.textContent = `⬇ Download All (.zip, ${formatBytes(bytes)})`;
-            zipBtn.href = `https://github.com/${REPO}/archive/refs/heads/${WALLPAPERS_BRANCH}.zip`;
-            guideBtn.href = `https://github.com/${REPO}#download-all-wallpapers`;
+            const total = cat.desktop + cat.mobile;
+            desktopBtn.textContent = `⬇ Desktop (${cat.desktop}, ${formatBytes(bytes.desktop)})`;
+            mobileBtn.textContent = `⬇ Mobile (${cat.mobile}, ${formatBytes(bytes.mobile)})`;
+            allBtn.textContent = `⬇ Everything (${total}, ${formatBytes(bytes.desktop + bytes.mobile)})`;
+            desktopBtn.href = `https://github.com/${REPO}/archive/refs/heads/desktop.zip`;
+            mobileBtn.href = `https://github.com/${REPO}/archive/refs/heads/mobile.zip`;
+            allBtn.href = `https://github.com/${REPO}/archive/refs/heads/${WALLPAPERS_BRANCH}.zip`;
         }
 
         async function init() {
