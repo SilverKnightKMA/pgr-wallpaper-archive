@@ -34,6 +34,18 @@ CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
 # Only download wallpaper/CG (pictureType 11)
 ALLOWED_PICTURE_TYPES = {11}
 
+# /images/<ts>/ segment in Kuro CDN URLs (upload-day bucket, part of the OSS key)
+import re
+TS_RE = re.compile(r'/images/(\d+)/')
+
+
+def ts_bucket_from_url(url):
+    """Extract the /images/<ts>/ segment from a Kuro CDN URL ('' if absent)."""
+    if not isinstance(url, str):
+        return ''
+    m = TS_RE.search(url)
+    return m.group(1) if m else ''
+
 timestamp = lambda: datetime.now().strftime('%H:%M:%S')
 
 
@@ -56,7 +68,12 @@ def download_json(url):
 
 
 def list_existing_images(server_id):
-    """Load existing image filenames from .existing_images file and local dirs."""
+    """Load existing-image dedup keys from .existing_images and local dirs.
+
+    Keys are "<sourceFilename>|<ts-bucket>" (ts empty when unknown), so a
+    re-upload of the same basename under a NEW timestamp is NOT skipped.
+    Legacy .existing_images lines without '|' get an empty ts suffix.
+    """
     existing = set()
     branch_dir = os.path.join(REPO_DIR, 'branches', server_id)
 
@@ -67,22 +84,29 @@ def list_existing_images(server_id):
             for line in f:
                 line = line.strip()
                 if line:
-                    existing.add(line)
+                    if '|' in line:
+                        existing.add(line)
+                    else:  # legacy format: bare filename
+                        existing.add(line + '|')
 
-    # Check local directories (flat downloads + organized categories)
+    # Check local directories (flat downloads + organized categories).
+    # Staged files are keyed with an empty ts: a URL carrying an explicit ts
+    # will not match them (worst case it is re-downloaded once; build_manifest
+    # then reconciles via Wallpapers/downloaded/). URLs WITHOUT a ts still
+    # match, preserving the old skip behavior for ts-less URLs.
     for subdir_name in ['downloads', 'images', 'desktop', 'mobile']:
         subdir = os.path.join(branch_dir, subdir_name)
         if os.path.isdir(subdir):
             for fn in os.listdir(subdir):
                 if fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                    existing.add(fn)
+                    existing.add(fn + '|')
             # Also check category subdirs inside images/
             for cat in ['desktop', 'mobile']:
                 cat_dir = os.path.join(subdir, cat)
                 if os.path.isdir(cat_dir):
                     for fn in os.listdir(cat_dir):
                         if fn.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
-                            existing.add(fn)
+                            existing.add(fn + '|')
 
     return existing
 
@@ -159,9 +183,10 @@ def process_server(server, max_images):
         url = extract_download_url(pic)
         if url:
             fn = filename_from_url(url)
-            if fn and fn not in existing:
+            key = f"{fn}|{ts_bucket_from_url(url)}"
+            if fn and key not in existing:
                 new_urls.append(url)
-                existing.add(fn)  # prevent duplicates within this run
+                existing.add(key)  # prevent duplicates within this run
 
     # Apply max_images cap
     if max_images and len(new_urls) > max_images:

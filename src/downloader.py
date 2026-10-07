@@ -8,6 +8,14 @@ Supports a size limit (MAX_BATCH_BYTES env var, default 1.8GB).
 When the limit is reached, downloading stops and remaining URLs are kept
 in the txt files for the next iteration.
 
+Stored filenames: each downloaded file keeps its URL basename unless that
+name (or its stem — previews share the stem namespace) is already taken by
+an archived image (any server) or by a file downloaded earlier in this run;
+in that case "__<server_id>" (and a counter if needed) is appended, e.g.
+"01.png" -> "01__cn.png". The mapping is written to
+Wallpapers/downloaded/<server_id>.map ("<stored>\t<url>") for
+build_manifest.py, which records it as sourceFilename vs filename.
+
 Exit codes:
     0 - All downloads completed (no remaining)
     2 - Batch limit reached, more downloads remain
@@ -49,6 +57,51 @@ def encode_url(url):
     return urllib.parse.urlunsplit((
         parsed.scheme, parsed.netloc, path, parsed.query, parsed.fragment
     ))
+
+
+def load_existing_stored_names():
+    """Load all stored filenames (+ stems) from data/manifest.json.
+
+    The manifest mirrors the wallpapers/preview branches 1:1, so these names
+    form the global namespace a new file must not collide with (across all
+    servers). Returns (names, stems).
+    """
+    names, stems = set(), set()
+    manifest_path = os.path.join(REPO_DIR, 'data', 'manifest.json')
+    if os.path.isfile(manifest_path):
+        try:
+            with open(manifest_path, encoding='utf-8') as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            return names, stems
+        for _sid, sdata in data.items():
+            if not isinstance(sdata, dict):
+                continue
+            for w in sdata.get('wallpapers', []):
+                fn = w.get('filename')
+                if fn:
+                    names.add(fn)
+                    stems.add(os.path.splitext(fn)[0])
+    return names, stems
+
+
+def pick_stored_name(base, server_id, taken_names, taken_stems):
+    """Return a collision-free stored filename for a downloaded image.
+
+    Keeps `base` when free; otherwise appends __<server_id> (+ counter) so a
+    same-basename image never overwrites another file or another preview
+    (previews are stem + '.jpg', so stems share one namespace). Callers must
+    add the returned name/stem to the taken sets.
+    """
+    stem, ext = os.path.splitext(base)
+    if base not in taken_names and stem not in taken_stems:
+        return base
+    cand = f'{stem}__{server_id}{ext}'
+    n = 2
+    while cand in taken_names or os.path.splitext(cand)[0] in taken_stems:
+        cand = f'{stem}__{server_id}__{n}{ext}'
+        n += 1
+    return cand
 
 
 MAX_RETRIES = 3
@@ -120,8 +173,13 @@ def download_file(url, dest, stop_event=None):
     return False, basename, f'{last_err} (after {attempt} attempt(s))', encoded_url, 0
 
 
-def process_server(server, cumulative_bytes):
+def process_server(server, cumulative_bytes, global_names, global_stems):
     """Download new images for a server.
+
+    global_names/global_stems are mutated: every stored name assigned here
+    (whether downloaded now or already on disk from an interrupted run) is
+    reserved for the rest of this process, preventing in-run collisions
+    across servers.
 
     Returns (new_cumulative_bytes, hit_limit).
     When limit is reached, remaining URLs are written back to the txt file.
@@ -158,12 +216,15 @@ def process_server(server, cumulative_bytes):
             decoded_fn = urllib.parse.unquote(raw_fn)
         except Exception:
             decoded_fn = raw_fn
-        filename = decoded_fn if decoded_fn else raw_fn
-        dest = os.path.join(download_dir, filename)
+        base = decoded_fn if decoded_fn else raw_fn
+        stored = pick_stored_name(base, server_id, global_names, global_stems)
+        global_names.add(stored)
+        global_stems.add(os.path.splitext(stored)[0])
+        dest = os.path.join(download_dir, stored)
 
         if os.path.isfile(dest):
             continue
-        tasks.append((url, dest, filename))
+        tasks.append((url, dest, stored))
 
     if not tasks:
         print(f'  All files already exist.')
@@ -174,6 +235,7 @@ def process_server(server, cumulative_bytes):
     failed_urls = []
     remaining_urls = []
     downloaded_urls = []
+    downloaded_pairs = []  # (stored, url) for the .map file
 
     # Thread-safe cumulative size tracking
     lock = threading.Lock()
@@ -203,6 +265,7 @@ def process_server(server, cumulative_bytes):
                     downloaded += 1
                     cumulative_bytes += fsize
                     downloaded_urls.append(url)
+                    downloaded_pairs.append((filename, url))
                     current_count = downloaded
                     current_bytes = cumulative_bytes
 
@@ -258,6 +321,12 @@ def process_server(server, cumulative_bytes):
         with open(dl_path, 'a', encoding='utf-8') as f:
             for url in downloaded_urls:
                 f.write(url + '\n')
+        # Stored-name mapping (stored<TAB>url) — consumed by build_manifest.py
+        # so manifest records the real stored filename + sourceFilename.
+        map_path = os.path.join(dl_dir, f'{server_id}.map')
+        with open(map_path, 'a', encoding='utf-8') as f:
+            for stored, url in downloaded_pairs:
+                f.write(f'{stored}\t{url}\n')
 
     return cumulative_bytes, hit_limit
 
@@ -267,11 +336,16 @@ def main():
     print('=== PGR DOWNLOADER START ===')
     sys.stdout.flush()
 
+    global_names, global_stems = load_existing_stored_names()
+    print(f'Loaded {len(global_names)} existing stored names from manifest')
+    sys.stdout.flush()
+
     cumulative = 0
     hit_limit = False
 
     for server in config['servers']:
-        cumulative, hit_limit = process_server(server, cumulative)
+        cumulative, hit_limit = process_server(server, cumulative,
+                                               global_names, global_stems)
         if hit_limit:
             print(f'\n[!] Batch limit reached. Remaining servers deferred to next iteration.')
             break

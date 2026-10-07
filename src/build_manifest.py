@@ -206,8 +206,23 @@ def main():
                         failed_filenames.add(filename_from_url(url))
         failed_count = len(failed_urls)
 
-        # ---- Add NEW filenames from images_url txt + downloaded txt ----
-        new_url_map = {}  # filename -> url
+        # ---- Add NEW filenames from stored-name map + URL txt files ----
+        new_url_map = {}      # stored filename -> url
+        source_name_map = {}  # stored filename -> source basename (from URL)
+        # Primary source: downloader's stored-name mapping (records collision
+        # renames: stored "01__cn.png" <- source "01.png")
+        map_file = os.path.join(repo_dir, 'Wallpapers', 'downloaded', f'{sid}.map')
+        if os.path.isfile(map_file):
+            with open(map_file, encoding='utf-8') as f:
+                for line in f:
+                    line = line.rstrip('\n')
+                    if not line or '\t' not in line:
+                        continue
+                    stored, url = line.split('\t', 1)
+                    if stored and url:
+                        new_url_map[stored] = url
+                        source_name_map[stored] = filename_from_url(url)
+        # Secondary: raw URL lists (legacy entries without a map)
         url_files = [
             os.path.join(repo_dir, 'Wallpapers', 'images_url', f'{sid}.txt'),
             os.path.join(repo_dir, 'Wallpapers', 'downloaded', f'{sid}.txt'),
@@ -221,13 +236,18 @@ def main():
                     if not url:
                         continue
                     fn = filename_from_url(url)
-                    new_url_map[fn] = url
-                    if fn not in failed_filenames:
-                        # Check if file exists in any category dir
-                        for cat in CATEGORIES:
-                            if get_file_size(size_dirs.get(cat, []), fn) > 0:
-                                success_filenames.add(fn)
-                                break
+                    if fn not in new_url_map:
+                        new_url_map[fn] = url
+
+        # Mark as success the new URLs whose file exists in a category dir
+        for fn, url in new_url_map.items():
+            if fn in failed_filenames:
+                continue
+            # Check if file exists in any category dir
+            for cat in CATEGORIES:
+                if get_file_size(size_dirs.get(cat, []), fn) > 0:
+                    success_filenames.add(fn)
+                    break
 
         success = len(success_filenames)
         total = success + failed_count
@@ -242,6 +262,13 @@ def main():
             entry['filename'] = fn
             entry['server'] = server_name_map.get(sid, sid)
             entry['status'] = 'success'
+
+            # Source basename from the CDN URL. Equals filename except when
+            # the downloader renamed the stored file to dodge a collision
+            # (e.g. source "01.png" stored as "01__cn.png").
+            src_fn = source_name_map.get(fn, fn)
+            if not entry.get('sourceFilename'):
+                entry['sourceFilename'] = src_fn
 
             # ---- Resolution + Category (resolution-based) ----
             img_meta = image_metadata.get(fn)
@@ -270,7 +297,7 @@ def main():
                         entry['category'] = 'desktop'
 
             # imgUrl (primary URL field, replaces old 'url')
-            pic_data = url_pic_map.get(fn)
+            pic_data = url_pic_map.get(entry['sourceFilename']) or url_pic_map.get(fn)
             if pic_data and pic_data.get('imgUrl'):
                 entry['imgUrl'] = pic_data['imgUrl']
             elif fn in new_url_map:
@@ -314,6 +341,7 @@ def main():
             fn = filename_from_url(url)
             entry = dict(prior_wallpaper_map.get(fn, {}))
             entry['filename'] = fn
+            entry['sourceFilename'] = entry.get('sourceFilename') or fn
             entry['server'] = server_name_map.get(sid, sid)
             entry['imgUrl'] = url
             entry.pop('url', None)

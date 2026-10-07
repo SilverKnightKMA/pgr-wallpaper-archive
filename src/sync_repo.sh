@@ -115,7 +115,20 @@ while IFS= read -r id; do
     echo "  Category: $cat ($CAT_COUNT files)"
 
     mkdir -p "$WP_DIR/$cat"
-    find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp {} "$WP_DIR/$cat/" \;
+    find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -exec cp -n {} "$WP_DIR/$cat/" \;
+
+    # Collision backstop: a staged file must never replace an existing branch
+    # file. The working tree is SPARSE (existing images are not checked out),
+    # so cp cannot see collisions — check the branch tree instead.
+    if git -C "$WP_DIR" rev-parse -q --verify HEAD >/dev/null 2>&1; then
+      while IFS= read -r -d '' staged; do
+        rel="$cat/$(basename "$staged")"
+        if [ -n "$(git -C "$WP_DIR" ls-tree HEAD -- "$rel")" ]; then
+          echo "❌ COLLISION (backstop): '$rel' already exists on branch $WALLPAPERS_BRANCH — refusing to overwrite (staged by server '$id')." >&2
+          exit 1
+        fi
+      done < <(find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -print0)
+    fi
 
     # LFS Tracking for large files
     find "$IMG_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) -size +100M | while read -r bigfile; do
@@ -131,7 +144,16 @@ while IFS= read -r id; do
     if [ "$PREVIEW_COUNT" -gt 0 ]; then
       echo "  Previews: $PREVIEW_COUNT files"
       mkdir -p "$PV_DIR/previews"
-      find "$PREVIEW_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -exec cp {} "$PV_DIR/previews/" \;
+      find "$PREVIEW_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -exec cp -n {} "$PV_DIR/previews/" \;
+      if git -C "$PV_DIR" rev-parse -q --verify HEAD >/dev/null 2>&1; then
+        while IFS= read -r -d '' staged; do
+          rel="previews/$(basename "$staged")"
+          if [ -n "$(git -C "$PV_DIR" ls-tree HEAD -- "$rel")" ]; then
+            echo "❌ COLLISION (backstop): '$rel' already exists on branch $PREVIEW_BRANCH — refusing to overwrite (staged by server '$id')." >&2
+            exit 1
+          fi
+        done < <(find "$PREVIEW_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0)
+      fi
     fi
   fi
 
