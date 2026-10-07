@@ -150,6 +150,9 @@ vite.config.ts.timestamp-*
 __pycache__/
 *.pyc
 
+# Observational memory (agent pipeline)
+.memory/
+
 # Ignore dump file
 full_source_code.txt
 dump_code.sh
