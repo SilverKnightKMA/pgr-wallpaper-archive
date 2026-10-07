@@ -12,18 +12,14 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 
 ## 📥 Download All Wallpapers
 
-The complete archive (3086 files, 22.06 GB) lives in the [`wallpapers`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers) branch with a flat `desktop/` + `mobile/` layout. Pick a one-click ZIP:
-
 | What you get | Files | Size | Download |
 |---|---|---|---|
 | `desktop/` only | 2983 | 21.87 GB | [⬇ desktop.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/desktop.zip) |
 | `mobile/` only | 103 | 197.59 MB | [⬇ mobile.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/mobile.zip) |
 | everything (desktop + mobile) | 3086 | 22.06 GB | [⬇ wallpapers.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip) |
+Incremental updates are also published as [Releases](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/releases).
+
 ## Server Galleries
-
-All wallpapers are stored in the [`wallpapers`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers) branch.
-
-Previews and server pages are in the [`preview`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview) branch.
 
 | Server | Total | Desktop | Mobile | Success | Failed | Last Updated |
 |--------|-------|---------|--------|---------|--------|--------------|
@@ -466,9 +462,3 @@ Previews and server pages are in the [`preview`](https://github.com/SilverKnight
     </td>
   </tr>
 </table>
-
----
-
-## Releases
-
-All wallpapers are also available as downloads in [Releases](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/releases).

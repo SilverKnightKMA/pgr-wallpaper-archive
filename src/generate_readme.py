@@ -178,17 +178,15 @@ def generate_main_readme(config):
     }
     lines.append('<a id="download-all-wallpapers"></a>\n')
     lines.append('## 📥 Download All Wallpapers\n')
-    lines.append(f'The complete archive ({total_all} files, {total_size_str}) lives in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch with a flat `desktop/` + `mobile/` layout. Pick a one-click ZIP:\n')
     lines.append('| What you get | Files | Size | Download |')
     lines.append('|---|---|---|---|')
     for cb in category_branches:
         n, sz = cat_stats.get(cb, (0, '0 B'))
         lines.append(f'| `{cb}/` only | {n} | {sz} | [⬇ {cb}.zip](https://github.com/{repo_slug}/archive/refs/heads/{cb}.zip) |')
     lines.append(f'| everything (desktop + mobile) | {total_all} | {total_size_str} | [⬇ {wallpapers_branch}.zip](https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip) |')
+    lines.append(f'Incremental updates are also published as [Releases](https://github.com/{repo_slug}/releases).\n')
 
     lines.append('## Server Galleries\n')
-    lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')
-    lines.append(f'Previews and server pages are in the [`{preview_branch}`](https://github.com/{repo_slug}/tree/{preview_branch}) branch.\n')
     lines.append('| Server | Total | Desktop | Mobile | Success | Failed | Last Updated |')
     lines.append('|--------|-------|---------|--------|---------|--------|--------------|')
 
@@ -239,10 +237,6 @@ def generate_main_readme(config):
             lines.append('</table>\n')
         else:
             lines.append('_No wallpapers yet._\n')
-
-    lines.append('---\n')
-    lines.append('## Releases\n')
-    lines.append(f'All wallpapers are also available as downloads in [Releases](https://github.com/{repo_slug}/releases).\n')
 
     content = '\n'.join(lines)
     output_path = os.environ.get('README_OUTPUT', os.path.join(REPO_DIR, 'README.md'))
