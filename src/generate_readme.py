@@ -168,7 +168,7 @@ def generate_main_readme(config):
 
     lines.append(f'{workflow_badge} {total_badge} {desktop_badge} {mobile_badge} {size_badge} {failed_badge}\n')
 
-    lines.append(f'> **Last Action Run:** {last_action_run}\n')
+    lines.append(f'> **Last Archive Update:** {last_action_run}\n')
 
     lines.append(f'[Browse & Filter Wallpapers on Web]({pages_url})\n')
 

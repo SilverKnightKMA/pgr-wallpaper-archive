@@ -4,7 +4,7 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 
 [![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-3086-blue) ![Desktop](https://img.shields.io/badge/Desktop-2983-informational) ![Mobile](https://img.shields.io/badge/Mobile-103-informational) ![Size](https://img.shields.io/badge/Size-22.06%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
 
-> **Last Action Run:** 2026-10-01T05:19:53Z
+> **Last Archive Update:** 2026-10-01T05:19:53Z
 
 [Browse & Filter Wallpapers on Web](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/)
 
