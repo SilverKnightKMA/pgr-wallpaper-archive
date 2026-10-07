@@ -26,6 +26,12 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         h1 { margin-bottom: 8px; }
         .subtitle { color: var(--text-muted); margin-bottom: 24px; }
+        .dl-all { margin-bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+        .dl-all a { display: inline-block; padding: 8px 14px; border-radius: 6px; font-size: 14px; text-decoration: none; }
+        .dl-all .dl-zip { background: #238636; color: #fff; border: 1px solid rgba(240,246,252,0.1); }
+        .dl-all .dl-zip:hover { background: #2ea043; }
+        .dl-all .dl-guide { color: var(--accent); border: 1px solid var(--border); }
+        .dl-all .dl-guide:hover { border-color: var(--accent); }
         
         /* --- Filter Controls Styling --- */
         .controls {
@@ -230,6 +236,11 @@
     <div class="container">
         <h1><img src="favicon.png" alt="PGR" width="32" height="32" style="vertical-align: middle; margin-right: 8px;" onerror="this.src='https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png'">PGR Wallpaper Archive</h1>
         <p class="subtitle">Browse and filter wallpapers from Punishing: Gray Raven</p>
+
+        <div class="dl-all">
+            <a id="downloadAllBtn" class="dl-zip" href="#" target="_blank" rel="noopener noreferrer">⬇ Download All (.zip)</a>
+            <a id="downloadGuideBtn" class="dl-guide" href="#" target="_blank" rel="noopener noreferrer">Per-category / sync guide</a>
+        </div>
 
         <div class="controls">
             <div class="filter-group">
@@ -641,10 +652,41 @@
             renderGallery(filtered);
         }
 
+        function parseSizeStr(str) {
+            const m = (str || '').match(/^([\d.]+)\s*(B|KB|MB|GB)$/i);
+            if (!m) return 0;
+            const mult = { B: 1, KB: 1024, MB: 1024 ** 2, GB: 1024 ** 3 };
+            return parseFloat(m[1]) * (mult[m[2].toUpperCase()] || 1);
+        }
+
+        function formatBytes(total) {
+            if (total >= 1024 ** 3) return (total / 1024 ** 3).toFixed(2) + ' GB';
+            if (total >= 1024 ** 2) return (total / 1024 ** 2).toFixed(1) + ' MB';
+            return Math.round(total / 1024) + ' KB';
+        }
+
+        function setupDownloadButtons(manifest) {
+            const zipBtn = document.getElementById('downloadAllBtn');
+            const guideBtn = document.getElementById('downloadGuideBtn');
+            if (!zipBtn || !guideBtn) return;
+            let count = 0, bytes = 0;
+            Object.keys(manifest).forEach(id => {
+                const sd = manifest[id];
+                if (!sd || !sd.wallpapers) return;
+                sd.wallpapers.forEach(w => {
+                    if (w.status === 'success') { count++; bytes += parseSizeStr(w.size); }
+                });
+            });
+            if (count > 0) zipBtn.textContent = `⬇ Download All (.zip, ${formatBytes(bytes)})`;
+            zipBtn.href = `https://github.com/${REPO}/archive/refs/heads/${WALLPAPERS_BRANCH}.zip`;
+            guideBtn.href = `https://github.com/${REPO}#download-all-wallpapers`;
+        }
+
         async function init() {
             try {
                 await loadConfig();
                 const manifest = await loadManifest();
+                setupDownloadButtons(manifest);
 
                 // Populate server names from manifest before building UI
                 const serverIds = Object.keys(manifest).filter(k => k !== 'releaseTime');

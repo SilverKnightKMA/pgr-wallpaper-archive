@@ -136,6 +136,18 @@ def generate_main_readme(config):
 
     total_size_str = format_size(total_size_bytes)
 
+    # Per-category stats for the download guide
+    desktop_size_bytes = 0
+    mobile_size_bytes = 0
+    for server in config['servers']:
+        sd = manifest.get(server['id'], {})
+        for w in sd.get('wallpapers', []):
+            cat = w.get('category', 'desktop')
+            if cat == 'desktop':
+                desktop_size_bytes += parse_size(w.get('size', ''))
+            else:
+                mobile_size_bytes += parse_size(w.get('size', ''))
+
     lines = []
     lines.append('# PGR Wallpaper Archive\n')
     lines.append('Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.\n')
@@ -157,6 +169,29 @@ def generate_main_readme(config):
     lines.append(f'> **Last Action Run:** {last_action_run}\n')
 
     lines.append(f'[Browse & Filter Wallpapers on Web]({pages_url})\n')
+
+    # --- Download All guide (kept in README; the website button links here) ---
+    zip_url = f'https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip'
+    clone_url = f'https://github.com/{repo_slug}.git'
+    lines.append('<a id="download-all-wallpapers"></a>\n')
+    lines.append('## 📥 Download All Wallpapers\n')
+    lines.append(f'The complete archive ({total_all} files, {total_size_str}) lives in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch with a flat `desktop/` + `mobile/` layout.\n')
+    lines.append(f'**Option 1 — one-click ZIP (desktop + mobile together, {total_size_str}):**\n')
+    lines.append(f'[⬇ Download `{wallpapers_branch}.zip`]({zip_url})\n')
+    lines.append(f'**Option 2 — only one category (git sparse checkout; works in Git Bash / PowerShell / Terminal):**\n')
+    lines.append(f'- `desktop/` — {total_desktop} files, {format_size(desktop_size_bytes)}\n')
+    lines.append(f'- `mobile/` — {total_mobile} files, {format_size(mobile_size_bytes)}\n')
+    lines.append('```bash\n')
+    lines.append(f'git clone --filter=blob:none --no-checkout --depth 1 -b {wallpapers_branch} {clone_url} pgr-wallpapers\n')
+    lines.append('cd pgr-wallpapers\n')
+    lines.append("git sparse-checkout set --no-cone '/desktop/*'   # or '/mobile/*'\n")
+    lines.append(f'git checkout {wallpapers_branch}\n')
+    lines.append('```\n')
+    lines.append('**Update your local copy later:**\n')
+    lines.append('```bash\n')
+    lines.append('cd pgr-wallpapers && git pull --ff-only\n')
+    lines.append('```\n')
+
     lines.append('## Server Galleries\n')
     lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')
     lines.append(f'Previews and server pages are in the [`{preview_branch}`](https://github.com/{repo_slug}/tree/{preview_branch}) branch.\n')
@@ -330,12 +365,44 @@ def generate_server_readme(config, server):
     print(f'Server README for {server["name"]} updated at {output_path}!')
 
 
+def generate_index_data(config):
+    """Write docs/index-data.json: compact index for the random-wallpaper Worker.
+
+    Format: {"repo": ..., "wallpapersBranch": ..., "previewBranch": ...,
+             "items": [[filename, category, server_id], ...]}
+    Served by GitHub Pages (docs/), consumed by the Cloudflare Worker.
+    """
+    manifest = load_manifest()
+    repo_slug = os.environ.get('GITHUB_REPOSITORY', 'SilverKnightKMA/pgr-wallpaper-archive')
+    items = []
+    for server in config['servers']:
+        sd = manifest.get(server['id'], {})
+        for w in sd.get('wallpapers', []):
+            if w.get('status') == 'success':
+                items.append([w.get('filename', ''),
+                              w.get('category', 'desktop'),
+                              server['id']])
+    data = {
+        'repo': repo_slug,
+        'wallpapersBranch': config.get('wallpapersBranch', 'wallpapers'),
+        'previewBranch': config.get('previewBranch', 'preview'),
+        'items': items,
+    }
+    output_path = os.environ.get('INDEX_DATA_OUTPUT',
+                                 os.path.join(REPO_DIR, 'docs', 'index-data.json'))
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, separators=(',', ':'), ensure_ascii=False)
+    print(f'index-data.json written: {len(items)} items -> {output_path}')
+
+
 def main():
     config = load_config()
     mode = sys.argv[1] if len(sys.argv) > 1 else 'main'
 
     if mode == 'main':
         generate_main_readme(config)
+        generate_index_data(config)
     elif mode in ('branch', 'server'):
         if len(sys.argv) < 3:
             print('Server ID required for server mode', file=sys.stderr)

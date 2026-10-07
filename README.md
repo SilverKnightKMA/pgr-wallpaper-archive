@@ -8,6 +8,42 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 
 [Browse & Filter Wallpapers on Web](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/)
 
+<a id="download-all-wallpapers"></a>
+
+## 📥 Download All Wallpapers
+
+The complete archive (3086 files, 22.06 GB) lives in the [`wallpapers`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers) branch with a flat `desktop/` + `mobile/` layout.
+
+**Option 1 — one-click ZIP (desktop + mobile together, 22.06 GB):**
+
+[⬇ Download `wallpapers.zip`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip)
+
+**Option 2 — only one category (git sparse checkout; works in Git Bash / PowerShell / Terminal):**
+
+- `desktop/` — 2983 files, 21.87 GB
+
+- `mobile/` — 103 files, 197.59 MB
+
+```bash
+
+git clone --filter=blob:none --no-checkout --depth 1 -b wallpapers https://github.com/SilverKnightKMA/pgr-wallpaper-archive.git pgr-wallpapers
+
+cd pgr-wallpapers
+
+git sparse-checkout set --no-cone '/desktop/*'   # or '/mobile/*'
+
+git checkout wallpapers
+
+```
+
+**Update your local copy later:**
+
+```bash
+
+cd pgr-wallpapers && git pull --ff-only
+
+```
+
 ## Server Galleries
 
 All wallpapers are stored in the [`wallpapers`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers) branch.
