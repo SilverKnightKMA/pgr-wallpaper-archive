@@ -6,7 +6,7 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 
 > **Last Archive Update:** 2026-10-01T05:19:53Z
 
-[Browse & Filter Wallpapers on Web](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/)
+[Browse & Filter Wallpapers on Web](https://pgr-wallpapers.tungvuthanh.com/)
 
 <a id="download-all-wallpapers"></a>
 
@@ -19,6 +19,22 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 | everything (desktop + mobile) | 3086 | 22.06 GB | [⬇ wallpapers.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip) |
 
 Incremental updates are also published as [Releases](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/releases).
+
+<a id="random-wallpaper-api"></a>
+
+## 🎲 Random Wallpaper API
+
+A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes, always streamed from this repo (GitHub-hosted, never the game CDN):
+
+| Endpoint | Returns |
+|---|---|
+| [`/wallpapers`](https://pgr-wallpapers.tungvuthanh.com/wallpapers) | random image, any category |
+| [`/desktop`](https://pgr-wallpapers.tungvuthanh.com/desktop) | random **desktop** wallpaper |
+| [`/mobile`](https://pgr-wallpapers.tungvuthanh.com/mobile) | random **mobile** wallpaper |
+
+Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 straight to the raw file instead of streaming bytes).
+
+Paste a link in a browser address bar, `curl -L`, `wget`, or any tool that expects an image URL — every hit re-rolls the dice.
 
 ## Server Galleries
 

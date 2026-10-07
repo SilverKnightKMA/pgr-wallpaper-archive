@@ -109,7 +109,7 @@ def generate_main_readme(config):
     preview_branch = config.get('previewBranch', 'preview')
     owner = repo_slug.split('/')[0]
     repo_name = repo_slug.split('/')[1]
-    pages_url = f'https://{owner}.github.io/{repo_name}/'
+    pages_url = (config.get('site') or {}).get('baseUrl', f'https://{owner}.github.io/{repo_name}/').rstrip('/') + '/'
 
     # Aggregate stats across all servers
     total_all = 0
@@ -188,6 +188,21 @@ def generate_main_readme(config):
     lines.append(f'| everything (desktop + mobile) | {total_all} | {total_size_str} | [⬇ {wallpapers_branch}.zip](https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip) |')
     lines.append('')
     lines.append(f'Incremental updates are also published as [Releases](https://github.com/{repo_slug}/releases).\n')
+
+    # --- Random Wallpaper API (Cloudflare Worker) ---
+    worker = config.get('worker') or {}
+    worker_base = (worker.get('baseUrl') or '').rstrip('/')
+    if worker_base:
+        lines.append('<a id="random-wallpaper-api"></a>\n')
+        lines.append('## 🎲 Random Wallpaper API\n')
+        lines.append(f'A tiny [Cloudflare Worker](https://github.com/{repo_slug}/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes, always streamed from this repo (GitHub-hosted, never the game CDN):\n')
+        lines.append('| Endpoint | Returns |\n|---|---|')
+        lines.append(f'| [`/wallpapers`]({worker_base}/wallpapers) | random image, any category |')
+        lines.append(f'| [`/desktop`]({worker_base}/desktop) | random **desktop** wallpaper |')
+        lines.append(f'| [`/mobile`]({worker_base}/mobile) | random **mobile** wallpaper |')
+        lines.append('')
+        lines.append(f'Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 straight to the raw file instead of streaming bytes).\n')
+        lines.append('Paste a link in a browser address bar, `curl -L`, `wget`, or any tool that expects an image URL — every hit re-rolls the dice.\n')
 
     lines.append('## Server Galleries\n')
     lines.append('| Server | Total | Desktop | Mobile | Success | Failed | Last Updated |')
@@ -288,7 +303,7 @@ def generate_server_readme(config, server):
     lines.append(f'> Total: {total} wallpapers\n')
     lines.append(f'[Back to Main](https://github.com/{repo_slug})\n')
 
-    pages_url = f'https://{owner}.github.io/{repo_name}/?server={server["id"]}'
+    pages_url = ((config.get('site') or {}).get('baseUrl') or f'https://{owner}.github.io/{repo_name}/').rstrip('/') + f'/?server={server["id"]}'
     lines.append(f'[View & Filter on GitHub Pages]({pages_url})\n')
     lines.append('## Gallery\n')
 

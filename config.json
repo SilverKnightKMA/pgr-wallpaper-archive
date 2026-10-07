@@ -28,7 +28,10 @@
   ],
   "wallpapersBranch": "wallpapers",
   "previewBranch": "preview",
-  "categoryBranches": ["desktop", "mobile"],
+  "categoryBranches": [
+    "desktop",
+    "mobile"
+  ],
   "settings": {},
   "readme": {
     "main": {
@@ -37,11 +40,21 @@
     },
     "server": {
       "outputDir": "preview",
-      "fields": ["startTime_formatted", "releaseTime", "resolution", "size", "category", "status"]
+      "fields": [
+        "startTime_formatted",
+        "releaseTime",
+        "resolution",
+        "size",
+        "category",
+        "status"
+      ]
     }
   },
   "website": {
-    "filters": ["desktop", "mobile"],
+    "filters": [
+      "desktop",
+      "mobile"
+    ],
     "gallery": {
       "thumbnailSource": "previewBranch",
       "fallbackThumbnail": "rawUrl"
@@ -49,6 +62,18 @@
   },
   "release": {
     "notesTemplate": "release_notes.md",
-    "fields": ["filename", "category", "resolution", "size", "status"]
+    "fields": [
+      "filename",
+      "category",
+      "resolution",
+      "size",
+      "status"
+    ]
+  },
+  "site": {
+    "baseUrl": "https://pgr-wallpapers.tungvuthanh.com"
+  },
+  "worker": {
+    "baseUrl": "https://pgr-wallpapers.tungvuthanh.com"
   }
 }
