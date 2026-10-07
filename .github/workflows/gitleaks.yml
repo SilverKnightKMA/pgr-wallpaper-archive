@@ -26,11 +26,11 @@ jobs:
       # multi-GB wallpapers/preview image branches, while gitleaks itself only
       # scans the pushed commit / PR range (2-4s).
       - uses: actions/checkout@v7
-      # gitleaks needs the full commit RANGE for PR scans (base..head) and for
-      # manual dispatch (full history). --unshallow expands only THIS ref's
-      # history (main is small); image branches are still not fetched.
-      - name: Fetch full history for this ref (PR range / manual scan)
-        if: github.event_name != 'push'
+      # gitleaks scans the commit RANGE (before..head on push, base..head on PR).
+      # checkout@v7 default (depth 1) is shallow, so the base commit is missing
+      # and gitleaks fails. --unshallow expands only THIS ref's history — main
+      # is a few MB; the multi-GB image branches are never fetched.
+      - name: Fetch full history for this ref
         run: git fetch --unshallow origin
       - uses: gitleaks/gitleaks-action@v3
         env:
