@@ -42,7 +42,7 @@ def decode_filename(url):
 
 def encode_filename(filename):
     encoded = re.sub(
-        r"[^A-Za-z0-9._~:@!$&'()*+,;=%/-]",
+        r"[^A-Za-z0-9._~:@!$&'*,;=%/-]",
         lambda m: urllib.parse.quote(m.group(0)),
         filename
     )

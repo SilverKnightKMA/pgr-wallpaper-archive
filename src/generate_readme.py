@@ -41,9 +41,11 @@ def escape_html(s):
 
 
 def encode_filename(filename):
-    """Encode filename for use in URLs, preserving existing %XX sequences."""
+    """Encode filename for use in URLs, preserving existing %XX sequences.
+    Parens are encoded too — raw ( ) breaks Markdown link destinations
+    whenever they are unbalanced (e.g. ASCII '(' paired with full-width '）')."""
     encoded = re.sub(
-        r"[^A-Za-z0-9._~:@!$&'()*+,;=%/-]",
+        r"[^A-Za-z0-9._~:@!$&'*,;=%/-]",
         lambda m: urllib.parse.quote(m.group(0)),
         filename
     )
