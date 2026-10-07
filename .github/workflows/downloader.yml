@@ -9,9 +9,18 @@ on:
         description: 'Maximum number of images to scrape per server (not counting existing images).'
         required: false
 
+# Only one downloader run at a time: overlapping runs would push batches to
+# the wallpapers/preview branches concurrently and could interleave commits.
+# Safe to cancel: the pipeline is idempotent (remaining URLs are persisted in
+# the txt files; manifest is committed only at the end of each batch).
+concurrency:
+  group: downloader
+  cancel-in-progress: true
+
 jobs:
   scrape-and-download:
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     permissions:
       contents: write
     steps:

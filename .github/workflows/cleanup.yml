@@ -2,13 +2,27 @@ name: Cleanup
 
 on:
   workflow_dispatch:
+    inputs:
+      delete_releases:
+        description: 'ALSO delete ALL releases and tags (irreversible)'
+        type: boolean
+        default: false
+      delete_data_dirs:
+        description: 'ALSO delete data/ and preview/ from main (REMOVES manifest.json!)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
 
+concurrency:
+  group: cleanup
+  cancel-in-progress: false
+
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -16,12 +30,18 @@ jobs:
           ref: main
           fetch-depth: 1
 
-      - name: Delete all branches except main
+      # Protected branches are NEVER deleted: main + the archive branches
+      # declared in config.json (wallpapersBranch / previewBranch) which hold
+      # the entire ~22 GB image archive with no other copy anywhere.
+      - name: Delete unprotected branches only
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Use gh api to delete branches (no need to fetch anything)
-          branches=$(gh api repos/${{ github.repository }}/branches --paginate -q '.[].name' | grep -v '^main$') || true
+          set -e
+          python3 -c "import json; c=json.load(open('config.json')); print('main'); print(c.get('wallpapersBranch','wallpapers')); print(c.get('previewBranch','preview'))" > /tmp/protected_branches.txt
+          echo "Protected branches:"
+          cat /tmp/protected_branches.txt
+          branches=$(gh api "repos/${{ github.repository }}/branches" --paginate -q '.[].name' | grep -vxF -f /tmp/protected_branches.txt) || true
           if [ -z "$branches" ]; then
             echo "No branches to delete."
           else
@@ -31,7 +51,8 @@ jobs:
             done
           fi
 
-      - name: Delete data and preview directories
+      - name: Delete data and preview directories (opt-in)
+        if: ${{ inputs.delete_data_dirs }}
         run: |
           deleted=false
           for dir in data preview; do
@@ -50,16 +71,17 @@ jobs:
             echo "No directories to delete."
           fi
 
-      - name: Delete all releases
+      - name: Delete all releases (opt-in)
+        if: ${{ inputs.delete_releases }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Delete releases in parallel (up to 10 at a time)
           gh release list --limit 1000 --json tagName -q '.[].tagName' | \
             xargs -P 10 -I {} sh -c 'echo "Deleting release: {}" && gh release delete "{}" --yes --cleanup-tag' || true
           echo "All releases deleted."
 
-      - name: Delete all Git tags
+      - name: Delete all Git tags (opt-in)
+        if: ${{ inputs.delete_releases }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

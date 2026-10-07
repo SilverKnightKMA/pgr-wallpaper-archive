@@ -1,20 +1,37 @@
 name: gitleaks
+
 permissions:
   contents: read
+
 on:
   pull_request:
   push:
+    branches:
+      - main
   workflow_dispatch:
-  release:
-    types: [published]
+
+# One scan per ref at a time; a newer run supersedes an older one on the same ref
+concurrency:
+  group: gitleaks-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   scan:
     name: gitleaks
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
+      # Default fetch-depth (1): downloads only the commit(s) to scan (~MBs).
+      # NEVER use fetch-depth: 0 here — it fetches ALL branches including the
+      # multi-GB wallpapers/preview image branches, while gitleaks itself only
+      # scans the pushed commit / PR range (2-4s).
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
+      # gitleaks needs the full commit RANGE for PR scans (base..head) and for
+      # manual dispatch (full history). --unshallow expands only THIS ref's
+      # history (main is small); image branches are still not fetched.
+      - name: Fetch full history for this ref (PR range / manual scan)
+        if: github.event_name != 'push'
+        run: git fetch --unshallow origin
       - uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
