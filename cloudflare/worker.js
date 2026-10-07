@@ -19,13 +19,16 @@
  * src/generate_readme.py on every archive batch). Deploy steps: cloudflare/README.md.
  */
 
-const SITE = 'https://blog.tungvuthanh.com/pgr-wallpaper-archive';
-const INDEX_URL = `${SITE}/index-data.json`;
+// Fetch the index straight from raw.githubusercontent.com (Fastly CDN,
+// ~0.2s TTFB) instead of the Pages host — the Pages chain (CF -> GitHub
+// Pages origin) occasionally took 5-12s on cache miss.
+const INDEX_URL =
+  'https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/main/docs/index-data.json';
 // Edge-cache the index for 6h; the random pick itself is per-request.
 const INDEX_CACHE_TTL = 21600;
 // In-isolate cache: most requests skip the index fetch entirely.
-// Isolates persist between requests; refresh after this TTL.
-const ISOLATE_CACHE_TTL = 30 * 60 * 1000;
+// 6h matches the archive batch cadence (daily) and the edge cache TTL.
+const ISOLATE_CACHE_TTL = 6 * 60 * 60 * 1000;
 let isolateIndex = null;
 let isolateIndexAt = 0;
 
