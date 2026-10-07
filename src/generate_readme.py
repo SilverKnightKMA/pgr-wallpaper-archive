@@ -185,7 +185,6 @@ def generate_main_readme(config):
         n, sz = cat_stats.get(cb, (0, '0 B'))
         lines.append(f'| `{cb}/` only | {n} | {sz} | [⬇ {cb}.zip](https://github.com/{repo_slug}/archive/refs/heads/{cb}.zip) |')
     lines.append(f'| everything (desktop + mobile) | {total_all} | {total_size_str} | [⬇ {wallpapers_branch}.zip](https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip) |')
-    lines.append(f'The per-category ZIPs are the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch split by folder — same images, no git required.\n')
 
     lines.append('## Server Galleries\n')
     lines.append(f'All wallpapers are stored in the [`{wallpapers_branch}`](https://github.com/{repo_slug}/tree/{wallpapers_branch}) branch.\n')

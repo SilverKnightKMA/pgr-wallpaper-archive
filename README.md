@@ -19,8 +19,6 @@ The complete archive (3086 files, 22.06 GB) lives in the [`wallpapers`](https://
 | `desktop/` only | 2983 | 21.87 GB | [⬇ desktop.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/desktop.zip) |
 | `mobile/` only | 103 | 197.59 MB | [⬇ mobile.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/mobile.zip) |
 | everything (desktop + mobile) | 3086 | 22.06 GB | [⬇ wallpapers.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip) |
-The per-category ZIPs are the [`wallpapers`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers) branch split by folder — same images, no git required.
-
 ## Server Galleries
 
 All wallpapers are stored in the [`wallpapers`](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/wallpapers) branch.
