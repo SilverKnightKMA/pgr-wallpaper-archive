@@ -186,6 +186,7 @@ def generate_main_readme(config):
         n, sz = cat_stats.get(cb, (0, '0 B'))
         lines.append(f'| `{cb}/` only | {n} | {sz} | [⬇ {cb}.zip](https://github.com/{repo_slug}/archive/refs/heads/{cb}.zip) |')
     lines.append(f'| everything (desktop + mobile) | {total_all} | {total_size_str} | [⬇ {wallpapers_branch}.zip](https://github.com/{repo_slug}/archive/refs/heads/{wallpapers_branch}.zip) |')
+    lines.append('')
     lines.append(f'Incremental updates are also published as [Releases](https://github.com/{repo_slug}/releases).\n')
 
     lines.append('## Server Galleries\n')

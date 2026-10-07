@@ -17,6 +17,7 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 | `desktop/` only | 2983 | 21.87 GB | [⬇ desktop.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/desktop.zip) |
 | `mobile/` only | 103 | 197.59 MB | [⬇ mobile.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/mobile.zip) |
 | everything (desktop + mobile) | 3086 | 22.06 GB | [⬇ wallpapers.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip) |
+
 Incremental updates are also published as [Releases](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/releases).
 
 ## Server Galleries
