@@ -23,6 +23,29 @@ const SITE = 'https://blog.tungvuthanh.com/pgr-wallpaper-archive';
 const INDEX_URL = `${SITE}/index-data.json`;
 // Edge-cache the index for 6h; the random pick itself is per-request.
 const INDEX_CACHE_TTL = 21600;
+// In-isolate cache: most requests skip the index fetch entirely.
+// Isolates persist between requests; refresh after this TTL.
+const ISOLATE_CACHE_TTL = 30 * 60 * 1000;
+let isolateIndex = null;
+let isolateIndexAt = 0;
+
+async function loadIndex() {
+  const now = Date.now();
+  if (isolateIndex && now - isolateIndexAt < ISOLATE_CACHE_TTL) {
+    return isolateIndex;
+  }
+  const res = await fetch(INDEX_URL, {
+    cf: { cacheTtl: INDEX_CACHE_TTL, cacheEverything: true },
+  });
+  if (!res.ok) {
+    // fall back to a stale isolate copy rather than failing outright
+    if (isolateIndex) return isolateIndex;
+    throw new Error(`index fetch ${res.status}`);
+  }
+  isolateIndex = await res.json();
+  isolateIndexAt = now;
+  return isolateIndex;
+}
 
 function pickRandom(items, category, server) {
   const pool = items.filter(
@@ -46,11 +69,7 @@ export default {
 
     let index;
     try {
-      const res = await fetch(INDEX_URL, {
-        cf: { cacheTtl: INDEX_CACHE_TTL, cacheEverything: true },
-      });
-      if (!res.ok) throw new Error(`index fetch ${res.status}`);
-      index = await res.json();
+      index = await loadIndex();
     } catch (e) {
       return new Response(`index-data.json unavailable: ${e.message}`, {
         status: 502,
