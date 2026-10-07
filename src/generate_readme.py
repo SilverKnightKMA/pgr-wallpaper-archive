@@ -195,14 +195,13 @@ def generate_main_readme(config):
     if worker_base:
         lines.append('<a id="random-wallpaper-api"></a>\n')
         lines.append('## 🎲 Random Wallpaper API\n')
-        lines.append(f'A tiny [Cloudflare Worker](https://github.com/{repo_slug}/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes, always streamed from this repo (GitHub-hosted, never the game CDN):\n')
+        lines.append(f'A tiny [Cloudflare Worker](https://github.com/{repo_slug}/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes:\n')
         lines.append('| Endpoint | Returns |\n|---|---|')
         lines.append(f'| [`/wallpapers`]({worker_base}/wallpapers) | random image, any category |')
         lines.append(f'| [`/desktop`]({worker_base}/desktop) | random **desktop** wallpaper |')
         lines.append(f'| [`/mobile`]({worker_base}/mobile) | random **mobile** wallpaper |')
         lines.append('')
         lines.append(f'Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 straight to the raw file instead of streaming bytes).\n')
-        lines.append('Paste a link in a browser address bar, `curl -L`, `wget`, or any tool that expects an image URL — every hit re-rolls the dice.\n')
 
     lines.append('## Server Galleries\n')
     lines.append('| Server | Total | Desktop | Mobile | Success | Failed | Last Updated |')

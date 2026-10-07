@@ -24,7 +24,7 @@ Incremental updates are also published as [Releases](https://github.com/SilverKn
 
 ## 🎲 Random Wallpaper API
 
-A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes, always streamed from this repo (GitHub-hosted, never the game CDN):
+A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes:
 
 | Endpoint | Returns |
 |---|---|
@@ -33,8 +33,6 @@ A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-arch
 | [`/mobile`](https://pgr-wallpapers.tungvuthanh.com/mobile) | random **mobile** wallpaper |
 
 Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 straight to the raw file instead of streaming bytes).
-
-Paste a link in a browser address bar, `curl -L`, `wget`, or any tool that expects an image URL — every hit re-rolls the dice.
 
 ## Server Galleries
 
