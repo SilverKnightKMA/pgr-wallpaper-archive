@@ -38,6 +38,9 @@ jobs:
       - name: Install Python Dependencies
         run: pip install Pillow
 
+      - name: Health gate - server URLs reachable and sane
+        run: python3 src/health_check.py
+
       - name: Ensure branches exist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
