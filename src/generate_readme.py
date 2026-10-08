@@ -195,7 +195,7 @@ def generate_main_readme(config):
     if worker_base:
         lines.append('<a id="random-wallpaper-api"></a>\n')
         lines.append('## 🎲 Random Wallpaper API\n')
-        lines.append(f'A tiny [Cloudflare Worker](https://github.com/{repo_slug}/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes:\n')
+        lines.append(f'A tiny [Cloudflare Worker](https://github.com/{repo_slug}/blob/main/worker/worker.js) serves a random wallpaper as real image bytes:\n')
         lines.append('| Endpoint | Returns |\n|---|---|')
         lines.append(f'| [`/wallpapers`]({worker_base}/wallpapers) | random image, any category |')
         lines.append(f'| [`/desktop`]({worker_base}/desktop) | random **desktop** wallpaper |')

@@ -24,7 +24,7 @@ Incremental updates are also published as [Releases](https://github.com/SilverKn
 
 ## 🎲 Random Wallpaper API
 
-A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/cloudflare/worker.js) serves a random wallpaper as real image bytes:
+A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/worker/worker.js) serves a random wallpaper as real image bytes:
 
 | Endpoint | Returns |
 |---|---|

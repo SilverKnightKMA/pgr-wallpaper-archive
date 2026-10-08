@@ -18,7 +18,7 @@ The workers.dev URL (`https://pgr-random.tungvt1912.workers.dev/...`) and the ol
 
 ## Auto-deploy from this repo
 
-`.github/workflows/deploy-worker.yml` deploys `cloudflare/worker.js` via `wrangler` on every push that touches `cloudflare/**`. One-time setup:
+`.github/workflows/deploy-worker.yml` deploys `worker/worker.js` via `wrangler` on every push that touches `worker/**`. One-time setup:
 
 1. **API token** — Cloudflare dashboard → My Profile → API Tokens → Create Token → *Edit Cloudflare Workers* template. Copy the token.
 2. **Account ID** — Cloudflare dashboard (any Workers page) → right sidebar.
