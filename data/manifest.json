@@ -74472,5 +74472,289 @@
     ],
     "pictureCount": 593
   },
-  "releaseTime": "2026-10-01T05:19:53Z"
+  "releaseTime": "2026-10-01T05:19:53Z",
+  "recovered": {
+    "name": "Recovered (pre-2026)",
+    "total": 13,
+    "success": 13,
+    "failed": 0,
+    "lastUpdated": "2026-10-08T04:16:11Z",
+    "lastActionRun": "2026-10-08T04:16:11Z",
+    "wallpapers": [
+      {
+        "filename": "26b042e41312f9c9d22df8d6df669b0c382651856.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "26b042e41312f9c9d22df8d6df669b0c382651856.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.82 MB",
+        "pictureType": 11,
+        "sourceFilename": "26b042e41312f9c9d22df8d6df669b0c382651856.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "8d8fb97dd06ff2a3cd3d4af4b241285250913e99",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "3ismmz1s8nvhv8j57qraa06en6xj29ke.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "3ismmz1s8nvhv8j57qraa06en6xj29ke.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.59 MB",
+        "pictureType": 11,
+        "sourceFilename": "3ismmz1s8nvhv8j57qraa06en6xj29ke.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "fbe24b2da3f066c243d8aadc5241e4e86341f25e",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "40ps5ldygf0ho1nj0r54f2ag7p3jxthe.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "40ps5ldygf0ho1nj0r54f2ag7p3jxthe.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "1.74 MB",
+        "pictureType": 11,
+        "sourceFilename": "40ps5ldygf0ho1nj0r54f2ag7p3jxthe.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "aa77964ea6cd11120a6ad672edafd36587699596",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "4i0qmpmsw1ly1zt9zvtao5nj0jfj0yf4.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "4i0qmpmsw1ly1zt9zvtao5nj0jfj0yf4.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.59 MB",
+        "pictureType": 11,
+        "sourceFilename": "4i0qmpmsw1ly1zt9zvtao5nj0jfj0yf4.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "5f7535163c1ba41633cc18c95c1d4b331ff0c8f0",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "7jq3kgv8035lwkdrzse6pah56dkqx4vb.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "7jq3kgv8035lwkdrzse6pah56dkqx4vb.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.37 MB",
+        "pictureType": 11,
+        "sourceFilename": "7jq3kgv8035lwkdrzse6pah56dkqx4vb.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "be3d38de5e790f93a93795f8b814a362636ba19a",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "7l6k3ejl5oins2yacqc7g5owvxwcx6ur.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "7l6k3ejl5oins2yacqc7g5owvxwcx6ur.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.22 MB",
+        "pictureType": 11,
+        "sourceFilename": "7l6k3ejl5oins2yacqc7g5owvxwcx6ur.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "dda0cc2d742cf1611230dcd24162d578c698a4df",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "8serpzkvprqw5ub5ry5l05b5xqbe3kw7.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "8serpzkvprqw5ub5ry5l05b5xqbe3kw7.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.17 MB",
+        "pictureType": 11,
+        "sourceFilename": "8serpzkvprqw5ub5ry5l05b5xqbe3kw7.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "857729d04c1795ce52187781832f47236e85a040",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "9bpf0gtk1w0y3uu85bh6dr94nokhhebu.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "9bpf0gtk1w0y3uu85bh6dr94nokhhebu.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.17 MB",
+        "pictureType": 11,
+        "sourceFilename": "9bpf0gtk1w0y3uu85bh6dr94nokhhebu.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "9c556b2f54f01f7edb89ebd0fbf76fd5fb5d26de",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "Alpha-Volatile-Priestess .jpg",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "3840x2160",
+        "category": "desktop",
+        "preview": "Alpha-Volatile-Priestess .jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "1.42 MB",
+        "pictureType": 11,
+        "sourceFilename": "Alpha-Volatile-Priestess .jpg",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "f5cd216cc6d6319b86d9c3584f639bdb6a6ec5b3",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "mjul1fq825bvt871l6tup9so2rxe8uk0.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "mjul1fq825bvt871l6tup9so2rxe8uk0.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.12 MB",
+        "pictureType": 11,
+        "sourceFilename": "mjul1fq825bvt871l6tup9so2rxe8uk0.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "476280805e2f216f9551832a0bbede69bd1876b8",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "qbrrrwisjxscxndbcj7cmbce2nhdr8wi.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "qbrrrwisjxscxndbcj7cmbce2nhdr8wi.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.37 MB",
+        "pictureType": 11,
+        "sourceFilename": "qbrrrwisjxscxndbcj7cmbce2nhdr8wi.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "50c408f327728d8b081e05ef1a433b6c0b10f11a",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "qdgc9oyai985jw93bz126ncm8rcaxjy8.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "qdgc9oyai985jw93bz126ncm8rcaxjy8.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.35 MB",
+        "pictureType": 11,
+        "sourceFilename": "qdgc9oyai985jw93bz126ncm8rcaxjy8.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "2aa9dc4f2833e4b52beb5c1031213f4c7ec1c61e",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      },
+      {
+        "filename": "rgykwbykpvdms6a0dqz9qot18h59cg1m.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "rgykwbykpvdms6a0dqz9qot18h59cg1m.jpg",
+        "releaseTime": "2026-10-08T04:16:11Z",
+        "size": "2.45 MB",
+        "pictureType": 11,
+        "sourceFilename": "rgykwbykpvdms6a0dqz9qot18h59cg1m.png",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08",
+          "sha1": "08b22818c161cbd2fb294cf7304c0b048a34eb79",
+          "verifiedAgainst": null,
+          "note": "Website-1.0-era naming (no Kuro hash-ts -> CDN URL not reconstructable). Hash-checked: not a byte-duplicate of any archive file (2026-10-08 audit)."
+        }
+      }
+    ],
+    "pictureCount": 13
+  }
 }

@@ -31,6 +31,15 @@
       "id": "kr",
       "name": "KR Server",
       "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G286/kr/MainMenu.json"
+    },
+    {
+      // Server ảo — wallpaper website-1.0-era hồi sinh từ community Drive
+      // snapshot (hash-check: không trùng bytes bất kỳ file nào trong archive).
+      // Không có jsonUrl nên scraper/health gate tự bỏ qua. Nguồn từng file
+      // nằm trong khối source của data/manifest.json (type: community).
+      "id": "recovered",
+      "name": "Recovered (pre-2026)",
+      "jsonUrl": ""
     }
   ],
 
