@@ -177,7 +177,7 @@ jobs:
             if [ ! -f docs/favicon.png ]; then
               curl -sL -o docs/favicon.png "https://cdnstatic.kurogame.net/h5_manage_dist/pgr_website2.0/favicon.png" || true
             fi
-            git add README.md data/manifest.json
+            git add README.md data/manifest.json docs/index-data.json
             [ -f docs/favicon.png ] && git add docs/favicon.png
             if ! git diff --cached --quiet; then
               git commit -m "Auto-sync: Update README and manifest (batch $BATCH)"
