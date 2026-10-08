@@ -32,7 +32,7 @@ A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-arch
 | [`/desktop`](https://pgr-wallpapers.tungvuthanh.com/desktop) | random **desktop** wallpaper |
 | [`/mobile`](https://pgr-wallpapers.tungvuthanh.com/mobile) | random **mobile** wallpaper |
 
-All query params (`?server`, `?preview`, `?redirect`, `?format=json`, `?count`, `?seed`) and `HEAD` are documented with examples in the [worker README](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/worker/README.md#query-params).
+Full API reference — query params, responses, and errors — lives in the [worker README](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/blob/main/worker/README.md#query-params).
 
 ## Server Galleries
 

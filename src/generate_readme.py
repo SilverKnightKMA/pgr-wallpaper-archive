@@ -201,7 +201,7 @@ def generate_main_readme(config):
         lines.append(f'| [`/desktop`]({worker_base}/desktop) | random **desktop** wallpaper |')
         lines.append(f'| [`/mobile`]({worker_base}/mobile) | random **mobile** wallpaper |')
         lines.append('')
-        lines.append(f'All query params (`?server`, `?preview`, `?redirect`, `?format=json`, `?count`, `?seed`) and `HEAD` are documented with examples in the [worker README](https://github.com/{repo_slug}/blob/main/worker/README.md#query-params).\n')
+        lines.append(f'Full API reference — query params, responses, and errors — lives in the [worker README](https://github.com/{repo_slug}/blob/main/worker/README.md#query-params).\n')
 
     lines.append('## Server Galleries\n')
     lines.append('| Server | Total | Desktop | Mobile | Success | Failed | Last Updated |')
