@@ -1,0 +1,96 @@
+// Central config for the whole pipeline — THE human-edited source.
+// Comments are stripped by src/build_config.py, which regenerates the pure
+// JSON config.json every script actually reads. Never edit config.json.
+{
+  // Official regional servers; jsonUrl = MainMenu.json on Kuro's website2.0
+  // CDN — the pipeline's sole data source. CN is .com, the rest are .net;
+  // that is how Kuro serves them, not a typo.
+  "servers": [
+    {
+      "id": "cn",          // region id used everywhere (manifest keys, params)
+      "name": "CN Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/json/G144/MainMenu.json"
+    },
+    {
+      "id": "jp",
+      "name": "JP Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G282/jp/MainMenu.json"
+    },
+    {
+      "id": "global",
+      "name": "Global Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G167/MainMenu.json"
+    },
+    {
+      "id": "tw",
+      "name": "TW Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G279/zh-tw/MainMenu.json"
+    },
+    {
+      "id": "kr",
+      "name": "KR Server",
+      "jsonUrl": "https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/json/G286/kr/MainMenu.json"
+    }
+  ],
+
+  // Branch holding the flat mirror of all original images (desktop/ + mobile/).
+  "wallpapersBranch": "wallpapers",
+
+  // Branch holding small JPEG previews plus the per-server HTML pages.
+  "previewBranch": "preview",
+
+  // Derived branches (one per category folder) powering the per-category
+  // one-click ZIPs; rebuilt each batch via git tree surgery from the
+  // wallpapers tip and force-pushed.
+  "categoryBranches": ["desktop", "mobile"],
+
+  // Reserved; currently unused.
+  "settings": {},
+
+  // README generation: main.* for the root README, server.* for the
+  // per-server pages on the preview branch.
+  "readme": {
+    "main": {
+      "outputPath": "README.md",   // where the root README is written
+      "previewCount": 15           // rows in the "recent additions" table
+    },
+    "server": {
+      "outputDir": "preview",      // output folder name for branch readmes
+      "fields": [                  // columns shown in per-server tables
+        "startTime_formatted",
+        "releaseTime",
+        "resolution",
+        "size",
+        "category",
+        "status"
+      ]
+    }
+  },
+
+  // Gallery site (docs/): filters = category filter chips;
+  // thumbnails come from the preview branch, falling back to the raw URL.
+  "website": {
+    "filters": ["desktop", "mobile"],
+    "gallery": {
+      "thumbnailSource": "previewBranch",
+      "fallbackThumbnail": "rawUrl"
+    }
+  },
+
+  // Release notes: template file + which metadata fields become columns.
+  "release": {
+    "notesTemplate": "release_notes.md",
+    "fields": ["filename", "category", "resolution", "size", "status"]
+  },
+
+  // The gallery's public domain (README web badge). Change domain HERE only.
+  "site": {
+    "baseUrl": "https://pgr-wallpapers.tungvuthanh.com"
+  },
+
+  // The random-wallpaper API's public domain (README 🎲 section). The worker
+  // code itself is hostname-agnostic; only the README generator reads this.
+  "worker": {
+    "baseUrl": "https://pgr-wallpapers.tungvuthanh.com"
+  }
+}
