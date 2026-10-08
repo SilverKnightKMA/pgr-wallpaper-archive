@@ -201,7 +201,7 @@ def generate_main_readme(config):
         lines.append(f'| [`/desktop`]({worker_base}/desktop) | random **desktop** wallpaper |')
         lines.append(f'| [`/mobile`]({worker_base}/mobile) | random **mobile** wallpaper |')
         lines.append('')
-        lines.append(f'Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 to the raw file), `?format=json` (metadata instead of bytes), `?count=1-20` (JSON list of distinct picks), `?seed=...` (deterministic pick). `HEAD` returns headers only (`X-Random-Source`).\n')
+        lines.append(f'All query params (`?server`, `?preview`, `?redirect`, `?format=json`, `?count`, `?seed`) and `HEAD` are documented with examples in the [worker README](https://github.com/{repo_slug}/blob/main/worker/README.md#query-params).\n')
 
     lines.append('## Server Galleries\n')
     lines.append('| Server | Total | Desktop | Mobile | Success | Failed | Last Updated |')
