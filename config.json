@@ -75,5 +75,18 @@
   },
   "worker": {
     "baseUrl": "https://pgr-wallpapers.tungvuthanh.com"
+  },
+  "_comments": {
+    "_intro": "Documentation-only map — every pipeline script reads specific keys and ignores _-prefixed ones.",
+    "servers": "Official regional servers; jsonUrl = MainMenu.json on Kuro's website2.0 CDN (the pipeline's sole data source). CN is .com, the rest are .net — that is how Kuro serves them.",
+    "wallpapersBranch": "Branch holding the flat mirror of all original images (desktop/ + mobile/).",
+    "previewBranch": "Branch holding small JPEG previews plus the per-server HTML pages.",
+    "categoryBranches": "Derived branches (one per category folder) powering the per-category one-click ZIPs; rebuilt each batch via git tree surgery from the wallpapers tip and force-pushed.",
+    "settings": "Reserved; currently unused.",
+    "readme": "README generation: main.outputPath/previewCount for the root file; server.outputDir/fields for the per-server pages on the preview branch.",
+    "website": "Gallery site (docs/): filters = category filter chips; gallery.thumbnailSource/fallbackThumbnail = where card thumbnails come from.",
+    "release": "Release notes: notesTemplate file + which metadata fields become table columns.",
+    "site": "baseUrl = the gallery's public domain; used for the README web badge. Change domain here only.",
+    "worker": "baseUrl = the random-wallpaper API's public domain (README section). Worker code itself is hostname-agnostic; only the generator reads this."
   }
 }
