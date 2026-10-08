@@ -55,7 +55,11 @@ def main():
     failed = False
     print('=== Server health check ===')
     for srv in servers:
-        sid, url = srv['id'], srv['jsonUrl']
+        sid, url = srv['id'], srv.get('jsonUrl', '')
+        if not url:
+            # Virtual servers (e.g. 'recovered') have no source JSON to gate.
+            print(f'  [SKIP] {sid}: no jsonUrl (virtual server) — nothing to check')
+            continue
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA})
             with urllib.request.urlopen(req, context=ctx, timeout=60) as resp:

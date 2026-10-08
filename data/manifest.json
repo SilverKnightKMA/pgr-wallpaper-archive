@@ -74072,5 +74072,280 @@
     ],
     "pictureCount": 593
   },
-  "releaseTime": "2026-10-01T05:19:53Z"
+  "releaseTime": "2026-10-01T05:19:53Z",
+  "recovered": {
+    "name": "Recovered (pre-2026)",
+    "total": 12,
+    "success": 12,
+    "failed": 0,
+    "lastUpdated": "2025-01-06T06:41:29Z",
+    "lastActionRun": "2026-10-08T03:19:30Z",
+    "wallpapers": [
+      {
+        "filename": "1avli1dz54e6qlle5y-173614555556319.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "1avli1dz54e6qlle5y-173614555556319.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.29 MB",
+        "startTime": 1736145555563,
+        "startTime_formatted": "2025-01-06T06:39:15Z",
+        "pictureType": 11,
+        "sourceFilename": "1avli1dz54e6qlle5y-173614555556319.png",
+        "imgUrl": "",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08T03:19:30Z",
+          "sha1": "7216e502caac72aa8d5c7d68d9f7b6e8648951e6",
+          "verifiedAgainst": null,
+          "formerCdnUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png (404 — dead)",
+          "note": "CDN deleted; Kuro-style filename preserved by uploader; original-looking PNG bytes, unverified."
+        }
+      },
+      {
+        "filename": "4cl5nqs2e8ms539iii-173614552567217.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "4cl5nqs2e8ms539iii-173614552567217.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.51 MB",
+        "startTime": 1736145525672,
+        "startTime_formatted": "2025-01-06T06:38:45Z",
+        "pictureType": 11,
+        "sourceFilename": "4cl5nqs2e8ms539iii-173614552567217.png",
+        "imgUrl": "",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08T03:19:30Z",
+          "sha1": "39f88d65ce5064e14fa8b77f0e29ca0306b8c984",
+          "verifiedAgainst": null,
+          "formerCdnUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png (404 — dead)",
+          "note": "CDN deleted; Kuro-style filename preserved by uploader; original-looking PNG bytes, unverified."
+        }
+      },
+      {
+        "filename": "67w0afxp5wngt9i9dh-173614548239015.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "67w0afxp5wngt9i9dh-173614548239015.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "2.49 MB",
+        "startTime": 1736145482390,
+        "startTime_formatted": "2025-01-06T06:38:02Z",
+        "pictureType": 11,
+        "sourceFilename": "67w0afxp5wngt9i9dh-173614548239015.png",
+        "imgUrl": "",
+        "source": {
+          "type": "community",
+          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
+          "uploader": "unknown (Drive folder owner)",
+          "fetchedAt": "2026-10-08T03:19:30Z",
+          "sha1": "2e8dc349c1a11e02e84c0c5f091acfad9d1f8d96",
+          "verifiedAgainst": null,
+          "formerCdnUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png (404 — dead)",
+          "note": "CDN deleted; Kuro-style filename preserved by uploader; original-looking PNG bytes, unverified."
+        }
+      },
+      {
+        "filename": "8dynqjme0b6scjvneu-173614566300225.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "8dynqjme0b6scjvneu-173614566300225.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.02 MB",
+        "startTime": 1736145663002,
+        "startTime_formatted": "2025-01-06T06:41:03Z",
+        "pictureType": 11,
+        "sourceFilename": "8dynqjme0b6scjvneu-173614566300225.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/8dynqjme0b6scjvneu-173614566300225.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "c6grcx8y8x5imm58hg-173614568905927.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "c6grcx8y8x5imm58hg-173614568905927.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.58 MB",
+        "startTime": 1736145689059,
+        "startTime_formatted": "2025-01-06T06:41:29Z",
+        "pictureType": 11,
+        "sourceFilename": "c6grcx8y8x5imm58hg-173614568905927.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/c6grcx8y8x5imm58hg-173614568905927.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "deb8eh8ia21h2y8w7u-173614567655426.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "deb8eh8ia21h2y8w7u-173614567655426.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.21 MB",
+        "startTime": 1736145676554,
+        "startTime_formatted": "2025-01-06T06:41:16Z",
+        "pictureType": 11,
+        "sourceFilename": "deb8eh8ia21h2y8w7u-173614567655426.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/deb8eh8ia21h2y8w7u-173614567655426.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "f7cp9010292uxa50hy-173614564963424.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "f7cp9010292uxa50hy-173614564963424.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.59 MB",
+        "startTime": 1736145649634,
+        "startTime_formatted": "2025-01-06T06:40:49Z",
+        "pictureType": 11,
+        "sourceFilename": "f7cp9010292uxa50hy-173614564963424.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/f7cp9010292uxa50hy-173614564963424.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "sfvpbebvnsph9x7nfi-173614554072018.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "sfvpbebvnsph9x7nfi-173614554072018.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "2.24 MB",
+        "startTime": 1736145540720,
+        "startTime_formatted": "2025-01-06T06:39:00Z",
+        "pictureType": 11,
+        "sourceFilename": "sfvpbebvnsph9x7nfi-173614554072018.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/sfvpbebvnsph9x7nfi-173614554072018.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "t3z4rsruyzqufyxfvn-173614557141620.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "t3z4rsruyzqufyxfvn-173614557141620.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "2.31 MB",
+        "startTime": 1736145571416,
+        "startTime_formatted": "2025-01-06T06:39:31Z",
+        "pictureType": 11,
+        "sourceFilename": "t3z4rsruyzqufyxfvn-173614557141620.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/t3z4rsruyzqufyxfvn-173614557141620.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "wug4qgniyp9pfam35d-173614558720221.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "wug4qgniyp9pfam35d-173614558720221.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "2.82 MB",
+        "startTime": 1736145587202,
+        "startTime_formatted": "2025-01-06T06:39:47Z",
+        "pictureType": 11,
+        "sourceFilename": "wug4qgniyp9pfam35d-173614558720221.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/wug4qgniyp9pfam35d-173614558720221.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "za0l8yzncv3gvya802-173614551314716.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "za0l8yzncv3gvya802-173614551314716.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "2.63 MB",
+        "startTime": 1736145513147,
+        "startTime_formatted": "2025-01-06T06:38:33Z",
+        "pictureType": 11,
+        "sourceFilename": "za0l8yzncv3gvya802-173614551314716.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/za0l8yzncv3gvya802-173614551314716.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      },
+      {
+        "filename": "zqhlab5931pu77la46-17361451056131.png",
+        "server": "Recovered (pre-2026)",
+        "status": "success",
+        "resolution": "1920x1080",
+        "category": "desktop",
+        "preview": "zqhlab5931pu77la46-17361451056131.jpg",
+        "releaseTime": "2026-10-08T03:19:30Z",
+        "size": "3.19 MB",
+        "startTime": 1736145105613,
+        "startTime_formatted": "2025-01-06T06:31:45Z",
+        "pictureType": 11,
+        "sourceFilename": "zqhlab5931pu77la46-17361451056131.png",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/zqhlab5931pu77la46-17361451056131.png",
+        "source": {
+          "type": "official-cdn",
+          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08T03:19:30Z"
+        }
+      }
+    ],
+    "pictureCount": 12
+  }
 }
