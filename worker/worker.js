@@ -5,9 +5,13 @@
  * content-type image/jpeg|png) — works with every client, including tools
  * that do not follow redirects.
  *
- *   https://pgr-random.tungvt1912.workers.dev/wallpapers   → random (all)
- *   https://pgr-random.tungvt1912.workers.dev/desktop      → random desktop
- *   https://pgr-random.tungvt1912.workers.dev/mobile       → random mobile
+ * Paths (serve on any host routed to this worker):
+ *   /wallpapers   → random (all)
+ *   /desktop      → random desktop
+ *   /mobile       → random mobile
+ *
+ * The served host itself is deploy configuration (see config.jsonc
+ * worker.baseUrl in the repo) — nothing in this file knows it.
  *
  * Query params:
  *   ?server=jp        restrict to one server (cn | jp | global | tw | kr)
@@ -38,16 +42,20 @@
 // Fetch the index straight from raw.githubusercontent.com (Fastly CDN,
 // ~0.2s TTFB) instead of the Pages host — the Pages chain (CF -> GitHub
 // Pages origin) occasionally took 5-12s on cache miss.
-const INDEX_URL =
-  'https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/main/docs/index-data.json';
+// Repo comes from the REPO var (set at deploy time from the workflow's
+// own github.repository — no hardcoded slug to keep in sync); the
+// fallback keeps dashboard-pasted copies working.
+const DEFAULT_REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
+const INDEX_BASE = 'https://raw.githubusercontent.com';
 // The cache key rolls every 5 minutes via a time-bucket query param:
 // any index content/schema change is live within ≤5 min, no manual
 // version to bump, and stale legacy entries under other keys are
 // simply never requested again.
 const CACHE_BUCKET_MS = 5 * 60 * 1000;
-function indexUrl() {
+function indexUrl(env) {
+  const repo = (env && env.REPO) || DEFAULT_REPO;
   const bucket = Math.floor(Date.now() / CACHE_BUCKET_MS);
-  return `${INDEX_URL}?t=${bucket}`;
+  return `${INDEX_BASE}/${repo}/main/docs/index-data.json?t=${bucket}`;
 }
 // Edge-cache lifetime per bucket key (redundant with the bucket rollover,
 // kept as a hard stop).
@@ -74,12 +82,12 @@ function contentTypeFor(name, upstreamType) {
   return upstreamType && upstreamType.startsWith('image/') ? upstreamType : 'application/octet-stream';
 }
 
-async function loadIndex() {
+async function loadIndex(env) {
   const now = Date.now();
   if (isolateIndex && now - isolateIndexAt < ISOLATE_CACHE_TTL) {
     return isolateIndex;
   }
-  const res = await fetch(indexUrl(), {
+  const res = await fetch(indexUrl(env), {
     cf: { cacheTtl: INDEX_CACHE_TTL, cacheEverything: true },
     signal: AbortSignal.timeout(10000),
   });
@@ -160,7 +168,7 @@ function metaFor(index, entry, seed) {
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     const segment = url.pathname.replace(/\/+$/, '').split('/').pop();
     const category = segment === 'desktop' || segment === 'mobile' ? segment : null;
@@ -182,7 +190,7 @@ export default {
 
     let index;
     try {
-      index = await loadIndex();
+      index = await loadIndex(env);
     } catch (e) {
       return new Response(`index-data.json unavailable: ${e.message}`, {
         status: 502,

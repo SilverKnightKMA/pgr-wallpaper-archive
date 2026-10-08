@@ -2,19 +2,15 @@
 
 Serves a **random wallpaper** from this repo as real image bytes, metadata, or a redirect — always GitHub-hosted (this archive's own copies), never the game CDN.
 
-**Host:** the live host is whatever zone has routes pointed at this worker — see `worker.baseUrl` in `config.jsonc` (single source of truth). The worker's own `*.workers.dev` URL works out of the box. Examples below use `$W`:
-
-```bash
-W="https://<your-worker-host>"   # workers.dev URL or the custom domain
-```
+**Host:** the live host is whatever zone has routes pointed at this worker — see `worker.baseUrl` in `config.jsonc` (single source of truth). The paths below work on any host serving this worker; examples use the RFC 2606 reserved `wallpapers.example.com`.
 
 ## Endpoints
 
 | Path | Returns |
 |---|---|
-| `$W/wallpapers` | random image, any category |
-| `$W/desktop` | random **desktop** wallpaper |
-| `$W/mobile` | random **mobile** wallpaper |
+| `/wallpapers` | random image, any category |
+| `/desktop` | random **desktop** wallpaper |
+| `/mobile` | random **mobile** wallpaper |
 
 Default response is the image **bytes** proxied from `raw.githubusercontent.com` (Content-Type derived from the filename — the CDN occasionally mislabels images as `application/octet-stream`).
 
@@ -25,7 +21,7 @@ Default response is the image **bytes** proxied from `raw.githubusercontent.com`
 Restrict the pick to one region's wallpapers. Combines with every other param.
 
 ```bash
-curl -L -o w.jpg "$W/wallpapers?server=jp"
+curl -L -o w.jpg "https://wallpapers.example.com/wallpapers?server=jp"
 ```
 
 ### `?preview=1`
@@ -41,7 +37,7 @@ Answer with an HTTP **302** straight to `raw.githubusercontent.com` instead of p
 Return **metadata** instead of image bytes — for scripts and bots. Fields: `filename`, `category`, `server`, `resolution`, `size` (human string from Kuro's index), `url` (full image), `previewUrl` (small JPEG), plus `seed` if one was given.
 
 ```bash
-curl -s "$W/wallpapers?format=json"
+curl -s "https://wallpapers.example.com/wallpapers?format=json"
 ```
 
 ```json
@@ -61,7 +57,7 @@ curl -s "$W/wallpapers?format=json"
 `N` **distinct** random picks as a JSON array (implies `format=json`). Clamped to **1–20** and to the size of the matching pool.
 
 ```bash
-curl -s "$W/mobile?count=3&server=cn"
+curl -s "https://wallpapers.example.com/mobile?count=3&server=cn"
 ```
 
 ### `?seed=<anything>`
@@ -73,7 +69,7 @@ curl -s "$W/mobile?count=3&server=cn"
 Headers only — `Content-Type` and `X-Random-Source` (the raw URL a GET would have served) with **no body and no upstream fetch**. Cheap probe for uptime checks:
 
 ```bash
-curl -I "$W/wallpapers"
+curl -I "https://wallpapers.example.com/wallpapers"
 ```
 
 ## Errors
