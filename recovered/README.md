@@ -116,6 +116,7 @@
 - **Size:** 3.29 MB
 - **Status:** Success
 - **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/1avli1dz54e6qlle5y-173614555556319.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png">Original</a>
 
 </details>
 
@@ -147,6 +148,7 @@
 - **Size:** 3.51 MB
 - **Status:** Success
 - **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4cl5nqs2e8ms539iii-173614552567217.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png">Original</a>
 
 </details>
 
@@ -178,6 +180,7 @@
 - **Size:** 2.49 MB
 - **Status:** Success
 - **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/67w0afxp5wngt9i9dh-173614548239015.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png">Original</a>
 
 </details>
 
