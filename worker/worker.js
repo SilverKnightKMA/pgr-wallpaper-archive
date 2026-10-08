@@ -42,20 +42,23 @@
 // Fetch the index straight from raw.githubusercontent.com (Fastly CDN,
 // ~0.2s TTFB) instead of the Pages host — the Pages chain (CF -> GitHub
 // Pages origin) occasionally took 5-12s on cache miss.
-// Repo comes from the REPO var (set at deploy time from the workflow's
-// own github.repository — no hardcoded slug to keep in sync); the
-// fallback keeps dashboard-pasted copies working.
-const DEFAULT_REPO = 'SilverKnightKMA/pgr-wallpaper-archive';
-const INDEX_BASE = 'https://raw.githubusercontent.com';
+// Repo comes ONLY from the REPO var, set at deploy time from the
+// workflow's own github.repository. No fallback: a missing var fails
+// fast with a clear message instead of silently serving some
+// hardcoded repo (forks would never notice otherwise).
 // The cache key rolls every 5 minutes via a time-bucket query param:
 // any index content/schema change is live within ≤5 min, no manual
 // version to bump, and stale legacy entries under other keys are
 // simply never requested again.
 const CACHE_BUCKET_MS = 5 * 60 * 1000;
+function requireRepo(env) {
+  if (!env || !env.REPO) {
+    throw new Error('REPO var not set — deploy via the workflow (--var REPO:owner/repo) or add REPO in dashboard Settings → Variables');
+  }
+}
 function indexUrl(env) {
-  const repo = (env && env.REPO) || DEFAULT_REPO;
   const bucket = Math.floor(Date.now() / CACHE_BUCKET_MS);
-  return `${INDEX_BASE}/${repo}/main/docs/index-data.json?t=${bucket}`;
+  return `https://raw.githubusercontent.com/${env.REPO}/main/docs/index-data.json?t=${bucket}`;
 }
 // Edge-cache lifetime per bucket key (redundant with the bucket rollover,
 // kept as a hard stop).
@@ -83,6 +86,8 @@ function contentTypeFor(name, upstreamType) {
 }
 
 async function loadIndex(env) {
+  requireRepo(env); // before the isolate-cache shortcut: a missing var
+                    // must fail every request deterministically
   const now = Date.now();
   if (isolateIndex && now - isolateIndexAt < ISOLATE_CACHE_TTL) {
     return isolateIndex;

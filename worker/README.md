@@ -104,4 +104,4 @@ To serve both the gallery (GitHub Pages) and the random API on one hostname:
 
 ## Manual fallback (dashboard paste)
 
-Worker overview → Edit code → paste `worker.js` → Deploy. Always pulls the live index from `docs/index-data.json` on `main`.
+Worker overview → Edit code → paste `worker.js` → Deploy, then add the `REPO` var (`owner/repo`) under Settings → Variables — the index URL is built from it at request time. Auto-deploys set it automatically.
