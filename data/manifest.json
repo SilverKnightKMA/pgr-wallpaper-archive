@@ -74094,16 +74094,20 @@
         "startTime_formatted": "2025-01-06T06:39:15Z",
         "pictureType": 11,
         "sourceFilename": "1avli1dz54e6qlle5y-173614555556319.png",
-        "imgUrl": "",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png",
         "source": {
-          "type": "community",
+          "type": "official-cdn",
           "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
           "uploader": "unknown (Drive folder owner)",
           "fetchedAt": "2026-10-08T03:19:30Z",
           "sha1": "7216e502caac72aa8d5c7d68d9f7b6e8648951e6",
-          "verifiedAgainst": null,
-          "formerCdnUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png (404 — dead)",
-          "note": "CDN deleted; Kuro-style filename preserved by uploader; original-looking PNG bytes, unverified."
+          "verifiedAgainst": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png",
+          "verifiedMethod": "sha1: Drive copy == CDN bytes (2026-10-08)",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08",
+          "note": "Fetched from community Drive snapshot; bytes proven byte-identical to the official CDN original (sha1). Earlier 404 verdict was a wrong-bucket test — CDN still live.",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74119,16 +74123,20 @@
         "startTime_formatted": "2025-01-06T06:38:45Z",
         "pictureType": 11,
         "sourceFilename": "4cl5nqs2e8ms539iii-173614552567217.png",
-        "imgUrl": "",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png",
         "source": {
-          "type": "community",
+          "type": "official-cdn",
           "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
           "uploader": "unknown (Drive folder owner)",
           "fetchedAt": "2026-10-08T03:19:30Z",
           "sha1": "39f88d65ce5064e14fa8b77f0e29ca0306b8c984",
-          "verifiedAgainst": null,
-          "formerCdnUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png (404 — dead)",
-          "note": "CDN deleted; Kuro-style filename preserved by uploader; original-looking PNG bytes, unverified."
+          "verifiedAgainst": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png",
+          "verifiedMethod": "sha1: Drive copy == CDN bytes (2026-10-08)",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08",
+          "note": "Fetched from community Drive snapshot; bytes proven byte-identical to the official CDN original (sha1). Earlier 404 verdict was a wrong-bucket test — CDN still live.",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74144,16 +74152,20 @@
         "startTime_formatted": "2025-01-06T06:38:02Z",
         "pictureType": 11,
         "sourceFilename": "67w0afxp5wngt9i9dh-173614548239015.png",
-        "imgUrl": "",
+        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png",
         "source": {
-          "type": "community",
+          "type": "official-cdn",
           "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
           "uploader": "unknown (Drive folder owner)",
           "fetchedAt": "2026-10-08T03:19:30Z",
           "sha1": "2e8dc349c1a11e02e84c0c5f091acfad9d1f8d96",
-          "verifiedAgainst": null,
-          "formerCdnUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png (404 — dead)",
-          "note": "CDN deleted; Kuro-style filename preserved by uploader; original-looking PNG bytes, unverified."
+          "verifiedAgainst": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png",
+          "verifiedMethod": "sha1: Drive copy == CDN bytes (2026-10-08)",
+          "discoveredVia": "community Drive snapshot listing",
+          "recoveredAt": "2026-10-08",
+          "note": "Fetched from community Drive snapshot; bytes proven byte-identical to the official CDN original (sha1). Earlier 404 verdict was a wrong-bucket test — CDN still live.",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74174,7 +74186,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74195,7 +74209,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74216,7 +74232,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74237,7 +74255,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74258,7 +74278,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74279,7 +74301,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74300,7 +74324,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74321,7 +74347,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       },
       {
@@ -74342,7 +74370,9 @@
           "type": "official-cdn",
           "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
           "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z"
+          "recoveredAt": "2026-10-08T03:19:30Z",
+          "originServer": "cn",
+          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
         }
       }
     ],
