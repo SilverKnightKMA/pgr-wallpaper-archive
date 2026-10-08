@@ -39,7 +39,10 @@
 // ~0.2s TTFB) instead of the Pages host — the Pages chain (CF -> GitHub
 // Pages origin) occasionally took 5-12s on cache miss.
 const INDEX_URL =
-  'https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/main/docs/index-data.json';
+  'https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/main/docs/index-data.json?v=2';
+// ?v= versions the edge-cache key — bump it whenever the item schema
+// changes so every isolate picks the new index immediately instead of
+// waiting out the 6h TTL (v=2: items gain [resolution, size]).
 // Edge-cache the index for 6h; the random pick itself is per-request.
 const INDEX_CACHE_TTL = 21600;
 // In-isolate cache: most requests skip the index fetch entirely.
