@@ -2,7 +2,7 @@
 
 Automated repository to archive high-quality wallpapers from Punishing: Gray Raven.
 
-[![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-3086-blue) ![Desktop](https://img.shields.io/badge/Desktop-2983-informational) ![Mobile](https://img.shields.io/badge/Mobile-103-informational) ![Size](https://img.shields.io/badge/Size-22.06%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
+[![Workflow](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml/badge.svg)](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/actions/workflows/downloader.yml) ![Total](https://img.shields.io/badge/Total-3086-blue) ![Desktop](https://img.shields.io/badge/Desktop-2956-informational) ![Mobile](https://img.shields.io/badge/Mobile-102-informational) ![Size](https://img.shields.io/badge/Size-21.74%20GB-green) ![Failed](https://img.shields.io/badge/Failed-0-brightgreen)
 
 > **Last Archive Update:** 2026-10-01T05:19:53Z
 
@@ -14,9 +14,9 @@ Automated repository to archive high-quality wallpapers from Punishing: Gray Rav
 
 | What you get | Files | Size | Download |
 |---|---|---|---|
-| `desktop/` only | 2983 | 21.87 GB | [⬇ desktop.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/desktop.zip) |
-| `mobile/` only | 103 | 197.59 MB | [⬇ mobile.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/mobile.zip) |
-| everything (desktop + mobile) | 3086 | 22.06 GB | [⬇ wallpapers.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip) |
+| `desktop/` only | 2956 | 21.54 GB | [⬇ desktop.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/desktop.zip) |
+| `mobile/` only | 102 | 197.39 MB | [⬇ mobile.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/mobile.zip) |
+| everything (desktop + mobile) | 3086 | 21.74 GB | [⬇ wallpapers.zip](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/archive/refs/heads/wallpapers.zip) |
 
 Incremental updates are also published as [Releases](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/releases).
 
@@ -38,11 +38,11 @@ Full API reference — query params, responses, and errors — lives in the [wor
 
 | Server | Total | Desktop | Mobile | Success | Failed | Last Updated |
 |--------|-------|---------|--------|---------|--------|--------------|
-| [CN Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/cn) | 988 | 914 | 74 | 988 | 0 | 2026-09-30T09:52:17Z |
-| [JP Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/jp) | 789 | 782 | 7 | 789 | 0 | 2026-09-29T07:03:31Z |
-| [Global Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/global) | 437 | 420 | 17 | 437 | 0 | 2026-09-30T09:08:05Z |
-| [TW Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/tw) | 279 | 275 | 4 | 279 | 0 | 2026-09-28T11:20:28Z |
-| [KR Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/kr) | 593 | 592 | 1 | 593 | 0 | 2026-07-21T02:50:51Z |
+| [CN Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/cn) | 988 | 912 | 74 | 988 | 0 | 2026-09-30T09:52:17Z |
+| [JP Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/jp) | 789 | 760 | 7 | 789 | 0 | 2026-09-29T07:03:31Z |
+| [Global Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/global) | 437 | 418 | 17 | 437 | 0 | 2026-09-30T09:08:05Z |
+| [TW Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/tw) | 279 | 275 | 3 | 279 | 0 | 2026-09-28T11:20:28Z |
+| [KR Server](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/tree/preview/kr) | 593 | 591 | 1 | 593 | 0 | 2026-07-21T02:50:51Z |
 
 ---
 

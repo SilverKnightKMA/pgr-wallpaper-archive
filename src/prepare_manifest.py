@@ -39,7 +39,11 @@ try:
         for w in data[server_id]['wallpapers']:
             fn = w.get('sourceFilename') or w.get('filename')
             status = w.get('status')
-            if fn and status == 'success':
+            # 'duplicate' entries: bytes removed from the wallpapers branch
+            # (byte-identical to the keeper), but their names may still be
+            # listed in Kuro's JSON — keep them in the skip-list so the
+            # downloader does not re-download the removed file every night.
+            if fn and status in ('success', 'duplicate'):
                 ts = ts_bucket_from_url(w.get('imgUrl', ''))
                 print(f'{fn}|{ts}')
 except Exception as e:

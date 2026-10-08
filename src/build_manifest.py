@@ -183,6 +183,7 @@ def main():
         # ---- Preserve prior manifest data ----
         prior_wallpaper_map = {}
         success_filenames = set()
+        duplicate_filenames = set()
 
         if sid in manifest and 'wallpapers' in manifest[sid]:
             for pw in manifest[sid]['wallpapers']:
@@ -192,6 +193,11 @@ def main():
                 prior_wallpaper_map[fn] = pw
                 if pw.get('status') == 'success':
                     success_filenames.add(fn)
+                elif pw.get('status') == 'duplicate':
+                    # Deduped entries: bytes removed (byte-identical to the
+                    # keeper) but the name may still be listed in Kuro's JSON.
+                    # Carry them over below instead of dropping them.
+                    duplicate_filenames.add(fn)
 
         # ---- Load failed URLs ----
         failed_urls = []
@@ -336,6 +342,12 @@ def main():
 
             wallpapers.append(entry)
 
+        # Carry over prior 'duplicate' entries as-is (bytes were removed
+        # from the wallpapers branch; the record keeps the name searchable
+        # and blocks re-download via prepare_manifest's skip-list).
+        for fn in sorted(duplicate_filenames):
+            wallpapers.append(prior_wallpaper_map[fn])
+
         # Add failed URLs
         for url in failed_urls:
             fn = filename_from_url(url)
@@ -372,6 +384,7 @@ def main():
             'total': total,
             'success': success,
             'failed': failed_count,
+            'duplicates': len(duplicate_filenames),
             'lastUpdated': last_updated,
             'lastActionRun': run_timestamp,
             'wallpapers': wallpapers,

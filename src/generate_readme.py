@@ -129,6 +129,8 @@ def generate_main_readme(config):
         if action_run and (last_action_run == 'N/A' or action_run > last_action_run):
             last_action_run = action_run
         for w in sd.get('wallpapers', []):
+            if w.get('status') == 'duplicate':
+                continue  # deduped: bytes removed, keeper holds the 'duplicates' record
             cat = w.get('category', 'desktop')
             if cat == 'desktop':
                 total_desktop += 1
@@ -144,6 +146,8 @@ def generate_main_readme(config):
     for server in config['servers']:
         sd = manifest.get(server['id'], {})
         for w in sd.get('wallpapers', []):
+            if w.get('status') == 'duplicate':
+                continue  # deduped: bytes removed, keeper holds the 'duplicates' record
             cat = w.get('category', 'desktop')
             if cat == 'desktop':
                 desktop_size_bytes += parse_size(w.get('size', ''))
@@ -215,8 +219,8 @@ def generate_main_readme(config):
         failed = sd.get('failed', 0)
         last_updated = sd.get('lastUpdated', 'N/A')
         # Count desktop/mobile per server
-        s_desktop = sum(1 for w in sd.get('wallpapers', []) if w.get('category', 'desktop') == 'desktop')
-        s_mobile = sum(1 for w in sd.get('wallpapers', []) if w.get('category') == 'mobile')
+        s_desktop = sum(1 for w in sd.get('wallpapers', []) if w.get('category', 'desktop') == 'desktop' and w.get('status') != 'duplicate')
+        s_mobile = sum(1 for w in sd.get('wallpapers', []) if w.get('category') == 'mobile' and w.get('status') != 'duplicate')
         lines.append(f'| [{server["name"]}]({server_url}) | {total} | {s_desktop} | {s_mobile} | {success} | {failed} | {last_updated} |')
 
     lines.append('\n---\n')
@@ -224,7 +228,7 @@ def generate_main_readme(config):
 
     for server in config['servers']:
         sd = manifest.get(server['id'], {})
-        wallpapers = sd.get('wallpapers', [])
+        wallpapers = [w for w in sd.get('wallpapers', []) if w.get('status') != 'duplicate']
         lines.append(f'### {server["name"]}\n')
 
         if wallpapers:
@@ -271,7 +275,7 @@ def generate_server_readme(config, server):
     repo_name = repo_slug.split('/')[1]
 
     sd = manifest.get(server['id'], {})
-    wallpapers = sd.get('wallpapers', [])
+    wallpapers = [w for w in sd.get('wallpapers', []) if w.get('status') != 'duplicate']
     total = sd.get('total', len(wallpapers))
 
     # Read failed URLs

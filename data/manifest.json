@@ -4085,7 +4085,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1638772529090,
-        "ossUpdate_formatted": "2021-12-06 06:35:29"
+        "ossUpdate_formatted": "2021-12-06 06:35:29",
+        "duplicates": [
+          {
+            "filename": "8opzmvta79fq612vtg-1636440641369官网图片 (97).jpg",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "51eecwroflleba8lfy-1636445150714官网图片 (10).jpg",
@@ -6442,7 +6450,7 @@
       {
         "filename": "8opzmvta79fq612vtg-1636440641369官网图片 (97).jpg",
         "server": "CN Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "1920x1080",
         "category": "desktop",
         "preview": "8opzmvta79fq612vtg-1636440641369官网图片 (97).jpg",
@@ -6461,7 +6469,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1638772533672,
-        "ossUpdate_formatted": "2021-12-06 06:35:33"
+        "ossUpdate_formatted": "2021-12-06 06:35:33",
+        "duplicateOf": "4zr3u56f5feefukeem-1636440668967官网图片 (97).jpg",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "8ur53o0m7nsreuk1wf-1636441585473官网图片 (77).jpg",
@@ -7892,6 +7903,12 @@
             "sha1": "95fe8b1d200f09df428e3ce482b57068718fd317",
             "removedAt": "2026-10-08",
             "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          },
+          {
+            "filename": "zu1taqmyt2ufosnxhh-1728726765468八咫中秋签到图.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
           }
         ]
       },
@@ -23738,7 +23755,7 @@
       {
         "filename": "zu1taqmyt2ufosnxhh-1728726765468八咫中秋签到图.png",
         "server": "CN Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "1920x1080",
         "category": "desktop",
         "preview": "zu1taqmyt2ufosnxhh-1728726765468八咫中秋签到图.jpg",
@@ -23757,7 +23774,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1728726773984,
-        "ossUpdate_formatted": "2024-10-12 09:52:53"
+        "ossUpdate_formatted": "2024-10-12 09:52:53",
+        "duplicateOf": "aucnnom1bnswwtf4fe-17626567576561.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "zvtinw4n5vh1br0a8j-1728726400257一切终将汇聚此刻-差分1.png",
@@ -24040,7 +24060,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105287060,
-        "ossUpdate_formatted": "2023-09-19 06:34:47"
+        "ossUpdate_formatted": "2023-09-19 06:34:47",
+        "duplicates": [
+          {
+            "filename": "8349cvtzetszg2ht7p-169484941179021号间章1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "0jtgp4ttcur76bniee-1780557510118日语.jpg",
@@ -24880,7 +24908,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695196947151,
-        "ossUpdate_formatted": "2023-09-20 08:02:27"
+        "ossUpdate_formatted": "2023-09-20 08:02:27",
+        "duplicates": [
+          {
+            "filename": "ylz9262kk9ohzxkup4-1694852291537渡边夙星-1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "27d1p2vft2wads4q48-1777345505401瞬息间是夜晚.png",
@@ -25029,7 +25065,7 @@
       {
         "filename": "2no4zn8gp60ghirmfe-1694851628298比安卡零度2.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "2no4zn8gp60ghirmfe-1694851628298比安卡零度2.jpg",
@@ -25048,7 +25084,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695003725086,
-        "ossUpdate_formatted": "2023-09-18 02:22:05"
+        "ossUpdate_formatted": "2023-09-18 02:22:05",
+        "duplicateOf": "bd842jd65j8y5akq81-1695105566134比安卡零度2.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "2o3sysd96fiarvyqla-1701153236528树上的野望.png",
@@ -25408,7 +25447,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105599084,
-        "ossUpdate_formatted": "2023-09-19 06:39:59"
+        "ossUpdate_formatted": "2023-09-19 06:39:59",
+        "duplicates": [
+          {
+            "filename": "glx7ig1h90n5w8tpqg-1694851644848比安卡零度3.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "38jbzcqfb3b3s7n2ed-178755290334302.png",
@@ -25581,7 +25628,7 @@
       {
         "filename": "3eo7xwd076k8cu25kv-1694851705043常羽游麟间章1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "5760x3240",
         "category": "desktop",
         "preview": "3eo7xwd076k8cu25kv-1694851705043常羽游麟间章1.jpg",
@@ -25600,7 +25647,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694851812569,
-        "ossUpdate_formatted": "2023-09-16 08:10:12"
+        "ossUpdate_formatted": "2023-09-16 08:10:12",
+        "duplicateOf": "9ackh3v5wt4g7jee07-1695196646932常羽游麟间章1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "3f3mu8z960ttvds5gb-178756497199002慈悲者_JP_日文_logo.png",
@@ -25792,7 +25842,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105547836,
-        "ossUpdate_formatted": "2023-09-19 06:39:07"
+        "ossUpdate_formatted": "2023-09-19 06:39:07",
+        "duplicates": [
+          {
+            "filename": "gcqizpuyqyn80a1shg-1694851605386比安卡零度1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "3m2fo8y5refk9ka9lk-1695031863131大鱼之梦.png",
@@ -26176,7 +26234,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1708418348896,
-        "ossUpdate_formatted": "2024-02-20 08:39:08"
+        "ossUpdate_formatted": "2024-02-20 08:39:08",
+        "duplicates": [
+          {
+            "filename": "bul2tkpcgpo4qpe0le-1708326239383废墟逃亡（拆分）_.jpg",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "49ft8tgf5t3n8zwu2q-1777292208659海報7.png",
@@ -26973,7 +27039,7 @@
       {
         "filename": "5k9vmiy3o0ii1wm2xy-1694852356655渡边夜刃3.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "5k9vmiy3o0ii1wm2xy-1694852356655渡边夜刃3.jpg",
@@ -26992,7 +27058,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852360480,
-        "ossUpdate_formatted": "2023-09-16 08:19:20"
+        "ossUpdate_formatted": "2023-09-16 08:19:20",
+        "duplicateOf": "9735ymuy5fvgi8tc4r-1695197091374渡边夜刃3.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "5obhi339p2lcavf3vt-1695278857337第十二章-04.png",
@@ -28557,7 +28626,7 @@
       {
         "filename": "8349cvtzetszg2ht7p-169484941179021号间章1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "8349cvtzetszg2ht7p-169484941179021号间章1.jpg",
@@ -28576,7 +28645,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694849415231,
-        "ossUpdate_formatted": "2023-09-16 07:30:15"
+        "ossUpdate_formatted": "2023-09-16 07:30:15",
+        "duplicateOf": "0jga0aytcsbkxqv4ht-169510527048521号间章1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "84bpkx3p10xwv3sz2v-1695198966473露西亚红莲2.png",
@@ -28864,7 +28936,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695197094799,
-        "ossUpdate_formatted": "2023-09-20 08:04:54"
+        "ossUpdate_formatted": "2023-09-20 08:04:54",
+        "duplicates": [
+          {
+            "filename": "5k9vmiy3o0ii1wm2xy-1694852356655渡边夜刃3.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "980v82dfcza46c6d6y-1695278123289第九章 四.png",
@@ -28912,7 +28992,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1777283165488,
-        "ossUpdate_formatted": "2026-04-27 09:46:05"
+        "ossUpdate_formatted": "2026-04-27 09:46:05",
+        "duplicates": [
+          {
+            "filename": "l50awu8vi4qs5u3gsv-1777283132488壁纸5.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "9ackh3v5wt4g7jee07-1695196646932常羽游麟间章1.png",
@@ -28936,7 +29024,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695196679159,
-        "ossUpdate_formatted": "2023-09-20 07:57:59"
+        "ossUpdate_formatted": "2023-09-20 07:57:59",
+        "duplicates": [
+          {
+            "filename": "3eo7xwd076k8cu25kv-1694851705043常羽游麟间章1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "9b15kepdlx0za31146-1777345922998bang.png",
@@ -29109,7 +29205,7 @@
       {
         "filename": "9umpu9ruq0h65q6twk-169484978385621号间章3.1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "9umpu9ruq0h65q6twk-169484978385621号间章3.1.jpg",
@@ -29128,7 +29224,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694853437014,
-        "ossUpdate_formatted": "2023-09-16 08:37:17"
+        "ossUpdate_formatted": "2023-09-16 08:37:17",
+        "duplicateOf": "bdwaczbpmx1jrs0wlo-169510534562621号间章3.1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "9yg36sobo4a2mt42n1-17875581868434.png",
@@ -29800,7 +29899,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105574302,
-        "ossUpdate_formatted": "2023-09-19 06:39:34"
+        "ossUpdate_formatted": "2023-09-19 06:39:34",
+        "duplicates": [
+          {
+            "filename": "2no4zn8gp60ghirmfe-1694851628298比安卡零度2.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "bdwaczbpmx1jrs0wlo-169510534562621号间章3.1.png",
@@ -29824,7 +29931,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105350727,
-        "ossUpdate_formatted": "2023-09-19 06:35:50"
+        "ossUpdate_formatted": "2023-09-19 06:35:50",
+        "duplicates": [
+          {
+            "filename": "9umpu9ruq0h65q6twk-169484978385621号间章3.1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "bhq7aym1aqocmo5p58-17772857416697.jpg",
@@ -29973,7 +30088,7 @@
       {
         "filename": "bul2tkpcgpo4qpe0le-1708326239383废墟逃亡（拆分）_.jpg",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "7680x4320",
         "category": "desktop",
         "preview": "bul2tkpcgpo4qpe0le-1708326239383废墟逃亡（拆分）_.jpg",
@@ -29992,12 +30107,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1708418348897,
-        "ossUpdate_formatted": "2024-02-20 08:39:08"
+        "ossUpdate_formatted": "2024-02-20 08:39:08",
+        "duplicateOf": "48yebgjiqpri9i6vrn-1708326276422废墟逃亡（拆分）_.jpg",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "bxvpm58dtp73g5c0q5-1694852256117超丽芙2.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "bxvpm58dtp73g5c0q5-1694852256117超丽芙2.jpg",
@@ -30016,7 +30134,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852261355,
-        "ossUpdate_formatted": "2023-09-16 08:17:41"
+        "ossUpdate_formatted": "2023-09-16 08:17:41",
+        "duplicateOf": "d5765rmyafzdvkunyw-1695196851773超丽芙2.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "c1wc918kio0h3e8arw-17772959160785.png",
@@ -30112,7 +30233,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105660576,
-        "ossUpdate_formatted": "2023-09-19 06:41:00"
+        "ossUpdate_formatted": "2023-09-19 06:41:00",
+        "duplicates": [
+          {
+            "filename": "h4exgjzqssettk84fs-1694851676217比安卡真理间章01.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "cderhxwt9eqtg2kx1e-178755843281115.png",
@@ -30472,7 +30601,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695196861107,
-        "ossUpdate_formatted": "2023-09-20 08:01:01"
+        "ossUpdate_formatted": "2023-09-20 08:01:01",
+        "duplicates": [
+          {
+            "filename": "bxvpm58dtp73g5c0q5-1694852256117超丽芙2.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "d993o3xepobtta97ab-1695284043521甜蜜的家.png",
@@ -30741,7 +30878,7 @@
       {
         "filename": "dv1g3i4lpgojp5bc7l-169484944082921号间章2.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "5760x3240",
         "category": "desktop",
         "preview": "dv1g3i4lpgojp5bc7l-169484944082921号间章2.jpg",
@@ -30760,7 +30897,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694853065395,
-        "ossUpdate_formatted": "2023-09-16 08:31:05"
+        "ossUpdate_formatted": "2023-09-16 08:31:05",
+        "duplicateOf": "q8q9i59lxfpp6u1wl7-169510531660321号间章2.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "dyvrq20rqq7ujgprbn-1695031252860背景图.png",
@@ -31456,7 +31596,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695196837281,
-        "ossUpdate_formatted": "2023-09-20 08:00:37"
+        "ossUpdate_formatted": "2023-09-20 08:00:37",
+        "duplicates": [
+          {
+            "filename": "jl65510fjht2qjq778-1694852240995超丽芙1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "f57kl4a9ij6tuibfr6-1777293723039露西亚CG-驶向星海的运河.png",
@@ -32037,7 +32185,7 @@
       {
         "filename": "g0a86ucwozhd4hg55m-1694852223995常羽游麟间章2.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "5760x3240",
         "category": "desktop",
         "preview": "g0a86ucwozhd4hg55m-1694852223995常羽游麟间章2.jpg",
@@ -32056,7 +32204,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852236510,
-        "ossUpdate_formatted": "2023-09-16 08:17:16"
+        "ossUpdate_formatted": "2023-09-16 08:17:16",
+        "duplicateOf": "gn6ud3yzblbautc9kn-1695196683342常羽游麟间章2.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "g0zzq0tu1mzvqtnnx3-1695290121715诺安CG 死亡回忆 改.png",
@@ -32181,7 +32332,7 @@
       {
         "filename": "gcqizpuyqyn80a1shg-1694851605386比安卡零度1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "gcqizpuyqyn80a1shg-1694851605386比安卡零度1.jpg",
@@ -32200,7 +32351,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694851756510,
-        "ossUpdate_formatted": "2023-09-16 08:09:16"
+        "ossUpdate_formatted": "2023-09-16 08:09:16",
+        "duplicateOf": "3lo37mfi4j8b5nw6jk-1695105540325比安卡零度1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "gg1kr0hqyra5w9dnxy-17772951958289.png",
@@ -32349,7 +32503,7 @@
       {
         "filename": "glx7ig1h90n5w8tpqg-1694851644848比安卡零度3.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "glx7ig1h90n5w8tpqg-1694851644848比安卡零度3.jpg",
@@ -32368,7 +32522,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694851812575,
-        "ossUpdate_formatted": "2023-09-16 08:10:12"
+        "ossUpdate_formatted": "2023-09-16 08:10:12",
+        "duplicateOf": "38algyippu7a7qs7xu-1695105594795比安卡零度3.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "gn1lkmwkah7usvgvc6-1780542344482千子-LOGO.png",
@@ -32416,7 +32573,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695196697966,
-        "ossUpdate_formatted": "2023-09-20 07:58:17"
+        "ossUpdate_formatted": "2023-09-20 07:58:17",
+        "duplicates": [
+          {
+            "filename": "g0a86ucwozhd4hg55m-1694852223995常羽游麟间章2.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "gougkjxh4xl24xbi52-1695367060684雨过天晴_1.jpg",
@@ -32464,7 +32629,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695197235386,
-        "ossUpdate_formatted": "2023-09-20 08:07:15"
+        "ossUpdate_formatted": "2023-09-20 08:07:15",
+        "duplicates": [
+          {
+            "filename": "vne4d4v1xa4yfw4uv2-1694852377806卡穆狂犬1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "gvguc8o9dddwgb82tr-1715245026687死亡主宰.png",
@@ -32536,7 +32709,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695197010013,
-        "ossUpdate_formatted": "2023-09-20 08:03:30"
+        "ossUpdate_formatted": "2023-09-20 08:03:30",
+        "duplicates": [
+          {
+            "filename": "xydvdgjpx5znz35tze-1694852309805渡边夙星-2.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "gz0foprgwi5r6mvwjp-1695366122025比安卡真理间章03_1.jpg",
@@ -32613,7 +32794,7 @@
       {
         "filename": "h4exgjzqssettk84fs-1694851676217比安卡真理间章01.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "7680x4320",
         "category": "desktop",
         "preview": "h4exgjzqssettk84fs-1694851676217比安卡真理间章01.jpg",
@@ -32632,7 +32813,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694851812573,
-        "ossUpdate_formatted": "2023-09-16 08:10:12"
+        "ossUpdate_formatted": "2023-09-16 08:10:12",
+        "duplicateOf": "ccwhr15ba15zj7vzya-1695105642266比安卡真理间章01.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "h5esxikrpxa714ykcu-178773343417535莉莉丝修改_JP_日文_logo.png",
@@ -34072,12 +34256,20 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695197066363,
-        "ossUpdate_formatted": "2023-09-20 08:04:26"
+        "ossUpdate_formatted": "2023-09-20 08:04:26",
+        "duplicates": [
+          {
+            "filename": "rsnou0my8empmu19ar-1694852328614渡边夜刃1.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "jl65510fjht2qjq778-1694852240995超丽芙1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "4186x2160",
         "category": "desktop",
         "preview": "jl65510fjht2qjq778-1694852240995超丽芙1.jpg",
@@ -34096,7 +34288,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852243826,
-        "ossUpdate_formatted": "2023-09-16 08:17:23"
+        "ossUpdate_formatted": "2023-09-16 08:17:23",
+        "duplicateOf": "f4duo5fnx0j6gtrru1-1695196820289超丽芙1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "jm6nguyjt3qmbvnq1h-1695203954726薇拉瑰丽1.png",
@@ -34941,7 +35136,7 @@
       {
         "filename": "l0w7cisfwxnzvo5zqh-1694850090644艾拉溢彩间章03.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "l0w7cisfwxnzvo5zqh-1694850090644艾拉溢彩间章03.jpg",
@@ -34960,7 +35155,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694853763688,
-        "ossUpdate_formatted": "2023-09-16 08:42:43"
+        "ossUpdate_formatted": "2023-09-16 08:42:43",
+        "duplicateOf": "zg1jfac9df3c756ujx-1695105478158艾拉溢彩间章03.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "l174kjzhjgqxgh9afw-1777346070122所有的破晓者.png",
@@ -35037,7 +35235,7 @@
       {
         "filename": "l50awu8vi4qs5u3gsv-1777283132488壁纸5.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "1920x1079",
         "category": "desktop",
         "preview": "l50awu8vi4qs5u3gsv-1777283132488壁纸5.jpg",
@@ -35056,7 +35254,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1777283145566,
-        "ossUpdate_formatted": "2026-04-27 09:45:45"
+        "ossUpdate_formatted": "2026-04-27 09:45:45",
+        "duplicateOf": "98izsx0ceg62uky53k-1777283158333壁纸5.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "l62v6o602676ht44bw-178755293823303.jpg",
@@ -37840,7 +38041,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105320841,
-        "ossUpdate_formatted": "2023-09-19 06:35:20"
+        "ossUpdate_formatted": "2023-09-19 06:35:20",
+        "duplicates": [
+          {
+            "filename": "dv1g3i4lpgojp5bc7l-169484944082921号间章2.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "q8ry9u4240ufhqzr0w-1695201760559七实脉冲1.png",
@@ -38565,7 +38774,7 @@
       {
         "filename": "rsnou0my8empmu19ar-1694852328614渡边夜刃1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "rsnou0my8empmu19ar-1694852328614渡边夜刃1.jpg",
@@ -38584,7 +38793,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852333325,
-        "ossUpdate_formatted": "2023-09-16 08:18:53"
+        "ossUpdate_formatted": "2023-09-16 08:18:53",
+        "duplicateOf": "jjz705htjqso2w2yso-1695197031237渡边夜刃1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "rtk27ofafgpm3oc1mn-1777282767121携旧魂.png",
@@ -39213,7 +39425,7 @@
       {
         "filename": "t0xw8l49w6z8org0rc-1694852778875渡边夜刃2.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "t0xw8l49w6z8org0rc-1694852778875渡边夜刃2.jpg",
@@ -39232,7 +39444,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852781303,
-        "ossUpdate_formatted": "2023-09-16 08:26:21"
+        "ossUpdate_formatted": "2023-09-16 08:26:21",
+        "duplicateOf": "uw2phbb3p87vp3iywr-1695197064316渡边夜刃2.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "t1fjk5oqwyo5tdhgl2-178756482369001神威_JP_日文_logo.png",
@@ -39909,7 +40124,7 @@
       {
         "filename": "uboh5axh4n8m9h7cdm-1694850063694艾拉溢彩间章01.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "uboh5axh4n8m9h7cdm-1694850063694艾拉溢彩间章01.jpg",
@@ -39928,7 +40143,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694853437011,
-        "ossUpdate_formatted": "2023-09-16 08:37:17"
+        "ossUpdate_formatted": "2023-09-16 08:37:17",
+        "duplicateOf": "x04mxd44z7esy0iiek-1695105419021艾拉溢彩间章01.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "ue5724hcy5av8cjn14-1695366209982共枕_1.jpg",
@@ -40048,7 +40266,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105719611,
-        "ossUpdate_formatted": "2023-09-19 06:41:59"
+        "ossUpdate_formatted": "2023-09-19 06:41:59",
+        "duplicates": [
+          {
+            "filename": "yzt6if4xq89i4msj9t-1694851696357比安卡真理间章02.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "ul770pkpktkjsxq7wq-177729529014412.png",
@@ -40216,7 +40442,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695197066361,
-        "ossUpdate_formatted": "2023-09-20 08:04:26"
+        "ossUpdate_formatted": "2023-09-20 08:04:26",
+        "duplicates": [
+          {
+            "filename": "t0xw8l49w6z8org0rc-1694852778875渡边夜刃2.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "v2jvrc5mpic64l0y4w-1695032655110七人御敌.png",
@@ -40629,7 +40863,7 @@
       {
         "filename": "vne4d4v1xa4yfw4uv2-1694852377806卡穆狂犬1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "vne4d4v1xa4yfw4uv2-1694852377806卡穆狂犬1.jpg",
@@ -40648,7 +40882,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852382106,
-        "ossUpdate_formatted": "2023-09-16 08:19:42"
+        "ossUpdate_formatted": "2023-09-16 08:19:42",
+        "duplicateOf": "gpcj2w14k4ds73tig7-1695197224922卡穆狂犬1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "voxvgmqorrvapss6j4-1780540461414鬼泣cg2-维吉尔vs阿尔法.png",
@@ -41391,7 +41628,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105430884,
-        "ossUpdate_formatted": "2023-09-19 06:37:10"
+        "ossUpdate_formatted": "2023-09-19 06:37:10",
+        "duplicates": [
+          {
+            "filename": "uboh5axh4n8m9h7cdm-1694850063694艾拉溢彩间章01.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "x0f9dic1nfhjuploa0-1777343603135赌城灯火.png",
@@ -41636,7 +41881,7 @@
       {
         "filename": "xydvdgjpx5znz35tze-1694852309805渡边夙星-2.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "4700x2000",
         "category": "desktop",
         "preview": "xydvdgjpx5znz35tze-1694852309805渡边夙星-2.jpg",
@@ -41655,7 +41900,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852316272,
-        "ossUpdate_formatted": "2023-09-16 08:18:36"
+        "ossUpdate_formatted": "2023-09-16 08:18:36",
+        "duplicateOf": "gx3cshyle7oofanrn0-1695196971141渡边夙星-2.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "y5odym7nrh51j5f0rb-1780561567856日语.jpg",
@@ -41900,7 +42148,7 @@
       {
         "filename": "ylz9262kk9ohzxkup4-1694852291537渡边夙星-1.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "3840x2160",
         "category": "desktop",
         "preview": "ylz9262kk9ohzxkup4-1694852291537渡边夙星-1.jpg",
@@ -41919,7 +42167,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694852296528,
-        "ossUpdate_formatted": "2023-09-16 08:18:16"
+        "ossUpdate_formatted": "2023-09-16 08:18:16",
+        "duplicateOf": "26vhs2jxdzltu4fsad-1695196940277渡边夙星-1.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "yq6u7nxzuzrwskeii2-177729657798615.png",
@@ -42116,7 +42367,7 @@
       {
         "filename": "yzt6if4xq89i4msj9t-1694851696357比安卡真理间章02.png",
         "server": "JP Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "7680x4320",
         "category": "desktop",
         "preview": "yzt6if4xq89i4msj9t-1694851696357比安卡真理间章02.jpg",
@@ -42135,7 +42386,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1694851812571,
-        "ossUpdate_formatted": "2023-09-16 08:10:12"
+        "ossUpdate_formatted": "2023-09-16 08:10:12",
+        "duplicateOf": "ukx53b9suh12arzn1m-1695105687437比安卡真理间章02.png",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "z3p1sp1gnbdp436egg-1695199369303罗塞塔凛冽03.png",
@@ -42471,7 +42725,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1695105492354,
-        "ossUpdate_formatted": "2023-09-19 06:38:12"
+        "ossUpdate_formatted": "2023-09-19 06:38:12",
+        "duplicates": [
+          {
+            "filename": "l0w7cisfwxnzvo5zqh-1694850090644艾拉溢彩间章03.png",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "zgz9lp6hsfsiyx8upj-178755841178914.png",
@@ -43034,7 +43296,21 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1786436962603,
-        "ossUpdate_formatted": "2026-08-11 08:29:22"
+        "ossUpdate_formatted": "2026-08-11 08:29:22",
+        "duplicates": [
+          {
+            "filename": "63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          },
+          {
+            "filename": "gaueg4u9wllx5vser4-1744972060876露西亚CG-驶向星海的运河-差分1+2.jpg",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "0reelblwolq2lblnwk-178754507481607.png",
@@ -44695,7 +44971,7 @@
       {
         "filename": "63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg",
         "server": "Global Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "7680x4320",
         "category": "desktop",
         "preview": "63edtak1hop68ihimk-1786415938457露西亚CG-驶向星海的运河-差分1+2.jpg",
@@ -44714,7 +44990,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1786415943945,
-        "ossUpdate_formatted": "2026-08-11 02:39:03"
+        "ossUpdate_formatted": "2026-08-11 02:39:03",
+        "duplicateOf": "0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "63nohgzpet4oq2bxoc-1701677876521邦比好感.jpg",
@@ -47791,7 +48070,7 @@
       {
         "filename": "gaueg4u9wllx5vser4-1744972060876露西亚CG-驶向星海的运河-差分1+2.jpg",
         "server": "Global Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "7680x4320",
         "category": "desktop",
         "preview": "gaueg4u9wllx5vser4-1744972060876露西亚CG-驶向星海的运河-差分1+2.jpg",
@@ -47810,7 +48089,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1744972263797,
-        "ossUpdate_formatted": "2025-04-18 10:31:03"
+        "ossUpdate_formatted": "2025-04-18 10:31:03",
+        "duplicateOf": "0o0rtpccodrpqsxaai-1786436959084露西亚CG-驶向星海的运河-差分1+2.jpg",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "gcxnx25p058nlmt7jz-1714123054312此岸与彼岸（动态）.jpg",
@@ -54892,7 +55174,15 @@
         "endTime": 1823745621000,
         "endTime_formatted": "2027-10-17 04:00:21",
         "ossUpdate": 1760846438707,
-        "ossUpdate_formatted": "2025-10-19 04:00:38"
+        "ossUpdate_formatted": "2025-10-19 04:00:38",
+        "duplicates": [
+          {
+            "filename": "bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "8mjyiaoeps4n4pyn48-1719212066954壁纸13.jpg",
@@ -55423,7 +55713,7 @@
       {
         "filename": "bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg",
         "server": "TW Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "1080x1920",
         "category": "mobile",
         "preview": "bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg",
@@ -55442,7 +55732,10 @@
         "endTime": 1823745439000,
         "endTime_formatted": "2027-10-17 03:57:19",
         "ossUpdate": 1760846258460,
-        "ossUpdate_formatted": "2025-10-19 03:57:38"
+        "ossUpdate_formatted": "2025-10-19 03:57:38",
+        "duplicateOf": "8l6tue23g4fewb0jho-1760587178938没有终点的路2.jpg",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "bt7g2plax0qnxl7shc-1781057890153繁中.jpg",
@@ -68115,7 +68408,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1731998072314,
-        "ossUpdate_formatted": "2024-11-19 06:34:32"
+        "ossUpdate_formatted": "2024-11-19 06:34:32",
+        "duplicates": [
+          {
+            "filename": "qmxpihyx46uvjlm9xb-1731655810848384.jpg",
+            "gitBlobSha": null,
+            "removedAt": "2026-10-08",
+            "note": "Kuro re-upload of identical bytes; file removed, name kept searchable here."
+          }
+        ]
       },
       {
         "filename": "kj2jfv3jz2ya6lqqcs-17846022211095.jpg",
@@ -70856,7 +71157,7 @@
       {
         "filename": "qmxpihyx46uvjlm9xb-1731655810848384.jpg",
         "server": "KR Server",
-        "status": "success",
+        "status": "duplicate",
         "resolution": "7680x4320",
         "category": "desktop",
         "preview": "qmxpihyx46uvjlm9xb-1731655810848384.jpg",
@@ -70875,7 +71176,10 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1731998118536,
-        "ossUpdate_formatted": "2024-11-19 06:35:18"
+        "ossUpdate_formatted": "2024-11-19 06:35:18",
+        "duplicateOf": "ki31s8gd3wol72mm29-1731655962342384.jpg",
+        "dedupedAt": "2026-10-08",
+        "note": "Byte-identical to the keeper (Kuro re-upload); bytes removed from the wallpapers branch."
       },
       {
         "filename": "qqsh8a7z46i23f69u8-17846020613295.jpg",
