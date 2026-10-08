@@ -40,8 +40,17 @@
 // Pages origin) occasionally took 5-12s on cache miss.
 const INDEX_URL =
   'https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/main/docs/index-data.json';
-// Short TTLs on both cache layers: index content and schema changes
-// propagate automatically within 5 minutes — no manual version bumps.
+// The cache key rolls every 5 minutes via a time-bucket query param:
+// any index content/schema change is live within ≤5 min, no manual
+// version to bump, and stale legacy entries under other keys are
+// simply never requested again.
+const CACHE_BUCKET_MS = 5 * 60 * 1000;
+function indexUrl() {
+  const bucket = Math.floor(Date.now() / CACHE_BUCKET_MS);
+  return `${INDEX_URL}?t=${bucket}`;
+}
+// Edge-cache lifetime per bucket key (redundant with the bucket rollover,
+// kept as a hard stop).
 const INDEX_CACHE_TTL = 300;
 // In-isolate cache: most requests skip the index fetch entirely.
 const ISOLATE_CACHE_TTL = 5 * 60 * 1000;
@@ -70,7 +79,7 @@ async function loadIndex() {
   if (isolateIndex && now - isolateIndexAt < ISOLATE_CACHE_TTL) {
     return isolateIndex;
   }
-  const res = await fetch(INDEX_URL, {
+  const res = await fetch(indexUrl(), {
     cf: { cacheTtl: INDEX_CACHE_TTL, cacheEverything: true },
     signal: AbortSignal.timeout(10000),
   });
