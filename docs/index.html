@@ -360,12 +360,12 @@
                     }
                 }
 
-                const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/config.json`);
-                const config = await res.json();
-                config.servers.forEach(s => { serverNames[s.id] = s.name; });
-                // Read branch names from config
-                if (config.wallpapersBranch) WALLPAPERS_BRANCH = config.wallpapersBranch;
-                if (config.previewBranch) PREVIEW_BRANCH = config.previewBranch;
+                const res = await fetch(`https://raw.githubusercontent.com/${REPO}/main/docs/index-data.json`);
+                const idx = await res.json();
+                (idx.servers || []).forEach(s => { serverNames[s.id] = s.name; });
+                // Read branch names from the same index
+                if (idx.wallpapersBranch) WALLPAPERS_BRANCH = idx.wallpapersBranch;
+                if (idx.previewBranch) PREVIEW_BRANCH = idx.previewBranch;
             } catch (e) {
                 console.warn('Could not load config, using defaults');
             }

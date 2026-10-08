@@ -23,17 +23,17 @@ import sys
 import re
 import urllib.parse
 import html
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
-CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
+# config: single source config.jsonc via config_loader
 
 CATEGORIES = ['desktop', 'mobile']
 
 
-def load_config():
-    with open(CONFIG_PATH, encoding='utf-8') as f:
-        return json.load(f)
+# config comes from config_loader.load_config (single-source config.jsonc)
 
 
 def escape_html(s):
@@ -393,6 +393,7 @@ def generate_index_data(config):
         'repo': repo_slug,
         'wallpapersBranch': config.get('wallpapersBranch', 'wallpapers'),
         'previewBranch': config.get('previewBranch', 'preview'),
+        'servers': [{'id': s.get('id', ''), 'name': s.get('name', '')} for s in config.get('servers', [])],
         'items': items,
     }
     output_path = os.environ.get('INDEX_DATA_OUTPUT',

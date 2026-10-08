@@ -26,6 +26,8 @@ import os
 import sys
 import shutil
 from concurrent.futures import ThreadPoolExecutor, as_completed
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 
 try:
     from PIL import Image
@@ -35,7 +37,7 @@ except ImportError:
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
-CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
+# config: single source config.jsonc via config_loader
 
 # Preview settings
 PREVIEW_MAX_SIZE = 480  # Max dimension (width or height) for preview
@@ -44,9 +46,7 @@ PREVIEW_QUALITY = 85    # JPEG quality for previews
 IMAGE_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.webp')
 
 
-def load_config():
-    with open(CONFIG_PATH, encoding='utf-8') as f:
-        return json.load(f)
+# config comes from config_loader.load_config (single-source config.jsonc)
 
 
 def get_image_resolution(filepath):

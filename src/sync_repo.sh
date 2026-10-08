@@ -3,9 +3,9 @@ set -e
 
 # Config
 REPO_DIR=$(pwd)
-WALLPAPERS_BRANCH=$(python3 -c "import json; c=json.load(open('config.json')); print(c.get('wallpapersBranch','wallpapers'))")
-PREVIEW_BRANCH=$(python3 -c "import json; c=json.load(open('config.json')); print(c.get('previewBranch','preview'))")
-SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
+WALLPAPERS_BRANCH=$(python3 "$REPO_DIR/src/get_config.py" wallpapersBranch)
+PREVIEW_BRANCH=$(python3 "$REPO_DIR/src/get_config.py" previewBranch)
+SERVERS=$(python3 "$REPO_DIR/src/get_config.py" servers)
 CATEGORIES="desktop mobile"
 
 # Git Setup
@@ -233,7 +233,7 @@ fi
 # These branches exist purely for one-click codeload ZIPs (desktop.zip /
 # mobile.zip). Derived from the wallpapers tip via tree surgery — only a few
 # KB of new tree/commit objects, no blob re-upload. Non-fatal on failure.
-CATEGORY_BRANCHES=$(python3 -c "import json; print(' '.join(json.load(open('$REPO_DIR/config.json')).get('categoryBranches', ['desktop','mobile'])))")
+CATEGORY_BRANCHES=$(python3 "$REPO_DIR/src/get_config.py" categoryBranches)
 for CB in $CATEGORY_BRANCHES; do
   SUBTREE=$(git -C "$WP_DIR" ls-tree HEAD | awk -v d="$CB" '$4==d{print $3}')
   if [ -z "$SUBTREE" ]; then

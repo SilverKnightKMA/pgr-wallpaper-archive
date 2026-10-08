@@ -31,14 +31,14 @@ jobs:
           fetch-depth: 1
 
       # Protected branches are NEVER deleted: main + the archive branches
-      # declared in config.json (wallpapersBranch / previewBranch) which hold
+      # declared in config.jsonc (wallpapersBranch / previewBranch) which hold
       # the entire ~22 GB image archive with no other copy anywhere.
       - name: Delete unprotected branches only
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          python3 -c "import json; c=json.load(open('config.json')); bs=['main', c.get('wallpapersBranch','wallpapers'), c.get('previewBranch','preview')] + c.get('categoryBranches',['desktop','mobile']); print('\n'.join(bs))" > /tmp/protected_branches.txt
+          python3 src/get_config.py protected-branches > /tmp/protected_branches.txt
           echo "Protected branches:"
           cat /tmp/protected_branches.txt
           branches=$(gh api "repos/${{ github.repository }}/branches" --paginate -q '.[].name' | grep -vxF -f /tmp/protected_branches.txt) || true

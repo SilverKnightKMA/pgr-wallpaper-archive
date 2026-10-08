@@ -13,7 +13,7 @@ fi
 
 MAX_BATCH_BYTES=$((2000 * 1024 * 1024))
 WORK_DIR="$(pwd)"
-SERVERS=$(python3 -c "import json; c=json.load(open('config.json')); [print(s['id']) for s in c['servers']]")
+SERVERS=$(python3 "$(dirname "$0")/get_config.py" servers)
 CATEGORIES="desktop mobile"
 
 # --- 1. Collect all new image file paths ---

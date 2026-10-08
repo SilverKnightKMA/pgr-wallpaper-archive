@@ -20,6 +20,8 @@ import sys
 import os
 import urllib.parse
 from datetime import datetime, timezone
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 
 CATEGORIES = ['desktop', 'mobile']
 
@@ -128,17 +130,15 @@ def main():
     server_ids = sys.argv[4:]
 
     # Load config
-    config_path = os.path.join(repo_dir, 'config.json')
+    # config: single source config.jsonc via config_loader
     server_name_map = {}
-    if os.path.isfile(config_path):
-        try:
-            with open(config_path, encoding='utf-8') as cf:
-                config = json.load(cf)
-        except json.JSONDecodeError as e:
-            print(f"Error: Failed to parse config: {e}", file=sys.stderr)
-            config = {}
-        for s in config.get('servers', []):
-            server_name_map[s['id']] = s.get('name', s['id'])
+    try:
+        config = load_config()
+    except Exception as e:
+        print(f"Error: Failed to parse config: {e}", file=sys.stderr)
+        config = {}
+    for s in config.get('servers', []):
+        server_name_map[s['id']] = s.get('name', s['id'])
 
     # Load scraped metadata (produced by scraper.py)
     scraped_path = os.path.join(repo_dir, 'data', 'scraped_metadata.json')

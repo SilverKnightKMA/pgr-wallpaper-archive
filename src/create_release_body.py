@@ -12,9 +12,11 @@ import json
 import re
 import urllib.parse
 from datetime import datetime
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 
 repo = os.environ.get('GITHUB_REPOSITORY', '')
-config_path = 'config.json'
+# config: single source config.jsonc via config_loader
 release_tag = os.environ.get('RELEASE_TAG', '')
 
 # GitHub release body limit is 125000 characters; leave some margin
@@ -22,9 +24,7 @@ MAX_BODY_CHARS = 120000
 MAX_ROWS_PER_SERVER = 200
 
 
-def load_config():
-    with open(config_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+# config comes from config_loader.load_config (single-source config.jsonc)
 
 
 def load_manifest():

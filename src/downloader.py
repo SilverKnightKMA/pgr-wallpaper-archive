@@ -34,10 +34,12 @@ import urllib.request
 import urllib.error
 import ssl
 from concurrent.futures import ThreadPoolExecutor, as_completed
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
-CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
+# config: single source config.jsonc via config_loader
 MAX_WORKERS = 16
 
 # 1.8 GB default, overridable via env
@@ -45,9 +47,7 @@ MAX_BATCH_BYTES = int(float(os.environ.get('MAX_BATCH_BYTES',
                                             1.8 * 1024 * 1024 * 1024)))
 
 
-def load_config():
-    with open(CONFIG_PATH, encoding='utf-8') as f:
-        return json.load(f)
+# config comes from config_loader.load_config (single-source config.jsonc)
 
 
 def encode_url(url):

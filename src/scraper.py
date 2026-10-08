@@ -29,13 +29,15 @@ from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.join(SCRIPT_DIR, '..')
-CONFIG_PATH = os.path.join(REPO_DIR, 'config.json')
+# config: single source config.jsonc via config_loader
 
 # Only download wallpaper/CG (pictureType 11)
 ALLOWED_PICTURE_TYPES = {11}
 
 # /images/<ts>/ segment in Kuro CDN URLs (upload-day bucket, part of the OSS key)
 import re
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 TS_RE = re.compile(r'/images/(\d+)/')
 
 
@@ -49,12 +51,7 @@ def ts_bucket_from_url(url):
 timestamp = lambda: datetime.now().strftime('%H:%M:%S')
 
 
-def load_config():
-    if not os.path.isfile(CONFIG_PATH):
-        print(f'Error: Config file not found at {CONFIG_PATH}', file=sys.stderr)
-        sys.exit(1)
-    with open(CONFIG_PATH, encoding='utf-8') as f:
-        return json.load(f)
+# config comes from config_loader.load_config (single-source config.jsonc)
 
 
 def download_json(url):

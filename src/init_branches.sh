@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
 
-# Load config
-WALLPAPERS_BRANCH=$(python3 -c "import json; c=json.load(open('config.json')); print(c.get('wallpapersBranch','wallpapers'))")
-PREVIEW_BRANCH=$(python3 -c "import json; c=json.load(open('config.json')); print(c.get('previewBranch','preview'))")
+# Load config (location-independent: this script lives in src/)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WALLPAPERS_BRANCH=$(python3 "$SCRIPT_DIR/get_config.py" wallpapersBranch)
+PREVIEW_BRANCH=$(python3 "$SCRIPT_DIR/get_config.py" previewBranch)
 
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"

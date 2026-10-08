@@ -20,8 +20,10 @@ import os
 import ssl
 import sys
 import urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config_loader import load_config
 
-CONFIG_PATH = 'config.json'
+# config: single source config.jsonc via config_loader
 MANIFEST_PATH = 'data/manifest.json'
 FLOOR_RATIO = 0.7  # fetched items must be >= 70% of archived count — low
                     # enough to tolerate Kuro pruning old images (tw is at 81%
@@ -35,8 +37,7 @@ ctx = ssl.create_default_context()
 
 
 def main():
-    with open(CONFIG_PATH, encoding='utf-8') as f:
-        servers = json.load(f)['servers']
+    servers = load_config()['servers']
 
     archived_counts = {}
     if os.path.exists(MANIFEST_PATH):

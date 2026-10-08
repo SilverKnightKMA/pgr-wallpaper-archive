@@ -1,6 +1,7 @@
-// Central config for the whole pipeline — THE human-edited source.
-// Comments are stripped by src/build_config.py, which regenerates the pure
-// JSON config.json every script actually reads. Never edit config.json.
+// Central config for the whole pipeline — THE ONLY config file.
+// Hand-edited, // comments welcome beside any line. Every consumer
+// parses it via src/config_loader.py (python) or src/get_config.py
+// (shell / workflow steps); no stripped copy is generated.
 {
   // Official regional servers; jsonUrl = MainMenu.json on Kuro's website2.0
   // CDN — the pipeline's sole data source. CN is .com, the rest are .net;
