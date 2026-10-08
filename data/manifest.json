@@ -7613,7 +7613,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1762656670864,
-        "ossUpdate_formatted": "2025-11-09 02:51:10"
+        "ossUpdate_formatted": "2025-11-09 02:51:10",
+        "duplicates": [
+          {
+            "filename": "1avli1dz54e6qlle5y-173614555556319.png",
+            "sha1": "7216e502caac72aa8d5c7d68d9f7b6e8648951e6",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "ajm8ssel31146gidde-169690931097506.png",
@@ -7877,7 +7885,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1762656766621,
-        "ossUpdate_formatted": "2025-11-09 02:52:46"
+        "ossUpdate_formatted": "2025-11-09 02:52:46",
+        "duplicates": [
+          {
+            "filename": "t3z4rsruyzqufyxfvn-173614557141620.png",
+            "sha1": "95fe8b1d200f09df428e3ce482b57068718fd317",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "aupn6q9aq8t816o2uj-17701769267972.png",
@@ -8621,7 +8637,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1728726614090,
-        "ossUpdate_formatted": "2024-10-12 09:50:14"
+        "ossUpdate_formatted": "2024-10-12 09:50:14",
+        "duplicates": [
+          {
+            "filename": "67w0afxp5wngt9i9dh-173614548239015.png",
+            "sha1": "2e8dc349c1a11e02e84c0c5f091acfad9d1f8d96",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "bxwb46wbzga41mfhqa-1636445122284官网图片 (12).jpg",
@@ -11477,7 +11501,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1762656900453,
-        "ossUpdate_formatted": "2025-11-09 02:55:00"
+        "ossUpdate_formatted": "2025-11-09 02:55:00",
+        "duplicates": [
+          {
+            "filename": "c6grcx8y8x5imm58hg-173614568905927.png",
+            "sha1": "37b650ef874b5b22a3fd7c74bfb4acfd53eb9a2e",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "gls6ewfqtfrywcwojl-16872320364112.jpg",
@@ -11645,7 +11677,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1732501263988,
-        "ossUpdate_formatted": "2024-11-25 02:21:03"
+        "ossUpdate_formatted": "2024-11-25 02:21:03",
+        "duplicates": [
+          {
+            "filename": "wug4qgniyp9pfam35d-173614558720221.png",
+            "sha1": "cc4b8ff21f9611e15c0b97009b0d56fbdb42ea57",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "gvde5z08lm3n196keu-16872321542039.jpg",
@@ -12245,7 +12285,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1762656935408,
-        "ossUpdate_formatted": "2025-11-09 02:55:35"
+        "ossUpdate_formatted": "2025-11-09 02:55:35",
+        "duplicates": [
+          {
+            "filename": "deb8eh8ia21h2y8w7u-173614567655426.png",
+            "sha1": "32984651a553ed3121f2af64485f8ae0f477a279",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "hv5g00z5k57os6hdh2-170433752250719.png",
@@ -14789,7 +14837,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1732501154213,
-        "ossUpdate_formatted": "2024-11-25 02:19:14"
+        "ossUpdate_formatted": "2024-11-25 02:19:14",
+        "duplicates": [
+          {
+            "filename": "8dynqjme0b6scjvneu-173614566300225.png",
+            "sha1": "d87f9940545cabb3ee8e7483f7ccd7c5825ed34a",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "lx8upu1ot6bf1zcavm-166580532899211.jpg",
@@ -14885,7 +14941,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1762657036458,
-        "ossUpdate_formatted": "2025-11-09 02:57:16"
+        "ossUpdate_formatted": "2025-11-09 02:57:16",
+        "duplicates": [
+          {
+            "filename": "f7cp9010292uxa50hy-173614564963424.png",
+            "sha1": "e4ef9bddbe1c82e01c46717c005fc9d2df54c893",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "m2l9nblqovemf2zybw-16588253987833(1).png",
@@ -15677,7 +15741,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1728726494166,
-        "ossUpdate_formatted": "2024-10-12 09:48:14"
+        "ossUpdate_formatted": "2024-10-12 09:48:14",
+        "duplicates": [
+          {
+            "filename": "sfvpbebvnsph9x7nfi-173614554072018.png",
+            "sha1": "f70d0ed78a4a98f97d615592eddbd32638315a59",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "n55wa8pba7qrbgrqna-1636437732840官网图片 (144).jpg",
@@ -19397,7 +19469,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1725685513211,
-        "ossUpdate_formatted": "2024-09-07 05:05:13"
+        "ossUpdate_formatted": "2024-09-07 05:05:13",
+        "duplicates": [
+          {
+            "filename": "zqhlab5931pu77la46-17361451056131.png",
+            "sha1": "121ee2fd7ce33e3299c40c2d0da19b232d3dddda",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "sw8o7ouigy2q381h0k-17875400386892.png",
@@ -21965,7 +22045,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1728726594360,
-        "ossUpdate_formatted": "2024-10-12 09:49:54"
+        "ossUpdate_formatted": "2024-10-12 09:49:54",
+        "duplicates": [
+          {
+            "filename": "za0l8yzncv3gvya802-173614551314716.png",
+            "sha1": "30cbc15128cb28f33a37e130896d1f403d501e78",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "wvatfqtl4up0msx75l-16805154655188.jpg",
@@ -23693,7 +23781,15 @@
         "endTime": 4070880000000,
         "endTime_formatted": "2098-12-31 16:00:00",
         "ossUpdate": 1728726403830,
-        "ossUpdate_formatted": "2024-10-12 09:46:43"
+        "ossUpdate_formatted": "2024-10-12 09:46:43",
+        "duplicates": [
+          {
+            "filename": "4cl5nqs2e8ms539iii-173614552567217.png",
+            "sha1": "39f88d65ce5064e14fa8b77f0e29ca0306b8c984",
+            "removedAt": "2026-10-08",
+            "note": "Recovered batch removed: byte-identical to this file (Kuro re-upload under a newer name; Jan-2025 name pruned from JSON)."
+          }
+        ]
       },
       {
         "filename": "zycndgaxcpj4hlicma-1636439734838官网图片 (110).jpg",
@@ -74072,310 +74168,5 @@
     ],
     "pictureCount": 593
   },
-  "releaseTime": "2026-10-01T05:19:53Z",
-  "recovered": {
-    "name": "Recovered (pre-2026)",
-    "total": 12,
-    "success": 12,
-    "failed": 0,
-    "lastUpdated": "2025-01-06T06:41:29Z",
-    "lastActionRun": "2026-10-08T03:19:30Z",
-    "wallpapers": [
-      {
-        "filename": "1avli1dz54e6qlle5y-173614555556319.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "1avli1dz54e6qlle5y-173614555556319.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.29 MB",
-        "startTime": 1736145555563,
-        "startTime_formatted": "2025-01-06T06:39:15Z",
-        "pictureType": 11,
-        "sourceFilename": "1avli1dz54e6qlle5y-173614555556319.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png",
-        "source": {
-          "type": "official-cdn",
-          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
-          "uploader": "unknown (Drive folder owner)",
-          "fetchedAt": "2026-10-08T03:19:30Z",
-          "sha1": "7216e502caac72aa8d5c7d68d9f7b6e8648951e6",
-          "verifiedAgainst": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/1avli1dz54e6qlle5y-173614555556319.png",
-          "verifiedMethod": "sha1: Drive copy == CDN bytes (2026-10-08)",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08",
-          "note": "Fetched from community Drive snapshot; bytes proven byte-identical to the official CDN original (sha1). Earlier 404 verdict was a wrong-bucket test — CDN still live.",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "4cl5nqs2e8ms539iii-173614552567217.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "4cl5nqs2e8ms539iii-173614552567217.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.51 MB",
-        "startTime": 1736145525672,
-        "startTime_formatted": "2025-01-06T06:38:45Z",
-        "pictureType": 11,
-        "sourceFilename": "4cl5nqs2e8ms539iii-173614552567217.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png",
-        "source": {
-          "type": "official-cdn",
-          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
-          "uploader": "unknown (Drive folder owner)",
-          "fetchedAt": "2026-10-08T03:19:30Z",
-          "sha1": "39f88d65ce5064e14fa8b77f0e29ca0306b8c984",
-          "verifiedAgainst": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/4cl5nqs2e8ms539iii-173614552567217.png",
-          "verifiedMethod": "sha1: Drive copy == CDN bytes (2026-10-08)",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08",
-          "note": "Fetched from community Drive snapshot; bytes proven byte-identical to the official CDN original (sha1). Earlier 404 verdict was a wrong-bucket test — CDN still live.",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "67w0afxp5wngt9i9dh-173614548239015.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "67w0afxp5wngt9i9dh-173614548239015.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "2.49 MB",
-        "startTime": 1736145482390,
-        "startTime_formatted": "2025-01-06T06:38:02Z",
-        "pictureType": 11,
-        "sourceFilename": "67w0afxp5wngt9i9dh-173614548239015.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png",
-        "source": {
-          "type": "official-cdn",
-          "origin": "https://drive.google.com/drive/folders/1_E7l0cnZqqQOLFlTgOG-VKLLdj8uDAZt",
-          "uploader": "unknown (Drive folder owner)",
-          "fetchedAt": "2026-10-08T03:19:30Z",
-          "sha1": "2e8dc349c1a11e02e84c0c5f091acfad9d1f8d96",
-          "verifiedAgainst": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/67w0afxp5wngt9i9dh-173614548239015.png",
-          "verifiedMethod": "sha1: Drive copy == CDN bytes (2026-10-08)",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08",
-          "note": "Fetched from community Drive snapshot; bytes proven byte-identical to the official CDN original (sha1). Earlier 404 verdict was a wrong-bucket test — CDN still live.",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "8dynqjme0b6scjvneu-173614566300225.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "8dynqjme0b6scjvneu-173614566300225.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.02 MB",
-        "startTime": 1736145663002,
-        "startTime_formatted": "2025-01-06T06:41:03Z",
-        "pictureType": 11,
-        "sourceFilename": "8dynqjme0b6scjvneu-173614566300225.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/8dynqjme0b6scjvneu-173614566300225.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "c6grcx8y8x5imm58hg-173614568905927.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "c6grcx8y8x5imm58hg-173614568905927.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.58 MB",
-        "startTime": 1736145689059,
-        "startTime_formatted": "2025-01-06T06:41:29Z",
-        "pictureType": 11,
-        "sourceFilename": "c6grcx8y8x5imm58hg-173614568905927.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/c6grcx8y8x5imm58hg-173614568905927.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "deb8eh8ia21h2y8w7u-173614567655426.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "deb8eh8ia21h2y8w7u-173614567655426.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.21 MB",
-        "startTime": 1736145676554,
-        "startTime_formatted": "2025-01-06T06:41:16Z",
-        "pictureType": 11,
-        "sourceFilename": "deb8eh8ia21h2y8w7u-173614567655426.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/deb8eh8ia21h2y8w7u-173614567655426.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "f7cp9010292uxa50hy-173614564963424.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "f7cp9010292uxa50hy-173614564963424.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.59 MB",
-        "startTime": 1736145649634,
-        "startTime_formatted": "2025-01-06T06:40:49Z",
-        "pictureType": 11,
-        "sourceFilename": "f7cp9010292uxa50hy-173614564963424.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/f7cp9010292uxa50hy-173614564963424.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "sfvpbebvnsph9x7nfi-173614554072018.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "sfvpbebvnsph9x7nfi-173614554072018.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "2.24 MB",
-        "startTime": 1736145540720,
-        "startTime_formatted": "2025-01-06T06:39:00Z",
-        "pictureType": 11,
-        "sourceFilename": "sfvpbebvnsph9x7nfi-173614554072018.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/sfvpbebvnsph9x7nfi-173614554072018.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "t3z4rsruyzqufyxfvn-173614557141620.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "t3z4rsruyzqufyxfvn-173614557141620.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "2.31 MB",
-        "startTime": 1736145571416,
-        "startTime_formatted": "2025-01-06T06:39:31Z",
-        "pictureType": 11,
-        "sourceFilename": "t3z4rsruyzqufyxfvn-173614557141620.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/t3z4rsruyzqufyxfvn-173614557141620.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "wug4qgniyp9pfam35d-173614558720221.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "wug4qgniyp9pfam35d-173614558720221.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "2.82 MB",
-        "startTime": 1736145587202,
-        "startTime_formatted": "2025-01-06T06:39:47Z",
-        "pictureType": 11,
-        "sourceFilename": "wug4qgniyp9pfam35d-173614558720221.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/wug4qgniyp9pfam35d-173614558720221.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "za0l8yzncv3gvya802-173614551314716.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "za0l8yzncv3gvya802-173614551314716.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "2.63 MB",
-        "startTime": 1736145513147,
-        "startTime_formatted": "2025-01-06T06:38:33Z",
-        "pictureType": 11,
-        "sourceFilename": "za0l8yzncv3gvya802-173614551314716.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/za0l8yzncv3gvya802-173614551314716.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      },
-      {
-        "filename": "zqhlab5931pu77la46-17361451056131.png",
-        "server": "Recovered (pre-2026)",
-        "status": "success",
-        "resolution": "1920x1080",
-        "category": "desktop",
-        "preview": "zqhlab5931pu77la46-17361451056131.jpg",
-        "releaseTime": "2026-10-08T03:19:30Z",
-        "size": "3.19 MB",
-        "startTime": 1736145105613,
-        "startTime_formatted": "2025-01-06T06:31:45Z",
-        "pictureType": 11,
-        "sourceFilename": "zqhlab5931pu77la46-17361451056131.png",
-        "imgUrl": "https://media-cdn-zspms.kurogame.com/pnswebsite/website2.0/images/1736092800000/zqhlab5931pu77la46-17361451056131.png",
-        "source": {
-          "type": "official-cdn",
-          "note": "Removed from source JSON before archive start; URL reconstructed from filename timestamp (bucket rule); bytes fetched from official CDN.",
-          "discoveredVia": "community Drive snapshot listing",
-          "recoveredAt": "2026-10-08T03:19:30Z",
-          "originServer": "cn",
-          "originEvidence": "cn files serve only on media-cdn-zspms.kurogame.com (.net 404) — domain split verified 2026-10-08; Drive snapshot context: 454/463 matched files are CN Server"
-        }
-      }
-    ],
-    "pictureCount": 12
-  }
+  "releaseTime": "2026-10-01T05:19:53Z"
 }
