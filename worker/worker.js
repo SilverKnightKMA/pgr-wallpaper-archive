@@ -14,7 +14,8 @@
  *   ?preview=1        serve the lightweight .jpg preview instead of the full image
  *   ?redirect=1       302 redirect to raw.githubusercontent.com instead of
  *                     proxying bytes (client downloads straight from GitHub CDN)
- *   ?format=json      return metadata (filename/category/server/urls) instead
+ *   ?format=json      return metadata (filename/category/server/resolution/
+ *                     size/raw URLs, plus the seed if one was given) instead
  *                     of image bytes — for scripts and bots
  *   ?count=N          N distinct random picks as a JSON array (1-20;
  *                     implies format=json)
@@ -140,9 +141,13 @@ function rawUrlsFor(index, entry) {
   };
 }
 
-function metaFor(index, entry) {
-  const [filename, cat, srv] = entry;
-  return { filename, category: cat, server: srv, ...rawUrlsFor(index, entry) };
+function metaFor(index, entry, seed) {
+  const [filename, cat, srv, resolution, size] = entry;
+  const meta = { filename, category: cat, server: srv, ...rawUrlsFor(index, entry) };
+  if (resolution) meta.resolution = resolution;
+  if (size) meta.size = size;
+  if (seed !== null && seed !== undefined) meta.seed = seed;
+  return meta;
 }
 
 export default {
@@ -184,7 +189,9 @@ export default {
       if (isHead) {
         return new Response(null, { status: 200, headers: jsonHeaders() });
       }
-      const payload = count ? entries.map((e) => metaFor(index, e)) : metaFor(index, single);
+      const payload = count
+        ? entries.map((e) => metaFor(index, e, seed))
+        : metaFor(index, single, seed);
       return new Response(JSON.stringify(payload, null, 2), { status: 200, headers: jsonHeaders() });
     }
 

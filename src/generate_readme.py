@@ -386,7 +386,9 @@ def generate_index_data(config):
             if w.get('status') == 'success':
                 items.append([w.get('filename', ''),
                               w.get('category', 'desktop'),
-                              server['id']])
+                              server['id'],
+                              w.get('resolution', ''),
+                              w.get('size', '')])
     data = {
         'repo': repo_slug,
         'wallpapersBranch': config.get('wallpapersBranch', 'wallpapers'),
