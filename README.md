@@ -32,7 +32,7 @@ A tiny [Cloudflare Worker](https://github.com/SilverKnightKMA/pgr-wallpaper-arch
 | [`/desktop`](https://pgr-wallpapers.tungvuthanh.com/desktop) | random **desktop** wallpaper |
 | [`/mobile`](https://pgr-wallpapers.tungvuthanh.com/mobile) | random **mobile** wallpaper |
 
-Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 straight to the raw file instead of streaming bytes).
+Query params: `?server=cn|jp|global|tw|kr` (single server), `?preview=1` (small JPEG preview), `?redirect=1` (HTTP 302 to the raw file), `?format=json` (metadata instead of bytes), `?count=1-20` (JSON list of distinct picks), `?seed=...` (deterministic pick). `HEAD` returns headers only (`X-Random-Source`).
 
 ## Server Galleries
 

@@ -12,7 +12,7 @@ Domain `pgr-wallpapers.tungvuthanh.com` also hosts the gallery (GitHub Pages at 
 | `https://pgr-wallpapers.tungvuthanh.com/desktop` | random desktop wallpaper |
 | `https://pgr-wallpapers.tungvuthanh.com/mobile` | random mobile wallpaper |
 
-Query params: `?server=cn|jp|global|tw|kr` · `?preview=1` (small JPEG) · `?redirect=1` (302 to raw instead of streaming).
+Query params: `?server=cn|jp|global|tw|kr` · `?preview=1` (small JPEG) · `?redirect=1` (302 to raw instead of streaming) · `?format=json` (metadata for scripts/bots) · `?count=1-20` (JSON array of distinct picks) · `?seed=...` (deterministic pick — stable only while the index snapshot is unchanged) · `HEAD` (headers only, no upstream fetch).
 
 The workers.dev URL (`https://pgr-random.tungvt1912.workers.dev/...`) and the old blog paths (`blog.tungvuthanh.com/pgr-wallpaper-archive/...`) also work — same Worker.
 

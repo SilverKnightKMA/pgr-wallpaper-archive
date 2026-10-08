@@ -14,6 +14,16 @@
  *   ?preview=1        serve the lightweight .jpg preview instead of the full image
  *   ?redirect=1       302 redirect to raw.githubusercontent.com instead of
  *                     proxying bytes (client downloads straight from GitHub CDN)
+ *   ?format=json      return metadata (filename/category/server/urls) instead
+ *                     of image bytes — for scripts and bots
+ *   ?count=N          N distinct random picks as a JSON array (1-20;
+ *                     implies format=json)
+ *   ?seed=any         deterministic pick: same seed + same index snapshot ->
+ *                     same image (hash includes category+server; NOT stable
+ *                     across archive batches that change the index)
+ *
+ * HEAD returns headers only (Content-Type, X-Random-Source) — no body,
+ * no upstream fetch.
  *
  * The content-type is derived from the filename extension because the CDN
  * occasionally mislabels images as application/octet-stream (observed on
@@ -73,12 +83,66 @@ async function loadIndex() {
   return isolateIndex;
 }
 
-function pickRandom(items, category, server) {
-  const pool = items.filter(
+function filteredPool(items, category, server) {
+  return items.filter(
     ([, c, s]) => (!category || c === category) && (!server || s === server)
   );
+}
+
+function hashCode(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+function pickFrom(pool, seed) {
+  if (seed === null || seed === undefined) {
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+  return pool[hashCode(seed) % pool.length];
+}
+
+function pickRandom(items, category, server, seed) {
+  const pool = filteredPool(items, category, server);
   if (!pool.length) return null;
-  return pool[Math.floor(Math.random() * pool.length)];
+  return pickFrom(pool, seed);
+}
+
+function pickMany(items, category, server, count, seed) {
+  const pool = filteredPool(items, category, server);
+  const out = [];
+  const seen = new Set();
+  const want = Math.min(count, pool.length);
+  for (let salt = 0; out.length < want && salt < want * 20 + 40; salt++) {
+    const e = pickFrom(pool, seed === null || seed === undefined ? null : `${seed}#${salt}`);
+    if (!seen.has(e[0])) {
+      seen.add(e[0]);
+      out.push(e);
+    }
+  }
+  return out;
+}
+
+function jsonHeaders() {
+  return {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'no-store',
+    'Access-Control-Allow-Origin': '*',
+  };
+}
+
+function rawUrlsFor(index, entry) {
+  const [filename, cat] = entry;
+  const encoded = encodeURIComponent(filename);
+  return {
+    url: `https://raw.githubusercontent.com/${index.repo}/${index.wallpapersBranch}/${cat}/${encoded}`,
+    previewUrl: `https://raw.githubusercontent.com/${index.repo}/${index.previewBranch}/previews/${encodeURIComponent(filename.replace(/\.[^.]+$/, '') + '.jpg')}`,
+  };
+}
+
+function metaFor(index, entry) {
+  const [filename, cat, srv] = entry;
+  return { filename, category: cat, server: srv, ...rawUrlsFor(index, entry) };
 }
 
 export default {
@@ -89,9 +153,18 @@ export default {
     if (segment !== 'wallpapers' && category === null) {
       return new Response('Not found', { status: 404 });
     }
+    if (request.method !== 'GET' && request.method !== 'HEAD') {
+      return new Response('Method not allowed', { status: 405 });
+    }
     const server = url.searchParams.get('server');
     const preview = url.searchParams.get('preview') === '1';
     const wantRedirect = url.searchParams.get('redirect') === '1';
+    const seedParam = url.searchParams.get('seed');
+    const seed = seedParam ? seedParam : null;
+    const countRaw = parseInt(url.searchParams.get('count'), 10);
+    const count = Number.isFinite(countRaw) && countRaw > 0 ? Math.min(20, countRaw) : null;
+    const wantJson = url.searchParams.get('format') === 'json' || count !== null;
+    const isHead = request.method === 'HEAD';
 
     let index;
     try {
@@ -102,11 +175,29 @@ export default {
       });
     }
 
+    if (wantJson) {
+      const entries = count ? pickMany(index.items, category, server, count, seed) : [];
+      const single = count ? null : pickRandom(index.items, category, server, seed);
+      if ((count !== null && !entries.length) || (count === null && !single)) {
+        return new Response('No wallpapers match this filter', { status: 404 });
+      }
+      if (isHead) {
+        return new Response(null, { status: 200, headers: jsonHeaders() });
+      }
+      const payload = count ? entries.map((e) => metaFor(index, e)) : metaFor(index, single);
+      return new Response(JSON.stringify(payload, null, 2), { status: 200, headers: jsonHeaders() });
+    }
+
     // Upstream fetches can hang (observed rare multi-minute stalls on cold
     // large objects). Timeout + one retry with a fresh random pick.
     let lastErr = null;
     for (let attempt = 0; attempt < 2; attempt++) {
-      const entry = pickRandom(index.items, category, server);
+      const entry = pickRandom(
+        index.items,
+        category,
+        server,
+        seed === null ? null : `${seed}#${attempt}`
+      );
       if (!entry) {
         return new Response('No wallpapers match this filter', { status: 404 });
       }
@@ -118,6 +209,18 @@ export default {
       const upstream = preview
         ? `https://raw.githubusercontent.com/${index.repo}/${index.previewBranch}/previews/${encodeURIComponent(servedName)}`
         : `https://raw.githubusercontent.com/${index.repo}/${index.wallpapersBranch}/${cat}/${encoded}`;
+
+      if (isHead) {
+        return new Response(null, {
+          status: 200,
+          headers: {
+            'Cache-Control': 'no-store',
+            'Access-Control-Allow-Origin': '*',
+            'X-Random-Source': upstream,
+            'Content-Type': contentTypeFor(servedName, null),
+          },
+        });
+      }
 
       if (wantRedirect) {
         return new Response(null, {
