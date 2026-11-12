@@ -1,12 +1,165 @@
 # TW Server — PGR Wallpaper Archive
 
-> Total: 279 wallpapers
+> Total: 287 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
-[View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=tw)
+[View & Filter on GitHub Pages](https://pgr-wallpapers.tungvuthanh.com/?server=tw)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/07ffi92ky8rjs72xwm-179430188588305.jpg" width="200" alt="07ffi92ky8rjs72xwm-179430188588305.jpg" title="07ffi92ky8rjs72xwm-179430188588305.jpg"> <strong>07ffi92ky8rjs72xwm-179430188588305.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.08 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/07ffi92ky8rjs72xwm-179430188588305.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/07ffi92ky8rjs72xwm-179430188588305.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/92t9qr57bnevmgcyz6-179430192415704.jpg" width="200" alt="92t9qr57bnevmgcyz6-179430192415704.jpg" title="92t9qr57bnevmgcyz6-179430192415704.jpg"> <strong>92t9qr57bnevmgcyz6-179430192415704.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.70 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/92t9qr57bnevmgcyz6-179430192415704.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/92t9qr57bnevmgcyz6-179430192415704.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/9scujnhjpnr2c9inut-179430199563602.jpg" width="200" alt="9scujnhjpnr2c9inut-179430199563602.jpg" title="9scujnhjpnr2c9inut-179430199563602.jpg"> <strong>9scujnhjpnr2c9inut-179430199563602.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/9scujnhjpnr2c9inut-179430199563602.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/9scujnhjpnr2c9inut-179430199563602.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/b1fbvku6i1rd6mwqyt-179430197082603.jpg" width="200" alt="b1fbvku6i1rd6mwqyt-179430197082603.jpg" title="b1fbvku6i1rd6mwqyt-179430197082603.jpg"> <strong>b1fbvku6i1rd6mwqyt-179430197082603.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.74 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/b1fbvku6i1rd6mwqyt-179430197082603.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/b1fbvku6i1rd6mwqyt-179430197082603.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/fkv4nl3x5ljt6g90wv-179430203107301.jpg" width="200" alt="fkv4nl3x5ljt6g90wv-179430203107301.jpg" title="fkv4nl3x5ljt6g90wv-179430203107301.jpg"> <strong>fkv4nl3x5ljt6g90wv-179430203107301.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/fkv4nl3x5ljt6g90wv-179430203107301.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/fkv4nl3x5ljt6g90wv-179430203107301.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g46lcylzmwj7zll7sz-179430174737708.jpg" width="200" alt="g46lcylzmwj7zll7sz-179430174737708.png" title="g46lcylzmwj7zll7sz-179430174737708.png"> <strong>g46lcylzmwj7zll7sz-179430174737708.png</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.69 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g46lcylzmwj7zll7sz-179430174737708.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/g46lcylzmwj7zll7sz-179430174737708.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mim7juc1t4wggqvcs8-179430179579807.jpg" width="200" alt="mim7juc1t4wggqvcs8-179430179579807.jpg" title="mim7juc1t4wggqvcs8-179430179579807.jpg"> <strong>mim7juc1t4wggqvcs8-179430179579807.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.79 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mim7juc1t4wggqvcs8-179430179579807.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/mim7juc1t4wggqvcs8-179430179579807.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q2goiukwk6af81ohng-179430184360806.jpg" width="200" alt="q2goiukwk6af81ohng-179430184360806.jpg" title="q2goiukwk6af81ohng-179430184360806.jpg"> <strong>q2goiukwk6af81ohng-179430184360806.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.68 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q2goiukwk6af81ohng-179430184360806.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/q2goiukwk6af81ohng-179430184360806.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/v11txm01qhla6hzaqd-179430170870309.jpg" width="200" alt="v11txm01qhla6hzaqd-179430170870309.jpg" title="v11txm01qhla6hzaqd-179430170870309.jpg"> <strong>v11txm01qhla6hzaqd-179430170870309.jpg</strong>
+</summary>
+
+- **Name:** 流光抛诸寰宇
+- **Published Date:** 2026-11-11 04:00:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.06 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/v11txm01qhla6hzaqd-179430170870309.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794240000000/v11txm01qhla6hzaqd-179430170870309.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
@@ -911,7 +1064,7 @@
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/h6yb1t2sgvm8k7nko4-1773991647849%E7%B9%81%E4%B8%AD(1).jpg" width="200" alt="h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg" title="h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg"> <strong>h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/h6yb1t2sgvm8k7nko4-1773991647849%E7%B9%81%E4%B8%AD%281%29.jpg" width="200" alt="h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg" title="h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg"> <strong>h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg</strong>
 </summary>
 
 - **Name:** 更美好的明天
@@ -921,7 +1074,7 @@
 - **Resolution:** 8839x5556
 - **Size:** 2.47 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/h6yb1t2sgvm8k7nko4-1773991647849%E7%B9%81%E4%B8%AD(1).jpg)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/h6yb1t2sgvm8k7nko4-1773991647849%E7%B9%81%E4%B8%AD%281%29.jpg)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1773936000000/h6yb1t2sgvm8k7nko4-1773991647849繁中(1).jpg">Original</a>
 
 </details>
@@ -1523,23 +1676,6 @@
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/bit8rt7aeqpabrzvbz-1760586995321%E6%B2%A1%E6%9C%89%E7%BB%88%E7%82%B9%E7%9A%84%E8%B7%AF2.jpg" width="200" alt="bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg" title="bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg"> <strong>bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg</strong>
-</summary>
-
-- **Name:** 理想籠桌布
-- **Published Date:** 2025-10-19 03:57:17
-- **Downloaded Date:** 2026-02-11T06:18:41Z
-- **Category:** 📱 Mobile
-- **Resolution:** 1080x1920
-- **Size:** 209.3 KB
-- **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/mobile/bit8rt7aeqpabrzvbz-1760586995321%E6%B2%A1%E6%9C%89%E7%BB%88%E7%82%B9%E7%9A%84%E8%B7%AF2.jpg)
-- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1760544000000/bit8rt7aeqpabrzvbz-1760586995321没有终点的路2.jpg">Original</a>
-
-</details>
-
-<details>
-<summary>
 <img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/b2mlt98y11mom4060r-1760586974082%E6%B2%A1%E6%9C%89%E7%BB%88%E7%82%B9%E7%9A%84%E8%B7%AF1.jpg" width="200" alt="b2mlt98y11mom4060r-1760586974082没有终点的路1.jpg" title="b2mlt98y11mom4060r-1760586974082没有终点的路1.jpg"> <strong>b2mlt98y11mom4060r-1760586974082没有终点的路1.jpg</strong>
 </summary>
 
@@ -1829,7 +1965,7 @@
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/inzjo67vq2do3kdz02-1754537315692Background%20(1).jpg" width="200" alt="inzjo67vq2do3kdz02-1754537315692Background (1).png" title="inzjo67vq2do3kdz02-1754537315692Background (1).png"> <strong>inzjo67vq2do3kdz02-1754537315692Background (1).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/inzjo67vq2do3kdz02-1754537315692Background%20%281%29.jpg" width="200" alt="inzjo67vq2do3kdz02-1754537315692Background (1).png" title="inzjo67vq2do3kdz02-1754537315692Background (1).png"> <strong>inzjo67vq2do3kdz02-1754537315692Background (1).png</strong>
 </summary>
 
 - **Name:** 覆海歸途9
@@ -1839,14 +1975,14 @@
 - **Resolution:** 1920x1080
 - **Size:** 4.41 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/inzjo67vq2do3kdz02-1754537315692Background%20(1).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/inzjo67vq2do3kdz02-1754537315692Background%20%281%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/inzjo67vq2do3kdz02-1754537315692Background (1).png">Original</a>
 
 </details>
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ztr7bllancdcc45hgx-1754537284249Background%20(2).jpg" width="200" alt="ztr7bllancdcc45hgx-1754537284249Background (2).png" title="ztr7bllancdcc45hgx-1754537284249Background (2).png"> <strong>ztr7bllancdcc45hgx-1754537284249Background (2).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ztr7bllancdcc45hgx-1754537284249Background%20%282%29.jpg" width="200" alt="ztr7bllancdcc45hgx-1754537284249Background (2).png" title="ztr7bllancdcc45hgx-1754537284249Background (2).png"> <strong>ztr7bllancdcc45hgx-1754537284249Background (2).png</strong>
 </summary>
 
 - **Name:** 覆海歸途8
@@ -1856,14 +1992,14 @@
 - **Resolution:** 1920x1080
 - **Size:** 2.88 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ztr7bllancdcc45hgx-1754537284249Background%20(2).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ztr7bllancdcc45hgx-1754537284249Background%20%282%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/ztr7bllancdcc45hgx-1754537284249Background (2).png">Original</a>
 
 </details>
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/z19bao2tnd8mppvjm0-1754537256339Background%20(3).jpg" width="200" alt="z19bao2tnd8mppvjm0-1754537256339Background (3).png" title="z19bao2tnd8mppvjm0-1754537256339Background (3).png"> <strong>z19bao2tnd8mppvjm0-1754537256339Background (3).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/z19bao2tnd8mppvjm0-1754537256339Background%20%283%29.jpg" width="200" alt="z19bao2tnd8mppvjm0-1754537256339Background (3).png" title="z19bao2tnd8mppvjm0-1754537256339Background (3).png"> <strong>z19bao2tnd8mppvjm0-1754537256339Background (3).png</strong>
 </summary>
 
 - **Name:** 覆海歸途7
@@ -1873,14 +2009,14 @@
 - **Resolution:** 1920x1080
 - **Size:** 3.36 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/z19bao2tnd8mppvjm0-1754537256339Background%20(3).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/z19bao2tnd8mppvjm0-1754537256339Background%20%283%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/z19bao2tnd8mppvjm0-1754537256339Background (3).png">Original</a>
 
 </details>
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/tlf0li0hyesqrk2wh3-1754537218006Background%20(4).jpg" width="200" alt="tlf0li0hyesqrk2wh3-1754537218006Background (4).png" title="tlf0li0hyesqrk2wh3-1754537218006Background (4).png"> <strong>tlf0li0hyesqrk2wh3-1754537218006Background (4).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/tlf0li0hyesqrk2wh3-1754537218006Background%20%284%29.jpg" width="200" alt="tlf0li0hyesqrk2wh3-1754537218006Background (4).png" title="tlf0li0hyesqrk2wh3-1754537218006Background (4).png"> <strong>tlf0li0hyesqrk2wh3-1754537218006Background (4).png</strong>
 </summary>
 
 - **Name:** 覆海歸途6
@@ -1890,14 +2026,14 @@
 - **Resolution:** 1920x1080
 - **Size:** 3.27 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/tlf0li0hyesqrk2wh3-1754537218006Background%20(4).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/tlf0li0hyesqrk2wh3-1754537218006Background%20%284%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/tlf0li0hyesqrk2wh3-1754537218006Background (4).png">Original</a>
 
 </details>
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/3137bihhdpe957tkaq-1754537187343Background%20(5).jpg" width="200" alt="3137bihhdpe957tkaq-1754537187343Background (5).png" title="3137bihhdpe957tkaq-1754537187343Background (5).png"> <strong>3137bihhdpe957tkaq-1754537187343Background (5).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/3137bihhdpe957tkaq-1754537187343Background%20%285%29.jpg" width="200" alt="3137bihhdpe957tkaq-1754537187343Background (5).png" title="3137bihhdpe957tkaq-1754537187343Background (5).png"> <strong>3137bihhdpe957tkaq-1754537187343Background (5).png</strong>
 </summary>
 
 - **Name:** 覆海歸途5
@@ -1907,14 +2043,14 @@
 - **Resolution:** 1920x1080
 - **Size:** 3.63 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/3137bihhdpe957tkaq-1754537187343Background%20(5).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/3137bihhdpe957tkaq-1754537187343Background%20%285%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/3137bihhdpe957tkaq-1754537187343Background (5).png">Original</a>
 
 </details>
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g4ulefa9xx96gal57n-1754537149134Background%20(6).jpg" width="200" alt="g4ulefa9xx96gal57n-1754537149134Background (6).png" title="g4ulefa9xx96gal57n-1754537149134Background (6).png"> <strong>g4ulefa9xx96gal57n-1754537149134Background (6).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g4ulefa9xx96gal57n-1754537149134Background%20%286%29.jpg" width="200" alt="g4ulefa9xx96gal57n-1754537149134Background (6).png" title="g4ulefa9xx96gal57n-1754537149134Background (6).png"> <strong>g4ulefa9xx96gal57n-1754537149134Background (6).png</strong>
 </summary>
 
 - **Name:** 覆海歸途4
@@ -1924,14 +2060,14 @@
 - **Resolution:** 1920x1080
 - **Size:** 2.81 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g4ulefa9xx96gal57n-1754537149134Background%20(6).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g4ulefa9xx96gal57n-1754537149134Background%20%286%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/g4ulefa9xx96gal57n-1754537149134Background (6).png">Original</a>
 
 </details>
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/85ln29rsjj9lz9f0qo-1754537099738Background%20(7).jpg" width="200" alt="85ln29rsjj9lz9f0qo-1754537099738Background (7).png" title="85ln29rsjj9lz9f0qo-1754537099738Background (7).png"> <strong>85ln29rsjj9lz9f0qo-1754537099738Background (7).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/85ln29rsjj9lz9f0qo-1754537099738Background%20%287%29.jpg" width="200" alt="85ln29rsjj9lz9f0qo-1754537099738Background (7).png" title="85ln29rsjj9lz9f0qo-1754537099738Background (7).png"> <strong>85ln29rsjj9lz9f0qo-1754537099738Background (7).png</strong>
 </summary>
 
 - **Name:** 覆海歸途3
@@ -1941,7 +2077,7 @@
 - **Resolution:** 1920x1080
 - **Size:** 2.95 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/85ln29rsjj9lz9f0qo-1754537099738Background%20(7).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/85ln29rsjj9lz9f0qo-1754537099738Background%20%287%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1754496000000/85ln29rsjj9lz9f0qo-1754537099738Background (7).png">Original</a>
 
 </details>
@@ -2832,7 +2968,7 @@
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/4cpld7hepdmsrfpm58-1740456056557CG-%E2%80%9C%E6%85%88%E6%82%B2%E8%80%85%E2%80%9D%EF%BC%88%E5%90%AB%E5%B7%AE%E5%88%86).jpg" width="200" alt="4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg" title="4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg"> <strong>4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/4cpld7hepdmsrfpm58-1740456056557CG-%E2%80%9C%E6%85%88%E6%82%B2%E8%80%85%E2%80%9D%EF%BC%88%E5%90%AB%E5%B7%AE%E5%88%86%29.jpg" width="200" alt="4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg" title="4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg"> <strong>4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg</strong>
 </summary>
 
 - **Name:** 鏽夜逐光3
@@ -2842,7 +2978,7 @@
 - **Resolution:** 1920x1080
 - **Size:** 798.0 KB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4cpld7hepdmsrfpm58-1740456056557CG-%E2%80%9C%E6%85%88%E6%82%B2%E8%80%85%E2%80%9D%EF%BC%88%E5%90%AB%E5%B7%AE%E5%88%86).jpg)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/4cpld7hepdmsrfpm58-1740456056557CG-%E2%80%9C%E6%85%88%E6%82%B2%E8%80%85%E2%80%9D%EF%BC%88%E5%90%AB%E5%B7%AE%E5%88%86%29.jpg)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1740412800000/4cpld7hepdmsrfpm58-1740456056557CG-“慈悲者”（含差分).jpg">Original</a>
 
 </details>

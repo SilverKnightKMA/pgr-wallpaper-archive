@@ -1,12 +1,675 @@
 # KR Server — PGR Wallpaper Archive
 
-> Total: 593 wallpapers
+> Total: 631 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
-[View & Filter on GitHub Pages](https://SilverKnightKMA.github.io/pgr-wallpaper-archive/?server=kr)
+[View & Filter on GitHub Pages](https://pgr-wallpapers.tungvuthanh.com/?server=kr)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ufvmrckc40cmka6uf0-179439339950409.jpg" width="200" alt="ufvmrckc40cmka6uf0-179439339950409.jpg" title="ufvmrckc40cmka6uf0-179439339950409.jpg"> <strong>ufvmrckc40cmka6uf0-179439339950409.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:36:33
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.06 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ufvmrckc40cmka6uf0-179439339950409.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/ufvmrckc40cmka6uf0-179439339950409.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/zv9rghb2orc64709sg-179439338468008.jpg" width="200" alt="zv9rghb2orc64709sg-179439338468008.png" title="zv9rghb2orc64709sg-179439338468008.png"> <strong>zv9rghb2orc64709sg-179439338468008.png</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:36:19
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.69 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/zv9rghb2orc64709sg-179439338468008.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/zv9rghb2orc64709sg-179439338468008.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/saofgpp0pyon25617f-179439337030607.jpg" width="200" alt="saofgpp0pyon25617f-179439337030607.jpg" title="saofgpp0pyon25617f-179439337030607.jpg"> <strong>saofgpp0pyon25617f-179439337030607.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:36:04
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.79 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/saofgpp0pyon25617f-179439337030607.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/saofgpp0pyon25617f-179439337030607.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/1so2feohbce59y1s9j-179439335158906.jpg" width="200" alt="1so2feohbce59y1s9j-179439335158906.jpg" title="1so2feohbce59y1s9j-179439335158906.jpg"> <strong>1so2feohbce59y1s9j-179439335158906.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:35:45
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.68 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/1so2feohbce59y1s9j-179439335158906.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/1so2feohbce59y1s9j-179439335158906.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/cujhr5h6tkv6skekeq-179439333681105.jpg" width="200" alt="cujhr5h6tkv6skekeq-179439333681105.jpg" title="cujhr5h6tkv6skekeq-179439333681105.jpg"> <strong>cujhr5h6tkv6skekeq-179439333681105.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:35:31
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.07 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/cujhr5h6tkv6skekeq-179439333681105.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/cujhr5h6tkv6skekeq-179439333681105.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/oy8g6lg6o5ggwkdocx-179439332351204.jpg" width="200" alt="oy8g6lg6o5ggwkdocx-179439332351204.jpg" title="oy8g6lg6o5ggwkdocx-179439332351204.jpg"> <strong>oy8g6lg6o5ggwkdocx-179439332351204.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:35:17
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.70 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/oy8g6lg6o5ggwkdocx-179439332351204.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/oy8g6lg6o5ggwkdocx-179439332351204.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/9k7l2kx2mpnf0r016z-179439330658803.jpg" width="200" alt="9k7l2kx2mpnf0r016z-179439330658803.jpg" title="9k7l2kx2mpnf0r016z-179439330658803.jpg"> <strong>9k7l2kx2mpnf0r016z-179439330658803.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:34:59
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.74 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/9k7l2kx2mpnf0r016z-179439330658803.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/9k7l2kx2mpnf0r016z-179439330658803.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/lb95i7qyv6c0l7c3ht-179439328950802.jpg" width="200" alt="lb95i7qyv6c0l7c3ht-179439328950802.jpg" title="lb95i7qyv6c0l7c3ht-179439328950802.jpg"> <strong>lb95i7qyv6c0l7c3ht-179439328950802.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:34:43
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lb95i7qyv6c0l7c3ht-179439328950802.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/lb95i7qyv6c0l7c3ht-179439328950802.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/zvrxc4xgk0r1h1tb5o-179439326758001.jpg" width="200" alt="zvrxc4xgk0r1h1tb5o-179439326758001.jpg" title="zvrxc4xgk0r1h1tb5o-179439326758001.jpg"> <strong>zvrxc4xgk0r1h1tb5o-179439326758001.jpg</strong>
+</summary>
+
+- **Name:** 4.9
+- **Published Date:** 2026-11-11 10:34:13
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/zvrxc4xgk0r1h1tb5o-179439326758001.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/zvrxc4xgk0r1h1tb5o-179439326758001.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/g6y7iiburii3xn2mba-17943925075993.%E8%81%94%E5%8A%A8%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5.jpg" width="200" alt="g6y7iiburii3xn2mba-17943925075993.联动皮肤海报.jpg" title="g6y7iiburii3xn2mba-17943925075993.联动皮肤海报.jpg"> <strong>g6y7iiburii3xn2mba-17943925075993.联动皮肤海报.jpg</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:21:40
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.64 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/g6y7iiburii3xn2mba-17943925075993.%E8%81%94%E5%8A%A8%E7%9A%AE%E8%82%A4%E6%B5%B7%E6%8A%A5.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/g6y7iiburii3xn2mba-17943925075993.联动皮肤海报.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5ojxtpzlkf1bluoira-17943924893892.%E8%81%94%E5%8A%A8cg.jpg" width="200" alt="5ojxtpzlkf1bluoira-17943924893892.联动cg.jpg" title="5ojxtpzlkf1bluoira-17943924893892.联动cg.jpg"> <strong>5ojxtpzlkf1bluoira-17943924893892.联动cg.jpg</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:21:23
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 1.59 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5ojxtpzlkf1bluoira-17943924893892.%E8%81%94%E5%8A%A8cg.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/5ojxtpzlkf1bluoira-17943924893892.联动cg.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/zqd0z8q6puwswk5n4s-17943924733781.%E8%81%94%E5%8A%A8kv.jpg" width="200" alt="zqd0z8q6puwswk5n4s-17943924733781.联动kv.jpg" title="zqd0z8q6puwswk5n4s-17943924733781.联动kv.jpg"> <strong>zqd0z8q6puwswk5n4s-17943924733781.联动kv.jpg</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:20:53
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 934.0 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/zqd0z8q6puwswk5n4s-17943924733781.%E8%81%94%E5%8A%A8kv.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/zqd0z8q6puwswk5n4s-17943924733781.联动kv.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/9tl8ybcktxkz4g11k9-179439243952509.jpg" width="200" alt="9tl8ybcktxkz4g11k9-179439243952509.png" title="9tl8ybcktxkz4g11k9-179439243952509.png"> <strong>9tl8ybcktxkz4g11k9-179439243952509.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:20:33
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.29 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/9tl8ybcktxkz4g11k9-179439243952509.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/9tl8ybcktxkz4g11k9-179439243952509.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jj2vkek1ekmfgxprjm-179439242601508.jpg" width="200" alt="jj2vkek1ekmfgxprjm-179439242601508.png" title="jj2vkek1ekmfgxprjm-179439242601508.png"> <strong>jj2vkek1ekmfgxprjm-179439242601508.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:20:19
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jj2vkek1ekmfgxprjm-179439242601508.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/jj2vkek1ekmfgxprjm-179439242601508.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/mu7lb6dppsh4v1mu6v-179439241051807.jpg" width="200" alt="mu7lb6dppsh4v1mu6v-179439241051807.png" title="mu7lb6dppsh4v1mu6v-179439241051807.png"> <strong>mu7lb6dppsh4v1mu6v-179439241051807.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:20:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.56 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/mu7lb6dppsh4v1mu6v-179439241051807.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/mu7lb6dppsh4v1mu6v-179439241051807.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/nl52aujasa3rew1vm8-179439238986306.jpg" width="200" alt="nl52aujasa3rew1vm8-179439238986306.png" title="nl52aujasa3rew1vm8-179439238986306.png"> <strong>nl52aujasa3rew1vm8-179439238986306.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:19:42
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.02 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/nl52aujasa3rew1vm8-179439238986306.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/nl52aujasa3rew1vm8-179439238986306.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/m8lrgxxqm3ur9toc0c-179439237266105.jpg" width="200" alt="m8lrgxxqm3ur9toc0c-179439237266105.png" title="m8lrgxxqm3ur9toc0c-179439237266105.png"> <strong>m8lrgxxqm3ur9toc0c-179439237266105.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:19:25
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.76 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/m8lrgxxqm3ur9toc0c-179439237266105.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/m8lrgxxqm3ur9toc0c-179439237266105.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/lobnimy4c7r2a3h0pf-179439234654104.jpg" width="200" alt="lobnimy4c7r2a3h0pf-179439234654104.png" title="lobnimy4c7r2a3h0pf-179439234654104.png"> <strong>lobnimy4c7r2a3h0pf-179439234654104.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:19:00
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1414
+- **Size:** 5.64 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/lobnimy4c7r2a3h0pf-179439234654104.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/lobnimy4c7r2a3h0pf-179439234654104.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/5xbajqclpcyq5xx32y-179439233055003.jpg" width="200" alt="5xbajqclpcyq5xx32y-179439233055003.png" title="5xbajqclpcyq5xx32y-179439233055003.png"> <strong>5xbajqclpcyq5xx32y-179439233055003.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:18:43
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.28 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/5xbajqclpcyq5xx32y-179439233055003.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/5xbajqclpcyq5xx32y-179439233055003.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ydipnsyvjlooaabtiu-179439231399602.jpg" width="200" alt="ydipnsyvjlooaabtiu-179439231399602.png" title="ydipnsyvjlooaabtiu-179439231399602.png"> <strong>ydipnsyvjlooaabtiu-179439231399602.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:18:27
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1611
+- **Size:** 6.42 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ydipnsyvjlooaabtiu-179439231399602.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/ydipnsyvjlooaabtiu-179439231399602.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/opj52m1906fbq01ti7-179439229788701.jpg" width="200" alt="opj52m1906fbq01ti7-179439229788701.png" title="opj52m1906fbq01ti7-179439229788701.png"> <strong>opj52m1906fbq01ti7-179439229788701.png</strong>
+</summary>
+
+- **Name:** 4.8
+- **Published Date:** 2026-11-11 10:18:08
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.63 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/opj52m1906fbq01ti7-179439229788701.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/opj52m1906fbq01ti7-179439229788701.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/ycngr2c3cs639k80ed-179439227100509.jpg" width="200" alt="ycngr2c3cs639k80ed-179439227100509.png" title="ycngr2c3cs639k80ed-179439227100509.png"> <strong>ycngr2c3cs639k80ed-179439227100509.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:13:47
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.30 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/ycngr2c3cs639k80ed-179439227100509.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/ycngr2c3cs639k80ed-179439227100509.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/yagd6xig2yca4yr6pw-179439201886208.jpg" width="200" alt="yagd6xig2yca4yr6pw-179439201886208.png" title="yagd6xig2yca4yr6pw-179439201886208.png"> <strong>yagd6xig2yca4yr6pw-179439201886208.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:13:25
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.81 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/yagd6xig2yca4yr6pw-179439201886208.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/yagd6xig2yca4yr6pw-179439201886208.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/d6avuzbytiqqz3olxf-179439199657307.jpg" width="200" alt="d6avuzbytiqqz3olxf-179439199657307.png" title="d6avuzbytiqqz3olxf-179439199657307.png"> <strong>d6avuzbytiqqz3olxf-179439199657307.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:13:10
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.91 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/d6avuzbytiqqz3olxf-179439199657307.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/d6avuzbytiqqz3olxf-179439199657307.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q80jlud9y1p274qom6-179439198236406.jpg" width="200" alt="q80jlud9y1p274qom6-179439198236406.png" title="q80jlud9y1p274qom6-179439198236406.png"> <strong>q80jlud9y1p274qom6-179439198236406.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:12:55
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.73 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q80jlud9y1p274qom6-179439198236406.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/q80jlud9y1p274qom6-179439198236406.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/e2sgwi6q3h28kmp1m0-179439195899005.jpg" width="200" alt="e2sgwi6q3h28kmp1m0-179439195899005.jpg" title="e2sgwi6q3h28kmp1m0-179439195899005.jpg"> <strong>e2sgwi6q3h28kmp1m0-179439195899005.jpg</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:12:32
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 2.26 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/e2sgwi6q3h28kmp1m0-179439195899005.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/e2sgwi6q3h28kmp1m0-179439195899005.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/q411qv6iksew9kpant-179439194060004.jpg" width="200" alt="q411qv6iksew9kpant-179439194060004.png" title="q411qv6iksew9kpant-179439194060004.png"> <strong>q411qv6iksew9kpant-179439194060004.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:12:14
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.18 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/q411qv6iksew9kpant-179439194060004.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/q411qv6iksew9kpant-179439194060004.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/d5enrwvzrnp1k5ygsh-179439192280203.jpg" width="200" alt="d5enrwvzrnp1k5ygsh-179439192280203.jpg" title="d5enrwvzrnp1k5ygsh-179439192280203.jpg"> <strong>d5enrwvzrnp1k5ygsh-179439192280203.jpg</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:11:54
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 3.63 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/d5enrwvzrnp1k5ygsh-179439192280203.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/d5enrwvzrnp1k5ygsh-179439192280203.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/xgeowexbhztfs0ey7j-179439190420602.jpg" width="200" alt="xgeowexbhztfs0ey7j-179439190420602.png" title="xgeowexbhztfs0ey7j-179439190420602.png"> <strong>xgeowexbhztfs0ey7j-179439190420602.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:11:38
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.43 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/xgeowexbhztfs0ey7j-179439190420602.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/xgeowexbhztfs0ey7j-179439190420602.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/1woy86g47hjpaiz3q9-179439188833101.jpg" width="200" alt="1woy86g47hjpaiz3q9-179439188833101.png" title="1woy86g47hjpaiz3q9-179439188833101.png"> <strong>1woy86g47hjpaiz3q9-179439188833101.png</strong>
+</summary>
+
+- **Name:** 4.7
+- **Published Date:** 2026-11-11 10:11:17
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.76 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/1woy86g47hjpaiz3q9-179439188833101.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/1woy86g47hjpaiz3q9-179439188833101.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/w5jlrtlb5cgkct8u80-17943918285889.jpg" width="200" alt="w5jlrtlb5cgkct8u80-17943918285889.jpg" title="w5jlrtlb5cgkct8u80-17943918285889.jpg"> <strong>w5jlrtlb5cgkct8u80-17943918285889.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:10:24
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 543.7 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/w5jlrtlb5cgkct8u80-17943918285889.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/w5jlrtlb5cgkct8u80-17943918285889.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jjgtwcwekmras33wi3-17943918142668.jpg" width="200" alt="jjgtwcwekmras33wi3-17943918142668.jpg" title="jjgtwcwekmras33wi3-17943918142668.jpg"> <strong>jjgtwcwekmras33wi3-17943918142668.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:10:09
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 411.7 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jjgtwcwekmras33wi3-17943918142668.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/jjgtwcwekmras33wi3-17943918142668.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/i9risey2i76mo848ya-17943917995407.jpg" width="200" alt="i9risey2i76mo848ya-17943917995407.jpg" title="i9risey2i76mo848ya-17943917995407.jpg"> <strong>i9risey2i76mo848ya-17943917995407.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:09:55
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 322.7 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/i9risey2i76mo848ya-17943917995407.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/i9risey2i76mo848ya-17943917995407.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jr6n6ie2jj0ayd9m4z-17943917823376.jpg" width="200" alt="jr6n6ie2jj0ayd9m4z-17943917823376.jpg" title="jr6n6ie2jj0ayd9m4z-17943917823376.jpg"> <strong>jr6n6ie2jj0ayd9m4z-17943917823376.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:09:36
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 604.1 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jr6n6ie2jj0ayd9m4z-17943917823376.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/jr6n6ie2jj0ayd9m4z-17943917823376.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/uspu9fke7wtr41659p-17943917682855.jpg" width="200" alt="uspu9fke7wtr41659p-17943917682855.jpg" title="uspu9fke7wtr41659p-17943917682855.jpg"> <strong>uspu9fke7wtr41659p-17943917682855.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:09:22
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 466.7 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/uspu9fke7wtr41659p-17943917682855.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/uspu9fke7wtr41659p-17943917682855.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/hoglkndb69jx9vw42v-17943917523184.jpg" width="200" alt="hoglkndb69jx9vw42v-17943917523184.jpg" title="hoglkndb69jx9vw42v-17943917523184.jpg"> <strong>hoglkndb69jx9vw42v-17943917523184.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:09:07
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 464.6 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/hoglkndb69jx9vw42v-17943917523184.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/hoglkndb69jx9vw42v-17943917523184.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/eusfcy9thtd4vu0dja-17943917351443.jpg" width="200" alt="eusfcy9thtd4vu0dja-17943917351443.jpg" title="eusfcy9thtd4vu0dja-17943917351443.jpg"> <strong>eusfcy9thtd4vu0dja-17943917351443.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:08:50
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1210
+- **Size:** 775.2 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/eusfcy9thtd4vu0dja-17943917351443.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/eusfcy9thtd4vu0dja-17943917351443.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/u302b9ycy0jzjn1su8-17943917152982.jpg" width="200" alt="u302b9ycy0jzjn1su8-17943917152982.jpg" title="u302b9ycy0jzjn1su8-17943917152982.jpg"> <strong>u302b9ycy0jzjn1su8-17943917152982.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:08:30
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 632.2 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/u302b9ycy0jzjn1su8-17943917152982.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/u302b9ycy0jzjn1su8-17943917152982.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/kz5k9q3tfxvfr02669-17943916941091.jpg" width="200" alt="kz5k9q3tfxvfr02669-17943916941091.jpg" title="kz5k9q3tfxvfr02669-17943916941091.jpg"> <strong>kz5k9q3tfxvfr02669-17943916941091.jpg</strong>
+</summary>
+
+- **Name:** 4.6
+- **Published Date:** 2026-11-11 10:07:49
+- **Downloaded Date:** 2026-11-12T06:45:31Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 1920x1080
+- **Size:** 566.9 KB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/kz5k9q3tfxvfr02669-17943916941091.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794326400000/kz5k9q3tfxvfr02669-17943916941091.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
@@ -656,7 +1319,7 @@
 
 <details>
 <summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jk0ofvt993abklc84v-1776862253976%E4%B8%BD%E8%8A%99cg%20(1).jpg" width="200" alt="jk0ofvt993abklc84v-1776862253976丽芙cg (1).png" title="jk0ofvt993abklc84v-1776862253976丽芙cg (1).png"> <strong>jk0ofvt993abklc84v-1776862253976丽芙cg (1).png</strong>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/jk0ofvt993abklc84v-1776862253976%E4%B8%BD%E8%8A%99cg%20%281%29.jpg" width="200" alt="jk0ofvt993abklc84v-1776862253976丽芙cg (1).png" title="jk0ofvt993abklc84v-1776862253976丽芙cg (1).png"> <strong>jk0ofvt993abklc84v-1776862253976丽芙cg (1).png</strong>
 </summary>
 
 - **Name:** 607
@@ -666,7 +1329,7 @@
 - **Resolution:** 7680x4320
 - **Size:** 60.99 MB
 - **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jk0ofvt993abklc84v-1776862253976%E4%B8%BD%E8%8A%99cg%20(1).png)
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/jk0ofvt993abklc84v-1776862253976%E4%B8%BD%E8%8A%99cg%20%281%29.png)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1776787200000/jk0ofvt993abklc84v-1776862253976丽芙cg (1).png">Original</a>
 
 </details>
@@ -3473,23 +4136,6 @@
 - **Status:** Success
 - **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/wdi1qsmz721vrfp560-1731655871906386.jpg)
 - **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1731600000000/wdi1qsmz721vrfp560-1731655871906386.jpg">Original</a>
-
-</details>
-
-<details>
-<summary>
-<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/qmxpihyx46uvjlm9xb-1731655810848384.jpg" width="200" alt="qmxpihyx46uvjlm9xb-1731655810848384.jpg" title="qmxpihyx46uvjlm9xb-1731655810848384.jpg"> <strong>qmxpihyx46uvjlm9xb-1731655810848384.jpg</strong>
-</summary>
-
-- **Name:** 420
-- **Published Date:** 2024-11-15 07:29:31
-- **Downloaded Date:** 2026-02-11T06:50:00Z
-- **Category:** 🖥️ Desktop
-- **Resolution:** 7680x4320
-- **Size:** 2.40 MB
-- **Status:** Success
-- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/qmxpihyx46uvjlm9xb-1731655810848384.jpg)
-- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1731600000000/qmxpihyx46uvjlm9xb-1731655810848384.jpg">Original</a>
 
 </details>
 
