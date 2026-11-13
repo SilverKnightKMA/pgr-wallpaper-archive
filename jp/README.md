@@ -1,12 +1,165 @@
 # JP Server — PGR Wallpaper Archive
 
-> Total: 767 wallpapers
+> Total: 776 wallpapers
 
 [Back to Main](https://github.com/SilverKnightKMA/pgr-wallpaper-archive)
 
 [View & Filter on GitHub Pages](https://pgr-wallpapers.tungvuthanh.com/?server=jp)
 
 ## Gallery
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/y2g7eod8k0d28y48mp-179447029799709.jpg" width="200" alt="y2g7eod8k0d28y48mp-179447029799709.jpg" title="y2g7eod8k0d28y48mp-179447029799709.jpg"> <strong>y2g7eod8k0d28y48mp-179447029799709.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸09
+- **Published Date:** 2026-11-12 07:58:11
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.06 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/y2g7eod8k0d28y48mp-179447029799709.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/y2g7eod8k0d28y48mp-179447029799709.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/vbrh2rw1vwav4kgmpq-179447025226908.jpg" width="200" alt="vbrh2rw1vwav4kgmpq-179447025226908.png" title="vbrh2rw1vwav4kgmpq-179447025226908.png"> <strong>vbrh2rw1vwav4kgmpq-179447025226908.png</strong>
+</summary>
+
+- **Name:** 4.9壁纸08
+- **Published Date:** 2026-11-12 07:57:26
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.69 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/vbrh2rw1vwav4kgmpq-179447025226908.png)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/vbrh2rw1vwav4kgmpq-179447025226908.png">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/a8824g11bojncba81r-179447023510307.jpg" width="200" alt="a8824g11bojncba81r-179447023510307.jpg" title="a8824g11bojncba81r-179447023510307.jpg"> <strong>a8824g11bojncba81r-179447023510307.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸07
+- **Published Date:** 2026-11-12 07:57:09
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.79 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/a8824g11bojncba81r-179447023510307.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/a8824g11bojncba81r-179447023510307.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/2dnu4bwlclfa61p5ub-179447021872806.jpg" width="200" alt="2dnu4bwlclfa61p5ub-179447021872806.jpg" title="2dnu4bwlclfa61p5ub-179447021872806.jpg"> <strong>2dnu4bwlclfa61p5ub-179447021872806.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸06
+- **Published Date:** 2026-11-12 07:56:52
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 5.68 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/2dnu4bwlclfa61p5ub-179447021872806.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/2dnu4bwlclfa61p5ub-179447021872806.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/t590kzblv67mw4poc5-179447020074905.jpg" width="200" alt="t590kzblv67mw4poc5-179447020074905.jpg" title="t590kzblv67mw4poc5-179447020074905.jpg"> <strong>t590kzblv67mw4poc5-179447020074905.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸05
+- **Published Date:** 2026-11-12 07:56:30
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.08 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/t590kzblv67mw4poc5-179447020074905.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/t590kzblv67mw4poc5-179447020074905.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/j1c07t9d3127i3zwfn-179447017541904.jpg" width="200" alt="j1c07t9d3127i3zwfn-179447017541904.jpg" title="j1c07t9d3127i3zwfn-179447017541904.jpg"> <strong>j1c07t9d3127i3zwfn-179447017541904.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸04
+- **Published Date:** 2026-11-12 07:56:09
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.70 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/j1c07t9d3127i3zwfn-179447017541904.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/j1c07t9d3127i3zwfn-179447017541904.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/55xua0jpp1n9ux27oe-179447014827403.jpg" width="200" alt="55xua0jpp1n9ux27oe-179447014827403.jpg" title="55xua0jpp1n9ux27oe-179447014827403.jpg"> <strong>55xua0jpp1n9ux27oe-179447014827403.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸03
+- **Published Date:** 2026-11-12 07:55:41
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 7.74 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/55xua0jpp1n9ux27oe-179447014827403.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/55xua0jpp1n9ux27oe-179447014827403.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/sov4jmf34lwiqc7v2n-179447012974202.jpg" width="200" alt="sov4jmf34lwiqc7v2n-179447012974202.jpg" title="sov4jmf34lwiqc7v2n-179447012974202.jpg"> <strong>sov4jmf34lwiqc7v2n-179447012974202.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸02
+- **Published Date:** 2026-11-12 07:55:22
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.92 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/sov4jmf34lwiqc7v2n-179447012974202.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/sov4jmf34lwiqc7v2n-179447012974202.jpg">Original</a>
+
+</details>
+
+<details>
+<summary>
+<img src="https://raw.githubusercontent.com/SilverKnightKMA/pgr-wallpaper-archive/preview/previews/pz87d5ukrsgot5dkta-179447011206401.jpg" width="200" alt="pz87d5ukrsgot5dkta-179447011206401.jpg" title="pz87d5ukrsgot5dkta-179447011206401.jpg"> <strong>pz87d5ukrsgot5dkta-179447011206401.jpg</strong>
+</summary>
+
+- **Name:** 4.9壁纸01
+- **Published Date:** 2026-11-12 07:54:54
+- **Downloaded Date:** 2026-11-13T06:04:36Z
+- **Category:** 🖥️ Desktop
+- **Resolution:** 2560x1440
+- **Size:** 6.93 MB
+- **Status:** Success
+- **Download Raw:** [Download](https://github.com/SilverKnightKMA/pgr-wallpaper-archive/raw/wallpapers/desktop/pz87d5ukrsgot5dkta-179447011206401.jpg)
+- **Original:** <a href="https://media-cdn-zspms.kurogame.net/pnswebsite/website2.0/images/1794412800000/pz87d5ukrsgot5dkta-179447011206401.jpg">Original</a>
+
+</details>
 
 <details>
 <summary>
